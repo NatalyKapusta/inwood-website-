@@ -4,6 +4,7 @@ import { Fragment, useEffect, useMemo, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { collections, collectionOrder } from "@/lib/products";
 import modelVariantsData from "@/data/model-variants.json";
+import { translateForPrint, PRINT_EN_STATIC, PRINT_EN_TIERS } from "@/lib/printEn";
 import {
   tariffLabels,
   positionTotal,
@@ -48,6 +49,7 @@ export default function QuoteBuilder({ consultantDefault }: { consultantDefault:
   const [discountValue, setDiscountValue] = useState(0);
   const [currency, setCurrency] = useState<"none" | "EUR" | "USD">("none");
   const [exchangeRate, setExchangeRate] = useState(0);
+  const [translateEn, setTranslateEn] = useState(false);
 
   const [collectionKey, setCollectionKey] = useState(collectionOrder[0]);
   const [modelCode, setModelCode] = useState("");
@@ -216,17 +218,30 @@ export default function QuoteBuilder({ consultantDefault }: { consultantDefault:
     return hasRate ? fmtForeign(uah) : `${uah.toFixed(2)} ₴`;
   }
 
+  const tariffLabelsEn: Record<Tariff, string> = {
+    retail: "Retail",
+    dealer: "Dealers",
+    distributor: "Distributor",
+    builder: "Builder",
+    epicenter: "Epicenter",
+    export: "Export",
+  };
+
   function buildDocumentHtml() {
     const origin = typeof window !== "undefined" ? window.location.origin : "";
+    const tt = (uk: string) => (translateEn ? PRINT_EN_STATIC[uk] ?? uk : uk);
+    const tc = (uk: string) => (translateEn ? translateForPrint(uk) : uk);
+
     const rowsHtml = positions
       .map((p) => {
+        const modelLine = `${p.collectionLabel} — ${p.modelCode}`;
         const subRows = p.rows
           .map(
             (r, idx) => `
         <tr>
           ${idx === 0 ? `<td rowspan="${p.rows.length}" style="text-align:center;"><img src="${origin}${p.photo ?? ""}" alt="" style="width:64px;height:auto;border-radius:6px;" /></td>` : ""}
-          ${idx === 0 ? `<td rowspan="${p.rows.length}"><strong>${p.collectionLabel} — ${p.modelCode}</strong><br/><span style="color:#8A90A6;font-size:12px;">${p.colorLabel || ""}</span></td>` : ""}
-          <td>${r.label}</td>
+          ${idx === 0 ? `<td rowspan="${p.rows.length}"><strong>${modelLine}</strong><br/><span style="color:#8A90A6;font-size:12px;">${tc(p.colorLabel || "")}</span></td>` : ""}
+          <td>${tc(r.label)}</td>
           <td style="text-align:center;">${r.qty}</td>
           <td style="text-align:right;">${r.unitPrice.toFixed(2)} ₴</td>
           <td style="text-align:right;">${r.amount.toFixed(2)} ₴</td>
@@ -239,17 +254,26 @@ export default function QuoteBuilder({ consultantDefault }: { consultantDefault:
 
     const discountRow =
       discountValue > 0
-        ? `<div style="text-align:right;color:#8A90A6;text-decoration:line-through;">Було: ${moneyDisplay(subtotal)}</div>
-           <div style="text-align:right;font-size:13px;color:#8A90A6;">Знижка: ${moneyDisplay(discountAmount)}</div>`
+        ? `<div style="text-align:right;color:#8A90A6;text-decoration:line-through;">${tt("Було")}: ${moneyDisplay(subtotal)}</div>
+           <div style="text-align:right;font-size:13px;color:#8A90A6;">${tt("Знижка")}: ${moneyDisplay(discountAmount)}</div>`
         : "";
 
     const rateRow = hasRate
-      ? `<div style="text-align:right;font-size:12px;color:#8A90A6;margin-top:4px;">Курс: ${exchangeRate.toFixed(2)} ₴ за 1 ${currencySymbol}</div>`
+      ? `<div style="text-align:right;font-size:12px;color:#8A90A6;margin-top:4px;">${tt("Курс")}: ${exchangeRate.toFixed(2)} ₴ ${translateEn ? "per" : "за"} 1 ${currencySymbol}</div>`
       : "";
 
+    const heading = tt("Комерційна пропозиція");
+    const greeting = translateEn ? `Dear ${clientName || "Client"},` : `Шановний(а) ${clientName || "клієнте"},`;
+    const introText = tt(
+      "Компанія IN WOOD рада запропонувати Вам комерційну пропозицію в напрямку виробництва та реалізації міжкімнатних дверей. Ми впевнені, що наша співпраця стане вигідною, тривалою та приємною."
+    );
+    const closingText = tt(
+      "Сподіваємось побачити Вас в числі наших партнерів і впевнені, що співпраця з IN WOOD буде вигідною, тривалою та приємною!"
+    );
+
     return `<!doctype html>
-<html lang="uk"><head><meta charset="utf-8" />
-<title>Комерційна пропозиція — IN WOOD</title>
+<html lang="${translateEn ? "en" : "uk"}"><head><meta charset="utf-8" />
+<title>${heading} — IN WOOD</title>
 <style>
   body { font-family: Arial, Helvetica, sans-serif; color: #333958; margin: 0; padding: 0; }
   .header { background: #333958; color: #fff; padding: 24px 32px; display: flex; justify-content: space-between; border-bottom: 4px solid #E3CCA1; }
@@ -269,33 +293,33 @@ export default function QuoteBuilder({ consultantDefault }: { consultantDefault:
 </head><body>
   <div class="header">
     <div>
-      <h1>Комерційна пропозиція</h1>
-      <p>IN WOOD · Двері та фурнітура</p>
+      <h1>${heading}</h1>
+      <p>IN WOOD · ${translateEn ? "Interior Doors & Hardware" : "Двері та фурнітура"}</p>
     </div>
     <div style="text-align:right;font-size:12px;">
-      <div>Дата: ${new Date().toLocaleDateString("uk-UA")}</div>
-      <div>Тариф: ${tariffLabels[tariff as Tariff] ?? tariff}</div>
+      <div>${tt("Дата:")} ${new Date().toLocaleDateString(translateEn ? "en-GB" : "uk-UA")}</div>
+      <div>${tt("Категорія:")} ${translateEn ? tariffLabelsEn[tariff as Tariff] : tariffLabels[tariff as Tariff] ?? tariff}</div>
     </div>
   </div>
   <div class="content">
-    <p><strong>Шановний(а) ${clientName || "клієнте"},</strong></p>
-    <p>IN WOOD раді запропонувати вам цю комерційну пропозицію на виготовлення та постачання міжкімнатних дверей.</p>
+    <p><strong>${greeting}</strong></p>
+    <p>${introText}</p>
     <div class="boxes">
-      <div class="box"><div class="title">Клієнт</div><div>${clientName || "—"}</div><div>${clientContact || ""}</div></div>
-      <div class="box"><div class="title">Консультант IN WOOD</div><div>${consultantName || "—"}</div></div>
+      <div class="box"><div class="title">${tt("Клієнт / Замовник")}</div><div>${clientName || "—"}</div><div>${clientContact || ""}</div></div>
+      <div class="box"><div class="title">${tt("Консультант IN WOOD")}</div><div>${consultantName || "—"}</div></div>
     </div>
     <table>
-      <thead><tr><th>Фото</th><th>Модель</th><th>Позиція</th><th>К-сть</th><th>Ціна за од.</th><th>Сума</th></tr></thead>
+      <thead><tr><th>${tt("Фото")}</th><th>${tt("Модель")}</th><th>${tt("Позиція")}</th><th>${tt("К-сть")}</th><th>${tt("Ціна за од.")}</th><th>${tt("Сума")}</th></tr></thead>
       <tbody>${rowsHtml}</tbody>
     </table>
     <div class="totals">
       ${discountRow}
-      <div>Разом: ${moneyDisplay(total)}</div>
+      <div>${tt("Разом")}: ${moneyDisplay(total)}</div>
       ${rateRow}
     </div>
     <div class="footer">
-      Дякуємо за співпрацю з IN WOOD!<br/>
-      Документ згенеровано автоматично і не є фіскальним чеком.
+      ${closingText}<br/>
+      ${tt("Документ згенеровано автоматично, не є фіскальним чеком")}
     </div>
   </div>
 </body></html>`;
@@ -686,6 +710,11 @@ export default function QuoteBuilder({ consultantDefault }: { consultantDefault:
                 />
               )}
             </div>
+
+            <label className="mt-3 flex items-center gap-2 text-sm text-navy-dark">
+              <input type="checkbox" checked={translateEn} onChange={(e) => setTranslateEn(e.target.checked)} />
+              Переклад бланку на англійську (лише для друку/файлу)
+            </label>
 
             <div className="mt-4 text-right">
               {discountValue > 0 && (

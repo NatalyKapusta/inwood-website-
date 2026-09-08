@@ -1,0 +1,252 @@
+{
+  "PRINT_EN_STATIC": {
+    "Завантажити PDF": "Download PDF",
+    "Друкувати": "Print",
+    "Комерційна пропозиція": "Commercial Offer",
+    "Компанія IN WOOD · Міжкімнатні двері та фурнітура": "IN WOOD Company · Interior Doors & Hardware",
+    "Дата:": "Date:",
+    "Категорія:": "Category:",
+    "Шановний партнере!": "Dear Partner,",
+    "Компанія IN WOOD рада запропонувати Вам комерційну пропозицію в напрямку виробництва та реалізації міжкімнатних дверей. Ми впевнені, що наша співпраця стане вигідною, тривалою та приємною.": "IN WOOD is pleased to offer you this commercial proposal for the manufacture and supply of interior doors. We are confident that our cooperation will be profitable, long-lasting and enjoyable.",
+    "Клієнт / Замовник": "Client",
+    "Консультант IN WOOD": "IN WOOD Consultant",
+    "Специфікація замовлення": "Order Specification",
+    "Фото": "Photo",
+    "Модель": "Model",
+    "Колір / текстура": "Color / Texture",
+    "Позиція": "Item",
+    "К-сть": "Qty",
+    "Ціна за од.": "Unit Price",
+    "Сума": "Amount",
+    "Разом": "Total",
+    "Разом зі знижкою": "Total after discount",
+    "Було": "Subtotal",
+    "Знижка": "Discount",
+    "Курс": "Exchange rate",
+    "* — нестандартний розмір": "* — non-standard size",
+    "Коментар": "Comment",
+    "Сподіваємось побачити Вас в числі наших партнерів і впевнені, що співпраця з IN WOOD буде вигідною, тривалою та приємною!": "We hope to welcome you among our partners and are confident that working with IN WOOD will be profitable, long-lasting and enjoyable!",
+    "З повагою, команда IN WOOD": "Best regards, the IN WOOD team",
+    "Документ згенеровано автоматично, не є фіскальним чеком": "This document is generated automatically and is not a fiscal receipt",
+    "Формування PDF...": "Generating PDF...",
+    "Не вдалося сформувати PDF. Скористайтесь кнопкою «Друкувати» → «Зберегти як PDF».": "Could not generate the PDF. Use the “Print” button → “Save as PDF”."
+  },
+  "PRINT_EN_TIERS": {
+    "Роздріб": "Retail",
+    "Дилери": "Dealers",
+    "Дистриб.": "Distributor",
+    "Забудовн.": "Builder",
+    "Експорт": "Export",
+    "Епіцентр": "Epicenter"
+  },
+  "PRINT_EN_CATALOG": {
+    "Антрацит": "Anthracite",
+    "Астана мерле": "Astana Merle",
+    "Бетон сніжний": "Snow Concrete",
+    "Бетон сірий": "Grey Concrete",
+    "Бетон темний": "Dark Concrete",
+    "Білий текстурний": "White Textured",
+    "Білий": "White",
+    "Венге": "Wenge",
+    "Венге південне": "Southern Wenge",
+    "Венге південне тиснене": "Southern Wenge Embossed",
+    "Дуб Немо Сріблястий": "Oak Nemo Silver",
+    "Дуб глазго еко": "Oak Glasgow Eco",
+    "Дуб немо лате": "Oak Nemo Latte",
+    "Дуб пасадена": "Oak Pasadena",
+    "Дуб портовий": "Oak Port",
+    "Дуб сріблястий": "Oak Silver",
+    "Дуб шато": "Oak Chateau",
+    "Зріз каменю": "Stone Cut",
+    "Карпатська ялина": "Carpathian Spruce",
+    "Комплект": "Set",
+    "Оксид білий": "Oxide White",
+    "Оксид світлий": "Oxide Light",
+    "Оксид темний": "Oxide Dark",
+    "Попелястий софтач": "Ash Soft-touch",
+    "Рустік авіньйон білий": "Rustic Avinon White",
+    "Рустік золотий": "Rustic Gold",
+    "Сосна прованс": "Pine Provence",
+    "Фельдграу": "Feldgrau",
+    "Чорна корка": "Black Cork",
+    "Шпон коричневий": "Brown Veneer",
+    "Немає": "None",
+    "Ліва": "Left",
+    "Права": "Right",
+    "Розсувна": "Sliding",
+    "Без врізки": "No cutout",
+    "Врізка замка": "Lock cutout",
+    "Врізка фурнітури": "Hardware cutout",
+    "Без кольору (полотно під фарбування замовником)": "No color (panel for customer's own painting)",
+    "Уточнюється (фарбування RAL/NCS)": "To be confirmed (RAL/NCS painting)",
+    "Двері під фарбування / Прихований монтаж": "Doors for Painting / Hidden Mount",
+    "Дверна накладка (метал. двері, 10 мм)": "Door overlay (metal doors, 10 mm)",
+    "Погонажні вироби (короб/лиштва/добір окремо)": "Linear items (frame/trim/door casing separately)",
+    "Уточнюється": "To be confirmed",
+    "Чорний": "Black",
+    "Сірий": "Grey",
+    "В колір полотна": "Matching panel color"
+  },
+  "PRINT_EN_ROOTS": [
+    [
+      "Коробка прихованого монтажу",
+      "Concealed Aluminum Door Frame"
+    ],
+    [
+      "Система алюм. профілів для торцювання",
+      "Aluminum edge-finishing profile system"
+    ],
+    [
+      "під панелі",
+      "for panels"
+    ],
+    [
+      "під шпатлівку",
+      "for putty"
+    ],
+    [
+      "крило",
+      "wing"
+    ],
+    [
+      "алюм. крайка INSIDE",
+      "aluminum edge INSIDE"
+    ],
+    [
+      "алюм. крайка",
+      "aluminum edge"
+    ],
+    [
+      "крайка - алюм. профіль (сіра)",
+      "edge - aluminum profile (gray)"
+    ],
+    [
+      "крайка - алюм. профіль (чорна)",
+      "edge - aluminum profile (black)"
+    ],
+    [
+      "крайка - грунт",
+      "edge - primer"
+    ],
+    [
+      "Плівка, Inside,",
+      "Film, Inside,"
+    ],
+    [
+      "Плівка,",
+      "Film,"
+    ],
+    [
+      "Компланарний",
+      "Flush"
+    ],
+    [
+      "Компланарна",
+      "Flush"
+    ],
+    [
+      "Телескопічний",
+      "Telescopic"
+    ],
+    [
+      "Телескопічна",
+      "Telescopic"
+    ],
+    [
+      "Плінтус",
+      "Skirting board"
+    ],
+    [
+      "ціна за 1 пог.м",
+      "price per running meter"
+    ],
+    [
+      "Полотно, ",
+      "Panel, "
+    ],
+    [
+      "Короб, нестандарт (глибина",
+      "Frame, non-standard (depth"
+    ],
+    [
+      "Короб, ",
+      "Frame, "
+    ],
+    [
+      "Лиштва лицьова, ",
+      "Trim (front), "
+    ],
+    [
+      "Лиштва тильна, ",
+      "Trim (back), "
+    ],
+    [
+      "Лиштва, ",
+      "Trim, "
+    ],
+    [
+      "Добір, нестандарт",
+      "Door Casing, non-standard"
+    ],
+    [
+      "Добір, ",
+      "Door Casing, "
+    ],
+    [
+      "нестандарт*",
+      "non-standard*"
+    ],
+    [
+      "нестандарт +20%",
+      "non-standard +20%"
+    ],
+    [
+      "Шумоізоляція",
+      "Soundproofing"
+    ],
+    [
+      "Фарбування алюмінієвої крайки",
+      "Aluminum edge painting"
+    ],
+    [
+      "Фарбування коробки прихованого монтажу по карті RAL",
+      "Concealed aluminum frame painting (RAL chart)"
+    ],
+    [
+      "відкривання:",
+      "opening side:"
+    ],
+    [
+      "колір вставки:",
+      "insert color:"
+    ],
+    [
+      "колір кромки:",
+      "edge color:"
+    ],
+    [
+      "короб RAL/NCS:",
+      "frame RAL/NCS:"
+    ],
+    [
+      "ліва",
+      "left"
+    ],
+    [
+      "права",
+      "right"
+    ],
+    [
+      "розсувна",
+      "sliding"
+    ],
+    [
+      " х ",
+      " x "
+    ],
+    [
+      " мм",
+      " mm"
+    ]
+  ]
+}
