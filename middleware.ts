@@ -20,8 +20,11 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
+  // Закритий B2B-портал — без мовного префікса, живе поза [locale]
+  const isPortalRoute = pathname === "/portal" || pathname.startsWith("/portal/");
+
   // Немає мовного префікса — редірект на дефолтну локаль (ua)
-  if (!getLocaleFromPath(pathname)) {
+  if (!isPortalRoute && !getLocaleFromPath(pathname)) {
     const url = request.nextUrl.clone();
     url.pathname = `/${defaultLocale}${pathname === "/" ? "" : pathname}`;
     return NextResponse.redirect(url);
@@ -48,7 +51,23 @@ export async function middleware(request: NextRequest) {
       },
     }
   );
-  await supabase.auth.getUser();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  // Захищаємо портал: без сесії пускаємо лише на сторінку логіну
+  if (isPortalRoute && pathname !== "/portal/login" && !user) {
+    const url = request.nextUrl.clone();
+    url.pathname = "/portal/login";
+    return NextResponse.redirect(url);
+  }
+
+  // Залогінений — з логіну одразу в портал
+  if (pathname === "/portal/login" && user) {
+    const url = request.nextUrl.clone();
+    url.pathname = "/portal";
+    return NextResponse.redirect(url);
+  }
 
   return response;
 }
