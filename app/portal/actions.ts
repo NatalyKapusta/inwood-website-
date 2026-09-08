@@ -95,3 +95,27 @@ export async function createOverride(formData: FormData) {
   revalidatePath("/portal/overrides");
   redirect("/portal/overrides");
 }
+
+// Лише staff: перемкнути видимість роздрібних цін на публічному сайті.
+export async function setPricesVisible(formData: FormData) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) redirect("/portal/login");
+
+  const { data: myProfile } = await supabase.from("profiles").select("role").eq("id", user.id).single();
+  if (myProfile?.role !== "staff") redirect("/portal");
+
+  const visible = formData.get("visible") === "true";
+
+  await supabase
+    .from("site_settings")
+    .upsert({ key: "prices_visible", value: visible, updated_by: user.id, updated_at: new Date().toISOString() });
+
+  revalidatePath("/portal");
+  revalidatePath("/ua/catalog");
+  revalidatePath("/ru/catalog");
+  revalidatePath("/en/catalog");
+  redirect("/portal");
+}

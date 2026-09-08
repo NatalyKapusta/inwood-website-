@@ -2,7 +2,12 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata } from "@/lib/seo";
 import { collections, collectionOrder } from "@/lib/products";
+import { getPricesVisible } from "@/lib/siteSettings";
 import CatalogFilter from "@/components/CatalogFilter";
+
+// Сторінка кешується статично, але раз на хвилину перевіряє
+// prices_visible наново — щоб перемикач у порталі діяв без редеплою.
+export const revalidate = 60;
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
@@ -20,6 +25,7 @@ export default async function CatalogPage({ params }: { params: { locale: Locale
   const sections = collectionOrder
     .filter((id) => collections[id])
     .map((id) => ({ id, data: collections[id] }));
+  const pricesVisible = await getPricesVisible();
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-16 sm:py-24">
@@ -32,7 +38,12 @@ export default async function CatalogPage({ params }: { params: { locale: Locale
       </div>
 
       <div className="mt-12">
-        <CatalogFilter sections={sections} orderEmail={dict.common.email} t={t} />
+        <CatalogFilter
+          sections={sections}
+          orderEmail={dict.common.email}
+          t={t}
+          pricesVisible={pricesVisible}
+        />
       </div>
     </div>
   );

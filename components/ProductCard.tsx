@@ -17,12 +17,14 @@ export default function ProductCard({
   komplekt,
   orderEmail,
   t,
+  pricesVisible,
 }: {
   collectionLabel: string;
   model: ProductModel;
   komplekt: Komplekt;
   orderEmail: string;
   t: Dictionary["catalog"];
+  pricesVisible: boolean;
 }) {
   const [colorIdx, setColorIdx] = useState(0);
   const [korob, setKorob] = useState(NONE);
@@ -52,8 +54,10 @@ export default function ProductCard({
     korob !== NONE ? `${t.korob}: ${korob}` : null,
     lyshtva !== NONE ? `${t.lyshtva}: ${lyshtva}` : null,
     dobir !== NONE ? `${t.dobir}: ${dobir}` : null,
+    // Ціну лишаємо в листі менеджеру завжди — це приватна заявка, не публічний показ.
     `${t.total}: ${fmt(total)}`,
   ].filter(Boolean) as string[];
+  const displayLines = pricesVisible ? configLines : configLines.slice(0, -1);
 
   const mailHref = `mailto:${orderEmail}?subject=${encodeURIComponent(
     `${collectionLabel} ${model.code}`
@@ -113,6 +117,7 @@ export default function ProductCard({
           value={korob}
           onChange={setKorob}
           options={komplekt.korob}
+          pricesVisible={pricesVisible}
         />
         <SelectRow
           label={t.lyshtva}
@@ -120,6 +125,7 @@ export default function ProductCard({
           value={lyshtva}
           onChange={setLyshtva}
           options={komplekt.lyshtva}
+          pricesVisible={pricesVisible}
         />
         {komplekt.dobir.length > 0 && (
           <SelectRow
@@ -128,12 +134,17 @@ export default function ProductCard({
             value={dobir}
             onChange={setDobir}
             options={komplekt.dobir}
+            pricesVisible={pricesVisible}
           />
         )}
 
         <div className="mt-auto flex items-center justify-between pt-2">
           <p className="font-serif text-lg font-bold text-navy-dark">
-            {extra > 0 ? `${t.total}: ${fmt(total)}` : `${t.from} ${fmt(model.basePrice)}`}
+            {!pricesVisible
+              ? t.findOutPrice
+              : extra > 0
+              ? `${t.total}: ${fmt(total)}`
+              : `${t.from} ${fmt(model.basePrice)}`}
           </p>
           <button
             type="button"
@@ -158,7 +169,7 @@ export default function ProductCard({
               {collectionLabel} — {model.code}
             </h4>
             <p className="mt-2 whitespace-pre-line text-sm text-navy-dim">
-              {configLines.slice(1).join("\n")}
+              {displayLines.slice(1).join("\n")}
             </p>
             <form className="mt-4 flex flex-col gap-3">
               <input
@@ -204,12 +215,14 @@ function SelectRow({
   value,
   onChange,
   options,
+  pricesVisible,
 }: {
   label: string;
   noneLabel: string;
   value: string;
   onChange: (v: string) => void;
   options: { label: string; price: number }[];
+  pricesVisible: boolean;
 }) {
   return (
     <label className="block text-xs text-navy-dim">
@@ -222,7 +235,7 @@ function SelectRow({
         <option value={NONE}>{noneLabel}</option>
         {options.map((o) => (
           <option key={o.label} value={o.label}>
-            {o.label} — {fmt(o.price)}
+            {pricesVisible ? `${o.label} — ${fmt(o.price)}` : o.label}
           </option>
         ))}
       </select>

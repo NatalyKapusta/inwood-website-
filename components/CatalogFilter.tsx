@@ -9,10 +9,12 @@ export default function CatalogFilter({
   sections,
   orderEmail,
   t,
+  pricesVisible,
 }: {
   sections: { id: string; data: Collection }[];
   orderEmail: string;
   t: Dictionary["catalog"];
+  pricesVisible: boolean;
 }) {
   const [active, setActive] = useState<string>("all");
 
@@ -48,6 +50,7 @@ export default function CatalogFilter({
                     komplekt={s.data.komplekt}
                     orderEmail={orderEmail}
                     t={t}
+                    pricesVisible={pricesVisible}
                   />
                 ))}
               </div>
@@ -71,7 +74,9 @@ export default function CatalogFilter({
                     <div className="p-4">
                       <p className="text-sm text-navy-dark">{v.label}</p>
                       <p className="mt-2 font-serif text-lg font-bold text-navy-dark">
-                        {t.from} {new Intl.NumberFormat("uk-UA").format(v.price)} ₴
+                        {pricesVisible
+                          ? `${t.from} ${new Intl.NumberFormat("uk-UA").format(v.price)} ₴`
+                          : t.findOutPrice}
                       </p>
                     </div>
                   </div>

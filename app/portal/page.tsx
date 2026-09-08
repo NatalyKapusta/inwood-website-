@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
+import { getPricesVisible } from "@/lib/siteSettings";
+import { setPricesVisible } from "@/app/portal/actions";
 
 const roleLabels: Record<string, string> = {
   dealer: "Дилер",
@@ -22,6 +24,7 @@ export default async function PortalDashboardPage() {
     .single();
 
   const role = profile?.role ?? "dealer";
+  const pricesVisible = role === "staff" ? await getPricesVisible() : null;
 
   return (
     <div>
@@ -78,6 +81,30 @@ export default async function PortalDashboardPage() {
           </>
         )}
       </div>
+
+      {role === "staff" && (
+        <div className="mt-8 rounded-xl bg-panel p-6 shadow-sm">
+          <h2 className="font-serif text-lg font-bold text-navy-dark">Видимість цін на сайті</h2>
+          <p className="mt-2 text-sm text-navy-dim">
+            {pricesVisible
+              ? "Роздрібні ціни зараз показуються всім відвідувачам публічного каталогу."
+              : "Ціни зараз приховані — відвідувачі бачать кнопку «Дізнатись ціну» замість суми."}
+          </p>
+          <form action={setPricesVisible} className="mt-4">
+            <input type="hidden" name="visible" value={(!pricesVisible).toString()} />
+            <button
+              type="submit"
+              className={`rounded-full px-6 py-3 font-semibold transition ${
+                pricesVisible
+                  ? "bg-red-50 text-red-700 hover:bg-red-100"
+                  : "bg-navy-dark text-white hover:bg-gold hover:text-navy-dark"
+              }`}
+            >
+              {pricesVisible ? "Приховати ціни на сайті" : "Показати ціни на сайті"}
+            </button>
+          </form>
+        </div>
+      )}
     </div>
   );
 }
