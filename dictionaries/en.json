@@ -1,0 +1,369 @@
+{
+  "common": {
+    "phone": "+380 (50) 880-38-41",
+    "exportPhone": "+380 (50) 308-18-99",
+    "address": "4 Sportyvnyi Lane, Poltava, Ukraine",
+    "email": "info@inwood.com.ua",
+    "exportEmail": "export@inwood.com.ua",
+    "hours": "Mon-Fri: 08:00 - 17:00, Sat-Sun: Closed",
+    "nav": [
+      { "label": "Door Range", "href": "/catalog" },
+      { "label": "About Us", "href": "/pro-nas" },
+      { "label": "Gallery", "href": "/galereya" },
+      { "label": "Door Specifications", "href": "/harakterystyky" },
+      { "label": "Our Dealers", "href": "/nashi-dileri" },
+      { "label": "Partnership", "href": "/spivpratsya" },
+      { "label": "Payment & Delivery", "href": "/oplata-dostavka" },
+      { "label": "Service", "href": "/servis" },
+      { "label": "Warranty", "href": "/garantiya" },
+      { "label": "Contacts", "href": "/kontakty" },
+      { "label": "Video", "href": "/video" },
+      { "label": "Blog", "href": "/blog" },
+      { "label": "Shop", "href": "/magazyn" }
+    ],
+    "footerTagline": "IN WOOD - the art of opening doors!",
+    "ctaTitle": "Leave a partnership inquiry",
+    "ctaText": "Want to become an official IN WOOD dealer or discuss product export? Leave your contact details — our manager will get in touch and prepare a personalised commercial offer.",
+    "ctaButton": "Get an offer",
+    "formName": "Name",
+    "formPhone": "Phone",
+    "formSubmit": "Send message"
+  },
+  "home": {
+    "title": "Interior Door Manufacturer in Ukraine | Dealers | Export",
+    "heroTitle": "Interior doors from a Ukrainian manufacturer — 20 years of experience",
+    "heroSubtitle": "We are growing our dealer network across Ukraine, welcome new partners for cooperation, and export our products worldwide.",
+    "heroCta": "Browse the catalog",
+    "counters": [
+      { "to": 20, "suffix": "+", "label": "years of experience" },
+      { "to": 70, "suffix": "+", "label": "door models" },
+      { "to": 35, "suffix": "+", "label": "dealers in Ukraine" },
+      { "to": 5, "suffix": "", "label": "export countries" }
+    ],
+    "categories": [
+      "Panel Doors",
+      "PVC-Coated Doors",
+      "Painted Doors",
+      "Flush (Hidden) Doors"
+    ],
+    "strengthsTitle": "Strengths of IN WOOD interior doors",
+    "strengths": [
+      {
+        "title": "Maximum factory preparation",
+        "text": "Lock mortising at the factory, pre-drilled hinge seats, frame rebate cut-in, 45° frame mitring, precise geometry of every element — fully ready for fast installation."
+      },
+      {
+        "title": "Custom sizes in 50 mm steps at no extra charge",
+        "text": "Width at no extra charge: 600–900 mm (50 mm steps). Height at no extra charge: 1800–2100 mm. Maximum height — up to 2300 mm for an additional fee."
+      },
+      {
+        "title": "Frame made of combined material (solid pine + MDF)",
+        "text": "Pine gives the frame rigidity and reliability, while MDF provides a perfectly even surface for a quality finish — the frame resists deformation for many years."
+      },
+      {
+        "title": "Thick 6 mm MDF layer",
+        "text": "Increased rigidity of the door leaf, resistance to deformation and a longer service life."
+      },
+      {
+        "title": "Kiln-dried timber frame",
+        "text": "Structural strength and durability of the doors even after many years of use."
+      },
+      {
+        "title": "Dense 18 mm honeycomb infill",
+        "text": "Better stability of the construction and the door leaf overall."
+      },
+      {
+        "title": "Aluminium edge trim (flush installation)",
+        "text": "Reliable protection against impacts, chips, moisture and mechanical damage."
+      }
+    ],
+    "installTitle": "Fast installation of IN WOOD doors: thanks to maximum factory preparation",
+    "installText": "IN WOOD doors arrive on site fully ready for installation: lock already mortised, hinge seats pre-drilled, frame mitred at 45° — the installer only needs to assemble and align it. No extra on-site adjustments — only precise factory dimensions.",
+    "installResult": "Result: installation is fast, accurate and without the risk of damaging elements on site.",
+    "aboutText": "IN WOOD is a Ukrainian manufacturer of interior doors with its own production facility in Poltava. We create modern doors for apartments, houses, offices and commercial premises using quality materials and modern production technology. Our products are available across Ukraine through a network of official dealers and are also exported abroad.",
+    "commercialTitle": "Door solutions for commercial projects",
+    "commercialText": "IN WOOD is a reliable manufacturer of interior doors for hotels, aparthotels, offices and residential complexes. We produce serial batches, work to construction schedules, and guarantee consistent quality, on-time delivery and professional project support.",
+    "collectionsTitle": "Doors in the interior",
+    "collectionsSubtitle": "Freedom to realise design ideas with IN WOOD doors",
+    "collections": [
+      {
+        "name": "ETALON",
+        "text": "ETALON panel interior doors embody minimalism and versatility. A composite panel decorates each model in this series while setting the tone for a restrained style. The PVC film finish is easy to maintain."
+      },
+      {
+        "name": "NOMINAL",
+        "text": "A range of minimalist panel doors with a light design. They bring harmony and complement the interior of living or working spaces."
+      },
+      {
+        "name": "FREZZATTI",
+        "text": "Balanced geometry, refined style and depth of choice — that's what the FREZZATTI collection offers. A wide palette of PVC films and the option of RAL/NCS colour matching expand the horizons of design solutions."
+      },
+      {
+        "name": "PERFETTO",
+        "text": "These doors are about elegance and flawless form. High-quality glass options and RAL/NCS colour matching give complete freedom of choice."
+      }
+    ],
+    "hiddenDoorsTitle": "Flush (hidden) installation doors",
+    "hiddenDoorsText": "A modern solution for minimalist interiors. The door leaf is installed flush with the wall, creating a \"hidden door\" effect. The INSIDE opening type ensures a neat opening into the room.",
+    "techTitle": "Production technology and materials",
+    "techText": "IN WOOD door leaves and frames are made from a combination of solid wood and MDF, ensuring high strength, structural stability and a long service life."
+  },
+  "proNas": {
+    "title": "IN WOOD — interior door manufacturer in Ukraine",
+    "heading": "About Us",
+    "intro": "IN WOOD is a Ukrainian manufacturer of interior doors.",
+    "lead": "We have been on the market for more than 20 years, and during this time we have built our own full-cycle production — from material processing to the finished door leaf.",
+    "text": "We specialise in stile-and-rail, panel, painted, milled, PVC-coated and flush installation doors, and also produce mouldings. We work with dealers and wholesale partners across Ukraine and export our products abroad.",
+    "points": [
+      "We manufacture environmentally friendly products",
+      "We use modern equipment",
+      "We scale up production capacity",
+      "We introduce new technologies into production",
+      "We develop combined interior styles",
+      "We fulfil custom orders"
+    ],
+    "principlesTitle": "Our company's core principles",
+    "principles": [
+      "We work only with quality raw materials",
+      "We use advanced production technologies",
+      "We value every employee",
+      "We do our utmost to meet our customers' needs"
+    ],
+    "valuesTitle": "A company with history and tradition",
+    "values": [
+      "We work only with professional contractors",
+      "A satisfied customer is our greatest value",
+      "We are constantly improving our production"
+    ]
+  },
+  "harakterystyky": {
+    "title": "IN WOOD door line specifications — sizes and construction",
+    "heading": "IN WOOD Door Line Specifications",
+    "subheading": "Technical parameters of the models: height, width, leaf thickness and finish",
+    "lines": [
+      {
+        "name": "ETALON",
+        "params": [
+          "Leaf height — standard 1800–2100 mm (maximum 2300 mm, 50 mm steps)",
+          "Width — 600, 650, 700, 750, 800, 850, 900 mm (50 mm steps)",
+          "Leaf thickness — 40 mm",
+          "MDF — 6 mm",
+          "Timber frame — 80/27 mm",
+          "Finish — PVC film"
+        ]
+      },
+      {
+        "name": "NOMINAL",
+        "params": [
+          "Leaf height — standard 1800–2100 mm (maximum 2300 mm, 50 mm steps)",
+          "Width — 600, 650, 700, 750, 800, 850, 900 mm (50 mm steps)",
+          "Leaf thickness — 34 mm",
+          "MDF — 6 mm",
+          "Timber frame — 80/27 mm",
+          "Finish — PVC film"
+        ]
+      },
+      {
+        "name": "FREZZATTI",
+        "params": [
+          "Leaf height — standard 1800–2100 mm (maximum 2300 mm, 50 mm steps)",
+          "Width — 600, 650, 700, 750, 800, 850, 900 mm (50 mm steps)",
+          "Leaf thickness — 34 mm",
+          "MDF — 4 mm",
+          "Timber frame — 80/27 mm",
+          "Finish — PVC film or RAL/NCS colour matching"
+        ]
+      },
+      {
+        "name": "PERFETTO",
+        "params": [
+          "Leaf height — standard 1800–2100 mm (maximum 2300 mm, 50 mm steps)",
+          "Width — 600, 650, 700, 750, 800, 850, 900 mm (50 mm steps)",
+          "Leaf thickness — 40 mm",
+          "MDF — 6 mm",
+          "Timber frame — 80/27 mm",
+          "Finish — RAL/NCS colour matching"
+        ]
+      }
+    ],
+    "ctaTitle": "Need advice on a model?",
+    "ctaText": "Can't find the parameters you need, or want to clarify custom sizes for a wholesale order? Leave your contacts — our manager will help you choose the right line for your project."
+  },
+  "garantiya": {
+    "title": "IN WOOD door warranty — terms for dealers and partners",
+    "heading": "Warranty",
+    "intro": "We stand behind the quality of every door that leaves our production — from materials to hardware. Below are the warranty terms for dealers and export partners.",
+    "sections": [
+      {
+        "title": "Standard warranty",
+        "text": "IN WOOD interior doors carry a 1-year warranty from the shipment date. The warranty covers manufacturing and material defects, provided storage, transport and installation guidelines are followed."
+      },
+      {
+        "title": "Hardware warranty",
+        "text": "The warranty on hardware (hinges, locks, handles, etc.) is set by the hardware manufacturer under its own warranty terms and is stated in the accompanying documentation for the batch."
+      },
+      {
+        "title": "Warranty conditions",
+        "text": "The warranty applies provided the recommendations on storage, transport, installation and use are followed. A warranty claim requires the supply agreement and invoice."
+      },
+      {
+        "title": "Warranty repair",
+        "text": "If a defect is found within the warranty period, the partner contacts their manager or calls +38 050 880 38 41 to file a claim report. Repair or replacement is free of charge unless the defect results from a breach of transport or use conditions."
+      }
+    ],
+    "procedureTitle": "Warranty claim procedure",
+    "procedureIntro": "To file a warranty claim, the partner provides:",
+    "procedure": [
+      "the contract or delivery note number",
+      "a description of the defect with photo evidence",
+      "the date and circumstances of the defect discovery"
+    ],
+    "exclusionsTitle": "Warranty exclusions",
+    "exclusionsIntro": "The warranty does not cover:",
+    "exclusions": [
+      "damage caused by a breach of transport or storage rules",
+      "natural wear (scratches, abrasion) from use",
+      "damage caused by factors beyond the manufacturer's control (room humidity, improper installation, etc.)"
+    ],
+    "ctaTitle": "Submit a warranty inquiry",
+    "ctaText": "Have questions about warranty terms or want to file a warranty claim? Leave your contacts — our manager will get in touch and advise on next steps."
+  },
+  "oplataDostavka": {
+    "title": "Cooperation terms — payment and delivery for dealers | IN WOOD",
+    "heading": "Cooperation Terms",
+    "intro": "Payment and delivery terms for dealers and export partners — transparent conditions at every stage of cooperation.",
+    "tabs": {
+      "payment": "Payment",
+      "delivery": "Delivery"
+    },
+    "payment": [
+      "Inquiry — you submit an order inquiry.",
+      "Call — we agree on the details, specification and volume.",
+      "Contract — we sign a supply agreement.",
+      "70% payment — after signing the contract, you make an advance payment and the order goes into production.",
+      "30% balance — the remainder is paid before the products are shipped.",
+      "Bank transfer — all payments are made by bank transfer to the company's account against an invoice."
+    ],
+    "delivery": [
+      {
+        "title": "Method of receiving goods",
+        "text": "The partner can collect the order directly from our factory, or we can arrange delivery via a carrier — you choose whichever option suits you best."
+      },
+      {
+        "title": "Timelines",
+        "text": "The shipment date is agreed individually depending on the order volume and delivery route."
+      },
+      {
+        "title": "Packaging",
+        "text": "All doors are packaged according to transport requirements, protecting the products from damage during transportation, including long-distance and export shipments."
+      },
+      {
+        "title": "Export",
+        "text": "For international shipments, we agree on delivery terms and documentation individually with each partner."
+      }
+    ]
+  },
+  "servis": {
+    "title": "IN WOOD door service — for dealers",
+    "heading": "Service",
+    "intro": "We support dealers and partners not only at the supply stage but afterwards too — from consultations to spare parts supply. Warranty repair terms and claim procedure are on the \"Warranty\" page.",
+    "sections": [
+      {
+        "title": "After-sales support",
+        "text": "After delivery, the partner can contact their manager with any questions about product use or maintenance. We provide advice and recommendations for further use of the doors."
+      },
+      {
+        "title": "Regular maintenance",
+        "text": "When needed, we provide recommendations for scheduled technical maintenance of the products to extend their service life."
+      },
+      {
+        "title": "Spare parts and components",
+        "text": "We keep spare parts and components for our products in stock. The partner can order them additionally to service doors for their customers."
+      },
+      {
+        "title": "Technical support",
+        "text": "Partners can call +38 050 880 38 41 or contact their manager with any technical questions about the products."
+      },
+      {
+        "title": "Service quality assessment",
+        "text": "We collect feedback from partners on service quality to keep improving our cooperation processes."
+      },
+      {
+        "title": "Handling inquiries",
+        "text": "We process all partner inquiries and keep them informed on the review status if a matter requires additional time."
+      }
+    ],
+    "ctaTitle": "Need help with service?",
+    "ctaText": "Have questions about technical support, spare parts or scheduled product maintenance? Leave your contacts — our manager will get in touch and advise on next steps."
+  },
+  "spivpratsya": {
+    "title": "Become an IN WOOD dealer — partnership and door export",
+    "heading": "Partnership with IN WOOD",
+    "intro": "A Ukrainian manufacturer of quality interior doors. Reliable quality. Flexible cooperation terms. Delivery across Ukraine and export abroad.",
+    "lead": "If you're looking for a reliable manufacturer with consistent quality and a wide range — you've come to the right place.",
+    "tabs": {
+      "dealership": "Dealership",
+      "export": "Export"
+    },
+    "dealership": [
+      {
+        "title": "A wide range of quality interior doors",
+        "text": "You'll find doors for every taste and budget — over 70 models in various colours and textures, plus all the necessary accessories. Your customers will definitely find what they're looking for!"
+      },
+      {
+        "title": "Mutually beneficial cooperation terms",
+        "text": "IN WOOD offers favourable dealer terms, product samples for your showroom, and training for your team. We work to make it worthwhile for you!"
+      },
+      {
+        "title": "Order production and delivery",
+        "text": "We keep to agreed production and delivery timelines, and keep you informed of order status at every stage. We deliver across Ukraine and package products securely for transport."
+      },
+      {
+        "title": "Custom orders",
+        "text": "When needed, we consider custom sizes, colours or designs for a specific project. Check with your manager on feasibility and lead times for such orders."
+      }
+    ],
+    "exportIntro": "Looking for a reliable interior door manufacturer for export?",
+    "exportText": "We are open to international cooperation and supply interior doors to partners in various countries around the world. IN WOOD is actively growing, offering its products to partners not only in Ukraine but abroad as well. Our doors are installed in private homes, apartments, offices, hotels and commercial premises worldwide.",
+    "exportCountries": "We have successful export experience to England, France, Switzerland, Lithuania and Latvia, and we continue to expand our geographic presence.",
+    "ctaTitle": "Become an IN WOOD partner",
+    "ctaText": "We're not just building a partner network — we're building a strong team of like-minded people. Get a commercial offer and cooperation terms.",
+    "formCountry": "Country",
+    "formCity": "City",
+    "formEmail": "Email",
+    "formMessage": "Message"
+  },
+  "kontakty": {
+    "title": "IN WOOD — Interior door manufacturer contacts | Ukraine",
+    "heading": "Contacts",
+    "managerLabel": "Manager",
+    "exportManagerLabel": "International Sales Manager",
+    "formTitle": "Write to us",
+    "formText": "Our specialists will be happy to provide you with any information"
+  },
+  "catalog": {
+    "title": "IN WOOD interior door prices",
+    "kicker": "IN WOOD · retail prices",
+    "heading": "Interior Door Shop",
+    "intro": "Choose the colour, frame, casing and jamb extension right in the card — the price is calculated instantly. Get an exact quote for your opening by inquiry.",
+    "all": "All",
+    "thickness": "Leaf thickness",
+    "color": "Colour",
+    "korob": "Frame",
+    "lyshtva": "Casing",
+    "dobir": "Jamb extension",
+    "none": "None",
+    "total": "Total",
+    "from": "from",
+    "findOutPrice": "Get a quote",
+    "sendInquiry": "Send inquiry",
+    "close": "Close",
+    "footnote": "The price does not include custom sizing (+20%), aluminium edge options or RAL/NCS colour matching — contact us for those. Colour choice does not affect the price."
+  },
+  "nashiDileri": {
+    "title": "IN WOOD doors in Ukraine | Official dealers and partners",
+    "heading": "Where to buy IN WOOD doors in Ukraine?",
+    "intro": "The official IN WOOD dealer network is present in cities across Ukraine. Find the nearest showroom on the map or choose your city from the list below.",
+    "text": "The official IN WOOD dealer network is present in regions across Ukraine. In our partner showrooms you can explore the current interior door collections, get advice and find the best solution for your interior."
+  }
+}

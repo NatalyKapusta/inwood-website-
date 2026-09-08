@@ -1,12 +1,16 @@
 import type { Locale } from "@/lib/i18n";
+import { getDictionary } from "@/lib/dictionary";
 import ContactCta from "@/components/ContactCta";
-import ua from "@/dictionaries/ua.json";
 
-export const metadata = { title: ua.proNas.title };
+export async function generateMetadata({ params }: { params: { locale: Locale } }) {
+  const dict = await getDictionary(params.locale);
+  return { title: dict.proNas.title };
+}
 
-export default function ProNasPage({ params }: { params: { locale: Locale } }) {
-  const t = ua.proNas;
-  const c = ua.common;
+export default async function ProNasPage({ params }: { params: { locale: Locale } }) {
+  const dict = await getDictionary(params.locale);
+  const t = dict.proNas;
+  const c = dict.common;
 
   return (
     <>

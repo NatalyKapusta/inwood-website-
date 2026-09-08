@@ -1,11 +1,15 @@
 import type { Locale } from "@/lib/i18n";
+import { getDictionary } from "@/lib/dictionary";
 import ContactCta from "@/components/ContactCta";
-import ua from "@/dictionaries/ua.json";
 
-export const metadata = { title: ua.garantiya.title };
+export async function generateMetadata({ params }: { params: { locale: Locale } }) {
+  const dict = await getDictionary(params.locale);
+  return { title: dict.garantiya.title };
+}
 
-export default function GarantiyaPage({ params }: { params: { locale: Locale } }) {
-  const t = ua.garantiya;
+export default async function GarantiyaPage({ params }: { params: { locale: Locale } }) {
+  const dict = await getDictionary(params.locale);
+  const t = dict.garantiya;
 
   return (
     <>
@@ -49,9 +53,9 @@ export default function GarantiyaPage({ params }: { params: { locale: Locale } }
       <ContactCta
         title={t.ctaTitle}
         text={t.ctaText}
-        nameLabel={ua.common.formName}
-        phoneLabel={ua.common.formPhone}
-        submitLabel={ua.common.formSubmit}
+        nameLabel={dict.common.formName}
+        phoneLabel={dict.common.formPhone}
+        submitLabel={dict.common.formSubmit}
       />
     </>
   );

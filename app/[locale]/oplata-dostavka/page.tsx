@@ -1,13 +1,17 @@
 import type { Locale } from "@/lib/i18n";
 import ContactCta from "@/components/ContactCta";
 import Tabs from "@/components/Tabs";
-import ua from "@/dictionaries/ua.json";
+import { getDictionary } from "@/lib/dictionary";
 
-export const metadata = { title: ua.oplataDostavka.title };
+export async function generateMetadata({ params }: { params: { locale: Locale } }) {
+  const dict = await getDictionary(params.locale);
+  return { title: dict.oplataDostavka.title };
+}
 
-export default function OplataDostavkaPage({ params }: { params: { locale: Locale } }) {
-  const t = ua.oplataDostavka;
-  const c = ua.common;
+export default async function OplataDostavkaPage({ params }: { params: { locale: Locale } }) {
+  const dict = await getDictionary(params.locale);
+  const t = dict.oplataDostavka;
+  const c = dict.common;
 
   return (
     <>

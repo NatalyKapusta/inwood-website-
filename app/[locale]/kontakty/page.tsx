@@ -1,11 +1,15 @@
 import type { Locale } from "@/lib/i18n";
-import ua from "@/dictionaries/ua.json";
+import { getDictionary } from "@/lib/dictionary";
 
-export const metadata = { title: ua.kontakty.title };
+export async function generateMetadata({ params }: { params: { locale: Locale } }) {
+  const dict = await getDictionary(params.locale);
+  return { title: dict.kontakty.title };
+}
 
-export default function KontaktyPage({ params }: { params: { locale: Locale } }) {
-  const t = ua.kontakty;
-  const c = ua.common;
+export default async function KontaktyPage({ params }: { params: { locale: Locale } }) {
+  const dict = await getDictionary(params.locale);
+  const t = dict.kontakty;
+  const c = dict.common;
 
   return (
     <section className="mx-auto max-w-4xl px-4 py-16 sm:py-24">

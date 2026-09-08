@@ -1,12 +1,16 @@
 import type { Locale } from "@/lib/i18n";
-import ua from "@/dictionaries/ua.json";
+import { getDictionary } from "@/lib/dictionary";
 import dealers from "@/data/dealers.json";
 import DealersMap from "@/components/DealersMap";
 
-export const metadata = { title: ua.nashiDileri.title };
+export async function generateMetadata({ params }: { params: { locale: Locale } }) {
+  const dict = await getDictionary(params.locale);
+  return { title: dict.nashiDileri.title };
+}
 
-export default function NashiDileriPage({ params }: { params: { locale: Locale } }) {
-  const t = ua.nashiDileri;
+export default async function NashiDileriPage({ params }: { params: { locale: Locale } }) {
+  const dict = await getDictionary(params.locale);
+  const t = dict.nashiDileri;
 
   return (
     <section className="mx-auto max-w-7xl px-4 py-16 sm:py-24">

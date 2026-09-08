@@ -1,11 +1,15 @@
 import type { Locale } from "@/lib/i18n";
 import ContactCta from "@/components/ContactCta";
-import ua from "@/dictionaries/ua.json";
+import { getDictionary } from "@/lib/dictionary";
 
-export const metadata = { title: ua.servis.title };
+export async function generateMetadata({ params }: { params: { locale: Locale } }) {
+  const dict = await getDictionary(params.locale);
+  return { title: dict.servis.title };
+}
 
-export default function ServisPage({ params }: { params: { locale: Locale } }) {
-  const t = ua.servis;
+export default async function ServisPage({ params }: { params: { locale: Locale } }) {
+  const dict = await getDictionary(params.locale);
+  const t = dict.servis;
 
   return (
     <>
@@ -31,9 +35,9 @@ export default function ServisPage({ params }: { params: { locale: Locale } }) {
       <ContactCta
         title={t.ctaTitle}
         text={t.ctaText}
-        nameLabel={ua.common.formName}
-        phoneLabel={ua.common.formPhone}
-        submitLabel={ua.common.formSubmit}
+        nameLabel={dict.common.formName}
+        phoneLabel={dict.common.formPhone}
+        submitLabel={dict.common.formSubmit}
       />
     </>
   );

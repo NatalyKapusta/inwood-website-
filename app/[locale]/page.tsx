@@ -64,10 +64,9 @@ export default async function HomePage({ params }: { params: { locale: Locale } 
 
           {/* Анімовані лічильники — "вау"-ефект без шкоди швидкодії (лише CSS/IntersectionObserver) */}
           <div className="grid grid-cols-2 gap-8 rounded-2xl border border-white/10 bg-white/5 p-8 sm:grid-cols-4 lg:grid-cols-2">
-            <Counter to={20} suffix="+" label="років досвіду" />
-            <Counter to={70} suffix="+" label="моделей дверей" />
-            <Counter to={35} suffix="+" label="дилерів в Україні" />
-            <Counter to={5} suffix="" label="країн експорту" />
+            {t.counters.map((cnt: { to: number; suffix: string; label: string }) => (
+              <Counter key={cnt.label} to={cnt.to} suffix={cnt.suffix} label={cnt.label} />
+            ))}
           </div>
         </div>
       </section>

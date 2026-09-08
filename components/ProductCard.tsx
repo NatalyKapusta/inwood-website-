@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import type { Komplekt, ProductModel } from "@/lib/products";
+import type { Dictionary } from "@/lib/dictionary";
 
 const NONE = "__none__";
 
@@ -15,11 +16,13 @@ export default function ProductCard({
   model,
   komplekt,
   orderEmail,
+  t,
 }: {
   collectionLabel: string;
   model: ProductModel;
   komplekt: Komplekt;
   orderEmail: string;
+  t: Dictionary["catalog"];
 }) {
   const [colorIdx, setColorIdx] = useState(0);
   const [korob, setKorob] = useState(NONE);
@@ -45,17 +48,17 @@ export default function ProductCard({
 
   const configLines = [
     `${collectionLabel} — ${model.code}`,
-    `Колір: ${color?.label ?? "-"}`,
-    korob !== NONE ? `Короб: ${korob}` : null,
-    lyshtva !== NONE ? `Лиштва: ${lyshtva}` : null,
-    dobir !== NONE ? `Добір: ${dobir}` : null,
-    `Разом: ${fmt(total)}`,
+    `${t.color}: ${color?.label ?? "-"}`,
+    korob !== NONE ? `${t.korob}: ${korob}` : null,
+    lyshtva !== NONE ? `${t.lyshtva}: ${lyshtva}` : null,
+    dobir !== NONE ? `${t.dobir}: ${dobir}` : null,
+    `${t.total}: ${fmt(total)}`,
   ].filter(Boolean) as string[];
 
   const mailHref = `mailto:${orderEmail}?subject=${encodeURIComponent(
-    `Заявка: ${collectionLabel} ${model.code}`
+    `${collectionLabel} ${model.code}`
   )}&body=${encodeURIComponent(
-    `${configLines.join("\n")}\n\nІм'я: ${name}\nТелефон: ${phone}`
+    `${configLines.join("\n")}\n\n${name}\n${phone}`
   )}`;
 
   return (
@@ -80,7 +83,9 @@ export default function ProductCard({
 
         {model.colors.length > 1 && (
           <div>
-            <label className="text-xs text-navy-dim">Колір: {color?.label}</label>
+            <label className="text-xs text-navy-dim">
+              {t.color}: {color?.label}
+            </label>
             <div className="mt-1 flex flex-wrap gap-1.5">
               {model.colors.map((c, i) => (
                 <button
@@ -102,22 +107,40 @@ export default function ProductCard({
           </div>
         )}
 
-        <SelectRow label="Короб" value={korob} onChange={setKorob} options={komplekt.korob} />
-        <SelectRow label="Лиштва" value={lyshtva} onChange={setLyshtva} options={komplekt.lyshtva} />
+        <SelectRow
+          label={t.korob}
+          noneLabel={t.none}
+          value={korob}
+          onChange={setKorob}
+          options={komplekt.korob}
+        />
+        <SelectRow
+          label={t.lyshtva}
+          noneLabel={t.none}
+          value={lyshtva}
+          onChange={setLyshtva}
+          options={komplekt.lyshtva}
+        />
         {komplekt.dobir.length > 0 && (
-          <SelectRow label="Добір" value={dobir} onChange={setDobir} options={komplekt.dobir} />
+          <SelectRow
+            label={t.dobir}
+            noneLabel={t.none}
+            value={dobir}
+            onChange={setDobir}
+            options={komplekt.dobir}
+          />
         )}
 
         <div className="mt-auto flex items-center justify-between pt-2">
           <p className="font-serif text-lg font-bold text-navy-dark">
-            {extra > 0 ? `Разом: ${fmt(total)}` : `від ${fmt(model.basePrice)}`}
+            {extra > 0 ? `${t.total}: ${fmt(total)}` : `${t.from} ${fmt(model.basePrice)}`}
           </p>
           <button
             type="button"
             onClick={() => setModalOpen(true)}
             className="rounded-full bg-navy-dark px-4 py-2 text-sm font-semibold text-white transition hover:bg-gold hover:text-navy-dark"
           >
-            Дізнатись ціну
+            {t.findOutPrice}
           </button>
         </div>
       </div>
@@ -141,7 +164,7 @@ export default function ProductCard({
               <input
                 type="text"
                 required
-                placeholder="Ім'я"
+                placeholder="Ім'я / Имя / Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 className="rounded-lg border border-navy-dim/30 px-3 py-2 text-sm outline-none focus:border-gold"
@@ -149,7 +172,7 @@ export default function ProductCard({
               <input
                 type="tel"
                 required
-                placeholder="Телефон"
+                placeholder="Телефон / Phone"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 className="rounded-lg border border-navy-dim/30 px-3 py-2 text-sm outline-none focus:border-gold"
@@ -158,7 +181,7 @@ export default function ProductCard({
                 href={mailHref}
                 className="rounded-full bg-gold px-4 py-2 text-center text-sm font-semibold text-navy-dark transition hover:bg-gold-dim"
               >
-                Надіслати заявку
+                {t.sendInquiry}
               </a>
             </form>
             <button
@@ -166,7 +189,7 @@ export default function ProductCard({
               onClick={() => setModalOpen(false)}
               className="mt-3 w-full text-center text-xs text-navy-dim underline"
             >
-              Закрити
+              {t.close}
             </button>
           </div>
         </div>
@@ -177,11 +200,13 @@ export default function ProductCard({
 
 function SelectRow({
   label,
+  noneLabel,
   value,
   onChange,
   options,
 }: {
   label: string;
+  noneLabel: string;
   value: string;
   onChange: (v: string) => void;
   options: { label: string; price: number }[];
@@ -194,7 +219,7 @@ function SelectRow({
         onChange={(e) => onChange(e.target.value)}
         className="mt-1 w-full rounded-lg border border-navy-dim/30 bg-panel px-2 py-1.5 text-sm text-navy-dark outline-none focus:border-gold"
       >
-        <option value={NONE}>Немає</option>
+        <option value={NONE}>{noneLabel}</option>
         {options.map((o) => (
           <option key={o.label} value={o.label}>
             {o.label} — {fmt(o.price)}

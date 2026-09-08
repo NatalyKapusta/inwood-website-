@@ -3,13 +3,16 @@
 import { useState } from "react";
 import ProductCard from "@/components/ProductCard";
 import type { Collection } from "@/lib/products";
+import type { Dictionary } from "@/lib/dictionary";
 
 export default function CatalogFilter({
   sections,
   orderEmail,
+  t,
 }: {
   sections: { id: string; data: Collection }[];
   orderEmail: string;
+  t: Dictionary["catalog"];
 }) {
   const [active, setActive] = useState<string>("all");
 
@@ -17,7 +20,7 @@ export default function CatalogFilter({
     <div>
       <div className="flex flex-wrap justify-center gap-2">
         <FilterButton active={active === "all"} onClick={() => setActive("all")}>
-          Усі
+          {t.all}
         </FilterButton>
         {sections.map((s) => (
           <FilterButton key={s.id} active={active === s.id} onClick={() => setActive(s.id)}>
@@ -31,7 +34,7 @@ export default function CatalogFilter({
           <section key={s.id} id={s.id} hidden={active !== "all" && active !== s.id}>
             <h2 className="font-serif text-2xl font-bold text-navy-dark">{s.data.label}</h2>
             <p className="mt-1 text-sm text-navy-dim">
-              Товщина полотна: {s.data.thickness}
+              {t.thickness}: {s.data.thickness}
               {s.data.extra ? ` · ${s.data.extra}` : ""}
             </p>
 
@@ -44,6 +47,7 @@ export default function CatalogFilter({
                     model={m}
                     komplekt={s.data.komplekt}
                     orderEmail={orderEmail}
+                    t={t}
                   />
                 ))}
               </div>
@@ -67,7 +71,7 @@ export default function CatalogFilter({
                     <div className="p-4">
                       <p className="text-sm text-navy-dark">{v.label}</p>
                       <p className="mt-2 font-serif text-lg font-bold text-navy-dark">
-                        від {new Intl.NumberFormat("uk-UA").format(v.price)} ₴
+                        {t.from} {new Intl.NumberFormat("uk-UA").format(v.price)} ₴
                       </p>
                     </div>
                   </div>
@@ -78,10 +82,7 @@ export default function CatalogFilter({
         ))}
       </div>
 
-      <p className="mt-12 text-center text-sm text-navy-dim">
-        Ціна не враховує нестандартний розмір (+20%), варіанти алюмінієвої крайки чи
-        фарбування RAL/NCS — за ними звертайтесь за заявкою. Колір не впливає на ціну.
-      </p>
+      <p className="mt-12 text-center text-sm text-navy-dim">{t.footnote}</p>
     </div>
   );
 }

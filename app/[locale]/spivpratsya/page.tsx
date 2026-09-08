@@ -1,13 +1,17 @@
 import type { Locale } from "@/lib/i18n";
 import Tabs from "@/components/Tabs";
 import ContactCta from "@/components/ContactCta";
-import ua from "@/dictionaries/ua.json";
+import { getDictionary } from "@/lib/dictionary";
 
-export const metadata = { title: ua.spivpratsya.title };
+export async function generateMetadata({ params }: { params: { locale: Locale } }) {
+  const dict = await getDictionary(params.locale);
+  return { title: dict.spivpratsya.title };
+}
 
-export default function SpivpratsyaPage({ params }: { params: { locale: Locale } }) {
-  const t = ua.spivpratsya;
-  const c = ua.common;
+export default async function SpivpratsyaPage({ params }: { params: { locale: Locale } }) {
+  const dict = await getDictionary(params.locale);
+  const t = dict.spivpratsya;
+  const c = dict.common;
 
   return (
     <>
