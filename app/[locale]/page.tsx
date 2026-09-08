@@ -131,7 +131,7 @@ export default async function HomePage({ params }: { params: { locale: Locale } 
           {t.collections.map((col: { name: string; text: string }) => (
             <Link
               key={col.name}
-              href={`/${locale}/catalog/${col.name.toLowerCase()}`}
+              href={`/${locale}/catalog#${col.name.toLowerCase()}`}
               className="group overflow-hidden rounded-xl bg-panel-alt transition hover:shadow-xl"
             >
               <div className="relative aspect-[4/5] overflow-hidden bg-white">
