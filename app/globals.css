@@ -11,3 +11,11 @@ html {
 body {
   @apply bg-panel text-navy-dark font-sans;
 }
+
+.iw-popup-link {
+  color: #4c547a;
+  text-decoration: underline;
+}
+.iw-popup-link:hover {
+  color: #b7935a;
+}
