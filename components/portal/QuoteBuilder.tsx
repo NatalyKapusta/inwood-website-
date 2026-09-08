@@ -46,6 +46,8 @@ export default function QuoteBuilder({ consultantDefault }: { consultantDefault:
   const [consultantName, setConsultantName] = useState(consultantDefault);
   const [discountType, setDiscountType] = useState<"percent" | "amount">("percent");
   const [discountValue, setDiscountValue] = useState(0);
+  const [currency, setCurrency] = useState<"none" | "EUR" | "USD">("none");
+  const [exchangeRate, setExchangeRate] = useState(0);
 
   const [collectionKey, setCollectionKey] = useState(collectionOrder[0]);
   const [modelCode, setModelCode] = useState("");
@@ -205,6 +207,14 @@ export default function QuoteBuilder({ consultantDefault }: { consultantDefault:
   const subtotal = positions.reduce((s, p) => s + positionTotal(p), 0);
   const discountAmount = discountType === "percent" ? (subtotal * discountValue) / 100 : discountValue;
   const total = Math.max(0, subtotal - discountAmount);
+  const currencySymbol = currency === "EUR" ? "€" : currency === "USD" ? "$" : "";
+  const hasRate = currency !== "none" && exchangeRate > 0;
+  function fmtForeign(uah: number) {
+    return `${(uah / exchangeRate).toFixed(2)} ${currencySymbol}`;
+  }
+  function moneyDisplay(uah: number) {
+    return hasRate ? fmtForeign(uah) : `${uah.toFixed(2)} ₴`;
+  }
 
   function buildDocumentHtml() {
     const origin = typeof window !== "undefined" ? window.location.origin : "";
@@ -229,9 +239,13 @@ export default function QuoteBuilder({ consultantDefault }: { consultantDefault:
 
     const discountRow =
       discountValue > 0
-        ? `<div style="text-align:right;color:#8A90A6;text-decoration:line-through;">Було: ${subtotal.toFixed(2)} ₴</div>
-           <div style="text-align:right;font-size:13px;color:#8A90A6;">Знижка: ${discountAmount.toFixed(2)} ₴</div>`
+        ? `<div style="text-align:right;color:#8A90A6;text-decoration:line-through;">Було: ${moneyDisplay(subtotal)}</div>
+           <div style="text-align:right;font-size:13px;color:#8A90A6;">Знижка: ${moneyDisplay(discountAmount)}</div>`
         : "";
+
+    const rateRow = hasRate
+      ? `<div style="text-align:right;font-size:12px;color:#8A90A6;margin-top:4px;">Курс: ${exchangeRate.toFixed(2)} ₴ за 1 ${currencySymbol}</div>`
+      : "";
 
     return `<!doctype html>
 <html lang="uk"><head><meta charset="utf-8" />
@@ -276,7 +290,8 @@ export default function QuoteBuilder({ consultantDefault }: { consultantDefault:
     </table>
     <div class="totals">
       ${discountRow}
-      <div>Разом: ${total.toFixed(2)} ₴</div>
+      <div>Разом: ${moneyDisplay(total)}</div>
+      ${rateRow}
     </div>
     <div class="footer">
       Дякуємо за співпрацю з IN WOOD!<br/>
@@ -321,6 +336,8 @@ export default function QuoteBuilder({ consultantDefault }: { consultantDefault:
       tariff,
       discount_type: discountValue > 0 ? discountType : null,
       discount_value: discountValue > 0 ? discountValue : null,
+      currency: currency === "none" ? "UAH" : currency,
+      exchange_rate: hasRate ? exchangeRate : null,
       items: positions,
       subtotal,
       total,
@@ -648,13 +665,37 @@ export default function QuoteBuilder({ consultantDefault }: { consultantDefault:
                 onChange={(e) => setDiscountValue(Math.max(0, Number(e.target.value)))}
                 className="w-32 rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
               />
+              <select
+                value={currency}
+                onChange={(e) => setCurrency(e.target.value as "none" | "EUR" | "USD")}
+                className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+              >
+                <option value="none">Без валюти</option>
+                <option value="EUR">EUR</option>
+                <option value="USD">USD</option>
+              </select>
+              {currency !== "none" && (
+                <input
+                  type="number"
+                  min={0}
+                  step="0.01"
+                  placeholder={`Курс, ₴ за 1 ${currencySymbol}`}
+                  value={exchangeRate || ""}
+                  onChange={(e) => setExchangeRate(Math.max(0, Number(e.target.value)))}
+                  className="w-36 rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+                />
+              )}
             </div>
 
             <div className="mt-4 text-right">
               {discountValue > 0 && (
-                <div className="text-sm text-navy-dim line-through">Було: {subtotal.toFixed(2)} ₴</div>
+                <div className="text-sm text-navy-dim line-through">
+                  Було: {subtotal.toFixed(2)} ₴{hasRate ? ` (${fmtForeign(subtotal)})` : ""}
+                </div>
               )}
-              <div className="font-serif text-2xl font-bold text-navy-dark">Разом: {total.toFixed(2)} ₴</div>
+              <div className="font-serif text-2xl font-bold text-navy-dark">
+                Разом: {total.toFixed(2)} ₴{hasRate ? ` (${fmtForeign(total)})` : ""}
+              </div>
             </div>
 
             <div className="mt-4 flex flex-wrap gap-3">
