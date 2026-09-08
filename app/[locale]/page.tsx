@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Locale } from "@/lib/i18n";
 import Counter from "@/components/Counter";
 import ua from "@/dictionaries/ua.json";
+import { buildMetadata } from "@/lib/seo";
 
 async function getDict(locale: Locale) {
   try {
@@ -11,6 +12,16 @@ async function getDict(locale: Locale) {
   } catch {
     return ua;
   }
+}
+
+export async function generateMetadata({ params }: { params: { locale: Locale } }) {
+  const dict = await getDict(params.locale);
+  return buildMetadata({
+    locale: params.locale,
+    path: "",
+    title: dict.home.title,
+    description: dict.home.metaDescription,
+  });
 }
 
 const collectionImages: Record<string, string> = {

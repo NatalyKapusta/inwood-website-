@@ -2,10 +2,16 @@ import type { Locale } from "@/lib/i18n";
 import ContactCta from "@/components/ContactCta";
 import Tabs from "@/components/Tabs";
 import { getDictionary } from "@/lib/dictionary";
+import { buildMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
-  return { title: dict.oplataDostavka.title };
+  return buildMetadata({
+    locale: params.locale,
+    path: "/oplata-dostavka",
+    title: dict.oplataDostavka.title,
+    description: dict.oplataDostavka.metaDescription,
+  });
 }
 
 export default async function OplataDostavkaPage({ params }: { params: { locale: Locale } }) {

@@ -1,10 +1,16 @@
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
+import { buildMetadata } from "@/lib/seo";
 import ContactCta from "@/components/ContactCta";
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
-  return { title: dict.proNas.title };
+  return buildMetadata({
+    locale: params.locale,
+    path: "/pro-nas",
+    title: dict.proNas.title,
+    description: dict.proNas.metaDescription,
+  });
 }
 
 export default async function ProNasPage({ params }: { params: { locale: Locale } }) {

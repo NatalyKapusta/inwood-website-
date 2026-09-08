@@ -1,9 +1,15 @@
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
+import { buildMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
-  return { title: dict.kontakty.title };
+  return buildMetadata({
+    locale: params.locale,
+    path: "/kontakty",
+    title: dict.kontakty.title,
+    description: dict.kontakty.metaDescription,
+  });
 }
 
 export default async function KontaktyPage({ params }: { params: { locale: Locale } }) {

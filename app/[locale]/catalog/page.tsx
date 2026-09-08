@@ -1,11 +1,17 @@
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
+import { buildMetadata } from "@/lib/seo";
 import { collections, collectionOrder } from "@/lib/products";
 import CatalogFilter from "@/components/CatalogFilter";
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
-  return { title: dict.catalog.title };
+  return buildMetadata({
+    locale: params.locale,
+    path: "/catalog",
+    title: dict.catalog.title,
+    description: dict.catalog.metaDescription,
+  });
 }
 
 export default async function CatalogPage({ params }: { params: { locale: Locale } }) {

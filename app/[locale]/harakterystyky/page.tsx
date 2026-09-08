@@ -1,10 +1,16 @@
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
+import { buildMetadata } from "@/lib/seo";
 import ContactCta from "@/components/ContactCta";
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
-  return { title: dict.harakterystyky.title };
+  return buildMetadata({
+    locale: params.locale,
+    path: "/harakterystyky",
+    title: dict.harakterystyky.title,
+    description: dict.harakterystyky.metaDescription,
+  });
 }
 
 export default async function CharacteristicsPage({ params }: { params: { locale: Locale } }) {

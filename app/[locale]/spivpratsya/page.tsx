@@ -2,10 +2,16 @@ import type { Locale } from "@/lib/i18n";
 import Tabs from "@/components/Tabs";
 import ContactCta from "@/components/ContactCta";
 import { getDictionary } from "@/lib/dictionary";
+import { buildMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
-  return { title: dict.spivpratsya.title };
+  return buildMetadata({
+    locale: params.locale,
+    path: "/spivpratsya",
+    title: dict.spivpratsya.title,
+    description: dict.spivpratsya.metaDescription,
+  });
 }
 
 export default async function SpivpratsyaPage({ params }: { params: { locale: Locale } }) {

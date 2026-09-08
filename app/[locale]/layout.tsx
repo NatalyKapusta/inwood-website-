@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { locales, type Locale } from "@/lib/i18n";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { organizationJsonLd } from "@/lib/seo";
 import "@/app/globals.css";
 
 export function generateStaticParams() {
@@ -31,6 +32,11 @@ export default async function LocaleLayout({
   return (
     <html lang={params.locale}>
       <body>
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd()) }}
+        />
         <Header
           locale={params.locale}
           phone={common.phone}

@@ -1,10 +1,16 @@
 import type { Locale } from "@/lib/i18n";
 import ContactCta from "@/components/ContactCta";
 import { getDictionary } from "@/lib/dictionary";
+import { buildMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
-  return { title: dict.servis.title };
+  return buildMetadata({
+    locale: params.locale,
+    path: "/servis",
+    title: dict.servis.title,
+    description: dict.servis.metaDescription,
+  });
 }
 
 export default async function ServisPage({ params }: { params: { locale: Locale } }) {

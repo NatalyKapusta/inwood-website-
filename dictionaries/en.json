@@ -7,19 +7,42 @@
     "exportEmail": "export@inwood.com.ua",
     "hours": "Mon-Fri: 08:00 - 17:00, Sat-Sun: Closed",
     "nav": [
-      { "label": "Door Range", "href": "/catalog" },
-      { "label": "About Us", "href": "/pro-nas" },
-      { "label": "Gallery", "href": "/galereya" },
-      { "label": "Door Specifications", "href": "/harakterystyky" },
-      { "label": "Our Dealers", "href": "/nashi-dileri" },
-      { "label": "Partnership", "href": "/spivpratsya" },
-      { "label": "Payment & Delivery", "href": "/oplata-dostavka" },
-      { "label": "Service", "href": "/servis" },
-      { "label": "Warranty", "href": "/garantiya" },
-      { "label": "Contacts", "href": "/kontakty" },
-      { "label": "Video", "href": "/video" },
-      { "label": "Blog", "href": "/blog" },
-      { "label": "Shop", "href": "/magazyn" }
+      {
+        "label": "Door Range",
+        "href": "/catalog"
+      },
+      {
+        "label": "About Us",
+        "href": "/pro-nas"
+      },
+      {
+        "label": "Door Specifications",
+        "href": "/harakterystyky"
+      },
+      {
+        "label": "Our Dealers",
+        "href": "/nashi-dileri"
+      },
+      {
+        "label": "Partnership",
+        "href": "/spivpratsya"
+      },
+      {
+        "label": "Payment & Delivery",
+        "href": "/oplata-dostavka"
+      },
+      {
+        "label": "Service",
+        "href": "/servis"
+      },
+      {
+        "label": "Warranty",
+        "href": "/garantiya"
+      },
+      {
+        "label": "Contacts",
+        "href": "/kontakty"
+      }
     ],
     "footerTagline": "IN WOOD - the art of opening doors!",
     "ctaTitle": "Leave a partnership inquiry",
@@ -35,10 +58,26 @@
     "heroSubtitle": "We are growing our dealer network across Ukraine, welcome new partners for cooperation, and export our products worldwide.",
     "heroCta": "Browse the catalog",
     "counters": [
-      { "to": 20, "suffix": "+", "label": "years of experience" },
-      { "to": 70, "suffix": "+", "label": "door models" },
-      { "to": 35, "suffix": "+", "label": "dealers in Ukraine" },
-      { "to": 5, "suffix": "", "label": "export countries" }
+      {
+        "to": 20,
+        "suffix": "+",
+        "label": "years of experience"
+      },
+      {
+        "to": 70,
+        "suffix": "+",
+        "label": "door models"
+      },
+      {
+        "to": 35,
+        "suffix": "+",
+        "label": "dealers in Ukraine"
+      },
+      {
+        "to": 5,
+        "suffix": "",
+        "label": "export countries"
+      }
     ],
     "categories": [
       "Panel Doors",
@@ -106,7 +145,8 @@
     "hiddenDoorsTitle": "Flush (hidden) installation doors",
     "hiddenDoorsText": "A modern solution for minimalist interiors. The door leaf is installed flush with the wall, creating a \"hidden door\" effect. The INSIDE opening type ensures a neat opening into the room.",
     "techTitle": "Production technology and materials",
-    "techText": "IN WOOD door leaves and frames are made from a combination of solid wood and MDF, ensuring high strength, structural stability and a long service life."
+    "techText": "IN WOOD door leaves and frames are made from a combination of solid wood and MDF, ensuring high strength, structural stability and a long service life.",
+    "metaDescription": "IN WOOD — interior door manufacturer in Poltava, Ukraine. 5 collections: ETALON, NOMINAL, FREZZATTI, PERFETTO, concealed-mount doors. Dealer network across Ukraine and export."
   },
   "proNas": {
     "title": "IN WOOD — interior door manufacturer in Ukraine",
@@ -134,7 +174,8 @@
       "We work only with professional contractors",
       "A satisfied customer is our greatest value",
       "We are constantly improving our production"
-    ]
+    ],
+    "metaDescription": "IN WOOD is a full-cycle Ukrainian interior door manufacturer with in-house production, quality control at every stage, a dealer network, and export."
   },
   "harakterystyky": {
     "title": "IN WOOD door line specifications — sizes and construction",
@@ -187,7 +228,8 @@
       }
     ],
     "ctaTitle": "Need advice on a model?",
-    "ctaText": "Can't find the parameters you need, or want to clarify custom sizes for a wholesale order? Leave your contacts — our manager will help you choose the right line for your project."
+    "ctaText": "Can't find the parameters you need, or want to clarify custom sizes for a wholesale order? Leave your contacts — our manager will help you choose the right line for your project.",
+    "metaDescription": "Technical specifications of IN WOOD door collections: panel sizes, frame, trim and door casing construction for ETALON, NOMINAL, FREZZATTI, PERFETTO."
   },
   "garantiya": {
     "title": "IN WOOD door warranty — terms for dealers and partners",
@@ -226,7 +268,8 @@
       "damage caused by factors beyond the manufacturer's control (room humidity, improper installation, etc.)"
     ],
     "ctaTitle": "Submit a warranty inquiry",
-    "ctaText": "Have questions about warranty terms or want to file a warranty claim? Leave your contacts — our manager will get in touch and advise on next steps."
+    "ctaText": "Have questions about warranty terms or want to file a warranty claim? Leave your contacts — our manager will get in touch and advise on next steps.",
+    "metaDescription": "IN WOOD interior door warranty terms for dealers and partners — coverage, duration and the claims process."
   },
   "oplataDostavka": {
     "title": "Cooperation terms — payment and delivery for dealers | IN WOOD",
@@ -261,7 +304,8 @@
         "title": "Export",
         "text": "For international shipments, we agree on delivery terms and documentation individually with each partner."
       }
-    ]
+    ],
+    "metaDescription": "IN WOOD payment and delivery terms for dealers and partners across Ukraine and for export."
   },
   "servis": {
     "title": "IN WOOD door service — for dealers",
@@ -294,7 +338,8 @@
       }
     ],
     "ctaTitle": "Need help with service?",
-    "ctaText": "Have questions about technical support, spare parts or scheduled product maintenance? Leave your contacts — our manager will get in touch and advise on next steps."
+    "ctaText": "Have questions about technical support, spare parts or scheduled product maintenance? Leave your contacts — our manager will get in touch and advise on next steps.",
+    "metaDescription": "IN WOOD door servicing for dealers — consultations, support and technical assistance."
   },
   "spivpratsya": {
     "title": "Become an IN WOOD dealer — partnership and door export",
@@ -331,7 +376,8 @@
     "formCountry": "Country",
     "formCity": "City",
     "formEmail": "Email",
-    "formMessage": "Message"
+    "formMessage": "Message",
+    "metaDescription": "Become an IN WOOD dealer — favorable cooperation terms, dealer and distributor support, export opportunities for interior doors."
   },
   "kontakty": {
     "title": "IN WOOD — Interior door manufacturer contacts | Ukraine",
@@ -339,7 +385,8 @@
     "managerLabel": "Manager",
     "exportManagerLabel": "International Sales Manager",
     "formTitle": "Write to us",
-    "formText": "Our specialists will be happy to provide you with any information"
+    "formText": "Our specialists will be happy to provide you with any information",
+    "metaDescription": "IN WOOD interior door manufacturer contacts: address in Poltava, phone numbers for orders in Ukraine and export inquiries, email, working hours."
   },
   "catalog": {
     "title": "IN WOOD interior door prices",
@@ -358,12 +405,14 @@
     "findOutPrice": "Get a quote",
     "sendInquiry": "Send inquiry",
     "close": "Close",
-    "footnote": "The price does not include custom sizing (+20%), aluminium edge options or RAL/NCS colour matching — contact us for those. Colour choice does not affect the price."
+    "footnote": "The price does not include custom sizing (+20%), aluminium edge options or RAL/NCS colour matching — contact us for those. Colour choice does not affect the price.",
+    "metaDescription": "IN WOOD interior door catalog with retail prices: choose a model, color, frame, trim and door casing — the calculator instantly shows the price."
   },
   "nashiDileri": {
     "title": "IN WOOD doors in Ukraine | Official dealers and partners",
     "heading": "Where to buy IN WOOD doors in Ukraine?",
     "intro": "The official IN WOOD dealer network is present in cities across Ukraine. Find the nearest showroom on the map or choose your city from the list below.",
-    "text": "The official IN WOOD dealer network is present in regions across Ukraine. In our partner showrooms you can explore the current interior door collections, get advice and find the best solution for your interior."
+    "text": "The official IN WOOD dealer network is present in regions across Ukraine. In our partner showrooms you can explore the current interior door collections, get advice and find the best solution for your interior.",
+    "metaDescription": "Official IN WOOD dealers and partners across Ukraine — interactive dealer network map, where to buy IN WOOD doors in your city."
   }
 }

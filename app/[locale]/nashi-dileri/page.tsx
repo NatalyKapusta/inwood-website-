@@ -1,11 +1,17 @@
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
+import { buildMetadata } from "@/lib/seo";
 import dealers from "@/data/dealers.json";
 import DealersMap from "@/components/DealersMap";
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
-  return { title: dict.nashiDileri.title };
+  return buildMetadata({
+    locale: params.locale,
+    path: "/nashi-dileri",
+    title: dict.nashiDileri.title,
+    description: dict.nashiDileri.metaDescription,
+  });
 }
 
 export default async function NashiDileriPage({ params }: { params: { locale: Locale } }) {
