@@ -11,7 +11,7 @@ export default async function PortalQuotePage() {
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select("full_name, company_name")
+    .select("full_name, company_name, role")
     .eq("id", user.id)
     .single();
 
@@ -23,7 +23,10 @@ export default async function PortalQuotePage() {
       <p className="mt-2 text-sm text-navy-dim">
         Додайте позиції, вкажіть клієнта — і збережіть готовий документ для друку чи PDF.
       </p>
-      <QuoteBuilder consultantDefault={profile?.full_name ?? user.email ?? ""} />
+      <QuoteBuilder
+        consultantDefault={profile?.full_name ?? user.email ?? ""}
+        isStaff={profile?.role === "staff"}
+      />
     </div>
   );
 }

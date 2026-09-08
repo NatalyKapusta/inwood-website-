@@ -33,7 +33,15 @@ const VRIZKA_OPTIONS = [
   { value: "full", label: "Повна врізка фурнітури" },
 ] as const;
 
-export default function QuoteBuilder({ consultantDefault }: { consultantDefault: string }) {
+const NONSTD_SURCHARGE = 1.2; // +20% за нестандартний розмір — той самий коефіцієнт, що й у прайсі
+
+export default function QuoteBuilder({
+  consultantDefault,
+  isStaff,
+}: {
+  consultantDefault: string;
+  isStaff: boolean;
+}) {
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
 
@@ -63,6 +71,14 @@ export default function QuoteBuilder({ consultantDefault }: { consultantDefault:
   const [shumo, setShumo] = useState(false);
   const [alumPaint, setAlumPaint] = useState(false);
   const [paintKorobRal, setPaintKorobRal] = useState(false);
+
+  // Ручний нестандарт — лише staff, як і в оригінальному калькуляторі
+  const [nonstdSize, setNonstdSize] = useState(false);
+  const [nonstdSizeNote, setNonstdSizeNote] = useState("");
+  const [korobManual, setKorobManual] = useState(false);
+  const [korobManualPrice, setKorobManualPrice] = useState(0);
+  const [dobirManual, setDobirManual] = useState(false);
+  const [dobirManualPrice, setDobirManualPrice] = useState(0);
   const [qty, setQty] = useState(1);
 
   const [positions, setPositions] = useState<QuotePosition[]>([]);
@@ -133,14 +149,25 @@ export default function QuoteBuilder({ consultantDefault }: { consultantDefault:
     if (!modelCode || !tariff) return [];
     const rows: { label: string; unitPrice: number }[] = [];
     const variantLabel = variantOptions.find((v) => v.code === effectiveVariantCode)?.label;
+    const panelBase = panelPrice();
     rows.push({
-      label: `Полотно, ${modelCode}${variantLabel && variantLabel !== "База" ? ` (${variantLabel})` : ""}`,
-      unitPrice: panelPrice(),
+      label: `Полотно, ${modelCode}${variantLabel && variantLabel !== "База" ? ` (${variantLabel})` : ""}${
+        isStaff && nonstdSize ? ` — нестандарт*${nonstdSizeNote ? ` (${nonstdSizeNote})` : ""}` : ""
+      }`,
+      unitPrice: isStaff && nonstdSize ? panelBase * NONSTD_SURCHARGE : panelBase,
     });
-    if (korob) rows.push({ label: korob, unitPrice: priceOf(korobOptions, korob) });
+    if (isStaff && korobManual) {
+      rows.push({ label: "Короб, нестандарт (вручну)", unitPrice: korobManualPrice });
+    } else if (korob) {
+      rows.push({ label: korob, unitPrice: priceOf(korobOptions, korob) });
+    }
     if (lishtvaFront) rows.push({ label: `${lishtvaFront} (лицьова)`, unitPrice: priceOf(lishtvaOptions, lishtvaFront) });
     if (lishtvaBack) rows.push({ label: `${lishtvaBack} (тильна)`, unitPrice: priceOf(lishtvaOptions, lishtvaBack) });
-    if (dobir) rows.push({ label: dobir, unitPrice: priceOf(dobirOptions, dobir) });
+    if (isStaff && dobirManual) {
+      rows.push({ label: "Добір, нестандарт (вручну)", unitPrice: dobirManualPrice });
+    } else if (dobir) {
+      rows.push({ label: dobir, unitPrice: priceOf(dobirOptions, dobir) });
+    }
     if (vrizka === "lock")
       rows.push({
         label: "Врізка під замок",
@@ -169,6 +196,12 @@ export default function QuoteBuilder({ consultantDefault }: { consultantDefault:
     shumo,
     alumPaint,
     paintKorobRal,
+    nonstdSize,
+    nonstdSizeNote,
+    korobManual,
+    korobManualPrice,
+    dobirManual,
+    dobirManualPrice,
     addonRows,
     serviceRows,
     panelRows,
@@ -199,6 +232,12 @@ export default function QuoteBuilder({ consultantDefault }: { consultantDefault:
     setShumo(false);
     setAlumPaint(false);
     setPaintKorobRal(false);
+    setNonstdSize(false);
+    setNonstdSizeNote("");
+    setKorobManual(false);
+    setKorobManualPrice(0);
+    setDobirManual(false);
+    setDobirManualPrice(0);
     setQty(1);
   }
 
@@ -493,18 +532,52 @@ export default function QuoteBuilder({ consultantDefault }: { consultantDefault:
               </select>
             )}
 
-            <select
-              value={korob}
-              onChange={(e) => setKorob(e.target.value)}
-              className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
-            >
-              <option value="">Короб — не обрано</option>
-              {korobOptions.map((r) => (
-                <option key={r.item_label} value={r.item_label}>
-                  {r.item_label}
-                </option>
-              ))}
-            </select>
+            {isStaff && (
+              <div className="rounded-lg bg-panel-alt p-3">
+                <label className="flex items-center gap-2 text-sm text-navy-dark">
+                  <input type="checkbox" checked={nonstdSize} onChange={(e) => setNonstdSize(e.target.checked)} />
+                  Нестандартний розмір полотна (+20%)
+                </label>
+                {nonstdSize && (
+                  <input
+                    value={nonstdSizeNote}
+                    onChange={(e) => setNonstdSizeNote(e.target.value)}
+                    placeholder="Опис розміру, напр. 950×2100 мм"
+                    className="mt-2 w-full rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+                  />
+                )}
+              </div>
+            )}
+
+            {isStaff && (
+              <label className="flex items-center gap-2 text-sm text-navy-dark">
+                <input type="checkbox" checked={korobManual} onChange={(e) => setKorobManual(e.target.checked)} />
+                Короб — нестандарт (вручну)
+              </label>
+            )}
+            {isStaff && korobManual ? (
+              <input
+                type="number"
+                min={0}
+                value={korobManualPrice || ""}
+                onChange={(e) => setKorobManualPrice(Math.max(0, Number(e.target.value)))}
+                placeholder="Ціна короба вручну, ₴"
+                className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+              />
+            ) : (
+              <select
+                value={korob}
+                onChange={(e) => setKorob(e.target.value)}
+                className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+              >
+                <option value="">Короб — не обрано</option>
+                {korobOptions.map((r) => (
+                  <option key={r.item_label} value={r.item_label}>
+                    {r.item_label}
+                  </option>
+                ))}
+              </select>
+            )}
 
             <select
               value={lishtvaFront}
@@ -532,18 +605,35 @@ export default function QuoteBuilder({ consultantDefault }: { consultantDefault:
               ))}
             </select>
 
-            <select
-              value={dobir}
-              onChange={(e) => setDobir(e.target.value)}
-              className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
-            >
-              <option value="">Добір — не обрано</option>
-              {dobirOptions.map((r) => (
-                <option key={r.item_label} value={r.item_label}>
-                  {r.item_label}
-                </option>
-              ))}
-            </select>
+            {isStaff && (
+              <label className="flex items-center gap-2 text-sm text-navy-dark">
+                <input type="checkbox" checked={dobirManual} onChange={(e) => setDobirManual(e.target.checked)} />
+                Добір — нестандарт (вручну)
+              </label>
+            )}
+            {isStaff && dobirManual ? (
+              <input
+                type="number"
+                min={0}
+                value={dobirManualPrice || ""}
+                onChange={(e) => setDobirManualPrice(Math.max(0, Number(e.target.value)))}
+                placeholder="Ціна добору вручну, ₴"
+                className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+              />
+            ) : (
+              <select
+                value={dobir}
+                onChange={(e) => setDobir(e.target.value)}
+                className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+              >
+                <option value="">Добір — не обрано</option>
+                {dobirOptions.map((r) => (
+                  <option key={r.item_label} value={r.item_label}>
+                    {r.item_label}
+                  </option>
+                ))}
+              </select>
+            )}
 
             <select
               value={vrizka}
