@@ -1,0 +1,628 @@
+[
+  {
+    "name": "Дріада",
+    "address": "м.Тернопіль, вул. Будного, 9в",
+    "phones": [
+      "+38 (073) 730 88 00"
+    ],
+    "phonesTel": [
+      "+380737308800"
+    ],
+    "sites": [
+      "https://driadadoors.com.ua"
+    ],
+    "sitesLabel": [
+      "driadadoors.com.ua"
+    ],
+    "lat": 49.5535,
+    "lon": 25.6045
+  },
+  {
+    "name": "Дверка",
+    "address": "м. Кривий Ріг, вул Гетьмана Івана Мазепи, 93",
+    "phones": [
+      "+38 (098) 821 87 00"
+    ],
+    "phonesTel": [
+      "+380988218700"
+    ],
+    "sites": [
+      "https://dverka.com.ua"
+    ],
+    "sitesLabel": [
+      "dverka.com.ua"
+    ],
+    "lat": 47.913856,
+    "lon": 33.45701
+  },
+  {
+    "name": "Сім'я Дім",
+    "address": "м. Болград, вул. Заводська, 89",
+    "phones": [
+      "+38 (093) 486 36 26"
+    ],
+    "phonesTel": [
+      "+380934863626"
+    ],
+    "sites": [],
+    "sitesLabel": [],
+    "lat": 45.6919,
+    "lon": 28.6153
+  },
+  {
+    "name": "ПАНОРАМА-ПРО",
+    "address": "м. Полтава, вул. Новобазарна, 37",
+    "phones": [
+      "+38 (095) 224 65 35"
+    ],
+    "phonesTel": [
+      "+380952246535"
+    ],
+    "sites": [
+      "https://panorama-pro.com",
+      "https://t.me/panorama_pro"
+    ],
+    "sitesLabel": [
+      "panorama-pro.com",
+      "t.me/panorama_pro"
+    ],
+    "lat": 49.5883,
+    "lon": 34.5514
+  },
+  {
+    "name": "KERAMIS",
+    "address": "м. Харків, вул. Клочківська, 159 (відділ дверей – цокольний поверх)",
+    "phones": [
+      "+38 (050) 355 51 50"
+    ],
+    "phonesTel": [
+      "+380503555150"
+    ],
+    "sites": [
+      "https://keramis.com.ua"
+    ],
+    "sitesLabel": [
+      "keramis.com.ua"
+    ],
+    "lat": 50.012035,
+    "lon": 36.216909
+  },
+  {
+    "name": "Yuterm",
+    "address": "м. Рівне, проспект Генерала Безручка, 2/20",
+    "phones": [
+      "+38 (097) 567 91 91"
+    ],
+    "phonesTel": [
+      "+380975679191"
+    ],
+    "sites": [
+      "https://facebook.com/Yuterm.ok"
+    ],
+    "sitesLabel": [
+      "facebook.com/Yuterm.ok"
+    ],
+    "lat": 50.6199,
+    "lon": 26.2516
+  },
+  {
+    "name": "Perfetto",
+    "address": "м. Кам'янець-Подільський, проспект Грушевського, 31/2",
+    "phones": [
+      "+38 (098) 709 01 90",
+      "+38 (098) 315 35 33"
+    ],
+    "phonesTel": [
+      "+380987090190",
+      "+380983153533"
+    ],
+    "sites": [
+      "https://perfetto.km.ua"
+    ],
+    "sitesLabel": [
+      "perfetto.km.ua"
+    ],
+    "lat": 48.6817,
+    "lon": 26.5786
+  },
+  {
+    "name": "Ваш Простір",
+    "address": "м. Полтава, вул. Героїв Чорнобильців, 8а (ТЦ «Асортимент», 2-й поверх)",
+    "phones": [
+      "+38 (050) 348 00 43",
+      "+38 (050) 983 30 96"
+    ],
+    "phonesTel": [
+      "+380503480043",
+      "+380509833096"
+    ],
+    "sites": [
+      "https://instagram.com/prostir_plt"
+    ],
+    "sitesLabel": [
+      "instagram.com/prostir_plt"
+    ],
+    "lat": 49.6003,
+    "lon": 34.5614
+  },
+  {
+    "name": "Star Design",
+    "address": "м. Полтава, вул. Європейська, 225",
+    "phones": [
+      "+38 (063) 633 07 43"
+    ],
+    "phonesTel": [
+      "+380636330743"
+    ],
+    "sites": [
+      "https://stardyzain.com.ua"
+    ],
+    "sitesLabel": [
+      "stardyzain.com.ua"
+    ],
+    "lat": 49.5783,
+    "lon": 34.5654
+  },
+  {
+    "name": "STRAJ",
+    "address": "м. Житомир, вул. Вітрука, 6б",
+    "phones": [
+      "+38 (098) 276 72 77"
+    ],
+    "phonesTel": [
+      "+380982767277"
+    ],
+    "sites": [],
+    "sitesLabel": [],
+    "lat": 50.2547,
+    "lon": 28.6587
+  },
+  {
+    "name": "Магазин Тесля",
+    "address": "м. Бровари, вул. Чорновола, 6а",
+    "phones": [
+      "+38 (077) 377 30 77",
+      "+38 (098) 690 74 08"
+    ],
+    "phonesTel": [
+      "+380773773077",
+      "+380986907408"
+    ],
+    "sites": [],
+    "sitesLabel": [],
+    "lat": 50.517501,
+    "lon": 30.780803
+  },
+  {
+    "name": "Маркет Дверей",
+    "address": "м. Черкаси, бульвар Шевченка, 352 (по вул. Чорновола, за зупинкою)",
+    "phones": [
+      "+38 (067) 145 46 18"
+    ],
+    "phonesTel": [
+      "+380671454618"
+    ],
+    "sites": [],
+    "sitesLabel": [],
+    "lat": 49.429998,
+    "lon": 32.084256
+  },
+  {
+    "name": "Маркет Дверей",
+    "address": "вул. Смілянська, 159 (база ОПС), корпус 5, магазин 1",
+    "phones": [
+      "+38 (067) 772 69 79"
+    ],
+    "phonesTel": [
+      "+380677726979"
+    ],
+    "sites": [],
+    "sitesLabel": [],
+    "lat": 49.409416,
+    "lon": 32.024844
+  },
+  {
+    "name": "БастіOn",
+    "address": "м. Луцьк, вул. Конякіна, 13",
+    "phones": [
+      "+38 (095) 602 43 29",
+      "+38 (097) 395 35 58"
+    ],
+    "phonesTel": [
+      "+380956024329",
+      "+380973953558"
+    ],
+    "sites": [
+      "https://www.tiktok.com/@bastion82256"
+    ],
+    "sitesLabel": [
+      "www.tiktok.com/@bastion82256"
+    ],
+    "lat": 50.771526,
+    "lon": 25.358342
+  },
+  {
+    "name": "ALLDOORS",
+    "address": "м. Черкаси, вул. Різдвяна, 43",
+    "phones": [
+      "+38 (097) 580 88 33",
+      "+38 (093) 580 88 33"
+    ],
+    "phonesTel": [
+      "+380975808833",
+      "+380935808833"
+    ],
+    "sites": [
+      "https://alldoors.com.ua"
+    ],
+    "sitesLabel": [
+      "alldoors.com.ua"
+    ],
+    "lat": 49.42698,
+    "lon": 32.092306
+  },
+  {
+    "name": "Салон Вікон та Дверей",
+    "address": "м. Бориспіль, вул. Київський шлях, 10",
+    "phones": [
+      "+38 (096) 787 87 08"
+    ],
+    "phonesTel": [
+      "+380967878708"
+    ],
+    "sites": [],
+    "sitesLabel": [],
+    "lat": 50.3486,
+    "lon": 30.9538
+  },
+  {
+    "name": "Rooms",
+    "address": "м. Тернопіль, вул. Степана Бандери, 63",
+    "phones": [
+      "+38 (068) 234 76 54"
+    ],
+    "phonesTel": [
+      "+380682347654"
+    ],
+    "sites": [
+      "https://rooms.org.ua",
+      "https://instagram.com/roomsternopil"
+    ],
+    "sitesLabel": [
+      "rooms.org.ua",
+      "instagram.com/roomsternopil"
+    ],
+    "lat": 49.5655,
+    "lon": 25.6145
+  },
+  {
+    "name": "Мінімаксі",
+    "address": "м.Полтава, вул. Заводська, 10",
+    "phones": [
+      "+38 (067) 553 44 46",
+      "+38 (050) 308 48 02"
+    ],
+    "phonesTel": [
+      "+380675534446",
+      "+380503084802"
+    ],
+    "sites": [
+      "https://minimaxi.pp.ua"
+    ],
+    "sitesLabel": [
+      "minimaxi.pp.ua"
+    ],
+    "lat": 49.597033,
+    "lon": 34.475331
+  },
+  {
+    "name": "Наші вікна-двері",
+    "address": "м. Полтава, вул. Героїв-Чорнобильців, 1",
+    "phones": [
+      "+38 (099) 702 88 45"
+    ],
+    "phonesTel": [
+      "+380997028845"
+    ],
+    "sites": [],
+    "sitesLabel": [],
+    "lat": 49.6063,
+    "lon": 34.5434
+  },
+  {
+    "name": "Dveri.Alex",
+    "address": "м. Кременчук, вул. 101-й квартал, 10г",
+    "phones": [
+      "+38 (096) 330 73 96",
+      "+38 (095) 496 66 33"
+    ],
+    "phonesTel": [
+      "+380963307396",
+      "+380954966633"
+    ],
+    "sites": [
+      "https://instagram.com/dveri.alex"
+    ],
+    "sitesLabel": [
+      "instagram.com/dveri.alex"
+    ],
+    "lat": 49.079637,
+    "lon": 33.424174
+  },
+  {
+    "name": "BRAVO",
+    "address": "м. Дніпро, проспект Науки, 82",
+    "phones": [
+      "+38 (066) 108 08 10"
+    ],
+    "phonesTel": [
+      "+380661080810"
+    ],
+    "sites": [
+      "https://vikna-dveri.dp.ua"
+    ],
+    "sitesLabel": [
+      "vikna-dveri.dp.ua"
+    ],
+    "lat": 48.428454,
+    "lon": 35.036161
+  },
+  {
+    "name": "Двері на Європейській",
+    "address": "м. Полтава, вул. Європейська, 68",
+    "phones": [
+      "+38 (050) 701 20 20"
+    ],
+    "phonesTel": [
+      "+380507012020"
+    ],
+    "sites": [
+      "https://instagram.com/dveri_vikna_poltava"
+    ],
+    "sitesLabel": [
+      "instagram.com/dveri_vikna_poltava"
+    ],
+    "lat": 49.574318,
+    "lon": 34.535607
+  },
+  {
+    "name": "Двері на Подолі",
+    "address": "вул. Небесної сотні, 88",
+    "phones": [
+      "+38 (050) 701 20 20"
+    ],
+    "phonesTel": [
+      "+380507012020"
+    ],
+    "sites": [
+      "https://instagram.com/dveri_vikna_poltava"
+    ],
+    "sitesLabel": [
+      "instagram.com/dveri_vikna_poltava"
+    ],
+    "lat": 49.578505,
+    "lon": 34.574717
+  },
+  {
+    "name": "DVNV",
+    "address": "м. Київ, вул. Стадіонна, 6",
+    "phones": [
+      "+38 (098) 596 94 96",
+      "+38 (099) 641 77 30"
+    ],
+    "phonesTel": [
+      "+380985969496",
+      "+380996417730"
+    ],
+    "sites": [
+      "https://instagram.com/dvnv.ua"
+    ],
+    "sitesLabel": [
+      "instagram.com/dvnv.ua"
+    ],
+    "lat": 50.436275,
+    "lon": 30.482845
+  },
+  {
+    "name": "Галерея Дверей",
+    "address": "м. Полтава, вул. Небесної сотні, 86а",
+    "phones": [
+      "+38 (050) 711 26 10",
+      "+38 (068) 503 44 49"
+    ],
+    "phonesTel": [
+      "+380507112610",
+      "+380685034449"
+    ],
+    "sites": [
+      "https://instagram.com/gallery_doors_",
+      "https://facebook.com/gallerydoorspoltava"
+    ],
+    "sitesLabel": [
+      "instagram.com/gallery_doors_",
+      "facebook.com/gallerydoorspoltava"
+    ],
+    "lat": 49.578669,
+    "lon": 34.574018
+  },
+  {
+    "name": "Магазин Тіана",
+    "address": "м. Одеса, проспект Небесної Сотні, 14б/13 (р-к \"Селянка\", пав. 45-Г)",
+    "phones": [
+      "+38 (097) 795 39 30"
+    ],
+    "phonesTel": [
+      "+380977953930"
+    ],
+    "sites": [
+      "https://tiana.od.ua"
+    ],
+    "sitesLabel": [
+      "tiana.od.ua"
+    ],
+    "lat": 46.39345,
+    "lon": 30.7042
+  },
+  {
+    "name": "Магазин Тіана",
+    "address": "проспект Небесної Сотні, 14б/13 (р-к \"Селянка\", пав. 12-А)",
+    "phones": [
+      "+38 (097) 795 39 30"
+    ],
+    "phonesTel": [
+      "+380977953930"
+    ],
+    "sites": [
+      "https://tiana.od.ua"
+    ],
+    "sitesLabel": [
+      "tiana.od.ua"
+    ],
+    "lat": 46.39345,
+    "lon": 30.7042
+  },
+  {
+    "name": "Brille",
+    "address": "м.Полтава, вул. Грушевського, 21 (магазин \"Brille\")",
+    "phones": [
+      "+38 (050) 619 08 71"
+    ],
+    "phonesTel": [
+      "+380506190871"
+    ],
+    "sites": [
+      "https://facebook.com/share/g/1BJDbFqzWU"
+    ],
+    "sitesLabel": [
+      "facebook.com/share/g/1BJDbFqzWU"
+    ],
+    "lat": 49.569601,
+    "lon": 34.517106
+  },
+  {
+    "name": "ЕСТЕТ Майстерня твого інтер'єру",
+    "address": "Полтава, вул. Шевченка, 67б",
+    "phones": [
+      "+38 (099) 948 62 31"
+    ],
+    "phonesTel": [
+      "+380999486231"
+    ],
+    "sites": [
+      "https://www.instagram.com/estet.poltava"
+    ],
+    "sitesLabel": [
+      "www.instagram.com/estet.poltava"
+    ],
+    "lat": 49.589147,
+    "lon": 34.535963
+  },
+  {
+    "name": "ЕСТЕТ Майстерня твого інтер'єру",
+    "address": "вул. Полтавська, 1",
+    "phones": [
+      "+38 (067) 848 62 31"
+    ],
+    "phonesTel": [
+      "+380678486231"
+    ],
+    "sites": [
+      "https://www.instagram.com/estet.poltava"
+    ],
+    "sitesLabel": [
+      "www.instagram.com/estet.poltava"
+    ],
+    "lat": 49.548263,
+    "lon": 34.514289
+  },
+  {
+    "name": "ВСІ Двері",
+    "address": "м. Київ, вул. Микільська, 8б (2-й поверх)",
+    "phones": [
+      "+38 (067) 881 42 43"
+    ],
+    "phonesTel": [
+      "+380678814243"
+    ],
+    "sites": [
+      "https://vsedveri.ua"
+    ],
+    "sitesLabel": [
+      "vsedveri.ua"
+    ],
+    "lat": 50.408899,
+    "lon": 30.388494
+  },
+  {
+    "name": "ВСІ Двері",
+    "address": "м. Одеса, вул. Середньофонтанська, 12а",
+    "phones": [
+      "+38 (099) 750 77 78"
+    ],
+    "phonesTel": [
+      "+380997507778"
+    ],
+    "sites": [
+      "https://vsedveri.ua"
+    ],
+    "sitesLabel": [
+      "vsedveri.ua"
+    ],
+    "lat": 46.461694,
+    "lon": 30.739056
+  },
+  {
+    "name": "Rich Market",
+    "address": "м. Одеса, вул. Мала Арнаутська, 52",
+    "phones": [
+      "+38 (063) 919 24 44"
+    ],
+    "phonesTel": [
+      "+380639192444"
+    ],
+    "sites": [
+      "https://rich-market.od.ua"
+    ],
+    "sitesLabel": [
+      "rich-market.od.ua"
+    ],
+    "lat": 46.47132,
+    "lon": 30.740056
+  },
+  {
+    "name": "Лінія Дверей",
+    "address": "м. Одеса, вул. Середньофонтанська, 12а",
+    "phones": [
+      "+38 (063) 508 24 33"
+    ],
+    "phonesTel": [
+      "+380635082433"
+    ],
+    "sites": [],
+    "sitesLabel": [],
+    "lat": 46.461694,
+    "lon": 30.739056
+  },
+  {
+    "name": "Mr Door",
+    "address": "м. Кривий Ріг, вул. Льотчиків, 9",
+    "phones": [
+      "+38 (098) 011 90 90",
+      "+38 (050) 011 90 90",
+      "+38 (093) 011 90 90"
+    ],
+    "phonesTel": [
+      "+380980119090",
+      "+380500119090",
+      "+380930119090"
+    ],
+    "sites": [
+      "https://mrdoor.com.ua"
+    ],
+    "sitesLabel": [
+      "mrdoor.com.ua"
+    ],
+    "lat": 47.9105,
+    "lon": 33.3918
+  }
+]
