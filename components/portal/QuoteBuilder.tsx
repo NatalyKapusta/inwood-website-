@@ -57,6 +57,8 @@ export default function QuoteBuilder({ consultantDefault }: { consultantDefault:
   const [dobir, setDobir] = useState("");
   const [vrizka, setVrizka] = useState<"none" | "lock" | "full">("none");
   const [shumo, setShumo] = useState(false);
+  const [alumPaint, setAlumPaint] = useState(false);
+  const [paintKorobRal, setPaintKorobRal] = useState(false);
   const [qty, setQty] = useState(1);
 
   const [positions, setPositions] = useState<QuotePosition[]>([]);
@@ -146,9 +148,27 @@ export default function QuoteBuilder({ consultantDefault }: { consultantDefault:
         unitPrice: serviceePrice(isAluEdge ? "VRIZKA_FULL_PRICE_ALU" : "VRIZKA_FULL_PRICE"),
       });
     if (shumo) rows.push({ label: "Шумоізоляція", unitPrice: serviceePrice("SHUMO_PRICE") });
+    if (alumPaint) rows.push({ label: "Фарбування алюм. крайки", unitPrice: serviceePrice("ALUM_PAINT_PRICE") });
+    if (paintKorobRal)
+      rows.push({ label: "Фарбування коробки прих. монтажу по RAL", unitPrice: serviceePrice("PAINT_KOROB_RAL_PRICE") });
     return rows;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [modelCode, effectiveVariantCode, tariff, korob, lishtvaFront, lishtvaBack, dobir, vrizka, shumo, addonRows, serviceRows, panelRows]);
+  }, [
+    modelCode,
+    effectiveVariantCode,
+    tariff,
+    korob,
+    lishtvaFront,
+    lishtvaBack,
+    dobir,
+    vrizka,
+    shumo,
+    alumPaint,
+    paintKorobRal,
+    addonRows,
+    serviceRows,
+    panelRows,
+  ]);
 
   const previewTotal = previewRows.reduce((s, r) => s + r.unitPrice, 0) * qty;
 
@@ -173,6 +193,8 @@ export default function QuoteBuilder({ consultantDefault }: { consultantDefault:
     setDobir("");
     setVrizka("none");
     setShumo(false);
+    setAlumPaint(false);
+    setPaintKorobRal(false);
     setQty(1);
   }
 
@@ -498,6 +520,24 @@ export default function QuoteBuilder({ consultantDefault }: { consultantDefault:
               <label className="flex items-center gap-2 text-sm text-navy-dark">
                 <input type="checkbox" checked={shumo} onChange={(e) => setShumo(e.target.checked)} />
                 Шумоізоляція
+              </label>
+            )}
+
+            {(collectionKey === "etalon" || isHiddenDoors) && (
+              <label className="flex items-center gap-2 text-sm text-navy-dark">
+                <input type="checkbox" checked={alumPaint} onChange={(e) => setAlumPaint(e.target.checked)} />
+                Фарбування алюм. крайки
+              </label>
+            )}
+
+            {isHiddenDoors && (
+              <label className="flex items-center gap-2 text-sm text-navy-dark">
+                <input
+                  type="checkbox"
+                  checked={paintKorobRal}
+                  onChange={(e) => setPaintKorobRal(e.target.checked)}
+                />
+                Фарбування коробки прих. монтажу по RAL
               </label>
             )}
 
