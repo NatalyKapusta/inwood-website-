@@ -3,15 +3,28 @@
 import { Fragment, useEffect, useMemo, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { collections, collectionOrder } from "@/lib/products";
+import modelVariantsData from "@/data/model-variants.json";
 import {
   tariffLabels,
   positionTotal,
+  isAluEdgeVariant,
+  isAddonCompatible,
   type Tariff,
   type PanelRow,
   type AddonRow,
   type ServiceRow,
   type QuotePosition,
+  type ModelVariant,
+  type ModelVariantsData,
+  type VariantType,
 } from "@/lib/quote";
+
+const variantsData = modelVariantsData as unknown as ModelVariantsData;
+
+function hiddenDoorCode(image: string) {
+  const file = image.split("/").pop() ?? "";
+  return file.replace(/\.\w+$/, "");
+}
 
 const VRIZKA_OPTIONS = [
   { value: "none", label: "Без врізки" },
@@ -36,6 +49,7 @@ export default function QuoteBuilder({ consultantDefault }: { consultantDefault:
 
   const [collectionKey, setCollectionKey] = useState(collectionOrder[0]);
   const [modelCode, setModelCode] = useState("");
+  const [variantCode, setVariantCode] = useState("");
   const [colorLabel, setColorLabel] = useState("");
   const [korob, setKorob] = useState("");
   const [lishtvaFront, setLishtvaFront] = useState("");
@@ -77,12 +91,27 @@ export default function QuoteBuilder({ consultantDefault }: { consultantDefault:
     [panelRows]
   );
 
+  const isHiddenDoors = collectionKey === "hidden-doors";
   const models = collections[collectionKey]?.models ?? [];
   const currentModel = models.find((m) => m.code === modelCode);
+  const hiddenVariants = collections["hidden-doors"]?.variants ?? [];
 
-  const korobOptions = addonRows.filter((r) => r.collection === collectionKey && r.addon_type === "korob" && r.tariff === tariff);
-  const lishtvaOptions = addonRows.filter((r) => r.collection === collectionKey && r.addon_type === "lishtva" && r.tariff === tariff);
-  const dobirOptions = addonRows.filter((r) => r.collection === collectionKey && r.addon_type === "dobir" && r.tariff === tariff);
+  // Варіанти конкретної моделі (база/алюм. крайка/INSIDE/RAL) — для hidden-doors
+  // кожен пункт списку вже сам по собі окремий покупний варіант.
+  const variantOptions: ModelVariant[] = isHiddenDoors
+    ? []
+    : variantsData.variantsByBaseCode[modelCode] ?? [{ code: modelCode, variantType: "base", label: "База" }];
+  const effectiveVariantCode = isHiddenDoors ? modelCode : variantCode || modelCode;
+  const variantType: VariantType = variantsData.variantTypeByCode[effectiveVariantCode] ?? "base";
+  const isAluEdge = isAluEdgeVariant(variantType);
+
+  const korobOptionsAll = addonRows.filter((r) => r.collection === collectionKey && r.addon_type === "korob" && r.tariff === tariff);
+  const lishtvaOptionsAll = addonRows.filter((r) => r.collection === collectionKey && r.addon_type === "lishtva" && r.tariff === tariff);
+  const dobirOptionsAll = addonRows.filter((r) => r.collection === collectionKey && r.addon_type === "dobir" && r.tariff === tariff);
+
+  const korobOptions = korobOptionsAll.filter((r) => isAddonCompatible(collectionKey, variantType, r.item_label));
+  const lishtvaOptions = lishtvaOptionsAll.filter((r) => isAddonCompatible(collectionKey, variantType, r.item_label));
+  const dobirOptions = dobirOptionsAll.filter((r) => isAddonCompatible(collectionKey, variantType, r.item_label));
 
   function priceOf(list: AddonRow[], label: string) {
     return list.find((r) => r.item_label === label)?.price ?? 0;
@@ -91,23 +120,35 @@ export default function QuoteBuilder({ consultantDefault }: { consultantDefault:
     return serviceRows.find((r) => r.service_key === key && r.tariff === tariff)?.price ?? 0;
   }
   function panelPrice() {
-    return panelRows.find((r) => r.product_code === modelCode && r.tariff === tariff)?.price ?? 0;
+    return panelRows.find((r) => r.product_code === effectiveVariantCode && r.tariff === tariff)?.price ?? 0;
   }
 
   const previewRows = useMemo(() => {
     if (!modelCode || !tariff) return [];
     const rows: { label: string; unitPrice: number }[] = [];
-    rows.push({ label: `Полотно, ${modelCode}`, unitPrice: panelPrice() });
+    const variantLabel = variantOptions.find((v) => v.code === effectiveVariantCode)?.label;
+    rows.push({
+      label: `Полотно, ${modelCode}${variantLabel && variantLabel !== "База" ? ` (${variantLabel})` : ""}`,
+      unitPrice: panelPrice(),
+    });
     if (korob) rows.push({ label: korob, unitPrice: priceOf(korobOptions, korob) });
     if (lishtvaFront) rows.push({ label: `${lishtvaFront} (лицьова)`, unitPrice: priceOf(lishtvaOptions, lishtvaFront) });
     if (lishtvaBack) rows.push({ label: `${lishtvaBack} (тильна)`, unitPrice: priceOf(lishtvaOptions, lishtvaBack) });
     if (dobir) rows.push({ label: dobir, unitPrice: priceOf(dobirOptions, dobir) });
-    if (vrizka === "lock") rows.push({ label: "Врізка під замок", unitPrice: serviceePrice("VRIZKA_LOCK_PRICE") });
-    if (vrizka === "full") rows.push({ label: "Повна врізка фурнітури", unitPrice: serviceePrice("VRIZKA_FULL_PRICE") });
+    if (vrizka === "lock")
+      rows.push({
+        label: "Врізка під замок",
+        unitPrice: serviceePrice(isAluEdge ? "VRIZKA_LOCK_PRICE_ALU" : "VRIZKA_LOCK_PRICE"),
+      });
+    if (vrizka === "full")
+      rows.push({
+        label: "Повна врізка фурнітури",
+        unitPrice: serviceePrice(isAluEdge ? "VRIZKA_FULL_PRICE_ALU" : "VRIZKA_FULL_PRICE"),
+      });
     if (shumo) rows.push({ label: "Шумоізоляція", unitPrice: serviceePrice("SHUMO_PRICE") });
     return rows;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [modelCode, tariff, korob, lishtvaFront, lishtvaBack, dobir, vrizka, shumo, addonRows, serviceRows, panelRows]);
+  }, [modelCode, effectiveVariantCode, tariff, korob, lishtvaFront, lishtvaBack, dobir, vrizka, shumo, addonRows, serviceRows, panelRows]);
 
   const previewTotal = previewRows.reduce((s, r) => s + r.unitPrice, 0) * qty;
 
@@ -118,11 +159,14 @@ export default function QuoteBuilder({ consultantDefault }: { consultantDefault:
       collectionLabel: collections[collectionKey].label,
       modelCode,
       colorLabel,
-      photo: currentModel?.colors.find((c) => c.label === colorLabel)?.image ?? currentModel?.colors[0]?.image,
+      photo: isHiddenDoors
+        ? hiddenVariants.find((v) => hiddenDoorCode(v.image) === modelCode)?.image
+        : currentModel?.colors.find((c) => c.label === colorLabel)?.image ?? currentModel?.colors[0]?.image,
       qty,
       rows: previewRows.map((r) => ({ label: r.label, unitPrice: r.unitPrice, qty, amount: r.unitPrice * qty })),
     };
     setPositions((prev) => [...prev, position]);
+    setVariantCode(modelCode);
     setKorob("");
     setLishtvaFront("");
     setLishtvaBack("");
@@ -320,12 +364,13 @@ export default function QuoteBuilder({ consultantDefault }: { consultantDefault:
               onChange={(e) => {
                 setCollectionKey(e.target.value);
                 setModelCode("");
+                setVariantCode("");
                 setColorLabel("");
               }}
               className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
             >
               {collectionOrder
-                .filter((k) => collections[k]?.models?.length)
+                .filter((k) => collections[k]?.models?.length || collections[k]?.variants?.length)
                 .map((k) => (
                   <option key={k} value={k}>
                     {collections[k].label}
@@ -337,17 +382,38 @@ export default function QuoteBuilder({ consultantDefault }: { consultantDefault:
               value={modelCode}
               onChange={(e) => {
                 setModelCode(e.target.value);
+                setVariantCode(e.target.value);
                 setColorLabel("");
               }}
               className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
             >
               <option value="">Модель...</option>
-              {models.map((m) => (
-                <option key={m.code} value={m.code}>
-                  {m.code}
-                </option>
-              ))}
+              {isHiddenDoors
+                ? hiddenVariants.map((v) => (
+                    <option key={v.image} value={hiddenDoorCode(v.image)}>
+                      {v.label}
+                    </option>
+                  ))
+                : models.map((m) => (
+                    <option key={m.code} value={m.code}>
+                      {m.code}
+                    </option>
+                  ))}
             </select>
+
+            {!isHiddenDoors && modelCode && variantOptions.length > 1 && (
+              <select
+                value={variantCode}
+                onChange={(e) => setVariantCode(e.target.value)}
+                className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+              >
+                {variantOptions.map((v) => (
+                  <option key={v.code} value={v.code}>
+                    {v.label}
+                  </option>
+                ))}
+              </select>
+            )}
 
             {currentModel && (
               <select

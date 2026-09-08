@@ -19,6 +19,36 @@ export type AddonRow = {
 };
 export type ServiceRow = { service_key: string; tariff: Tariff; price: number };
 
+export type VariantType = "base" | "alu" | "alu-inside" | "ral";
+
+export type ModelVariant = { code: string; variantType: VariantType; label: string };
+
+export type ModelVariantsData = {
+  variantsByBaseCode: Record<string, ModelVariant[]>;
+  variantTypeByCode: Record<string, VariantType>;
+};
+
+export function isAluEdgeVariant(variantType: VariantType) {
+  return variantType === "alu" || variantType === "alu-inside";
+}
+
+// Мірить filterAddonsByRal/INSIDE-фільтр з оригінального калькулятора:
+// FREZZATTI/PERFETTO — короб/лиштва/добір фільтруються по підрядку "RAL/NCS";
+// ETALON — короб фільтрується по підрядку "INSIDE" (лиштва/добір спільні для всіх варіантів);
+// короб прихованого монтажу ETALON у конструкторі КП поки не підтримується.
+export function isAddonCompatible(collection: string, variantType: VariantType, itemLabel: string) {
+  if (collection === "frezzatti" || collection === "perfetto") {
+    const isRal = itemLabel.includes("RAL/NCS");
+    return variantType === "ral" ? isRal : !isRal;
+  }
+  if (collection === "etalon") {
+    if (itemLabel.includes("прихованого монтажу")) return false;
+    const isInside = itemLabel.includes("INSIDE");
+    return variantType === "alu-inside" ? isInside : !isInside;
+  }
+  return true;
+}
+
 export type QuoteLineItem = {
   label: string;
   unitPrice: number;
