@@ -14,10 +14,10 @@ async function getDict(locale: Locale) {
 }
 
 const collectionImages: Record<string, string> = {
-  ETALON: "/photos/ETALON 1/Et-01_white .png",
-  NOMINAL: "/photos/NOMINAL/NL-01_дуб шато.png",
-  FREZZATTI: "/photos/FREZZATTI/Door_01 дуб шато.png",
-  PERFETTO: "/photos/PERFETTO/PF-01.png",
+  ETALON: "/photos/etalon/et-01-white.png",
+  NOMINAL: "/photos/nominal/nl-01-dub-shato.png",
+  FREZZATTI: "/photos/frezzatti/fz-01-dub-shato.png",
+  PERFETTO: "/photos/perfetto/pf-01.png",
 };
 
 export default async function HomePage({ params }: { params: { locale: Locale } }) {
@@ -137,10 +137,9 @@ export default async function HomePage({ params }: { params: { locale: Locale } 
               <div className="relative aspect-[4/5] overflow-hidden bg-white">
                 {collectionImages[col.name] && (
                   <Image
-                    src={encodeURI(collectionImages[col.name])}
+                    src={collectionImages[col.name]}
                     alt={col.name}
                     fill
-                    unoptimized
                     className="object-contain p-6 transition duration-300 group-hover:scale-105"
                   />
                 )}

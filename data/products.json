@@ -1,0 +1,3451 @@
+{
+  "etalon": {
+    "label": "ETALON",
+    "thickness": "40 мм",
+    "komplekt": {
+      "korob": [
+        {
+          "label": "Телескопічний 80 мм",
+          "price": 2945
+        },
+        {
+          "label": "Телескопічний 100 мм",
+          "price": 3926
+        },
+        {
+          "label": "Телескопічний 120 мм",
+          "price": 4308
+        },
+        {
+          "label": "Компланарний 80 мм",
+          "price": 3566
+        },
+        {
+          "label": "Компланарний 100 мм",
+          "price": 4130
+        },
+        {
+          "label": "Компланарний 120 мм",
+          "price": 4512
+        },
+        {
+          "label": "Телескопічний INSIDE 80 мм",
+          "price": 3534
+        },
+        {
+          "label": "Телескопічний INSIDE 100 мм",
+          "price": 4711
+        },
+        {
+          "label": "Телескопічний INSIDE 120 мм",
+          "price": 5170
+        },
+        {
+          "label": "Компланарний INSIDE 80 мм",
+          "price": 4279
+        },
+        {
+          "label": "Компланарний INSIDE 100 мм",
+          "price": 4956
+        },
+        {
+          "label": "Компланарний INSIDE 120 мм",
+          "price": 5414
+        }
+      ],
+      "lyshtva": [
+        {
+          "label": "Телескопічна 80 мм",
+          "price": 1278
+        },
+        {
+          "label": "Телескопічна 80 мм (крило 40 мм)",
+          "price": 1541
+        },
+        {
+          "label": "Компланарна 80 мм",
+          "price": 1636
+        }
+      ],
+      "dobir": [
+        {
+          "label": "Телескопічний 100 мм",
+          "price": 1126
+        },
+        {
+          "label": "Телескопічний 150 мм",
+          "price": 1470
+        },
+        {
+          "label": "Телескопічний 200 мм",
+          "price": 2155
+        }
+      ]
+    },
+    "models": [
+      {
+        "code": "ET-01",
+        "basePrice": 7395,
+        "colors": [
+          {
+            "slug": "astana-marle",
+            "label": "астана марле",
+            "image": "/photos/etalon/et-01-astana-marle.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "бетон сірий",
+            "image": "/photos/etalon/et-01-beton-siryi.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "бетон сніжний",
+            "image": "/photos/etalon/et-01-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-temnyi",
+            "label": "бетон темний",
+            "image": "/photos/etalon/et-01-beton-temnyi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "біла текстурна",
+            "image": "/photos/etalon/et-01-bila-teksturna.png"
+          },
+          {
+            "slug": "chorna-korka",
+            "label": "чорна корка",
+            "image": "/photos/etalon/et-01-chorna-korka.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "дуб глазго еко",
+            "image": "/photos/etalon/et-01-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/etalon/et-01-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "карпатська ялина",
+            "image": "/photos/etalon/et-01-karpatska-ialyna.png"
+          },
+          {
+            "slug": "popeliastyi-softach",
+            "label": "попелястий софтач",
+            "image": "/photos/etalon/et-01-popeliastyi-softach.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "рустік авінон білий",
+            "image": "/photos/etalon/et-01-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "рустик золотий",
+            "image": "/photos/etalon/et-01-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "шпон коричневий",
+            "image": "/photos/etalon/et-01-shpon-korychnevyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "сосна прованс",
+            "image": "/photos/etalon/et-01-sosna-provans.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "венге південне тиснене",
+            "image": "/photos/etalon/et-01-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/etalon/et-01-white.png"
+          },
+          {
+            "slug": "zriz-kameniu",
+            "label": "зріз каменю",
+            "image": "/photos/etalon/et-01-zriz-kameniu.png"
+          }
+        ]
+      },
+      {
+        "code": "ET-02",
+        "basePrice": 8293,
+        "colors": [
+          {
+            "slug": "astana-marle",
+            "label": "астана марле",
+            "image": "/photos/etalon/et-02-astana-marle.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "бетон сірий",
+            "image": "/photos/etalon/et-02-beton-siryi.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "бетон сніжний",
+            "image": "/photos/etalon/et-02-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-temnyi",
+            "label": "бетон темний",
+            "image": "/photos/etalon/et-02-beton-temnyi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "біла текстурна",
+            "image": "/photos/etalon/et-02-bila-teksturna.png"
+          },
+          {
+            "slug": "chorna-korka",
+            "label": "чорна корка",
+            "image": "/photos/etalon/et-02-chorna-korka.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "дуб глазго еко",
+            "image": "/photos/etalon/et-02-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/etalon/et-02-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "карпатська ялина",
+            "image": "/photos/etalon/et-02-karpatska-ialyna.png"
+          },
+          {
+            "slug": "popeliastyi-softach",
+            "label": "попелястий софтач",
+            "image": "/photos/etalon/et-02-popeliastyi-softach.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "рустік авінон білий",
+            "image": "/photos/etalon/et-02-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "рустик золотий",
+            "image": "/photos/etalon/et-02-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "шпон коричневий",
+            "image": "/photos/etalon/et-02-shpon-korychnevyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "сосна прованс",
+            "image": "/photos/etalon/et-02-sosna-provans.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "венге південне тиснене",
+            "image": "/photos/etalon/et-02-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/etalon/et-02-white.png"
+          },
+          {
+            "slug": "zriz-kameniu",
+            "label": "зріз каменю",
+            "image": "/photos/etalon/et-02-zriz-kameniu.png"
+          }
+        ]
+      },
+      {
+        "code": "ET-03",
+        "basePrice": 8293,
+        "colors": [
+          {
+            "slug": "astana-marle",
+            "label": "астана марле",
+            "image": "/photos/etalon/et-03-astana-marle.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "бетон сірий",
+            "image": "/photos/etalon/et-03-beton-siryi.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "бетон сніжний",
+            "image": "/photos/etalon/et-03-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-temnyi",
+            "label": "бетон темний",
+            "image": "/photos/etalon/et-03-beton-temnyi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "біла текстурна",
+            "image": "/photos/etalon/et-03-bila-teksturna.png"
+          },
+          {
+            "slug": "chorna-korka",
+            "label": "чорна корка",
+            "image": "/photos/etalon/et-03-chorna-korka.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "дуб глазго еко",
+            "image": "/photos/etalon/et-03-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/etalon/et-03-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "карпатська ялина",
+            "image": "/photos/etalon/et-03-karpatska-ialyna.png"
+          },
+          {
+            "slug": "popeliastyi-softach",
+            "label": "попелястий софтач",
+            "image": "/photos/etalon/et-03-popeliastyi-softach.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "рустік авінон білий",
+            "image": "/photos/etalon/et-03-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "рустик золотий",
+            "image": "/photos/etalon/et-03-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "шпон коричневий",
+            "image": "/photos/etalon/et-03-shpon-korychnevyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "сосна прованс",
+            "image": "/photos/etalon/et-03-sosna-provans.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "венге південне тиснене",
+            "image": "/photos/etalon/et-03-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/etalon/et-03-white.png"
+          },
+          {
+            "slug": "zriz-kameniu",
+            "label": "зріз каменю",
+            "image": "/photos/etalon/et-03-zriz-kameniu.png"
+          }
+        ]
+      },
+      {
+        "code": "ET-04",
+        "basePrice": 8293,
+        "colors": [
+          {
+            "slug": "astana-marle",
+            "label": "астана марле",
+            "image": "/photos/etalon/et-04-astana-marle.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "бетон сірий",
+            "image": "/photos/etalon/et-04-beton-siryi.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "бетон сніжний",
+            "image": "/photos/etalon/et-04-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-temnyi",
+            "label": "бетон темний",
+            "image": "/photos/etalon/et-04-beton-temnyi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "біла текстурна",
+            "image": "/photos/etalon/et-04-bila-teksturna.png"
+          },
+          {
+            "slug": "chorna-korka",
+            "label": "чорна корка",
+            "image": "/photos/etalon/et-04-chorna-korka.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "дуб глазго еко",
+            "image": "/photos/etalon/et-04-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/etalon/et-04-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "карпатська ялина",
+            "image": "/photos/etalon/et-04-karpatska-ialyna.png"
+          },
+          {
+            "slug": "popeliastyi-softach",
+            "label": "попелястий софтач",
+            "image": "/photos/etalon/et-04-popeliastyi-softach.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "рустік авінон білий",
+            "image": "/photos/etalon/et-04-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "рустик золотий",
+            "image": "/photos/etalon/et-04-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "шпон коричневий",
+            "image": "/photos/etalon/et-04-shpon-korychnevyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "сосна прованс",
+            "image": "/photos/etalon/et-04-sosna-provans.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "венге південне тиснене",
+            "image": "/photos/etalon/et-04-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/etalon/et-04-white.png"
+          },
+          {
+            "slug": "zriz-kameniu",
+            "label": "зріз каменю",
+            "image": "/photos/etalon/et-04-zriz-kameniu.png"
+          }
+        ]
+      },
+      {
+        "code": "ET-05",
+        "basePrice": 8293,
+        "colors": [
+          {
+            "slug": "astana-marle",
+            "label": "астана марле",
+            "image": "/photos/etalon/et-05-astana-marle.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "бетон сірий",
+            "image": "/photos/etalon/et-05-beton-siryi.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "бетон сніжний",
+            "image": "/photos/etalon/et-05-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-temnyi",
+            "label": "бетон темний",
+            "image": "/photos/etalon/et-05-beton-temnyi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "біла текстурна",
+            "image": "/photos/etalon/et-05-bila-teksturna.png"
+          },
+          {
+            "slug": "chorna-korka",
+            "label": "чорна корка",
+            "image": "/photos/etalon/et-05-chorna-korka.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "дуб глазго еко",
+            "image": "/photos/etalon/et-05-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/etalon/et-05-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "карпатська ялина",
+            "image": "/photos/etalon/et-05-karpatska-ialyna.png"
+          },
+          {
+            "slug": "popeliastyi-softach",
+            "label": "попелястий софтач",
+            "image": "/photos/etalon/et-05-popeliastyi-softach.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "рустік авінон білий",
+            "image": "/photos/etalon/et-05-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "рустик золотий",
+            "image": "/photos/etalon/et-05-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "шпон коричневий",
+            "image": "/photos/etalon/et-05-shpon-korychnevyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "сосна прованс",
+            "image": "/photos/etalon/et-05-sosna-provans.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "венге південне тиснене",
+            "image": "/photos/etalon/et-05-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/etalon/et-05-white.png"
+          },
+          {
+            "slug": "zriz-kameniu",
+            "label": "зріз каменю",
+            "image": "/photos/etalon/et-05-zriz-kameniu.png"
+          }
+        ]
+      },
+      {
+        "code": "ET-06",
+        "basePrice": 8293,
+        "colors": [
+          {
+            "slug": "astana-marle",
+            "label": "астана марле",
+            "image": "/photos/etalon/et-06-astana-marle.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "бетон сірий",
+            "image": "/photos/etalon/et-06-beton-siryi.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "бетон сніжний",
+            "image": "/photos/etalon/et-06-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-temnyi",
+            "label": "бетон темний",
+            "image": "/photos/etalon/et-06-beton-temnyi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "біла текстурна",
+            "image": "/photos/etalon/et-06-bila-teksturna.png"
+          },
+          {
+            "slug": "chorna-korka",
+            "label": "чорна корка",
+            "image": "/photos/etalon/et-06-chorna-korka.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "дуб глазго еко",
+            "image": "/photos/etalon/et-06-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/etalon/et-06-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "карпатська ялина",
+            "image": "/photos/etalon/et-06-karpatska-ialyna.png"
+          },
+          {
+            "slug": "popeliastyi-softach",
+            "label": "попелястий софтач",
+            "image": "/photos/etalon/et-06-popeliastyi-softach.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "рустік авінон білий",
+            "image": "/photos/etalon/et-06-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "рустик золотий",
+            "image": "/photos/etalon/et-06-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "шпон коричневий",
+            "image": "/photos/etalon/et-06-shpon-korychnevyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "сосна прованс",
+            "image": "/photos/etalon/et-06-sosna-provans.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "венге південне тиснене",
+            "image": "/photos/etalon/et-06-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/etalon/et-06-white.png"
+          },
+          {
+            "slug": "zriz-kameniu",
+            "label": "зріз каменю",
+            "image": "/photos/etalon/et-06-zriz-kameniu.png"
+          }
+        ]
+      },
+      {
+        "code": "ET-07",
+        "basePrice": 8293,
+        "colors": [
+          {
+            "slug": "astana-marle",
+            "label": "астана марле",
+            "image": "/photos/etalon/et-07-astana-marle.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "бетон сірий",
+            "image": "/photos/etalon/et-07-beton-siryi.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "бетон сніжний",
+            "image": "/photos/etalon/et-07-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-temnyi",
+            "label": "бетон темний",
+            "image": "/photos/etalon/et-07-beton-temnyi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "біла текстурна",
+            "image": "/photos/etalon/et-07-bila-teksturna.png"
+          },
+          {
+            "slug": "chorna-korka",
+            "label": "чорна корка",
+            "image": "/photos/etalon/et-07-chorna-korka.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "дуб глазго еко",
+            "image": "/photos/etalon/et-07-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/etalon/et-07-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "карпатська ялина",
+            "image": "/photos/etalon/et-07-karpatska-ialyna.png"
+          },
+          {
+            "slug": "popeliastyi-softach",
+            "label": "попелястий софтач",
+            "image": "/photos/etalon/et-07-popeliastyi-softach.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "рустік авінон білий",
+            "image": "/photos/etalon/et-07-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "рустик золотий",
+            "image": "/photos/etalon/et-07-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "шпон коричневий",
+            "image": "/photos/etalon/et-07-shpon-korychnevyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "сосна прованс",
+            "image": "/photos/etalon/et-07-sosna-provans.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "венге південне тиснене",
+            "image": "/photos/etalon/et-07-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/etalon/et-07-white.png"
+          },
+          {
+            "slug": "zriz-kameniu",
+            "label": "зріз каменю",
+            "image": "/photos/etalon/et-07-zriz-kameniu.png"
+          }
+        ]
+      },
+      {
+        "code": "ET-08",
+        "basePrice": 8293,
+        "colors": [
+          {
+            "slug": "astana-marle",
+            "label": "астана марле",
+            "image": "/photos/etalon/et-08-astana-marle.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "бетон сірий",
+            "image": "/photos/etalon/et-08-beton-siryi.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "бетон сніжний",
+            "image": "/photos/etalon/et-08-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-temnyi",
+            "label": "бетон темний",
+            "image": "/photos/etalon/et-08-beton-temnyi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "біла текстурна",
+            "image": "/photos/etalon/et-08-bila-teksturna.png"
+          },
+          {
+            "slug": "chorna-korka",
+            "label": "чорна корка",
+            "image": "/photos/etalon/et-08-chorna-korka.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "дуб глазго еко",
+            "image": "/photos/etalon/et-08-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/etalon/et-08-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "карпатська ялина",
+            "image": "/photos/etalon/et-08-karpatska-ialyna.png"
+          },
+          {
+            "slug": "popeliastyi-softach",
+            "label": "попелястий софтач",
+            "image": "/photos/etalon/et-08-popeliastyi-softach.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "рустік авінон білий",
+            "image": "/photos/etalon/et-08-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "рустик золотий",
+            "image": "/photos/etalon/et-08-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "шпон коричневий",
+            "image": "/photos/etalon/et-08-shpon-korychnevyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "сосна прованс",
+            "image": "/photos/etalon/et-08-sosna-provans.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "венге південне тиснене",
+            "image": "/photos/etalon/et-08-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/etalon/et-08-white.png"
+          },
+          {
+            "slug": "zriz-kameniu",
+            "label": "зріз каменю",
+            "image": "/photos/etalon/et-08-zriz-kameniu.png"
+          }
+        ]
+      },
+      {
+        "code": "ET-09",
+        "basePrice": 8293,
+        "colors": [
+          {
+            "slug": "astana-marle",
+            "label": "астана марле",
+            "image": "/photos/etalon/et-09-astana-marle.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "бетон сірий",
+            "image": "/photos/etalon/et-09-beton-siryi.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "бетон сніжний",
+            "image": "/photos/etalon/et-09-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-temnyi",
+            "label": "бетон темний",
+            "image": "/photos/etalon/et-09-beton-temnyi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "біла текстурна",
+            "image": "/photos/etalon/et-09-bila-teksturna.png"
+          },
+          {
+            "slug": "chorna-korka",
+            "label": "чорна корка",
+            "image": "/photos/etalon/et-09-chorna-korka.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "дуб глазго еко",
+            "image": "/photos/etalon/et-09-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/etalon/et-09-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "карпатська ялина",
+            "image": "/photos/etalon/et-09-karpatska-ialyna.png"
+          },
+          {
+            "slug": "popeliastyi-softach",
+            "label": "попелястий софтач",
+            "image": "/photos/etalon/et-09-popeliastyi-softach.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "рустік авінон білий",
+            "image": "/photos/etalon/et-09-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "рустик золотий",
+            "image": "/photos/etalon/et-09-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "шпон коричневий",
+            "image": "/photos/etalon/et-09-shpon-korychnevyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "сосна прованс",
+            "image": "/photos/etalon/et-09-sosna-provans.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "венге південне тиснене",
+            "image": "/photos/etalon/et-09-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/etalon/et-09-white.png"
+          },
+          {
+            "slug": "zriz-kameniu",
+            "label": "зріз каменю",
+            "image": "/photos/etalon/et-09-zriz-kameniu.png"
+          }
+        ]
+      },
+      {
+        "code": "ET-10",
+        "basePrice": 8293,
+        "colors": [
+          {
+            "slug": "astana-marle",
+            "label": "астана марле",
+            "image": "/photos/etalon/et-10-astana-marle.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "бетон сірий",
+            "image": "/photos/etalon/et-10-beton-siryi.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "бетон сніжний",
+            "image": "/photos/etalon/et-10-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-temnyi",
+            "label": "бетон темний",
+            "image": "/photos/etalon/et-10-beton-temnyi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "біла текстурна",
+            "image": "/photos/etalon/et-10-bila-teksturna.png"
+          },
+          {
+            "slug": "chorna-korka",
+            "label": "чорна корка",
+            "image": "/photos/etalon/et-10-chorna-korka.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "дуб глазго еко",
+            "image": "/photos/etalon/et-10-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/etalon/et-10-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "карпатська ялина",
+            "image": "/photos/etalon/et-10-karpatska-ialyna.png"
+          },
+          {
+            "slug": "popeliastyi-softach",
+            "label": "попелястий софтач",
+            "image": "/photos/etalon/et-10-popeliastyi-softach.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "рустік авінон білий",
+            "image": "/photos/etalon/et-10-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "рустик золотий",
+            "image": "/photos/etalon/et-10-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "шпон коричневий",
+            "image": "/photos/etalon/et-10-shpon-korychnevyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "сосна прованс",
+            "image": "/photos/etalon/et-10-sosna-provans.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "венге південне тиснене",
+            "image": "/photos/etalon/et-10-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/etalon/et-10-white.png"
+          },
+          {
+            "slug": "zriz-kameniu",
+            "label": "зріз каменю",
+            "image": "/photos/etalon/et-10-zriz-kameniu.png"
+          }
+        ]
+      },
+      {
+        "code": "ET-11",
+        "basePrice": 8293,
+        "colors": [
+          {
+            "slug": "astana-marle",
+            "label": "астана марле",
+            "image": "/photos/etalon/et-11-astana-marle.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "бетон сірий",
+            "image": "/photos/etalon/et-11-beton-siryi.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "бетон сніжний",
+            "image": "/photos/etalon/et-11-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-temnyi",
+            "label": "бетон темний",
+            "image": "/photos/etalon/et-11-beton-temnyi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "біла текстурна",
+            "image": "/photos/etalon/et-11-bila-teksturna.png"
+          },
+          {
+            "slug": "chorna-korka",
+            "label": "чорна корка",
+            "image": "/photos/etalon/et-11-chorna-korka.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "дуб глазго еко",
+            "image": "/photos/etalon/et-11-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/etalon/et-11-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "карпатська ялина",
+            "image": "/photos/etalon/et-11-karpatska-ialyna.png"
+          },
+          {
+            "slug": "popeliastyi-softach",
+            "label": "попелястий софтач",
+            "image": "/photos/etalon/et-11-popeliastyi-softach.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "рустік авінон білий",
+            "image": "/photos/etalon/et-11-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "рустик золотий",
+            "image": "/photos/etalon/et-11-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "шпон коричневий",
+            "image": "/photos/etalon/et-11-shpon-korychnevyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "сосна прованс",
+            "image": "/photos/etalon/et-11-sosna-provans.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "венге південне тиснене",
+            "image": "/photos/etalon/et-11-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/etalon/et-11-white.png"
+          },
+          {
+            "slug": "zriz-kameniu",
+            "label": "зріз каменю",
+            "image": "/photos/etalon/et-11-zriz-kameniu.png"
+          }
+        ]
+      },
+      {
+        "code": "ET-12",
+        "basePrice": 8293,
+        "colors": [
+          {
+            "slug": "astana-marle",
+            "label": "астана марле",
+            "image": "/photos/etalon/et-12-astana-marle.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "бетон сірий",
+            "image": "/photos/etalon/et-12-beton-siryi.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "бетон сніжний",
+            "image": "/photos/etalon/et-12-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-temnyi",
+            "label": "бетон темний",
+            "image": "/photos/etalon/et-12-beton-temnyi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "біла текстурна",
+            "image": "/photos/etalon/et-12-bila-teksturna.png"
+          },
+          {
+            "slug": "chorna-korka",
+            "label": "чорна корка",
+            "image": "/photos/etalon/et-12-chorna-korka.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "дуб глазго еко",
+            "image": "/photos/etalon/et-12-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/etalon/et-12-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "карпатська ялина",
+            "image": "/photos/etalon/et-12-karpatska-ialyna.png"
+          },
+          {
+            "slug": "popeliastyi-softach",
+            "label": "попелястий софтач",
+            "image": "/photos/etalon/et-12-popeliastyi-softach.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "рустік авінон білий",
+            "image": "/photos/etalon/et-12-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "рустик золотий",
+            "image": "/photos/etalon/et-12-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "шпон коричневий",
+            "image": "/photos/etalon/et-12-shpon-korychnevyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "сосна прованс",
+            "image": "/photos/etalon/et-12-sosna-provans.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "венге південне тиснене",
+            "image": "/photos/etalon/et-12-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/etalon/et-12-white.png"
+          },
+          {
+            "slug": "zriz-kameniu",
+            "label": "зріз каменю",
+            "image": "/photos/etalon/et-12-zriz-kameniu.png"
+          }
+        ]
+      },
+      {
+        "code": "ET-13",
+        "basePrice": 8293,
+        "colors": [
+          {
+            "slug": "astana-marle",
+            "label": "астана марле",
+            "image": "/photos/etalon/et-13-astana-marle.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "бетон сірий",
+            "image": "/photos/etalon/et-13-beton-siryi.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "бетон сніжний",
+            "image": "/photos/etalon/et-13-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-temnyi",
+            "label": "бетон темний",
+            "image": "/photos/etalon/et-13-beton-temnyi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "біла текстурна",
+            "image": "/photos/etalon/et-13-bila-teksturna.png"
+          },
+          {
+            "slug": "chorna-korka",
+            "label": "чорна корка",
+            "image": "/photos/etalon/et-13-chorna-korka.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "дуб глазго еко",
+            "image": "/photos/etalon/et-13-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/etalon/et-13-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "карпатська ялина",
+            "image": "/photos/etalon/et-13-karpatska-ialyna.png"
+          },
+          {
+            "slug": "popeliastyi-softach",
+            "label": "попелястий софтач",
+            "image": "/photos/etalon/et-13-popeliastyi-softach.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "рустік авінон білий",
+            "image": "/photos/etalon/et-13-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "рустик золотий",
+            "image": "/photos/etalon/et-13-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "шпон коричневий",
+            "image": "/photos/etalon/et-13-shpon-korychnevyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "сосна прованс",
+            "image": "/photos/etalon/et-13-sosna-provans.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "венге південне тиснене",
+            "image": "/photos/etalon/et-13-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/etalon/et-13-white.png"
+          },
+          {
+            "slug": "zriz-kameniu",
+            "label": "зріз каменю",
+            "image": "/photos/etalon/et-13-zriz-kameniu.png"
+          }
+        ]
+      },
+      {
+        "code": "ET-14",
+        "basePrice": 8293,
+        "colors": [
+          {
+            "slug": "astana-marle",
+            "label": "астана марле",
+            "image": "/photos/etalon/et-14-astana-marle.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "бетон сірий",
+            "image": "/photos/etalon/et-14-beton-siryi.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "бетон сніжний",
+            "image": "/photos/etalon/et-14-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-temnyi",
+            "label": "бетон темний",
+            "image": "/photos/etalon/et-14-beton-temnyi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "біла текстурна",
+            "image": "/photos/etalon/et-14-bila-teksturna.png"
+          },
+          {
+            "slug": "chorna-korka",
+            "label": "чорна корка",
+            "image": "/photos/etalon/et-14-chorna-korka.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "дуб глазго еко",
+            "image": "/photos/etalon/et-14-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/etalon/et-14-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "карпатська ялина",
+            "image": "/photos/etalon/et-14-karpatska-ialyna.png"
+          },
+          {
+            "slug": "popeliastyi-softach",
+            "label": "попелястий софтач",
+            "image": "/photos/etalon/et-14-popeliastyi-softach.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "рустік авінон білий",
+            "image": "/photos/etalon/et-14-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "рустик золотий",
+            "image": "/photos/etalon/et-14-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "шпон коричневий",
+            "image": "/photos/etalon/et-14-shpon-korychnevyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "сосна прованс",
+            "image": "/photos/etalon/et-14-sosna-provans.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "венге південне тиснене",
+            "image": "/photos/etalon/et-14-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/etalon/et-14-white.png"
+          },
+          {
+            "slug": "zriz-kameniu",
+            "label": "зріз каменю",
+            "image": "/photos/etalon/et-14-zriz-kameniu.png"
+          }
+        ]
+      },
+      {
+        "code": "ET-15",
+        "basePrice": 8293,
+        "colors": [
+          {
+            "slug": "astana-marle",
+            "label": "астана марле",
+            "image": "/photos/etalon/et-15-astana-marle.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "бетон сірий",
+            "image": "/photos/etalon/et-15-beton-siryi.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "бетон сніжний",
+            "image": "/photos/etalon/et-15-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-temnyi",
+            "label": "бетон темний",
+            "image": "/photos/etalon/et-15-beton-temnyi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "біла текстурна",
+            "image": "/photos/etalon/et-15-bila-teksturna.png"
+          },
+          {
+            "slug": "chorna-korka",
+            "label": "чорна корка",
+            "image": "/photos/etalon/et-15-chorna-korka.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "дуб глазго еко",
+            "image": "/photos/etalon/et-15-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/etalon/et-15-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "карпатська ялина",
+            "image": "/photos/etalon/et-15-karpatska-ialyna.png"
+          },
+          {
+            "slug": "popeliastyi-softach",
+            "label": "попелястий софтач",
+            "image": "/photos/etalon/et-15-popeliastyi-softach.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "рустік авінон білий",
+            "image": "/photos/etalon/et-15-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "рустик золотий",
+            "image": "/photos/etalon/et-15-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "шпон коричневий",
+            "image": "/photos/etalon/et-15-shpon-korychnevyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "сосна прованс",
+            "image": "/photos/etalon/et-15-sosna-provans.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "венге південне тиснене",
+            "image": "/photos/etalon/et-15-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/etalon/et-15-white.png"
+          },
+          {
+            "slug": "zriz-kameniu",
+            "label": "зріз каменю",
+            "image": "/photos/etalon/et-15-zriz-kameniu.png"
+          }
+        ]
+      },
+      {
+        "code": "ET-16",
+        "basePrice": 8293,
+        "colors": [
+          {
+            "slug": "astana-marle",
+            "label": "астана марле",
+            "image": "/photos/etalon/et-16-astana-marle.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "бетон сірий",
+            "image": "/photos/etalon/et-16-beton-siryi.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "бетон сніжний",
+            "image": "/photos/etalon/et-16-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-temnyi",
+            "label": "бетон темний",
+            "image": "/photos/etalon/et-16-beton-temnyi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "біла текстурна",
+            "image": "/photos/etalon/et-16-bila-teksturna.png"
+          },
+          {
+            "slug": "chorna-korka",
+            "label": "чорна корка",
+            "image": "/photos/etalon/et-16-chorna-korka.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "дуб глазго еко",
+            "image": "/photos/etalon/et-16-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/etalon/et-16-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "карпатська ялина",
+            "image": "/photos/etalon/et-16-karpatska-ialyna.png"
+          },
+          {
+            "slug": "popeliastyi-softach",
+            "label": "попелястий софтач",
+            "image": "/photos/etalon/et-16-popeliastyi-softach.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "рустік авінон білий",
+            "image": "/photos/etalon/et-16-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "рустик золотий",
+            "image": "/photos/etalon/et-16-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "шпон коричневий",
+            "image": "/photos/etalon/et-16-shpon-korychnevyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "сосна прованс",
+            "image": "/photos/etalon/et-16-sosna-provans.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "венге південне тиснене",
+            "image": "/photos/etalon/et-16-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/etalon/et-16-white.png"
+          },
+          {
+            "slug": "zriz-kameniu",
+            "label": "зріз каменю",
+            "image": "/photos/etalon/et-16-zriz-kameniu.png"
+          }
+        ]
+      },
+      {
+        "code": "ET-17",
+        "basePrice": 8293,
+        "colors": [
+          {
+            "slug": "astana-marle",
+            "label": "астана марле",
+            "image": "/photos/etalon/et-17-astana-marle.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "бетон сірий",
+            "image": "/photos/etalon/et-17-beton-siryi.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "бетон сніжний",
+            "image": "/photos/etalon/et-17-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-temnyi",
+            "label": "бетон темний",
+            "image": "/photos/etalon/et-17-beton-temnyi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "біла текстурна",
+            "image": "/photos/etalon/et-17-bila-teksturna.png"
+          },
+          {
+            "slug": "chorna-korka",
+            "label": "чорна корка",
+            "image": "/photos/etalon/et-17-chorna-korka.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "дуб глазго еко",
+            "image": "/photos/etalon/et-17-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/etalon/et-17-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "карпатська ялина",
+            "image": "/photos/etalon/et-17-karpatska-ialyna.png"
+          },
+          {
+            "slug": "popeliastyi-softach",
+            "label": "попелястий софтач",
+            "image": "/photos/etalon/et-17-popeliastyi-softach.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "рустік авінон білий",
+            "image": "/photos/etalon/et-17-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "рустик золотий",
+            "image": "/photos/etalon/et-17-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "шпон коричневий",
+            "image": "/photos/etalon/et-17-shpon-korychnevyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "сосна прованс",
+            "image": "/photos/etalon/et-17-sosna-provans.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "венге південне тиснене",
+            "image": "/photos/etalon/et-17-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/etalon/et-17-white.png"
+          },
+          {
+            "slug": "zriz-kameniu",
+            "label": "зріз каменю",
+            "image": "/photos/etalon/et-17-zriz-kameniu.png"
+          }
+        ]
+      }
+    ]
+  },
+  "nominal": {
+    "label": "NOMINAL",
+    "thickness": "34 мм",
+    "komplekt": {
+      "korob": [
+        {
+          "label": "Телескопічний 80 мм",
+          "price": 2646
+        },
+        {
+          "label": "Телескопічний 100 мм",
+          "price": 3753
+        },
+        {
+          "label": "Телескопічний 120 мм",
+          "price": 3944
+        }
+      ],
+      "lyshtva": [
+        {
+          "label": "Телескопічна 80 мм",
+          "price": 1027
+        },
+        {
+          "label": "Телескопічна 80 мм (крило 40 мм)",
+          "price": 1315
+        }
+      ],
+      "dobir": [
+        {
+          "label": "Телескопічний 100 мм",
+          "price": 1012
+        },
+        {
+          "label": "Телескопічний 150 мм",
+          "price": 1336
+        },
+        {
+          "label": "Телескопічний 200 мм",
+          "price": 1920
+        }
+      ]
+    },
+    "models": [
+      {
+        "code": "NL-01",
+        "basePrice": 5824,
+        "colors": [
+          {
+            "slug": "antratsyt",
+            "label": "Антрацит",
+            "image": "/photos/nominal/nl-01-antratsyt.png"
+          },
+          {
+            "slug": "dub-nemo-late",
+            "label": "Дуб немо лате",
+            "image": "/photos/nominal/nl-01-dub-nemo-late.png"
+          },
+          {
+            "slug": "dub-nemo-sribliastyi",
+            "label": "Дуб немо сріблястий",
+            "image": "/photos/nominal/nl-01-dub-nemo-sribliastyi.png"
+          },
+          {
+            "slug": "dub-pasadena",
+            "label": "Дуб пасадена",
+            "image": "/photos/nominal/nl-01-dub-pasadena.png"
+          },
+          {
+            "slug": "dub-portovyi",
+            "label": "Дуб портовий",
+            "image": "/photos/nominal/nl-01-dub-portovyi.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "Дуб шато",
+            "image": "/photos/nominal/nl-01-dub-shato.png"
+          },
+          {
+            "slug": "feldhrau",
+            "label": "Фельдграу",
+            "image": "/photos/nominal/nl-01-feldhrau.png"
+          },
+          {
+            "slug": "oksyd-bilyi",
+            "label": "Оксид білий",
+            "image": "/photos/nominal/nl-01-oksyd-bilyi.png"
+          },
+          {
+            "slug": "oksyd-svitlyi",
+            "label": "Оксид світлий",
+            "image": "/photos/nominal/nl-01-oksyd-svitlyi.png"
+          },
+          {
+            "slug": "oksyd-temnyi",
+            "label": "Оксид темний",
+            "image": "/photos/nominal/nl-01-oksyd-temnyi.png"
+          },
+          {
+            "slug": "venhe-pivdenne",
+            "label": "венге південне",
+            "image": "/photos/nominal/nl-01-venhe-pivdenne.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/nominal/nl-01-white.png"
+          }
+        ]
+      },
+      {
+        "code": "NL-02",
+        "basePrice": 6760,
+        "colors": [
+          {
+            "slug": "antratsyt",
+            "label": "Антрацит",
+            "image": "/photos/nominal/nl-02-antratsyt.png"
+          },
+          {
+            "slug": "dub-nemo-late",
+            "label": "Дуб немо лате",
+            "image": "/photos/nominal/nl-02-dub-nemo-late.png"
+          },
+          {
+            "slug": "dub-nemo-sribliastyi",
+            "label": "Дуб немо сріблястий",
+            "image": "/photos/nominal/nl-02-dub-nemo-sribliastyi.png"
+          },
+          {
+            "slug": "dub-pasadena",
+            "label": "Дуб пасадена",
+            "image": "/photos/nominal/nl-02-dub-pasadena.png"
+          },
+          {
+            "slug": "dub-portovyi",
+            "label": "Дуб портовий",
+            "image": "/photos/nominal/nl-02-dub-portovyi.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "Дуб шато",
+            "image": "/photos/nominal/nl-02-dub-shato.png"
+          },
+          {
+            "slug": "feldhrau",
+            "label": "Фельдграу",
+            "image": "/photos/nominal/nl-02-feldhrau.png"
+          },
+          {
+            "slug": "oksyd-bilyi",
+            "label": "Оксид білий",
+            "image": "/photos/nominal/nl-02-oksyd-bilyi.png"
+          },
+          {
+            "slug": "oksyd-svitlyi",
+            "label": "Оксид світлий",
+            "image": "/photos/nominal/nl-02-oksyd-svitlyi.png"
+          },
+          {
+            "slug": "oksyd-temnyi",
+            "label": "Оксид темний",
+            "image": "/photos/nominal/nl-02-oksyd-temnyi.png"
+          },
+          {
+            "slug": "venhe-pivdenne",
+            "label": "венге південне",
+            "image": "/photos/nominal/nl-02-venhe-pivdenne.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/nominal/nl-02-white.png"
+          }
+        ]
+      },
+      {
+        "code": "NL-03",
+        "basePrice": 6760,
+        "colors": [
+          {
+            "slug": "antratsyt",
+            "label": "Антрацит",
+            "image": "/photos/nominal/nl-03-antratsyt.png"
+          },
+          {
+            "slug": "dub-nemo-late",
+            "label": "Дуб немо лате",
+            "image": "/photos/nominal/nl-03-dub-nemo-late.png"
+          },
+          {
+            "slug": "dub-nemo-sribliastyi",
+            "label": "Дуб немо сріблястий",
+            "image": "/photos/nominal/nl-03-dub-nemo-sribliastyi.png"
+          },
+          {
+            "slug": "dub-pasadena",
+            "label": "Дуб пасадена",
+            "image": "/photos/nominal/nl-03-dub-pasadena.png"
+          },
+          {
+            "slug": "dub-portovyi",
+            "label": "Дуб портовий",
+            "image": "/photos/nominal/nl-03-dub-portovyi.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "Дуб шато",
+            "image": "/photos/nominal/nl-03-dub-shato.png"
+          },
+          {
+            "slug": "feldhrau",
+            "label": "Фельдграу",
+            "image": "/photos/nominal/nl-03-feldhrau.png"
+          },
+          {
+            "slug": "oksyd-bilyi",
+            "label": "Оксид білий",
+            "image": "/photos/nominal/nl-03-oksyd-bilyi.png"
+          },
+          {
+            "slug": "oksyd-svitlyi",
+            "label": "Оксид світлий",
+            "image": "/photos/nominal/nl-03-oksyd-svitlyi.png"
+          },
+          {
+            "slug": "oksyd-temnyi",
+            "label": "Оксид темний",
+            "image": "/photos/nominal/nl-03-oksyd-temnyi.png"
+          },
+          {
+            "slug": "venhe-pivdenne",
+            "label": "венге південне",
+            "image": "/photos/nominal/nl-03-venhe-pivdenne.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/nominal/nl-03-white.png"
+          }
+        ]
+      },
+      {
+        "code": "NL-04",
+        "basePrice": 6760,
+        "colors": [
+          {
+            "slug": "antratsyt",
+            "label": "Антрацит",
+            "image": "/photos/nominal/nl-04-antratsyt.png"
+          },
+          {
+            "slug": "dub-nemo-late",
+            "label": "Дуб немо лате",
+            "image": "/photos/nominal/nl-04-dub-nemo-late.png"
+          },
+          {
+            "slug": "dub-nemo-sribliastyi",
+            "label": "Дуб немо сріблястий",
+            "image": "/photos/nominal/nl-04-dub-nemo-sribliastyi.png"
+          },
+          {
+            "slug": "dub-pasadena",
+            "label": "Дуб пасадена",
+            "image": "/photos/nominal/nl-04-dub-pasadena.png"
+          },
+          {
+            "slug": "dub-portovyi",
+            "label": "Дуб портовий",
+            "image": "/photos/nominal/nl-04-dub-portovyi.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "Дуб шато",
+            "image": "/photos/nominal/nl-04-dub-shato.png"
+          },
+          {
+            "slug": "feldhrau",
+            "label": "Фельдграу",
+            "image": "/photos/nominal/nl-04-feldhrau.png"
+          },
+          {
+            "slug": "oksyd-bilyi",
+            "label": "Оксид білий",
+            "image": "/photos/nominal/nl-04-oksyd-bilyi.png"
+          },
+          {
+            "slug": "oksyd-svitlyi",
+            "label": "Оксид світлий",
+            "image": "/photos/nominal/nl-04-oksyd-svitlyi.png"
+          },
+          {
+            "slug": "oksyd-temnyi",
+            "label": "Оксид темний",
+            "image": "/photos/nominal/nl-04-oksyd-temnyi.png"
+          },
+          {
+            "slug": "venhe-pivdenne",
+            "label": "венге південне",
+            "image": "/photos/nominal/nl-04-venhe-pivdenne.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/nominal/nl-04-white.png"
+          }
+        ]
+      },
+      {
+        "code": "NL-05",
+        "basePrice": 6760,
+        "colors": [
+          {
+            "slug": "antratsyt",
+            "label": "Антрацит",
+            "image": "/photos/nominal/nl-05-antratsyt.png"
+          },
+          {
+            "slug": "dub-nemo-late",
+            "label": "Дуб немо лате",
+            "image": "/photos/nominal/nl-05-dub-nemo-late.png"
+          },
+          {
+            "slug": "dub-nemo-sribliastyi",
+            "label": "Дуб немо сріблястий",
+            "image": "/photos/nominal/nl-05-dub-nemo-sribliastyi.png"
+          },
+          {
+            "slug": "dub-pasadena",
+            "label": "Дуб пасадена",
+            "image": "/photos/nominal/nl-05-dub-pasadena.png"
+          },
+          {
+            "slug": "dub-portovyi",
+            "label": "Дуб портовий",
+            "image": "/photos/nominal/nl-05-dub-portovyi.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "Дуб шато",
+            "image": "/photos/nominal/nl-05-dub-shato.png"
+          },
+          {
+            "slug": "feldhrau",
+            "label": "Фельдграу",
+            "image": "/photos/nominal/nl-05-feldhrau.png"
+          },
+          {
+            "slug": "oksyd-bilyi",
+            "label": "Оксид білий",
+            "image": "/photos/nominal/nl-05-oksyd-bilyi.png"
+          },
+          {
+            "slug": "oksyd-svitlyi",
+            "label": "Оксид світлий",
+            "image": "/photos/nominal/nl-05-oksyd-svitlyi.png"
+          },
+          {
+            "slug": "oksyd-temnyi",
+            "label": "Оксид темний",
+            "image": "/photos/nominal/nl-05-oksyd-temnyi.png"
+          },
+          {
+            "slug": "venhe-pivdenne",
+            "label": "венге південне",
+            "image": "/photos/nominal/nl-05-venhe-pivdenne.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/nominal/nl-05-white.png"
+          }
+        ]
+      },
+      {
+        "code": "NL-06",
+        "basePrice": 6760,
+        "colors": [
+          {
+            "slug": "antratsyt",
+            "label": "Антрацит",
+            "image": "/photos/nominal/nl-06-antratsyt.png"
+          },
+          {
+            "slug": "dub-nemo-late",
+            "label": "Дуб немо лате",
+            "image": "/photos/nominal/nl-06-dub-nemo-late.png"
+          },
+          {
+            "slug": "dub-nemo-sribliastyi",
+            "label": "Дуб немо сріблястий",
+            "image": "/photos/nominal/nl-06-dub-nemo-sribliastyi.png"
+          },
+          {
+            "slug": "dub-pasadena",
+            "label": "Дуб пасадена",
+            "image": "/photos/nominal/nl-06-dub-pasadena.png"
+          },
+          {
+            "slug": "dub-portovyi",
+            "label": "Дуб портовий",
+            "image": "/photos/nominal/nl-06-dub-portovyi.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "Дуб шато",
+            "image": "/photos/nominal/nl-06-dub-shato.png"
+          },
+          {
+            "slug": "feldhrau",
+            "label": "Фельдграу",
+            "image": "/photos/nominal/nl-06-feldhrau.png"
+          },
+          {
+            "slug": "oksyd-bilyi",
+            "label": "Оксид білий",
+            "image": "/photos/nominal/nl-06-oksyd-bilyi.png"
+          },
+          {
+            "slug": "oksyd-svitlyi",
+            "label": "Оксид світлий",
+            "image": "/photos/nominal/nl-06-oksyd-svitlyi.png"
+          },
+          {
+            "slug": "oksyd-temnyi",
+            "label": "Оксид темний",
+            "image": "/photos/nominal/nl-06-oksyd-temnyi.png"
+          },
+          {
+            "slug": "venhe",
+            "label": "Венге",
+            "image": "/photos/nominal/nl-06-venhe.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/nominal/nl-06-white.png"
+          }
+        ]
+      },
+      {
+        "code": "NL-07",
+        "basePrice": 6760,
+        "colors": [
+          {
+            "slug": "antratsyt",
+            "label": "Антрацит",
+            "image": "/photos/nominal/nl-07-antratsyt.png"
+          },
+          {
+            "slug": "dub-nemo-late",
+            "label": "Дуб немо лате",
+            "image": "/photos/nominal/nl-07-dub-nemo-late.png"
+          },
+          {
+            "slug": "dub-nemo-sribliastyi",
+            "label": "Дуб немо сріблястий",
+            "image": "/photos/nominal/nl-07-dub-nemo-sribliastyi.png"
+          },
+          {
+            "slug": "dub-pasadena",
+            "label": "Дуб пасадена",
+            "image": "/photos/nominal/nl-07-dub-pasadena.png"
+          },
+          {
+            "slug": "dub-portovyi",
+            "label": "Дуб портовий",
+            "image": "/photos/nominal/nl-07-dub-portovyi.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "Дуб шато",
+            "image": "/photos/nominal/nl-07-dub-shato.png"
+          },
+          {
+            "slug": "feldhrau",
+            "label": "Фельдграу",
+            "image": "/photos/nominal/nl-07-feldhrau.png"
+          },
+          {
+            "slug": "oksyd-bilyi",
+            "label": "Оксид білий",
+            "image": "/photos/nominal/nl-07-oksyd-bilyi.png"
+          },
+          {
+            "slug": "oksyd-svitlyi",
+            "label": "Оксид світлий",
+            "image": "/photos/nominal/nl-07-oksyd-svitlyi.png"
+          },
+          {
+            "slug": "oksyd-temnyi",
+            "label": "Оксид темний",
+            "image": "/photos/nominal/nl-07-oksyd-temnyi.png"
+          },
+          {
+            "slug": "venhe",
+            "label": "Венге",
+            "image": "/photos/nominal/nl-07-venhe.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/nominal/nl-07-white.png"
+          }
+        ]
+      },
+      {
+        "code": "NL-08",
+        "basePrice": 6760,
+        "colors": [
+          {
+            "slug": "antratsyt",
+            "label": "Антрацит",
+            "image": "/photos/nominal/nl-08-antratsyt.png"
+          },
+          {
+            "slug": "dub-nemo-late",
+            "label": "Дуб немо лате",
+            "image": "/photos/nominal/nl-08-dub-nemo-late.png"
+          },
+          {
+            "slug": "dub-nemo-sribliastyi",
+            "label": "Дуб немо сріблястий",
+            "image": "/photos/nominal/nl-08-dub-nemo-sribliastyi.png"
+          },
+          {
+            "slug": "dub-pasadena",
+            "label": "Дуб пасадена",
+            "image": "/photos/nominal/nl-08-dub-pasadena.png"
+          },
+          {
+            "slug": "dub-portovyi",
+            "label": "Дуб портовий",
+            "image": "/photos/nominal/nl-08-dub-portovyi.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "Дуб шато",
+            "image": "/photos/nominal/nl-08-dub-shato.png"
+          },
+          {
+            "slug": "feldhrau",
+            "label": "Фельдграу",
+            "image": "/photos/nominal/nl-08-feldhrau.png"
+          },
+          {
+            "slug": "oksyd-bilyi",
+            "label": "Оксид білий",
+            "image": "/photos/nominal/nl-08-oksyd-bilyi.png"
+          },
+          {
+            "slug": "oksyd-svitlyi",
+            "label": "Оксид світлий",
+            "image": "/photos/nominal/nl-08-oksyd-svitlyi.png"
+          },
+          {
+            "slug": "oksyd-temnyi",
+            "label": "Оксид темний",
+            "image": "/photos/nominal/nl-08-oksyd-temnyi.png"
+          },
+          {
+            "slug": "venhe",
+            "label": "Венге",
+            "image": "/photos/nominal/nl-08-venhe.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/nominal/nl-08-white.png"
+          }
+        ]
+      },
+      {
+        "code": "NL-09",
+        "basePrice": 6760,
+        "colors": [
+          {
+            "slug": "antratsyt",
+            "label": "Антрацит",
+            "image": "/photos/nominal/nl-09-antratsyt.png"
+          },
+          {
+            "slug": "dub-nemo-late",
+            "label": "Дуб немо лате",
+            "image": "/photos/nominal/nl-09-dub-nemo-late.png"
+          },
+          {
+            "slug": "dub-nemo-sribliastyi",
+            "label": "Дуб немо сріблястий",
+            "image": "/photos/nominal/nl-09-dub-nemo-sribliastyi.png"
+          },
+          {
+            "slug": "dub-pasadena",
+            "label": "Дуб пасадена",
+            "image": "/photos/nominal/nl-09-dub-pasadena.png"
+          },
+          {
+            "slug": "dub-portovyi",
+            "label": "Дуб портовий",
+            "image": "/photos/nominal/nl-09-dub-portovyi.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "Дуб шато",
+            "image": "/photos/nominal/nl-09-dub-shato.png"
+          },
+          {
+            "slug": "feldhrau",
+            "label": "Фельдграу",
+            "image": "/photos/nominal/nl-09-feldhrau.png"
+          },
+          {
+            "slug": "oksyd-bilyi",
+            "label": "Оксид білий",
+            "image": "/photos/nominal/nl-09-oksyd-bilyi.png"
+          },
+          {
+            "slug": "oksyd-svitlyi",
+            "label": "Оксид світлий",
+            "image": "/photos/nominal/nl-09-oksyd-svitlyi.png"
+          },
+          {
+            "slug": "oksyd-temnyi",
+            "label": "Оксид темний",
+            "image": "/photos/nominal/nl-09-oksyd-temnyi.png"
+          },
+          {
+            "slug": "venhe",
+            "label": "Венге",
+            "image": "/photos/nominal/nl-09-venhe.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/nominal/nl-09-white.png"
+          }
+        ]
+      },
+      {
+        "code": "NL-10",
+        "basePrice": 6760,
+        "colors": [
+          {
+            "slug": "antratsyt",
+            "label": "Антрацит",
+            "image": "/photos/nominal/nl-10-antratsyt.png"
+          },
+          {
+            "slug": "dub-nemo-late",
+            "label": "Дуб немо лате",
+            "image": "/photos/nominal/nl-10-dub-nemo-late.png"
+          },
+          {
+            "slug": "dub-nemo-sribliastyi",
+            "label": "Дуб немо сріблястий",
+            "image": "/photos/nominal/nl-10-dub-nemo-sribliastyi.png"
+          },
+          {
+            "slug": "dub-pasadena",
+            "label": "Дуб пасадена",
+            "image": "/photos/nominal/nl-10-dub-pasadena.png"
+          },
+          {
+            "slug": "dub-portovyi",
+            "label": "Дуб портовий",
+            "image": "/photos/nominal/nl-10-dub-portovyi.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "Дуб шато",
+            "image": "/photos/nominal/nl-10-dub-shato.png"
+          },
+          {
+            "slug": "feldhrau",
+            "label": "Фельдграу",
+            "image": "/photos/nominal/nl-10-feldhrau.png"
+          },
+          {
+            "slug": "oksyd-bilyi",
+            "label": "Оксид білий",
+            "image": "/photos/nominal/nl-10-oksyd-bilyi.png"
+          },
+          {
+            "slug": "oksyd-svitlyi",
+            "label": "Оксид світлий",
+            "image": "/photos/nominal/nl-10-oksyd-svitlyi.png"
+          },
+          {
+            "slug": "oksyd-temnyi",
+            "label": "Оксид темний",
+            "image": "/photos/nominal/nl-10-oksyd-temnyi.png"
+          },
+          {
+            "slug": "venhe",
+            "label": "Венге",
+            "image": "/photos/nominal/nl-10-venhe.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/nominal/nl-10-white.png"
+          }
+        ]
+      }
+    ]
+  },
+  "frezzatti": {
+    "label": "FREZZATTI",
+    "thickness": "34 мм",
+    "komplekt": {
+      "korob": [
+        {
+          "label": "Телескопічний 80 мм",
+          "price": 2646
+        },
+        {
+          "label": "Телескопічний 100 мм",
+          "price": 3753
+        },
+        {
+          "label": "Телескопічний 120 мм",
+          "price": 3944
+        }
+      ],
+      "lyshtva": [
+        {
+          "label": "Телескопічна 80 мм",
+          "price": 1027
+        },
+        {
+          "label": "Телескопічна 80 мм (крило 40 мм)",
+          "price": 1315
+        }
+      ],
+      "dobir": [
+        {
+          "label": "Телескопічний 100 мм",
+          "price": 1012
+        },
+        {
+          "label": "Телескопічний 150 мм",
+          "price": 1336
+        },
+        {
+          "label": "Телескопічний 200 мм",
+          "price": 1920
+        }
+      ]
+    },
+    "extra": "Додатково доступно (за доплату): фарбування RAL/NCS.",
+    "models": [
+      {
+        "code": "FZ-01",
+        "basePrice": 7605,
+        "colors": [
+          {
+            "slug": "antratsyt",
+            "label": "антрацит",
+            "image": "/photos/frezzatti/fz-01-antratsyt.png"
+          },
+          {
+            "slug": "dub-nemo-late",
+            "label": "дуб немо лате",
+            "image": "/photos/frezzatti/fz-01-dub-nemo-late.png"
+          },
+          {
+            "slug": "dub-pasadena",
+            "label": "дуб пасадена",
+            "image": "/photos/frezzatti/fz-01-dub-pasadena.png"
+          },
+          {
+            "slug": "dub-portovyi",
+            "label": "дуб портовий",
+            "image": "/photos/frezzatti/fz-01-dub-portovyi.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/frezzatti/fz-01-dub-shato.png"
+          },
+          {
+            "slug": "dub-sribliastyi",
+            "label": "дуб сріблястий",
+            "image": "/photos/frezzatti/fz-01-dub-sribliastyi.png"
+          },
+          {
+            "slug": "feldhrau",
+            "label": "фельдграу",
+            "image": "/photos/frezzatti/fz-01-feldhrau.png"
+          },
+          {
+            "slug": "oksyd-bilyi",
+            "label": "оксид білий",
+            "image": "/photos/frezzatti/fz-01-oksyd-bilyi.png"
+          },
+          {
+            "slug": "oksyd-svitlyi",
+            "label": "оксид світлий",
+            "image": "/photos/frezzatti/fz-01-oksyd-svitlyi.png"
+          },
+          {
+            "slug": "oksyd-temnyi",
+            "label": "оксид темний",
+            "image": "/photos/frezzatti/fz-01-oksyd-temnyi.png"
+          },
+          {
+            "slug": "venhe",
+            "label": "венге",
+            "image": "/photos/frezzatti/fz-01-venhe.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/frezzatti/fz-01-white.png"
+          }
+        ]
+      },
+      {
+        "code": "FZ-02",
+        "basePrice": 7605,
+        "colors": [
+          {
+            "slug": "antratsyt",
+            "label": "антрацит",
+            "image": "/photos/frezzatti/fz-02-antratsyt.png"
+          },
+          {
+            "slug": "dub-nemo-late",
+            "label": "дуб немо лате",
+            "image": "/photos/frezzatti/fz-02-dub-nemo-late.png"
+          },
+          {
+            "slug": "dub-pasadena",
+            "label": "дуб пасадена",
+            "image": "/photos/frezzatti/fz-02-dub-pasadena.png"
+          },
+          {
+            "slug": "dub-portovyi",
+            "label": "дуб портовий",
+            "image": "/photos/frezzatti/fz-02-dub-portovyi.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/frezzatti/fz-02-dub-shato.png"
+          },
+          {
+            "slug": "dub-sribliastyi",
+            "label": "дуб сріблястий",
+            "image": "/photos/frezzatti/fz-02-dub-sribliastyi.png"
+          },
+          {
+            "slug": "feldhrau",
+            "label": "фельдграу",
+            "image": "/photos/frezzatti/fz-02-feldhrau.png"
+          },
+          {
+            "slug": "oksyd-bilyi",
+            "label": "оксид білий",
+            "image": "/photos/frezzatti/fz-02-oksyd-bilyi.png"
+          },
+          {
+            "slug": "oksyd-svitlyi",
+            "label": "оксид світлий",
+            "image": "/photos/frezzatti/fz-02-oksyd-svitlyi.png"
+          },
+          {
+            "slug": "oksyd-temnyi",
+            "label": "оксид темний",
+            "image": "/photos/frezzatti/fz-02-oksyd-temnyi.png"
+          },
+          {
+            "slug": "venhe",
+            "label": "венге",
+            "image": "/photos/frezzatti/fz-02-venhe.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/frezzatti/fz-02-white.png"
+          }
+        ]
+      },
+      {
+        "code": "FZ-03",
+        "basePrice": 7605,
+        "colors": [
+          {
+            "slug": "antratsyt",
+            "label": "антрацит",
+            "image": "/photos/frezzatti/fz-03-antratsyt.png"
+          },
+          {
+            "slug": "dub-nemo-late",
+            "label": "дуб немо лате",
+            "image": "/photos/frezzatti/fz-03-dub-nemo-late.png"
+          },
+          {
+            "slug": "dub-pasadena",
+            "label": "дуб пасадена",
+            "image": "/photos/frezzatti/fz-03-dub-pasadena.png"
+          },
+          {
+            "slug": "dub-portovyi",
+            "label": "дуб портовий",
+            "image": "/photos/frezzatti/fz-03-dub-portovyi.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/frezzatti/fz-03-dub-shato.png"
+          },
+          {
+            "slug": "dub-sribliastyi",
+            "label": "дуб сріблястий",
+            "image": "/photos/frezzatti/fz-03-dub-sribliastyi.png"
+          },
+          {
+            "slug": "feldhrau",
+            "label": "фельдграу",
+            "image": "/photos/frezzatti/fz-03-feldhrau.png"
+          },
+          {
+            "slug": "oksyd-bilyi",
+            "label": "оксид білий",
+            "image": "/photos/frezzatti/fz-03-oksyd-bilyi.png"
+          },
+          {
+            "slug": "oksyd-svitlyi",
+            "label": "оксид світлий",
+            "image": "/photos/frezzatti/fz-03-oksyd-svitlyi.png"
+          },
+          {
+            "slug": "oksyd-temnyi",
+            "label": "оксид темний",
+            "image": "/photos/frezzatti/fz-03-oksyd-temnyi.png"
+          },
+          {
+            "slug": "venhe",
+            "label": "венге",
+            "image": "/photos/frezzatti/fz-03-venhe.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/frezzatti/fz-03-white.png"
+          }
+        ]
+      },
+      {
+        "code": "FZ-04",
+        "basePrice": 7605,
+        "colors": [
+          {
+            "slug": "antratsyt",
+            "label": "антрацит",
+            "image": "/photos/frezzatti/fz-04-antratsyt.png"
+          },
+          {
+            "slug": "dub-nemo-late",
+            "label": "дуб немо лате",
+            "image": "/photos/frezzatti/fz-04-dub-nemo-late.png"
+          },
+          {
+            "slug": "dub-pasadena",
+            "label": "дуб пасадена",
+            "image": "/photos/frezzatti/fz-04-dub-pasadena.png"
+          },
+          {
+            "slug": "dub-portovyi",
+            "label": "дуб портовий",
+            "image": "/photos/frezzatti/fz-04-dub-portovyi.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/frezzatti/fz-04-dub-shato.png"
+          },
+          {
+            "slug": "dub-sribliastyi",
+            "label": "дуб сріблястий",
+            "image": "/photos/frezzatti/fz-04-dub-sribliastyi.png"
+          },
+          {
+            "slug": "feldhrau",
+            "label": "фельдграу",
+            "image": "/photos/frezzatti/fz-04-feldhrau.png"
+          },
+          {
+            "slug": "oksyd-bilyi",
+            "label": "оксид білий",
+            "image": "/photos/frezzatti/fz-04-oksyd-bilyi.png"
+          },
+          {
+            "slug": "oksyd-svitlyi",
+            "label": "оксид світлий",
+            "image": "/photos/frezzatti/fz-04-oksyd-svitlyi.png"
+          },
+          {
+            "slug": "oksyd-temnyi",
+            "label": "оксид темний",
+            "image": "/photos/frezzatti/fz-04-oksyd-temnyi.png"
+          },
+          {
+            "slug": "venhe",
+            "label": "венге",
+            "image": "/photos/frezzatti/fz-04-venhe.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/frezzatti/fz-04-white.png"
+          }
+        ]
+      },
+      {
+        "code": "FZ-05",
+        "basePrice": 7605,
+        "colors": [
+          {
+            "slug": "antratsyt",
+            "label": "антрацит",
+            "image": "/photos/frezzatti/fz-05-antratsyt.png"
+          },
+          {
+            "slug": "dub-nemo-late",
+            "label": "дуб немо лате",
+            "image": "/photos/frezzatti/fz-05-dub-nemo-late.png"
+          },
+          {
+            "slug": "dub-pasadena",
+            "label": "дуб пасадена",
+            "image": "/photos/frezzatti/fz-05-dub-pasadena.png"
+          },
+          {
+            "slug": "dub-portovyi",
+            "label": "дуб портовий",
+            "image": "/photos/frezzatti/fz-05-dub-portovyi.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/frezzatti/fz-05-dub-shato.png"
+          },
+          {
+            "slug": "dub-sribliastyi",
+            "label": "дуб сріблястий",
+            "image": "/photos/frezzatti/fz-05-dub-sribliastyi.png"
+          },
+          {
+            "slug": "feldhrau",
+            "label": "фельдграу",
+            "image": "/photos/frezzatti/fz-05-feldhrau.png"
+          },
+          {
+            "slug": "oksyd-bilyi",
+            "label": "оксид білий",
+            "image": "/photos/frezzatti/fz-05-oksyd-bilyi.png"
+          },
+          {
+            "slug": "oksyd-svitlyi",
+            "label": "оксид світлий",
+            "image": "/photos/frezzatti/fz-05-oksyd-svitlyi.png"
+          },
+          {
+            "slug": "oksyd-temnyi",
+            "label": "оксид темний",
+            "image": "/photos/frezzatti/fz-05-oksyd-temnyi.png"
+          },
+          {
+            "slug": "venhe",
+            "label": "венге",
+            "image": "/photos/frezzatti/fz-05-venhe.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/frezzatti/fz-05-white.png"
+          }
+        ]
+      },
+      {
+        "code": "FZ-06",
+        "basePrice": 7605,
+        "colors": [
+          {
+            "slug": "antratsyt",
+            "label": "антрацит",
+            "image": "/photos/frezzatti/fz-06-antratsyt.png"
+          },
+          {
+            "slug": "dub-nemo-late",
+            "label": "дуб немо лате",
+            "image": "/photos/frezzatti/fz-06-dub-nemo-late.png"
+          },
+          {
+            "slug": "dub-pasadena",
+            "label": "дуб пасадена",
+            "image": "/photos/frezzatti/fz-06-dub-pasadena.png"
+          },
+          {
+            "slug": "dub-portovyi",
+            "label": "дуб портовий",
+            "image": "/photos/frezzatti/fz-06-dub-portovyi.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/frezzatti/fz-06-dub-shato.png"
+          },
+          {
+            "slug": "dub-sribliastyi",
+            "label": "дуб сріблястий",
+            "image": "/photos/frezzatti/fz-06-dub-sribliastyi.png"
+          },
+          {
+            "slug": "feldhrau",
+            "label": "фельдграу",
+            "image": "/photos/frezzatti/fz-06-feldhrau.png"
+          },
+          {
+            "slug": "oksyd-bilyi",
+            "label": "оксид білий",
+            "image": "/photos/frezzatti/fz-06-oksyd-bilyi.png"
+          },
+          {
+            "slug": "oksyd-svitlyi",
+            "label": "оксид світлий",
+            "image": "/photos/frezzatti/fz-06-oksyd-svitlyi.png"
+          },
+          {
+            "slug": "oksyd-temnyi",
+            "label": "оксид темний",
+            "image": "/photos/frezzatti/fz-06-oksyd-temnyi.png"
+          },
+          {
+            "slug": "venhe",
+            "label": "венге",
+            "image": "/photos/frezzatti/fz-06-venhe.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/frezzatti/fz-06-white.png"
+          }
+        ]
+      },
+      {
+        "code": "FZ-07",
+        "basePrice": 7605,
+        "colors": [
+          {
+            "slug": "antratsyt",
+            "label": "антрацит",
+            "image": "/photos/frezzatti/fz-07-antratsyt.png"
+          },
+          {
+            "slug": "dub-nemo-late",
+            "label": "дуб немо лате",
+            "image": "/photos/frezzatti/fz-07-dub-nemo-late.png"
+          },
+          {
+            "slug": "dub-pasadena",
+            "label": "дуб пасадена",
+            "image": "/photos/frezzatti/fz-07-dub-pasadena.png"
+          },
+          {
+            "slug": "dub-portovyi",
+            "label": "дуб портовий",
+            "image": "/photos/frezzatti/fz-07-dub-portovyi.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/frezzatti/fz-07-dub-shato.png"
+          },
+          {
+            "slug": "dub-sribliastyi",
+            "label": "дуб сріблястий",
+            "image": "/photos/frezzatti/fz-07-dub-sribliastyi.png"
+          },
+          {
+            "slug": "feldhrau",
+            "label": "фельдграу",
+            "image": "/photos/frezzatti/fz-07-feldhrau.png"
+          },
+          {
+            "slug": "oksyd-bilyi",
+            "label": "оксид білий",
+            "image": "/photos/frezzatti/fz-07-oksyd-bilyi.png"
+          },
+          {
+            "slug": "oksyd-svitlyi",
+            "label": "оксид світлий",
+            "image": "/photos/frezzatti/fz-07-oksyd-svitlyi.png"
+          },
+          {
+            "slug": "oksyd-temnyi",
+            "label": "оксид темний",
+            "image": "/photos/frezzatti/fz-07-oksyd-temnyi.png"
+          },
+          {
+            "slug": "venhe",
+            "label": "венге",
+            "image": "/photos/frezzatti/fz-07-venhe.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/frezzatti/fz-07-white.png"
+          }
+        ]
+      },
+      {
+        "code": "FZ-08",
+        "basePrice": 7605,
+        "colors": [
+          {
+            "slug": "antratsyt",
+            "label": "антрацит",
+            "image": "/photos/frezzatti/fz-08-antratsyt.png"
+          },
+          {
+            "slug": "dub-nemo-late",
+            "label": "дуб немо лате",
+            "image": "/photos/frezzatti/fz-08-dub-nemo-late.png"
+          },
+          {
+            "slug": "dub-pasadena",
+            "label": "дуб пасадена",
+            "image": "/photos/frezzatti/fz-08-dub-pasadena.png"
+          },
+          {
+            "slug": "dub-portovyi",
+            "label": "дуб портовий",
+            "image": "/photos/frezzatti/fz-08-dub-portovyi.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/frezzatti/fz-08-dub-shato.png"
+          },
+          {
+            "slug": "dub-sribliastyi",
+            "label": "дуб сріблястий",
+            "image": "/photos/frezzatti/fz-08-dub-sribliastyi.png"
+          },
+          {
+            "slug": "feldhrau",
+            "label": "фельдграу",
+            "image": "/photos/frezzatti/fz-08-feldhrau.png"
+          },
+          {
+            "slug": "oksyd-bilyi",
+            "label": "оксид білий",
+            "image": "/photos/frezzatti/fz-08-oksyd-bilyi.png"
+          },
+          {
+            "slug": "oksyd-svitlyi",
+            "label": "оксид світлий",
+            "image": "/photos/frezzatti/fz-08-oksyd-svitlyi.png"
+          },
+          {
+            "slug": "oksyd-temnyi",
+            "label": "оксид темний",
+            "image": "/photos/frezzatti/fz-08-oksyd-temnyi.png"
+          },
+          {
+            "slug": "venhe",
+            "label": "венге",
+            "image": "/photos/frezzatti/fz-08-venhe.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/frezzatti/fz-08-white.png"
+          }
+        ]
+      },
+      {
+        "code": "FZ-09",
+        "basePrice": 7605,
+        "colors": [
+          {
+            "slug": "antratsyt",
+            "label": "антрацит",
+            "image": "/photos/frezzatti/fz-09-antratsyt.png"
+          },
+          {
+            "slug": "dub-nemo-late",
+            "label": "дуб немо лате",
+            "image": "/photos/frezzatti/fz-09-dub-nemo-late.png"
+          },
+          {
+            "slug": "dub-pasadena",
+            "label": "дуб пасадена",
+            "image": "/photos/frezzatti/fz-09-dub-pasadena.png"
+          },
+          {
+            "slug": "dub-portovyi",
+            "label": "дуб портовий",
+            "image": "/photos/frezzatti/fz-09-dub-portovyi.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/frezzatti/fz-09-dub-shato.png"
+          },
+          {
+            "slug": "dub-sribliastyi",
+            "label": "дуб сріблястий",
+            "image": "/photos/frezzatti/fz-09-dub-sribliastyi.png"
+          },
+          {
+            "slug": "feldhrau",
+            "label": "фельдграу",
+            "image": "/photos/frezzatti/fz-09-feldhrau.png"
+          },
+          {
+            "slug": "oksyd-bilyi",
+            "label": "оксид білий",
+            "image": "/photos/frezzatti/fz-09-oksyd-bilyi.png"
+          },
+          {
+            "slug": "oksyd-svitlyi",
+            "label": "оксид світлий",
+            "image": "/photos/frezzatti/fz-09-oksyd-svitlyi.png"
+          },
+          {
+            "slug": "oksyd-temnyi",
+            "label": "оксид темний",
+            "image": "/photos/frezzatti/fz-09-oksyd-temnyi.png"
+          },
+          {
+            "slug": "venhe",
+            "label": "венге",
+            "image": "/photos/frezzatti/fz-09-venhe.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/frezzatti/fz-09-white.png"
+          }
+        ]
+      },
+      {
+        "code": "FZ-10",
+        "basePrice": 7605,
+        "colors": [
+          {
+            "slug": "antratsyt",
+            "label": "антрацит",
+            "image": "/photos/frezzatti/fz-10-antratsyt.png"
+          },
+          {
+            "slug": "dub-nemo-late",
+            "label": "дуб немо лате",
+            "image": "/photos/frezzatti/fz-10-dub-nemo-late.png"
+          },
+          {
+            "slug": "dub-pasadena",
+            "label": "дуб пасадена",
+            "image": "/photos/frezzatti/fz-10-dub-pasadena.png"
+          },
+          {
+            "slug": "dub-portovyi",
+            "label": "дуб портовий",
+            "image": "/photos/frezzatti/fz-10-dub-portovyi.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/frezzatti/fz-10-dub-shato.png"
+          },
+          {
+            "slug": "dub-sribliastyi",
+            "label": "дуб сріблястий",
+            "image": "/photos/frezzatti/fz-10-dub-sribliastyi.png"
+          },
+          {
+            "slug": "feldhrau",
+            "label": "фельдграу",
+            "image": "/photos/frezzatti/fz-10-feldhrau.png"
+          },
+          {
+            "slug": "oksyd-bilyi",
+            "label": "оксид білий",
+            "image": "/photos/frezzatti/fz-10-oksyd-bilyi.png"
+          },
+          {
+            "slug": "oksyd-svitlyi",
+            "label": "оксид світлий",
+            "image": "/photos/frezzatti/fz-10-oksyd-svitlyi.png"
+          },
+          {
+            "slug": "oksyd-temnyi",
+            "label": "оксид темний",
+            "image": "/photos/frezzatti/fz-10-oksyd-temnyi.png"
+          },
+          {
+            "slug": "venhe",
+            "label": "венге",
+            "image": "/photos/frezzatti/fz-10-venhe.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/frezzatti/fz-10-white.png"
+          }
+        ]
+      },
+      {
+        "code": "FZ-11",
+        "basePrice": 7605,
+        "colors": [
+          {
+            "slug": "antratsyt",
+            "label": "антрацит",
+            "image": "/photos/frezzatti/fz-11-antratsyt.png"
+          },
+          {
+            "slug": "dub-nemo-late",
+            "label": "дуб немо лате",
+            "image": "/photos/frezzatti/fz-11-dub-nemo-late.png"
+          },
+          {
+            "slug": "dub-pasadena",
+            "label": "дуб пасадена",
+            "image": "/photos/frezzatti/fz-11-dub-pasadena.png"
+          },
+          {
+            "slug": "dub-portovyi",
+            "label": "дуб портовий",
+            "image": "/photos/frezzatti/fz-11-dub-portovyi.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/frezzatti/fz-11-dub-shato.png"
+          },
+          {
+            "slug": "dub-sribliastyi",
+            "label": "дуб сріблястий",
+            "image": "/photos/frezzatti/fz-11-dub-sribliastyi.png"
+          },
+          {
+            "slug": "feldhrau",
+            "label": "фельдграу",
+            "image": "/photos/frezzatti/fz-11-feldhrau.png"
+          },
+          {
+            "slug": "oksyd-bilyi",
+            "label": "оксид білий",
+            "image": "/photos/frezzatti/fz-11-oksyd-bilyi.png"
+          },
+          {
+            "slug": "oksyd-svitlyi",
+            "label": "оксид світлий",
+            "image": "/photos/frezzatti/fz-11-oksyd-svitlyi.png"
+          },
+          {
+            "slug": "oksyd-temnyi",
+            "label": "оксид темний",
+            "image": "/photos/frezzatti/fz-11-oksyd-temnyi.png"
+          },
+          {
+            "slug": "venhe",
+            "label": "венге",
+            "image": "/photos/frezzatti/fz-11-venhe.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/frezzatti/fz-11-white.png"
+          }
+        ]
+      },
+      {
+        "code": "FZ-12",
+        "basePrice": 7605,
+        "colors": [
+          {
+            "slug": "antratsyt",
+            "label": "антрацит",
+            "image": "/photos/frezzatti/fz-12-antratsyt.png"
+          },
+          {
+            "slug": "dub-nemo-late",
+            "label": "дуб немо лате",
+            "image": "/photos/frezzatti/fz-12-dub-nemo-late.png"
+          },
+          {
+            "slug": "dub-pasadena",
+            "label": "дуб пасадена",
+            "image": "/photos/frezzatti/fz-12-dub-pasadena.png"
+          },
+          {
+            "slug": "dub-portovyi",
+            "label": "дуб портовий",
+            "image": "/photos/frezzatti/fz-12-dub-portovyi.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/frezzatti/fz-12-dub-shato.png"
+          },
+          {
+            "slug": "dub-sribliastyi",
+            "label": "дуб сріблястий",
+            "image": "/photos/frezzatti/fz-12-dub-sribliastyi.png"
+          },
+          {
+            "slug": "feldhrau",
+            "label": "фельдграу",
+            "image": "/photos/frezzatti/fz-12-feldhrau.png"
+          },
+          {
+            "slug": "oksyd-bilyi",
+            "label": "оксид білий",
+            "image": "/photos/frezzatti/fz-12-oksyd-bilyi.png"
+          },
+          {
+            "slug": "oksyd-svitlyi",
+            "label": "оксид світлий",
+            "image": "/photos/frezzatti/fz-12-oksyd-svitlyi.png"
+          },
+          {
+            "slug": "oksyd-temnyi",
+            "label": "оксид темний",
+            "image": "/photos/frezzatti/fz-12-oksyd-temnyi.png"
+          },
+          {
+            "slug": "venhe",
+            "label": "венге",
+            "image": "/photos/frezzatti/fz-12-venhe.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/frezzatti/fz-12-white.png"
+          }
+        ]
+      },
+      {
+        "code": "FZ-13",
+        "basePrice": 7605,
+        "colors": [
+          {
+            "slug": "antratsyt",
+            "label": "антрацит",
+            "image": "/photos/frezzatti/fz-13-antratsyt.png"
+          },
+          {
+            "slug": "dub-nemo-late",
+            "label": "дуб немо лате",
+            "image": "/photos/frezzatti/fz-13-dub-nemo-late.png"
+          },
+          {
+            "slug": "dub-pasadena",
+            "label": "дуб пасадена",
+            "image": "/photos/frezzatti/fz-13-dub-pasadena.png"
+          },
+          {
+            "slug": "dub-portovyi",
+            "label": "дуб портовий",
+            "image": "/photos/frezzatti/fz-13-dub-portovyi.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/frezzatti/fz-13-dub-shato.png"
+          },
+          {
+            "slug": "dub-sribliastyi",
+            "label": "дуб сріблястий",
+            "image": "/photos/frezzatti/fz-13-dub-sribliastyi.png"
+          },
+          {
+            "slug": "feldhrau",
+            "label": "фельдграу",
+            "image": "/photos/frezzatti/fz-13-feldhrau.png"
+          },
+          {
+            "slug": "oksyd-bilyi",
+            "label": "оксид білий",
+            "image": "/photos/frezzatti/fz-13-oksyd-bilyi.png"
+          },
+          {
+            "slug": "oksyd-svitlyi",
+            "label": "оксид світлий",
+            "image": "/photos/frezzatti/fz-13-oksyd-svitlyi.png"
+          },
+          {
+            "slug": "oksyd-temnyi",
+            "label": "оксид темний",
+            "image": "/photos/frezzatti/fz-13-oksyd-temnyi.png"
+          },
+          {
+            "slug": "venhe",
+            "label": "венге",
+            "image": "/photos/frezzatti/fz-13-venhe.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/frezzatti/fz-13-white.png"
+          }
+        ]
+      },
+      {
+        "code": "FZ-14",
+        "basePrice": 7605,
+        "colors": [
+          {
+            "slug": "antratsyt",
+            "label": "антрацит",
+            "image": "/photos/frezzatti/fz-14-antratsyt.png"
+          },
+          {
+            "slug": "dub-nemo-late",
+            "label": "дуб немо лате",
+            "image": "/photos/frezzatti/fz-14-dub-nemo-late.png"
+          },
+          {
+            "slug": "dub-pasadena",
+            "label": "дуб пасадена",
+            "image": "/photos/frezzatti/fz-14-dub-pasadena.png"
+          },
+          {
+            "slug": "dub-portovyi",
+            "label": "дуб портовий",
+            "image": "/photos/frezzatti/fz-14-dub-portovyi.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/frezzatti/fz-14-dub-shato.png"
+          },
+          {
+            "slug": "dub-sribliastyi",
+            "label": "дуб сріблястий",
+            "image": "/photos/frezzatti/fz-14-dub-sribliastyi.png"
+          },
+          {
+            "slug": "feldhrau",
+            "label": "фельдграу",
+            "image": "/photos/frezzatti/fz-14-feldhrau.png"
+          },
+          {
+            "slug": "oksyd-bilyi",
+            "label": "оксид білий",
+            "image": "/photos/frezzatti/fz-14-oksyd-bilyi.png"
+          },
+          {
+            "slug": "oksyd-svitlyi",
+            "label": "оксид світлий",
+            "image": "/photos/frezzatti/fz-14-oksyd-svitlyi.png"
+          },
+          {
+            "slug": "oksyd-temnyi",
+            "label": "оксид темний",
+            "image": "/photos/frezzatti/fz-14-oksyd-temnyi.png"
+          },
+          {
+            "slug": "venhe",
+            "label": "венге",
+            "image": "/photos/frezzatti/fz-14-venhe.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/frezzatti/fz-14-white.png"
+          }
+        ]
+      }
+    ]
+  },
+  "perfetto": {
+    "label": "PERFETTO",
+    "thickness": "40 мм",
+    "komplekt": {
+      "korob": [
+        {
+          "label": "Телескопічний 80 мм",
+          "price": 2945
+        },
+        {
+          "label": "Телескопічний 100 мм",
+          "price": 3926
+        },
+        {
+          "label": "Телескопічний 120 мм",
+          "price": 4308
+        },
+        {
+          "label": "Компланарний 80 мм",
+          "price": 3566
+        },
+        {
+          "label": "Компланарний 100 мм",
+          "price": 4130
+        },
+        {
+          "label": "Компланарний 120 мм",
+          "price": 4512
+        }
+      ],
+      "lyshtva": [
+        {
+          "label": "Телескопічна 80 мм",
+          "price": 1278
+        },
+        {
+          "label": "Телескопічна 80 мм (крило 40 мм)",
+          "price": 1541
+        },
+        {
+          "label": "Компланарна 80 мм",
+          "price": 1636
+        }
+      ],
+      "dobir": [
+        {
+          "label": "Телескопічний 100 мм",
+          "price": 1126
+        },
+        {
+          "label": "Телескопічний 150 мм",
+          "price": 1470
+        },
+        {
+          "label": "Телескопічний 200 мм",
+          "price": 2155
+        }
+      ]
+    },
+    "extra": "Додатково доступно (за доплату): фарбування RAL/NCS. Кольори — за запитом.",
+    "models": [
+      {
+        "code": "PF-01",
+        "basePrice": 9645,
+        "colors": [
+          {
+            "slug": "base",
+            "label": "Базове фото",
+            "image": "/photos/perfetto/pf-01.png"
+          }
+        ]
+      },
+      {
+        "code": "PF-02",
+        "basePrice": 9645,
+        "colors": [
+          {
+            "slug": "base",
+            "label": "Базове фото",
+            "image": "/photos/perfetto/pf-02.png"
+          }
+        ]
+      }
+    ]
+  },
+  "hidden-doors": {
+    "label": "Двері прихованого монтажу",
+    "thickness": "40 мм",
+    "komplekt": {
+      "korob": [
+        {
+          "label": "Коробка прихованого монтажу STANDART (під шпатлівку)",
+          "price": 8424
+        },
+        {
+          "label": "Коробка прихованого монтажу LUX (під панелі)",
+          "price": 9752
+        }
+      ],
+      "lyshtva": [
+        {
+          "label": "Система алюм. профілів для торцювання 40 мм",
+          "price": 2788
+        },
+        {
+          "label": "Inside 56 мм",
+          "price": 5133
+        }
+      ],
+      "dobir": []
+    },
+    "variants": [
+      {
+        "label": "Плівка, крайка - грунт",
+        "price": 7390,
+        "image": "/photos/hidden-doors/primer.jpg"
+      },
+      {
+        "label": "Плівка, крайка - алюм. профіль (сіра)",
+        "price": 9830,
+        "image": "/photos/hidden-doors/aluminum-gray.jpg"
+      },
+      {
+        "label": "Плівка, крайка - алюм. профіль (чорна)",
+        "price": 10361,
+        "image": "/photos/hidden-doors/aluminum-black.jpg"
+      },
+      {
+        "label": "Плівка, Inside, крайка - алюм. профіль (сіра)",
+        "price": 11865,
+        "image": "/photos/hidden-doors/inside-aluminum-gray.jpg"
+      },
+      {
+        "label": "Плівка, Inside, крайка - алюм. профіль (чорна)",
+        "price": 12463,
+        "image": "/photos/hidden-doors/inside-aluminum-black.jpg"
+      }
+    ]
+  }
+}
