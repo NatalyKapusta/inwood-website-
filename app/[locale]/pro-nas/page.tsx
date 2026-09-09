@@ -13,7 +13,13 @@ export async function generateMetadata({ params }: { params: { locale: Locale } 
   });
 }
 
-export default async function ProNasPage({ params }: { params: { locale: Locale } }) {
+export default async function ProNasPage({
+  params,
+  searchParams,
+}: {
+  params: { locale: Locale };
+  searchParams: { sent?: string };
+}) {
   const dict = await getDictionary(params.locale);
   const t = dict.proNas;
   const c = dict.common;
@@ -68,6 +74,8 @@ export default async function ProNasPage({ params }: { params: { locale: Locale 
         nameLabel={c.formName}
         phoneLabel={c.formPhone}
         submitLabel={c.formSubmit}
+      source="Про нас"
+      sent={searchParams.sent === "1"}
       />
     </>
   );

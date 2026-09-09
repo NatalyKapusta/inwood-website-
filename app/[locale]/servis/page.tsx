@@ -13,7 +13,13 @@ export async function generateMetadata({ params }: { params: { locale: Locale } 
   });
 }
 
-export default async function ServisPage({ params }: { params: { locale: Locale } }) {
+export default async function ServisPage({
+  params,
+  searchParams,
+}: {
+  params: { locale: Locale };
+  searchParams: { sent?: string };
+}) {
   const dict = await getDictionary(params.locale);
   const t = dict.servis;
 
@@ -44,6 +50,8 @@ export default async function ServisPage({ params }: { params: { locale: Locale 
         nameLabel={dict.common.formName}
         phoneLabel={dict.common.formPhone}
         submitLabel={dict.common.formSubmit}
+      source="Сервісне обслуговування"
+      sent={searchParams.sent === "1"}
       />
     </>
   );

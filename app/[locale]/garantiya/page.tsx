@@ -13,7 +13,13 @@ export async function generateMetadata({ params }: { params: { locale: Locale } 
   });
 }
 
-export default async function GarantiyaPage({ params }: { params: { locale: Locale } }) {
+export default async function GarantiyaPage({
+  params,
+  searchParams,
+}: {
+  params: { locale: Locale };
+  searchParams: { sent?: string };
+}) {
   const dict = await getDictionary(params.locale);
   const t = dict.garantiya;
 
@@ -62,6 +68,8 @@ export default async function GarantiyaPage({ params }: { params: { locale: Loca
         nameLabel={dict.common.formName}
         phoneLabel={dict.common.formPhone}
         submitLabel={dict.common.formSubmit}
+      source="Гарантія"
+      sent={searchParams.sent === "1"}
       />
     </>
   );

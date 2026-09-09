@@ -2,6 +2,7 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata } from "@/lib/seo";
 import PhoneInput from "@/components/PhoneInput";
+import { submitLead } from "@/app/actions/lead";
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
@@ -13,10 +14,17 @@ export async function generateMetadata({ params }: { params: { locale: Locale } 
   });
 }
 
-export default async function KontaktyPage({ params }: { params: { locale: Locale } }) {
+export default async function KontaktyPage({
+  params,
+  searchParams,
+}: {
+  params: { locale: Locale };
+  searchParams: { sent?: string };
+}) {
   const dict = await getDictionary(params.locale);
   const t = dict.kontakty;
   const c = dict.common;
+  const sent = searchParams.sent === "1";
 
   return (
     <section className="mx-auto max-w-4xl px-4 py-16 sm:py-24">
@@ -69,35 +77,45 @@ export default async function KontaktyPage({ params }: { params: { locale: Local
         <div className="rounded-xl bg-panel-alt p-6">
           <h2 className="font-serif text-lg font-bold text-navy-dark">{t.formTitle}</h2>
           <p className="mt-1 text-sm text-navy-dim">{t.formText}</p>
-          <form className="mt-6 flex flex-col gap-3">
-            <input
-              type="text"
-              placeholder={c.formName}
-              required
-              className="rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
-            />
-            <PhoneInput
-              placeholder={c.formPhone}
-              required
-              className="w-full rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
-            />
-            <input
-              type="email"
-              placeholder="Пошта"
-              className="rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
-            />
-            <textarea
-              placeholder="Повідомлення"
-              rows={4}
-              className="rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
-            />
-            <button
-              type="submit"
-              className="rounded-full bg-navy-dark px-7 py-3 font-semibold text-white transition hover:bg-gold hover:text-navy-dark"
-            >
-              {c.formSubmit}
-            </button>
-          </form>
+          {sent ? (
+            <p className="mt-6 rounded-lg bg-panel px-4 py-3 text-navy-dark">
+              Дякуємо! Заявку надіслано, ми скоро з вами зв&apos;яжемось.
+            </p>
+          ) : (
+            <form action={submitLead} className="mt-6 flex flex-col gap-3">
+              <input type="hidden" name="source" value="Контакти" />
+              <input
+                type="text"
+                name="name"
+                placeholder={c.formName}
+                required
+                className="rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
+              />
+              <PhoneInput
+                placeholder={c.formPhone}
+                required
+                className="w-full rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Пошта"
+                className="rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
+              />
+              <textarea
+                name="comment"
+                placeholder="Повідомлення"
+                rows={4}
+                className="rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
+              />
+              <button
+                type="submit"
+                className="rounded-full bg-navy-dark px-7 py-3 font-semibold text-white transition hover:bg-gold hover:text-navy-dark"
+              >
+                {c.formSubmit}
+              </button>
+            </form>
+          )}
         </div>
       </div>
     </section>

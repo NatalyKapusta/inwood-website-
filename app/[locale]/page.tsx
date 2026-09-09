@@ -5,6 +5,7 @@ import Counter from "@/components/Counter";
 import ua from "@/dictionaries/ua.json";
 import { buildMetadata } from "@/lib/seo";
 import PhoneInput from "@/components/PhoneInput";
+import { submitLead } from "@/app/actions/lead";
 
 async function getDict(locale: Locale) {
   try {
@@ -32,11 +33,18 @@ const collectionImages: Record<string, string> = {
   PERFETTO: "/photos/perfetto/pf-01.png",
 };
 
-export default async function HomePage({ params }: { params: { locale: Locale } }) {
+export default async function HomePage({
+  params,
+  searchParams,
+}: {
+  params: { locale: Locale };
+  searchParams: { sent?: string };
+}) {
   const dict = await getDict(params.locale);
   const t = dict.home;
   const c = dict.common;
   const locale = params.locale;
+  const sent = searchParams.sent === "1";
 
   return (
     <>
@@ -185,25 +193,33 @@ export default async function HomePage({ params }: { params: { locale: Locale } 
           {c.ctaTitle}
         </h2>
         <p className="mt-4 text-navy-dim">{c.ctaText}</p>
-        <form className="mx-auto mt-8 flex max-w-md flex-col gap-4">
-          <input
-            type="text"
-            placeholder={c.formName}
-            required
-            className="rounded-lg border border-navy-dim/30 px-4 py-3 outline-none focus:border-gold"
-          />
-          <PhoneInput
-            placeholder={c.formPhone}
-            required
-            className="w-full rounded-lg border border-navy-dim/30 px-4 py-3 outline-none focus:border-gold"
-          />
-          <button
-            type="submit"
-            className="rounded-full bg-navy-dark px-7 py-3 font-semibold text-white transition hover:bg-gold hover:text-navy-dark"
-          >
-            {c.formSubmit}
-          </button>
-        </form>
+        {sent ? (
+          <p className="mx-auto mt-8 max-w-md rounded-lg bg-panel-alt px-6 py-4 text-navy-dark">
+            Дякуємо! Заявку надіслано, ми скоро з вами зв&apos;яжемось.
+          </p>
+        ) : (
+          <form action={submitLead} className="mx-auto mt-8 flex max-w-md flex-col gap-4">
+            <input type="hidden" name="source" value="Головна сторінка" />
+            <input
+              type="text"
+              name="name"
+              placeholder={c.formName}
+              required
+              className="rounded-lg border border-navy-dim/30 px-4 py-3 outline-none focus:border-gold"
+            />
+            <PhoneInput
+              placeholder={c.formPhone}
+              required
+              className="w-full rounded-lg border border-navy-dim/30 px-4 py-3 outline-none focus:border-gold"
+            />
+            <button
+              type="submit"
+              className="rounded-full bg-navy-dark px-7 py-3 font-semibold text-white transition hover:bg-gold hover:text-navy-dark"
+            >
+              {c.formSubmit}
+            </button>
+          </form>
+        )}
       </section>
     </>
   );

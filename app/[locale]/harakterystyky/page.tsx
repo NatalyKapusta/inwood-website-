@@ -15,7 +15,13 @@ export async function generateMetadata({ params }: { params: { locale: Locale } 
   });
 }
 
-export default async function CharacteristicsPage({ params }: { params: { locale: Locale } }) {
+export default async function CharacteristicsPage({
+  params,
+  searchParams,
+}: {
+  params: { locale: Locale };
+  searchParams: { sent?: string };
+}) {
   const dict = await getDictionary(params.locale);
   const t = dict.harakterystyky;
   const c = dict.common;
@@ -54,6 +60,8 @@ export default async function CharacteristicsPage({ params }: { params: { locale
         nameLabel={c.formName}
         phoneLabel={c.formPhone}
         submitLabel={c.formSubmit}
+      source="Характеристики дверей"
+      sent={searchParams.sent === "1"}
       />
     </>
   );

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Script from "next/script";
 import { locales, type Locale } from "@/lib/i18n";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -55,6 +56,10 @@ export default async function LocaleLayout({
           exportEmail={common.exportEmail}
           address={common.address}
           hours={common.hours}
+        />
+        <Script
+          src="https://keepincrm.chat/chat-widget.js?widgetId=bSz1XhHCMkhe"
+          strategy="lazyOnload"
         />
       </body>
     </html>

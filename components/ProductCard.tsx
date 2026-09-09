@@ -34,6 +34,9 @@ export default function ProductCard({
   const [modalOpen, setModalOpen] = useState(false);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [error, setError] = useState(false);
 
   const color = model.colors[colorIdx];
 
@@ -60,11 +63,30 @@ export default function ProductCard({
   ].filter(Boolean) as string[];
   const displayLines = pricesVisible ? configLines : configLines.slice(0, -1);
 
-  const mailHref = `mailto:${orderEmail}?subject=${encodeURIComponent(
-    `${collectionLabel} ${model.code}`
-  )}&body=${encodeURIComponent(
-    `${configLines.join("\n")}\n\n${name}\n${phone}`
-  )}`;
+  async function sendInquiry(e: React.FormEvent) {
+    e.preventDefault();
+    setSending(true);
+    setError(false);
+    try {
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          client: name,
+          phone,
+          comment: configLines.join("; "),
+          source: `Каталог — ${collectionLabel} ${model.code}`,
+        }),
+      });
+      const data = await res.json();
+      if (data.ok) setSent(true);
+      else setError(true);
+    } catch {
+      setError(true);
+    } finally {
+      setSending(false);
+    }
+  }
 
   return (
     <div className="flex flex-col overflow-hidden rounded-xl border border-navy-dim/10 bg-panel">
@@ -172,29 +194,39 @@ export default function ProductCard({
             <p className="mt-2 whitespace-pre-line text-sm text-navy-dim">
               {displayLines.slice(1).join("\n")}
             </p>
-            <form className="mt-4 flex flex-col gap-3">
-              <input
-                type="text"
-                required
-                placeholder="Ім'я / Имя / Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className="rounded-lg border border-navy-dim/30 px-3 py-2 text-sm outline-none focus:border-gold"
-              />
-              <PhoneInput
-                placeholder="Телефон / Phone"
-                required
-                value={phone}
-                onChange={setPhone}
-                className="w-full rounded-lg border border-navy-dim/30 px-3 py-2 text-sm outline-none focus:border-gold"
-              />
-              <a
-                href={mailHref}
-                className="rounded-full bg-gold px-4 py-2 text-center text-sm font-semibold text-navy-dark transition hover:bg-gold-dim"
-              >
-                {t.sendInquiry}
-              </a>
-            </form>
+            {sent ? (
+              <p className="mt-4 rounded-lg bg-panel-alt px-4 py-3 text-sm text-navy-dark">
+                Дякуємо! Заявку надіслано, ми скоро з вами зв&apos;яжемось.
+              </p>
+            ) : (
+              <form onSubmit={sendInquiry} className="mt-4 flex flex-col gap-3">
+                <input
+                  type="text"
+                  required
+                  placeholder="Ім'я / Имя / Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="rounded-lg border border-navy-dim/30 px-3 py-2 text-sm outline-none focus:border-gold"
+                />
+                <PhoneInput
+                  placeholder="Телефон / Phone"
+                  required
+                  value={phone}
+                  onChange={setPhone}
+                  className="w-full rounded-lg border border-navy-dim/30 px-3 py-2 text-sm outline-none focus:border-gold"
+                />
+                {error && (
+                  <p className="text-xs text-red-600">Не вдалося надіслати. Спробуйте ще раз.</p>
+                )}
+                <button
+                  type="submit"
+                  disabled={sending}
+                  className="rounded-full bg-gold px-4 py-2 text-center text-sm font-semibold text-navy-dark transition hover:bg-gold-dim disabled:opacity-60"
+                >
+                  {sending ? "..." : t.sendInquiry}
+                </button>
+              </form>
+            )}
             <button
               type="button"
               onClick={() => setModalOpen(false)}

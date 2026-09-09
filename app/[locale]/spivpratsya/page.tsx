@@ -14,7 +14,13 @@ export async function generateMetadata({ params }: { params: { locale: Locale } 
   });
 }
 
-export default async function SpivpratsyaPage({ params }: { params: { locale: Locale } }) {
+export default async function SpivpratsyaPage({
+  params,
+  searchParams,
+}: {
+  params: { locale: Locale };
+  searchParams: { sent?: string };
+}) {
   const dict = await getDictionary(params.locale);
   const t = dict.spivpratsya;
   const c = dict.common;
@@ -72,10 +78,12 @@ export default async function SpivpratsyaPage({ params }: { params: { locale: Lo
         nameLabel={c.formName}
         phoneLabel={c.formPhone}
         submitLabel={c.formSubmit}
+        source="Співпраця"
+        sent={searchParams.sent === "1"}
         extraFields={[
-          { placeholder: t.formEmail, type: "email" },
+          { placeholder: t.formEmail, type: "email", name: "email" },
           { placeholder: t.formCountry },
-          { placeholder: t.formCity },
+          { placeholder: t.formCity, name: "misto" },
           { placeholder: t.formMessage },
         ]}
       />

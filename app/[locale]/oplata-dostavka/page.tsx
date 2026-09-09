@@ -14,7 +14,13 @@ export async function generateMetadata({ params }: { params: { locale: Locale } 
   });
 }
 
-export default async function OplataDostavkaPage({ params }: { params: { locale: Locale } }) {
+export default async function OplataDostavkaPage({
+  params,
+  searchParams,
+}: {
+  params: { locale: Locale };
+  searchParams: { sent?: string };
+}) {
   const dict = await getDictionary(params.locale);
   const t = dict.oplataDostavka;
   const c = dict.common;
@@ -67,6 +73,8 @@ export default async function OplataDostavkaPage({ params }: { params: { locale:
         nameLabel={c.formName}
         phoneLabel={c.formPhone}
         submitLabel={c.formSubmit}
+      source="Оплата та доставка"
+      sent={searchParams.sent === "1"}
       />
     </>
   );
