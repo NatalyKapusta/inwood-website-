@@ -62,8 +62,8 @@ export async function inviteUser(formData: FormData) {
   } = await supabase.auth.getUser();
   if (!user) redirect("/portal/login");
 
-  const { data: myProfile } = await supabase.from("profiles").select("role").eq("id", user.id).single();
-  if (myProfile?.role !== "staff") {
+  const { data: myProfile } = await supabase.from("profiles").select("is_owner").eq("id", user.id).single();
+  if (!myProfile?.is_owner) {
     redirect("/portal/users?error=" + encodeURIComponent("Недостатньо прав"));
   }
 
@@ -111,8 +111,8 @@ export async function updateUserRole(formData: FormData) {
   } = await supabase.auth.getUser();
   if (!user) redirect("/portal/login");
 
-  const { data: myProfile } = await supabase.from("profiles").select("role").eq("id", user.id).single();
-  if (myProfile?.role !== "staff") {
+  const { data: myProfile } = await supabase.from("profiles").select("is_owner").eq("id", user.id).single();
+  if (!myProfile?.is_owner) {
     redirect("/portal/users?error=" + encodeURIComponent("Недостатньо прав"));
   }
 
@@ -142,8 +142,8 @@ export async function toggleUserAccess(formData: FormData) {
   } = await supabase.auth.getUser();
   if (!user) redirect("/portal/login");
 
-  const { data: myProfile } = await supabase.from("profiles").select("role").eq("id", user.id).single();
-  if (myProfile?.role !== "staff") {
+  const { data: myProfile } = await supabase.from("profiles").select("is_owner").eq("id", user.id).single();
+  if (!myProfile?.is_owner) {
     redirect("/portal/users?error=" + encodeURIComponent("Недостатньо прав"));
   }
 
@@ -179,8 +179,8 @@ export async function deleteUserAccount(formData: FormData) {
   } = await supabase.auth.getUser();
   if (!user) redirect("/portal/login");
 
-  const { data: myProfile } = await supabase.from("profiles").select("role").eq("id", user.id).single();
-  if (myProfile?.role !== "staff") {
+  const { data: myProfile } = await supabase.from("profiles").select("is_owner").eq("id", user.id).single();
+  if (!myProfile?.is_owner) {
     redirect("/portal/users?error=" + encodeURIComponent("Недостатньо прав"));
   }
 

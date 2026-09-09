@@ -18,13 +18,19 @@ export default async function PortalLayout({ children }: { children: ReactNode }
   } = await supabase.auth.getUser();
 
   let role: string | null = null;
+  let isOwner = false;
   if (user) {
-    const { data: profile } = await supabase.from("profiles").select("role, blocked").eq("id", user.id).single();
+    const { data: profile } = await supabase
+      .from("profiles")
+      .select("role, blocked, is_owner")
+      .eq("id", user.id)
+      .single();
     if (profile?.blocked) {
       await supabase.auth.signOut();
       redirect("/portal/login?error=" + encodeURIComponent("Доступ заблоковано. Зверніться до вашого менеджера IN WOOD"));
     }
     role = profile?.role ?? null;
+    isOwner = profile?.is_owner ?? false;
   }
 
   return (
@@ -48,14 +54,14 @@ export default async function PortalLayout({ children }: { children: ReactNode }
                   Комерційна пропозиція
                 </Link>
                 {role === "staff" && (
-                  <>
-                    <Link href="/portal/overrides" className="text-white/85 hover:text-gold">
-                      Перевизначення
-                    </Link>
-                    <Link href="/portal/users" className="text-white/85 hover:text-gold">
-                      Користувачі
-                    </Link>
-                  </>
+                  <Link href="/portal/overrides" className="text-white/85 hover:text-gold">
+                    Перевизначення
+                  </Link>
+                )}
+                {isOwner && (
+                  <Link href="/portal/users" className="text-white/85 hover:text-gold">
+                    Користувачі
+                  </Link>
                 )}
                 <LogoutButton />
               </nav>

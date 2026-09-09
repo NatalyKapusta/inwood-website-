@@ -20,11 +20,12 @@ export default async function PortalDashboardPage() {
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select("role, full_name, company_name")
+    .select("role, full_name, company_name, is_owner")
     .eq("id", user.id)
     .single();
 
   const role = profile?.role ?? "dealer";
+  const isOwner = profile?.is_owner ?? false;
   const pricesVisible = role === "staff" ? await getPricesVisible() : null;
 
   return (
@@ -81,28 +82,28 @@ export default async function PortalDashboardPage() {
         </div>
 
         {role === "staff" && (
-          <>
-            <Link
-              href="/portal/overrides"
-              className="rounded-xl bg-panel p-6 shadow-sm transition hover:shadow-md"
-            >
-              <h2 className="font-serif text-lg font-bold text-navy-dark">
-                Ручне перевизначення ціни/розміру
-              </h2>
-              <p className="mt-2 text-sm text-navy-dim">
-                Для нестандартних замовлень — індивідуальна ціна та розмір.
-              </p>
-            </Link>
-            <Link
-              href="/portal/users"
-              className="rounded-xl bg-panel p-6 shadow-sm transition hover:shadow-md"
-            >
-              <h2 className="font-serif text-lg font-bold text-navy-dark">Користувачі</h2>
-              <p className="mt-2 text-sm text-navy-dim">
-                Запросити нового дилера, дистриб&apos;ютора чи співробітника.
-              </p>
-            </Link>
-          </>
+          <Link
+            href="/portal/overrides"
+            className="rounded-xl bg-panel p-6 shadow-sm transition hover:shadow-md"
+          >
+            <h2 className="font-serif text-lg font-bold text-navy-dark">
+              Ручне перевизначення ціни/розміру
+            </h2>
+            <p className="mt-2 text-sm text-navy-dim">
+              Для нестандартних замовлень — індивідуальна ціна та розмір.
+            </p>
+          </Link>
+        )}
+        {isOwner && (
+          <Link
+            href="/portal/users"
+            className="rounded-xl bg-panel p-6 shadow-sm transition hover:shadow-md"
+          >
+            <h2 className="font-serif text-lg font-bold text-navy-dark">Користувачі</h2>
+            <p className="mt-2 text-sm text-navy-dim">
+              Запросити нового дилера, дистриб&apos;ютора чи співробітника.
+            </p>
+          </Link>
         )}
       </div>
 
