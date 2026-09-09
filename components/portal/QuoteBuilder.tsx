@@ -237,7 +237,7 @@ export default function QuoteBuilder({
       return [{ label: row.product_code.slice(flatLine!.prefix.length), unitPrice: row.price }];
     }
     if (!modelCode || !tariff) return [];
-    const rows: { label: string; unitPrice: number }[] = [];
+    const rows: { label: string; unitPrice: number; photo?: string }[] = [];
     const variantLabel = variantOptions.find((v) => v.code === effectiveVariantCode)?.label;
     const panelBase = panelPrice();
     const isManualSize = canOverride && nonstdSize;
@@ -264,19 +264,30 @@ export default function QuoteBuilder({
         unitPrice: korobManualPrice,
       });
     } else if (korob) {
-      rows.push({ label: korob, unitPrice: priceOf(korobOptions, korob) });
+      rows.push({ label: korob, unitPrice: priceOf(korobOptions, korob), photo: addonPhotoFor("korob", korob) });
     }
-    if (lishtvaFront) rows.push({ label: `${lishtvaFront} (лицьова)`, unitPrice: priceOf(lishtvaOptions, lishtvaFront) });
-    if (lishtvaBack) rows.push({ label: `${lishtvaBack} (тильна)`, unitPrice: priceOf(lishtvaOptions, lishtvaBack) });
+    if (lishtvaFront)
+      rows.push({
+        label: `${lishtvaFront} (лицьова)`,
+        unitPrice: priceOf(lishtvaOptions, lishtvaFront),
+        photo: addonPhotoFor("lishtva", lishtvaFront),
+      });
+    if (lishtvaBack)
+      rows.push({
+        label: `${lishtvaBack} (тильна)`,
+        unitPrice: priceOf(lishtvaOptions, lishtvaBack),
+        photo: addonPhotoFor("lishtva", lishtvaBack),
+      });
     if (canOverride && dobirManual) {
       rows.push({
         label: `Добір, нестандарт${
           dobirManualWidth && dobirManualHeight ? `, ${dobirManualWidth}×${dobirManualHeight} мм` : ""
         } (вручну)`,
         unitPrice: dobirManualPrice,
+        photo: addonPhotoFor("dobir", dobir),
       });
     } else if (dobir) {
-      rows.push({ label: dobir, unitPrice: priceOf(dobirOptions, dobir) });
+      rows.push({ label: dobir, unitPrice: priceOf(dobirOptions, dobir), photo: addonPhotoFor("dobir", dobir) });
     }
     if (vrizka === "lock")
       rows.push({
@@ -343,7 +354,7 @@ export default function QuoteBuilder({
         colorLabel: "",
         photo: undefined,
         qty,
-        rows: previewRows.map((r) => ({ label: r.label, unitPrice: r.unitPrice, qty, amount: r.unitPrice * qty })),
+        rows: previewRows.map((r) => ({ label: r.label, unitPrice: r.unitPrice, qty, amount: r.unitPrice * qty, photo: r.photo })),
       };
       setPositions((prev) => [...prev, position]);
       setPogItem("");
@@ -359,7 +370,7 @@ export default function QuoteBuilder({
         colorLabel: "",
         photo: undefined,
         qty,
-        rows: previewRows.map((r) => ({ label: r.label, unitPrice: r.unitPrice, qty, amount: r.unitPrice * qty })),
+        rows: previewRows.map((r) => ({ label: r.label, unitPrice: r.unitPrice, qty, amount: r.unitPrice * qty, photo: r.photo })),
       };
       setPositions((prev) => [...prev, position]);
       setFlatItemCode("");
@@ -374,7 +385,7 @@ export default function QuoteBuilder({
       colorLabel,
       photo: previewPhoto,
       qty,
-      rows: previewRows.map((r) => ({ label: r.label, unitPrice: r.unitPrice, qty, amount: r.unitPrice * qty })),
+      rows: previewRows.map((r) => ({ label: r.label, unitPrice: r.unitPrice, qty, amount: r.unitPrice * qty, photo: r.photo })),
     };
     setPositions((prev) => [...prev, position]);
     setVariantCode(modelCode);
@@ -441,7 +452,7 @@ export default function QuoteBuilder({
         <tr>
           ${idx === 0 ? `<td rowspan="${p.rows.length}" style="text-align:center;"><img src="${origin}${p.photo ?? ""}" alt="" style="width:64px;height:auto;border-radius:6px;" /></td>` : ""}
           ${idx === 0 ? `<td rowspan="${p.rows.length}"><strong>${modelLine}</strong><br/><span style="color:#8A90A6;font-size:12px;">${tc(p.colorLabel || "")}</span></td>` : ""}
-          <td>${tc(r.label)}</td>
+          <td>${r.photo ? `<img class="addon-photo" src="${origin}${r.photo}" alt="" />` : ""}${tc(r.label)}</td>
           <td style="text-align:center;">${r.qty}</td>
           <td style="text-align:right;">${r.unitPrice.toFixed(2)} ₴</td>
           <td style="text-align:right;">${r.amount.toFixed(2)} ₴</td>
@@ -486,6 +497,7 @@ export default function QuoteBuilder({
   table { width: 100%; border-collapse: collapse; margin-top: 12px; }
   th { text-align: left; border-bottom: 2px solid #E3CCA1; padding: 8px 6px; font-size: 12px; text-transform: uppercase; color: #333958; }
   td { padding: 8px 6px; border-bottom: 1px solid #eee; font-size: 13px; vertical-align: top; }
+  .addon-photo { width: 28px; height: 20px; object-fit: contain; vertical-align: middle; margin-right: 6px; border-radius: 3px; background: #F7F6F2; }
   .totals { text-align: right; margin-top: 16px; font-size: 20px; font-weight: bold; color: #333958; }
   .footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid #eee; font-size: 12px; color: #8A90A6; text-align: center; }
   @media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
@@ -1080,7 +1092,15 @@ export default function QuoteBuilder({
                           <div className="text-xs font-normal text-navy-dim">{p.colorLabel}</div>
                         </td>
                       )}
-                      <td className="px-3 py-3 text-navy-dark">{r.label}</td>
+                      <td className="px-3 py-3 text-navy-dark">
+                        <div className="flex items-center gap-2">
+                          {r.photo && (
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img src={r.photo} alt="" className="h-5 w-7 rounded object-contain bg-panel-alt" />
+                          )}
+                          {r.label}
+                        </div>
+                      </td>
                       <td className="px-3 py-3 text-navy-dark">{r.qty}</td>
                       <td className="px-3 py-3 text-navy-dark">{r.unitPrice.toFixed(2)} ₴</td>
                       <td className="px-3 py-3 text-navy-dark">{r.amount.toFixed(2)} ₴</td>

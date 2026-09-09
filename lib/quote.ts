@@ -57,6 +57,7 @@ export type QuoteLineItem = {
   unitPrice: number;
   qty: number;
   amount: number;
+  photo?: string;
 };
 
 export type QuotePosition = {
