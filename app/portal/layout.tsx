@@ -65,9 +65,6 @@ export default async function PortalLayout({ children }: { children: ReactNode }
                 <Link href="/portal" className="text-white/85 hover:text-gold">
                   Кабінет
                 </Link>
-                <Link href="/portal/prices" className="text-white/85 hover:text-gold">
-                  Ціни
-                </Link>
                 <Link href="/portal/quote" className="text-white/85 hover:text-gold">
                   Комерційна пропозиція
                 </Link>

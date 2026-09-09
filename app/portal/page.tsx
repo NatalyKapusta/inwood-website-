@@ -71,16 +71,6 @@ export default async function PortalDashboardPage() {
       </div>
 
       <div className="mt-8 grid gap-4 sm:grid-cols-2">
-        <Link
-          href="/portal/prices"
-          className="rounded-xl bg-navy-dark p-6 text-white transition hover:bg-gold hover:text-navy-dark"
-        >
-          <h2 className="font-serif text-lg font-bold">Ціни за вашим тарифом</h2>
-          <p className="mt-2 text-sm opacity-80">
-            Актуальні ціни на всі моделі дверей для вашої ролі.
-          </p>
-        </Link>
-
         <div className="rounded-xl bg-panel p-6 shadow-sm">
           <h2 className="font-serif text-lg font-bold text-navy-dark">Каталоги для завантаження</h2>
           <p className="mt-2 text-sm text-navy-dim">Повний каталог продукції IN WOOD у PDF.</p>
