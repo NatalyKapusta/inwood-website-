@@ -71,13 +71,18 @@ export function organizationJsonLd() {
     url: SITE_URL,
     logo: `${SITE_URL}/logo/inwood-logo-gold.svg`,
     description:
-      "Виробник міжкімнатних дверей повного циклу — Полтава, Україна. Дилерська мережа та експорт.",
+      "Виробник міжкімнатних дверей повного циклу — Полтава, Україна. Дилерська мережа та експорт до Великої Британії, Франції, Швейцарії, Литви та Латвії.",
     address: {
       "@type": "PostalAddress",
       streetAddress: "провулок Спортивний, 4",
       addressLocality: "Полтава",
       addressCountry: "UA",
     },
+    // Реальні країни експорту (підтверджено власником) — конкретні країни
+    // замість загального "worldwide" дають Google/AI-пошуковикам точніший
+    // сигнал про те, куди саме постачається продукція.
+    areaServed: ["UA", "GB", "FR", "CH", "LT", "LV"],
+    sameAs: ["https://www.facebook.com/inwood.official", "https://www.instagram.com/in_wood_official"],
     contactPoint: [
       {
         "@type": "ContactPoint",
@@ -90,7 +95,7 @@ export function organizationJsonLd() {
         "@type": "ContactPoint",
         telephone: "+380-50-308-18-99",
         contactType: "sales",
-        areaServed: ["UA", "EU", "worldwide"],
+        areaServed: ["UA", "GB", "FR", "CH", "LT", "LV"],
         availableLanguage: ["en", "uk"],
       },
     ],
