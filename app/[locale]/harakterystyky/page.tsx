@@ -73,6 +73,9 @@ export default async function CharacteristicsPage({
         nameLabel={c.formName}
         phoneLabel={c.formPhone}
         submitLabel={c.formSubmit}
+        phoneManualLabel={c.phoneManual}
+        phoneChooseCountryLabel={c.phoneChooseCountry}
+        phoneInvalidLabel={c.phoneInvalid}
       source="Характеристики дверей"
       sent={searchParams.sent === "1"}
       />

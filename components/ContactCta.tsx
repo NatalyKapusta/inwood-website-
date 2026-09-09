@@ -13,6 +13,9 @@ export default function ContactCta({
   source,
   sent,
   sentLabel,
+  phoneManualLabel,
+  phoneChooseCountryLabel,
+  phoneInvalidLabel,
 }: {
   title: string;
   text: string;
@@ -23,6 +26,9 @@ export default function ContactCta({
   source: string;
   sent?: boolean;
   sentLabel?: string;
+  phoneManualLabel?: string;
+  phoneChooseCountryLabel?: string;
+  phoneInvalidLabel?: string;
 }) {
   return (
     <section className="mx-auto max-w-2xl px-4 py-16 text-center sm:py-24">
@@ -47,6 +53,9 @@ export default function ContactCta({
             placeholder={phoneLabel}
             required
             className="w-full rounded-lg border border-navy-dim/30 px-4 py-3 outline-none focus:border-gold"
+            manualLabel={phoneManualLabel}
+            chooseCountryLabel={phoneChooseCountryLabel}
+            invalidLabel={phoneInvalidLabel}
           />
           {extraFields?.map((f) => (
             <input

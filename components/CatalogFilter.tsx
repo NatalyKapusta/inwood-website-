@@ -10,11 +10,17 @@ export default function CatalogFilter({
   orderEmail,
   t,
   pricesVisible,
+  phoneManual,
+  phoneChooseCountry,
+  phoneInvalid,
 }: {
   sections: { id: string; data: Collection }[];
   orderEmail: string;
   t: Dictionary["catalog"];
   pricesVisible: boolean;
+  phoneManual?: string;
+  phoneChooseCountry?: string;
+  phoneInvalid?: string;
 }) {
   const [active, setActive] = useState<string>("all");
 
@@ -51,6 +57,9 @@ export default function CatalogFilter({
                     orderEmail={orderEmail}
                     t={t}
                     pricesVisible={pricesVisible}
+                    phoneManual={phoneManual}
+                    phoneChooseCountry={phoneChooseCountry}
+                    phoneInvalid={phoneInvalid}
                   />
                 ))}
               </div>

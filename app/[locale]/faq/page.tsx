@@ -51,6 +51,9 @@ export default async function FaqPage({
         nameLabel={c.formName}
         phoneLabel={c.formPhone}
         submitLabel={c.formSubmit}
+        phoneManualLabel={c.phoneManual}
+        phoneChooseCountryLabel={c.phoneChooseCountry}
+        phoneInvalidLabel={c.phoneInvalid}
         source="Питання та відповіді"
         sent={searchParams.sent === "1"}
       />

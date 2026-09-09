@@ -257,6 +257,9 @@ export default async function HomePage({
               placeholder={c.formPhone}
               required
               className="w-full rounded-lg border border-navy-dim/30 px-4 py-3 outline-none focus:border-gold"
+              manualLabel={c.phoneManual}
+              chooseCountryLabel={c.phoneChooseCountry}
+              invalidLabel={c.phoneInvalid}
             />
             <button
               type="submit"

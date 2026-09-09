@@ -52,6 +52,9 @@ export default async function CatalogPage({ params }: { params: { locale: Locale
           orderEmail={dict.common.email}
           t={t}
           pricesVisible={pricesVisible}
+          phoneManual={dict.common.phoneManual}
+          phoneChooseCountry={dict.common.phoneChooseCountry}
+          phoneInvalid={dict.common.phoneInvalid}
         />
       </div>
     </div>

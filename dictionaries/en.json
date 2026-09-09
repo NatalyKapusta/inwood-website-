@@ -63,7 +63,10 @@
     "ctaButton": "Get an offer",
     "formName": "Name",
     "formPhone": "Phone",
-    "formSubmit": "Send message"
+    "formSubmit": "Send message",
+    "phoneManual": "Don't see my country in the list — enter number manually",
+    "phoneChooseCountry": "Choose a country from the list",
+    "phoneInvalid": "Please check your phone number — enter a valid number"
   },
   "home": {
     "title": "Interior Door Manufacturer in Ukraine | Dealers | Export",

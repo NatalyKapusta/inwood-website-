@@ -68,6 +68,9 @@ export default async function GarantiyaPage({
         nameLabel={dict.common.formName}
         phoneLabel={dict.common.formPhone}
         submitLabel={dict.common.formSubmit}
+        phoneManualLabel={dict.common.phoneManual}
+        phoneChooseCountryLabel={dict.common.phoneChooseCountry}
+        phoneInvalidLabel={dict.common.phoneInvalid}
       source="Гарантія"
       sent={searchParams.sent === "1"}
       />

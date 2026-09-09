@@ -60,6 +60,9 @@ export default function PhoneInput({
   className,
   value,
   onChange,
+  manualLabel = "Немає моєї країни в списку — ввести номер вручну",
+  chooseCountryLabel = "Обрати країну зі списку",
+  invalidLabel = "Перевірте номер телефону — введіть коректний номер",
 }: {
   name?: string;
   placeholder?: string;
@@ -67,6 +70,9 @@ export default function PhoneInput({
   className?: string;
   value?: string;
   onChange?: (value: string) => void;
+  manualLabel?: string;
+  chooseCountryLabel?: string;
+  invalidLabel?: string;
 }) {
   const [internalValue, setInternalValue] = useState("");
   const [touched, setTouched] = useState(false);
@@ -125,11 +131,9 @@ export default function PhoneInput({
         }}
         className="mt-1 text-xs text-navy-dim underline decoration-dotted hover:text-gold-dim"
       >
-        {manual ? "Обрати країну зі списку" : "Немає моєї країни в списку — ввести номер вручну"}
+        {manual ? chooseCountryLabel : manualLabel}
       </button>
-      {invalid && (
-        <p className="mt-1 text-xs text-red-600">Перевірте номер телефону — введіть коректний номер</p>
-      )}
+      {invalid && <p className="mt-1 text-xs text-red-600">{invalidLabel}</p>}
     </div>
   );
 }

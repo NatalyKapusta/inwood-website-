@@ -90,6 +90,9 @@ export default async function BlogPostPage({
         nameLabel={c.formName}
         phoneLabel={c.formPhone}
         submitLabel={c.formSubmit}
+        phoneManualLabel={c.phoneManual}
+        phoneChooseCountryLabel={c.phoneChooseCountry}
+        phoneInvalidLabel={c.phoneInvalid}
         source={`Блог — ${post.title}`}
         sent={searchParams.sent === "1"}
       />

@@ -135,7 +135,7 @@ export default async function KontaktyPage({
             <p className="text-xs uppercase tracking-wide text-gold-dim">Режим роботи</p>
             <p className="mt-1 text-navy-dark">{c.hours}</p>
           </div>
-          <SocialLinks />
+          <SocialLinks tone="light" />
         </div>
 
         <div className="rounded-xl bg-panel-alt p-6">
@@ -159,6 +159,9 @@ export default async function KontaktyPage({
                 placeholder={c.formPhone}
                 required
                 className="w-full rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
+                manualLabel={c.phoneManual}
+                chooseCountryLabel={c.phoneChooseCountry}
+                invalidLabel={c.phoneInvalid}
               />
               <input
                 type="email"

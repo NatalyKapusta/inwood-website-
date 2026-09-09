@@ -73,6 +73,9 @@ export default async function OplataDostavkaPage({
         nameLabel={c.formName}
         phoneLabel={c.formPhone}
         submitLabel={c.formSubmit}
+        phoneManualLabel={c.phoneManual}
+        phoneChooseCountryLabel={c.phoneChooseCountry}
+        phoneInvalidLabel={c.phoneInvalid}
       source="Оплата та доставка"
       sent={searchParams.sent === "1"}
       />

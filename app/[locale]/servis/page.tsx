@@ -50,6 +50,9 @@ export default async function ServisPage({
         nameLabel={dict.common.formName}
         phoneLabel={dict.common.formPhone}
         submitLabel={dict.common.formSubmit}
+        phoneManualLabel={dict.common.phoneManual}
+        phoneChooseCountryLabel={dict.common.phoneChooseCountry}
+        phoneInvalidLabel={dict.common.phoneInvalid}
       source="Сервісне обслуговування"
       sent={searchParams.sent === "1"}
       />

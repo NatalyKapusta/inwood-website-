@@ -78,6 +78,9 @@ export default async function SpivpratsyaPage({
         nameLabel={c.formName}
         phoneLabel={c.formPhone}
         submitLabel={c.formSubmit}
+        phoneManualLabel={c.phoneManual}
+        phoneChooseCountryLabel={c.phoneChooseCountry}
+        phoneInvalidLabel={c.phoneInvalid}
         source="Співпраця"
         sent={searchParams.sent === "1"}
         extraFields={[

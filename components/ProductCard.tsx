@@ -34,6 +34,9 @@ export default function ProductCard({
   orderEmail,
   t,
   pricesVisible,
+  phoneManual,
+  phoneChooseCountry,
+  phoneInvalid,
 }: {
   collectionLabel: string;
   model: ProductModel;
@@ -41,6 +44,9 @@ export default function ProductCard({
   orderEmail: string;
   t: Dictionary["catalog"];
   pricesVisible: boolean;
+  phoneManual?: string;
+  phoneChooseCountry?: string;
+  phoneInvalid?: string;
 }) {
   const defaultColorIdx = Math.max(
     model.colors.findIndex((c) => c.slug === "white"),
@@ -322,6 +328,9 @@ export default function ProductCard({
                   value={phone}
                   onChange={setPhone}
                   className="w-full rounded-lg border border-navy-dim/30 px-3 py-2 text-sm outline-none focus:border-gold"
+                  manualLabel={phoneManual}
+                  chooseCountryLabel={phoneChooseCountry}
+                  invalidLabel={phoneInvalid}
                 />
                 {error && (
                   <p className="text-xs text-red-600">Не вдалося надіслати. Спробуйте ще раз.</p>
