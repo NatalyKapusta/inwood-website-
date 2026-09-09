@@ -33,6 +33,24 @@ const VRIZKA_OPTIONS = [
   { value: "full", label: "Повна врізка фурнітури" },
 ] as const;
 
+// Погонажні вироби — короб/лиштва/добір продаються окремо, без дверного полотна.
+// Ціни ті самі, що й у комплекті до дверей (line_addon_prices), лише обираються без моделі.
+const POGONAZHNI_KEY = "pogonazhni";
+const POGONAZHNI_LABEL = "Погонажні вироби (короб/лиштва/добір окремо)";
+const POGONAZHNI_TYPE_OPTIONS = [
+  { value: "korob", label: "Короб" },
+  { value: "lishtva", label: "Лиштва" },
+  { value: "dobir", label: "Добір" },
+] as const;
+type PogonazhniType = (typeof POGONAZHNI_TYPE_OPTIONS)[number]["value"];
+
+// Плінтус і дверна накладка — прості "плоскі" позиції без моделі/кольору/короба,
+// ціни лежать у product_tariff_prices з відповідним префіксом у product_code.
+const FLAT_LINE_CATEGORIES = [
+  { key: "plintus", label: "Плінтус", prefix: "PLINTUS — " },
+  { key: "nakladka", label: "Дверна накладка (метал. двері, 10 мм)", prefix: "NAKLADKA — " },
+] as const;
+
 const NONSTD_SURCHARGE = 1.2; // +20% за нестандартний розмір — той самий коефіцієнт, що й у прайсі
 
 export default function QuoteBuilder({
@@ -60,6 +78,10 @@ export default function QuoteBuilder({
   const [translateEn, setTranslateEn] = useState(false);
 
   const [collectionKey, setCollectionKey] = useState(collectionOrder[0]);
+  const [pogLine, setPogLine] = useState(collectionOrder[0]);
+  const [pogType, setPogType] = useState<PogonazhniType>("korob");
+  const [pogItem, setPogItem] = useState("");
+  const [flatItemCode, setFlatItemCode] = useState("");
   const [modelCode, setModelCode] = useState("");
   const [variantCode, setVariantCode] = useState("");
   const [colorLabel, setColorLabel] = useState("");
@@ -113,6 +135,10 @@ export default function QuoteBuilder({
     [panelRows]
   );
 
+  const isPogonazhni = collectionKey === POGONAZHNI_KEY;
+  const flatLine = FLAT_LINE_CATEGORIES.find((c) => c.key === collectionKey);
+  const isFlatLine = !!flatLine;
+  const isSpecialLine = isPogonazhni || isFlatLine;
   const isHiddenDoors = collectionKey === "hidden-doors";
   const models = collections[collectionKey]?.models ?? [];
   const currentModel = models.find((m) => m.code === modelCode);
@@ -135,6 +161,15 @@ export default function QuoteBuilder({
   const lishtvaOptions = lishtvaOptionsAll.filter((r) => isAddonCompatible(collectionKey, variantType, r.item_label));
   const dobirOptions = dobirOptionsAll.filter((r) => isAddonCompatible(collectionKey, variantType, r.item_label));
 
+  const pogItemOptions = addonRows.filter(
+    (r) => r.collection === pogLine && r.addon_type === pogType && r.tariff === tariff
+  );
+  const pogTypeLabel = POGONAZHNI_TYPE_OPTIONS.find((o) => o.value === pogType)?.label ?? pogType;
+
+  const flatItemOptions = flatLine
+    ? panelRows.filter((r) => r.product_code.startsWith(flatLine.prefix) && r.tariff === tariff)
+    : [];
+
   function priceOf(list: AddonRow[], label: string) {
     return list.find((r) => r.item_label === label)?.price ?? 0;
   }
@@ -146,6 +181,17 @@ export default function QuoteBuilder({
   }
 
   const previewRows = useMemo(() => {
+    if (isPogonazhni) {
+      if (!pogItem || !tariff) return [];
+      const price = pogItemOptions.find((r) => r.item_label === pogItem)?.price ?? 0;
+      return [{ label: `${pogTypeLabel}: ${pogItem}`, unitPrice: price }];
+    }
+    if (isFlatLine) {
+      if (!flatItemCode || !tariff) return [];
+      const row = flatItemOptions.find((r) => r.product_code === flatItemCode);
+      if (!row) return [];
+      return [{ label: row.product_code.slice(flatLine!.prefix.length), unitPrice: row.price }];
+    }
     if (!modelCode || !tariff) return [];
     const rows: { label: string; unitPrice: number }[] = [];
     const variantLabel = variantOptions.find((v) => v.code === effectiveVariantCode)?.label;
@@ -185,6 +231,13 @@ export default function QuoteBuilder({
     return rows;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
+    isPogonazhni,
+    pogItem,
+    pogType,
+    pogLine,
+    isFlatLine,
+    flatItemCode,
+    flatItemOptions,
     modelCode,
     effectiveVariantCode,
     tariff,
@@ -210,6 +263,38 @@ export default function QuoteBuilder({
   const previewTotal = previewRows.reduce((s, r) => s + r.unitPrice, 0) * qty;
 
   function addPosition() {
+    if (isPogonazhni) {
+      if (!pogItem || previewRows.length === 0) return;
+      const position: QuotePosition = {
+        id: crypto.randomUUID(),
+        collectionLabel: POGONAZHNI_LABEL,
+        modelCode: `${collections[pogLine]?.label ?? pogLine} — ${pogTypeLabel}`,
+        colorLabel: "",
+        photo: undefined,
+        qty,
+        rows: previewRows.map((r) => ({ label: r.label, unitPrice: r.unitPrice, qty, amount: r.unitPrice * qty })),
+      };
+      setPositions((prev) => [...prev, position]);
+      setPogItem("");
+      setQty(1);
+      return;
+    }
+    if (isFlatLine) {
+      if (!flatItemCode || previewRows.length === 0) return;
+      const position: QuotePosition = {
+        id: crypto.randomUUID(),
+        collectionLabel: flatLine!.label,
+        modelCode: previewRows[0].label,
+        colorLabel: "",
+        photo: undefined,
+        qty,
+        rows: previewRows.map((r) => ({ label: r.label, unitPrice: r.unitPrice, qty, amount: r.unitPrice * qty })),
+      };
+      setPositions((prev) => [...prev, position]);
+      setFlatItemCode("");
+      setQty(1);
+      return;
+    }
     if (!modelCode || previewRows.length === 0) return;
     const position: QuotePosition = {
       id: crypto.randomUUID(),
@@ -468,6 +553,8 @@ export default function QuoteBuilder({
                 setModelCode("");
                 setVariantCode("");
                 setColorLabel("");
+                setPogItem("");
+                setFlatItemCode("");
               }}
               className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
             >
@@ -478,8 +565,77 @@ export default function QuoteBuilder({
                     {collections[k].label}
                   </option>
                 ))}
+              <option value={POGONAZHNI_KEY}>{POGONAZHNI_LABEL}</option>
+              {FLAT_LINE_CATEGORIES.map((c) => (
+                <option key={c.key} value={c.key}>
+                  {c.label}
+                </option>
+              ))}
             </select>
 
+            {isFlatLine && (
+              <select
+                value={flatItemCode}
+                onChange={(e) => setFlatItemCode(e.target.value)}
+                className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+              >
+                <option value="">Позиція...</option>
+                {flatItemOptions.map((r) => (
+                  <option key={r.product_code} value={r.product_code}>
+                    {r.product_code.slice(flatLine!.prefix.length)}
+                  </option>
+                ))}
+              </select>
+            )}
+
+            {isPogonazhni && (
+              <>
+                <select
+                  value={pogLine}
+                  onChange={(e) => {
+                    setPogLine(e.target.value);
+                    setPogItem("");
+                  }}
+                  className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+                >
+                  {collectionOrder
+                    .filter((k) => collections[k]?.models?.length)
+                    .map((k) => (
+                      <option key={k} value={k}>
+                        Лінія: {collections[k].label}
+                      </option>
+                    ))}
+                </select>
+                <select
+                  value={pogType}
+                  onChange={(e) => {
+                    setPogType(e.target.value as PogonazhniType);
+                    setPogItem("");
+                  }}
+                  className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+                >
+                  {POGONAZHNI_TYPE_OPTIONS.map((o) => (
+                    <option key={o.value} value={o.value}>
+                      {o.label}
+                    </option>
+                  ))}
+                </select>
+                <select
+                  value={pogItem}
+                  onChange={(e) => setPogItem(e.target.value)}
+                  className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+                >
+                  <option value="">Позиція...</option>
+                  {pogItemOptions.map((r) => (
+                    <option key={r.item_label} value={r.item_label}>
+                      {r.item_label}
+                    </option>
+                  ))}
+                </select>
+              </>
+            )}
+
+            {!isSpecialLine && (
             <select
               value={modelCode}
               onChange={(e) => {
@@ -502,8 +658,9 @@ export default function QuoteBuilder({
                     </option>
                   ))}
             </select>
+            )}
 
-            {!isHiddenDoors && modelCode && variantOptions.length > 1 && (
+            {!isSpecialLine && !isHiddenDoors && modelCode && variantOptions.length > 1 && (
               <select
                 value={variantCode}
                 onChange={(e) => setVariantCode(e.target.value)}
@@ -517,7 +674,7 @@ export default function QuoteBuilder({
               </select>
             )}
 
-            {currentModel && (
+            {!isSpecialLine && currentModel && (
               <select
                 value={colorLabel}
                 onChange={(e) => setColorLabel(e.target.value)}
@@ -532,6 +689,8 @@ export default function QuoteBuilder({
               </select>
             )}
 
+            {!isSpecialLine && (
+            <>
             {isStaff && (
               <div className="rounded-lg bg-panel-alt p-3">
                 <label className="flex items-center gap-2 text-sm text-navy-dark">
@@ -671,6 +830,8 @@ export default function QuoteBuilder({
                 Фарбування коробки прих. монтажу по RAL
               </label>
             )}
+            </>
+            )}
 
             <input
               type="number"
@@ -698,7 +859,7 @@ export default function QuoteBuilder({
             <button
               type="button"
               onClick={addPosition}
-              disabled={!modelCode}
+              disabled={isPogonazhni ? !pogItem : isFlatLine ? !flatItemCode : !modelCode}
               className="rounded-full bg-navy-dark px-6 py-3 font-semibold text-white transition hover:bg-gold hover:text-navy-dark disabled:opacity-40"
             >
               Додати позицію
