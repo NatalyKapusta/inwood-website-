@@ -77,6 +77,15 @@ export async function inviteUser(formData: FormData) {
   }
 
   const admin = createAdminClient();
+
+  const { data: existing } = await admin.from("profiles").select("id").eq("email", email).maybeSingle();
+  if (existing) {
+    redirect(
+      "/portal/users?error=" +
+        encodeURIComponent("Цей email уже зареєстровано — змініть роль у таблиці нижче, повторне запрошення не потрібне")
+    );
+  }
+
   const { data: invited, error } = await admin.auth.admin.inviteUserByEmail(email, {
     redirectTo: `${SITE_URL}/portal/set-password`,
   });
@@ -92,6 +101,37 @@ export async function inviteUser(formData: FormData) {
 
   revalidatePath("/portal/users");
   redirect("/portal/users?invited=" + encodeURIComponent(email));
+}
+
+// Лише staff: змінити роль уже зареєстрованого користувача.
+export async function updateUserRole(formData: FormData) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) redirect("/portal/login");
+
+  const { data: myProfile } = await supabase.from("profiles").select("role").eq("id", user.id).single();
+  if (myProfile?.role !== "staff") {
+    redirect("/portal/users?error=" + encodeURIComponent("Недостатньо прав"));
+  }
+
+  const targetId = String(formData.get("user_id") ?? "");
+  const role = String(formData.get("role") ?? "");
+  const validRoles = ["dealer", "dealer_distributor", "manager", "staff"];
+
+  if (!targetId || !validRoles.includes(role)) {
+    redirect("/portal/users?error=" + encodeURIComponent("Некоректні дані"));
+  }
+
+  const admin = createAdminClient();
+  const { error } = await admin.from("profiles").update({ role }).eq("id", targetId);
+  if (error) {
+    redirect("/portal/users?error=" + encodeURIComponent(error.message));
+  }
+
+  revalidatePath("/portal/users");
+  redirect("/portal/users?roleUpdated=1");
 }
 
 // Лише staff: заблокувати або розблокувати доступ користувача до порталу.

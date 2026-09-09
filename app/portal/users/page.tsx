@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import { inviteUser, toggleUserAccess } from "@/app/portal/actions";
+import { inviteUser, toggleUserAccess, updateUserRole } from "@/app/portal/actions";
 import DeleteUserButton from "@/components/portal/DeleteUserButton";
 
 const roleLabels: Record<string, string> = {
@@ -13,7 +13,14 @@ const roleLabels: Record<string, string> = {
 export default async function PortalUsersPage({
   searchParams,
 }: {
-  searchParams: { error?: string; invited?: string; blocked?: string; unblocked?: string; deleted?: string };
+  searchParams: {
+    error?: string;
+    invited?: string;
+    blocked?: string;
+    unblocked?: string;
+    deleted?: string;
+    roleUpdated?: string;
+  };
 }) {
   const supabase = await createClient();
   const {
@@ -59,6 +66,11 @@ export default async function PortalUsersPage({
       {searchParams.deleted && (
         <p className="mt-4 rounded-lg bg-green-50 px-4 py-3 text-sm text-green-700">
           Користувача видалено. Цей email можна запросити знову.
+        </p>
+      )}
+      {searchParams.roleUpdated && (
+        <p className="mt-4 rounded-lg bg-green-50 px-4 py-3 text-sm text-green-700">
+          Роль оновлено
         </p>
       )}
 
@@ -118,7 +130,31 @@ export default async function PortalUsersPage({
                 <td className="px-4 py-3 text-navy-dark">{p.email}</td>
                 <td className="px-4 py-3 text-navy-dark">{p.full_name ?? "—"}</td>
                 <td className="px-4 py-3 text-navy-dim">{p.company_name ?? "—"}</td>
-                <td className="px-4 py-3 text-navy-dark">{roleLabels[p.role] ?? p.role}</td>
+                <td className="px-4 py-3 text-navy-dark">
+                  {p.id === user.id ? (
+                    roleLabels[p.role] ?? p.role
+                  ) : (
+                    <form action={updateUserRole} className="flex items-center gap-2">
+                      <input type="hidden" name="user_id" value={p.id} />
+                      <select
+                        name="role"
+                        defaultValue={p.role}
+                        className="rounded-lg border border-navy-dim/30 bg-panel px-2 py-1.5 text-xs outline-none focus:border-gold"
+                      >
+                        <option value="dealer">Дилер</option>
+                        <option value="dealer_distributor">Дилер + роздріб + дистрибуція</option>
+                        <option value="manager">Менеджер (тільки калькулятор)</option>
+                        <option value="staff">Співробітник IN WOOD</option>
+                      </select>
+                      <button
+                        type="submit"
+                        className="rounded-full border border-navy-dim/30 px-3 py-1.5 text-xs font-semibold text-navy-dark transition hover:border-gold hover:text-gold-dim"
+                      >
+                        Зберегти
+                      </button>
+                    </form>
+                  )}
+                </td>
                 <td className="px-4 py-3">
                   {p.blocked ? (
                     <span className="rounded-full bg-red-50 px-3 py-1 text-xs font-semibold text-red-700">
