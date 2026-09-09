@@ -165,6 +165,25 @@ export default function QuoteBuilder({
     ? []
     : variantsData.variantsByBaseCode[modelCode] ?? [{ code: modelCode, variantType: "base", label: "База" }];
   const effectiveVariantCode = isHiddenDoors ? modelCode : variantCode || modelCode;
+
+  // Один список "Модель" з усіма варіантами разом (як в оригінальному калькуляторі) —
+  // порядок база → алюм. крайка INSIDE → алюм. крайка / RAL, той самий, що дає
+  // сортування рядків у калькуляторі ("ET-01 (алюм. крайка INSIDE)" < "ET-01 (алюм. крайка)").
+  const VARIANT_SORT_PRIORITY: Record<VariantType, number> = { base: 0, "alu-inside": 1, alu: 2, ral: 1 };
+  const combinedModelOptions = isHiddenDoors
+    ? []
+    : models.flatMap((m) => {
+        const variants = variantsData.variantsByBaseCode[m.code] ?? [
+          { code: m.code, variantType: "base" as VariantType, label: "База" },
+        ];
+        return [...variants]
+          .sort((a, b) => VARIANT_SORT_PRIORITY[a.variantType] - VARIANT_SORT_PRIORITY[b.variantType])
+          .map((v) => ({
+            code: v.code,
+            baseCode: m.code,
+            label: v.variantType === "base" ? m.code : `${m.code} (${v.label})`,
+          }));
+      });
   const variantType: VariantType = variantsData.variantTypeByCode[effectiveVariantCode] ?? "base";
   const isAluEdge = isAluEdgeVariant(variantType);
 
@@ -659,10 +678,16 @@ export default function QuoteBuilder({
 
             {!isSpecialLine && (
             <select
-              value={modelCode}
+              value={isHiddenDoors ? modelCode : variantCode || modelCode}
               onChange={(e) => {
-                setModelCode(e.target.value);
-                setVariantCode(e.target.value);
+                if (isHiddenDoors) {
+                  setModelCode(e.target.value);
+                  setVariantCode(e.target.value);
+                } else {
+                  const opt = combinedModelOptions.find((o) => o.code === e.target.value);
+                  setModelCode(opt?.baseCode ?? e.target.value);
+                  setVariantCode(e.target.value);
+                }
                 setColorLabel("");
                 setWidth("");
                 setHeight("");
@@ -676,26 +701,12 @@ export default function QuoteBuilder({
                       {v.label}
                     </option>
                   ))
-                : models.map((m) => (
-                    <option key={m.code} value={m.code}>
-                      {m.code}
+                : combinedModelOptions.map((o) => (
+                    <option key={o.code} value={o.code}>
+                      {o.label}
                     </option>
                   ))}
             </select>
-            )}
-
-            {!isSpecialLine && !isHiddenDoors && modelCode && variantOptions.length > 1 && (
-              <select
-                value={variantCode}
-                onChange={(e) => setVariantCode(e.target.value)}
-                className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
-              >
-                {variantOptions.map((v) => (
-                  <option key={v.code} value={v.code}>
-                    {v.label}
-                  </option>
-                ))}
-              </select>
             )}
 
             {!isSpecialLine && currentModel && (
