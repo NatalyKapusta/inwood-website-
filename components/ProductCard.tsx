@@ -5,6 +5,13 @@ import Image from "next/image";
 import type { Komplekt, ProductModel } from "@/lib/products";
 import type { Dictionary } from "@/lib/dictionary";
 import PhoneInput from "@/components/PhoneInput";
+import {
+  STANDARD_WIDTHS,
+  STANDARD_HEIGHTS,
+  NONSTD_WIDTHS,
+  NONSTD_HEIGHTS,
+  NONSTD_SURCHARGE,
+} from "@/lib/doorSizes";
 
 const NONE = "__none__";
 
@@ -45,6 +52,8 @@ export default function ProductCard({
   const [dobir, setDobir] = useState(NONE);
   const [vrizka, setVrizka] = useState<"none" | "lock" | "full">("none");
   const [shumo, setShumo] = useState(false);
+  const [width, setWidth] = useState("");
+  const [height, setHeight] = useState("");
   const [modalOpen, setModalOpen] = useState(false);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -56,6 +65,13 @@ export default function ProductCard({
 
   const vrizkaPrice = vrizka === "lock" ? VRIZKA_LOCK_PRICE : vrizka === "full" ? VRIZKA_FULL_PRICE : 0;
   const shumoPrice = shumo ? SHUMO_PRICE : 0;
+
+  // Нестандартний розмір — та сама логіка й націнка +20%, що й у B2B-калькуляторі:
+  // ширина чи висота понад стандартний ряд автоматично додають NONSTD_SURCHARGE.
+  const sizeIsNonstd =
+    (width !== "" && NONSTD_WIDTHS.includes(Number(width))) ||
+    (height !== "" && NONSTD_HEIGHTS.includes(Number(height)));
+  const panelPrice = sizeIsNonstd ? model.basePrice * NONSTD_SURCHARGE : model.basePrice;
 
   const extra = useMemo(() => {
     const findPrice = (list: { label: string; price: number }[], value: string) =>
@@ -69,10 +85,11 @@ export default function ProductCard({
     );
   }, [korob, lyshtva, dobir, komplekt, vrizkaPrice, shumoPrice]);
 
-  const total = model.basePrice + extra;
+  const total = panelPrice + extra;
+  const sizeLabel = width && height ? ` ${width}×${height} мм${sizeIsNonstd ? ` (${t.nonstdSuffix})` : ""}` : "";
 
   const configLines = [
-    `${collectionLabel} — ${model.code}`,
+    `${collectionLabel} — ${model.code}${sizeLabel}`,
     `${t.color}: ${color?.label ?? "-"}`,
     korob !== NONE ? `${t.korob}: ${korob}` : null,
     lyshtva !== NONE ? `${t.lyshtva}: ${lyshtva}` : null,
@@ -155,6 +172,49 @@ export default function ProductCard({
           </div>
         )}
 
+        <div className="grid grid-cols-2 gap-2">
+          <label className="block text-xs text-navy-dim">
+            {t.width}
+            <select
+              value={width}
+              onChange={(e) => setWidth(e.target.value)}
+              className="mt-1 w-full rounded-lg border border-navy-dim/30 bg-panel px-2 py-1.5 text-sm text-navy-dark outline-none focus:border-gold"
+            >
+              <option value="">{t.none}</option>
+              {STANDARD_WIDTHS.map((w) => (
+                <option key={w} value={w}>
+                  {w} мм
+                </option>
+              ))}
+              {NONSTD_WIDTHS.map((w) => (
+                <option key={w} value={w}>
+                  {w} мм ({t.nonstdSuffix})
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="block text-xs text-navy-dim">
+            {t.height}
+            <select
+              value={height}
+              onChange={(e) => setHeight(e.target.value)}
+              className="mt-1 w-full rounded-lg border border-navy-dim/30 bg-panel px-2 py-1.5 text-sm text-navy-dark outline-none focus:border-gold"
+            >
+              <option value="">{t.none}</option>
+              {STANDARD_HEIGHTS.map((h) => (
+                <option key={h} value={h}>
+                  {h} мм
+                </option>
+              ))}
+              {NONSTD_HEIGHTS.map((h) => (
+                <option key={h} value={h}>
+                  {h} мм ({t.nonstdSuffix})
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+
         <SelectRow
           label={t.korob}
           noneLabel={t.none}
@@ -213,7 +273,7 @@ export default function ProductCard({
           <p className="whitespace-nowrap font-serif text-lg font-bold text-navy-dark">
             {!pricesVisible
               ? t.findOutPrice
-              : extra > 0
+              : extra > 0 || sizeIsNonstd
               ? `${t.total}: ${fmt(total)}`
               : `${t.from} ${fmt(model.basePrice)}`}
           </p>

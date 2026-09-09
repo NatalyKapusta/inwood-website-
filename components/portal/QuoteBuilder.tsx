@@ -7,6 +7,13 @@ import modelVariantsData from "@/data/model-variants.json";
 import { translateForPrint, PRINT_EN_STATIC, PRINT_EN_TIERS } from "@/lib/printEn";
 import { addonPhotoFor } from "@/lib/addonPhotos";
 import {
+  STANDARD_WIDTHS,
+  STANDARD_HEIGHTS,
+  NONSTD_WIDTHS,
+  NONSTD_HEIGHTS,
+  NONSTD_SURCHARGE,
+} from "@/lib/doorSizes";
+import {
   tariffLabels,
   positionTotal,
   isAluEdgeVariant,
@@ -61,15 +68,10 @@ const FLAT_LINE_CATEGORIES = [
   { key: "nakladka", label: "Дверна накладка (метал. двері, 10 мм)", prefix: "NAKLADKA — " },
 ] as const;
 
-const NONSTD_SURCHARGE = 1.2; // +20% за нестандартний розмір — той самий коефіцієнт, що й у прайсі
-
 // Розміри полотна за каталогом IN WOOD — однакові для всіх ліній (ETALON/NOMINAL/
 // FREZZATTI/PERFETTO/двері під фарбування). Ширина/висота понад стандарт доступні
-// прямо у списку, але автоматично додають +20% (той самий NONSTD_SURCHARGE).
-const STANDARD_WIDTHS = [400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900];
-const STANDARD_HEIGHTS = [1800, 1850, 1900, 1950, 2000, 2050, 2100];
-const NONSTD_WIDTHS = [950, 1000];
-const NONSTD_HEIGHTS = [2150, 2200, 2250, 2300];
+// прямо у списку, але автоматично додають +20% (той самий NONSTD_SURCHARGE) —
+// спільні з публічним каталогом (lib/doorSizes.ts), тримати синхронізованим.
 
 export default function QuoteBuilder({
   consultantDefault,

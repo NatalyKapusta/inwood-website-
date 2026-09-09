@@ -96,7 +96,7 @@ export default async function HomePage({
         <div className="grid gap-10 overflow-hidden rounded-2xl bg-panel-alt lg:grid-cols-2 lg:items-center">
           <div className="relative aspect-[3/2]">
             <Image
-              src="/photos/interiors/etalon-et-06-dub-shato.jpg"
+              src="/photos/interiors/etalon-et-01-zriz-kameniu.jpg"
               alt={t.qualityBanner.title}
               fill
               className="object-cover"
