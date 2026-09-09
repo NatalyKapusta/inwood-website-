@@ -142,8 +142,8 @@ export default async function PortalUsersPage({
                           type="submit"
                           className={
                             p.blocked
-                              ? "rounded-full border border-navy-dim/30 px-4 py-1.5 text-xs font-semibold text-navy-dark transition hover:border-gold hover:text-gold-dim"
-                              : "rounded-full border border-red-200 px-4 py-1.5 text-xs font-semibold text-red-700 transition hover:bg-red-50"
+                              ? "rounded-full bg-red-600 px-4 py-1.5 text-xs font-semibold text-white transition hover:bg-red-700"
+                              : "rounded-full border border-red-200 bg-white px-4 py-1.5 text-xs font-semibold text-red-700 transition hover:bg-red-50"
                           }
                         >
                           {p.blocked ? "Розблокувати" : "Заблокувати доступ"}
