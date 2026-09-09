@@ -5,6 +5,7 @@ import { createClient } from "@/lib/supabase/client";
 import { collections, collectionOrder } from "@/lib/products";
 import modelVariantsData from "@/data/model-variants.json";
 import { translateForPrint, PRINT_EN_STATIC, PRINT_EN_TIERS } from "@/lib/printEn";
+import { addonPhotoFor } from "@/lib/addonPhotos";
 import {
   tariffLabels,
   positionTotal,
@@ -79,6 +80,8 @@ export default function QuoteBuilder({
   const [clientName, setClientName] = useState("");
   const [clientContact, setClientContact] = useState("");
   const [consultantName, setConsultantName] = useState(consultantDefault);
+  const [consultantPhone, setConsultantPhone] = useState("");
+  const [comment, setComment] = useState("");
   const [discountType, setDiscountType] = useState<"percent" | "amount">("percent");
   const [discountValue, setDiscountValue] = useState(0);
   const [currency, setCurrency] = useState<"none" | "EUR" | "USD">("none");
@@ -471,8 +474,9 @@ export default function QuoteBuilder({
     <p>${introText}</p>
     <div class="boxes">
       <div class="box"><div class="title">${tt("Клієнт / Замовник")}</div><div>${clientName || "—"}</div><div>${clientContact || ""}</div></div>
-      <div class="box"><div class="title">${tt("Консультант IN WOOD")}</div><div>${consultantName || "—"}</div></div>
+      <div class="box"><div class="title">${tt("Консультант IN WOOD")}</div><div>${consultantName || "—"}</div><div>${consultantPhone || ""}</div></div>
     </div>
+    ${comment ? `<p style="color:#8A90A6;font-size:13px;">${tt("Коментар:")} ${tc(comment)}</p>` : ""}
     <table>
       <thead><tr><th>${tt("Фото")}</th><th>${tt("Модель")}</th><th>${tt("Позиція")}</th><th>${tt("К-сть")}</th><th>${tt("Ціна за од.")}</th><th>${tt("Сума")}</th></tr></thead>
       <tbody>${rowsHtml}</tbody>
@@ -522,6 +526,8 @@ export default function QuoteBuilder({
       client_name: clientName || null,
       client_contact: clientContact || null,
       consultant_name: consultantName || null,
+      consultant_contact: consultantPhone || null,
+      comment: comment || null,
       tariff,
       discount_type: discountValue > 0 ? discountType : null,
       discount_value: discountValue > 0 ? discountValue : null,
@@ -578,7 +584,20 @@ export default function QuoteBuilder({
             <input
               value={consultantName}
               onChange={(e) => setConsultantName(e.target.value)}
-              placeholder="Консультант IN WOOD"
+              placeholder="Ім'я консультанта"
+              className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+            />
+            <input
+              value={consultantPhone}
+              onChange={(e) => setConsultantPhone(e.target.value)}
+              placeholder="Телефон консультанта"
+              className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+            />
+            <textarea
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+              placeholder="Коментар (необов'язково)"
+              rows={2}
               className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
             />
           </div>
@@ -811,6 +830,7 @@ export default function QuoteBuilder({
                 ))}
               </select>
             )}
+            <AddonRefPhoto src={addonPhotoFor("korob", korob)} />
 
             <select
               value={lishtvaFront}
@@ -824,6 +844,7 @@ export default function QuoteBuilder({
                 </option>
               ))}
             </select>
+            <AddonRefPhoto src={addonPhotoFor("lishtva", lishtvaFront)} />
 
             <select
               value={lishtvaBack}
@@ -837,6 +858,7 @@ export default function QuoteBuilder({
                 </option>
               ))}
             </select>
+            <AddonRefPhoto src={addonPhotoFor("lishtva", lishtvaBack)} />
 
             {isStaff && (
               <label className="flex items-center gap-2 text-sm text-navy-dark">
@@ -867,6 +889,7 @@ export default function QuoteBuilder({
                 ))}
               </select>
             )}
+            <AddonRefPhoto src={addonPhotoFor("dobir", dobir)} />
 
             <select
               value={vrizka}
@@ -1089,5 +1112,13 @@ export default function QuoteBuilder({
         )}
       </div>
     </div>
+  );
+}
+
+function AddonRefPhoto({ src }: { src?: string }) {
+  if (!src) return null;
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img src={src} alt="" className="h-14 w-20 -mt-2 rounded-md border border-navy-dim/10 object-contain bg-panel-alt p-1" />
   );
 }
