@@ -7,6 +7,7 @@ import { setPricesVisible } from "@/app/portal/actions";
 const roleLabels: Record<string, string> = {
   dealer: "Дилер",
   dealer_distributor: "Дилер + роздріб + дистрибуція",
+  manager: "Менеджер (тільки калькулятор)",
   staff: "Співробітник IN WOOD",
 };
 

@@ -5,6 +5,7 @@ import { inviteUser } from "@/app/portal/actions";
 const roleLabels: Record<string, string> = {
   dealer: "Дилер",
   dealer_distributor: "Дилер + роздріб + дистрибуція",
+  manager: "Менеджер (тільки калькулятор)",
   staff: "Співробітник IN WOOD",
 };
 
@@ -72,6 +73,7 @@ export default async function PortalUsersPage({
         >
           <option value="dealer">Дилер</option>
           <option value="dealer_distributor">Дилер + роздріб + дистрибуція</option>
+          <option value="manager">Менеджер (тільки калькулятор)</option>
           <option value="staff">Співробітник IN WOOD</option>
         </select>
         <button
