@@ -53,6 +53,14 @@ const FLAT_LINE_CATEGORIES = [
 
 const NONSTD_SURCHARGE = 1.2; // +20% за нестандартний розмір — той самий коефіцієнт, що й у прайсі
 
+// Розміри полотна за каталогом IN WOOD — однакові для всіх ліній (ETALON/NOMINAL/
+// FREZZATTI/PERFETTO/двері під фарбування). Ширина/висота понад стандарт доступні
+// прямо у списку, але автоматично додають +20% (той самий NONSTD_SURCHARGE).
+const STANDARD_WIDTHS = [400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900];
+const STANDARD_HEIGHTS = [1800, 1850, 1900, 1950, 2000, 2050, 2100];
+const NONSTD_WIDTHS = [950, 1000];
+const NONSTD_HEIGHTS = [2150, 2200, 2250, 2300];
+
 export default function QuoteBuilder({
   consultantDefault,
   isStaff,
@@ -89,6 +97,8 @@ export default function QuoteBuilder({
   const [lishtvaFront, setLishtvaFront] = useState("");
   const [lishtvaBack, setLishtvaBack] = useState("");
   const [dobir, setDobir] = useState("");
+  const [width, setWidth] = useState("");
+  const [height, setHeight] = useState("");
   const [vrizka, setVrizka] = useState<"none" | "lock" | "full">("none");
   const [shumo, setShumo] = useState(false);
   const [alumPaint, setAlumPaint] = useState(false);
@@ -143,6 +153,11 @@ export default function QuoteBuilder({
   const models = collections[collectionKey]?.models ?? [];
   const currentModel = models.find((m) => m.code === modelCode);
   const hiddenVariants = collections["hidden-doors"]?.variants ?? [];
+  const previewPhoto = isSpecialLine
+    ? undefined
+    : isHiddenDoors
+    ? hiddenVariants.find((v) => hiddenDoorCode(v.image) === modelCode)?.image
+    : currentModel?.colors.find((c) => c.label === colorLabel)?.image ?? currentModel?.colors[0]?.image;
 
   // Варіанти конкретної моделі (база/алюм. крайка/INSIDE/RAL) — для hidden-doors
   // кожен пункт списку вже сам по собі окремий покупний варіант.
@@ -196,11 +211,16 @@ export default function QuoteBuilder({
     const rows: { label: string; unitPrice: number }[] = [];
     const variantLabel = variantOptions.find((v) => v.code === effectiveVariantCode)?.label;
     const panelBase = panelPrice();
+    const sizeIsNonstd =
+      (width !== "" && NONSTD_WIDTHS.includes(Number(width))) ||
+      (height !== "" && NONSTD_HEIGHTS.includes(Number(height)));
+    const isBumped = (isStaff && nonstdSize) || sizeIsNonstd;
+    const sizeLabel = width && height ? ` ${width}×${height} мм` : "";
     rows.push({
-      label: `Полотно, ${modelCode}${variantLabel && variantLabel !== "База" ? ` (${variantLabel})` : ""}${
-        isStaff && nonstdSize ? ` — нестандарт*${nonstdSizeNote ? ` (${nonstdSizeNote})` : ""}` : ""
+      label: `Полотно, ${modelCode}${variantLabel && variantLabel !== "База" ? ` (${variantLabel})` : ""}${sizeLabel}${
+        isBumped ? ` — нестандарт*${isStaff && nonstdSizeNote ? ` (${nonstdSizeNote})` : ""}` : ""
       }`,
-      unitPrice: isStaff && nonstdSize ? panelBase * NONSTD_SURCHARGE : panelBase,
+      unitPrice: isBumped ? panelBase * NONSTD_SURCHARGE : panelBase,
     });
     if (isStaff && korobManual) {
       rows.push({ label: "Короб, нестандарт (вручну)", unitPrice: korobManualPrice });
@@ -251,6 +271,8 @@ export default function QuoteBuilder({
     paintKorobRal,
     nonstdSize,
     nonstdSizeNote,
+    width,
+    height,
     korobManual,
     korobManualPrice,
     dobirManual,
@@ -301,14 +323,14 @@ export default function QuoteBuilder({
       collectionLabel: collections[collectionKey].label,
       modelCode,
       colorLabel,
-      photo: isHiddenDoors
-        ? hiddenVariants.find((v) => hiddenDoorCode(v.image) === modelCode)?.image
-        : currentModel?.colors.find((c) => c.label === colorLabel)?.image ?? currentModel?.colors[0]?.image,
+      photo: previewPhoto,
       qty,
       rows: previewRows.map((r) => ({ label: r.label, unitPrice: r.unitPrice, qty, amount: r.unitPrice * qty })),
     };
     setPositions((prev) => [...prev, position]);
     setVariantCode(modelCode);
+    setWidth("");
+    setHeight("");
     setKorob("");
     setLishtvaFront("");
     setLishtvaBack("");
@@ -642,6 +664,8 @@ export default function QuoteBuilder({
                 setModelCode(e.target.value);
                 setVariantCode(e.target.value);
                 setColorLabel("");
+                setWidth("");
+                setHeight("");
               }}
               className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
             >
@@ -690,18 +714,57 @@ export default function QuoteBuilder({
             )}
 
             {!isSpecialLine && (
+              <div className="grid grid-cols-2 gap-3">
+                <select
+                  value={width}
+                  onChange={(e) => setWidth(e.target.value)}
+                  className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+                >
+                  <option value="">Ширина, мм...</option>
+                  {STANDARD_WIDTHS.map((w) => (
+                    <option key={w} value={w}>
+                      {w} мм
+                    </option>
+                  ))}
+                  {NONSTD_WIDTHS.map((w) => (
+                    <option key={w} value={w}>
+                      {w} мм (нестандарт +20%)
+                    </option>
+                  ))}
+                </select>
+                <select
+                  value={height}
+                  onChange={(e) => setHeight(e.target.value)}
+                  className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+                >
+                  <option value="">Висота, мм...</option>
+                  {STANDARD_HEIGHTS.map((h) => (
+                    <option key={h} value={h}>
+                      {h} мм
+                    </option>
+                  ))}
+                  {NONSTD_HEIGHTS.map((h) => (
+                    <option key={h} value={h}>
+                      {h} мм (нестандарт +20%)
+                    </option>
+                  ))}
+                </select>
+              </div>
+            )}
+
+            {!isSpecialLine && (
             <>
             {isStaff && (
               <div className="rounded-lg bg-panel-alt p-3">
                 <label className="flex items-center gap-2 text-sm text-navy-dark">
                   <input type="checkbox" checked={nonstdSize} onChange={(e) => setNonstdSize(e.target.checked)} />
-                  Нестандартний розмір полотна (+20%)
+                  Розмір поза списком (вручну, +20%)
                 </label>
                 {nonstdSize && (
                   <input
                     value={nonstdSizeNote}
                     onChange={(e) => setNonstdSizeNote(e.target.value)}
-                    placeholder="Опис розміру, напр. 950×2100 мм"
+                    placeholder="Опис розміру, напр. 1050×2350 мм"
                     className="mt-2 w-full rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
                   />
                 )}
@@ -840,6 +903,15 @@ export default function QuoteBuilder({
               onChange={(e) => setQty(Math.max(1, Number(e.target.value)))}
               className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
             />
+
+            {previewPhoto && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={previewPhoto}
+                alt={modelCode}
+                className="h-40 w-full rounded-lg border border-navy-dim/10 bg-panel-alt object-contain p-2"
+              />
+            )}
 
             {previewRows.length > 0 && (
               <div className="rounded-lg bg-panel-alt p-3 text-xs text-navy-dim">
