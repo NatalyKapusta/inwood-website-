@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { SITE_URL } from "@/lib/seo";
 
 export async function login(formData: FormData) {
   const email = String(formData.get("email") ?? "").trim();
@@ -48,7 +49,9 @@ export async function inviteUser(formData: FormData) {
   }
 
   const admin = createAdminClient();
-  const { data: invited, error } = await admin.auth.admin.inviteUserByEmail(email);
+  const { data: invited, error } = await admin.auth.admin.inviteUserByEmail(email, {
+    redirectTo: `${SITE_URL}/portal/set-password`,
+  });
 
   if (error || !invited?.user) {
     redirect("/portal/users?error=" + encodeURIComponent(error?.message ?? "Не вдалося запросити користувача"));
