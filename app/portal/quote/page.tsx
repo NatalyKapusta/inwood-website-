@@ -25,7 +25,7 @@ export default async function PortalQuotePage() {
       </p>
       <QuoteBuilder
         consultantDefault={profile?.full_name ?? user.email ?? ""}
-        isStaff={profile?.role === "staff"}
+        canOverride={profile?.role === "staff" || profile?.role === "manager"}
       />
     </div>
   );

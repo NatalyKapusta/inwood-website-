@@ -64,10 +64,10 @@ const NONSTD_HEIGHTS = [2150, 2200, 2250, 2300];
 
 export default function QuoteBuilder({
   consultantDefault,
-  isStaff,
+  canOverride,
 }: {
   consultantDefault: string;
-  isStaff: boolean;
+  canOverride: boolean;
 }) {
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
@@ -107,12 +107,19 @@ export default function QuoteBuilder({
   const [alumPaint, setAlumPaint] = useState(false);
   const [paintKorobRal, setPaintKorobRal] = useState(false);
 
-  // Ручний нестандарт — лише staff, як і в оригінальному калькуляторі
+  // Ручне перевизначення — доступне staff і manager, як і в оригінальному калькуляторі.
+  // Це НЕ автоматичні +20% — консультант вручну вписує розмір і кінцеву ціну повністю
+  // самостійно (заміняє прайсову ціну, а не домножує її).
   const [nonstdSize, setNonstdSize] = useState(false);
-  const [nonstdSizeNote, setNonstdSizeNote] = useState("");
+  const [manualWidth, setManualWidth] = useState("");
+  const [manualHeight, setManualHeight] = useState("");
+  const [manualPolotnoPrice, setManualPolotnoPrice] = useState(0);
   const [korobManual, setKorobManual] = useState(false);
+  const [korobManualWidth, setKorobManualWidth] = useState("");
   const [korobManualPrice, setKorobManualPrice] = useState(0);
   const [dobirManual, setDobirManual] = useState(false);
+  const [dobirManualWidth, setDobirManualWidth] = useState("");
+  const [dobirManualHeight, setDobirManualHeight] = useState("");
   const [dobirManualPrice, setDobirManualPrice] = useState(0);
   const [qty, setQty] = useState(1);
 
@@ -233,26 +240,41 @@ export default function QuoteBuilder({
     const rows: { label: string; unitPrice: number }[] = [];
     const variantLabel = variantOptions.find((v) => v.code === effectiveVariantCode)?.label;
     const panelBase = panelPrice();
+    const isManualSize = canOverride && nonstdSize;
     const sizeIsNonstd =
-      (width !== "" && NONSTD_WIDTHS.includes(Number(width))) ||
-      (height !== "" && NONSTD_HEIGHTS.includes(Number(height)));
-    const isBumped = (isStaff && nonstdSize) || sizeIsNonstd;
-    const sizeLabel = width && height ? ` ${width}×${height} мм` : "";
+      !isManualSize &&
+      ((width !== "" && NONSTD_WIDTHS.includes(Number(width))) ||
+        (height !== "" && NONSTD_HEIGHTS.includes(Number(height))));
+    const sizeLabel = isManualSize
+      ? manualWidth && manualHeight
+        ? ` ${manualWidth}×${manualHeight} мм`
+        : ""
+      : width && height
+      ? ` ${width}×${height} мм`
+      : "";
     rows.push({
       label: `Полотно, ${modelCode}${variantLabel && variantLabel !== "База" ? ` (${variantLabel})` : ""}${sizeLabel}${
-        isBumped ? ` — нестандарт*${isStaff && nonstdSizeNote ? ` (${nonstdSizeNote})` : ""}` : ""
+        isManualSize ? " — нестандарт (вручну)" : sizeIsNonstd ? " — нестандарт*" : ""
       }`,
-      unitPrice: isBumped ? panelBase * NONSTD_SURCHARGE : panelBase,
+      unitPrice: isManualSize ? manualPolotnoPrice : sizeIsNonstd ? panelBase * NONSTD_SURCHARGE : panelBase,
     });
-    if (isStaff && korobManual) {
-      rows.push({ label: "Короб, нестандарт (вручну)", unitPrice: korobManualPrice });
+    if (canOverride && korobManual) {
+      rows.push({
+        label: `Короб, нестандарт${korobManualWidth ? `, ${korobManualWidth} мм (глибина)` : ""} (вручну)`,
+        unitPrice: korobManualPrice,
+      });
     } else if (korob) {
       rows.push({ label: korob, unitPrice: priceOf(korobOptions, korob) });
     }
     if (lishtvaFront) rows.push({ label: `${lishtvaFront} (лицьова)`, unitPrice: priceOf(lishtvaOptions, lishtvaFront) });
     if (lishtvaBack) rows.push({ label: `${lishtvaBack} (тильна)`, unitPrice: priceOf(lishtvaOptions, lishtvaBack) });
-    if (isStaff && dobirManual) {
-      rows.push({ label: "Добір, нестандарт (вручну)", unitPrice: dobirManualPrice });
+    if (canOverride && dobirManual) {
+      rows.push({
+        label: `Добір, нестандарт${
+          dobirManualWidth && dobirManualHeight ? `, ${dobirManualWidth}×${dobirManualHeight} мм` : ""
+        } (вручну)`,
+        unitPrice: dobirManualPrice,
+      });
     } else if (dobir) {
       rows.push({ label: dobir, unitPrice: priceOf(dobirOptions, dobir) });
     }
@@ -292,12 +314,17 @@ export default function QuoteBuilder({
     alumPaint,
     paintKorobRal,
     nonstdSize,
-    nonstdSizeNote,
+    manualWidth,
+    manualHeight,
+    manualPolotnoPrice,
     width,
     height,
     korobManual,
+    korobManualWidth,
     korobManualPrice,
     dobirManual,
+    dobirManualWidth,
+    dobirManualHeight,
     dobirManualPrice,
     addonRows,
     serviceRows,
@@ -362,10 +389,15 @@ export default function QuoteBuilder({
     setAlumPaint(false);
     setPaintKorobRal(false);
     setNonstdSize(false);
-    setNonstdSizeNote("");
+    setManualWidth("");
+    setManualHeight("");
+    setManualPolotnoPrice(0);
     setKorobManual(false);
+    setKorobManualWidth("");
     setKorobManualPrice(0);
     setDobirManual(false);
+    setDobirManualWidth("");
+    setDobirManualHeight("");
     setDobirManualPrice(0);
     setQty(1);
   }
@@ -743,7 +775,14 @@ export default function QuoteBuilder({
               </select>
             )}
 
-            {!isSpecialLine && (
+            {!isSpecialLine && canOverride && (
+              <label className="flex items-center gap-2 text-sm text-navy-dark">
+                <input type="checkbox" checked={nonstdSize} onChange={(e) => setNonstdSize(e.target.checked)} />
+                Нестандартний розмір (вручну)
+              </label>
+            )}
+
+            {!isSpecialLine && !(canOverride && nonstdSize) && (
               <div className="grid grid-cols-2 gap-3">
                 <select
                   value={width}
@@ -782,40 +821,64 @@ export default function QuoteBuilder({
               </div>
             )}
 
-            {!isSpecialLine && (
-            <>
-            {isStaff && (
-              <div className="rounded-lg bg-panel-alt p-3">
-                <label className="flex items-center gap-2 text-sm text-navy-dark">
-                  <input type="checkbox" checked={nonstdSize} onChange={(e) => setNonstdSize(e.target.checked)} />
-                  Розмір поза списком (вручну, +20%)
-                </label>
-                {nonstdSize && (
-                  <input
-                    value={nonstdSizeNote}
-                    onChange={(e) => setNonstdSizeNote(e.target.value)}
-                    placeholder="Опис розміру, напр. 1050×2350 мм"
-                    className="mt-2 w-full rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
-                  />
-                )}
+            {!isSpecialLine && canOverride && nonstdSize && (
+              <div className="grid grid-cols-2 gap-3">
+                <input
+                  type="number"
+                  min={1}
+                  value={manualWidth}
+                  onChange={(e) => setManualWidth(e.target.value)}
+                  placeholder="Ширина, мм (вручну), напр. 1050"
+                  className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+                />
+                <input
+                  type="number"
+                  min={1}
+                  value={manualHeight}
+                  onChange={(e) => setManualHeight(e.target.value)}
+                  placeholder="Висота, мм (вручну), напр. 2350"
+                  className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+                />
+                <input
+                  type="number"
+                  min={0}
+                  step="0.01"
+                  value={manualPolotnoPrice || ""}
+                  onChange={(e) => setManualPolotnoPrice(Math.max(0, Number(e.target.value)))}
+                  placeholder="Ціна полотна, ₴ (вручну), напр. 12000"
+                  className="col-span-2 rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+                />
               </div>
             )}
 
-            {isStaff && (
+            {!isSpecialLine && (
+            <>
+            {canOverride && (
               <label className="flex items-center gap-2 text-sm text-navy-dark">
                 <input type="checkbox" checked={korobManual} onChange={(e) => setKorobManual(e.target.checked)} />
                 Короб — нестандарт (вручну)
               </label>
             )}
-            {isStaff && korobManual ? (
-              <input
-                type="number"
-                min={0}
-                value={korobManualPrice || ""}
-                onChange={(e) => setKorobManualPrice(Math.max(0, Number(e.target.value)))}
-                placeholder="Ціна короба вручну, ₴"
-                className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
-              />
+            {canOverride && korobManual ? (
+              <div className="grid grid-cols-2 gap-3">
+                <input
+                  type="number"
+                  min={1}
+                  value={korobManualWidth}
+                  onChange={(e) => setKorobManualWidth(e.target.value)}
+                  placeholder="Глибина короба, мм, напр. 130"
+                  className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+                />
+                <input
+                  type="number"
+                  min={0}
+                  step="0.01"
+                  value={korobManualPrice || ""}
+                  onChange={(e) => setKorobManualPrice(Math.max(0, Number(e.target.value)))}
+                  placeholder="Ціна короба, ₴"
+                  className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+                />
+              </div>
             ) : (
               <select
                 value={korob}
@@ -860,21 +923,40 @@ export default function QuoteBuilder({
             </select>
             <AddonRefPhoto src={addonPhotoFor("lishtva", lishtvaBack)} />
 
-            {isStaff && (
+            {canOverride && (
               <label className="flex items-center gap-2 text-sm text-navy-dark">
                 <input type="checkbox" checked={dobirManual} onChange={(e) => setDobirManual(e.target.checked)} />
                 Добір — нестандарт (вручну)
               </label>
             )}
-            {isStaff && dobirManual ? (
-              <input
-                type="number"
-                min={0}
-                value={dobirManualPrice || ""}
-                onChange={(e) => setDobirManualPrice(Math.max(0, Number(e.target.value)))}
-                placeholder="Ціна добору вручну, ₴"
-                className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
-              />
+            {canOverride && dobirManual ? (
+              <div className="grid grid-cols-2 gap-3">
+                <input
+                  type="number"
+                  min={1}
+                  value={dobirManualWidth}
+                  onChange={(e) => setDobirManualWidth(e.target.value)}
+                  placeholder="Ширина добору, мм, напр. 220"
+                  className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+                />
+                <input
+                  type="number"
+                  min={1}
+                  value={dobirManualHeight}
+                  onChange={(e) => setDobirManualHeight(e.target.value)}
+                  placeholder="Висота добору, мм, напр. 2050"
+                  className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+                />
+                <input
+                  type="number"
+                  min={0}
+                  step="0.01"
+                  value={dobirManualPrice || ""}
+                  onChange={(e) => setDobirManualPrice(Math.max(0, Number(e.target.value)))}
+                  placeholder="Ціна добору, ₴"
+                  className="col-span-2 rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+                />
+              </div>
             ) : (
               <select
                 value={dobir}
