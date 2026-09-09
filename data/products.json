@@ -3375,8 +3375,88 @@
         "basePrice": 9645,
         "colors": [
           {
-            "slug": "base",
-            "label": "Базове фото",
+            "slug": "astana-marle",
+            "label": "астана марле",
+            "image": "/photos/perfetto/pf-01.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "бетон сірий",
+            "image": "/photos/perfetto/pf-01.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "бетон сніжний",
+            "image": "/photos/perfetto/pf-01.png"
+          },
+          {
+            "slug": "beton-temnyi",
+            "label": "бетон темний",
+            "image": "/photos/perfetto/pf-01.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "біла текстурна",
+            "image": "/photos/perfetto/pf-01.png"
+          },
+          {
+            "slug": "chorna-korka",
+            "label": "чорна корка",
+            "image": "/photos/perfetto/pf-01.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "дуб глазго еко",
+            "image": "/photos/perfetto/pf-01.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/perfetto/pf-01.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "карпатська ялина",
+            "image": "/photos/perfetto/pf-01.png"
+          },
+          {
+            "slug": "popeliastyi-softach",
+            "label": "попелястий софтач",
+            "image": "/photos/perfetto/pf-01.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "рустік авінон білий",
+            "image": "/photos/perfetto/pf-01.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "рустик золотий",
+            "image": "/photos/perfetto/pf-01.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "шпон коричневий",
+            "image": "/photos/perfetto/pf-01.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "сосна прованс",
+            "image": "/photos/perfetto/pf-01.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "венге південне тиснене",
+            "image": "/photos/perfetto/pf-01.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/perfetto/pf-01.png"
+          },
+          {
+            "slug": "zriz-kameniu",
+            "label": "зріз каменю",
             "image": "/photos/perfetto/pf-01.png"
           }
         ]
@@ -3386,8 +3466,88 @@
         "basePrice": 9645,
         "colors": [
           {
-            "slug": "base",
-            "label": "Базове фото",
+            "slug": "astana-marle",
+            "label": "астана марле",
+            "image": "/photos/perfetto/pf-02.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "бетон сірий",
+            "image": "/photos/perfetto/pf-02.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "бетон сніжний",
+            "image": "/photos/perfetto/pf-02.png"
+          },
+          {
+            "slug": "beton-temnyi",
+            "label": "бетон темний",
+            "image": "/photos/perfetto/pf-02.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "біла текстурна",
+            "image": "/photos/perfetto/pf-02.png"
+          },
+          {
+            "slug": "chorna-korka",
+            "label": "чорна корка",
+            "image": "/photos/perfetto/pf-02.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "дуб глазго еко",
+            "image": "/photos/perfetto/pf-02.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "дуб шато",
+            "image": "/photos/perfetto/pf-02.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "карпатська ялина",
+            "image": "/photos/perfetto/pf-02.png"
+          },
+          {
+            "slug": "popeliastyi-softach",
+            "label": "попелястий софтач",
+            "image": "/photos/perfetto/pf-02.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "рустік авінон білий",
+            "image": "/photos/perfetto/pf-02.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "рустик золотий",
+            "image": "/photos/perfetto/pf-02.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "шпон коричневий",
+            "image": "/photos/perfetto/pf-02.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "сосна прованс",
+            "image": "/photos/perfetto/pf-02.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "венге південне тиснене",
+            "image": "/photos/perfetto/pf-02.png"
+          },
+          {
+            "slug": "white",
+            "label": "white",
+            "image": "/photos/perfetto/pf-02.png"
+          },
+          {
+            "slug": "zriz-kameniu",
+            "label": "зріз каменю",
             "image": "/photos/perfetto/pf-02.png"
           }
         ]
