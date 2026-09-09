@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import Image from "next/image";
 import type { Komplekt, ProductModel } from "@/lib/products";
 import type { Dictionary } from "@/lib/dictionary";
+import PhoneInput from "@/components/PhoneInput";
 
 const NONE = "__none__";
 
@@ -180,13 +181,12 @@ export default function ProductCard({
                 onChange={(e) => setName(e.target.value)}
                 className="rounded-lg border border-navy-dim/30 px-3 py-2 text-sm outline-none focus:border-gold"
               />
-              <input
-                type="tel"
-                required
+              <PhoneInput
                 placeholder="Телефон / Phone"
+                required
                 value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                className="rounded-lg border border-navy-dim/30 px-3 py-2 text-sm outline-none focus:border-gold"
+                onChange={setPhone}
+                className="w-full rounded-lg border border-navy-dim/30 px-3 py-2 text-sm outline-none focus:border-gold"
               />
               <a
                 href={mailHref}

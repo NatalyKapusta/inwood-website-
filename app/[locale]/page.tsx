@@ -4,6 +4,7 @@ import type { Locale } from "@/lib/i18n";
 import Counter from "@/components/Counter";
 import ua from "@/dictionaries/ua.json";
 import { buildMetadata } from "@/lib/seo";
+import PhoneInput from "@/components/PhoneInput";
 
 async function getDict(locale: Locale) {
   try {
@@ -191,11 +192,10 @@ export default async function HomePage({ params }: { params: { locale: Locale } 
             required
             className="rounded-lg border border-navy-dim/30 px-4 py-3 outline-none focus:border-gold"
           />
-          <input
-            type="tel"
+          <PhoneInput
             placeholder={c.formPhone}
             required
-            className="rounded-lg border border-navy-dim/30 px-4 py-3 outline-none focus:border-gold"
+            className="w-full rounded-lg border border-navy-dim/30 px-4 py-3 outline-none focus:border-gold"
           />
           <button
             type="submit"

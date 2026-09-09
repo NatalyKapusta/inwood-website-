@@ -1,6 +1,7 @@
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata } from "@/lib/seo";
+import PhoneInput from "@/components/PhoneInput";
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
@@ -27,7 +28,14 @@ export default async function KontaktyPage({ params }: { params: { locale: Local
         <div className="space-y-6">
           <div>
             <p className="text-xs uppercase tracking-wide text-gold-dim">Адреса</p>
-            <p className="mt-1 text-navy-dark">{c.address}</p>
+            <a
+              href={`https://maps.google.com/?q=${encodeURIComponent(c.address)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-1 block text-navy-dark hover:text-gold-dim"
+            >
+              {c.address}
+            </a>
           </div>
           <div>
             <p className="text-xs uppercase tracking-wide text-gold-dim">{t.managerLabel}</p>
@@ -68,11 +76,10 @@ export default async function KontaktyPage({ params }: { params: { locale: Local
               required
               className="rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
             />
-            <input
-              type="tel"
+            <PhoneInput
               placeholder={c.formPhone}
               required
-              className="rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
+              className="w-full rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
             />
             <input
               type="email"

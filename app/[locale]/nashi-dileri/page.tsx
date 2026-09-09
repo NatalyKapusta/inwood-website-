@@ -3,6 +3,7 @@ import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata } from "@/lib/seo";
 import dealers from "@/data/dealers.json";
 import DealersMap from "@/components/DealersMap";
+import DealersList from "@/components/DealersList";
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
@@ -33,24 +34,8 @@ export default async function NashiDileriPage({ params }: { params: { locale: Lo
         <h2 className="font-serif text-xl font-bold text-navy-dark">
           Дилери за містами ({dealers.length})
         </h2>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {dealers.map((d, i) => (
-            <div key={`${d.name}-${i}`} className="rounded-lg bg-panel-alt p-4">
-              <p className="font-serif font-bold text-navy-dark">{d.name}</p>
-              <p className="mt-1 text-sm text-navy-dim">{d.address}</p>
-              <div className="mt-2 flex flex-col gap-0.5 text-sm">
-                {d.phones.map((phone, j) => (
-                  <a
-                    key={phone}
-                    href={`tel:${d.phonesTel[j]}`}
-                    className="text-navy hover:text-gold-dim"
-                  >
-                    {phone}
-                  </a>
-                ))}
-              </div>
-            </div>
-          ))}
+        <div className="mt-6">
+          <DealersList dealers={dealers} />
         </div>
       </div>
     </section>

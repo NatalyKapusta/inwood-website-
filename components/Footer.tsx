@@ -40,17 +40,38 @@ export default function Footer({
         <div className="mt-10 grid gap-8 text-sm text-white/80 sm:grid-cols-3">
           <div>
             <p className="mb-2 font-semibold uppercase tracking-wide text-gold">Пошта</p>
-            <p>{email}</p>
-            <p className="mt-1">International Sales Manager {exportEmail}</p>
+            <a href={`mailto:${email}`} className="block hover:text-gold">
+              {email}
+            </a>
+            <p className="mt-1">
+              International Sales Manager{" "}
+              <a href={`mailto:${exportEmail}`} className="hover:text-gold">
+                {exportEmail}
+              </a>
+            </p>
           </div>
           <div>
             <p className="mb-2 font-semibold uppercase tracking-wide text-gold">Телефон</p>
-            <p>{phone}</p>
-            <p className="mt-1">International Sales Manager {exportPhone}</p>
+            <a href={`tel:${phone.replace(/[^\d+]/g, "")}`} className="block hover:text-gold">
+              {phone}
+            </a>
+            <p className="mt-1">
+              International Sales Manager{" "}
+              <a href={`tel:${exportPhone.replace(/[^\d+]/g, "")}`} className="hover:text-gold">
+                {exportPhone}
+              </a>
+            </p>
           </div>
           <div>
             <p className="mb-2 font-semibold uppercase tracking-wide text-gold">Адреса</p>
-            <p>{address}</p>
+            <a
+              href={`https://maps.google.com/?q=${encodeURIComponent(address)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block hover:text-gold"
+            >
+              {address}
+            </a>
             <p className="mt-3 mb-2 font-semibold uppercase tracking-wide text-gold">
               Режим роботи
             </p>

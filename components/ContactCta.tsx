@@ -1,3 +1,5 @@
+import PhoneInput from "@/components/PhoneInput";
+
 export default function ContactCta({
   title,
   text,
@@ -24,11 +26,10 @@ export default function ContactCta({
           required
           className="rounded-lg border border-navy-dim/30 px-4 py-3 outline-none focus:border-gold"
         />
-        <input
-          type="tel"
+        <PhoneInput
           placeholder={phoneLabel}
           required
-          className="rounded-lg border border-navy-dim/30 px-4 py-3 outline-none focus:border-gold"
+          className="w-full rounded-lg border border-navy-dim/30 px-4 py-3 outline-none focus:border-gold"
         />
         {extraFields?.map((f) => (
           <input
