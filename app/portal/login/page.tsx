@@ -1,4 +1,5 @@
 import { login } from "@/app/portal/actions";
+import PasswordInput from "@/components/PasswordInput";
 
 export const metadata = { title: "Вхід — Партнерський портал IN WOOD" };
 
@@ -30,8 +31,7 @@ export default function PortalLoginPage({
           autoComplete="email"
           className="rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
         />
-        <input
-          type="password"
+        <PasswordInput
           name="password"
           placeholder="Пароль"
           required
