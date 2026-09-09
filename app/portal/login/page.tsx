@@ -1,20 +1,21 @@
 import Link from "next/link";
 import { login } from "@/app/portal/actions";
+import { submitLead } from "@/app/actions/lead";
 import PasswordInput from "@/components/PasswordInput";
+import PhoneInput from "@/components/PhoneInput";
 
 export const metadata = { title: "Вхід — Партнерський портал IN WOOD" };
 
 export default function PortalLoginPage({
   searchParams,
 }: {
-  searchParams: { error?: string };
+  searchParams: { error?: string; sent?: string };
 }) {
   return (
     <div className="mx-auto max-w-sm">
       <h1 className="font-serif text-2xl font-bold text-navy-dark">Вхід у портал</h1>
       <p className="mt-2 text-sm text-navy-dim">
-        Доступ надається персонально — зверніться до вашого менеджера IN WOOD, якщо у вас
-        ще немає логіну.
+        Доступ надається персонально — якщо у вас ще немає логіну, залиште заявку нижче.
       </p>
 
       {searchParams.error && (
@@ -53,6 +54,55 @@ export default function PortalLoginPage({
       >
         Забули пароль?
       </Link>
+
+      <div className="mt-10 border-t border-navy-dim/15 pt-8">
+        <h2 className="font-serif text-lg font-bold text-navy-dark">Ще не маєте доступу?</h2>
+        <p className="mt-2 text-sm text-navy-dim">
+          Портал доступний дилерам і партнерам IN WOOD — тут ціни за вашим тарифом і
+          конструктор комерційних пропозицій. Залиште заявку, ми зв&apos;яжемось і надамо
+          доступ після узгодження умов співпраці.
+        </p>
+
+        {searchParams.sent ? (
+          <p className="mt-6 rounded-lg bg-green-50 px-4 py-3 text-sm text-green-700">
+            Дякуємо! Заявку надіслано, ми скоро з вами зв&apos;яжемось.
+          </p>
+        ) : (
+          <form action={submitLead} className="mt-6 flex flex-col gap-3">
+            <input type="hidden" name="source" value="Партнерський портал — заявка на доступ" />
+            <input
+              type="text"
+              name="name"
+              placeholder="Ім'я"
+              required
+              className="rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
+            />
+            <PhoneInput
+              placeholder="Телефон"
+              required
+              className="w-full rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Пошта"
+              className="rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
+            />
+            <input
+              type="text"
+              name="misto"
+              placeholder="Місто / компанія"
+              className="rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
+            />
+            <button
+              type="submit"
+              className="rounded-full border border-navy-dark px-7 py-3 font-semibold text-navy-dark transition hover:bg-navy-dark hover:text-white"
+            >
+              Подати заявку
+            </button>
+          </form>
+        )}
+      </div>
     </div>
   );
 }

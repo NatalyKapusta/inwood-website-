@@ -13,12 +13,14 @@ export default function Header({
   address,
   email,
   nav,
+  portalLabel,
 }: {
   locale: Locale;
   phone: string;
   address: string;
   email: string;
   nav: NavItem[];
+  portalLabel: string;
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -84,6 +86,12 @@ export default function Header({
                 {item.label}
               </Link>
             ))}
+            <Link
+              href="/portal/login"
+              className="rounded-full border border-gold px-4 py-1.5 text-xs font-semibold normal-case tracking-normal text-gold transition hover:bg-gold hover:text-navy-dark"
+            >
+              {portalLabel}
+            </Link>
           </nav>
 
           <button
@@ -117,6 +125,13 @@ export default function Header({
                 {item.label}
               </Link>
             ))}
+            <Link
+              href="/portal/login"
+              onClick={() => setMenuOpen(false)}
+              className="mt-2 rounded-lg border border-gold px-2 py-2 text-center normal-case tracking-normal text-gold hover:bg-white/5"
+            >
+              {portalLabel}
+            </Link>
           </nav>
         )}
       </div>

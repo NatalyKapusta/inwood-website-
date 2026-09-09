@@ -44,6 +44,7 @@ export default async function LocaleLayout({
           address={common.address}
           email={common.email}
           nav={common.nav}
+          portalLabel={common.portalLink}
         />
         <main>{children}</main>
         <Footer
