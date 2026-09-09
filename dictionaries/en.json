@@ -623,7 +623,15 @@
       "Export experience to the UK, France, Switzerland, Lithuania and Latvia",
       "Flexible cooperation terms and partner support"
     ],
-    "metaDescription": "Official IN WOOD dealers and partners across Ukraine — interactive dealer network map, where to buy IN WOOD doors in your city."
+    "metaDescription": "Official IN WOOD dealers and partners across Ukraine — interactive dealer network map, where to buy IN WOOD doors in your city.",
+    "cityTitlePrefix": "IN WOOD Doors in",
+    "cityTitleSuffix": "Official Dealers",
+    "cityMetaPrefix": "Official IN WOOD dealers in",
+    "cityMetaSuffix": "— addresses, contacts and the IN WOOD interior door catalog.",
+    "cityIntro": "Current contacts for IN WOOD dealers in this city — address, phone number and dealer website.",
+    "cityDealersHeading": "Dealers",
+    "cityBackLink": "← All dealers in Ukraine",
+    "cityCatalogCta": "Browse the door catalog"
   },
   "faq": {
     "title": "FAQ about IN WOOD doors",

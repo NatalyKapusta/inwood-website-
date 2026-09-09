@@ -1,61 +1,10 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
+import { groupByCity, CITY_SLUGS, type Dealer } from "@/lib/dealers";
 
-type Dealer = {
-  name: string;
-  address: string;
-  phones: string[];
-  phonesTel: string[];
-  sites?: string[];
-  sitesLabel?: string[];
-  lat: number;
-  lon: number;
-};
-
-function extractCity(address: string): string | null {
-  const first = address.split(",")[0].trim();
-  const m = first.match(/^(?:м\.?|с\.?)\s*(.+)$/);
-  if (m) return m[1].trim();
-  if (/^[А-ЯІЇЄҐ][а-яіїєґ'-]+$/.test(first)) return first;
-  return null;
-}
-
-function distanceKm(lat1: number, lon1: number, lat2: number, lon2: number) {
-  const R = 6371;
-  const dLat = ((lat2 - lat1) * Math.PI) / 180;
-  const dLon = ((lon2 - lon1) * Math.PI) / 180;
-  const a =
-    Math.sin(dLat / 2) ** 2 +
-    Math.cos((lat1 * Math.PI) / 180) * Math.cos((lat2 * Math.PI) / 180) * Math.sin(dLon / 2) ** 2;
-  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-}
-
-function groupByCity(dealers: Dealer[]) {
-  const withCity = dealers.map((d) => ({ dealer: d, city: extractCity(d.address) }));
-  const knownCities = withCity.filter((x) => x.city) as { dealer: Dealer; city: string }[];
-
-  // Для дилерів без міста в адресі — шукаємо найближче за GPS-координатами
-  // серед дилерів з відомим містом (у межах 20 км).
-  const resolved = withCity.map(({ dealer, city }) => {
-    if (city) return { dealer, city };
-    let best: { city: string; dist: number } | null = null;
-    for (const known of knownCities) {
-      const dist = distanceKm(dealer.lat, dealer.lon, known.dealer.lat, known.dealer.lon);
-      if (!best || dist < best.dist) best = { city: known.city, dist };
-    }
-    return { dealer, city: best && best.dist <= 20 ? best.city : "Інші міста" };
-  });
-
-  const groups = new Map<string, Dealer[]>();
-  for (const { dealer, city } of resolved) {
-    if (!groups.has(city)) groups.set(city, []);
-    groups.get(city)!.push(dealer);
-  }
-  return Array.from(groups.entries()).sort((a, b) => a[0].localeCompare(b[0], "uk"));
-}
-
-export default function DealersList({ dealers }: { dealers: Dealer[] }) {
+export default function DealersList({ dealers, locale }: { dealers: Dealer[]; locale: string }) {
   const [query, setQuery] = useState("");
   const grouped = useMemo(() => groupByCity(dealers), [dealers]);
   const filtered = useMemo(() => {
@@ -80,7 +29,14 @@ export default function DealersList({ dealers }: { dealers: Dealer[] }) {
         {filtered.map(([city, list]) => (
           <div key={city}>
             <h3 className="font-serif text-lg font-bold text-gold-dim">
-              {city} <span className="text-sm font-normal text-navy-dim">({list.length})</span>
+              {CITY_SLUGS[city] ? (
+                <Link href={`/${locale}/nashi-dileri/${CITY_SLUGS[city]}`} className="hover:text-gold">
+                  {city}
+                </Link>
+              ) : (
+                city
+              )}{" "}
+              <span className="text-sm font-normal text-navy-dim">({list.length})</span>
             </h3>
             <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {list.map((d, i) => (

@@ -66,7 +66,7 @@ export default async function NashiDileriPage({ params }: { params: { locale: Lo
           Дилери за містами ({dealers.length})
         </h2>
         <div className="mt-6">
-          <DealersList dealers={dealers} />
+          <DealersList dealers={dealers} locale={params.locale} />
         </div>
       </div>
     </section>
