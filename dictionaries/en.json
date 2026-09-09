@@ -13,6 +13,10 @@
         "href": "/catalog"
       },
       {
+        "label": "Gallery",
+        "href": "/galereya"
+      },
+      {
         "label": "About Us",
         "href": "/pro-nas"
       },
@@ -617,5 +621,13 @@
     "metaDescription": "IN WOOD blog — advice on choosing, installing and caring for interior doors.",
     "readMore": "Read article",
     "back": "← All articles"
+  },
+  "galereya": {
+    "title": "IN WOOD Doors in Real Interiors — Gallery by Model",
+    "heading": "Gallery",
+    "intro": "IN WOOD doors in real interiors — choose a collection and model to see the available colors.",
+    "metaDescription": "Photos of IN WOOD interior doors in real interiors by model and color — ETALON, NOMINAL, FREZZATTI, PERFETTO collections.",
+    "all": "All collections",
+    "color": "Color"
   }
 }
