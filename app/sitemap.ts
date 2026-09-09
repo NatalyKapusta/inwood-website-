@@ -1,10 +1,12 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/lib/i18n";
 import { SITE_URL, hreflang } from "@/lib/seo";
+import { blogPosts } from "@/data/blog";
 
 const paths = [
   "",
   "/catalog",
+  "/galereya",
   "/pro-nas",
   "/harakterystyky",
   "/nashi-dileri",
@@ -12,7 +14,10 @@ const paths = [
   "/oplata-dostavka",
   "/servis",
   "/garantiya",
+  "/faq",
+  "/blog",
   "/kontakty",
+  ...blogPosts.ua.map((post) => `/blog/${post.slug}`),
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

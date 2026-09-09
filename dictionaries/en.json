@@ -166,6 +166,7 @@
       "kicker": "Quality guaranteed",
       "title": "Quality guaranteed by IN WOOD",
       "text": "Every door goes through a full cycle of factory preparation and quality control before it ships — to a dealer or straight to the site. We stand behind the result at every stage, from production to installation.",
+      "imageAlt": "IN WOOD ETALON ET-01 interior door, зріз каменю color, in a real interior",
       "points": [
         "20+ years of production in Ukraine",
         "Factory-prepared for fast installation",
@@ -453,6 +454,7 @@
     "heading": "Contacts",
     "heroTitle": "Glad to stay in touch",
     "heroText": "Our team is always ready to answer your questions and help you choose the best solutions for your project or business.",
+    "heroImageAlt": "IN WOOD FREZZATTI FZ-02 interior door, дуб портовий color, in a real interior",
     "heroFeatures": [
       "Consultation and support",
       "Individual approach",
@@ -490,7 +492,7 @@
     "findOutPrice": "Get a quote",
     "sendInquiry": "Send inquiry",
     "close": "Close",
-    "footnote": "The price does not include custom sizing (+20%), aluminium edge options or RAL/NCS colour matching — contact us for those. Colour choice does not affect the price.",
+    "footnote": "Non-standard sizing is applied automatically (+20% to the price). Aluminium edge options or RAL/NCS colour matching — contact us for those. Colour choice does not affect the price.",
     "metaDescription": "IN WOOD interior door catalog with retail prices: choose a model, color, frame, trim and door casing — the calculator instantly shows the price.",
     "downloadCatalog": "Download catalog (PDF)"
   },
@@ -502,6 +504,7 @@
     "heroKicker": "PARTNER NETWORK",
     "heroTitle": "IN WOOD dealers across Ukraine and abroad",
     "heroText": "We're building a network of reliable partners — from dealer showrooms in Ukrainian cities to international shipments. Find the nearest showroom or join our team.",
+    "heroImageAlt": "IN WOOD NOMINAL NL-01 interior door, white color, in a real interior",
     "heroPoints": [
       "50+ door models in the current lineup",
       "Export experience to the UK, France, Switzerland, Lithuania and Latvia",

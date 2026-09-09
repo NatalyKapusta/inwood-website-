@@ -97,7 +97,7 @@ export default async function HomePage({
           <div className="relative aspect-[3/2]">
             <Image
               src="/photos/interiors/etalon-et-01-zriz-kameniu.jpg"
-              alt={t.qualityBanner.title}
+              alt={t.qualityBanner.imageAlt}
               fill
               sizes="(min-width: 1024px) 640px, 100vw"
               className="object-cover"

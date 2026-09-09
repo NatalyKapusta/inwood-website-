@@ -74,7 +74,7 @@ export default async function KontaktyPage({
           <div className="relative mx-auto aspect-[3/2] w-full max-w-lg overflow-hidden rounded-2xl lg:max-w-none">
             <Image
               src="/photos/interiors/frezzatti-fz-02-dub-portovyi.jpg"
-              alt={t.heroTitle}
+              alt={t.heroImageAlt}
               fill
               sizes="(min-width: 1024px) 640px, 100vw"
               className="object-cover"

@@ -42,7 +42,7 @@ export default async function NashiDileriPage({ params }: { params: { locale: Lo
           <div className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl">
             <Image
               src="/photos/interiors/nominal-nl-01-white.jpg"
-              alt={t.heroTitle}
+              alt={t.heroImageAlt}
               fill
               sizes="(min-width: 1024px) 640px, 100vw"
               className="object-cover"
