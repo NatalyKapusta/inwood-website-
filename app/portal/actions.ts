@@ -72,11 +72,17 @@ export async function requestPasswordReset(formData: FormData) {
   }
 
   const supabase = await createClient();
-  await supabase.auth.resetPasswordForEmail(email, {
+  const { error } = await supabase.auth.resetPasswordForEmail(email, {
     redirectTo: `${SITE_URL}/portal/set-password`,
   });
 
-  // Навмисно не повідомляємо, чи існує такий email — щоб не розкривати список користувачів.
+  // Supabase не повідомляє "email не знайдено" (щоб не розкривати список
+  // користувачів) — але справжні збої (ліміт листів, проблеми з поштою)
+  // повертає як помилку, і її варто показати, а не ховати мовчки.
+  if (error) {
+    redirect("/portal/forgot-password?error=" + encodeURIComponent(error.message));
+  }
+
   redirect("/portal/forgot-password?sent=1");
 }
 
