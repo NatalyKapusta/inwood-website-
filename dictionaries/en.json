@@ -141,6 +141,14 @@
     "aboutText": "IN WOOD is a Ukrainian manufacturer of interior doors with its own production facility in Poltava. We create modern doors for apartments, houses, offices and commercial premises using quality materials and modern production technology. Our products are available across Ukraine through a network of official dealers and are also exported abroad.",
     "commercialTitle": "Door solutions for commercial projects",
     "commercialText": "IN WOOD is a reliable manufacturer of interior doors for hotels, aparthotels, offices and residential complexes. We produce serial batches, work to construction schedules, and guarantee consistent quality, on-time delivery and professional project support.",
+    "audienceTitle": "Who we work with",
+    "audienceText": "IN WOOD manufactures doors for private clients and businesses alike — whatever the scale of your project, we'll find the right solution.",
+    "audience": [
+      { "title": "Private clients", "text": "Renovating an apartment or house — we'll match doors to your interior, colours and non-standard sizes." },
+      { "title": "Developers", "text": "Serial supply for residential complexes: consistent quality, installation schedule, project support." },
+      { "title": "Dealers and partners", "text": "Wholesale terms, marketing materials, a dedicated account manager." },
+      { "title": "Designers and architects", "text": "A wide choice of colours and finishes, and room for custom solutions on your project." }
+    ],
     "collectionsTitle": "Doors in the interior",
     "collectionsSubtitle": "Freedom to realise design ideas with IN WOOD doors",
     "collections": [

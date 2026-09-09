@@ -155,6 +155,24 @@ export default async function HomePage({
         <p className="text-navy-dim">{t.aboutText}</p>
       </section>
 
+      {/* З КИМ МИ ПРАЦЮЄМО */}
+      <section className="bg-panel-alt py-16 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4">
+          <h2 className="text-center font-serif text-2xl font-bold text-navy-dark sm:text-3xl">
+            {t.audienceTitle}
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-navy-dim">{t.audienceText}</p>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {t.audience.map((a: { title: string; text: string }) => (
+              <div key={a.title} className="rounded-xl bg-white p-6 shadow-sm">
+                <h3 className="font-serif text-lg font-bold text-navy-dark">{a.title}</h3>
+                <p className="mt-2 text-sm text-navy-dim">{a.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* КОМЕРЦІЙНІ ОБ'ЄКТИ */}
       <section className="bg-navy-dark py-16 text-white sm:py-24">
         <div className="mx-auto max-w-3xl px-4 text-center">
