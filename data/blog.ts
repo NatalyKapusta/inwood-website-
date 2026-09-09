@@ -157,6 +157,95 @@ const uaPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "hto-zamovliaie-mizhkimnatni-dveri",
+    title: "Хто замовляє міжкімнатні двері: приватні клієнти, бізнес і державні заклади",
+    excerpt:
+      "Двері купують не тільки для однієї квартири. Розповідаємо, хто ще звертається по міжкімнатні двері — від забудовників і дизайнерів до готелів та кав'ярень.",
+    blocks: [
+      {
+        type: "p",
+        text: "Коли думаєш про покупця дверей, зазвичай уявляєш людину, яка робить ремонт у власній квартирі. Насправді коло значно ширше — двері замовляють приватні особи, бізнес і навіть державні та комунальні заклади. У кожного — свої вимоги до об'єму, термінів і того, на що звертати увагу в першу чергу.",
+      },
+      { type: "h2", text: "Приватні клієнти" },
+      {
+        type: "p",
+        text: "Це найзрозуміліша категорія — люди, які купують двері для себе.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Власники нових квартир — найчастіше міняють двері «від забудовника», якщо ті невисокої якості, або обирають двері з нуля під час ремонту в новобудові.",
+          "Ті, хто робить косметичний чи капітальний ремонт — замінюють старі, зношені двері на нові під оновлений інтер'єр.",
+        ],
+      },
+      { type: "h2", text: "Бізнес і оптові покупці" },
+      {
+        type: "p",
+        text: "Тут вимоги інші: важливі не тільки дизайн і якість, а й здатність виробника закрити великий обсяг у прогнозовані терміни.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Забудовники та будівельні компанії — закуповують міжкімнатні двері оптом для нових житлових комплексів і котеджних містечок.",
+          "Архітектори та дизайнери інтер'єру — підбирають двері під конкретний проєкт клієнта, часто орієнтуючись на колір і фактуру, а не тільки на ціну.",
+          "Виконроби та ремонтні бригади — нерідко самі беруть на себе закупівлю дверей під час капітального ремонту квартири чи будинку замовника.",
+          "Комерційні приміщення — офіси, готелі, ресторани та кафе, яким потрібні двері зі стильним і водночас зносостійким виглядом.",
+        ],
+      },
+      { type: "h2", text: "Державні та комунальні заклади" },
+      {
+        type: "p",
+        text: "Школи, дитячі садки, лікарні та інші заклади теж регулярно оновлюють двері — найчастіше через тендерні закупівлі. Це окремий сегмент ринку зі своїми вимогами до документації та строків, і не кожен виробник із ним працює.",
+      },
+      { type: "h2", text: "З ким працює IN WOOD" },
+      {
+        type: "p",
+        text: "Ми спеціалізуємось на міжкімнатних дверях і будуємо співпрацю з дилерами, дистриб'юторами, забудовниками житлової та комерційної нерухомості, дизайнерами інтер'єру, а також готелями та апарт-комплексами. Якщо впізнали себе в одній із цих категорій — на сторінці «Співпраця» можна залишити заявку та отримати персональні умови.",
+      },
+    ],
+  },
+  {
+    slug: "shhytovi-chy-tsargovi-dveri",
+    title: "Щитові чи царгові двері: у чому різниця і як не заплутатися у виборі",
+    excerpt:
+      "Пояснюємо, чим відрізняється конструкція дверей «зсередини» — і чому продавці взагалі використовують ці терміни.",
+    blocks: [
+      {
+        type: "p",
+        text: "«Щитові» і «царгові» — перші слова, які можна почути від консультанта, щойно мова заходить про конструкцію дверей. Але мало хто пояснює, що це насправді означає і чому взагалі варто це знати перед покупкою.",
+      },
+      { type: "h2", text: "Щитові двері" },
+      {
+        type: "p",
+        text: "Полотно щитових дверей — це суцільна конструкція: дерев'яний брус усередині, заповнений стільниковим наповнювачем, і облицювання з МДФ зверху. Поверхня виходить рівною — гладкою або з декором: молдингом, фрезеруванням, дзеркальними вставками. Це найпоширеніший тип міжкімнатних дверей на ринку.",
+      },
+      { type: "h2", text: "Царгові двері" },
+      {
+        type: "p",
+        text: "Тут інша логіка: полотно збирають із цільнодерев'яних вертикальних стійок, з'єднаних між собою горизонтальними елементами — царгами. Часто в такій конструкції передбачені скляні вставки — сатин або чорне скло.",
+      },
+      { type: "h2", text: "Яка різниця на практиці" },
+      {
+        type: "ul",
+        items: [
+          "Зовнішній вигляд — щитові двері зазвичай виглядають більш лаконічно й однорідно, царгові — рельєфніше, за рахунок видимих стійок і царг.",
+          "Скляні вставки — частіше зустрічаються саме в царгових моделях.",
+          "Декор — щитова конструкція дозволяє молдинг, фрезерування, дзеркальні вставки на суцільній поверхні полотна.",
+        ],
+      },
+      { type: "h2", text: "Що виробляє IN WOOD" },
+      {
+        type: "p",
+        text: "Увесь асортимент IN WOOD — щитової конструкції: колекції ETALON, NOMINAL, FREZZATTI, PERFETTO та двері прихованого монтажу. В основі — дерев'яний брус 80×27 мм, стільниковий наповнювач із коміркою 18 мм, облицювання МДФ (4–6 мм залежно від колекції) та алюмінієва крайка для захисту від вологи й пошкоджень. Покриття — ПВХ-плівка або фарбування за картами RAL/NCS, залежно від колекції.",
+      },
+      { type: "h2", text: "Підсумок" },
+      {
+        type: "p",
+        text: "Якщо консультант каже «щитові» чи «царгові» — тепер зрозуміло, про що йдеться. Для більшості інтер'єрів щитова конструкція — практичний і перевірений вибір: вона стабільна, добре тримає форму і дає простір для декору без зайвого ускладнення монтажу.",
+      },
+    ],
+  },
 ];
 
 const ruPosts: BlogPost[] = [
@@ -303,6 +392,95 @@ const ruPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "hto-zamovliaie-mizhkimnatni-dveri",
+    title: "Кто заказывает межкомнатные двери: частные клиенты, бизнес и государственные учреждения",
+    excerpt:
+      "Двери покупают не только для одной квартиры. Рассказываем, кто ещё обращается за межкомнатными дверями — от застройщиков и дизайнеров до отелей и кафе.",
+    blocks: [
+      {
+        type: "p",
+        text: "Когда думаешь о покупателе дверей, обычно представляешь человека, который делает ремонт в собственной квартире. На самом деле круг намного шире — двери заказывают частные лица, бизнес и даже государственные и коммунальные учреждения. У каждого — свои требования к объёму, срокам и тому, на что обращать внимание в первую очередь.",
+      },
+      { type: "h2", text: "Частные клиенты" },
+      {
+        type: "p",
+        text: "Это самая понятная категория — люди, которые покупают двери для себя.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Владельцы новых квартир — чаще всего меняют двери «от застройщика», если те невысокого качества, или выбирают двери с нуля во время ремонта в новостройке.",
+          "Те, кто делает косметический или капитальный ремонт — заменяют старые, изношенные двери на новые под обновлённый интерьер.",
+        ],
+      },
+      { type: "h2", text: "Бизнес и оптовые покупатели" },
+      {
+        type: "p",
+        text: "Здесь требования другие: важны не только дизайн и качество, но и способность производителя закрыть большой объём в прогнозируемые сроки.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Застройщики и строительные компании — закупают межкомнатные двери оптом для новых жилых комплексов и коттеджных городков.",
+          "Архитекторы и дизайнеры интерьера — подбирают двери под конкретный проект клиента, часто ориентируясь на цвет и фактуру, а не только на цену.",
+          "Прорабы и ремонтные бригады — нередко сами берут на себя закупку дверей во время капитального ремонта квартиры или дома заказчика.",
+          "Коммерческие помещения — офисы, отели, рестораны и кафе, которым нужны двери со стильным и при этом износостойким видом.",
+        ],
+      },
+      { type: "h2", text: "Государственные и коммунальные учреждения" },
+      {
+        type: "p",
+        text: "Школы, детские сады, больницы и другие учреждения тоже регулярно обновляют двери — чаще всего через тендерные закупки. Это отдельный сегмент рынка со своими требованиями к документации и срокам, и не каждый производитель с ним работает.",
+      },
+      { type: "h2", text: "С кем работает IN WOOD" },
+      {
+        type: "p",
+        text: "Мы специализируемся на межкомнатных дверях и строим сотрудничество с дилерами, дистрибьюторами, застройщиками жилой и коммерческой недвижимости, дизайнерами интерьера, а также отелями и апарт-комплексами. Если узнали себя в одной из этих категорий — на странице «Сотрудничество» можно оставить заявку и получить персональные условия.",
+      },
+    ],
+  },
+  {
+    slug: "shhytovi-chy-tsargovi-dveri",
+    title: "Щитовые или царговые двери: в чём разница и как не запутаться в выборе",
+    excerpt:
+      "Объясняем, чем отличается конструкция дверей «изнутри» — и почему продавцы вообще используют эти термины.",
+    blocks: [
+      {
+        type: "p",
+        text: "«Щитовые» и «царговые» — первые слова, которые можно услышать от консультанта, как только речь заходит о конструкции дверей. Но мало кто объясняет, что это на самом деле значит и почему вообще стоит это знать перед покупкой.",
+      },
+      { type: "h2", text: "Щитовые двери" },
+      {
+        type: "p",
+        text: "Полотно щитовых дверей — это цельная конструкция: деревянный брус внутри, заполненный сотовым наполнителем, и облицовка из МДФ сверху. Поверхность получается ровной — гладкой или с декором: молдингом, фрезеровкой, зеркальными вставками. Это самый распространённый тип межкомнатных дверей на рынке.",
+      },
+      { type: "h2", text: "Царговые двери" },
+      {
+        type: "p",
+        text: "Здесь другая логика: полотно собирают из цельнодеревянных вертикальных стоек, соединённых между собой горизонтальными элементами — царгами. Часто в такой конструкции предусмотрены стеклянные вставки — сатин или чёрное стекло.",
+      },
+      { type: "h2", text: "Какая разница на практике" },
+      {
+        type: "ul",
+        items: [
+          "Внешний вид — щитовые двери обычно выглядят более лаконично и однородно, царговые — рельефнее, за счёт видимых стоек и царг.",
+          "Стеклянные вставки — чаще встречаются именно в царговых моделях.",
+          "Декор — щитовая конструкция позволяет молдинг, фрезеровку, зеркальные вставки на цельной поверхности полотна.",
+        ],
+      },
+      { type: "h2", text: "Что производит IN WOOD" },
+      {
+        type: "p",
+        text: "Весь ассортимент IN WOOD — щитовой конструкции: коллекции ETALON, NOMINAL, FREZZATTI, PERFETTO и двери скрытого монтажа. В основе — деревянный брус 80×27 мм, сотовый наполнитель с ячейкой 18 мм, облицовка МДФ (4–6 мм в зависимости от коллекции) и алюминиевая кромка для защиты от влаги и повреждений. Покрытие — ПВХ-плёнка или окраска по картам RAL/NCS, в зависимости от коллекции.",
+      },
+      { type: "h2", text: "Итог" },
+      {
+        type: "p",
+        text: "Если консультант говорит «щитовые» или «царговые» — теперь понятно, о чём речь. Для большинства интерьеров щитовая конструкция — практичный и проверенный выбор: она стабильна, хорошо держит форму и даёт простор для декора без лишнего усложнения монтажа.",
+      },
+    ],
+  },
 ];
 
 const enPosts: BlogPost[] = [
@@ -446,6 +624,95 @@ const enPosts: BlogPost[] = [
       {
         type: "p",
         text: "The main advice is simple: before buying, think about how exactly you'll use the door every day, what style your interior is in, and what stage your renovation is at. The answers to these three questions will point you to the best option for you.",
+      },
+    ],
+  },
+  {
+    slug: "hto-zamovliaie-mizhkimnatni-dveri",
+    title: "Who orders interior doors: private clients, businesses and public institutions",
+    excerpt:
+      "Doors aren't just bought for a single apartment. Here's who else orders interior doors — from developers and designers to hotels and cafes.",
+    blocks: [
+      {
+        type: "p",
+        text: "When you picture a door buyer, you probably imagine someone renovating their own apartment. In reality, the circle is much wider — doors are ordered by private individuals, businesses, and even public and municipal institutions. Each group has its own requirements for volume, timelines, and what matters most.",
+      },
+      { type: "h2", text: "Private clients" },
+      {
+        type: "p",
+        text: "This is the most straightforward category — people buying doors for themselves.",
+      },
+      {
+        type: "ul",
+        items: [
+          "New apartment owners — most often replace the \"developer-grade\" doors if they're low quality, or choose doors from scratch during a new-build renovation.",
+          "Anyone doing a cosmetic or major renovation — replacing old, worn doors with new ones as part of an interior refresh.",
+        ],
+      },
+      { type: "h2", text: "Business and wholesale buyers" },
+      {
+        type: "p",
+        text: "Here the requirements differ: design and quality matter, but so does the manufacturer's ability to deliver a large volume within a predictable timeframe.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Developers and construction companies — purchase interior doors wholesale for new residential complexes and cottage communities.",
+          "Architects and interior designers — select doors for a specific client project, often prioritising colour and texture over price alone.",
+          "Site managers and renovation crews — often take on door procurement themselves during a client's major renovation.",
+          "Commercial spaces — offices, hotels, restaurants and cafes that need doors with a stylish yet durable look.",
+        ],
+      },
+      { type: "h2", text: "Public and municipal institutions" },
+      {
+        type: "p",
+        text: "Schools, kindergartens, hospitals and other institutions also update their doors regularly — most often through tender procurement. This is a distinct market segment with its own documentation and timeline requirements, and not every manufacturer works with it.",
+      },
+      { type: "h2", text: "Who IN WOOD works with" },
+      {
+        type: "p",
+        text: "We specialise in interior doors and build partnerships with dealers, distributors, residential and commercial developers, interior designers, as well as hotels and apartment complexes. If you recognised yourself in one of these categories, you can leave a request on the Partnership page and get personalised terms.",
+      },
+    ],
+  },
+  {
+    slug: "shhytovi-chy-tsargovi-dveri",
+    title: "Panel vs. stile-and-rail doors: what's the difference and how to choose",
+    excerpt:
+      "We explain how door construction differs \"on the inside\" — and why sales staff use these terms in the first place.",
+    blocks: [
+      {
+        type: "p",
+        text: "\"Panel\" and \"stile-and-rail\" are usually the first terms you'll hear from a showroom consultant as soon as door construction comes up. Few people explain what they actually mean, or why it's worth knowing before you buy.",
+      },
+      { type: "h2", text: "Panel doors" },
+      {
+        type: "p",
+        text: "A panel door leaf is a solid construction: a wooden frame filled with a honeycomb core, faced with MDF. The surface comes out flat — smooth, or decorated with moulding, milling, or mirror inserts. This is the most common type of interior door on the market.",
+      },
+      { type: "h2", text: "Stile-and-rail doors" },
+      {
+        type: "p",
+        text: "The logic here is different: the leaf is assembled from solid-wood vertical stiles joined together by horizontal elements called rails (tsargas). This construction often includes glass inserts — satin or black glass.",
+      },
+      { type: "h2", text: "What the difference means in practice" },
+      {
+        type: "ul",
+        items: [
+          "Look — panel doors tend to look more streamlined and uniform, while stile-and-rail doors look more textured, thanks to the visible stiles and rails.",
+          "Glass inserts — more common in stile-and-rail models.",
+          "Decor — panel construction allows moulding, milling and mirror inserts across a solid door face.",
+        ],
+      },
+      { type: "h2", text: "What IN WOOD manufactures" },
+      {
+        type: "p",
+        text: "IN WOOD's entire range is panel construction: the ETALON, NOMINAL, FREZZATTI and PERFETTO collections, plus flush-mount doors. The core is a wooden frame at 80×27 mm, a honeycomb core with an 18 mm cell, MDF facing (4–6 mm depending on the collection), and an aluminium edge for protection against moisture and damage. The finish is PVC film or RAL/NCS painted colour, depending on the collection.",
+      },
+      { type: "h2", text: "In summary" },
+      {
+        type: "p",
+        text: "So when a consultant says \"panel\" or \"stile-and-rail\", now you know what they mean. For most interiors, panel construction is a practical, proven choice — it's stable, holds its shape well, and leaves plenty of room for decor without complicating installation.",
       },
     ],
   },
