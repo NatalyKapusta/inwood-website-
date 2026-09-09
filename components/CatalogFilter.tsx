@@ -75,7 +75,7 @@ export default function CatalogFilter({
                       <p className="text-sm text-navy-dark">{v.label}</p>
                       <p className="mt-2 font-serif text-lg font-bold text-navy-dark">
                         {pricesVisible
-                          ? `${t.from} ${new Intl.NumberFormat("uk-UA").format(v.price)} ₴`
+                          ? `${t.from} ${new Intl.NumberFormat("uk-UA").format(v.price)} ₴`
                           : t.findOutPrice}
                       </p>
                     </div>

@@ -9,7 +9,8 @@ import PhoneInput from "@/components/PhoneInput";
 const NONE = "__none__";
 
 function fmt(n: number) {
-  return new Intl.NumberFormat("uk-UA").format(n) + " ₴";
+  // Нерозривний пробіл перед ₴ — щоб гривня не "відривалась" на новий рядок
+  return new Intl.NumberFormat("uk-UA").format(n) + " ₴";
 }
 
 export default function ProductCard({
@@ -161,8 +162,8 @@ export default function ProductCard({
           />
         )}
 
-        <div className="mt-auto flex items-center justify-between pt-2">
-          <p className="font-serif text-lg font-bold text-navy-dark">
+        <div className="mt-auto flex flex-col gap-2 pt-2 sm:flex-row sm:items-center sm:justify-between">
+          <p className="whitespace-nowrap font-serif text-lg font-bold text-navy-dark">
             {!pricesVisible
               ? t.findOutPrice
               : extra > 0
@@ -172,7 +173,7 @@ export default function ProductCard({
           <button
             type="button"
             onClick={() => setModalOpen(true)}
-            className="rounded-full bg-navy-dark px-4 py-2 text-sm font-semibold text-white transition hover:bg-gold hover:text-navy-dark"
+            className="shrink-0 rounded-full bg-navy-dark px-4 py-2 text-sm font-semibold text-white transition hover:bg-gold hover:text-navy-dark"
           >
             {t.findOutPrice}
           </button>
