@@ -35,7 +35,11 @@ export default function ProductCard({
   t: Dictionary["catalog"];
   pricesVisible: boolean;
 }) {
-  const [colorIdx, setColorIdx] = useState(0);
+  const defaultColorIdx = Math.max(
+    model.colors.findIndex((c) => c.slug === "white"),
+    0
+  );
+  const [colorIdx, setColorIdx] = useState(defaultColorIdx);
   const [korob, setKorob] = useState(NONE);
   const [lyshtva, setLyshtva] = useState(NONE);
   const [dobir, setDobir] = useState(NONE);
