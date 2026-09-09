@@ -76,6 +76,7 @@ export default async function KontaktyPage({
               src="/photos/interiors/frezzatti-fz-02-dub-portovyi.jpg"
               alt={t.heroTitle}
               fill
+              sizes="(min-width: 1024px) 640px, 100vw"
               className="object-cover"
             />
           </div>

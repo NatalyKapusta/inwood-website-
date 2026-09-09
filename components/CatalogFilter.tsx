@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import ProductCard from "@/components/ProductCard";
 import type { Collection } from "@/lib/products";
 import type { Dictionary } from "@/lib/dictionary";
@@ -73,11 +74,12 @@ export default function CatalogFilter({
                     className="overflow-hidden rounded-xl border border-navy-dim/10 bg-panel"
                   >
                     <div className="relative aspect-square bg-panel-alt">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
+                      <Image
                         src={v.image}
                         alt={v.label}
-                        className="h-full w-full object-contain p-4"
+                        fill
+                        sizes="(min-width: 1280px) 300px, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                        className="object-contain p-4"
                       />
                     </div>
                     <div className="p-4">

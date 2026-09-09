@@ -99,6 +99,7 @@ export default async function HomePage({
               src="/photos/interiors/etalon-et-01-zriz-kameniu.jpg"
               alt={t.qualityBanner.title}
               fill
+              sizes="(min-width: 1024px) 640px, 100vw"
               className="object-cover"
             />
           </div>
@@ -188,6 +189,7 @@ export default async function HomePage({
                     src={collectionImages[col.name]}
                     alt={col.name}
                     fill
+                    sizes="(min-width: 1024px) 320px, (min-width: 640px) 50vw, 100vw"
                     className="object-contain p-6 transition duration-300 group-hover:scale-105"
                   />
                 )}
