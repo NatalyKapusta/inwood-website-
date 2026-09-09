@@ -229,7 +229,31 @@
     ],
     "ctaTitle": "Need advice on a model?",
     "ctaText": "Can't find the parameters you need, or want to clarify custom sizes for a wholesale order? Leave your contacts — our manager will help you choose the right line for your project.",
-    "metaDescription": "Technical specifications of IN WOOD door collections: panel sizes, frame, trim and door casing construction for ETALON, NOMINAL, FREZZATTI, PERFETTO."
+    "metaDescription": "Technical specifications of IN WOOD door collections: panel sizes, frame, trim and door casing construction for ETALON, NOMINAL, FREZZATTI, PERFETTO.",
+    "constructionDiagram": {
+      "title": "Panel construction",
+      "subtitle": "ETALON / NOMINAL panel doors — what the panel is made of",
+      "layers": [
+        { "label": "Wooden frame", "value": "80 × 27 mm" },
+        { "label": "Honeycomb core", "value": "18 mm cell" },
+        { "label": "MDF", "value": "6 mm" },
+        { "label": "Aluminium molding", "value": "" },
+        { "label": "PVC film", "value": "" }
+      ],
+      "featuresTitle": "Additional panel features",
+      "features": [
+        "Chamber-dried timber, 8–10% moisture content",
+        "Optional sound-insulation fill, up to 45 dB reduction",
+        "ABS or aluminium edge banding — impact resistance, moisture resistance, protected corners",
+        "PVC film is easy to clean and maintain"
+      ],
+      "dimensionsTitle": "Dimensions",
+      "dimensions": [
+        "Height: standard 1800–2100 mm (max 2300 mm, 50 mm increments)",
+        "Width: 600, 650, 700, 750, 800, 850, 900 mm (50 mm increments)",
+        "Thickness: ETALON — 40 mm; NOMINAL — 34 mm"
+      ]
+    }
   },
   "garantiya": {
     "title": "IN WOOD door warranty — terms for dealers and partners",

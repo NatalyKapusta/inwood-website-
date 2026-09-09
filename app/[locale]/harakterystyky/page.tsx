@@ -4,6 +4,7 @@ import { buildMetadata } from "@/lib/seo";
 import { collections } from "@/lib/products";
 import ContactCta from "@/components/ContactCta";
 import LineColorPreview from "@/components/LineColorPreview";
+import ConstructionDiagram from "@/components/ConstructionDiagram";
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
@@ -52,6 +53,18 @@ export default async function CharacteristicsPage({
             );
           })}
         </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pb-16 sm:pb-24">
+        <ConstructionDiagram
+          title={t.constructionDiagram.title}
+          subtitle={t.constructionDiagram.subtitle}
+          layers={t.constructionDiagram.layers}
+          featuresTitle={t.constructionDiagram.featuresTitle}
+          features={t.constructionDiagram.features}
+          dimensionsTitle={t.constructionDiagram.dimensionsTitle}
+          dimensions={t.constructionDiagram.dimensions}
+        />
       </section>
 
       <ContactCta
