@@ -20,13 +20,22 @@ export default async function PortalDashboardPage() {
   } = await supabase.auth.getUser();
   if (!user) redirect("/portal/login");
 
-  const { data: profile } = await supabase
+  const { data: profile, error: profileError } = await supabase
     .from("profiles")
     .select("role, full_name, company_name, is_owner")
     .eq("id", user.id)
     .single();
 
-  const role = profile?.role ?? "dealer";
+  if (profileError || !profile) {
+    return (
+      <div className="mx-auto max-w-sm rounded-xl bg-red-50 p-6 text-sm text-red-700">
+        Не вдалося завантажити профіль ({profileError?.message ?? "невідома помилка"}). Оновіть
+        сторінку; якщо не допомогло — можливо, потрібно виконати останню SQL-міграцію в Supabase.
+      </div>
+    );
+  }
+
+  const role = profile.role ?? "dealer";
   const isOwner = profile?.is_owner ?? false;
   const pricesVisible = role === "staff" ? await getPricesVisible() : null;
 
