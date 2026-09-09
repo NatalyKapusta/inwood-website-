@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import "@/app/globals.css";
 import { createClient } from "@/lib/supabase/server";
 import LogoutButton from "@/components/portal/LogoutButton";
@@ -18,7 +19,11 @@ export default async function PortalLayout({ children }: { children: ReactNode }
 
   let role: string | null = null;
   if (user) {
-    const { data: profile } = await supabase.from("profiles").select("role").eq("id", user.id).single();
+    const { data: profile } = await supabase.from("profiles").select("role, blocked").eq("id", user.id).single();
+    if (profile?.blocked) {
+      await supabase.auth.signOut();
+      redirect("/portal/login?error=" + encodeURIComponent("Доступ заблоковано. Зверніться до вашого менеджера IN WOOD"));
+    }
     role = profile?.role ?? null;
   }
 

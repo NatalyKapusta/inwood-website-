@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { locales, type Locale } from "@/lib/i18n";
 
-// Змінити на реальний домен при деплої (env-змінна NEXT_PUBLIC_SITE_URL),
-// поки що — плейсхолдер на існуючий домен компанії.
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://inwood.com.ua";
+// Реальна адреса сайту зараз — Vercel (домен inwood.com.ua ще не перенесено).
+// Коли домен перенесуть, змінити тут або задати env-змінну NEXT_PUBLIC_SITE_URL.
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://inwood-website.vercel.app";
 
 const ogLocale: Record<Locale, string> = {
   ua: "uk_UA",

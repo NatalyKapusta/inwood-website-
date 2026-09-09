@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import { inviteUser } from "@/app/portal/actions";
+import { inviteUser, toggleUserAccess } from "@/app/portal/actions";
 
 const roleLabels: Record<string, string> = {
   dealer: "Дилер",
@@ -12,7 +12,7 @@ const roleLabels: Record<string, string> = {
 export default async function PortalUsersPage({
   searchParams,
 }: {
-  searchParams: { error?: string; invited?: string };
+  searchParams: { error?: string; invited?: string; blocked?: string; unblocked?: string };
 }) {
   const supabase = await createClient();
   const {
@@ -25,7 +25,7 @@ export default async function PortalUsersPage({
 
   const { data: allProfiles } = await supabase
     .from("profiles")
-    .select("id, email, full_name, company_name, role, created_at")
+    .select("id, email, full_name, company_name, role, blocked, created_at")
     .order("created_at", { ascending: false });
 
   return (
@@ -43,6 +43,16 @@ export default async function PortalUsersPage({
       {searchParams.invited && (
         <p className="mt-4 rounded-lg bg-green-50 px-4 py-3 text-sm text-green-700">
           Запрошення надіслано на {searchParams.invited}
+        </p>
+      )}
+      {searchParams.blocked && (
+        <p className="mt-4 rounded-lg bg-green-50 px-4 py-3 text-sm text-green-700">
+          Доступ заблоковано
+        </p>
+      )}
+      {searchParams.unblocked && (
+        <p className="mt-4 rounded-lg bg-green-50 px-4 py-3 text-sm text-green-700">
+          Доступ відновлено
         </p>
       )}
 
@@ -92,6 +102,8 @@ export default async function PortalUsersPage({
               <th className="px-4 py-3">Імʼя</th>
               <th className="px-4 py-3">Компанія</th>
               <th className="px-4 py-3">Роль</th>
+              <th className="px-4 py-3">Доступ</th>
+              <th className="px-4 py-3" />
             </tr>
           </thead>
           <tbody>
@@ -101,6 +113,37 @@ export default async function PortalUsersPage({
                 <td className="px-4 py-3 text-navy-dark">{p.full_name ?? "—"}</td>
                 <td className="px-4 py-3 text-navy-dim">{p.company_name ?? "—"}</td>
                 <td className="px-4 py-3 text-navy-dark">{roleLabels[p.role] ?? p.role}</td>
+                <td className="px-4 py-3">
+                  {p.blocked ? (
+                    <span className="rounded-full bg-red-50 px-3 py-1 text-xs font-semibold text-red-700">
+                      Заблоковано
+                    </span>
+                  ) : (
+                    <span className="rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-700">
+                      Активний
+                    </span>
+                  )}
+                </td>
+                <td className="px-4 py-3 text-right">
+                  {p.id === user.id ? (
+                    <span className="text-xs text-navy-dim">Це ви</span>
+                  ) : (
+                    <form action={toggleUserAccess}>
+                      <input type="hidden" name="user_id" value={p.id} />
+                      <input type="hidden" name="block" value={p.blocked ? "0" : "1"} />
+                      <button
+                        type="submit"
+                        className={
+                          p.blocked
+                            ? "rounded-full border border-navy-dim/30 px-4 py-1.5 text-xs font-semibold text-navy-dark transition hover:border-gold hover:text-gold-dim"
+                            : "rounded-full border border-red-200 px-4 py-1.5 text-xs font-semibold text-red-700 transition hover:bg-red-50"
+                        }
+                      >
+                        {p.blocked ? "Розблокувати" : "Заблокувати доступ"}
+                      </button>
+                    </form>
+                  )}
+                </td>
               </tr>
             ))}
           </tbody>

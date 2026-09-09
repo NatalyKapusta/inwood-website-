@@ -11,10 +11,22 @@ export async function login(formData: FormData) {
   const password = String(formData.get("password") ?? "");
 
   const supabase = await createClient();
-  const { error } = await supabase.auth.signInWithPassword({ email, password });
+  const { data, error } = await supabase.auth.signInWithPassword({ email, password });
 
   if (error) {
     redirect(`/portal/login?error=${encodeURIComponent("Невірний email або пароль")}`);
+  }
+
+  if (data.user) {
+    const { data: myProfile } = await supabase
+      .from("profiles")
+      .select("blocked")
+      .eq("id", data.user.id)
+      .single();
+    if (myProfile?.blocked) {
+      await supabase.auth.signOut();
+      redirect(`/portal/login?error=${encodeURIComponent("Доступ заблоковано. Зверніться до вашого менеджера IN WOOD")}`);
+    }
   }
 
   redirect("/portal");
@@ -64,6 +76,43 @@ export async function inviteUser(formData: FormData) {
 
   revalidatePath("/portal/users");
   redirect("/portal/users?invited=" + encodeURIComponent(email));
+}
+
+// Лише staff: заблокувати або розблокувати доступ користувача до порталу.
+export async function toggleUserAccess(formData: FormData) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) redirect("/portal/login");
+
+  const { data: myProfile } = await supabase.from("profiles").select("role").eq("id", user.id).single();
+  if (myProfile?.role !== "staff") {
+    redirect("/portal/users?error=" + encodeURIComponent("Недостатньо прав"));
+  }
+
+  const targetId = String(formData.get("user_id") ?? "");
+  const block = formData.get("block") === "1";
+
+  if (!targetId) {
+    redirect("/portal/users?error=" + encodeURIComponent("Не вказано користувача"));
+  }
+  if (targetId === user.id) {
+    redirect("/portal/users?error=" + encodeURIComponent("Не можна заблокувати власний доступ"));
+  }
+
+  const admin = createAdminClient();
+  const { error } = await admin.auth.admin.updateUserById(targetId, {
+    ban_duration: block ? "876000h" : "none",
+  });
+  if (error) {
+    redirect("/portal/users?error=" + encodeURIComponent(error.message));
+  }
+
+  await admin.from("profiles").update({ blocked: block }).eq("id", targetId);
+
+  revalidatePath("/portal/users");
+  redirect("/portal/users?" + (block ? "blocked" : "unblocked") + "=1");
 }
 
 // Лише staff: створити ручне перевизначення ціни/розміру.
