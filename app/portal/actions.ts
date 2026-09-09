@@ -150,9 +150,7 @@ export async function updateUserRole(formData: FormData) {
 
   const targetId = String(formData.get("user_id") ?? "");
   const role = String(formData.get("role") ?? "");
-  const validRoles = ["dealer", "dealer_distributor", "manager", "staff"];
-
-  if (!targetId || !validRoles.includes(role)) {
+  if (!targetId || !isPortalRole(role)) {
     redirect("/portal/users?error=" + encodeURIComponent("Некоректні дані"));
   }
 

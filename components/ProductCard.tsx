@@ -8,6 +8,13 @@ import PhoneInput from "@/components/PhoneInput";
 
 const NONE = "__none__";
 
+// Роздрібні ціни на послуги, що застосовуються до будь-якої моделі —
+// ті самі значення, що й у B2B-калькуляторі (service_tariff_prices,
+// тариф "retail"): VRIZKA_LOCK_PRICE, VRIZKA_FULL_PRICE, SHUMO_PRICE.
+const VRIZKA_LOCK_PRICE = 300;
+const VRIZKA_FULL_PRICE = 600;
+const SHUMO_PRICE = 1200;
+
 function fmt(n: number) {
   // Нерозривний пробіл перед ₴ — щоб гривня не "відривалась" на новий рядок
   return new Intl.NumberFormat("uk-UA").format(n) + " ₴";
@@ -32,6 +39,8 @@ export default function ProductCard({
   const [korob, setKorob] = useState(NONE);
   const [lyshtva, setLyshtva] = useState(NONE);
   const [dobir, setDobir] = useState(NONE);
+  const [vrizka, setVrizka] = useState<"none" | "lock" | "full">("none");
+  const [shumo, setShumo] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -41,15 +50,20 @@ export default function ProductCard({
 
   const color = model.colors[colorIdx];
 
+  const vrizkaPrice = vrizka === "lock" ? VRIZKA_LOCK_PRICE : vrizka === "full" ? VRIZKA_FULL_PRICE : 0;
+  const shumoPrice = shumo ? SHUMO_PRICE : 0;
+
   const extra = useMemo(() => {
     const findPrice = (list: { label: string; price: number }[], value: string) =>
       value === NONE ? 0 : list.find((o) => o.label === value)?.price ?? 0;
     return (
       findPrice(komplekt.korob, korob) +
       findPrice(komplekt.lyshtva, lyshtva) +
-      findPrice(komplekt.dobir, dobir)
+      findPrice(komplekt.dobir, dobir) +
+      vrizkaPrice +
+      shumoPrice
     );
-  }, [korob, lyshtva, dobir, komplekt]);
+  }, [korob, lyshtva, dobir, komplekt, vrizkaPrice, shumoPrice]);
 
   const total = model.basePrice + extra;
 
@@ -59,6 +73,8 @@ export default function ProductCard({
     korob !== NONE ? `${t.korob}: ${korob}` : null,
     lyshtva !== NONE ? `${t.lyshtva}: ${lyshtva}` : null,
     dobir !== NONE ? `${t.dobir}: ${dobir}` : null,
+    vrizka === "lock" ? `${t.vrizka}: ${t.vrizkaLock}` : vrizka === "full" ? `${t.vrizka}: ${t.vrizkaFull}` : null,
+    shumo ? t.shumo : null,
     // Ціну лишаємо в листі менеджеру завжди — це приватна заявка, не публічний показ.
     `${t.total}: ${fmt(total)}`,
   ].filter(Boolean) as string[];
@@ -161,6 +177,33 @@ export default function ProductCard({
             pricesVisible={pricesVisible}
           />
         )}
+
+        <label className="block text-xs text-navy-dim">
+          {t.vrizka}
+          <select
+            value={vrizka}
+            onChange={(e) => setVrizka(e.target.value as "none" | "lock" | "full")}
+            className="mt-1 w-full rounded-lg border border-navy-dim/30 bg-panel px-2 py-1.5 text-sm text-navy-dark outline-none focus:border-gold"
+          >
+            <option value="none">{t.vrizkaNone}</option>
+            <option value="lock">
+              {pricesVisible ? `${t.vrizkaLock} — ${fmt(VRIZKA_LOCK_PRICE)}` : t.vrizkaLock}
+            </option>
+            <option value="full">
+              {pricesVisible ? `${t.vrizkaFull} — ${fmt(VRIZKA_FULL_PRICE)}` : t.vrizkaFull}
+            </option>
+          </select>
+        </label>
+
+        <label className="flex items-center gap-2 text-xs text-navy-dark">
+          <input
+            type="checkbox"
+            checked={shumo}
+            onChange={(e) => setShumo(e.target.checked)}
+            className="h-4 w-4 rounded border-navy-dim/30 accent-gold"
+          />
+          {pricesVisible ? `${t.shumo} — ${fmt(SHUMO_PRICE)}` : t.shumo}
+        </label>
 
         <div className="mt-auto flex flex-col gap-2 pt-2 sm:flex-row sm:items-center sm:justify-between">
           <p className="whitespace-nowrap font-serif text-lg font-bold text-navy-dark">

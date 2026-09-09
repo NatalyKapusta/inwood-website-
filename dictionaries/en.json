@@ -65,7 +65,7 @@
         "label": "years of experience"
       },
       {
-        "to": 70,
+        "to": 50,
         "suffix": "+",
         "label": "door models"
       },
@@ -249,11 +249,26 @@
       "title": "Panel construction",
       "subtitle": "ETALON / NOMINAL panel doors — what the panel is made of",
       "layers": [
-        { "label": "Wooden frame", "value": "80 × 27 mm" },
-        { "label": "Honeycomb core", "value": "18 mm cell" },
-        { "label": "MDF", "value": "6 mm" },
-        { "label": "Aluminium molding", "value": "" },
-        { "label": "PVC film", "value": "" }
+        {
+          "label": "Wooden frame",
+          "value": "80 × 27 mm"
+        },
+        {
+          "label": "Honeycomb core",
+          "value": "18 mm cell"
+        },
+        {
+          "label": "MDF",
+          "value": "6 mm"
+        },
+        {
+          "label": "Aluminium molding",
+          "value": ""
+        },
+        {
+          "label": "PVC film",
+          "value": ""
+        }
       ],
       "featuresTitle": "Additional panel features",
       "features": [
@@ -392,7 +407,7 @@
     "dealership": [
       {
         "title": "A wide range of quality interior doors",
-        "text": "You'll find doors for every taste and budget — over 70 models in various colours and textures, plus all the necessary accessories. Your customers will definitely find what they're looking for!"
+        "text": "You'll find doors for every taste and budget — over 50 models in various colours and textures, plus all the necessary accessories. Your customers will definitely find what they're looking for!"
       },
       {
         "title": "Mutually beneficial cooperation terms",
@@ -447,6 +462,11 @@
     "lyshtva": "Casing",
     "dobir": "Jamb extension",
     "none": "None",
+    "vrizka": "Hardware mortising",
+    "vrizkaNone": "No mortising",
+    "vrizkaLock": "Lock mortising",
+    "vrizkaFull": "Full hardware mortising",
+    "shumo": "Soundproofing",
     "total": "Total",
     "from": "from",
     "findOutPrice": "Get a quote",
@@ -465,7 +485,7 @@
     "heroTitle": "IN WOOD dealers across Ukraine and abroad",
     "heroText": "We're building a network of reliable partners — from dealer showrooms in Ukrainian cities to international shipments. Find the nearest showroom or join our team.",
     "heroPoints": [
-      "70+ door models in the current lineup",
+      "50+ door models in the current lineup",
       "Export experience to the UK, France, Switzerland, Lithuania and Latvia",
       "Flexible cooperation terms and partner support"
     ],

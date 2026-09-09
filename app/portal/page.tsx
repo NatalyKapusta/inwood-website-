@@ -4,14 +4,7 @@ import { cookies } from "next/headers";
 import { createClient } from "@/lib/supabase/server";
 import { getPricesVisible } from "@/lib/siteSettings";
 import { setPricesVisible } from "@/app/portal/actions";
-import { VIEW_AS_COOKIE, isPortalRole } from "@/lib/portalRole";
-
-const roleLabels: Record<string, string> = {
-  dealer: "Дилер",
-  dealer_distributor: "Дилер + роздріб + дистрибуція",
-  manager: "Менеджер (тільки калькулятор)",
-  staff: "Співробітник IN WOOD",
-};
+import { VIEW_AS_COOKIE, isPortalRole, roleLabels } from "@/lib/portalRole";
 
 export default async function PortalDashboardPage() {
   const supabase = await createClient();
@@ -65,7 +58,7 @@ export default async function PortalDashboardPage() {
         <p className="mt-1 text-sm text-navy-dim">
           Роль:{" "}
           <span className="font-semibold text-navy-dark">
-            {roleLabels[effectiveRole] ?? effectiveRole}
+            {roleLabels[effectiveRole as keyof typeof roleLabels] ?? effectiveRole}
           </span>
         </p>
       </div>
