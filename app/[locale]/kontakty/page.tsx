@@ -70,7 +70,7 @@ export default async function KontaktyPage({
               ))}
             </div>
           </div>
-          <div className="relative mx-auto aspect-[4/3] w-full max-w-md overflow-hidden rounded-2xl lg:aspect-auto lg:h-full lg:max-w-none">
+          <div className="relative mx-auto aspect-[3/2] w-full max-w-lg overflow-hidden rounded-2xl lg:max-w-none">
             <Image
               src="/photos/interiors/frezzatti-fz-02-dub-portovyi.jpg"
               alt={t.heroTitle}

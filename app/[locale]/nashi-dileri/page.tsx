@@ -39,7 +39,7 @@ export default async function NashiDileriPage({ params }: { params: { locale: Lo
               ))}
             </ul>
           </div>
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl lg:aspect-auto lg:h-full">
+          <div className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl">
             <Image
               src="/photos/interiors/nominal-nl-01-white.jpg"
               alt={t.heroTitle}

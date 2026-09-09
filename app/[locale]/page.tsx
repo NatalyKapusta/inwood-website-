@@ -94,7 +94,7 @@ export default async function HomePage({
       {/* ЯКІСТЬ ГАРАНТОВАНА */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:py-24">
         <div className="grid gap-10 overflow-hidden rounded-2xl bg-panel-alt lg:grid-cols-2 lg:items-center">
-          <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full">
+          <div className="relative aspect-[3/2]">
             <Image
               src="/photos/interiors/etalon-et-06-dub-shato.jpg"
               alt={t.qualityBanner.title}
