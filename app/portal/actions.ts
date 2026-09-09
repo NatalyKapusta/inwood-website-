@@ -115,6 +115,45 @@ export async function toggleUserAccess(formData: FormData) {
   redirect("/portal/users?" + (block ? "blocked" : "unblocked") + "=1");
 }
 
+// Лише staff: повністю видалити користувача (можна одразу запросити той самий email заново).
+export async function deleteUserAccount(formData: FormData) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) redirect("/portal/login");
+
+  const { data: myProfile } = await supabase.from("profiles").select("role").eq("id", user.id).single();
+  if (myProfile?.role !== "staff") {
+    redirect("/portal/users?error=" + encodeURIComponent("Недостатньо прав"));
+  }
+
+  const targetId = String(formData.get("user_id") ?? "");
+
+  if (!targetId) {
+    redirect("/portal/users?error=" + encodeURIComponent("Не вказано користувача"));
+  }
+  if (targetId === user.id) {
+    redirect("/portal/users?error=" + encodeURIComponent("Не можна видалити власний обліковий запис"));
+  }
+
+  const admin = createAdminClient();
+
+  // Знімаємо посилання на користувача з його КП та перевизначень цін —
+  // самі записи (історія) лишаються, просто без автора.
+  await admin.from("quotes").update({ created_by: null }).eq("created_by", targetId);
+  await admin.from("price_overrides").update({ created_by: null }).eq("created_by", targetId);
+  await admin.from("site_settings").update({ updated_by: null }).eq("updated_by", targetId);
+
+  const { error } = await admin.auth.admin.deleteUser(targetId);
+  if (error) {
+    redirect("/portal/users?error=" + encodeURIComponent(error.message));
+  }
+
+  revalidatePath("/portal/users");
+  redirect("/portal/users?deleted=1");
+}
+
 // Лише staff: створити ручне перевизначення ціни/розміру.
 export async function createOverride(formData: FormData) {
   const supabase = await createClient();

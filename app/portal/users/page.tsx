@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { inviteUser, toggleUserAccess } from "@/app/portal/actions";
+import DeleteUserButton from "@/components/portal/DeleteUserButton";
 
 const roleLabels: Record<string, string> = {
   dealer: "Дилер",
@@ -12,7 +13,7 @@ const roleLabels: Record<string, string> = {
 export default async function PortalUsersPage({
   searchParams,
 }: {
-  searchParams: { error?: string; invited?: string; blocked?: string; unblocked?: string };
+  searchParams: { error?: string; invited?: string; blocked?: string; unblocked?: string; deleted?: string };
 }) {
   const supabase = await createClient();
   const {
@@ -53,6 +54,11 @@ export default async function PortalUsersPage({
       {searchParams.unblocked && (
         <p className="mt-4 rounded-lg bg-green-50 px-4 py-3 text-sm text-green-700">
           Доступ відновлено
+        </p>
+      )}
+      {searchParams.deleted && (
+        <p className="mt-4 rounded-lg bg-green-50 px-4 py-3 text-sm text-green-700">
+          Користувача видалено. Цей email можна запросити знову.
         </p>
       )}
 
@@ -128,20 +134,23 @@ export default async function PortalUsersPage({
                   {p.id === user.id ? (
                     <span className="text-xs text-navy-dim">Це ви</span>
                   ) : (
-                    <form action={toggleUserAccess}>
-                      <input type="hidden" name="user_id" value={p.id} />
-                      <input type="hidden" name="block" value={p.blocked ? "0" : "1"} />
-                      <button
-                        type="submit"
-                        className={
-                          p.blocked
-                            ? "rounded-full border border-navy-dim/30 px-4 py-1.5 text-xs font-semibold text-navy-dark transition hover:border-gold hover:text-gold-dim"
-                            : "rounded-full border border-red-200 px-4 py-1.5 text-xs font-semibold text-red-700 transition hover:bg-red-50"
-                        }
-                      >
-                        {p.blocked ? "Розблокувати" : "Заблокувати доступ"}
-                      </button>
-                    </form>
+                    <div className="flex items-center justify-end gap-2">
+                      <form action={toggleUserAccess}>
+                        <input type="hidden" name="user_id" value={p.id} />
+                        <input type="hidden" name="block" value={p.blocked ? "0" : "1"} />
+                        <button
+                          type="submit"
+                          className={
+                            p.blocked
+                              ? "rounded-full border border-navy-dim/30 px-4 py-1.5 text-xs font-semibold text-navy-dark transition hover:border-gold hover:text-gold-dim"
+                              : "rounded-full border border-red-200 px-4 py-1.5 text-xs font-semibold text-red-700 transition hover:bg-red-50"
+                          }
+                        >
+                          {p.blocked ? "Розблокувати" : "Заблокувати доступ"}
+                        </button>
+                      </form>
+                      <DeleteUserButton userId={p.id} email={p.email ?? ""} />
+                    </div>
                   )}
                 </td>
               </tr>
