@@ -14,6 +14,10 @@ export default function CatalogFilter({
   phoneManual,
   phoneChooseCountry,
   phoneInvalid,
+  sendFailedRetry,
+  nameLabel,
+  phoneLabel,
+  formSentMessage,
 }: {
   sections: { id: string; data: Collection }[];
   orderEmail: string;
@@ -22,6 +26,10 @@ export default function CatalogFilter({
   phoneManual?: string;
   phoneChooseCountry?: string;
   phoneInvalid?: string;
+  sendFailedRetry?: string;
+  nameLabel?: string;
+  phoneLabel?: string;
+  formSentMessage?: string;
 }) {
   const [active, setActive] = useState<string>("all");
 
@@ -61,6 +69,10 @@ export default function CatalogFilter({
                     phoneManual={phoneManual}
                     phoneChooseCountry={phoneChooseCountry}
                     phoneInvalid={phoneInvalid}
+                    sendFailedRetry={sendFailedRetry}
+                    nameLabel={nameLabel}
+                    phoneLabel={phoneLabel}
+                    formSentMessage={formSentMessage}
                   />
                 ))}
               </div>

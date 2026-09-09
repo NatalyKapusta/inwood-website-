@@ -45,6 +45,7 @@ export default async function LocaleLayout({
           email={common.email}
           nav={common.nav}
           portalLabel={common.portalLink}
+          menuLabel={common.menuLabel}
         />
         <main>{children}</main>
         <Footer
@@ -57,6 +58,10 @@ export default async function LocaleLayout({
           exportEmail={common.exportEmail}
           address={common.address}
           hours={common.hours}
+          mailLabel={common.footerMailLabel}
+          phoneLabel={common.footerPhoneLabel}
+          addressLabel={common.footerAddressLabel}
+          hoursLabel={common.hoursLabel}
         />
         <Script
           src="https://keepincrm.chat/chat-widget.js?widgetId=bSz1XhHCMkhe"

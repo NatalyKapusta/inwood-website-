@@ -15,6 +15,7 @@ export default function Header({
   email,
   nav,
   portalLabel,
+  menuLabel,
 }: {
   locale: Locale;
   phone: string;
@@ -22,6 +23,7 @@ export default function Header({
   email: string;
   nav: NavItem[];
   portalLabel: string;
+  menuLabel: string;
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -99,7 +101,7 @@ export default function Header({
           <button
             type="button"
             onClick={() => setMenuOpen((v) => !v)}
-            aria-label="Меню"
+            aria-label={menuLabel}
             aria-expanded={menuOpen}
             className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/20 text-white lg:hidden"
           >

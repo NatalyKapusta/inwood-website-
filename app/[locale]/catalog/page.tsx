@@ -79,6 +79,10 @@ export default async function CatalogPage({ params }: { params: { locale: Locale
           phoneManual={dict.common.phoneManual}
           phoneChooseCountry={dict.common.phoneChooseCountry}
           phoneInvalid={dict.common.phoneInvalid}
+          sendFailedRetry={dict.common.sendFailedRetry}
+          nameLabel={dict.common.formName}
+          phoneLabel={dict.common.formPhone}
+          formSentMessage={dict.common.formSentMessage}
         />
       </div>
     </div>

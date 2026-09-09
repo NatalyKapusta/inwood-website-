@@ -67,7 +67,19 @@
     "phoneManual": "Немає моєї країни в списку — ввести номер вручну",
     "phoneChooseCountry": "Обрати країну зі списку",
     "phoneInvalid": "Перевірте номер телефону — введіть коректний номер",
-    "breadcrumbHome": "Головна"
+    "breadcrumbHome": "Головна",
+    "footerMailLabel": "Пошта",
+    "footerPhoneLabel": "Телефон",
+    "footerAddressLabel": "Адреса",
+    "hoursLabel": "Режим роботи",
+    "formEmailPlaceholder": "Пошта",
+    "formMessagePlaceholder": "Повідомлення",
+    "formSentMessage": "Дякуємо! Заявку надіслано, ми скоро з вами зв'яжемось.",
+    "noResultsFound": "Нічого не знайдено",
+    "dealerSearchPlaceholder": "Пошук міста або дилера...",
+    "menuLabel": "Меню",
+    "getDirections": "Прокласти маршрут →",
+    "sendFailedRetry": "Не вдалося надіслати. Спробуйте ще раз."
   },
   "home": {
     "title": "Виробник міжкімнатних дверей в Україні | Дилери | Експорт",

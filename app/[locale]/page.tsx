@@ -261,7 +261,7 @@ export default async function HomePage({
         <p className="mt-4 text-navy-dim">{c.ctaText}</p>
         {sent ? (
           <p className="mx-auto mt-8 max-w-md rounded-lg bg-panel-alt px-6 py-4 text-navy-dark">
-            Дякуємо! Заявку надіслано, ми скоро з вами зв&apos;яжемось.
+            {c.formSentMessage}
           </p>
         ) : (
           <form action={submitLead} className="mx-auto mt-8 flex max-w-md flex-col gap-4">

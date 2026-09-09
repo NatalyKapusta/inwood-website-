@@ -37,6 +37,10 @@ export default function ProductCard({
   phoneManual,
   phoneChooseCountry,
   phoneInvalid,
+  sendFailedRetry = "Не вдалося надіслати. Спробуйте ще раз.",
+  nameLabel = "Ім'я",
+  phoneLabel = "Телефон",
+  formSentMessage = "Дякуємо! Заявку надіслано, ми скоро з вами зв'яжемось.",
 }: {
   collectionLabel: string;
   model: ProductModel;
@@ -47,6 +51,10 @@ export default function ProductCard({
   phoneManual?: string;
   phoneChooseCountry?: string;
   phoneInvalid?: string;
+  sendFailedRetry?: string;
+  nameLabel?: string;
+  phoneLabel?: string;
+  formSentMessage?: string;
 }) {
   const defaultColorIdx = Math.max(
     model.colors.findIndex((c) => c.slug === "white"),
@@ -311,20 +319,20 @@ export default function ProductCard({
             </p>
             {sent ? (
               <p className="mt-4 rounded-lg bg-panel-alt px-4 py-3 text-sm text-navy-dark">
-                Дякуємо! Заявку надіслано, ми скоро з вами зв&apos;яжемось.
+                {formSentMessage}
               </p>
             ) : (
               <form onSubmit={sendInquiry} className="mt-4 flex flex-col gap-3">
                 <input
                   type="text"
                   required
-                  placeholder="Ім'я / Имя / Name"
+                  placeholder={nameLabel}
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className="rounded-lg border border-navy-dim/30 px-3 py-2 text-sm outline-none focus:border-gold"
                 />
                 <PhoneInput
-                  placeholder="Телефон / Phone"
+                  placeholder={phoneLabel}
                   required
                   value={phone}
                   onChange={setPhone}
@@ -334,7 +342,7 @@ export default function ProductCard({
                   invalidLabel={phoneInvalid}
                 />
                 {error && (
-                  <p className="text-xs text-red-600">Не вдалося надіслати. Спробуйте ще раз.</p>
+                  <p className="text-xs text-red-600">{sendFailedRetry}</p>
                 )}
                 <button
                   type="submit"

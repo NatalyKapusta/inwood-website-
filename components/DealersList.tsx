@@ -2,9 +2,19 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { groupByCity, CITY_SLUGS, type Dealer } from "@/lib/dealers";
+import { groupByCity, CITY_SLUGS, getCityDisplayName, type Dealer } from "@/lib/dealers";
 
-export default function DealersList({ dealers, locale }: { dealers: Dealer[]; locale: string }) {
+export default function DealersList({
+  dealers,
+  locale,
+  searchPlaceholder,
+  noResultsLabel,
+}: {
+  dealers: Dealer[];
+  locale: "ua" | "ru" | "en";
+  searchPlaceholder: string;
+  noResultsLabel: string;
+}) {
   const [query, setQuery] = useState("");
   const grouped = useMemo(() => groupByCity(dealers), [dealers]);
   const filtered = useMemo(() => {
@@ -12,8 +22,8 @@ export default function DealersList({ dealers, locale }: { dealers: Dealer[]; lo
     const q = query.trim().toLowerCase();
     return grouped
       .map(([city, list]) => [city, list.filter((d) => d.name.toLowerCase().includes(q) || d.address.toLowerCase().includes(q))] as [string, Dealer[]])
-      .filter(([city, list]) => city.toLowerCase().includes(q) || list.length > 0);
-  }, [grouped, query]);
+      .filter(([city, list]) => getCityDisplayName(city, locale).toLowerCase().includes(q) || list.length > 0);
+  }, [grouped, query, locale]);
 
   return (
     <div>
@@ -21,7 +31,7 @@ export default function DealersList({ dealers, locale }: { dealers: Dealer[]; lo
         type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        placeholder="Пошук міста або дилера..."
+        placeholder={searchPlaceholder}
         className="w-full max-w-sm rounded-lg border border-navy-dim/30 bg-panel px-4 py-2.5 text-sm outline-none focus:border-gold"
       />
 
@@ -31,10 +41,10 @@ export default function DealersList({ dealers, locale }: { dealers: Dealer[]; lo
             <h3 className="font-serif text-lg font-bold text-gold-dim">
               {CITY_SLUGS[city] ? (
                 <Link href={`/${locale}/nashi-dileri/${CITY_SLUGS[city]}`} className="hover:text-gold">
-                  {city}
+                  {getCityDisplayName(city, locale)}
                 </Link>
               ) : (
-                city
+                getCityDisplayName(city, locale)
               )}{" "}
               <span className="text-sm font-normal text-navy-dim">({list.length})</span>
             </h3>
@@ -72,7 +82,7 @@ export default function DealersList({ dealers, locale }: { dealers: Dealer[]; lo
             </div>
           </div>
         ))}
-        {filtered.length === 0 && <p className="text-navy-dim">Нічого не знайдено</p>}
+        {filtered.length === 0 && <p className="text-navy-dim">{noResultsLabel}</p>}
       </div>
     </div>
   );

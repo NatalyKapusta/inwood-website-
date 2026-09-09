@@ -106,7 +106,7 @@ export default async function KontaktyPage({
       <div className="mt-12 grid gap-10 sm:grid-cols-2">
         <div className="space-y-6">
           <div>
-            <p className="text-xs uppercase tracking-wide text-gold-dim">Адреса</p>
+            <p className="text-xs uppercase tracking-wide text-gold-dim">{c.footerAddressLabel}</p>
             <a
               href={`https://maps.google.com/?q=${encodeURIComponent(c.address)}`}
               target="_blank"
@@ -148,7 +148,7 @@ export default async function KontaktyPage({
             </a>
           </div>
           <div>
-            <p className="text-xs uppercase tracking-wide text-gold-dim">Режим роботи</p>
+            <p className="text-xs uppercase tracking-wide text-gold-dim">{c.hoursLabel}</p>
             <p className="mt-1 text-navy-dark">{c.hours}</p>
           </div>
           <SocialLinks tone="light" />
@@ -159,7 +159,7 @@ export default async function KontaktyPage({
           <p className="mt-1 text-sm text-navy-dim">{t.formText}</p>
           {sent ? (
             <p className="mt-6 rounded-lg bg-panel px-4 py-3 text-navy-dark">
-              Дякуємо! Заявку надіслано, ми скоро з вами зв&apos;яжемось.
+              {c.formSentMessage}
             </p>
           ) : (
             <form action={submitLead} className="mt-6 flex flex-col gap-3">
@@ -182,12 +182,12 @@ export default async function KontaktyPage({
               <input
                 type="email"
                 name="email"
-                placeholder="Пошта"
+                placeholder={c.formEmailPlaceholder}
                 className="rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
               />
               <textarea
                 name="comment"
-                placeholder="Повідомлення"
+                placeholder={c.formMessagePlaceholder}
                 rows={4}
                 className="rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
               />

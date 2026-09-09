@@ -67,7 +67,19 @@
     "phoneManual": "Нет моей страны в списке — ввести номер вручную",
     "phoneChooseCountry": "Выбрать страну из списка",
     "phoneInvalid": "Проверьте номер телефона — введите корректный номер",
-    "breadcrumbHome": "Главная"
+    "breadcrumbHome": "Главная",
+    "footerMailLabel": "Почта",
+    "footerPhoneLabel": "Телефон",
+    "footerAddressLabel": "Адрес",
+    "hoursLabel": "Режим работы",
+    "formEmailPlaceholder": "Почта",
+    "formMessagePlaceholder": "Сообщение",
+    "formSentMessage": "Спасибо! Заявка отправлена, мы скоро с вами свяжемся.",
+    "noResultsFound": "Ничего не найдено",
+    "dealerSearchPlaceholder": "Поиск города или дилера...",
+    "menuLabel": "Меню",
+    "getDirections": "Проложить маршрут →",
+    "sendFailedRetry": "Не удалось отправить. Попробуйте ещё раз."
   },
   "home": {
     "title": "Производитель межкомнатных дверей в Украине | Дилеры | Экспорт",

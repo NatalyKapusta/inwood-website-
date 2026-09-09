@@ -20,6 +20,7 @@ export async function generateMetadata({ params }: { params: { locale: Locale } 
 export default async function NashiDileriPage({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
   const t = dict.nashiDileri;
+  const c = dict.common;
 
   return (
     <>
@@ -59,7 +60,7 @@ export default async function NashiDileriPage({ params }: { params: { locale: Lo
       </div>
 
       <div className="mt-10">
-        <DealersMap />
+        <DealersMap getDirectionsLabel={c.getDirections} />
       </div>
 
       <div className="mt-12">
@@ -67,7 +68,12 @@ export default async function NashiDileriPage({ params }: { params: { locale: Lo
           {t.dealersByCityHeading} ({dealers.length})
         </h2>
         <div className="mt-6">
-          <DealersList dealers={dealers} locale={params.locale} />
+          <DealersList
+            dealers={dealers}
+            locale={params.locale}
+            searchPlaceholder={c.dealerSearchPlaceholder}
+            noResultsLabel={c.noResultsFound}
+          />
         </div>
       </div>
 

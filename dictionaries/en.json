@@ -67,7 +67,19 @@
     "phoneManual": "Don't see my country in the list — enter number manually",
     "phoneChooseCountry": "Choose a country from the list",
     "phoneInvalid": "Please check your phone number — enter a valid number",
-    "breadcrumbHome": "Home"
+    "breadcrumbHome": "Home",
+    "footerMailLabel": "Mail",
+    "footerPhoneLabel": "Phone",
+    "footerAddressLabel": "Address",
+    "hoursLabel": "Working hours",
+    "formEmailPlaceholder": "Email",
+    "formMessagePlaceholder": "Message",
+    "formSentMessage": "Thank you! Your request has been sent — we'll be in touch shortly.",
+    "noResultsFound": "Nothing found",
+    "dealerSearchPlaceholder": "Search by city or dealer...",
+    "menuLabel": "Menu",
+    "getDirections": "Get directions →",
+    "sendFailedRetry": "Couldn't send. Please try again."
   },
   "home": {
     "title": "Interior Door Manufacturer in Ukraine | Wholesale & Export",

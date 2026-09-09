@@ -15,6 +15,10 @@ export default function Footer({
   exportEmail,
   address,
   hours,
+  mailLabel,
+  phoneLabel,
+  addressLabel,
+  hoursLabel,
 }: {
   locale: Locale;
   tagline: string;
@@ -25,6 +29,10 @@ export default function Footer({
   exportEmail: string;
   address: string;
   hours: string;
+  mailLabel: string;
+  phoneLabel: string;
+  addressLabel: string;
+  hoursLabel: string;
 }) {
   return (
     <footer className="bg-navy-dark text-white">
@@ -43,7 +51,7 @@ export default function Footer({
 
         <div className="mt-10 grid gap-8 text-sm text-white/80 sm:grid-cols-3">
           <div>
-            <p className="mb-2 font-semibold uppercase tracking-wide text-gold">Пошта</p>
+            <p className="mb-2 font-semibold uppercase tracking-wide text-gold">{mailLabel}</p>
             <a
               href={`mailto:${email}`}
               className="flex items-center gap-1.5 underline decoration-white/30 underline-offset-2 hover:text-gold hover:decoration-gold"
@@ -63,7 +71,7 @@ export default function Footer({
             </p>
           </div>
           <div>
-            <p className="mb-2 font-semibold uppercase tracking-wide text-gold">Телефон</p>
+            <p className="mb-2 font-semibold uppercase tracking-wide text-gold">{phoneLabel}</p>
             <a href={`tel:${phone.replace(/[^\d+]/g, "")}`} className="block hover:text-gold">
               {phone}
             </a>
@@ -75,7 +83,7 @@ export default function Footer({
             </p>
           </div>
           <div>
-            <p className="mb-2 font-semibold uppercase tracking-wide text-gold">Адреса</p>
+            <p className="mb-2 font-semibold uppercase tracking-wide text-gold">{addressLabel}</p>
             <a
               href={`https://maps.google.com/?q=${encodeURIComponent(address)}`}
               target="_blank"
@@ -85,7 +93,7 @@ export default function Footer({
               {address}
             </a>
             <p className="mt-3 mb-2 font-semibold uppercase tracking-wide text-gold">
-              Режим роботи
+              {hoursLabel}
             </p>
             <p>{hours}</p>
           </div>
