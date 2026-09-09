@@ -37,7 +37,7 @@ export default async function PortalDashboardPage() {
 
   const role = profile.role ?? "dealer";
   const isOwner = profile?.is_owner ?? false;
-  const pricesVisible = role === "staff" ? await getPricesVisible() : null;
+  const pricesVisible = isOwner ? await getPricesVisible() : null;
 
   let viewingAs: string | null = null;
   if (isOwner) {
@@ -130,7 +130,7 @@ export default async function PortalDashboardPage() {
         )}
       </div>
 
-      {role === "staff" && (
+      {effectiveIsOwner && (
         <div className="mt-8 rounded-xl bg-panel p-6 shadow-sm">
           <h2 className="font-serif text-lg font-bold text-navy-dark">Видимість цін на сайті</h2>
           <p className="mt-2 text-sm text-navy-dim">

@@ -269,7 +269,7 @@ export async function createOverride(formData: FormData) {
   redirect("/portal/overrides");
 }
 
-// Лише staff: перемкнути видимість роздрібних цін на публічному сайті.
+// Лише власник: перемкнути видимість роздрібних цін на публічному сайті.
 export async function setPricesVisible(formData: FormData) {
   const supabase = await createClient();
   const {
@@ -277,8 +277,8 @@ export async function setPricesVisible(formData: FormData) {
   } = await supabase.auth.getUser();
   if (!user) redirect("/portal/login");
 
-  const { data: myProfile } = await supabase.from("profiles").select("role").eq("id", user.id).single();
-  if (myProfile?.role !== "staff") redirect("/portal");
+  const { data: myProfile } = await supabase.from("profiles").select("is_owner").eq("id", user.id).single();
+  if (!myProfile?.is_owner) redirect("/portal");
 
   const visible = formData.get("visible") === "true";
 
