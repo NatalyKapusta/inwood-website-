@@ -4,7 +4,7 @@ import ContactCta from "@/components/ContactCta";
 import Counter from "@/components/Counter";
 import ProductCard from "@/components/ProductCard";
 import { getDictionary } from "@/lib/dictionary";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { collections } from "@/lib/products";
 import { getPricesVisible } from "@/lib/siteSettings";
 
@@ -33,6 +33,21 @@ export default async function SpivpratsyaPage({
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd(
+              [
+                { name: c.breadcrumbHome, path: "" },
+                { name: t.heading, path: "/spivpratsya" },
+              ],
+              params.locale
+            )
+          ),
+        }}
+      />
       <section className="bg-navy-dark py-16 text-center text-white sm:py-24">
         <div className="mx-auto max-w-3xl px-4">
           <h1 className="font-serif text-3xl font-bold sm:text-4xl">{t.heading}</h1>

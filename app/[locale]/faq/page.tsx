@@ -1,6 +1,6 @@
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, faqPageJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import ContactCta from "@/components/ContactCta";
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
@@ -26,6 +26,26 @@ export default async function FaqPage({
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageJsonLd(t.items)) }}
+      />
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd(
+              [
+                { name: c.breadcrumbHome, path: "" },
+                { name: t.heading, path: "/faq" },
+              ],
+              params.locale
+            )
+          ),
+        }}
+      />
       <section className="mx-auto max-w-3xl px-4 py-16 text-center sm:py-24">
         <h1 className="font-serif text-3xl font-bold text-navy-dark sm:text-4xl">{t.heading}</h1>
         <p className="mt-4 text-navy-dim">{t.intro}</p>

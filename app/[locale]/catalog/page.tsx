@@ -1,6 +1,6 @@
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, productListJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import { collections, collectionOrder } from "@/lib/products";
 import { getPricesVisible } from "@/lib/siteSettings";
 import CatalogFilter from "@/components/CatalogFilter";
@@ -30,6 +30,30 @@ export default async function CatalogPage({ params }: { params: { locale: Locale
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-16 sm:py-24">
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            productListJsonLd({ sections, locale: params.locale, pricesVisible })
+          ),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd(
+              [
+                { name: dict.common.breadcrumbHome, path: "" },
+                { name: t.heading, path: "/catalog" },
+              ],
+              params.locale
+            )
+          ),
+        }}
+      />
       <div className="text-center">
         <p className="text-sm uppercase tracking-wide text-gold-dim">{t.kicker}</p>
         <h1 className="mt-2 font-serif text-3xl font-bold text-navy-dark sm:text-4xl">

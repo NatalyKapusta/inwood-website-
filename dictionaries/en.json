@@ -66,7 +66,8 @@
     "formSubmit": "Send message",
     "phoneManual": "Don't see my country in the list — enter number manually",
     "phoneChooseCountry": "Choose a country from the list",
-    "phoneInvalid": "Please check your phone number — enter a valid number"
+    "phoneInvalid": "Please check your phone number — enter a valid number",
+    "breadcrumbHome": "Home"
   },
   "home": {
     "title": "Interior Door Manufacturer in Ukraine | Wholesale & Export",

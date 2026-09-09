@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import PhoneInput from "@/components/PhoneInput";
 import SocialLinks from "@/components/SocialLinks";
 import MailIcon from "@/components/MailIcon";
@@ -53,6 +53,21 @@ export default async function KontaktyPage({
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd(
+              [
+                { name: c.breadcrumbHome, path: "" },
+                { name: t.heading, path: "/kontakty" },
+              ],
+              params.locale
+            )
+          ),
+        }}
+      />
       <section className="bg-navy-dark text-white">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>

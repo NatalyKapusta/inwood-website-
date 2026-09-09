@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { locales, type Locale } from "@/lib/i18n";
+import type { Collection } from "@/lib/products";
 
 // Реальна адреса сайту зараз — Vercel (домен inwood.com.ua ще не перенесено).
 // Коли домен перенесуть, змінити тут або задати env-змінну NEXT_PUBLIC_SITE_URL.
@@ -99,5 +100,96 @@ export function organizationJsonLd() {
         availableLanguage: ["en", "uk"],
       },
     ],
+  };
+}
+
+export function faqPageJsonLd(items: { q: string; a: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+}
+
+export function breadcrumbJsonLd(items: { name: string; path: string }[], locale: Locale) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      item: `${SITE_URL}/${locale}${item.path}`,
+    })),
+  };
+}
+
+// Product-розмітка для каталогу — ціна включається тільки коли prices_visible
+// увімкнено в порталі (той самий перемикач, що ховає ціни на сторінці).
+export function productListJsonLd({
+  sections,
+  locale,
+  pricesVisible,
+}: {
+  sections: { id: string; data: Collection }[];
+  locale: Locale;
+  pricesVisible: boolean;
+}) {
+  const catalogUrl = `${SITE_URL}/${locale}/catalog`;
+  const products = sections.flatMap(({ id, data }) => {
+    const fromModels = (data.models ?? []).map((model) => ({
+      "@type": "Product" as const,
+      name: `${data.label} ${model.code}`,
+      image: model.colors[0] ? `${SITE_URL}${model.colors[0].image}` : undefined,
+      url: `${catalogUrl}#${id}`,
+      brand: { "@type": "Brand", name: "IN WOOD" },
+      ...(pricesVisible
+        ? {
+            offers: {
+              "@type": "Offer",
+              price: model.basePrice,
+              priceCurrency: "UAH",
+              availability: "https://schema.org/InStock",
+              url: `${catalogUrl}#${id}`,
+            },
+          }
+        : {}),
+    }));
+    const fromVariants = (data.variants ?? []).map((variant) => ({
+      "@type": "Product" as const,
+      name: `${data.label} — ${variant.label}`,
+      image: `${SITE_URL}${variant.image}`,
+      url: `${catalogUrl}#${id}`,
+      brand: { "@type": "Brand", name: "IN WOOD" },
+      ...(pricesVisible
+        ? {
+            offers: {
+              "@type": "Offer",
+              price: variant.price,
+              priceCurrency: "UAH",
+              availability: "https://schema.org/InStock",
+              url: `${catalogUrl}#${id}`,
+            },
+          }
+        : {}),
+    }));
+    return [...fromModels, ...fromVariants];
+  });
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: products.map((product, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: product,
+    })),
   };
 }
