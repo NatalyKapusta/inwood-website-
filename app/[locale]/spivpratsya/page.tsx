@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Locale } from "@/lib/i18n";
 import Tabs from "@/components/Tabs";
 import ContactCta from "@/components/ContactCta";
@@ -7,6 +8,7 @@ import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { collections } from "@/lib/products";
 import { getPricesVisible } from "@/lib/siteSettings";
+import { RECRUIT_CITIES, getRecruitCityDisplayName } from "@/lib/recruitCities";
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
@@ -208,6 +210,24 @@ export default async function SpivpratsyaPage({
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-4 py-16 text-center sm:py-24">
+        <h2 className="font-serif text-2xl font-bold text-navy-dark sm:text-3xl">
+          {t.recruitCitiesTitle}
+        </h2>
+        <p className="mx-auto mt-4 max-w-2xl text-navy-dim">{t.recruitCitiesText}</p>
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
+          {RECRUIT_CITIES.map((rc) => (
+            <Link
+              key={rc.slug}
+              href={`/${params.locale}/staty-dylerom/${rc.slug}`}
+              className="rounded-full border border-navy-dim/25 px-5 py-2 text-sm text-navy-dark transition hover:border-gold hover:text-gold-dim"
+            >
+              {getRecruitCityDisplayName(rc, params.locale)}
+            </Link>
+          ))}
         </div>
       </section>
 

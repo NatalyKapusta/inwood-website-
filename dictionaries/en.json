@@ -568,6 +568,8 @@
     "formCity": "City",
     "formEmail": "Email",
     "formMessage": "Message",
+    "recruitCitiesTitle": "We're looking for dealers in these cities",
+    "recruitCitiesText": "We're expanding our dealer network and inviting building-materials stores, furniture showrooms and entrepreneurs to partner with us.",
     "metaDescription": "Partner with IN WOOD: dealer, distributor and export cooperation for interior doors. Already exporting to the UK, France, Switzerland, Lithuania and Latvia — join our international partner network."
   },
   "kontakty": {
@@ -640,6 +642,17 @@
     "cityDealersHeading": "Dealers",
     "cityBackLink": "← All dealers in Ukraine",
     "cityCatalogCta": "Browse the door catalog"
+  },
+  "dealerRecruit": {
+    "titlePrefix": "IN WOOD —",
+    "titleSuffix": "looking for an official dealer",
+    "metaPrefix": "IN WOOD is expanding its dealer network —",
+    "metaSuffix": "Wholesale terms, marketing support and a dedicated account manager, from an interior door manufacturer with its own factory in Poltava, Ukraine.",
+    "heading": "We're looking for a dealer",
+    "intro": "IN WOOD is a Ukrainian interior door manufacturer with its own factory in Poltava. We're expanding our dealer network and inviting building-materials stores, furniture showrooms and entrepreneurs in this city to partner with us.",
+    "backLink": "← All partnership options",
+    "ctaTitle": "Ready to become an official IN WOOD dealer?",
+    "ctaText": "Leave a request — our manager will contact you and explain the partnership terms for your city."
   },
   "faq": {
     "title": "FAQ about IN WOOD doors",
