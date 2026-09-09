@@ -4,6 +4,7 @@ import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata } from "@/lib/seo";
 import PhoneInput from "@/components/PhoneInput";
 import SocialLinks from "@/components/SocialLinks";
+import MailIcon from "@/components/MailIcon";
 import { submitLead } from "@/app/actions/lead";
 
 const FEATURE_ICONS = [
@@ -104,7 +105,11 @@ export default async function KontaktyPage({
             <a href={`tel:${c.phone.replace(/[^\d+]/g, "")}`} className="mt-1 block text-navy-dark hover:text-gold-dim">
               {c.phone}
             </a>
-            <a href={`mailto:${c.email}`} className="text-navy-dark hover:text-gold-dim">
+            <a
+              href={`mailto:${c.email}`}
+              className="inline-flex items-center gap-1.5 text-navy-dark underline decoration-navy-dim/30 underline-offset-2 hover:text-gold-dim hover:decoration-gold-dim"
+            >
+              <MailIcon className="shrink-0" />
               {c.email}
             </a>
           </div>
@@ -118,7 +123,11 @@ export default async function KontaktyPage({
             >
               {c.exportPhone}
             </a>
-            <a href={`mailto:${c.exportEmail}`} className="text-navy-dark hover:text-gold-dim">
+            <a
+              href={`mailto:${c.exportEmail}`}
+              className="inline-flex items-center gap-1.5 text-navy-dark underline decoration-navy-dim/30 underline-offset-2 hover:text-gold-dim hover:decoration-gold-dim"
+            >
+              <MailIcon className="shrink-0" />
               {c.exportEmail}
             </a>
           </div>
@@ -126,7 +135,7 @@ export default async function KontaktyPage({
             <p className="text-xs uppercase tracking-wide text-gold-dim">Режим роботи</p>
             <p className="mt-1 text-navy-dark">{c.hours}</p>
           </div>
-          <SocialLinks tone="light" />
+          <SocialLinks />
         </div>
 
         <div className="rounded-xl bg-panel-alt p-6">

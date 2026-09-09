@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Locale } from "@/lib/i18n";
 import SocialLinks from "@/components/SocialLinks";
+import MailIcon from "@/components/MailIcon";
 
 type NavItem = { label: string; href: string };
 
@@ -43,12 +44,20 @@ export default function Footer({
         <div className="mt-10 grid gap-8 text-sm text-white/80 sm:grid-cols-3">
           <div>
             <p className="mb-2 font-semibold uppercase tracking-wide text-gold">Пошта</p>
-            <a href={`mailto:${email}`} className="block hover:text-gold">
+            <a
+              href={`mailto:${email}`}
+              className="flex items-center gap-1.5 underline decoration-white/30 underline-offset-2 hover:text-gold hover:decoration-gold"
+            >
+              <MailIcon className="shrink-0" />
               {email}
             </a>
             <p className="mt-1">
               International Sales Manager{" "}
-              <a href={`mailto:${exportEmail}`} className="hover:text-gold">
+              <a
+                href={`mailto:${exportEmail}`}
+                className="inline-flex items-center gap-1.5 underline decoration-white/30 underline-offset-2 hover:text-gold hover:decoration-gold"
+              >
+                <MailIcon className="shrink-0" />
                 {exportEmail}
               </a>
             </p>

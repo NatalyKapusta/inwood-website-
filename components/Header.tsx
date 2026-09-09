@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { locales, localeLabels, type Locale } from "@/lib/i18n";
+import MailIcon from "@/components/MailIcon";
 
 type NavItem = { label: string; href: string };
 
@@ -56,7 +57,8 @@ export default function Header({
             >
               {address}
             </a>
-            <a href={`mailto:${email}`} className="hover:text-gold">
+            <a href={`mailto:${email}`} className="flex items-center gap-1.5 underline decoration-white/30 underline-offset-2 hover:text-gold hover:decoration-gold">
+              <MailIcon className="shrink-0" />
               {email}
             </a>
           </div>
