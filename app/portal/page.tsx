@@ -56,6 +56,29 @@ export default async function PortalDashboardPage() {
           </p>
         </Link>
 
+        <div className="rounded-xl bg-panel p-6 shadow-sm">
+          <h2 className="font-serif text-lg font-bold text-navy-dark">Каталоги для завантаження</h2>
+          <p className="mt-2 text-sm text-navy-dim">Повний каталог продукції IN WOOD у PDF.</p>
+          <div className="mt-3 flex flex-wrap gap-3">
+            <a
+              href="/documents/catalog-ua.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-navy-dark px-4 py-2 text-sm font-semibold text-navy-dark transition hover:bg-navy-dark hover:text-white"
+            >
+              UA каталог
+            </a>
+            <a
+              href="/documents/catalog-en.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-navy-dark px-4 py-2 text-sm font-semibold text-navy-dark transition hover:bg-navy-dark hover:text-white"
+            >
+              EN catalogue
+            </a>
+          </div>
+        </div>
+
         {role === "staff" && (
           <>
             <Link

@@ -26,6 +26,7 @@ export default async function CatalogPage({ params }: { params: { locale: Locale
     .filter((id) => collections[id])
     .map((id) => ({ id, data: collections[id] }));
   const pricesVisible = await getPricesVisible();
+  const catalogPdf = params.locale === "en" ? "/documents/catalog-en.pdf" : "/documents/catalog-ua.pdf";
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-16 sm:py-24">
@@ -35,6 +36,14 @@ export default async function CatalogPage({ params }: { params: { locale: Locale
           {t.heading}
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-navy-dim">{t.intro}</p>
+        <a
+          href={catalogPdf}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-6 inline-flex items-center gap-2 rounded-full bg-navy-dark px-6 py-3 text-sm font-semibold text-white transition hover:bg-gold hover:text-navy-dark"
+        >
+          {t.downloadCatalog}
+        </a>
       </div>
 
       <div className="mt-12">
