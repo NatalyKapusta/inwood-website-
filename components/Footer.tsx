@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Locale } from "@/lib/i18n";
+import SocialLinks from "@/components/SocialLinks";
 
 type NavItem = { label: string; href: string };
 
@@ -28,6 +29,8 @@ export default function Footer({
     <footer className="bg-navy-dark text-white">
       <div className="mx-auto max-w-7xl px-4 py-12">
         <p className="font-serif text-2xl font-bold text-gold">{tagline}</p>
+
+        <SocialLinks className="mt-5" />
 
         <nav className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/80">
           {nav.map((item) => (

@@ -3,6 +3,7 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata } from "@/lib/seo";
 import PhoneInput from "@/components/PhoneInput";
+import SocialLinks from "@/components/SocialLinks";
 import { submitLead } from "@/app/actions/lead";
 
 const FEATURE_ICONS = [
@@ -125,6 +126,7 @@ export default async function KontaktyPage({
             <p className="text-xs uppercase tracking-wide text-gold-dim">Режим роботи</p>
             <p className="mt-1 text-navy-dark">{c.hours}</p>
           </div>
+          <SocialLinks tone="light" />
         </div>
 
         <div className="rounded-xl bg-panel-alt p-6">
