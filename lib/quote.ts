@@ -32,19 +32,22 @@ export function isAluEdgeVariant(variantType: VariantType) {
   return variantType === "alu" || variantType === "alu-inside";
 }
 
-// Мірить filterAddonsByRal/INSIDE-фільтр з оригінального калькулятора:
-// FREZZATTI/PERFETTO — короб/лиштва/добір фільтруються по підрядку "RAL/NCS";
-// ETALON — короб фільтрується по підрядку "INSIDE" (лиштва/добір спільні для всіх варіантів);
-// короб прихованого монтажу ETALON у конструкторі КП поки не підтримується.
+// Мірить filterAddonsByRal-фільтр з оригінального калькулятора:
+// FREZZATTI/PERFETTO — короб/лиштва/добір фільтруються по підрядку "RAL/NCS".
+// ETALON — короб/лиштва/добір СПІЛЬНІ для всіх варіантів (база/алюм. крайка/INSIDE) —
+// в оригінальному калькуляторі вони ніколи не фільтруються по варіанту полотна
+// (це підтверджено кодом калькулятора: перефільтровується лише FREZZATTI/PERFETTO).
+// Добір узагалі не має окремих INSIDE-позицій, тож фільтр по "INSIDE" робив
+// добір (і лиштву) порожніми для варіанту "алюм. крайка INSIDE" — це був баг.
+// Короб прихованого монтажу лишається виключеним з цього списку — він продається
+// окремою колекцією "Двері прихованого монтажу".
 export function isAddonCompatible(collection: string, variantType: VariantType, itemLabel: string) {
   if (collection === "frezzatti" || collection === "perfetto") {
     const isRal = itemLabel.includes("RAL/NCS");
     return variantType === "ral" ? isRal : !isRal;
   }
   if (collection === "etalon") {
-    if (itemLabel.includes("прихованого монтажу")) return false;
-    const isInside = itemLabel.includes("INSIDE");
-    return variantType === "alu-inside" ? isInside : !isInside;
+    return !itemLabel.includes("прихованого монтажу");
   }
   return true;
 }
