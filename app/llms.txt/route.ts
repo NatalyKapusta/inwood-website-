@@ -30,8 +30,8 @@ Standard slab sizes: height 1800-2100 mm (max 2300 mm, 50 mm step), width 600-90
 - [Gallery](${u("/ua/galereya")}): real interior photos grouped by model and color across all 4 collections.
 - [About us](${u("/ua/pro-nas")}): company background and production facts.
 - [Specifications](${u("/ua/harakterystyky")}): technical construction details per collection (materials, layer thicknesses, sizing).
-- [Our dealers](${u("/ua/nashi-dileri")}): dealer network map and list, grouped by city.
-- [Become a partner](${u("/ua/spivpratsya")}): dealership/distribution/export partnership terms and application form.
+- [Our dealers](${u("/ua/nashi-dileri")}): dealer network map and list, grouped by city, with dedicated pages per city (e.g. Kyiv, Kharkiv, Odesa, Dnipro).
+- [Become a partner](${u("/ua/spivpratsya")}): dealership/distribution/export partnership terms and application form. IN WOOD is actively recruiting dealers in cities without current coverage — Lviv, Vinnytsia, Ivano-Frankivsk, Uzhhorod, Chernivtsi, Khmelnytskyi, and Kropyvnytskyi — with a dedicated page per city (e.g. ${u("/ua/staty-dylerom/lviv")}).
 - [Payment and delivery](${u("/ua/oplata-dostavka")}): payment and shipping terms for dealers and export partners.
 - [Service](${u("/ua/servis")}): after-sales service terms.
 - [Warranty](${u("/ua/garantiya")}): warranty terms for dealers and export partners.

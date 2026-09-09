@@ -641,7 +641,11 @@
     "cityIntro": "Актуальные контакты дилеров IN WOOD в этом городе — адрес, телефон и сайт дилера.",
     "cityDealersHeading": "Дилеры",
     "cityBackLink": "← Все дилеры Украины",
-    "cityCatalogCta": "Посмотреть каталог дверей"
+    "cityCatalogCta": "Посмотреть каталог дверей",
+    "dealersByCityHeading": "Дилеры по городам",
+    "noDealerCtaTitle": "Нет дилера в вашем городе?",
+    "noDealerCtaText": "Мы расширяем дилерскую сеть — возможно, среди городов, где мы ищем партнёра, есть ваш.",
+    "noDealerCtaLink": "Посмотреть города"
   },
   "dealerRecruit": {
     "titlePrefix": "IN WOOD —",

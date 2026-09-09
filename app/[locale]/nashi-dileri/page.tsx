@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata } from "@/lib/seo";
@@ -63,11 +64,22 @@ export default async function NashiDileriPage({ params }: { params: { locale: Lo
 
       <div className="mt-12">
         <h2 className="font-serif text-xl font-bold text-navy-dark">
-          Дилери за містами ({dealers.length})
+          {t.dealersByCityHeading} ({dealers.length})
         </h2>
         <div className="mt-6">
           <DealersList dealers={dealers} locale={params.locale} />
         </div>
+      </div>
+
+      <div className="mt-16 rounded-xl bg-panel-alt p-8 text-center">
+        <h3 className="font-serif text-lg font-bold text-navy-dark">{t.noDealerCtaTitle}</h3>
+        <p className="mx-auto mt-2 max-w-xl text-sm text-navy-dim">{t.noDealerCtaText}</p>
+        <Link
+          href={`/${params.locale}/spivpratsya#recruit`}
+          className="mt-5 inline-block rounded-full bg-navy-dark px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-gold hover:text-navy-dark"
+        >
+          {t.noDealerCtaLink}
+        </Link>
       </div>
     </section>
     </>

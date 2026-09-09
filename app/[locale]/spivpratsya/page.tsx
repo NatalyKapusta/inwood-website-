@@ -213,7 +213,7 @@ export default async function SpivpratsyaPage({
         </div>
       </section>
 
-      <section className="mx-auto max-w-5xl px-4 py-16 text-center sm:py-24">
+      <section id="recruit" className="mx-auto max-w-5xl px-4 py-16 text-center sm:py-24">
         <h2 className="font-serif text-2xl font-bold text-navy-dark sm:text-3xl">
           {t.recruitCitiesTitle}
         </h2>

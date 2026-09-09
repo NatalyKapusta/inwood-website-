@@ -641,7 +641,11 @@
     "cityIntro": "Current contacts for IN WOOD dealers in this city — address, phone number and dealer website.",
     "cityDealersHeading": "Dealers",
     "cityBackLink": "← All dealers in Ukraine",
-    "cityCatalogCta": "Browse the door catalog"
+    "cityCatalogCta": "Browse the door catalog",
+    "dealersByCityHeading": "Dealers by city",
+    "noDealerCtaTitle": "No dealer in your city yet?",
+    "noDealerCtaText": "We're expanding our dealer network — your city might be one we're currently recruiting in.",
+    "noDealerCtaLink": "See the cities"
   },
   "dealerRecruit": {
     "titlePrefix": "IN WOOD —",
