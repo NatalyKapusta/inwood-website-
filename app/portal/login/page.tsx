@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { login } from "@/app/portal/actions";
 import PasswordInput from "@/components/PasswordInput";
 
@@ -45,6 +46,13 @@ export default function PortalLoginPage({
           Увійти
         </button>
       </form>
+
+      <Link
+        href="/portal/forgot-password"
+        className="mt-4 block text-sm text-navy-dim hover:text-gold-dim"
+      >
+        Забули пароль?
+      </Link>
     </div>
   );
 }

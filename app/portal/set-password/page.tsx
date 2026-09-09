@@ -59,8 +59,9 @@ export default function SetPasswordPage() {
       <div className="mx-auto max-w-sm">
         <h1 className="font-serif text-2xl font-bold text-navy-dark">Посилання недійсне</h1>
         <p className="mt-2 text-sm text-navy-dim">
-          Посилання із запрошенням застаріло або вже було використано. Зверніться до вашого
-          менеджера IN WOOD, щоб надіслати запрошення повторно.
+          Посилання застаріло або вже було використано (діє обмежений час). Запросіть нове
+          посилання на сторінці входу — «Забули пароль?», або зверніться до вашого менеджера
+          IN WOOD.
         </p>
       </div>
     );

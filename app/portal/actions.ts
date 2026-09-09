@@ -38,6 +38,22 @@ export async function logout() {
   redirect("/portal/login");
 }
 
+// Публічно: користувач сам запитує лист для скидання пароля.
+export async function requestPasswordReset(formData: FormData) {
+  const email = String(formData.get("email") ?? "").trim();
+  if (!email) {
+    redirect("/portal/forgot-password?error=" + encodeURIComponent("Вкажіть email"));
+  }
+
+  const supabase = await createClient();
+  await supabase.auth.resetPasswordForEmail(email, {
+    redirectTo: `${SITE_URL}/portal/set-password`,
+  });
+
+  // Навмисно не повідомляємо, чи існує такий email — щоб не розкривати список користувачів.
+  redirect("/portal/forgot-password?sent=1");
+}
+
 // Лише staff: запросити нового партнера/співробітника поштою.
 export async function inviteUser(formData: FormData) {
   const supabase = await createClient();
