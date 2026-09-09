@@ -99,7 +99,9 @@
       "Panel Doors",
       "PVC-Coated Doors",
       "Painted Doors",
-      "Flush (Hidden) Doors"
+      "Milled Doors",
+      "Flush (Hidden) Doors",
+      "Doors with Mirror Inserts"
     ],
     "strengthsTitle": "Strengths of IN WOOD interior doors",
     "strengths": [
@@ -437,6 +439,116 @@
         "title": "Custom orders",
         "text": "When needed, we consider custom sizes, colours or designs for a specific project. Check with your manager on feasibility and lead times for such orders."
       }
+    ],
+    "stats": [
+      { "to": 20, "suffix": "+", "label": "years of production experience" },
+      { "to": 35, "suffix": "+", "label": "partners already working with us" },
+      { "to": 50, "suffix": "+", "label": "door models in the range" }
+    ],
+    "calcKicker": "Try it right now",
+    "calcTitle": "A commercial offer in minutes, not hours",
+    "calcText": "Choose a model, colour and size — the price and photo update instantly. IN WOOD partners get the full calculator with frame, casing, hardware routing, and instant PDF export of a ready-to-send offer.",
+    "calcCta": "I want this calculator for my business",
+    "audienceTitle": "Partnership for any type of business",
+    "audienceText": "From retail shops to large dealer networks, developers and international partners — IN WOOD offers cooperation terms adapted to the scale and needs of your business.",
+    "audience": [
+      "Dealers",
+      "Distributors",
+      "Residential construction",
+      "Commercial real estate",
+      "Hospitality business",
+      "Apartment complexes",
+      "International partnership",
+      "Designers"
+    ],
+    "toolsTitle": "Terms that work for your profit",
+    "toolsText": "Direct prices from the manufacturer with no middlemen, a competitive offer for your customers, and ready-made tools for effective sales.",
+    "tools": [
+      {
+        "title": "Product catalog",
+        "text": "The full door range with collections, finish options and technical specifications for an easy presentation."
+      },
+      {
+        "title": "Price list",
+        "text": "Current prices and cooperation terms for putting together a competitive offer."
+      },
+      {
+        "title": "IN WOOD online calculator",
+        "text": "Takes routine calculations off your hands: a commercial offer that used to take hours is ready in minutes."
+      },
+      {
+        "title": "Personal manager",
+        "text": "Full partner support: consultations, help choosing solutions, and quick resolution of working questions."
+      },
+      {
+        "title": "Marketing materials",
+        "text": "Ready-made digital and printed materials for promoting IN WOOD products: presentations, catalog, flyers, price list and other sales tools."
+      },
+      {
+        "title": "Instant PDF export",
+        "text": "A ready commercial offer with photos, prices and all order line items — exported to PDF in one click, ready to print or send to the client."
+      }
+    ],
+    "strengthsTitle": "Product strengths",
+    "strengthsText": "Technical solutions that deliver comfort and quality you can feel from the first touch.",
+    "strengths": [
+      {
+        "title": "Maximum factory preparation",
+        "text": "Lock routing, hinge seat preparation, 45° frame cutting, precise geometry of every element — fully ready for fast installation."
+      },
+      {
+        "title": "Custom sizes in 50 mm steps at no extra cost",
+        "text": "Width 600–900 mm, height 1800–2100 mm — no surcharge. Maximum height up to 2300 mm is available for an extra charge."
+      },
+      {
+        "title": "Frame made of combined material",
+        "text": "Natural pine for strength and MDF for a perfectly flat surface — the frame resists warping for many years."
+      },
+      {
+        "title": "Thick 6 mm MDF facing",
+        "text": "Greater slab rigidity, resistance to warping, and a longer service life."
+      },
+      {
+        "title": "Dry-wood frame",
+        "text": "Structural strength and door longevity even after many years of use."
+      },
+      {
+        "title": "Dense 18 mm honeycomb core",
+        "text": "Better overall stability of the door slab and construction."
+      },
+      {
+        "title": "Aluminium edge",
+        "text": "Reliable protection against impacts, chips, moisture and mechanical damage."
+      }
+    ],
+    "stepsTitle": "Four steps from first contact to launching sales",
+    "steps": [
+      {
+        "title": "Application",
+        "text": "Fill out a short form — an IN WOOD manager will contact you to discuss the details of cooperation."
+      },
+      {
+        "title": "Cooperation terms",
+        "text": "Defining the working format, region, product range and general partnership terms."
+      },
+      {
+        "title": "Sales materials",
+        "text": "Product catalog, partner price list, cost calculator and other tools for working with customers."
+      },
+      {
+        "title": "Launch",
+        "text": "Together with your personal manager, place your first order and get support at every stage."
+      }
+    ],
+    "formRole": "Cooperation format",
+    "formRoleOptions": [
+      "Dealer",
+      "Distributor",
+      "Residential developer",
+      "Commercial developer",
+      "International partnership",
+      "Designer",
+      "Other"
     ],
     "exportIntro": "Looking for a reliable interior door manufacturer for export?",
     "exportText": "We are open to international cooperation and supply interior doors to partners in various countries around the world. IN WOOD is actively growing, offering its products to partners not only in Ukraine but abroad as well. Our doors are installed in private homes, apartments, offices, hotels and commercial premises worldwide.",
