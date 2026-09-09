@@ -69,12 +69,12 @@ export default async function KontaktyPage({
               ))}
             </div>
           </div>
-          <div className="relative mx-auto aspect-square w-full max-w-xs overflow-hidden rounded-2xl bg-white/5 lg:max-w-none">
+          <div className="relative mx-auto aspect-[4/3] w-full max-w-md overflow-hidden rounded-2xl lg:aspect-auto lg:h-full lg:max-w-none">
             <Image
-              src="/photos/frezzatti/fz-01-dub-shato.png"
+              src="/photos/interiors/frezzatti-fz-02-dub-portovyi.jpg"
               alt={t.heroTitle}
               fill
-              className="object-contain p-6"
+              className="object-cover"
             />
           </div>
         </div>
