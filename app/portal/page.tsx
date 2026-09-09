@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { cookies } from "next/headers";
 import { createClient } from "@/lib/supabase/server";
 import { getPricesVisible } from "@/lib/siteSettings";
 import { setPricesVisible } from "@/app/portal/actions";
+import { VIEW_AS_COOKIE, isPortalRole } from "@/lib/portalRole";
 
 const roleLabels: Record<string, string> = {
   dealer: "Дилер",
@@ -28,6 +30,15 @@ export default async function PortalDashboardPage() {
   const isOwner = profile?.is_owner ?? false;
   const pricesVisible = role === "staff" ? await getPricesVisible() : null;
 
+  let viewingAs: string | null = null;
+  if (isOwner) {
+    const jar = await cookies();
+    const cookieValue = jar.get(VIEW_AS_COOKIE)?.value;
+    if (isPortalRole(cookieValue)) viewingAs = cookieValue;
+  }
+  const effectiveRole = viewingAs ?? role;
+  const effectiveIsOwner = isOwner && !viewingAs;
+
   return (
     <div>
       <h1 className="font-serif text-2xl font-bold text-navy-dark">
@@ -43,7 +54,10 @@ export default async function PortalDashboardPage() {
           </p>
         )}
         <p className="mt-1 text-sm text-navy-dim">
-          Роль: <span className="font-semibold text-navy-dark">{roleLabels[role] ?? role}</span>
+          Роль:{" "}
+          <span className="font-semibold text-navy-dark">
+            {roleLabels[effectiveRole] ?? effectiveRole}
+          </span>
         </p>
       </div>
 
@@ -81,7 +95,7 @@ export default async function PortalDashboardPage() {
           </div>
         </div>
 
-        {role === "staff" && (
+        {effectiveRole === "staff" && (
           <Link
             href="/portal/overrides"
             className="rounded-xl bg-panel p-6 shadow-sm transition hover:shadow-md"
@@ -94,7 +108,7 @@ export default async function PortalDashboardPage() {
             </p>
           </Link>
         )}
-        {isOwner && (
+        {effectiveIsOwner && (
           <Link
             href="/portal/users"
             className="rounded-xl bg-panel p-6 shadow-sm transition hover:shadow-md"

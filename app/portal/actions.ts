@@ -2,9 +2,11 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { cookies } from "next/headers";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { SITE_URL } from "@/lib/seo";
+import { VIEW_AS_COOKIE, isPortalRole } from "@/lib/portalRole";
 
 export async function login(formData: FormData) {
   const email = String(formData.get("email") ?? "").trim();
@@ -36,6 +38,30 @@ export async function logout() {
   const supabase = await createClient();
   await supabase.auth.signOut();
   redirect("/portal/login");
+}
+
+// Лише власник: тимчасово переглянути портал очима іншої ролі (лише вигляд —
+// реальний доступ і RLS лишаються прив'язані до справжнього акаунту власника).
+export async function setViewAsRole(formData: FormData) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) redirect("/portal/login");
+
+  const { data: myProfile } = await supabase.from("profiles").select("is_owner").eq("id", user.id).single();
+  if (!myProfile?.is_owner) redirect("/portal");
+
+  const role = String(formData.get("role") ?? "");
+  const jar = await cookies();
+  if (isPortalRole(role)) {
+    jar.set(VIEW_AS_COOKIE, role, { path: "/portal", maxAge: 60 * 60 * 8 });
+  } else {
+    jar.delete({ name: VIEW_AS_COOKIE, path: "/portal" });
+  }
+
+  const returnTo = String(formData.get("return_to") ?? "/portal");
+  redirect(returnTo);
 }
 
 // Публічно: користувач сам запитує лист для скидання пароля.

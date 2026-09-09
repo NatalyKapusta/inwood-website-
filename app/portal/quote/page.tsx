@@ -1,6 +1,8 @@
 import { redirect } from "next/navigation";
+import { cookies } from "next/headers";
 import { createClient } from "@/lib/supabase/server";
 import QuoteBuilder from "@/components/portal/QuoteBuilder";
+import { VIEW_AS_COOKIE, isPortalRole, TARIFFS_BY_ROLE, type Tariff, type PortalRole } from "@/lib/portalRole";
 
 export default async function PortalQuotePage() {
   const supabase = await createClient();
@@ -11,9 +13,18 @@ export default async function PortalQuotePage() {
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select("full_name, company_name, role")
+    .select("full_name, company_name, role, is_owner")
     .eq("id", user.id)
     .single();
+
+  let viewingAs: PortalRole | null = null;
+  if (profile?.is_owner) {
+    const jar = await cookies();
+    const cookieValue = jar.get(VIEW_AS_COOKIE)?.value;
+    if (isPortalRole(cookieValue)) viewingAs = cookieValue;
+  }
+  const effectiveRole = viewingAs ?? profile?.role;
+  const allowedTariffs = viewingAs ? TARIFFS_BY_ROLE[viewingAs] : "all";
 
   return (
     <div>
@@ -25,7 +36,8 @@ export default async function PortalQuotePage() {
       </p>
       <QuoteBuilder
         consultantDefault={profile?.full_name ?? user.email ?? ""}
-        canOverride={profile?.role === "staff" || profile?.role === "manager"}
+        canOverride={effectiveRole === "staff" || effectiveRole === "manager"}
+        allowedTariffs={allowedTariffs === "all" ? undefined : (allowedTariffs as Tariff[])}
       />
     </div>
   );

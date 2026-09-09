@@ -74,9 +74,14 @@ const NONSTD_HEIGHTS = [2150, 2200, 2250, 2300];
 export default function QuoteBuilder({
   consultantDefault,
   canOverride,
+  allowedTariffs,
 }: {
   consultantDefault: string;
   canOverride: boolean;
+  // Задається лише під час прев'ю власником "чужими очима" — звужує список
+  // тарифів у селекті до того, що бачила б обрана роль. Дані самі по собі
+  // не звужуються (RLS вже й так дає власнику доступ до всього).
+  allowedTariffs?: Tariff[];
 }) {
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
@@ -153,16 +158,18 @@ export default function QuoteBuilder({
       setPanelRows((panels.data ?? []) as PanelRow[]);
       setAddonRows((addons.data ?? []) as AddonRow[]);
       setServiceRows((services.data ?? []) as ServiceRow[]);
-      const tariffsAvailable = Array.from(new Set((panels.data ?? []).map((r) => r.tariff))) as Tariff[];
+      let tariffsAvailable = Array.from(new Set((panels.data ?? []).map((r) => r.tariff))) as Tariff[];
+      if (allowedTariffs) tariffsAvailable = tariffsAvailable.filter((t) => allowedTariffs.includes(t));
       if (tariffsAvailable.length > 0) setTariff(tariffsAvailable[0]);
       setLoading(false);
     })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const availableTariffs = useMemo(
-    () => Array.from(new Set(panelRows.map((r) => r.tariff))) as Tariff[],
-    [panelRows]
-  );
+  const availableTariffs = useMemo(() => {
+    const all = Array.from(new Set(panelRows.map((r) => r.tariff))) as Tariff[];
+    return allowedTariffs ? all.filter((t) => allowedTariffs.includes(t)) : all;
+  }, [panelRows, allowedTariffs]);
 
   const isPogonazhni = collectionKey === POGONAZHNI_KEY;
   const flatLine = FLAT_LINE_CATEGORIES.find((c) => c.key === collectionKey);
