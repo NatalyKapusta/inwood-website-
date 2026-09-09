@@ -1,8 +1,31 @@
+import Image from "next/image";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata } from "@/lib/seo";
 import PhoneInput from "@/components/PhoneInput";
 import { submitLead } from "@/app/actions/lead";
+
+const FEATURE_ICONS = [
+  // Консультація та підтримка
+  <svg key="chat" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+  </svg>,
+  // Індивідуальний підхід
+  <svg key="handshake" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <path d="M8 12l3 3 6-6" />
+    <circle cx="12" cy="12" r="9" />
+  </svg>,
+  // Співпраця по всьому світу
+  <svg key="globe" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <circle cx="12" cy="12" r="9" />
+    <path d="M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z" />
+  </svg>,
+  // Швидкі відповіді
+  <svg key="clock" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <circle cx="12" cy="12" r="9" />
+    <path d="M12 7v5l3.5 2" strokeLinecap="round" />
+  </svg>,
+];
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
@@ -27,10 +50,40 @@ export default async function KontaktyPage({
   const sent = searchParams.sent === "1";
 
   return (
-    <section className="mx-auto max-w-4xl px-4 py-16 sm:py-24">
-      <h1 className="text-center font-serif text-3xl font-bold text-navy-dark sm:text-4xl">
+    <>
+      <section className="bg-navy-dark text-white">
+        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div>
+            <h1 className="font-serif text-3xl font-bold leading-tight sm:text-4xl">
+              {t.heroTitle}
+            </h1>
+            <p className="mt-4 max-w-lg text-white/80">{t.heroText}</p>
+            <div className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-4">
+              {t.heroFeatures.map((label: string, i: number) => (
+                <div key={label} className="flex flex-col items-center gap-2 text-center sm:items-start sm:text-left">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-full border border-gold/40 text-gold">
+                    {FEATURE_ICONS[i]}
+                  </span>
+                  <span className="text-xs text-white/85">{label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="relative mx-auto aspect-square w-full max-w-xs overflow-hidden rounded-2xl bg-white/5 lg:max-w-none">
+            <Image
+              src="/photos/frezzatti/fz-01-dub-shato.png"
+              alt={t.heroTitle}
+              fill
+              className="object-contain p-6"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-4xl px-4 py-16 sm:py-24">
+      <h2 className="text-center font-serif text-3xl font-bold text-navy-dark sm:text-4xl">
         {t.heading}
-      </h1>
+      </h2>
 
       <div className="mt-12 grid gap-10 sm:grid-cols-2">
         <div className="space-y-6">
@@ -119,5 +172,6 @@ export default async function KontaktyPage({
         </div>
       </div>
     </section>
+    </>
   );
 }

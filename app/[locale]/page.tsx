@@ -91,6 +91,35 @@ export default async function HomePage({
         </div>
       </section>
 
+      {/* ЯКІСТЬ ГАРАНТОВАНА */}
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:py-24">
+        <div className="grid gap-10 overflow-hidden rounded-2xl bg-panel-alt lg:grid-cols-2 lg:items-center">
+          <div className="relative aspect-[4/3] bg-white lg:aspect-auto lg:h-full">
+            <Image
+              src="/photos/etalon/et-01-dub-shato.png"
+              alt={t.qualityBanner.title}
+              fill
+              className="object-contain p-8"
+            />
+          </div>
+          <div className="p-8 sm:p-12">
+            <p className="text-sm uppercase tracking-wide text-gold-dim">{t.qualityBanner.kicker}</p>
+            <h2 className="mt-2 font-serif text-2xl font-bold text-navy-dark sm:text-3xl">
+              {t.qualityBanner.title}
+            </h2>
+            <p className="mt-4 text-navy-dim">{t.qualityBanner.text}</p>
+            <ul className="mt-6 space-y-2">
+              {t.qualityBanner.points.map((p: string) => (
+                <li key={p} className="flex items-start gap-2 text-sm text-navy-dark">
+                  <span className="mt-0.5 text-gold">✔</span>
+                  <span>{p}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
       {/* СИЛЬНІ СТОРОНИ */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:py-24">
         <h2 className="font-serif text-2xl font-bold text-navy-dark sm:text-3xl">
@@ -184,6 +213,23 @@ export default async function HomePage({
             {t.techTitle}
           </h2>
           <p className="mt-6 text-navy-dim">{t.techText}</p>
+        </div>
+      </section>
+
+      {/* ВІДЕО */}
+      <section className="mx-auto max-w-4xl px-4 py-16 text-center sm:py-24">
+        <h2 className="font-serif text-2xl font-bold text-navy-dark sm:text-3xl">
+          {t.videoSection.title}
+        </h2>
+        <p className="mt-4 text-navy-dim">{t.videoSection.text}</p>
+        <div className="relative mt-8 aspect-video overflow-hidden rounded-2xl bg-navy-dark shadow-lg">
+          <iframe
+            src="https://www.youtube.com/embed/D1vzqflg0u8"
+            title={t.videoSection.title}
+            className="absolute inset-0 h-full w-full"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
         </div>
       </section>
 

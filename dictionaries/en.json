@@ -146,6 +146,20 @@
     "hiddenDoorsText": "A modern solution for minimalist interiors. The door leaf is installed flush with the wall, creating a \"hidden door\" effect. The INSIDE opening type ensures a neat opening into the room.",
     "techTitle": "Production technology and materials",
     "techText": "IN WOOD door leaves and frames are made from a combination of solid wood and MDF, ensuring high strength, structural stability and a long service life.",
+    "qualityBanner": {
+      "kicker": "Quality guaranteed",
+      "title": "Quality guaranteed by IN WOOD",
+      "text": "Every door goes through a full cycle of factory preparation and quality control before it ships — to a dealer or straight to the site. We stand behind the result at every stage, from production to installation.",
+      "points": [
+        "20+ years of production in Ukraine",
+        "Factory-prepared for fast installation",
+        "A personal consultant on every order"
+      ]
+    },
+    "videoSection": {
+      "title": "See how we make our doors",
+      "text": "A short video about IN WOOD production — from raw materials to the finished door."
+    },
     "metaDescription": "IN WOOD — interior door manufacturer in Poltava, Ukraine. 5 collections: ETALON, NOMINAL, FREZZATTI, PERFETTO, concealed-mount doors. Dealer network across Ukraine and export."
   },
   "proNas": {
@@ -406,6 +420,14 @@
   "kontakty": {
     "title": "IN WOOD — Interior door manufacturer contacts | Ukraine",
     "heading": "Contacts",
+    "heroTitle": "Glad to stay in touch",
+    "heroText": "Our team is always ready to answer your questions and help you choose the best solutions for your project or business.",
+    "heroFeatures": [
+      "Consultation and support",
+      "Individual approach",
+      "Cooperation worldwide",
+      "Fast replies"
+    ],
     "managerLabel": "Manager",
     "exportManagerLabel": "International Sales Manager",
     "formTitle": "Write to us",
