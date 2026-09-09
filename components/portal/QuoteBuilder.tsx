@@ -28,6 +28,15 @@ function hiddenDoorCode(image: string) {
   return file.replace(/\.\w+$/, "");
 }
 
+// Форматування як скрізь на сайті: розділювач тисяч, кома для копійок,
+// нерозривний пробіл перед ₴ — щоб не було "5176.50" замість "5 176,50 ₴".
+function fmtNum(n: number) {
+  return new Intl.NumberFormat("uk-UA", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(n);
+}
+function fmtUah(n: number) {
+  return `${fmtNum(n)} ₴`;
+}
+
 const VRIZKA_OPTIONS = [
   { value: "none", label: "Без врізки" },
   { value: "lock", label: "Врізка під замок" },
@@ -423,10 +432,10 @@ export default function QuoteBuilder({
   const currencySymbol = currency === "EUR" ? "€" : currency === "USD" ? "$" : "";
   const hasRate = currency !== "none" && exchangeRate > 0;
   function fmtForeign(uah: number) {
-    return `${(uah / exchangeRate).toFixed(2)} ${currencySymbol}`;
+    return `${fmtNum(uah / exchangeRate)} ${currencySymbol}`;
   }
   function moneyDisplay(uah: number) {
-    return hasRate ? fmtForeign(uah) : `${uah.toFixed(2)} ₴`;
+    return hasRate ? fmtForeign(uah) : fmtUah(uah);
   }
 
   const tariffLabelsEn: Record<Tariff, string> = {
@@ -450,12 +459,12 @@ export default function QuoteBuilder({
           .map(
             (r, idx) => `
         <tr>
-          ${idx === 0 ? `<td rowspan="${p.rows.length}" style="text-align:center;"><img src="${origin}${p.photo ?? ""}" alt="" style="width:64px;height:auto;border-radius:6px;" /></td>` : ""}
+          ${idx === 0 ? `<td rowspan="${p.rows.length}" style="text-align:center;">${p.photo ? `<img src="${origin}${p.photo}" alt="" style="width:64px;height:auto;border-radius:6px;" />` : ""}</td>` : ""}
           ${idx === 0 ? `<td rowspan="${p.rows.length}"><strong>${modelLine}</strong><br/><span style="color:#8A90A6;font-size:12px;">${tc(p.colorLabel || "")}</span></td>` : ""}
           <td>${r.photo ? `<img class="addon-photo" src="${origin}${r.photo}" alt="" />` : ""}${tc(r.label)}</td>
           <td style="text-align:center;">${r.qty}</td>
-          <td style="text-align:right;">${r.unitPrice.toFixed(2)} ₴</td>
-          <td style="text-align:right;">${r.amount.toFixed(2)} ₴</td>
+          <td style="text-align:right;">${fmtUah(r.unitPrice)}</td>
+          <td style="text-align:right;">${fmtUah(r.amount)}</td>
         </tr>`
           )
           .join("");
@@ -470,7 +479,7 @@ export default function QuoteBuilder({
         : "";
 
     const rateRow = hasRate
-      ? `<div style="text-align:right;font-size:12px;color:#8A90A6;margin-top:4px;">${tt("Курс")}: ${exchangeRate.toFixed(2)} ₴ ${translateEn ? "per" : "за"} 1 ${currencySymbol}</div>`
+      ? `<div style="text-align:right;font-size:12px;color:#8A90A6;margin-top:4px;">${tt("Курс")}: ${fmtNum(exchangeRate)} ₴ ${translateEn ? "per" : "за"} 1 ${currencySymbol}</div>`
       : "";
 
     const heading = tt("Комерційна пропозиція");
@@ -492,15 +501,17 @@ export default function QuoteBuilder({
   .header p { margin: 4px 0 0; color: #E3CCA1; font-size: 12px; text-transform: uppercase; }
   .content { padding: 24px 32px; }
   .boxes { display: flex; gap: 16px; margin: 20px 0; }
-  .box { flex: 1; background: #F7F6F2; border-radius: 8px; padding: 14px 16px; }
+  .box { flex: 1; min-width: 0; overflow-wrap: break-word; background: #F7F6F2; border-radius: 8px; padding: 14px 16px; }
   .box .title { color: #B7935A; font-size: 11px; text-transform: uppercase; font-weight: bold; }
-  table { width: 100%; border-collapse: collapse; margin-top: 12px; }
-  th { text-align: left; border-bottom: 2px solid #E3CCA1; padding: 8px 6px; font-size: 12px; text-transform: uppercase; color: #333958; }
+  .table-wrap { overflow-x: auto; margin-top: 12px; -webkit-overflow-scrolling: touch; }
+  table { width: 100%; min-width: 620px; border-collapse: collapse; }
+  th { text-align: left; border-bottom: 2px solid #E3CCA1; padding: 8px 6px; font-size: 12px; text-transform: uppercase; color: #333958; white-space: nowrap; }
   td { padding: 8px 6px; border-bottom: 1px solid #eee; font-size: 13px; vertical-align: top; }
+  td:nth-child(4), td:nth-child(5), td:nth-child(6) { white-space: nowrap; }
   .addon-photo { width: 28px; height: 20px; object-fit: contain; vertical-align: middle; margin-right: 6px; border-radius: 3px; background: #F7F6F2; }
   .totals { text-align: right; margin-top: 16px; font-size: 20px; font-weight: bold; color: #333958; }
   .footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid #eee; font-size: 12px; color: #8A90A6; text-align: center; }
-  @media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+  @media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } .table-wrap { overflow-x: visible; } table { min-width: 0; } }
 </style>
 </head><body>
   <div class="header">
@@ -521,10 +532,12 @@ export default function QuoteBuilder({
       <div class="box"><div class="title">${tt("Консультант IN WOOD")}</div><div>${consultantName || "—"}</div><div>${consultantPhone || ""}</div></div>
     </div>
     ${comment ? `<p style="color:#8A90A6;font-size:13px;">${tt("Коментар:")} ${tc(comment)}</p>` : ""}
+    <div class="table-wrap">
     <table>
       <thead><tr><th>${tt("Фото")}</th><th>${tt("Модель")}</th><th>${tt("Позиція")}</th><th>${tt("К-сть")}</th><th>${tt("Ціна за од.")}</th><th>${tt("Сума")}</th></tr></thead>
       <tbody>${rowsHtml}</tbody>
     </table>
+    </div>
     <div class="totals">
       ${discountRow}
       <div>${tt("Разом")}: ${moneyDisplay(total)}</div>
@@ -1046,12 +1059,12 @@ export default function QuoteBuilder({
                 {previewRows.map((r) => (
                   <div key={r.label} className="flex justify-between">
                     <span>{r.label}</span>
-                    <span>{r.unitPrice.toFixed(2)} ₴</span>
+                    <span>{fmtUah(r.unitPrice)}</span>
                   </div>
                 ))}
                 <div className="mt-1 flex justify-between font-semibold text-navy-dark">
                   <span>Разом за {qty} шт.</span>
-                  <span>{previewTotal.toFixed(2)} ₴</span>
+                  <span>{fmtUah(previewTotal)}</span>
                 </div>
               </div>
             )}
@@ -1102,8 +1115,8 @@ export default function QuoteBuilder({
                         </div>
                       </td>
                       <td className="px-3 py-3 text-navy-dark">{r.qty}</td>
-                      <td className="px-3 py-3 text-navy-dark">{r.unitPrice.toFixed(2)} ₴</td>
-                      <td className="px-3 py-3 text-navy-dark">{r.amount.toFixed(2)} ₴</td>
+                      <td className="px-3 py-3 text-navy-dark">{fmtUah(r.unitPrice)}</td>
+                      <td className="px-3 py-3 text-navy-dark">{fmtUah(r.amount)}</td>
                       {idx === 0 && (
                         <td className="px-3 py-3" rowSpan={p.rows.length}>
                           <button
@@ -1178,11 +1191,11 @@ export default function QuoteBuilder({
             <div className="mt-4 text-right">
               {discountValue > 0 && (
                 <div className="text-sm text-navy-dim line-through">
-                  Було: {subtotal.toFixed(2)} ₴{hasRate ? ` (${fmtForeign(subtotal)})` : ""}
+                  Було: {fmtUah(subtotal)}{hasRate ? ` (${fmtForeign(subtotal)})` : ""}
                 </div>
               )}
               <div className="font-serif text-2xl font-bold text-navy-dark">
-                Разом: {total.toFixed(2)} ₴{hasRate ? ` (${fmtForeign(total)})` : ""}
+                Разом: {fmtUah(total)}{hasRate ? ` (${fmtForeign(total)})` : ""}
               </div>
             </div>
 
