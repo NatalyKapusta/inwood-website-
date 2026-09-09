@@ -41,6 +41,14 @@
         "href": "/garantiya"
       },
       {
+        "label": "FAQ",
+        "href": "/faq"
+      },
+      {
+        "label": "Blog",
+        "href": "/blog"
+      },
+      {
         "label": "Contacts",
         "href": "/kontakty"
       }
@@ -490,5 +498,121 @@
       "Flexible cooperation terms and partner support"
     ],
     "metaDescription": "Official IN WOOD dealers and partners across Ukraine — interactive dealer network map, where to buy IN WOOD doors in your city."
+  },
+  "faq": {
+    "title": "FAQ about IN WOOD doors",
+    "heading": "Frequently Asked Questions",
+    "intro": "Answers to the most common questions about IN WOOD interior doors — manufacturing, sizes, materials, installation and warranty.",
+    "items": [
+      {
+        "q": "How long does it take to manufacture IN WOOD interior doors?",
+        "a": "Standard interior doors take 30 days to manufacture. Custom sizes take 45 days."
+      },
+      {
+        "q": "What are the standard sizes of IN WOOD interior doors?",
+        "a": "Width: 600–900 mm; height: 1800–2100 mm."
+      },
+      {
+        "q": "Does IN WOOD make interior doors in custom sizes?",
+        "a": "IN WOOD manufactures interior doors in custom sizes in 50 mm steps at no extra charge: width — 650, 750, 850 mm; height — 1850, 1950, 2050 mm."
+      },
+      {
+        "q": "How do I correctly measure the door opening before ordering?",
+        "a": "Measure the width, height and wall thickness at several points, since the opening may be uneven. For an accurate order, we recommend using a professional measurement service that will account for all installation details."
+      },
+      {
+        "q": "When is the best time to install interior doors during a renovation?",
+        "a": "Interior doors are recommended to be installed at the final stage of renovation — after finishing the walls, ceiling and floor. This helps avoid damage to the door leaves and ensures accurate installation of casings and hardware."
+      },
+      {
+        "q": "Can interior doors be installed after the renovation is finished?",
+        "a": "Yes, installing interior doors after the renovation is complete is possible. The main requirement is that the door openings are prepared to the required dimensions and the walls and floor have finished surfaces."
+      },
+      {
+        "q": "What materials are IN WOOD interior doors made of?",
+        "a": "IN WOOD interior doors are made with a frame of solid wood and MDF."
+      },
+      {
+        "q": "Which door finish is better: PVC film or paint?",
+        "a": "The choice of finish depends on usage conditions and the desired design. PVC-film finish is practical, moisture-resistant and easy to maintain. Painted doors have a more premium look, a wide colour palette, and allow more complex design solutions."
+      },
+      {
+        "q": "What's the difference between panel and stile-and-rail (\"tsarga\") interior doors?",
+        "a": "Panel doors have a solid construction with a smooth surface or decor (moulding, milling, mirror inserts, etc.). Stile-and-rail doors are made by joining solid-wood vertical stiles of the door leaf together with horizontal rails (tsargas)."
+      },
+      {
+        "q": "How thick are IN WOOD interior doors?",
+        "a": "IN WOOD manufactures interior doors in 34 mm and 40 mm thickness."
+      },
+      {
+        "q": "What filling is used inside interior doors?",
+        "a": "IN WOOD panel doors are filled with a fine-cell honeycomb infill (18 mm cell), which ensures uniformity, flatness and rigidity of the door leaf."
+      },
+      {
+        "q": "Are IN WOOD interior doors resistant to moisture and damage?",
+        "a": "Sealed leaf edges and an aluminium edge trim provide extra protection against moisture and damage."
+      },
+      {
+        "q": "Does the door finish fade or lose colour in the sun?",
+        "a": "IN WOOD door finishes are resistant to sunlight."
+      },
+      {
+        "q": "What glass is used in IN WOOD stile-and-rail doors?",
+        "a": "IN WOOD's stile-and-rail door series use satin or black glass."
+      },
+      {
+        "q": "Can IN WOOD interior doors be painted in any colour from the RAL and NCS catalogues?",
+        "a": "IN WOOD can paint doors in any colour available in the RAL / NCS catalogues."
+      },
+      {
+        "q": "Can I order interior doors taller than 2100 mm?",
+        "a": "The maximum door leaf height is 2300 mm (2150–2300 mm for an additional fee)."
+      },
+      {
+        "q": "What are flush (hidden) installation doors?",
+        "a": "Flush installation doors are interior doors with an aluminium frame that is installed flush with the wall, staying invisible after finishing, with two opening options — standard and inside. Such doors create the effect of a single plane with the wall and complement modern interiors beautifully."
+      },
+      {
+        "q": "What are the advantages of flush installation doors?",
+        "a": "Flush installation doors create a modern, minimalist interior look thanks to being installed flush with the wall. They visually enlarge the space and allow the leaf to be painted or finished in the same style as the walls."
+      },
+      {
+        "q": "What hardware does IN WOOD fit its interior doors with?",
+        "a": "IN WOOD fits its doors with hardware from AGB, PALADII, Anselmi and MVM."
+      },
+      {
+        "q": "Can I buy just the door leaf, without the frame and casing?",
+        "a": "Yes, at IN WOOD you can purchase just the door leaf, without the accompanying frame and casing set."
+      },
+      {
+        "q": "Does IN WOOD install interior doors?",
+        "a": "The company's specialists carry out door installation by arrangement with the client, depending on the order volume."
+      },
+      {
+        "q": "How do I properly care for IN WOOD interior doors, and which products should I use?",
+        "a": "IN WOOD interior doors are low-maintenance — simply wipe the surface regularly with a soft, damp cloth and use neutral cleaning products without abrasives or harsh chemicals. This helps keep the finish, colour and flawless look of the doors for years to come."
+      },
+      {
+        "q": "What warranty applies to IN WOOD interior doors, and what does it cover?",
+        "a": "IN WOOD interior doors carry a 1-year warranty from the shipping date. The warranty covers manufacturing and material defects, provided storage, transport and installation guidelines are followed."
+      },
+      {
+        "q": "Does IN WOOD operate across all of Ukraine?",
+        "a": "IN WOOD delivers interior doors across Ukraine and works with a network of official partners in many towns and cities."
+      },
+      {
+        "q": "Which interior doors will last for many years?",
+        "a": "All IN WOOD interior doors are made from quality materials using modern production technology, ensuring their durability, reliability and flawless appearance over many years of use."
+      }
+    ],
+    "metaDescription": "FAQ about IN WOOD interior doors — lead times, sizes, materials, installation, warranty and care."
+  },
+  "blog": {
+    "title": "IN WOOD blog — interior door articles",
+    "heading": "Blog",
+    "intro": "Helpful articles on choosing, installing and caring for IN WOOD interior doors.",
+    "metaDescription": "IN WOOD blog — advice on choosing, installing and caring for interior doors.",
+    "readMore": "Read article",
+    "back": "← All articles"
   }
 }
