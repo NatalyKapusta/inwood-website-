@@ -25,7 +25,7 @@ export default function Header({
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-panel">
+    <header className="sticky top-0 z-50 bg-panel shadow-[0_4px_20px_-8px_rgba(51,57,88,0.25)]">
       {/* Верхня контактна панель */}
       <div className="bg-navy text-white text-sm">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-4 py-2">

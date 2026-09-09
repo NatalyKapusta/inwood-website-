@@ -1,23 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import PhoneInputWithCountrySelect, {
+  formatPhoneNumberIntl,
+  getCountries,
+  isValidPhoneNumber,
+} from "react-phone-number-input";
+import flags from "react-phone-number-input/flags";
+import countryLabels from "react-phone-number-input/locale/en.json";
+import "react-phone-number-input/style.css";
 
-// Український мобільний номер: +380 XX XXX XX XX
-function formatUaPhone(raw: string) {
-  const digits = raw.replace(/\D/g, "").replace(/^380/, "");
-  const d = digits.slice(0, 9);
-  let out = "+380";
-  if (d.length > 0) out += " " + d.slice(0, 2);
-  if (d.length > 2) out += " " + d.slice(2, 5);
-  if (d.length > 5) out += " " + d.slice(5, 7);
-  if (d.length > 7) out += " " + d.slice(7, 9);
-  return out;
-}
-
-function isValidUaPhone(value: string) {
-  const digits = value.replace(/\D/g, "").replace(/^380/, "");
-  return digits.length === 9;
-}
+// Усі країни, підтримувані бібліотекою, окрім росії.
+const COUNTRIES = getCountries().filter((code) => code !== "RU");
 
 export default function PhoneInput({
   name = "phone",
@@ -37,34 +31,34 @@ export default function PhoneInput({
   const [internalValue, setInternalValue] = useState("");
   const [touched, setTouched] = useState(false);
   const current = value ?? internalValue;
-  const invalid = touched && current.length > 0 && !isValidUaPhone(current);
+  const invalid = touched && current.length > 0 && !isValidPhoneNumber(current);
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const formatted = formatUaPhone(e.target.value);
-    if (onChange) onChange(formatted);
-    else setInternalValue(formatted);
+  function handleChange(next?: string) {
+    if (onChange) onChange(next ?? "");
+    else setInternalValue(next ?? "");
   }
 
   return (
     <div>
-      <input
-        type="tel"
-        name={name}
-        placeholder={placeholder ?? "+380 XX XXX XX XX"}
+      <PhoneInputWithCountrySelect
+        international
+        defaultCountry="UA"
+        countries={COUNTRIES}
+        labels={countryLabels}
+        flags={flags}
+        countryCallingCodeEditable={false}
         required={required}
         value={current}
         onChange={handleChange}
-        onFocus={() => {
-          if (!current) {
-            if (onChange) onChange("+380 ");
-            else setInternalValue("+380 ");
-          }
-        }}
         onBlur={() => setTouched(true)}
-        className={className}
+        placeholder={placeholder ?? "+380 XX XXX XX XX"}
+        className={className ? `iw-phone ${className}` : "iw-phone"}
         style={invalid ? { borderColor: "#dc2626" } : undefined}
       />
-      {invalid && <p className="mt-1 text-xs text-red-600">Перевірте номер телефону — формат +380 XX XXX XX XX</p>}
+      <input type="hidden" name={name} value={current ? formatPhoneNumberIntl(current) : ""} />
+      {invalid && (
+        <p className="mt-1 text-xs text-red-600">Перевірте номер телефону — введіть коректний номер</p>
+      )}
     </div>
   );
 }
