@@ -1,7 +1,9 @@
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata } from "@/lib/seo";
+import { collections } from "@/lib/products";
 import ContactCta from "@/components/ContactCta";
+import LineColorPreview from "@/components/LineColorPreview";
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
@@ -27,16 +29,22 @@ export default async function CharacteristicsPage({ params }: { params: { locale
 
       <section className="mx-auto max-w-6xl px-4 pb-16 sm:pb-24">
         <div className="grid gap-6 sm:grid-cols-2">
-          {t.lines.map((line) => (
-            <div key={line.name} className="rounded-xl bg-panel-alt p-6">
-              <h2 className="font-serif text-xl font-bold text-gold-dim">{line.name}</h2>
-              <ul className="mt-4 space-y-2 text-sm text-navy-dark">
-                {line.params.map((p) => (
-                  <li key={p}>— {p}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {t.lines.map((line) => {
+            const model = collections[line.name.toLowerCase()]?.models?.[0];
+            return (
+              <div key={line.name} className="rounded-xl bg-panel-alt p-6">
+                <h2 className="font-serif text-xl font-bold text-gold-dim">{line.name}</h2>
+                <div className="mt-4 grid gap-6 sm:grid-cols-[200px_1fr]">
+                  {model && <LineColorPreview code={model.code} colors={model.colors} />}
+                  <ul className="space-y-2 text-sm text-navy-dark">
+                    {line.params.map((p) => (
+                      <li key={p}>— {p}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 
