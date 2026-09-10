@@ -79,6 +79,16 @@ const VRIZKA_OPTIONS = [
   { value: "full", label: "Повна врізка фурнітури" },
 ] as const;
 
+// Короб прихованого монтажу STANDART/LUX фарбується під замовлення —
+// фарбування по RAL/NCS більше не окрема галочка (як було раніше): щойно
+// обрано один з цих коробів і вписано колір, фарбування підключається
+// автоматично, а сам код кольору потрапляє в рядок КП — це синхронізовано
+// з актуальною логікою оригінального калькулятора.
+const KOROB_RAL_MODELS = new Set([
+  "Коробка прихованого монтажу STANDART (під шпатлівку)",
+  "Коробка прихованого монтажу LUX (під панелі)",
+]);
+
 // Погонажні вироби — короб/лиштва/добір продаються окремо, без дверного полотна.
 // Ціни ті самі, що й у комплекті до дверей (line_addon_prices), лише обираються без моделі.
 const POGONAZHNI_KEY = "pogonazhni";
@@ -173,7 +183,7 @@ export default function QuoteBuilder({
   const [vrizka, setVrizka] = useState<"none" | "lock" | "full">("none");
   const [shumo, setShumo] = useState(false);
   const [alumPaint, setAlumPaint] = useState(false);
-  const [paintKorobRal, setPaintKorobRal] = useState(false);
+  const [ralNcsColor, setRalNcsColor] = useState("");
 
   // Ручне перевизначення — доступне staff і manager, як і в оригінальному калькуляторі.
   // Це НЕ автоматичні +20% — консультант вручну вписує розмір і кінцеву ціну повністю
@@ -255,6 +265,7 @@ export default function QuoteBuilder({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isHardwareLine, hardwareBrand, hardwareRows]);
   const isHiddenDoors = collectionKey === "hidden-doors";
+  const isKorobRalModel = isHiddenDoors && KOROB_RAL_MODELS.has(korob);
   const models = collections[collectionKey]?.models ?? [];
   const currentModel = models.find((m) => m.code === modelCode);
   const hiddenVariants = collections["hidden-doors"]?.variants ?? [];
@@ -378,7 +389,11 @@ export default function QuoteBuilder({
         unitPrice: korobManualPrice,
       });
     } else if (korob) {
-      rows.push({ label: korob, unitPrice: priceOf(korobOptions, korob), photo: addonPhotoFor("korob", korob) });
+      rows.push({
+        label: isKorobRalModel && ralNcsColor.trim() ? `${korob} — RAL/NCS: ${ralNcsColor.trim()}` : korob,
+        unitPrice: priceOf(korobOptions, korob),
+        photo: addonPhotoFor("korob", korob),
+      });
     }
     if (lishtvaFront)
       rows.push({
@@ -415,7 +430,7 @@ export default function QuoteBuilder({
       });
     if (shumo) rows.push({ label: "Шумоізоляція", unitPrice: serviceePrice("SHUMO_PRICE") });
     if (alumPaint) rows.push({ label: "Фарбування алюм. крайки", unitPrice: serviceePrice("ALUM_PAINT_PRICE") });
-    if (paintKorobRal)
+    if (isKorobRalModel && ralNcsColor.trim())
       rows.push({ label: "Фарбування коробки прих. монтажу по RAL", unitPrice: serviceePrice("PAINT_KOROB_RAL_PRICE") });
     return rows;
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -440,7 +455,8 @@ export default function QuoteBuilder({
     vrizka,
     shumo,
     alumPaint,
-    paintKorobRal,
+    isKorobRalModel,
+    ralNcsColor,
     nonstdSize,
     manualWidth,
     manualHeight,
@@ -531,7 +547,7 @@ export default function QuoteBuilder({
     setVrizka("none");
     setShumo(false);
     setAlumPaint(false);
-    setPaintKorobRal(false);
+    setRalNcsColor("");
     setNonstdSize(false);
     setManualWidth("");
     setManualHeight("");
@@ -1092,7 +1108,10 @@ export default function QuoteBuilder({
             ) : (
               <select
                 value={korob}
-                onChange={(e) => setKorob(e.target.value)}
+                onChange={(e) => {
+                  setKorob(e.target.value);
+                  if (!KOROB_RAL_MODELS.has(e.target.value)) setRalNcsColor("");
+                }}
                 className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
               >
                 <option value="">Короб — не обрано</option>
@@ -1104,6 +1123,16 @@ export default function QuoteBuilder({
               </select>
             )}
             <AddonRefPhoto src={addonPhotoFor("korob", korob)} />
+
+            {isKorobRalModel && (
+              <input
+                type="text"
+                value={ralNcsColor}
+                onChange={(e) => setRalNcsColor(e.target.value)}
+                placeholder="Колір RAL/NCS, напр. RAL 9010"
+                className="rounded-lg border border-gold-dim bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+              />
+            )}
 
             <select
               value={lishtvaFront}
@@ -1209,16 +1238,6 @@ export default function QuoteBuilder({
               </label>
             )}
 
-            {isHiddenDoors && (
-              <label className="flex items-center gap-2 text-sm text-navy-dark">
-                <input
-                  type="checkbox"
-                  checked={paintKorobRal}
-                  onChange={(e) => setPaintKorobRal(e.target.checked)}
-                />
-                Фарбування коробки прих. монтажу по RAL
-              </label>
-            )}
             </>
             )}
 
@@ -1258,7 +1277,13 @@ export default function QuoteBuilder({
               type="button"
               onClick={addPosition}
               disabled={
-                isPogonazhni ? !pogItem : isFlatLine ? !flatItemCode : isHardwareLine ? !hardwareArticle : !modelCode
+                isPogonazhni
+                  ? !pogItem
+                  : isFlatLine
+                  ? !flatItemCode
+                  : isHardwareLine
+                  ? !hardwareArticle
+                  : !modelCode || (isKorobRalModel && !ralNcsColor.trim())
               }
               className="rounded-full bg-navy-dark px-6 py-3 font-semibold text-white transition hover:bg-gold hover:text-navy-dark disabled:opacity-40"
             >
