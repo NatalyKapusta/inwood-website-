@@ -6,6 +6,7 @@ import Image from "next/image";
 import type { Komplekt, ProductModel } from "@/lib/products";
 import type { Dictionary } from "@/lib/dictionary";
 import PhoneInput from "@/components/PhoneInput";
+import { trackEvent } from "@/lib/gtag";
 import {
   STANDARD_WIDTHS,
   STANDARD_HEIGHTS,
@@ -132,8 +133,10 @@ export default function ProductCard({
         }),
       });
       const data = await res.json();
-      if (data.ok) setSent(true);
-      else setError(true);
+      if (data.ok) {
+        setSent(true);
+        trackEvent("generate_lead", { form_source: `Каталог — ${collectionLabel} ${model.code}` });
+      } else setError(true);
     } catch {
       setError(true);
     } finally {

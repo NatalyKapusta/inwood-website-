@@ -1,5 +1,6 @@
 import PhoneInput from "@/components/PhoneInput";
 import { submitLead } from "@/app/actions/lead";
+import LeadConversionTracker from "@/components/LeadConversionTracker";
 
 type ExtraField = {
   placeholder: string;
@@ -41,9 +42,12 @@ export default function ContactCta({
       <p className="mt-4 text-navy-dim">{text}</p>
 
       {sent ? (
-        <p className="mx-auto mt-8 max-w-md rounded-lg bg-panel-alt px-6 py-4 text-navy-dark">
-          {sentLabel ?? "Дякуємо! Заявку надіслано, ми скоро з вами зв'яжемось."}
-        </p>
+        <>
+          <LeadConversionTracker source={source} />
+          <p className="mx-auto mt-8 max-w-md rounded-lg bg-panel-alt px-6 py-4 text-navy-dark">
+            {sentLabel ?? "Дякуємо! Заявку надіслано, ми скоро з вами зв'яжемось."}
+          </p>
+        </>
       ) : (
         <form action={submitLead} className="mx-auto mt-8 flex max-w-md flex-col gap-4">
           <input type="hidden" name="source" value={source} />

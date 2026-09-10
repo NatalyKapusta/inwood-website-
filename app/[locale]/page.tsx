@@ -6,6 +6,7 @@ import ua from "@/dictionaries/ua.json";
 import { buildMetadata } from "@/lib/seo";
 import PhoneInput from "@/components/PhoneInput";
 import { submitLead } from "@/app/actions/lead";
+import LeadConversionTracker from "@/components/LeadConversionTracker";
 
 async function getDict(locale: Locale) {
   try {
@@ -260,9 +261,12 @@ export default async function HomePage({
         </h2>
         <p className="mt-4 text-navy-dim">{c.ctaText}</p>
         {sent ? (
-          <p className="mx-auto mt-8 max-w-md rounded-lg bg-panel-alt px-6 py-4 text-navy-dark">
-            {c.formSentMessage}
-          </p>
+          <>
+            <LeadConversionTracker source="Головна сторінка" />
+            <p className="mx-auto mt-8 max-w-md rounded-lg bg-panel-alt px-6 py-4 text-navy-dark">
+              {c.formSentMessage}
+            </p>
+          </>
         ) : (
           <form action={submitLead} className="mx-auto mt-8 flex max-w-md flex-col gap-4">
             <input type="hidden" name="source" value="Головна сторінка" />

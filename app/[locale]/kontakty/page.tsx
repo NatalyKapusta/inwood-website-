@@ -6,6 +6,7 @@ import PhoneInput from "@/components/PhoneInput";
 import SocialLinks from "@/components/SocialLinks";
 import MailIcon from "@/components/MailIcon";
 import { submitLead } from "@/app/actions/lead";
+import LeadConversionTracker from "@/components/LeadConversionTracker";
 
 const FEATURE_ICONS = [
   // Консультація та підтримка
@@ -158,9 +159,12 @@ export default async function KontaktyPage({
           <h2 className="font-serif text-lg font-bold text-navy-dark">{t.formTitle}</h2>
           <p className="mt-1 text-sm text-navy-dim">{t.formText}</p>
           {sent ? (
-            <p className="mt-6 rounded-lg bg-panel px-4 py-3 text-navy-dark">
-              {c.formSentMessage}
-            </p>
+            <>
+              <LeadConversionTracker source="Контакти" />
+              <p className="mt-6 rounded-lg bg-panel px-4 py-3 text-navy-dark">
+                {c.formSentMessage}
+              </p>
+            </>
           ) : (
             <form action={submitLead} className="mt-6 flex flex-col gap-3">
               <input type="hidden" name="source" value="Контакти" />
