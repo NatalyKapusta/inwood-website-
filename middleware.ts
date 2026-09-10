@@ -69,8 +69,17 @@ export async function middleware(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  // Захищаємо портал: без сесії пускаємо лише на сторінку логіну
-  if (isPortalRoute && pathname !== "/portal/login" && !user) {
+  // Захищаємо портал: без сесії пускаємо лише на сторінку логіну і на
+  // відновлення пароля — ці дві сторінки саме для того й існують, щоб
+  // ними могла скористатись людина БЕЗ активної сесії (інакше сторінка
+  // "Забули пароль" миттєво перекидала б назад на логін, а посилання зі
+  // "скидання пароля" з листа — на set-password з токеном у хеші URL —
+  // взагалі не встигало б обмінятись на сесію до цього редіректу).
+  const isPublicPortalRoute =
+    pathname === "/portal/login" ||
+    pathname === "/portal/forgot-password" ||
+    pathname === "/portal/set-password";
+  if (isPortalRoute && !isPublicPortalRoute && !user) {
     const url = request.nextUrl.clone();
     url.pathname = "/portal/login";
     return NextResponse.redirect(url);
