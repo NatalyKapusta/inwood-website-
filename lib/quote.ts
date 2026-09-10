@@ -56,12 +56,12 @@ export type HardwareRow = {
 // Фурнітура згрупована по виробнику окремими "лініями" (як в оригінальному
 // калькуляторі) — так консультант одразу бачить, чий це товар, а не лише
 // артикул. brand у hardware_tariff_prices відповідає ключам цього обʼєкта.
+// ABUS об'єднано з MVM (0023) — це той самий партнер-постачальник.
 export const HARDWARE_BRAND_LABELS: Record<string, string> = {
   MVM: "Фурнітура MVM",
   AGB_BUONELLE: "Фурнітура Anselmi + AGB",
-  ABUS: "Фурнітура ABUS",
 };
-export const HARDWARE_BRAND_ORDER = ["MVM", "AGB_BUONELLE", "ABUS"];
+export const HARDWARE_BRAND_ORDER = ["MVM", "AGB_BUONELLE"];
 
 export type VariantType = "base" | "alu" | "alu-inside" | "ral";
 
