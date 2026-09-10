@@ -21,6 +21,21 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
+  // Рекламний піддомен partnership.inwood.com.ua — на нього ллють платний
+  // трафік по дилерству, але окремого лендингу під нього ще нема. Тимчасово
+  // віддаємо звідти /ua/spivpratsya (rewrite, адреса в браузері лишається
+  // partnership.inwood.com.ua) і ховаємо від індексації — щоб реклама не
+  // впиралась у биту сторінку, поки не готовий фінальний дизайн. Замінити
+  // на dedicated-сторінку, коли вона буде.
+  const hostname = request.headers.get("host") ?? "";
+  if (hostname.startsWith("partnership.")) {
+    const url = request.nextUrl.clone();
+    url.pathname = "/ua/spivpratsya";
+    const rewritten = NextResponse.rewrite(url);
+    rewritten.headers.set("X-Robots-Tag", "noindex, nofollow");
+    return rewritten;
+  }
+
   // Редіректи зі старого сайту inwood.com.ua — перевіряємо ПЕРШИМ, до
   // загального правила локалі нижче, інакше воно переплутає старий слаг
   // з новим (напр. /kontakti стало б /ua/kontakti, якого не існує,
