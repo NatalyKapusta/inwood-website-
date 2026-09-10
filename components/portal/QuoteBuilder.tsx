@@ -630,7 +630,7 @@ export default function QuoteBuilder({
           .map(
             (r, idx) => `
         <tr>
-          ${idx === 0 ? `<td rowspan="${p.rows.length}" style="text-align:center;">${p.photo ? `<img src="${origin}${p.photo}" alt="" style="width:64px;height:auto;border-radius:6px;" />` : ""}</td>` : ""}
+          ${idx === 0 ? `<td rowspan="${p.rows.length}" style="text-align:center;">${p.photo ? `<div style="width:64px;height:64px;display:flex;align-items:center;justify-content:center;margin:0 auto;"><img src="${origin}${p.photo}" alt="" style="max-width:64px;max-height:64px;width:auto;height:auto;object-fit:contain;border-radius:6px;" /></div>` : ""}</td>` : ""}
           ${idx === 0 ? `<td rowspan="${p.rows.length}"><strong>${modelLine}</strong><br/><span style="color:#8A90A6;font-size:12px;">${tc(p.colorLabel || "")}</span></td>` : ""}
           <td>${r.photo ? `<img class="addon-photo" src="${origin}${r.photo}" alt="" />` : ""}${tc(r.label)}</td>
           <td style="text-align:center;">${r.qty}</td>
