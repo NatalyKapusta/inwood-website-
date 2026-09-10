@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import type { Komplekt, ProductModel } from "@/lib/products";
 import type { Dictionary } from "@/lib/dictionary";
@@ -302,67 +303,75 @@ export default function ProductCard({
         </div>
       </div>
 
-      {modalOpen && (
-        <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-navy-dark/60 p-4"
-          onClick={() => setModalOpen(false)}
-        >
+      {modalOpen &&
+        createPortal(
+          // Портал у document.body — картка товару має :hover-ефект з
+          // transform (app/globals.css, "легкий підйом при наведенні"),
+          // а transform на предку ламає position:fixed у нащадків (робить
+          // його відносним до цього предка, а не вʼюпорту). Без порталу
+          // модалка "стрибала" по екрану й блимала щоразу, коли курсор
+          // перетинав межу картки під час наведення.
           <div
-            className="w-full max-w-md rounded-xl bg-panel p-6"
-            onClick={(e) => e.stopPropagation()}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-navy-dark/60 p-4"
+            onClick={() => setModalOpen(false)}
           >
-            <h4 className="font-serif text-lg font-bold text-navy-dark">
-              {collectionLabel} — {model.code}
-            </h4>
-            <p className="mt-2 whitespace-pre-line text-sm text-navy-dim">
-              {displayLines.slice(1).join("\n")}
-            </p>
-            {sent ? (
-              <p className="mt-4 rounded-lg bg-panel-alt px-4 py-3 text-sm text-navy-dark">
-                {formSentMessage}
-              </p>
-            ) : (
-              <form onSubmit={sendInquiry} className="mt-4 flex flex-col gap-3">
-                <input
-                  type="text"
-                  required
-                  placeholder={nameLabel}
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="rounded-lg border border-navy-dim/30 px-3 py-2 text-sm outline-none focus:border-gold"
-                />
-                <PhoneInput
-                  placeholder={phoneLabel}
-                  required
-                  value={phone}
-                  onChange={setPhone}
-                  className="w-full rounded-lg border border-navy-dim/30 px-3 py-2 text-sm outline-none focus:border-gold"
-                  manualLabel={phoneManual}
-                  chooseCountryLabel={phoneChooseCountry}
-                  invalidLabel={phoneInvalid}
-                />
-                {error && (
-                  <p className="text-xs text-red-600">{sendFailedRetry}</p>
-                )}
-                <button
-                  type="submit"
-                  disabled={sending}
-                  className="rounded-full bg-gold px-4 py-2 text-center text-sm font-semibold text-navy-dark transition hover:bg-gold-dim disabled:opacity-60"
-                >
-                  {sending ? "..." : t.sendInquiry}
-                </button>
-              </form>
-            )}
-            <button
-              type="button"
-              onClick={() => setModalOpen(false)}
-              className="mt-3 w-full text-center text-xs text-navy-dim underline"
+            <div
+              className="w-full max-w-md rounded-xl bg-panel p-6"
+              onClick={(e) => e.stopPropagation()}
             >
-              {t.close}
-            </button>
-          </div>
-        </div>
-      )}
+              <h4 className="font-serif text-lg font-bold text-navy-dark">
+                {collectionLabel} — {model.code}
+              </h4>
+              <p className="mt-2 whitespace-pre-line text-sm text-navy-dim">
+                {displayLines.slice(1).join("\n")}
+              </p>
+              {sent ? (
+                <p className="mt-4 rounded-lg bg-panel-alt px-4 py-3 text-sm text-navy-dark">
+                  {formSentMessage}
+                </p>
+              ) : (
+                <form onSubmit={sendInquiry} className="mt-4 flex flex-col gap-3">
+                  <input
+                    type="text"
+                    required
+                    placeholder={nameLabel}
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="rounded-lg border border-navy-dim/30 px-3 py-2 text-sm outline-none focus:border-gold"
+                  />
+                  <PhoneInput
+                    placeholder={phoneLabel}
+                    required
+                    value={phone}
+                    onChange={setPhone}
+                    className="w-full rounded-lg border border-navy-dim/30 px-3 py-2 text-sm outline-none focus:border-gold"
+                    manualLabel={phoneManual}
+                    chooseCountryLabel={phoneChooseCountry}
+                    invalidLabel={phoneInvalid}
+                  />
+                  {error && (
+                    <p className="text-xs text-red-600">{sendFailedRetry}</p>
+                  )}
+                  <button
+                    type="submit"
+                    disabled={sending}
+                    className="rounded-full bg-gold px-4 py-2 text-center text-sm font-semibold text-navy-dark transition hover:bg-gold-dim disabled:opacity-60"
+                  >
+                    {sending ? "..." : t.sendInquiry}
+                  </button>
+                </form>
+              )}
+              <button
+                type="button"
+                onClick={() => setModalOpen(false)}
+                className="mt-3 w-full text-center text-xs text-navy-dim underline"
+              >
+                {t.close}
+              </button>
+            </div>
+          </div>,
+          document.body
+        )}
     </div>
   );
 }
