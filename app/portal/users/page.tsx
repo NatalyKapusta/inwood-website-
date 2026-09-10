@@ -37,7 +37,7 @@ export default async function PortalUsersPage({
     <div>
       <h1 className="font-serif text-2xl font-bold text-navy-dark">Користувачі порталу</h1>
       <p className="mt-2 text-sm text-navy-dim">
-        Запрошення надсилається на email — людина сама встановить пароль за посиланням.
+        Користувач створюється одразу з паролем, який ви вкажете — без листа, вже можна входити.
       </p>
 
       {searchParams.error && (
@@ -47,7 +47,7 @@ export default async function PortalUsersPage({
       )}
       {searchParams.invited && (
         <p className="mt-4 rounded-lg bg-green-50 px-4 py-3 text-sm text-green-700">
-          Запрошення надіслано на {searchParams.invited}
+          Користувача {searchParams.invited} створено — повідомте йому email і пароль, вже можна входити.
         </p>
       )}
       {searchParams.blocked && (
@@ -106,6 +106,14 @@ export default async function PortalUsersPage({
           placeholder="Компанія"
           className="rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
         />
+        <input
+          type="text"
+          name="password"
+          placeholder="Пароль (мінімум 6 символів)"
+          required
+          minLength={6}
+          className="rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
+        />
         <select
           name="role"
           defaultValue="dealer"
@@ -121,7 +129,7 @@ export default async function PortalUsersPage({
           type="submit"
           className="rounded-full bg-navy-dark px-7 py-3 font-semibold text-white transition hover:bg-gold hover:text-navy-dark sm:col-span-2"
         >
-          Запросити
+          Створити
         </button>
       </form>
 

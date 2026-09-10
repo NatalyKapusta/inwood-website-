@@ -110,9 +110,13 @@ export async function inviteUser(formData: FormData) {
   const fullName = String(formData.get("full_name") ?? "").trim();
   const companyName = String(formData.get("company_name") ?? "").trim();
   const role = String(formData.get("role") ?? "dealer");
+  const password = String(formData.get("password") ?? "").trim();
 
   if (!email) {
     redirect("/portal/users?error=" + encodeURIComponent("Вкажіть email"));
+  }
+  if (password.length < 6) {
+    redirect("/portal/users?error=" + encodeURIComponent("Пароль має бути не менше 6 символів"));
   }
 
   const admin = createAdminClient();
@@ -125,18 +129,25 @@ export async function inviteUser(formData: FormData) {
     );
   }
 
-  const { data: invited, error } = await admin.auth.admin.inviteUserByEmail(email, {
-    redirectTo: `${SITE_URL}/portal/set-password`,
+  // Створюємо одразу з паролем, який задає власник, і email_confirm: true —
+  // без листа-запрошення взагалі. Раніше через inviteUserByEmail Supabase
+  // надсилав лист із одноразовим посиланням: воно і на лімітер листів
+  // (email rate limit exceeded при кількох запрошеннях поспіль), і на той
+  // самий "лист сам згорає" баг, що вже ламав вхід іншим користувачам.
+  const { data: created, error } = await admin.auth.admin.createUser({
+    email,
+    password,
+    email_confirm: true,
   });
 
-  if (error || !invited?.user) {
-    redirect("/portal/users?error=" + encodeURIComponent(error?.message ?? "Не вдалося запросити користувача"));
+  if (error || !created?.user) {
+    redirect("/portal/users?error=" + encodeURIComponent(error?.message ?? "Не вдалося створити користувача"));
   }
 
   await admin
     .from("profiles")
     .update({ full_name: fullName || null, company_name: companyName || null, role })
-    .eq("id", invited.user.id);
+    .eq("id", created.user.id);
 
   revalidatePath("/portal/users");
   redirect("/portal/users?invited=" + encodeURIComponent(email));
