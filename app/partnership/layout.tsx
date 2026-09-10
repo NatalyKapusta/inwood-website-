@@ -1,21 +1,43 @@
 import type { ReactNode } from "react";
 import Script from "next/script";
 import "@/app/globals.css";
+import { SITE_URL } from "@/lib/seo";
 
-// Окрема (поза [locale]) рекламна лендинг-сторінка для партнерської програми —
-// без шапки/футера/нав публічного сайту, як і /portal. Не в navigation, не в
-// sitemap.xml; middleware.ts додатково позначає її noindex для хоста
-// partnership.inwood.com.ua. Тут же лишається FB Pixel зі старої Netlify-версії
-// (реклама йде з Meta, піксель потрібен для оптимізації кампанії) — той самий
-// ID, що й був на partnership.inwood.com.ua раніше.
+// Окрема (поза [locale]) сторінка для партнерської програми — без шапки/футера/нав
+// публічного сайту, як і /portal. Не в navigation, але (на відміну від /portal)
+// індексується Google — має рости в органічному пошуку, а не лише приймати платну
+// рекламу. Доступна з двох URL: https://inwood.com.ua/partnership (канонічний,
+// індексується) і https://partnership.inwood.com.ua (рекламний піддомен — той
+// самий контент через rewrite в middleware.ts, яке саме для цього хоста додає
+// заголовок X-Robots-Tag: noindex, щоб не створювати дубль у пошуку).
+// FB Pixel лишається зі старої Netlify-версії (реклама йде з Meta, піксель
+// потрібен для оптимізації кампанії) — той самий ID, що й був там раніше.
 const FB_PIXEL_ID = "3180845672111598";
 const GA_MEASUREMENT_ID = "G-R75X510R1Z";
+const PAGE_URL = `${SITE_URL}/partnership`;
+const TITLE = "Стати партнером IN WOOD — виробник міжкімнатних дверей у Полтаві";
+const DESCRIPTION =
+  "IN WOOD — виробник міжкімнатних дверей із 20-річним досвідом. Власне виробництво в Полтаві, каталог продукції, калькулятор цін та підтримка менеджера з першого дня співпраці.";
 
 export const metadata = {
-  title: "Стати партнером IN WOOD — виробник міжкімнатних дверей у Полтаві",
-  description:
-    "IN WOOD — виробник міжкімнатних дверей із 20-річним досвідом. Власне виробництво в Полтаві, каталог продукції, калькулятор цін та підтримка менеджера з першого дня співпраці.",
-  robots: { index: false, follow: false },
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: PAGE_URL,
+    siteName: "IN WOOD",
+    locale: "uk_UA",
+    images: [{ url: `${SITE_URL}/og-image.jpg`, width: 1200, height: 630 }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [`${SITE_URL}/og-image.jpg`],
+  },
 };
 
 export default function PartnershipLayout({ children }: { children: ReactNode }) {

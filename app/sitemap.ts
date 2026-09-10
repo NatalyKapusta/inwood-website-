@@ -28,7 +28,7 @@ const paths = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return paths.flatMap((path) =>
+  const localizedEntries = paths.flatMap((path) =>
     locales.map((locale) => ({
       url: `${SITE_URL}/${locale}${path}`,
       lastModified: new Date(),
@@ -39,4 +39,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     }))
   );
+
+  // /partnership живе поза [locale] (без мовного префікса, без alternates) —
+  // єдина сторінка, яка навмисно НЕ в навігації, але має індексуватись і рости
+  // в органічному пошуку. Рекламний піддомен partnership.inwood.com.ua віддає
+  // той самий контент через rewrite, але позначений noindex у middleware.ts,
+  // щоб не дублювати цей запис.
+  const partnershipEntry = {
+    url: `${SITE_URL}/partnership`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  };
+
+  return [...localizedEntries, partnershipEntry];
 }
