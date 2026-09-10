@@ -5,6 +5,7 @@ import { createClient } from "@/lib/supabase/server";
 import { getPricesVisible } from "@/lib/siteSettings";
 import { setPricesVisible } from "@/app/portal/actions";
 import { VIEW_AS_COOKIE, isPortalRole, roleLabels } from "@/lib/portalRole";
+import ChangePasswordForm from "@/components/portal/ChangePasswordForm";
 
 export default async function PortalDashboardPage() {
   const supabase = await createClient();
@@ -61,6 +62,9 @@ export default async function PortalDashboardPage() {
             {roleLabels[effectiveRole as keyof typeof roleLabels] ?? effectiveRole}
           </span>
         </p>
+        <div className="mt-4">
+          <ChangePasswordForm />
+        </div>
       </div>
 
       <div className="mt-8 grid gap-4 sm:grid-cols-2">
