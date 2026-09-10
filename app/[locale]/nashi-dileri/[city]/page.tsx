@@ -68,7 +68,7 @@ export default async function DealerCityPage({
       <section className="mx-auto max-w-4xl px-4 py-16 sm:py-24">
         <Link
           href={`/${params.locale}/nashi-dileri`}
-          className="text-sm text-navy-dim hover:text-gold-dim"
+          className="text-sm text-navy-dim underline decoration-dotted underline-offset-4 hover:text-gold-dim"
         >
           {t.cityBackLink}
         </Link>

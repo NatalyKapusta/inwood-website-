@@ -73,7 +73,7 @@ export default async function DlyaZabudovnykivCityPage({
 
       <section className="bg-navy-dark py-16 text-center text-white sm:py-24">
         <div className="mx-auto max-w-3xl px-4">
-          <Link href={`/${params.locale}/dlya-zabudovnykiv`} className="text-sm text-white/60 hover:text-gold">
+          <Link href={`/${params.locale}/dlya-zabudovnykiv`} className="text-sm text-white/60 underline decoration-dotted underline-offset-4 hover:text-gold">
             {t.cityBackLink}
           </Link>
           <h1 className="mt-4 font-serif text-3xl font-bold sm:text-4xl">
