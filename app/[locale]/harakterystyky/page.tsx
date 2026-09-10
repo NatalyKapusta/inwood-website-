@@ -6,6 +6,13 @@ import ContactCta from "@/components/ContactCta";
 import LineColorPreview from "@/components/LineColorPreview";
 import ConstructionDiagram from "@/components/ConstructionDiagram";
 
+// Яку модель показувати як приклад у картці колекції на цій сторінці —
+// за замовчуванням береться перша модель колекції, тут навмисний вибір.
+const SHOWCASE_MODEL_CODE: Record<string, string> = {
+  ETALON: "ET-11",
+  NOMINAL: "NL-05",
+};
+
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
   return buildMetadata({
@@ -37,7 +44,9 @@ export default async function CharacteristicsPage({
       <section className="mx-auto max-w-6xl px-4 pb-16 sm:pb-24">
         <div className="grid gap-6 sm:grid-cols-2">
           {t.lines.map((line) => {
-            const model = collections[line.name.toLowerCase()]?.models?.[0];
+            const lineModels = collections[line.name.toLowerCase()]?.models;
+            const preferredCode = SHOWCASE_MODEL_CODE[line.name];
+            const model = (preferredCode && lineModels?.find((m) => m.code === preferredCode)) ?? lineModels?.[0];
             return (
               <div key={line.name} className="rounded-xl bg-panel-alt p-6">
                 <h2 className="font-serif text-xl font-bold text-gold-dim">{line.name}</h2>
