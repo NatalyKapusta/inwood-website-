@@ -664,9 +664,12 @@
     "findOutPrice": "Get a quote",
     "sendInquiry": "Send inquiry",
     "close": "Close",
-    "footnote": "Non-standard sizing is applied automatically (+20% to the price). Aluminium edge options or RAL/NCS colour matching — contact us for those. Colour choice does not affect the price.",
+    "footnote": "Non-standard sizing is applied automatically (+20% to the price). Aluminium edge options — contact us for those. Choosing a colour within the standard palette does not affect the price; RAL/NCS painting (where available) has its own price.",
     "metaDescription": "IN WOOD interior door catalog with retail prices: choose a model, color, frame, trim and door casing — the calculator instantly shows the price.",
-    "downloadCatalog": "Download catalog (PDF)"
+    "downloadCatalog": "Download catalog (PDF)",
+    "finishBase": "Base",
+    "finishRal": "RAL/NCS Painting",
+    "ralPlaceholder": "RAL/NCS color, e.g. RAL 9010"
   },
   "nashiDileri": {
     "title": "IN WOOD doors in Ukraine | Official dealers and partners",

@@ -2447,7 +2447,8 @@
             "label": "white",
             "image": "/photos/frezzatti/fz-01-white.png"
           }
-        ]
+        ],
+        "ralPrice": 10780.0
       },
       {
         "code": "FZ-02",
@@ -2513,7 +2514,8 @@
             "label": "white",
             "image": "/photos/frezzatti/fz-02-white.png"
           }
-        ]
+        ],
+        "ralPrice": 10780.0
       },
       {
         "code": "FZ-03",
@@ -2579,7 +2581,8 @@
             "label": "white",
             "image": "/photos/frezzatti/fz-03-white.png"
           }
-        ]
+        ],
+        "ralPrice": 10780.0
       },
       {
         "code": "FZ-04",
@@ -2645,7 +2648,8 @@
             "label": "white",
             "image": "/photos/frezzatti/fz-04-white.png"
           }
-        ]
+        ],
+        "ralPrice": 10780.0
       },
       {
         "code": "FZ-05",
@@ -2711,7 +2715,8 @@
             "label": "white",
             "image": "/photos/frezzatti/fz-05-white.png"
           }
-        ]
+        ],
+        "ralPrice": 10780.0
       },
       {
         "code": "FZ-06",
@@ -2777,7 +2782,8 @@
             "label": "white",
             "image": "/photos/frezzatti/fz-06-white.png"
           }
-        ]
+        ],
+        "ralPrice": 10780.0
       },
       {
         "code": "FZ-07",
@@ -2843,7 +2849,8 @@
             "label": "white",
             "image": "/photos/frezzatti/fz-07-white.png"
           }
-        ]
+        ],
+        "ralPrice": 10780.0
       },
       {
         "code": "FZ-08",
@@ -2909,7 +2916,8 @@
             "label": "white",
             "image": "/photos/frezzatti/fz-08-white.png"
           }
-        ]
+        ],
+        "ralPrice": 10780.0
       },
       {
         "code": "FZ-09",
@@ -2975,7 +2983,8 @@
             "label": "white",
             "image": "/photos/frezzatti/fz-09-white.png"
           }
-        ]
+        ],
+        "ralPrice": 10780.0
       },
       {
         "code": "FZ-10",
@@ -3041,7 +3050,8 @@
             "label": "white",
             "image": "/photos/frezzatti/fz-10-white.png"
           }
-        ]
+        ],
+        "ralPrice": 10780.0
       },
       {
         "code": "FZ-11",
@@ -3107,7 +3117,8 @@
             "label": "white",
             "image": "/photos/frezzatti/fz-11-white.png"
           }
-        ]
+        ],
+        "ralPrice": 10780.0
       },
       {
         "code": "FZ-12",
@@ -3173,7 +3184,8 @@
             "label": "white",
             "image": "/photos/frezzatti/fz-12-white.png"
           }
-        ]
+        ],
+        "ralPrice": 10780.0
       },
       {
         "code": "FZ-13",
@@ -3239,7 +3251,8 @@
             "label": "white",
             "image": "/photos/frezzatti/fz-13-white.png"
           }
-        ]
+        ],
+        "ralPrice": 10780.0
       },
       {
         "code": "FZ-14",
@@ -3305,7 +3318,8 @@
             "label": "white",
             "image": "/photos/frezzatti/fz-14-white.png"
           }
-        ]
+        ],
+        "ralPrice": 10780.0
       }
     ]
   },
@@ -3459,7 +3473,8 @@
             "label": "зріз каменю",
             "image": "/photos/perfetto/pf-01.png"
           }
-        ]
+        ],
+        "ralPrice": 12733.0
       },
       {
         "code": "PF-02",
@@ -3550,7 +3565,8 @@
             "label": "зріз каменю",
             "image": "/photos/perfetto/pf-02.png"
           }
-        ]
+        ],
+        "ralPrice": 12733.0
       }
     ]
   },

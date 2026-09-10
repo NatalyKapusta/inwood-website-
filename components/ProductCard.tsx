@@ -63,6 +63,9 @@ export default function ProductCard({
     0
   );
   const [colorIdx, setColorIdx] = useState(defaultColorIdx);
+  const hasRal = typeof model.ralPrice === "number";
+  const [finish, setFinish] = useState<"base" | "ral">("base");
+  const [ralColor, setRalColor] = useState("");
   const [korob, setKorob] = useState(NONE);
   const [lyshtva, setLyshtva] = useState(NONE);
   const [dobir, setDobir] = useState(NONE);
@@ -87,7 +90,8 @@ export default function ProductCard({
   const sizeIsNonstd =
     (width !== "" && NONSTD_WIDTHS.includes(Number(width))) ||
     (height !== "" && NONSTD_HEIGHTS.includes(Number(height)));
-  const panelPrice = sizeIsNonstd ? model.basePrice * NONSTD_SURCHARGE : model.basePrice;
+  const basePanelPrice = finish === "ral" && model.ralPrice ? model.ralPrice : model.basePrice;
+  const panelPrice = sizeIsNonstd ? basePanelPrice * NONSTD_SURCHARGE : basePanelPrice;
 
   const extra = useMemo(() => {
     const findPrice = (list: { label: string; price: number }[], value: string) =>
@@ -106,7 +110,9 @@ export default function ProductCard({
 
   const configLines = [
     `${collectionLabel} — ${model.code}${sizeLabel}`,
-    `${t.color}: ${color?.label ?? "-"}`,
+    finish === "ral"
+      ? `${t.finishRal}: ${ralColor.trim() || "-"}`
+      : `${t.color}: ${color?.label ?? "-"}`,
     korob !== NONE ? `${t.korob}: ${korob}` : null,
     lyshtva !== NONE ? `${t.lyshtva}: ${lyshtva}` : null,
     dobir !== NONE ? `${t.dobir}: ${dobir}` : null,
@@ -165,30 +171,70 @@ export default function ProductCard({
           <h3 className="font-serif text-lg font-bold text-navy-dark">{model.code}</h3>
         </div>
 
-        {model.colors.length > 1 && (
-          <div>
-            <label className="text-xs text-navy-dim">
-              {t.color}: {color?.label}
-            </label>
-            <div className="mt-1 flex flex-wrap gap-1.5">
-              {model.colors.map((c, i) => (
-                <button
-                  key={c.slug}
-                  type="button"
-                  onClick={() => setColorIdx(i)}
-                  title={c.label}
-                  className={`h-6 w-6 rounded-full border-2 ${
-                    i === colorIdx ? "border-gold" : "border-navy-dim/20"
-                  }`}
-                  style={{
-                    backgroundImage: `url(${c.image})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                />
-              ))}
-            </div>
+        {hasRal && (
+          <div className="flex gap-1.5">
+            <button
+              type="button"
+              onClick={() => setFinish("base")}
+              className={`rounded-full border px-3 py-1 text-xs font-semibold transition ${
+                finish === "base"
+                  ? "border-gold bg-gold/10 text-navy-dark"
+                  : "border-navy-dim/25 text-navy-dim hover:border-gold"
+              }`}
+            >
+              {t.finishBase}
+            </button>
+            <button
+              type="button"
+              onClick={() => setFinish("ral")}
+              className={`rounded-full border px-3 py-1 text-xs font-semibold transition ${
+                finish === "ral"
+                  ? "border-gold bg-gold/10 text-navy-dark"
+                  : "border-navy-dim/25 text-navy-dim hover:border-gold"
+              }`}
+            >
+              {t.finishRal}
+            </button>
           </div>
+        )}
+
+        {finish === "ral" ? (
+          <label className="block text-xs text-navy-dim">
+            {t.finishRal}
+            <input
+              type="text"
+              value={ralColor}
+              onChange={(e) => setRalColor(e.target.value)}
+              placeholder={t.ralPlaceholder}
+              className="mt-1 w-full rounded-lg border border-navy-dim/30 bg-panel px-2 py-1.5 text-sm text-navy-dark outline-none focus:border-gold"
+            />
+          </label>
+        ) : (
+          model.colors.length > 1 && (
+            <div>
+              <label className="text-xs text-navy-dim">
+                {t.color}: {color?.label}
+              </label>
+              <div className="mt-1 flex flex-wrap gap-1.5">
+                {model.colors.map((c, i) => (
+                  <button
+                    key={c.slug}
+                    type="button"
+                    onClick={() => setColorIdx(i)}
+                    title={c.label}
+                    className={`h-6 w-6 rounded-full border-2 ${
+                      i === colorIdx ? "border-gold" : "border-navy-dim/20"
+                    }`}
+                    style={{
+                      backgroundImage: `url(${c.image})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
+          )
         )}
 
         <div className="grid grid-cols-2 gap-2">
@@ -294,7 +340,7 @@ export default function ProductCard({
               ? t.findOutPrice
               : extra > 0 || sizeIsNonstd
               ? `${t.total}: ${fmt(total)}`
-              : `${t.from} ${fmt(model.basePrice)}`}
+              : `${t.from} ${fmt(basePanelPrice)}`}
           </p>
           <button
             type="button"
