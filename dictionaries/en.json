@@ -29,6 +29,10 @@
         "href": "/nashi-dileri"
       },
       {
+        "label": "For Developers",
+        "href": "/dlya-zabudovnykiv"
+      },
+      {
         "label": "Partnership",
         "href": "/spivpratsya"
       },
@@ -157,10 +161,22 @@
     "audienceTitle": "Who we work with",
     "audienceText": "IN WOOD manufactures doors for private clients and businesses alike — whatever the scale of your project, we'll find the right solution.",
     "audience": [
-      { "title": "Private clients", "text": "Renovating an apartment or house — we'll match doors to your interior, colours and non-standard sizes." },
-      { "title": "Developers", "text": "Serial supply for residential complexes: consistent quality, installation schedule, project support." },
-      { "title": "Dealers and partners", "text": "Wholesale terms, marketing materials, a dedicated account manager." },
-      { "title": "Designers and architects", "text": "A wide choice of colours and finishes, and room for custom solutions on your project." }
+      {
+        "title": "Private clients",
+        "text": "Renovating an apartment or house — we'll match doors to your interior, colours and non-standard sizes."
+      },
+      {
+        "title": "Developers",
+        "text": "Serial supply for residential complexes: consistent quality, installation schedule, project support."
+      },
+      {
+        "title": "Dealers and partners",
+        "text": "Wholesale terms, marketing materials, a dedicated account manager."
+      },
+      {
+        "title": "Designers and architects",
+        "text": "A wide choice of colours and finishes, and room for custom solutions on your project."
+      }
     ],
     "collectionsTitle": "Doors in the interior",
     "collectionsSubtitle": "Freedom to realise design ideas with IN WOOD doors",
@@ -463,9 +479,21 @@
       }
     ],
     "stats": [
-      { "to": 20, "suffix": "+", "label": "years of production experience" },
-      { "to": 35, "suffix": "+", "label": "partners already working with us" },
-      { "to": 50, "suffix": "+", "label": "door models in the range" }
+      {
+        "to": 20,
+        "suffix": "+",
+        "label": "years of production experience"
+      },
+      {
+        "to": 35,
+        "suffix": "+",
+        "label": "partners already working with us"
+      },
+      {
+        "to": 50,
+        "suffix": "+",
+        "label": "door models in the range"
+      }
     ],
     "calcKicker": "Try it right now",
     "calcTitle": "A commercial offer in minutes, not hours",
@@ -790,5 +818,45 @@
     "metaDescription": "Photos of IN WOOD interior doors in real interiors by model and color — ETALON, NOMINAL, FREZZATTI, PERFETTO collections.",
     "all": "All collections",
     "color": "Color"
+  },
+  "dlyaZabudovnykiv": {
+    "pageTitle": "IN WOOD Doors for Developers — Wholesale Supply",
+    "metaDescription": "Wholesale supply of IN WOOD interior doors for developers, construction companies and residential complexes. In-house production in Poltava, bulk pricing, delivery across Ukraine.",
+    "backLink": "← All cooperation options",
+    "heading": "Doors for Developers and Construction Companies",
+    "intro": "IN WOOD is a manufacturer of interior doors with its own production facility in Poltava. We supply doors wholesale for fitting out new buildings, residential complexes and commercial projects — from a single entrance to an entire complex.",
+    "benefitsTitle": "Terms for Developers",
+    "benefitsText": "We work directly with the manufacturer — no middlemen, no markups.",
+    "benefits": [
+      {
+        "title": "Wholesale Pricing for Developers",
+        "text": "A dedicated \"Builder\" tariff — the larger the order volume, the better the per-unit price."
+      },
+      {
+        "title": "Personal Project Manager",
+        "text": "One point of contact for the whole construction period: specification, colors, deadlines and delivery schedule."
+      },
+      {
+        "title": "Deliveries on Your Construction Schedule",
+        "text": "We plan production around handover deadlines — in batches, per entrance or per construction phase."
+      },
+      {
+        "title": "Delivery Across Ukraine",
+        "text": "Our own production in Poltava — securely packaged and delivered to your site in any safe city."
+      }
+    ],
+    "citiesTitle": "We Work with Developers in These Cities",
+    "citiesText": "We prepare a commercial proposal for your project regardless of city — here's where we already actively work with developers.",
+    "ctaTitle": "Planning a Development Project?",
+    "ctaText": "Leave a request — we'll prepare a commercial proposal for your project and construction timeline.",
+    "cityTitlePrefix": "IN WOOD Doors for Developers —",
+    "cityTitleSuffix": "Wholesale Supply",
+    "cityMetaPrefix": "Wholesale supply of IN WOOD doors for developers",
+    "cityMetaSuffix": "In-house production in Poltava, bulk pricing and delivery on your construction schedule.",
+    "cityIntro": "We supply interior doors wholesale for construction companies and developers — from a single project to an entire residential complex.",
+    "cityBackLink": "← Doors for Developers",
+    "cityCtaTitlePrefix": "Building",
+    "cityCtaTitleSuffix": "?",
+    "cityCtaText": "Leave a request — we'll calculate cost and delivery timeline for your project."
   }
 }

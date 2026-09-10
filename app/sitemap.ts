@@ -23,6 +23,8 @@ const paths = [
   ...blogPosts.ua.map((post) => `/blog/${post.slug}`),
   ...getCitiesWithDealers(dealers).map((c) => `/nashi-dileri/${c.slug}`),
   ...RECRUIT_CITIES.map((c) => `/staty-dylerom/${c.slug}`),
+  "/dlya-zabudovnykiv",
+  ...RECRUIT_CITIES.map((c) => `/dlya-zabudovnykiv/${c.slug}`),
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
