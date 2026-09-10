@@ -23,11 +23,12 @@ export default async function PortalLayout({ children }: { children: ReactNode }
 
   let role: string | null = null;
   let isOwner = false;
+  let hasSalaryAccess = false;
   let viewingAs: string | null = null;
   if (user) {
     const { data: profile } = await supabase
       .from("profiles")
-      .select("role, blocked, is_owner")
+      .select("role, blocked, is_owner, salary_access")
       .eq("id", user.id)
       .single();
     if (profile?.blocked) {
@@ -36,6 +37,7 @@ export default async function PortalLayout({ children }: { children: ReactNode }
     }
     role = profile?.role ?? null;
     isOwner = profile?.is_owner ?? false;
+    hasSalaryAccess = (profile?.salary_access ?? false) || isOwner;
 
     if (isOwner) {
       const jar = await cookies();
@@ -71,6 +73,11 @@ export default async function PortalLayout({ children }: { children: ReactNode }
                 {effectiveRole === "staff" && (
                   <Link href="/portal/overrides" className="text-white/85 hover:text-gold">
                     Перевизначення
+                  </Link>
+                )}
+                {hasSalaryAccess && (
+                  <Link href="/portal/salary" className="text-white/85 hover:text-gold">
+                    Зарплата
                   </Link>
                 )}
                 {effectiveIsOwner && (

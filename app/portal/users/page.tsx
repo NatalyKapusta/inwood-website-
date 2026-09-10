@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import { inviteUser, toggleUserAccess, updateUserRole } from "@/app/portal/actions";
+import { inviteUser, toggleUserAccess, toggleSalaryAccess, updateUserRole } from "@/app/portal/actions";
 import DeleteUserButton from "@/components/portal/DeleteUserButton";
 import { PORTAL_ROLES, roleLabels } from "@/lib/portalRole";
 
@@ -14,6 +14,8 @@ export default async function PortalUsersPage({
     unblocked?: string;
     deleted?: string;
     roleUpdated?: string;
+    salaryGranted?: string;
+    salaryRevoked?: string;
   };
 }) {
   const supabase = await createClient();
@@ -27,7 +29,7 @@ export default async function PortalUsersPage({
 
   const { data: allProfiles } = await supabase
     .from("profiles")
-    .select("id, email, full_name, company_name, role, blocked, created_at")
+    .select("id, email, full_name, company_name, role, blocked, salary_access, created_at")
     .order("created_at", { ascending: false });
 
   return (
@@ -65,6 +67,16 @@ export default async function PortalUsersPage({
       {searchParams.roleUpdated && (
         <p className="mt-4 rounded-lg bg-green-50 px-4 py-3 text-sm text-green-700">
           Роль оновлено
+        </p>
+      )}
+      {searchParams.salaryGranted && (
+        <p className="mt-4 rounded-lg bg-green-50 px-4 py-3 text-sm text-green-700">
+          Доступ до "Зарплата" надано
+        </p>
+      )}
+      {searchParams.salaryRevoked && (
+        <p className="mt-4 rounded-lg bg-green-50 px-4 py-3 text-sm text-green-700">
+          Доступ до "Зарплата" знято
         </p>
       )}
 
@@ -116,6 +128,7 @@ export default async function PortalUsersPage({
               <th className="px-4 py-3">Компанія</th>
               <th className="px-4 py-3">Роль</th>
               <th className="px-4 py-3">Доступ</th>
+              <th className="px-4 py-3">Зарплата</th>
               <th className="px-4 py-3" />
             </tr>
           </thead>
@@ -160,6 +173,26 @@ export default async function PortalUsersPage({
                     <span className="rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-700">
                       Активний
                     </span>
+                  )}
+                </td>
+                <td className="px-4 py-3">
+                  {p.id === user.id ? (
+                    <span className="rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-700">Є доступ</span>
+                  ) : (
+                    <form action={toggleSalaryAccess}>
+                      <input type="hidden" name="user_id" value={p.id} />
+                      <input type="hidden" name="grant" value={p.salary_access ? "0" : "1"} />
+                      <button
+                        type="submit"
+                        className={
+                          p.salary_access
+                            ? "rounded-full bg-gold px-3 py-1.5 text-xs font-semibold text-navy-dark transition hover:bg-gold-dim"
+                            : "rounded-full border border-navy-dim/30 px-3 py-1.5 text-xs font-semibold text-navy-dim transition hover:border-gold hover:text-gold-dim"
+                        }
+                      >
+                        {p.salary_access ? "Є доступ" : "Дати доступ"}
+                      </button>
+                    </form>
                   )}
                 </td>
                 <td className="px-4 py-3 text-right">

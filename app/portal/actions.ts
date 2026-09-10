@@ -201,6 +201,36 @@ export async function toggleUserAccess(formData: FormData) {
   redirect("/portal/users?" + (block ? "blocked" : "unblocked") + "=1");
 }
 
+// Лише власник: дати або забрати конкретній людині доступ до /portal/salary
+// (окремо від ролі/is_owner — точково, одній-двом людям).
+export async function toggleSalaryAccess(formData: FormData) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) redirect("/portal/login");
+
+  const { data: myProfile } = await supabase.from("profiles").select("is_owner").eq("id", user.id).single();
+  if (!myProfile?.is_owner) {
+    redirect("/portal/users?error=" + encodeURIComponent("Недостатньо прав"));
+  }
+
+  const targetId = String(formData.get("user_id") ?? "");
+  const grant = formData.get("grant") === "1";
+  if (!targetId) {
+    redirect("/portal/users?error=" + encodeURIComponent("Не вказано користувача"));
+  }
+
+  const admin = createAdminClient();
+  const { error } = await admin.from("profiles").update({ salary_access: grant }).eq("id", targetId);
+  if (error) {
+    redirect("/portal/users?error=" + encodeURIComponent(error.message));
+  }
+
+  revalidatePath("/portal/users");
+  redirect("/portal/users?" + (grant ? "salaryGranted" : "salaryRevoked") + "=1");
+}
+
 // Лише staff: повністю видалити користувача (можна одразу запросити той самий email заново).
 export async function deleteUserAccount(formData: FormData) {
   const supabase = await createClient();
