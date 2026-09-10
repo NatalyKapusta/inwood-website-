@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 import { locales, defaultLocale } from "./lib/i18n";
+import { resolveLegacyRedirect } from "./lib/legacyRedirects";
 
 function getLocaleFromPath(pathname: string) {
   return locales.find(
@@ -18,6 +19,19 @@ export async function middleware(request: NextRequest) {
     pathname.includes(".")
   ) {
     return NextResponse.next();
+  }
+
+  // Редіректи зі старого сайту inwood.com.ua — перевіряємо ПЕРШИМ, до
+  // загального правила локалі нижче, інакше воно переплутає старий слаг
+  // з новим (напр. /kontakti стало б /ua/kontakti, якого не існує,
+  // замість правильного /ua/kontakty).
+  const legacyTarget = resolveLegacyRedirect(pathname);
+  if (legacyTarget) {
+    const [newPathname, hash] = legacyTarget.split("#");
+    const url = request.nextUrl.clone();
+    url.pathname = newPathname;
+    url.hash = hash ?? "";
+    return NextResponse.redirect(url, 301);
   }
 
   // Закритий B2B-портал — без мовного префікса, живе поза [locale]
