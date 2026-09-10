@@ -150,7 +150,6 @@ export default function PartnershipLanding({ sentState }: { sentState: "partner"
         .pl header .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;gap:14px;flex-wrap:wrap;}
         .pl .logo{display:flex;align-items:center;gap:10px;}
         .pl .logo img{height:36px;width:auto;}
-        .pl .logo span{font-weight:800;font-size:18px;letter-spacing:.02em;}
         .pl .btn{display:inline-block;background:var(--gold);color:#14151C;border:none;padding:12px 24px;border-radius:8px;font-weight:800;font-size:14px;cursor:pointer;text-decoration:none;white-space:nowrap;transition:transform .25s ease, background .25s ease, box-shadow .25s ease;}
         .pl .btn:hover{background:#f0dcb4;transform:translateY(-2px);box-shadow:0 10px 24px -8px rgba(227,204,161,0.45);}
         .pl .btn:active{transform:translateY(0);}
@@ -337,8 +336,7 @@ export default function PartnershipLanding({ sentState }: { sentState: "partner"
         <div className="wrap">
           <div className="logo">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo/inwood-logo-white.svg" alt="IN WOOD" />
-            <span>IN WOOD</span>
+            <img src="/logo/inwood-logo-gold.svg" alt="IN WOOD" />
           </div>
           <a href="#form-section" className="btn">Стати партнером</a>
         </div>
@@ -804,8 +802,7 @@ export default function PartnershipLanding({ sentState }: { sentState: "partner"
           <div>
             <div className="logo" style={{ marginBottom: 12 }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo/inwood-logo-white.svg" alt="IN WOOD" style={{ height: 28, width: "auto" }} />
-              <span style={{ fontSize: 15 }}>IN WOOD</span>
+              <img src="/logo/inwood-logo-gold.svg" alt="IN WOOD" style={{ height: 28, width: "auto" }} />
             </div>
             <div className="fcontact">
               м. Полтава, провулок Спортивний, 4<br />
