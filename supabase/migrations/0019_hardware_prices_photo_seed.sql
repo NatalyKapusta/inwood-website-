@@ -86,7 +86,7 @@ update public.hardware_tariff_prices set photo = '/photos/furnitura/mvm/a-2028-s
 update public.hardware_tariff_prices set photo = '/photos/furnitura/mvm/a-2029-black.png' where brand = 'MVM' and article = 'A-2029 BLACK';
 update public.hardware_tariff_prices set photo = '/photos/furnitura/mvm/a-2029-mn.png' where brand = 'MVM' and article = 'A-2029 MN';
 update public.hardware_tariff_prices set photo = '/photos/furnitura/mvm/a-2030-black.png' where brand = 'MVM' and article = 'A-2030 BLACK';
-update public.hardware_tariff_prices set photo = '/photos/furnitura/mvm/декоративна-вставка-z-1440-white.png' where brand = 'MVM' and article = 'Декоративна вставка Z-1440 WHITE';
+update public.hardware_tariff_prices set photo = '/photos/furnitura/mvm/dekoratyvna-vstavka-z-1440-white.png' where brand = 'MVM' and article = 'Декоративна вставка Z-1440 WHITE';
 update public.hardware_tariff_prices set photo = '/photos/furnitura/mvm/z-1812-black.png' where brand = 'MVM' and article = 'Z-1812 BLACK';
 update public.hardware_tariff_prices set photo = '/photos/furnitura/mvm/z-1812-mc.png' where brand = 'MVM' and article = 'Z-1812 MC';
 update public.hardware_tariff_prices set photo = '/photos/furnitura/mvm/z-1813-black.png' where brand = 'MVM' and article = 'Z-1813 BLACK';
@@ -274,7 +274,7 @@ update public.hardware_tariff_prices set photo = '/photos/furnitura/mvm/p6p35-45
 update public.hardware_tariff_prices set photo = '/photos/furnitura/mvm/sd-100.png' where brand = 'MVM' and article = 'SD-100';
 update public.hardware_tariff_prices set photo = '/photos/furnitura/mvm/sdh-2-black.png' where brand = 'MVM' and article = 'SDH-2 BLACK';
 update public.hardware_tariff_prices set photo = '/photos/furnitura/mvm/sdh-2-ma.png' where brand = 'MVM' and article = 'SDH-2 MA';
-update public.hardware_tariff_prices set photo = '/photos/furnitura/mvm/1162-l-18-б-п-t5.png' where brand = 'MVM' and article = '1162 L-1.8 Б/П T5';
+update public.hardware_tariff_prices set photo = '/photos/furnitura/mvm/1162-l-18-b-p-t5.png' where brand = 'MVM' and article = '1162 L-1.8 Б/П T5';
 update public.hardware_tariff_prices set photo = '/photos/furnitura/mvm/c-140-sn.png' where brand = 'MVM' and article = 'C-140 SN';
 update public.hardware_tariff_prices set photo = '/photos/furnitura/mvm/c-140-ab.png' where brand = 'MVM' and article = 'C-140 AB';
 update public.hardware_tariff_prices set photo = '/photos/furnitura/mvm/dv35-55-16-mc.png' where brand = 'MVM' and article = 'DV35-55/16 MC';
