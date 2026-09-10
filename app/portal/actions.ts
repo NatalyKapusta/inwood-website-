@@ -31,12 +31,19 @@ export async function login(formData: FormData) {
     }
   }
 
+  // Без цього шапка порталу (app/portal/layout.tsx) може лишитись із
+  // кешованими даними попередньої сесії (роль/is_owner) після входу під
+  // іншим акаунтом в тому самому вікні — сторінка "Кабінет" вже показує
+  // актуальні дані (вона завжди динамічна), а меню — ні, поки не скинути
+  // клієнтський router cache для цього сегмента явно.
+  revalidatePath("/portal", "layout");
   redirect("/portal");
 }
 
 export async function logout() {
   const supabase = await createClient();
   await supabase.auth.signOut();
+  revalidatePath("/portal", "layout");
   redirect("/portal/login");
 }
 
