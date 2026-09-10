@@ -1,3 +1,5 @@
+import { CITY_SLUGS, CITY_NAMES } from "./dealers";
+
 // Міста, де IN WOOD ще не має дилерів (перевірено — немає збігів у
 // data/dealers.json) і де ми свідомо шукаємо партнера: сторінки націлені
 // на запит "стати дилером/дистриб'ютором", а не на "купити двері в місті".
@@ -31,9 +33,40 @@ export const RECRUIT_CITIES: RecruitCity[] = [
   { city: "Вишневе", slug: "vyshneve", ru: "Вишневое", en: "Vyshneve", inCityUa: "у Вишневому", inCityRu: "в Вишневом" },
 ];
 
-export function getRecruitCityDisplayName(c: RecruitCity, locale: "ua" | "ru" | "en"): string {
+export function getRecruitCityDisplayName(
+  c: { city: string; ru: string; en: string },
+  locale: "ua" | "ru" | "en"
+): string {
   if (locale === "ua") return c.city;
   return c[locale];
+}
+
+// "Шукаємо дилера" — на відміну від RECRUIT_CITIES (де немає жодного
+// дилера), тут навмисно об'єднуємо їх з містами, де дилер вже є: більшість
+// міст цілком може підтримати кількох дилерів одночасно, і власниця
+// бізнесу хоче активно шукати ще там теж. Не використовується для сторінок
+// "для забудовників" — там лишаємо тільки міста без дилера, щоб не
+// підривати оптовий бізнес існуючого партнера в тому ж місті.
+export type DealerRecruitTarget = { city: string; slug: string; ru: string; en: string };
+
+export function getAllDealerRecruitCities(): DealerRecruitTarget[] {
+  const fromRecruit: DealerRecruitTarget[] = RECRUIT_CITIES.map((c) => ({
+    city: c.city,
+    slug: c.slug,
+    ru: c.ru,
+    en: c.en,
+  }));
+  const fromDealerCities: DealerRecruitTarget[] = Object.entries(CITY_SLUGS).map(([city, slug]) => ({
+    city,
+    slug,
+    ru: CITY_NAMES[city]?.ru ?? city,
+    en: CITY_NAMES[city]?.en ?? city,
+  }));
+  return [...fromRecruit, ...fromDealerCities];
+}
+
+export function findDealerRecruitCity(slug: string): DealerRecruitTarget | undefined {
+  return getAllDealerRecruitCities().find((c) => c.slug === slug);
 }
 
 // "у/в [Місто]" з правильним відмінком — для EN просто "in [City]", бо

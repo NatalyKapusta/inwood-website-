@@ -8,7 +8,7 @@ import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { collections } from "@/lib/products";
 import { getPricesVisible } from "@/lib/siteSettings";
-import { RECRUIT_CITIES, getRecruitCityDisplayName } from "@/lib/recruitCities";
+import { getAllDealerRecruitCities, getRecruitCityDisplayName } from "@/lib/recruitCities";
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
@@ -223,7 +223,7 @@ export default async function SpivpratsyaPage({
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-navy-dim">{t.recruitCitiesText}</p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
-          {RECRUIT_CITIES.map((rc) => (
+          {getAllDealerRecruitCities().map((rc) => (
             <Link
               key={rc.slug}
               href={`/${params.locale}/staty-dylerom/${rc.slug}`}

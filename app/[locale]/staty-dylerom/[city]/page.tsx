@@ -3,11 +3,11 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { locales } from "@/lib/i18n";
-import { RECRUIT_CITIES, findRecruitCity, getRecruitCityDisplayName } from "@/lib/recruitCities";
+import { getAllDealerRecruitCities, findDealerRecruitCity, getRecruitCityDisplayName } from "@/lib/recruitCities";
 import ContactCta from "@/components/ContactCta";
 
 export function generateStaticParams() {
-  return locales.flatMap((locale) => RECRUIT_CITIES.map((c) => ({ locale, city: c.slug })));
+  return locales.flatMap((locale) => getAllDealerRecruitCities().map((c) => ({ locale, city: c.slug })));
 }
 
 export async function generateMetadata({
@@ -15,7 +15,7 @@ export async function generateMetadata({
 }: {
   params: { locale: Locale; city: string };
 }) {
-  const found = findRecruitCity(params.city);
+  const found = findDealerRecruitCity(params.city);
   if (!found) return {};
   const dict = await getDictionary(params.locale);
   const t = dict.dealerRecruit;
@@ -35,7 +35,7 @@ export default async function DealerRecruitCityPage({
   params: { locale: Locale; city: string };
   searchParams: { sent?: string };
 }) {
-  const found = findRecruitCity(params.city);
+  const found = findDealerRecruitCity(params.city);
   if (!found) {
     return null;
   }

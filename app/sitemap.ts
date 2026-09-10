@@ -4,7 +4,7 @@ import { SITE_URL, hreflang } from "@/lib/seo";
 import { blogPosts } from "@/data/blog";
 import dealers from "@/data/dealers.json";
 import { getCitiesWithDealers } from "@/lib/dealers";
-import { RECRUIT_CITIES } from "@/lib/recruitCities";
+import { RECRUIT_CITIES, getAllDealerRecruitCities } from "@/lib/recruitCities";
 
 const paths = [
   "",
@@ -22,7 +22,7 @@ const paths = [
   "/kontakty",
   ...blogPosts.ua.map((post) => `/blog/${post.slug}`),
   ...getCitiesWithDealers(dealers).map((c) => `/nashi-dileri/${c.slug}`),
-  ...RECRUIT_CITIES.map((c) => `/staty-dylerom/${c.slug}`),
+  ...getAllDealerRecruitCities().map((c) => `/staty-dylerom/${c.slug}`),
   "/dlya-zabudovnykiv",
   ...RECRUIT_CITIES.map((c) => `/dlya-zabudovnykiv/${c.slug}`),
 ];
