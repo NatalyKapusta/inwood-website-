@@ -350,8 +350,8 @@ export default function SalaryCalculator({ initialPeople }: { initialPeople: Sal
                 <div className="px-5 py-3">
                   <div
                     className={
-                      "grid gap-2 pb-1 text-[11px] font-bold uppercase tracking-wide text-navy-dim " +
-                      (p.mode === "split" ? "grid-cols-[100px_1fr_120px_90px_28px]" : "grid-cols-[100px_1fr_120px_28px]")
+                      "hidden gap-2 pb-1 text-[11px] font-bold uppercase tracking-wide text-navy-dim sm:grid " +
+                      (p.mode === "split" ? "sm:grid-cols-[100px_1fr_120px_90px_28px]" : "sm:grid-cols-[100px_1fr_120px_28px]")
                     }
                   >
                     <span>Дата</span>
@@ -364,35 +364,36 @@ export default function SalaryCalculator({ initialPeople }: { initialPeople: Sal
                     <div
                       key={o.id}
                       className={
-                        "grid items-center gap-2 border-t border-navy-dim/10 py-1.5 " +
-                        (p.mode === "split" ? "grid-cols-[100px_1fr_120px_90px_28px]" : "grid-cols-[100px_1fr_120px_28px]")
+                        "flex flex-wrap items-center gap-x-2 gap-y-1 border-t border-navy-dim/10 py-2 sm:grid sm:flex-nowrap sm:gap-2 sm:py-1.5 " +
+                        (p.mode === "split" ? "sm:grid-cols-[100px_1fr_120px_90px_28px]" : "sm:grid-cols-[100px_1fr_120px_28px]")
                       }
                     >
-                      <input
-                        type="date"
-                        value={o.order_date ?? ""}
-                        onChange={(e) => updateOrderField(p.id, o.id, "order_date", e.target.value)}
-                        className="w-full rounded border-none bg-transparent text-xs text-navy-dim outline-none focus:bg-panel-alt"
-                      />
                       <input
                         value={o.comment}
                         onChange={(e) => updateOrderField(p.id, o.id, "comment", e.target.value)}
                         placeholder="№ замовлення / клієнт"
-                        className="w-full rounded border-none bg-transparent text-sm text-navy-dark outline-none focus:bg-panel-alt"
+                        className="order-1 w-full rounded border-none bg-transparent text-sm text-navy-dark outline-none focus:bg-panel-alt sm:order-2 sm:w-auto"
+                      />
+                      <input
+                        type="date"
+                        value={o.order_date ?? ""}
+                        onChange={(e) => updateOrderField(p.id, o.id, "order_date", e.target.value)}
+                        className="order-2 w-[132px] shrink-0 rounded border-none bg-transparent text-xs text-navy-dim outline-none focus:bg-panel-alt sm:order-1 sm:w-full"
                       />
                       <input
                         type="number"
                         step="0.01"
                         value={o.amount}
                         onChange={(e) => updateOrderField(p.id, o.id, "amount", Number(e.target.value))}
-                        className="w-full rounded border-none bg-transparent text-right font-mono text-sm tabular-nums text-navy-dark outline-none focus:bg-panel-alt"
+                        placeholder="сума"
+                        className="order-3 w-24 shrink-0 rounded border-none bg-transparent text-right font-mono text-sm tabular-nums text-navy-dark outline-none focus:bg-panel-alt sm:w-full"
                       />
                       {p.mode === "split" && (
                         <select
                           value={o.kind}
                           onChange={(e) => updateOrderField(p.id, o.id, "kind", e.target.value as "new" | "old")}
                           className={
-                            "rounded border px-1.5 py-1 text-xs font-semibold " +
+                            "order-4 shrink-0 rounded border px-1.5 py-1 text-xs font-semibold " +
                             (o.kind === "old" ? "border-orange-200 text-orange-700" : "border-green-200 text-green-700")
                           }
                         >
@@ -402,7 +403,7 @@ export default function SalaryCalculator({ initialPeople }: { initialPeople: Sal
                       )}
                       <button
                         onClick={() => removeOrder(p.id, o.id)}
-                        className="justify-self-end text-navy-dim hover:text-red-600 print:hidden"
+                        className="order-5 shrink-0 text-navy-dim hover:text-red-600 print:hidden sm:justify-self-end"
                       >
                         ✕
                       </button>
