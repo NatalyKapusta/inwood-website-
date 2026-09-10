@@ -10,6 +10,8 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
+const GA_MEASUREMENT_ID = "G-R75X510R1Z";
+
 async function getCommonDict(locale: Locale) {
   // Поки перекладено лише UA — RU/EN дублюють UA-текст до перекладу.
   try {
@@ -67,6 +69,18 @@ export default async function LocaleLayout({
           src="https://keepincrm.chat/chat-widget.js?widgetId=bSz1XhHCMkhe"
           strategy="lazyOnload"
         />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
       </body>
     </html>
   );
