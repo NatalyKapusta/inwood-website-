@@ -24,6 +24,11 @@ export const RECRUIT_CITIES: RecruitCity[] = [
   { city: "Чернівці", slug: "chernivtsi", ru: "Черновцы", en: "Chernivtsi", inCityUa: "в Чернівцях", inCityRu: "в Черновцах" },
   { city: "Хмельницький", slug: "khmelnytskyi", ru: "Хмельницкий", en: "Khmelnytskyi", inCityUa: "у Хмельницькому", inCityRu: "в Хмельницком" },
   { city: "Кропивницький", slug: "kropyvnytskyi", ru: "Кропивницкий", en: "Kropyvnytskyi", inCityUa: "у Кропивницькому", inCityRu: "в Кропивницком" },
+  // Міста-супутники Києва з активним будівництвом новобудов — не обласні
+  // центри, але саме тут зараз найбільший попит на двері для забудовників.
+  { city: "Ірпінь", slug: "irpin", ru: "Ирпень", en: "Irpin", inCityUa: "в Ірпені", inCityRu: "в Ирпене" },
+  { city: "Буча", slug: "bucha", ru: "Буча", en: "Bucha", inCityUa: "у Бучі", inCityRu: "в Буче" },
+  { city: "Вишневе", slug: "vyshneve", ru: "Вишневое", en: "Vyshneve", inCityUa: "у Вишневому", inCityRu: "в Вишневом" },
 ];
 
 export function getRecruitCityDisplayName(c: RecruitCity, locale: "ua" | "ru" | "en"): string {
