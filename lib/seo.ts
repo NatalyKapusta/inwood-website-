@@ -69,10 +69,15 @@ export function buildMetadata({
 export function organizationJsonLd() {
   return {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    // Подвійний тип: Organization (для бренду й експорту) + HomeGoodsStore
+    // (для локального пошуку/Google Maps — "двері Полтава" тощо). Координати —
+    // геокодинг адреси провулок Спортивний, 4 (звірити вручну в Google Maps
+    // при створенні Google Business Profile).
+    "@type": ["Organization", "HomeGoodsStore"],
     name: "IN WOOD",
     url: SITE_URL,
     logo: `${SITE_URL}/logo/inwood-logo-gold.svg`,
+    image: `${SITE_URL}/og-image.jpg`,
     description:
       "Виробник міжкімнатних дверей повного циклу — Полтава, Україна. Дилерська мережа та експорт до Великої Британії, Франції, Швейцарії, Литви та Латвії.",
     address: {
@@ -81,6 +86,19 @@ export function organizationJsonLd() {
       addressLocality: "Полтава",
       addressCountry: "UA",
     },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 49.60915,
+      longitude: 34.51545,
+    },
+    hasMap: "https://www.google.com/maps?q=Полтава,+провулок+Спортивний,+4",
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:00",
+      closes: "17:00",
+    },
+    priceRange: "₴₴",
     // Реальні країни експорту (підтверджено власником) — конкретні країни
     // замість загального "worldwide" дають Google/AI-пошуковикам точніший
     // сигнал про те, куди саме постачається продукція.

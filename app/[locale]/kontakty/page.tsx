@@ -5,6 +5,7 @@ import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import PhoneInput from "@/components/PhoneInput";
 import SocialLinks from "@/components/SocialLinks";
 import MailIcon from "@/components/MailIcon";
+import ShowroomMap from "@/components/ShowroomMap";
 import { submitLead } from "@/app/actions/lead";
 import LeadConversionTracker from "@/components/LeadConversionTracker";
 
@@ -153,6 +154,7 @@ export default async function KontaktyPage({
             <p className="mt-1 text-navy-dark">{c.hours}</p>
           </div>
           <SocialLinks tone="light" />
+          <ShowroomMap address={c.address} getDirectionsLabel={c.getDirections} />
         </div>
 
         <div className="rounded-xl bg-panel-alt p-6">
