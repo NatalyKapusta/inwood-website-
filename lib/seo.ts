@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { locales, type Locale } from "@/lib/i18n";
 import type { Collection } from "@/lib/products";
 
-// Реальна адреса сайту зараз — Vercel (домен inwood.com.ua ще не перенесено).
-// Коли домен перенесуть, змінити тут або задати env-змінну NEXT_PUBLIC_SITE_URL.
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://inwood-website.vercel.app";
+// Готово до перенесення на inwood.com.ua — сайт весь час посилається сюди
+// (sitemap, canonical, OG, редиректи авторизації), незалежно від того, з
+// якого домену його фактично відкривають. Якщо перенесення скасують або
+// відкладуть — задати env-змінну NEXT_PUBLIC_SITE_URL зі старою адресою.
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://inwood.com.ua";
 
 const ogLocale: Record<Locale, string> = {
   ua: "uk_UA",

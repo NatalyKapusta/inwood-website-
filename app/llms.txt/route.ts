@@ -49,7 +49,6 @@ Standard slab sizes: height 1800-2100 mm (max 2300 mm, 50 mm step), width 600-90
 
 ## Notes
 
-- This site is currently hosted at ${SITE_URL}; the production domain inwood.com.ua has not yet been migrated to it.
 - Pricing shown publicly is retail pricing and may be hidden or shown at the manufacturer's discretion; wholesale/dealer pricing is only available through the partner portal.
 `;
 }
