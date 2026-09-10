@@ -173,19 +173,19 @@ export default function QuoteBuilder({
   useEffect(() => {
     const supabase = createClient();
     (async () => {
-      let [panels, addons, services, hardware] = await Promise.all([
+      const [panels, addons, services, hardware] = await Promise.all([
         supabase.from("product_tariff_prices").select("product_code, tariff, price"),
         supabase.from("line_addon_prices").select("collection, addon_type, item_label, tariff, price"),
         supabase.from("service_tariff_prices").select("service_key, tariff, price"),
-        supabase.from("hardware_tariff_prices").select("brand, category, article, name, material, tariff, price, photo"),
-      ]);
-      // Фото — окрема колонка (0018), додана пізніше за основну таблицю (0015/0016).
-      // Якщо її ще нема — пробуємо без неї, а не ламаємо весь розділ фурнітури.
-      if (hardware.error) {
-        hardware = await supabase
+        // Фурнітура — 485 позицій × 6 тарифів (2910 рядків), тому явно
+        // задаємо діапазон: без .range() PostgREST мовчки обрізає видачу
+        // своїм лімітом за замовчуванням, і останні бренди (ABUS, AGB) просто
+        // не доїжджають до клієнта — саме через це вони зникали зі списку.
+        supabase
           .from("hardware_tariff_prices")
-          .select("brand, category, article, name, material, tariff, price");
-      }
+          .select("brand, category, article, name, material, tariff, price, photo")
+          .range(0, 4999),
+      ]);
       if (panels.error || addons.error || services.error) {
         setLoadError(
           panels.error?.message || addons.error?.message || services.error?.message || "Помилка завантаження цін"
