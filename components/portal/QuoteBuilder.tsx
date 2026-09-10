@@ -19,6 +19,8 @@ import {
   isAluEdgeVariant,
   isAddonCompatible,
   hardwareCategoryLabels,
+  HARDWARE_BRAND_LABELS,
+  HARDWARE_BRAND_ORDER,
   type Tariff,
   type PanelRow,
   type AddonRow,
@@ -73,9 +75,12 @@ const FLAT_LINE_CATEGORIES = [
 
 // Фурнітура (ручки/накладки/завіси/упори/механізми/циліндри/розсувні системи/
 // аксесуари) — окрема позиція без прив'язки до моделі дверей, ціни лежать
-// у hardware_tariff_prices. Джерело: прайс-лист МВМ (MVM/ABUS/AGB/Buonelle).
-const HARDWARE_KEY = "hardware";
-const HARDWARE_LABEL = "Фурнітура (ручки, завіси, механізми тощо)";
+// у hardware_tariff_prices. Розбита на окремі "лінії" по виробнику (MVM /
+// Anselmi+AGB / ABUS), так само як в оригінальному калькуляторі — так одразу
+// видно, чий це товар, а не тільки артикул.
+const HARDWARE_KEY_PREFIX = "hardware:";
+const hardwareKeyForBrand = (brand: string) => `${HARDWARE_KEY_PREFIX}${brand}`;
+const hardwareBrandFromKey = (key: string) => key.slice(HARDWARE_KEY_PREFIX.length);
 const HARDWARE_CATEGORY_ORDER: HardwareCategory[] = [
   "ruchky",
   "nakladky",
@@ -168,12 +173,19 @@ export default function QuoteBuilder({
   useEffect(() => {
     const supabase = createClient();
     (async () => {
-      const [panels, addons, services, hardware] = await Promise.all([
+      let [panels, addons, services, hardware] = await Promise.all([
         supabase.from("product_tariff_prices").select("product_code, tariff, price"),
         supabase.from("line_addon_prices").select("collection, addon_type, item_label, tariff, price"),
         supabase.from("service_tariff_prices").select("service_key, tariff, price"),
-        supabase.from("hardware_tariff_prices").select("brand, category, article, name, material, tariff, price"),
+        supabase.from("hardware_tariff_prices").select("brand, category, article, name, material, tariff, price, photo"),
       ]);
+      // Фото — окрема колонка (0018), додана пізніше за основну таблицю (0015/0016).
+      // Якщо її ще нема — пробуємо без неї, а не ламаємо весь розділ фурнітури.
+      if (hardware.error) {
+        hardware = await supabase
+          .from("hardware_tariff_prices")
+          .select("brand, category, article, name, material, tariff, price");
+      }
       if (panels.error || addons.error || services.error) {
         setLoadError(
           panels.error?.message || addons.error?.message || services.error?.message || "Помилка завантаження цін"
@@ -186,7 +198,14 @@ export default function QuoteBuilder({
       setServiceRows((services.data ?? []) as ServiceRow[]);
       // Фурнітура необов'язкова — якщо таблиця ще не створена (0015/0016 не виконані),
       // просто не показуємо розділ, а не ламаємо весь конструктор КП.
-      if (!hardware.error) setHardwareRows((hardware.data ?? []) as HardwareRow[]);
+      if (!hardware.error) {
+        setHardwareRows(
+          ((hardware.data ?? []) as Array<Omit<HardwareRow, "photo"> & { photo?: string | null }>).map((r) => ({
+            ...r,
+            photo: r.photo ?? null,
+          }))
+        );
+      }
       let tariffsAvailable = Array.from(new Set((panels.data ?? []).map((r) => r.tariff))) as Tariff[];
       if (allowedTariffs) tariffsAvailable = tariffsAvailable.filter((t) => allowedTariffs.includes(t));
       if (tariffsAvailable.length > 0) setTariff(tariffsAvailable[0]);
@@ -203,8 +222,24 @@ export default function QuoteBuilder({
   const isPogonazhni = collectionKey === POGONAZHNI_KEY;
   const flatLine = FLAT_LINE_CATEGORIES.find((c) => c.key === collectionKey);
   const isFlatLine = !!flatLine;
-  const isHardwareLine = collectionKey === HARDWARE_KEY;
+  const isHardwareLine = collectionKey.startsWith(HARDWARE_KEY_PREFIX);
+  const hardwareBrand = isHardwareLine ? hardwareBrandFromKey(collectionKey) : "";
   const isSpecialLine = isPogonazhni || isFlatLine || isHardwareLine;
+
+  // При переключенні лінії фурнітури (MVM/Anselmi+AGB/ABUS) поточна категорія
+  // може не існувати для нового бренду (напр. ABUS — лише циліндри) —
+  // переключаємось на першу доступну, щоб список позицій не лишався порожнім.
+  useEffect(() => {
+    if (!isHardwareLine) return;
+    const categoriesForBrand = HARDWARE_CATEGORY_ORDER.filter((c) =>
+      hardwareRows.some((r) => r.brand === hardwareBrand && r.category === c)
+    );
+    if (categoriesForBrand.length > 0 && !categoriesForBrand.includes(hardwareCategory)) {
+      setHardwareCategory(categoriesForBrand[0]);
+      setHardwareArticle("");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isHardwareLine, hardwareBrand, hardwareRows]);
   const isHiddenDoors = collectionKey === "hidden-doors";
   const models = collections[collectionKey]?.models ?? [];
   const currentModel = models.find((m) => m.code === modelCode);
@@ -260,8 +295,14 @@ export default function QuoteBuilder({
     ? panelRows.filter((r) => r.product_code.startsWith(flatLine.prefix) && r.tariff === tariff)
     : [];
 
+  const availableHardwareBrands = HARDWARE_BRAND_ORDER.filter((b) =>
+    hardwareRows.some((r) => r.brand === b)
+  );
+  const hardwareCategoriesForBrand = HARDWARE_CATEGORY_ORDER.filter((c) =>
+    hardwareRows.some((r) => r.brand === hardwareBrand && r.category === c)
+  );
   const hardwareItemOptions = hardwareRows.filter(
-    (r) => r.category === hardwareCategory && r.tariff === tariff
+    (r) => r.brand === hardwareBrand && r.category === hardwareCategory && r.tariff === tariff
   );
   const selectedHardware = hardwareItemOptions.find((r) => r.article === hardwareArticle);
 
@@ -289,9 +330,10 @@ export default function QuoteBuilder({
     }
     if (isHardwareLine) {
       if (!hardwareArticle || !tariff || !selectedHardware) return [];
+      const brandLabel = HARDWARE_BRAND_LABELS[selectedHardware.brand]?.replace("Фурнітура ", "") ?? selectedHardware.brand;
       const label = `${selectedHardware.article} — ${selectedHardware.name}${
         selectedHardware.material ? ` (${selectedHardware.material})` : ""
-      }`;
+      } [${brandLabel}]`;
       return [{ label, unitPrice: selectedHardware.price }];
     }
     if (!modelCode || !tariff) return [];
@@ -442,10 +484,10 @@ export default function QuoteBuilder({
       if (!hardwareArticle || previewRows.length === 0) return;
       const position: QuotePosition = {
         id: crypto.randomUUID(),
-        collectionLabel: HARDWARE_LABEL,
+        collectionLabel: HARDWARE_BRAND_LABELS[hardwareBrand] ?? "Фурнітура",
         modelCode: hardwareCategoryLabels[hardwareCategory],
         colorLabel: "",
-        photo: undefined,
+        photo: selectedHardware?.photo ?? undefined,
         qty,
         rows: previewRows.map((r) => ({ label: r.label, unitPrice: r.unitPrice, qty, amount: r.unitPrice * qty, photo: r.photo })),
       };
@@ -757,7 +799,11 @@ export default function QuoteBuilder({
                   {c.label}
                 </option>
               ))}
-              {hardwareRows.length > 0 && <option value={HARDWARE_KEY}>{HARDWARE_LABEL}</option>}
+              {availableHardwareBrands.map((b) => (
+                <option key={b} value={hardwareKeyForBrand(b)}>
+                  {HARDWARE_BRAND_LABELS[b] ?? b}
+                </option>
+              ))}
             </select>
 
             {isFlatLine && (
@@ -832,7 +878,7 @@ export default function QuoteBuilder({
                   }}
                   className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
                 >
-                  {HARDWARE_CATEGORY_ORDER.map((c) => (
+                  {hardwareCategoriesForBrand.map((c) => (
                     <option key={c} value={c}>
                       {hardwareCategoryLabels[c]}
                     </option>
@@ -850,8 +896,29 @@ export default function QuoteBuilder({
                     </option>
                   ))}
                 </select>
-                {selectedHardware?.material && (
-                  <p className="text-xs text-navy-dim">{selectedHardware.material}</p>
+                {selectedHardware && (
+                  <div className="flex items-start gap-3 rounded-lg bg-panel-alt p-2">
+                    {selectedHardware.photo ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={selectedHardware.photo}
+                        alt={selectedHardware.name}
+                        className="h-20 w-20 shrink-0 rounded-md border border-navy-dim/10 bg-panel object-contain p-1"
+                      />
+                    ) : (
+                      <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-md border border-navy-dim/10 bg-panel text-center text-[10px] text-navy-dim">
+                        Немає фото
+                      </div>
+                    )}
+                    <div className="min-w-0">
+                      <span className="inline-block rounded-full bg-navy-dark px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-gold">
+                        {HARDWARE_BRAND_LABELS[selectedHardware.brand]?.replace("Фурнітура ", "") ?? selectedHardware.brand}
+                      </span>
+                      {selectedHardware.material && (
+                        <p className="mt-1 text-xs text-navy-dim">{selectedHardware.material}</p>
+                      )}
+                    </div>
+                  </div>
                 )}
               </>
             )}

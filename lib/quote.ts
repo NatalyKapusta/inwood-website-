@@ -50,7 +50,18 @@ export type HardwareRow = {
   material: string;
   tariff: Tariff;
   price: number;
+  photo: string | null;
 };
+
+// Фурнітура згрупована по виробнику окремими "лініями" (як в оригінальному
+// калькуляторі) — так консультант одразу бачить, чий це товар, а не лише
+// артикул. brand у hardware_tariff_prices відповідає ключам цього обʼєкта.
+export const HARDWARE_BRAND_LABELS: Record<string, string> = {
+  MVM: "Фурнітура MVM",
+  AGB_BUONELLE: "Фурнітура Anselmi + AGB",
+  ABUS: "Фурнітура ABUS",
+};
+export const HARDWARE_BRAND_ORDER = ["MVM", "AGB_BUONELLE", "ABUS"];
 
 export type VariantType = "base" | "alu" | "alu-inside" | "ral";
 
