@@ -8,7 +8,9 @@ import { submitPartnerForm, submitCatalogForm } from "./actions";
 
 const STANDARD_WIDTHS_TEXT = STANDARD_WIDTHS.join(", ") + " мм";
 const STANDARD_HEIGHTS_TEXT = `${STANDARD_HEIGHTS[0]}–${STANDARD_HEIGHTS[STANDARD_HEIGHTS.length - 1]} мм`;
-const NONSTD_HEIGHTS_TEXT = `${NONSTD_HEIGHTS[0]} мм до ${NONSTD_HEIGHTS[NONSTD_HEIGHTS.length - 1]} мм`;
+const NONSTD_WIDTHS_TEXT = NONSTD_WIDTHS.join(", ") + " мм";
+const NONSTD_HEIGHTS_TEXT = NONSTD_HEIGHTS.join(", ") + " мм";
+const NONSTD_SURCHARGE_TEXT = `+${Math.round((NONSTD_SURCHARGE - 1) * 100)}%`;
 
 const DEMO_MODEL_CODES = ["ET-01", "ET-02"];
 const demoModels = (collections.etalon.models ?? []).filter((m) => DEMO_MODEL_CODES.includes(m.code));
@@ -571,7 +573,10 @@ export default function PartnershipLanding({ sentState }: { sentState: "partner"
                   <li>Ширина без доплати: {STANDARD_WIDTHS_TEXT} (крок 50 мм)</li>
                   <li>Висота без доплати: {STANDARD_HEIGHTS_TEXT} (крок 50 мм)</li>
                 </ul>
-                <span className="note">*Максимальна висота: від {NONSTD_HEIGHTS_TEXT} (за додаткову оплату)</span>
+                <span className="note">
+                  *Нестандартні розміри (ширина {NONSTD_WIDTHS_TEXT}, висота {NONSTD_HEIGHTS_TEXT}) — з доплатою{" "}
+                  {NONSTD_SURCHARGE_TEXT} до вартості полотна
+                </span>
               </div>
             </div>
             <div className="strength-item reveal">
@@ -806,8 +811,7 @@ export default function PartnershipLanding({ sentState }: { sentState: "partner"
             </div>
             <div className="fcontact">
               м. Полтава, провулок Спортивний, 4<br />
-              <a href="mailto:info@inwood.com.ua">info@inwood.com.ua</a><br />
-              <a href="tel:+380508803841">+380 (50) 880-38-41</a>
+              <a href="#form-section">Залишити заявку на партнерство →</a>
             </div>
           </div>
           <div className="fnote">Виробник міжкімнатних дверей<br />Партнерська програма 2026</div>
