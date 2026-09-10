@@ -18,10 +18,13 @@ import {
   positionTotal,
   isAluEdgeVariant,
   isAddonCompatible,
+  hardwareCategoryLabels,
   type Tariff,
   type PanelRow,
   type AddonRow,
   type ServiceRow,
+  type HardwareRow,
+  type HardwareCategory,
   type QuotePosition,
   type ModelVariant,
   type ModelVariantsData,
@@ -68,6 +71,23 @@ const FLAT_LINE_CATEGORIES = [
   { key: "nakladka", label: "Дверна накладка (метал. двері, 10 мм)", prefix: "NAKLADKA — " },
 ] as const;
 
+// Фурнітура (ручки/накладки/завіси/упори/механізми/циліндри/розсувні системи/
+// аксесуари) — окрема позиція без прив'язки до моделі дверей, ціни лежать
+// у hardware_tariff_prices. Джерело: прайс-лист МВМ (MVM/ABUS/AGB/Buonelle).
+const HARDWARE_KEY = "hardware";
+const HARDWARE_LABEL = "Фурнітура (ручки, завіси, механізми тощо)";
+const HARDWARE_CATEGORY_ORDER: HardwareCategory[] = [
+  "ruchky",
+  "nakladky",
+  "zavisy",
+  "upory",
+  "mekhanizmy",
+  "tsylindry",
+  "rozsuvna",
+  "aksesuary",
+  "inshe",
+];
+
 // Розміри полотна за каталогом IN WOOD — однакові для всіх ліній (ETALON/NOMINAL/
 // FREZZATTI/PERFETTO/двері під фарбування). Ширина/висота понад стандарт доступні
 // прямо у списку, але автоматично додають +20% (той самий NONSTD_SURCHARGE) —
@@ -91,6 +111,7 @@ export default function QuoteBuilder({
   const [panelRows, setPanelRows] = useState<PanelRow[]>([]);
   const [addonRows, setAddonRows] = useState<AddonRow[]>([]);
   const [serviceRows, setServiceRows] = useState<ServiceRow[]>([]);
+  const [hardwareRows, setHardwareRows] = useState<HardwareRow[]>([]);
 
   const [tariff, setTariff] = useState<Tariff | "">("");
   const [clientName, setClientName] = useState("");
@@ -109,6 +130,8 @@ export default function QuoteBuilder({
   const [pogType, setPogType] = useState<PogonazhniType>("korob");
   const [pogItem, setPogItem] = useState("");
   const [flatItemCode, setFlatItemCode] = useState("");
+  const [hardwareCategory, setHardwareCategory] = useState<HardwareCategory>("ruchky");
+  const [hardwareArticle, setHardwareArticle] = useState("");
   const [modelCode, setModelCode] = useState("");
   const [variantCode, setVariantCode] = useState("");
   const [colorLabel, setColorLabel] = useState("");
@@ -145,10 +168,11 @@ export default function QuoteBuilder({
   useEffect(() => {
     const supabase = createClient();
     (async () => {
-      const [panels, addons, services] = await Promise.all([
+      const [panels, addons, services, hardware] = await Promise.all([
         supabase.from("product_tariff_prices").select("product_code, tariff, price"),
         supabase.from("line_addon_prices").select("collection, addon_type, item_label, tariff, price"),
         supabase.from("service_tariff_prices").select("service_key, tariff, price"),
+        supabase.from("hardware_tariff_prices").select("brand, category, article, name, material, tariff, price"),
       ]);
       if (panels.error || addons.error || services.error) {
         setLoadError(
@@ -160,6 +184,9 @@ export default function QuoteBuilder({
       setPanelRows((panels.data ?? []) as PanelRow[]);
       setAddonRows((addons.data ?? []) as AddonRow[]);
       setServiceRows((services.data ?? []) as ServiceRow[]);
+      // Фурнітура необов'язкова — якщо таблиця ще не створена (0015/0016 не виконані),
+      // просто не показуємо розділ, а не ламаємо весь конструктор КП.
+      if (!hardware.error) setHardwareRows((hardware.data ?? []) as HardwareRow[]);
       let tariffsAvailable = Array.from(new Set((panels.data ?? []).map((r) => r.tariff))) as Tariff[];
       if (allowedTariffs) tariffsAvailable = tariffsAvailable.filter((t) => allowedTariffs.includes(t));
       if (tariffsAvailable.length > 0) setTariff(tariffsAvailable[0]);
@@ -176,7 +203,8 @@ export default function QuoteBuilder({
   const isPogonazhni = collectionKey === POGONAZHNI_KEY;
   const flatLine = FLAT_LINE_CATEGORIES.find((c) => c.key === collectionKey);
   const isFlatLine = !!flatLine;
-  const isSpecialLine = isPogonazhni || isFlatLine;
+  const isHardwareLine = collectionKey === HARDWARE_KEY;
+  const isSpecialLine = isPogonazhni || isFlatLine || isHardwareLine;
   const isHiddenDoors = collectionKey === "hidden-doors";
   const models = collections[collectionKey]?.models ?? [];
   const currentModel = models.find((m) => m.code === modelCode);
@@ -232,6 +260,11 @@ export default function QuoteBuilder({
     ? panelRows.filter((r) => r.product_code.startsWith(flatLine.prefix) && r.tariff === tariff)
     : [];
 
+  const hardwareItemOptions = hardwareRows.filter(
+    (r) => r.category === hardwareCategory && r.tariff === tariff
+  );
+  const selectedHardware = hardwareItemOptions.find((r) => r.article === hardwareArticle);
+
   function priceOf(list: AddonRow[], label: string) {
     return list.find((r) => r.item_label === label)?.price ?? 0;
   }
@@ -253,6 +286,13 @@ export default function QuoteBuilder({
       const row = flatItemOptions.find((r) => r.product_code === flatItemCode);
       if (!row) return [];
       return [{ label: row.product_code.slice(flatLine!.prefix.length), unitPrice: row.price }];
+    }
+    if (isHardwareLine) {
+      if (!hardwareArticle || !tariff || !selectedHardware) return [];
+      const label = `${selectedHardware.article} — ${selectedHardware.name}${
+        selectedHardware.material ? ` (${selectedHardware.material})` : ""
+      }`;
+      return [{ label, unitPrice: selectedHardware.price }];
     }
     if (!modelCode || !tariff) return [];
     const rows: { label: string; unitPrice: number; photo?: string }[] = [];
@@ -331,6 +371,9 @@ export default function QuoteBuilder({
     isFlatLine,
     flatItemCode,
     flatItemOptions,
+    isHardwareLine,
+    hardwareArticle,
+    selectedHardware,
     modelCode,
     effectiveVariantCode,
     tariff,
@@ -392,6 +435,22 @@ export default function QuoteBuilder({
       };
       setPositions((prev) => [...prev, position]);
       setFlatItemCode("");
+      setQty(1);
+      return;
+    }
+    if (isHardwareLine) {
+      if (!hardwareArticle || previewRows.length === 0) return;
+      const position: QuotePosition = {
+        id: crypto.randomUUID(),
+        collectionLabel: HARDWARE_LABEL,
+        modelCode: hardwareCategoryLabels[hardwareCategory],
+        colorLabel: "",
+        photo: undefined,
+        qty,
+        rows: previewRows.map((r) => ({ label: r.label, unitPrice: r.unitPrice, qty, amount: r.unitPrice * qty, photo: r.photo })),
+      };
+      setPositions((prev) => [...prev, position]);
+      setHardwareArticle("");
       setQty(1);
       return;
     }
@@ -681,6 +740,7 @@ export default function QuoteBuilder({
                 setColorLabel("");
                 setPogItem("");
                 setFlatItemCode("");
+                setHardwareArticle("");
               }}
               className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
             >
@@ -697,6 +757,7 @@ export default function QuoteBuilder({
                   {c.label}
                 </option>
               ))}
+              {hardwareRows.length > 0 && <option value={HARDWARE_KEY}>{HARDWARE_LABEL}</option>}
             </select>
 
             {isFlatLine && (
@@ -758,6 +819,40 @@ export default function QuoteBuilder({
                     </option>
                   ))}
                 </select>
+              </>
+            )}
+
+            {isHardwareLine && (
+              <>
+                <select
+                  value={hardwareCategory}
+                  onChange={(e) => {
+                    setHardwareCategory(e.target.value as HardwareCategory);
+                    setHardwareArticle("");
+                  }}
+                  className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+                >
+                  {HARDWARE_CATEGORY_ORDER.map((c) => (
+                    <option key={c} value={c}>
+                      {hardwareCategoryLabels[c]}
+                    </option>
+                  ))}
+                </select>
+                <select
+                  value={hardwareArticle}
+                  onChange={(e) => setHardwareArticle(e.target.value)}
+                  className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+                >
+                  <option value="">Позиція...</option>
+                  {hardwareItemOptions.map((r) => (
+                    <option key={r.article} value={r.article}>
+                      {r.article} — {r.name}
+                    </option>
+                  ))}
+                </select>
+                {selectedHardware?.material && (
+                  <p className="text-xs text-navy-dim">{selectedHardware.material}</p>
+                )}
               </>
             )}
 
@@ -1081,7 +1176,9 @@ export default function QuoteBuilder({
             <button
               type="button"
               onClick={addPosition}
-              disabled={isPogonazhni ? !pogItem : isFlatLine ? !flatItemCode : !modelCode}
+              disabled={
+                isPogonazhni ? !pogItem : isFlatLine ? !flatItemCode : isHardwareLine ? !hardwareArticle : !modelCode
+              }
               className="rounded-full bg-navy-dark px-6 py-3 font-semibold text-white transition hover:bg-gold hover:text-navy-dark disabled:opacity-40"
             >
               Додати позицію

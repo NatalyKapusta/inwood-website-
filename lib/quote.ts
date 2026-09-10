@@ -19,6 +19,39 @@ export type AddonRow = {
 };
 export type ServiceRow = { service_key: string; tariff: Tariff; price: number };
 
+export type HardwareCategory =
+  | "ruchky"
+  | "nakladky"
+  | "zavisy"
+  | "upory"
+  | "mekhanizmy"
+  | "tsylindry"
+  | "rozsuvna"
+  | "aksesuary"
+  | "inshe";
+
+export const hardwareCategoryLabels: Record<HardwareCategory, string> = {
+  ruchky: "Ручки",
+  nakladky: "Накладки",
+  zavisy: "Завіси",
+  upory: "Упори",
+  mekhanizmy: "Механізми",
+  tsylindry: "Циліндри",
+  rozsuvna: "Розсувні системи",
+  aksesuary: "Аксесуари",
+  inshe: "Інше",
+};
+
+export type HardwareRow = {
+  brand: string;
+  category: HardwareCategory;
+  article: string;
+  name: string;
+  material: string;
+  tariff: Tariff;
+  price: number;
+};
+
 export type VariantType = "base" | "alu" | "alu-inside" | "ral";
 
 export type ModelVariant = { code: string; variantType: VariantType; label: string };
