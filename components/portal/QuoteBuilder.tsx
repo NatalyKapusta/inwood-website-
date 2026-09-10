@@ -302,6 +302,7 @@ export default function QuoteBuilder({
       });
   const variantType: VariantType = variantsData.variantTypeByCode[effectiveVariantCode] ?? "base";
   const isAluEdge = isAluEdgeVariant(variantType);
+  const isRalVariant = variantType === "ral";
 
   const korobOptionsAll = addonRows.filter((r) => r.collection === collectionKey && r.addon_type === "korob" && r.tariff === tariff);
   const lishtvaOptionsAll = addonRows.filter((r) => r.collection === collectionKey && r.addon_type === "lishtva" && r.tariff === tariff);
@@ -1014,7 +1015,17 @@ export default function QuoteBuilder({
             </select>
             )}
 
-            {!isSpecialLine && currentModel && (
+            {!isSpecialLine && currentModel && isRalVariant && (
+              <input
+                type="text"
+                value={colorLabel}
+                onChange={(e) => setColorLabel(e.target.value)}
+                placeholder="Колір RAL/NCS, напр. RAL 9010"
+                className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+              />
+            )}
+
+            {!isSpecialLine && currentModel && !isRalVariant && (
               <select
                 value={colorLabel}
                 onChange={(e) => setColorLabel(e.target.value)}
