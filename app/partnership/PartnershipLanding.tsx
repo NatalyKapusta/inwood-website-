@@ -810,7 +810,6 @@ export default function PartnershipLanding({ sentState }: { sentState: "partner"
               <img src="/logo/inwood-logo-gold.svg" alt="IN WOOD" style={{ height: 28, width: "auto" }} />
             </div>
             <div className="fcontact">
-              м. Полтава, провулок Спортивний, 4<br />
               <a href="#form-section">Залишити заявку на партнерство →</a>
             </div>
           </div>
