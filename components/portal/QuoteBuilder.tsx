@@ -40,6 +40,30 @@ function hiddenDoorCode(image: string) {
   return file.replace(/\.\w+$/, "");
 }
 
+// hardware_tariff_prices — 2910 рядків (485 позицій × 6 тарифів), це більше за
+// стандартний ліміт рядків на один запит у Supabase (сервер сам обрізає видачу,
+// незалежно від запитаного .range()) — тому підвантажуємо сторінками по 1000,
+// поки не отримаємо все, інакше бренди, вставлені пізніше за MVM, губляться.
+async function fetchAllHardwareRows(supabase: ReturnType<typeof createClient>): Promise<HardwareRow[]> {
+  const pageSize = 1000;
+  const all: HardwareRow[] = [];
+  for (let offset = 0; ; offset += pageSize) {
+    const { data, error } = await supabase
+      .from("hardware_tariff_prices")
+      .select("brand, category, article, name, material, tariff, price, photo")
+      .range(offset, offset + pageSize - 1);
+    if (error || !data || data.length === 0) break;
+    all.push(
+      ...(data as Array<Omit<HardwareRow, "photo"> & { photo?: string | null }>).map((r) => ({
+        ...r,
+        photo: r.photo ?? null,
+      }))
+    );
+    if (data.length < pageSize) break;
+  }
+  return all;
+}
+
 // Форматування як скрізь на сайті: розділювач тисяч, кома для копійок,
 // нерозривний пробіл перед ₴ — щоб не було "5176.50" замість "5 176,50 ₴".
 function fmtNum(n: number) {
@@ -173,18 +197,15 @@ export default function QuoteBuilder({
   useEffect(() => {
     const supabase = createClient();
     (async () => {
-      const [panels, addons, services, hardware] = await Promise.all([
+      const [panels, addons, services, hardwareData] = await Promise.all([
         supabase.from("product_tariff_prices").select("product_code, tariff, price"),
         supabase.from("line_addon_prices").select("collection, addon_type, item_label, tariff, price"),
         supabase.from("service_tariff_prices").select("service_key, tariff, price"),
-        // Фурнітура — 485 позицій × 6 тарифів (2910 рядків), тому явно
-        // задаємо діапазон: без .range() PostgREST мовчки обрізає видачу
-        // своїм лімітом за замовчуванням, і останні бренди (ABUS, AGB) просто
-        // не доїжджають до клієнта — саме через це вони зникали зі списку.
-        supabase
-          .from("hardware_tariff_prices")
-          .select("brand, category, article, name, material, tariff, price, photo")
-          .range(0, 4999),
+        // Фурнітура — 485 позицій × 6 тарифів (2910 рядків) перевищує стандартний
+        // ліміт рядків на один запит у Supabase (сервер обрізає видачу незалежно
+        // від .range(), просто не віддає більше свого ліміту за раз) — тому
+        // підвантажуємо сторінками, поки не отримаємо все.
+        fetchAllHardwareRows(supabase),
       ]);
       if (panels.error || addons.error || services.error) {
         setLoadError(
@@ -198,14 +219,7 @@ export default function QuoteBuilder({
       setServiceRows((services.data ?? []) as ServiceRow[]);
       // Фурнітура необов'язкова — якщо таблиця ще не створена (0015/0016 не виконані),
       // просто не показуємо розділ, а не ламаємо весь конструктор КП.
-      if (!hardware.error) {
-        setHardwareRows(
-          ((hardware.data ?? []) as Array<Omit<HardwareRow, "photo"> & { photo?: string | null }>).map((r) => ({
-            ...r,
-            photo: r.photo ?? null,
-          }))
-        );
-      }
+      setHardwareRows(hardwareData);
       let tariffsAvailable = Array.from(new Set((panels.data ?? []).map((r) => r.tariff))) as Tariff[];
       if (allowedTariffs) tariffsAvailable = tariffsAvailable.filter((t) => allowedTariffs.includes(t));
       if (tariffsAvailable.length > 0) setTariff(tariffsAvailable[0]);
