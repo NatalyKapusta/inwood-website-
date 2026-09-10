@@ -254,6 +254,14 @@ export default async function SpivpratsyaPage({
           { placeholder: t.formMessage },
         ]}
       />
+
+      {params.locale === "ua" && (
+        <p className="mx-auto max-w-5xl px-4 pb-6 text-center text-xs text-navy-dim/50">
+          <Link href="/partnership" className="hover:text-navy-dim">
+            Детальніше про партнерську програму IN WOOD
+          </Link>
+        </p>
+      )}
     </>
   );
 }
