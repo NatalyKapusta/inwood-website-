@@ -22,15 +22,14 @@ export async function middleware(request: NextRequest) {
   }
 
   // Рекламний піддомен partnership.inwood.com.ua — на нього ллють платний
-  // трафік по дилерству, але окремого лендингу під нього ще нема. Тимчасово
-  // віддаємо звідти /ua/spivpratsya (rewrite, адреса в браузері лишається
-  // partnership.inwood.com.ua) і ховаємо від індексації — щоб реклама не
-  // впиралась у биту сторінку, поки не готовий фінальний дизайн. Замінити
-  // на dedicated-сторінку, коли вона буде.
+  // трафік по дилерству. Віддаємо звідти окрему (поза [locale]) сторінку
+  // /partnership — rewrite, адреса в браузері лишається
+  // partnership.inwood.com.ua — і ховаємо від індексації, щоб вона не
+  // спорила з рештою сайту в пошуку.
   const hostname = request.headers.get("host") ?? "";
   if (hostname.startsWith("partnership.")) {
     const url = request.nextUrl.clone();
-    url.pathname = "/ua/spivpratsya";
+    url.pathname = pathname === "/" ? "/partnership" : `/partnership${pathname}`;
     const rewritten = NextResponse.rewrite(url);
     rewritten.headers.set("X-Robots-Tag", "noindex, nofollow");
     return rewritten;
@@ -49,11 +48,13 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(url, 301);
   }
 
-  // Закритий B2B-портал — без мовного префікса, живе поза [locale]
+  // Закритий B2B-портал і рекламний лендинг партнерства — без мовного
+  // префікса, живуть поза [locale]
   const isPortalRoute = pathname === "/portal" || pathname.startsWith("/portal/");
+  const isPartnershipRoute = pathname === "/partnership" || pathname.startsWith("/partnership/");
 
   // Немає мовного префікса — редірект на дефолтну локаль (ua)
-  if (!isPortalRoute && !getLocaleFromPath(pathname)) {
+  if (!isPortalRoute && !isPartnershipRoute && !getLocaleFromPath(pathname)) {
     const url = request.nextUrl.clone();
     url.pathname = `/${defaultLocale}${pathname === "/" ? "" : pathname}`;
     return NextResponse.redirect(url);
