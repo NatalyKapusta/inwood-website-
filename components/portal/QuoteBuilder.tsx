@@ -174,6 +174,8 @@ export default function QuoteBuilder({
   const [modelCode, setModelCode] = useState("");
   const [variantCode, setVariantCode] = useState("");
   const [colorLabel, setColorLabel] = useState("");
+  const [edgeColor, setEdgeColor] = useState("");
+  const [insertColor, setInsertColor] = useState("");
   const [korob, setKorob] = useState("");
   const [lishtvaFront, setLishtvaFront] = useState("");
   const [lishtvaBack, setLishtvaBack] = useState("");
@@ -265,7 +267,14 @@ export default function QuoteBuilder({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isHardwareLine, hardwareBrand, hardwareRows]);
   const isHiddenDoors = collectionKey === "hidden-doors";
-  const isKorobRalModel = isHiddenDoors && KOROB_RAL_MODELS.has(korob);
+  // Короб прихованого монтажу STANDART/LUX продається і в лінії ETALON (не лише на
+  // "Двері під фарбування"), тож перевірка на RAL/NCS не має залежати від лінії —
+  // інакше повторюється той самий баг, що й з кольором полотна PERFETTO/FREZZATTI.
+  const isKorobRalModel = KOROB_RAL_MODELS.has(korob);
+  // На ETALON цей короб не поєднується зі звичайною лиштвою/добором — ховаємо й
+  // скидаємо ці поля, як в оригінальному калькуляторі (на "Двері під фарбування"
+  // добору й так немає, а лиштва там — це вже система алюм. профілів, інша річ).
+  const hideLishtvaDobirForKorob = collectionKey === "etalon" && isKorobRalModel;
   const models = collections[collectionKey]?.models ?? [];
   const currentModel = models.find((m) => m.code === modelCode);
   const hiddenVariants = collections["hidden-doors"]?.variants ?? [];
@@ -303,6 +312,20 @@ export default function QuoteBuilder({
   const variantType: VariantType = variantsData.variantTypeByCode[effectiveVariantCode] ?? "base";
   const isAluEdge = isAluEdgeVariant(variantType);
   const isRalVariant = variantType === "ral";
+
+  // Колір кромки (торця полотна) — інформаційне поле, на ціну не впливає, але в
+  // оригінальному калькуляторі обов'язкове для всіх моделей ETALON/NOMINAL/FREZZATTI/PERFETTO,
+  // щоб на заводі й у друкованій КП було видно, який колір торця замовлено.
+  const isEdgeColorModel = !isSpecialLine && !isHiddenDoors && ["etalon", "nominal", "frezzatti", "perfetto"].includes(collectionKey) && !!modelCode;
+  const edgeColorOptions = isAluEdge
+    ? ["Чорний", "Сірий"]
+    : collectionKey === "etalon" || collectionKey === "perfetto"
+    ? ["Чорний", "Білий", "В колір полотна"]
+    : ["Чорний", "Білий"];
+  // Колір вставки — інформаційне поле, лише для ETALON ЕТ-02…17 і NOMINAL NL-02…05.
+  const isInsertColorModel =
+    (collectionKey === "etalon" && /^ET-(\d+)$/.test(modelCode) && Number(modelCode.slice(3)) >= 2) ||
+    (collectionKey === "nominal" && /^NL-\d+$/.test(modelCode) && modelCode !== "NL-01");
 
   const korobOptionsAll = addonRows.filter((r) => r.collection === collectionKey && r.addon_type === "korob" && r.tariff === tariff);
   const lishtvaOptionsAll = addonRows.filter((r) => r.collection === collectionKey && r.addon_type === "lishtva" && r.tariff === tariff);
@@ -528,17 +551,23 @@ export default function QuoteBuilder({
       return;
     }
     if (!modelCode || previewRows.length === 0) return;
+    const colorNotes = [
+      isEdgeColorModel && edgeColor ? `кромка: ${edgeColor}` : "",
+      isInsertColorModel && insertColor ? `вставка: ${insertColor}` : "",
+    ].filter(Boolean);
     const position: QuotePosition = {
       id: crypto.randomUUID(),
       collectionLabel: collections[collectionKey].label,
       modelCode,
-      colorLabel,
+      colorLabel: [colorLabel, ...colorNotes].filter(Boolean).join(" · "),
       photo: previewPhoto,
       qty,
       rows: previewRows.map((r) => ({ label: r.label, unitPrice: r.unitPrice, qty, amount: r.unitPrice * qty, photo: r.photo })),
     };
     setPositions((prev) => [...prev, position]);
     setVariantCode(modelCode);
+    setEdgeColor("");
+    setInsertColor("");
     setWidth("");
     setHeight("");
     setKorob("");
@@ -839,6 +868,8 @@ export default function QuoteBuilder({
                 setModelCode("");
                 setVariantCode("");
                 setColorLabel("");
+                setEdgeColor("");
+                setInsertColor("");
                 setPogItem("");
                 setFlatItemCode("");
                 setHardwareArticle("");
@@ -995,6 +1026,8 @@ export default function QuoteBuilder({
                   setVariantCode(e.target.value);
                 }
                 setColorLabel("");
+                setEdgeColor("");
+                setInsertColor("");
                 setWidth("");
                 setHeight("");
               }}
@@ -1037,6 +1070,33 @@ export default function QuoteBuilder({
                     {c.label}
                   </option>
                 ))}
+              </select>
+            )}
+
+            {isEdgeColorModel && (
+              <select
+                value={edgeColor}
+                onChange={(e) => setEdgeColor(e.target.value)}
+                className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+              >
+                <option value="">Колір кромки...</option>
+                {edgeColorOptions.map((c) => (
+                  <option key={c} value={c}>
+                    {c}
+                  </option>
+                ))}
+              </select>
+            )}
+
+            {isInsertColorModel && (
+              <select
+                value={insertColor}
+                onChange={(e) => setInsertColor(e.target.value)}
+                className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+              >
+                <option value="">Колір вставки...</option>
+                <option value="Сірий">Сірий</option>
+                <option value="Чорний">Чорний</option>
               </select>
             )}
 
@@ -1150,6 +1210,11 @@ export default function QuoteBuilder({
                 onChange={(e) => {
                   setKorob(e.target.value);
                   if (!KOROB_RAL_MODELS.has(e.target.value)) setRalNcsColor("");
+                  if (collectionKey === "etalon" && KOROB_RAL_MODELS.has(e.target.value)) {
+                    setLishtvaFront("");
+                    setLishtvaBack("");
+                    setDobir("");
+                  }
                 }}
                 className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
               >
@@ -1173,6 +1238,8 @@ export default function QuoteBuilder({
               />
             )}
 
+            {!hideLishtvaDobirForKorob && (
+            <>
             <select
               value={lishtvaFront}
               onChange={(e) => setLishtvaFront(e.target.value)}
@@ -1250,6 +1317,8 @@ export default function QuoteBuilder({
               </select>
             )}
             <AddonRefPhoto src={addonPhotoFor("dobir", dobir)} />
+            </>
+            )}
 
             <select
               value={vrizka}
@@ -1322,7 +1391,10 @@ export default function QuoteBuilder({
                   ? !flatItemCode
                   : isHardwareLine
                   ? !hardwareArticle
-                  : !modelCode || (isKorobRalModel && !ralNcsColor.trim())
+                  : !modelCode ||
+                    (isKorobRalModel && !ralNcsColor.trim()) ||
+                    (isEdgeColorModel && !edgeColor) ||
+                    (isInsertColorModel && !insertColor)
               }
               className="rounded-full bg-navy-dark px-6 py-3 font-semibold text-white transition hover:bg-gold hover:text-navy-dark disabled:opacity-40"
             >
