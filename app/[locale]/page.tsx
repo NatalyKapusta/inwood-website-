@@ -142,12 +142,23 @@ export default async function HomePage({
 
       {/* МОНТАЖ */}
       <section className="bg-panel-alt py-16 sm:py-24">
-        <div className="mx-auto max-w-4xl px-4 text-center">
-          <h2 className="font-serif text-2xl font-bold text-navy-dark sm:text-3xl">
-            {t.installTitle}
-          </h2>
-          <p className="mt-6 text-navy-dim">{t.installText}</p>
-          <p className="mt-4 font-semibold text-navy-dark">{t.installResult}</p>
+        <div className="mx-auto grid max-w-5xl gap-8 px-4 sm:grid-cols-[220px_1fr] sm:items-center lg:grid-cols-[280px_1fr]">
+          <div className="relative mx-auto aspect-[9/16] w-full max-w-[220px] overflow-hidden rounded-2xl bg-navy-dark shadow-lg lg:max-w-[280px]">
+            <iframe
+              src="https://www.youtube.com/embed/6i9gj2CIQ7k"
+              title={t.installTitle}
+              className="absolute inset-0 h-full w-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+          <div className="text-center sm:text-left">
+            <h2 className="font-serif text-2xl font-bold text-navy-dark sm:text-3xl">
+              {t.installTitle}
+            </h2>
+            <p className="mt-6 text-navy-dim">{t.installText}</p>
+            <p className="mt-4 font-semibold text-navy-dark">{t.installResult}</p>
+          </div>
         </div>
       </section>
 
@@ -176,15 +187,26 @@ export default async function HomePage({
 
       {/* КОМЕРЦІЙНІ ОБ'ЄКТИ */}
       <section className="bg-navy-dark py-16 text-white sm:py-24">
-        <div className="mx-auto max-w-3xl px-4 text-center">
-          <h2 className="font-serif text-2xl font-bold sm:text-3xl">{t.commercialTitle}</h2>
-          <p className="mt-6 text-white/80">{t.commercialText}</p>
-          <Link
-            href={`/${locale}/spivpratsya`}
-            className="mt-8 inline-block rounded-full bg-gold px-7 py-3 font-semibold text-navy-dark transition hover:bg-gold-dim"
-          >
-            {c.ctaButton}
-          </Link>
+        <div className="mx-auto grid max-w-5xl gap-8 px-4 sm:grid-cols-[220px_1fr] sm:items-center lg:grid-cols-[280px_1fr]">
+          <div className="relative mx-auto aspect-[9/16] w-full max-w-[220px] overflow-hidden rounded-2xl bg-black shadow-lg lg:max-w-[280px]">
+            <iframe
+              src="https://www.youtube.com/embed/ztZxnzij35w"
+              title={t.commercialTitle}
+              className="absolute inset-0 h-full w-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+          <div className="text-center sm:text-left">
+            <h2 className="font-serif text-2xl font-bold sm:text-3xl">{t.commercialTitle}</h2>
+            <p className="mt-6 text-white/80">{t.commercialText}</p>
+            <Link
+              href={`/${locale}/spivpratsya`}
+              className="mt-8 inline-block rounded-full bg-gold px-7 py-3 font-semibold text-navy-dark transition hover:bg-gold-dim"
+            >
+              {c.ctaButton}
+            </Link>
+          </div>
         </div>
       </section>
 
