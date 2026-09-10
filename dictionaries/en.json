@@ -265,7 +265,7 @@
         "name": "ETALON",
         "params": [
           "Leaf height — standard 1800–2100 mm (maximum 2300 mm, 50 mm steps)",
-          "Width — 600, 650, 700, 750, 800, 850, 900 mm (50 mm steps)",
+          "Width — standard 400–900 mm (non-standard — up to 1000 mm, 50 mm steps)",
           "Leaf thickness — 40 mm",
           "MDF — 6 mm",
           "Timber frame — 80/27 mm",
@@ -276,7 +276,7 @@
         "name": "NOMINAL",
         "params": [
           "Leaf height — standard 1800–2100 mm (maximum 2300 mm, 50 mm steps)",
-          "Width — 600, 650, 700, 750, 800, 850, 900 mm (50 mm steps)",
+          "Width — standard 400–900 mm (non-standard — up to 1000 mm, 50 mm steps)",
           "Leaf thickness — 34 mm",
           "MDF — 6 mm",
           "Timber frame — 80/27 mm",
@@ -287,7 +287,7 @@
         "name": "FREZZATTI",
         "params": [
           "Leaf height — standard 1800–2100 mm (maximum 2300 mm, 50 mm steps)",
-          "Width — 600, 650, 700, 750, 800, 850, 900 mm (50 mm steps)",
+          "Width — standard 400–900 mm (non-standard — up to 1000 mm, 50 mm steps)",
           "Leaf thickness — 34 mm",
           "MDF — 4 mm",
           "Timber frame — 80/27 mm",
@@ -298,7 +298,7 @@
         "name": "PERFETTO",
         "params": [
           "Leaf height — standard 1800–2100 mm (maximum 2300 mm, 50 mm steps)",
-          "Width — 600, 650, 700, 750, 800, 850, 900 mm (50 mm steps)",
+          "Width — standard 400–900 mm (non-standard — up to 1000 mm, 50 mm steps)",
           "Leaf thickness — 40 mm",
           "MDF — 6 mm",
           "Timber frame — 80/27 mm",
@@ -344,7 +344,7 @@
       "dimensionsTitle": "Dimensions",
       "dimensions": [
         "Height: standard 1800–2100 mm (max 2300 mm, 50 mm increments)",
-        "Width: 600, 650, 700, 750, 800, 850, 900 mm (50 mm increments)",
+        "Width: standard 400–900 mm (non-standard — up to 1000 mm, 50 mm increments)",
         "Thickness: ETALON — 40 mm; NOMINAL — 34 mm"
       ]
     }
