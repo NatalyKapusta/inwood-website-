@@ -208,6 +208,42 @@ export async function toggleUserAccess(formData: FormData) {
   redirect("/portal/users?" + (block ? "blocked" : "unblocked") + "=1");
 }
 
+// Лише власник: встановити конкретному користувачу пароль напряму, в обхід
+// листа — бо одноразові посилання для скидання пароля іноді "згорають" самі
+// (поштовий сервіс сам відкриває посилання, перевіряючи на безпечність,
+// раніше за саму людину).
+export async function setUserPassword(formData: FormData) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) redirect("/portal/login");
+
+  const { data: myProfile } = await supabase.from("profiles").select("is_owner").eq("id", user.id).single();
+  if (!myProfile?.is_owner) {
+    redirect("/portal/users?error=" + encodeURIComponent("Недостатньо прав"));
+  }
+
+  const targetId = String(formData.get("user_id") ?? "");
+  const newPassword = String(formData.get("new_password") ?? "");
+
+  if (!targetId) {
+    redirect("/portal/users?error=" + encodeURIComponent("Не вказано користувача"));
+  }
+  if (newPassword.length < 6) {
+    redirect("/portal/users?error=" + encodeURIComponent("Пароль має бути не менше 6 символів"));
+  }
+
+  const admin = createAdminClient();
+  const { error } = await admin.auth.admin.updateUserById(targetId, { password: newPassword });
+  if (error) {
+    redirect("/portal/users?error=" + encodeURIComponent(error.message));
+  }
+
+  revalidatePath("/portal/users");
+  redirect("/portal/users?passwordSet=1");
+}
+
 // Лише власник: дати або забрати конкретній людині доступ до /portal/salary
 // (окремо від ролі/is_owner — точково, одній-двом людям).
 export async function toggleSalaryAccess(formData: FormData) {

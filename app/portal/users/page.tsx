@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import { inviteUser, toggleUserAccess, toggleSalaryAccess, updateUserRole } from "@/app/portal/actions";
+import { inviteUser, toggleUserAccess, toggleSalaryAccess, updateUserRole, setUserPassword } from "@/app/portal/actions";
 import DeleteUserButton from "@/components/portal/DeleteUserButton";
 import { PORTAL_ROLES, roleLabels } from "@/lib/portalRole";
 
@@ -16,6 +16,7 @@ export default async function PortalUsersPage({
     roleUpdated?: string;
     salaryGranted?: string;
     salaryRevoked?: string;
+    passwordSet?: string;
   };
 }) {
   const supabase = await createClient();
@@ -79,6 +80,11 @@ export default async function PortalUsersPage({
           Доступ до "Зарплата" знято
         </p>
       )}
+      {searchParams.passwordSet && (
+        <p className="mt-4 rounded-lg bg-green-50 px-4 py-3 text-sm text-green-700">
+          Пароль встановлено — повідомте його людині.
+        </p>
+      )}
 
       <form action={inviteUser} className="mt-6 grid gap-3 rounded-xl bg-panel p-6 shadow-sm sm:grid-cols-2">
         <input
@@ -129,6 +135,7 @@ export default async function PortalUsersPage({
               <th className="px-4 py-3">Роль</th>
               <th className="px-4 py-3">Доступ</th>
               <th className="px-4 py-3">Зарплата</th>
+              <th className="px-4 py-3">Пароль</th>
               <th className="px-4 py-3" />
             </tr>
           </thead>
@@ -191,6 +198,29 @@ export default async function PortalUsersPage({
                         }
                       >
                         {p.salary_access ? "Є доступ" : "Дати доступ"}
+                      </button>
+                    </form>
+                  )}
+                </td>
+                <td className="px-4 py-3">
+                  {p.id === user.id ? (
+                    <span className="text-xs text-navy-dim">—</span>
+                  ) : (
+                    <form action={setUserPassword} className="flex items-center gap-2">
+                      <input type="hidden" name="user_id" value={p.id} />
+                      <input
+                        type="text"
+                        name="new_password"
+                        placeholder="новий пароль"
+                        minLength={6}
+                        required
+                        className="w-32 rounded-lg border border-navy-dim/30 bg-panel px-2 py-1.5 text-xs outline-none focus:border-gold"
+                      />
+                      <button
+                        type="submit"
+                        className="rounded-full border border-navy-dim/30 px-3 py-1.5 text-xs font-semibold text-navy-dark transition hover:border-gold hover:text-gold-dim"
+                      >
+                        Встановити
                       </button>
                     </form>
                   )}
