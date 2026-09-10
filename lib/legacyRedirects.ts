@@ -26,6 +26,7 @@ export const LEGACY_EXACT_REDIRECTS: Record<string, string> = {
   "/farbovani-dveri": "/ua/catalog",
   "/pryhovani-dveri": "/ua/catalog#hidden-doors",
   "/pogonazhni-vyroby": "/ua/catalog",
+  "/standart": "/ua/catalog",
   "/vidhuk": "/ua",
   "/blog-mizhkimnatni-dveri": "/ua/blog",
   "/cooperation": "/ua/spivpratsya",
@@ -84,6 +85,7 @@ export const LEGACY_EXACT_REDIRECTS: Record<string, string> = {
   "/ru/farbovani-dveri": "/ru/catalog",
   "/ru/pryhovani-dveri": "/ru/catalog#hidden-doors",
   "/ru/pogonazhni-vyroby": "/ru/catalog",
+  "/ru/standart": "/ru/catalog",
   "/ru/blog-mizhkimnatni-dveri": "/ru/blog",
   "/ru/dveri-kiev": "/ru/nashi-dileri/kyiv",
   "/ru/dveri-kharkiv": "/ru/nashi-dileri/kharkiv",
@@ -121,6 +123,15 @@ const SHOP_COLLECTION_ANCHOR: Record<string, string> = {
 export function resolveLegacyRedirect(pathname: string): string | null {
   const exact = LEGACY_EXACT_REDIRECTS[pathname];
   if (exact) return exact;
+
+  // UA-слаги в мапі вище без префікса (бо на старому сайті UA був у
+  // корені) — але хтось міг зберегти/натиснути посилання вже з "/ua/"
+  // (напр. проіндексоване Google-ом чи вручну набране), тож пробуємо
+  // ще й без цього префікса.
+  if (pathname.startsWith("/ua/")) {
+    const withoutUaPrefix = LEGACY_EXACT_REDIRECTS[pathname.slice(3)];
+    if (withoutUaPrefix) return withoutUaPrefix;
+  }
 
   const segments = pathname.split("/").filter(Boolean);
   let locale = "ua";
