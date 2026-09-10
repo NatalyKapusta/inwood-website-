@@ -163,7 +163,15 @@
     "audience": [
       {
         "title": "Private clients",
-        "text": "Renovating an apartment or house — we'll match doors to your interior, colours and non-standard sizes."
+        "text": "Fitting out a new-build with no finishing, a full renovation, or replacing just one or two doors — we'll match a solution to your interior and budget."
+      },
+      {
+        "title": "Site Foremen and Construction Crews",
+        "text": "Purchasing materials as agreed with the client — we'll advise on technical parameters and solutions that are easy to install."
+      },
+      {
+        "title": "Designers and architects",
+        "text": "A wide choice of colours and finishes, including concealed frames (invisible doors), and room for custom solutions on your project."
       },
       {
         "title": "Developers",
@@ -174,8 +182,8 @@
         "text": "Wholesale terms, marketing materials, a dedicated account manager."
       },
       {
-        "title": "Designers and architects",
-        "text": "A wide choice of colours and finishes, and room for custom solutions on your project."
+        "title": "Public and Medical Institutions",
+        "text": "Schools, kindergartens, hospitals — we account for the higher sanitary and fire-safety requirements such buildings need."
       }
     ],
     "collectionsTitle": "Doors in the interior",
@@ -829,8 +837,8 @@
     "benefitsText": "We work directly with the manufacturer — no middlemen, no markups.",
     "benefits": [
       {
-        "title": "Wholesale Pricing for Developers",
-        "text": "A dedicated \"Builder\" tariff — the larger the order volume, the better the per-unit price."
+        "title": "Favorable Terms for Developers",
+        "text": "A dedicated \"Builder\" tariff with direct manufacturer pricing, no middlemen — we're focused on long-term cooperation."
       },
       {
         "title": "Personal Project Manager",
