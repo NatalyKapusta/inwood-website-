@@ -33,6 +33,10 @@
         "href": "/dlya-zabudovnykiv"
       },
       {
+        "label": "Export",
+        "href": "/export"
+      },
+      {
         "label": "Partnership",
         "href": "/spivpratsya"
       },
@@ -176,6 +180,11 @@
       {
         "title": "Developers",
         "text": "Serial supply for residential complexes: consistent quality, installation schedule, project support."
+      },
+      {
+        "title": "International partners",
+        "text": "We export to Canada, France, Switzerland, Lithuania and Latvia — open to new countries.",
+        "href": "/export"
       },
       {
         "title": "Dealers and partners",
@@ -610,7 +619,7 @@
     ],
     "exportIntro": "Looking for a reliable interior door manufacturer for export?",
     "exportText": "We are open to international cooperation and supply interior doors to partners in various countries around the world. IN WOOD is actively growing, offering its products to partners not only in Ukraine but abroad as well. Our doors are installed in private homes, apartments, offices, hotels and commercial premises worldwide.",
-    "exportCountries": "We have successful export experience to England, France, Switzerland, Lithuania and Latvia, and we continue to expand our geographic presence.",
+    "exportCountries": "We have successful export experience to Canada, France, Switzerland, Lithuania and Latvia, and we continue to expand our geographic presence.",
     "ctaTitle": "Become an IN WOOD partner",
     "ctaText": "We're not just building a partner network — we're building a strong team of like-minded people. Get a commercial offer and cooperation terms.",
     "formCountry": "Country",
@@ -682,7 +691,7 @@
     "heroImageAlt": "IN WOOD NOMINAL NL-01 interior door, white color, in a real interior",
     "heroPoints": [
       "50+ door models in the current lineup",
-      "Export experience to the UK, France, Switzerland, Lithuania and Latvia",
+      "Export experience to Canada, France, Switzerland, Lithuania and Latvia",
       "Flexible cooperation terms and partner support"
     ],
     "metaDescription": "Official IN WOOD dealers and partners across Ukraine — interactive dealer network map, where to buy IN WOOD doors in your city.",
@@ -875,5 +884,44 @@
     "cityCtaTitlePrefix": "Building",
     "cityCtaTitleSuffix": "?",
     "cityCtaText": "Leave a request — we'll calculate cost and delivery timeline for your project."
+  },
+  "export": {
+    "pageTitle": "IN WOOD — Interior Door Manufacturer for Export from Ukraine",
+    "metaDescription": "IN WOOD is a full-cycle interior door manufacturer in Poltava, Ukraine, exporting to Canada, France, Switzerland, Lithuania and Latvia. Wholesale interior doors for international partners and distributors — open to new export markets worldwide.",
+    "backLink": "← All cooperation options",
+    "heading": "Interior Door Export — IN WOOD Manufacturer, Ukraine",
+    "intro": "IN WOOD is a full-cycle interior door manufacturer with its own production facility in Poltava, Ukraine. We already export our doors abroad and are actively growing into new international markets — looking for distributors, importers and wholesale partners worldwide.",
+    "countriesTitle": "Countries We Currently Export To",
+    "countriesText": "Not a marketing claim — real, completed shipments to real partners.",
+    "countries": [
+      { "name": "Canada", "flag": "🇨🇦" },
+      { "name": "France", "flag": "🇫🇷" },
+      { "name": "Switzerland", "flag": "🇨🇭" },
+      { "name": "Lithuania", "flag": "🇱🇹" },
+      { "name": "Latvia", "flag": "🇱🇻" }
+    ],
+    "openTitle": "Open to Partnership with Any Country",
+    "openText": "This list is not a limit. We are actively looking for new export partners and ready to discuss supply to any country in the world — from a first trial shipment to a long-term wholesale contract.",
+    "whyTitle": "Why International Partners Choose IN WOOD",
+    "reasons": [
+      {
+        "title": "Full In-House Production Cycle",
+        "text": "Our own manufacturing facility in Poltava, Ukraine — quality is controlled at every stage, from raw material to the finished door panel."
+      },
+      {
+        "title": "Packaging Built for Long-Distance Freight",
+        "text": "Every door is packaged specifically for long-distance transport and export shipping, arriving undamaged after international freight."
+      },
+      {
+        "title": "Flexible Order Volumes",
+        "text": "We work with new partners on trial shipments as well as with established partners on regular container-load export orders."
+      },
+      {
+        "title": "Dedicated Export Manager",
+        "text": "A single point of contact for international partners — specifications, export documentation and logistics, handled in English."
+      }
+    ],
+    "ctaTitle": "Interested in Becoming Our Export Partner?",
+    "ctaText": "Tell us which country you're based in and what volumes you're interested in — we'll prepare a commercial offer for interior door export."
   }
 }

@@ -14,6 +14,7 @@ const paths = [
   "/harakterystyky",
   "/nashi-dileri",
   "/spivpratsya",
+  "/export",
   "/oplata-dostavka",
   "/servis",
   "/garantiya",

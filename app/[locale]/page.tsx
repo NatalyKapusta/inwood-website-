@@ -183,12 +183,23 @@ export default async function HomePage({
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-navy-dim">{t.audienceText}</p>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {t.audience.map((a: { title: string; text: string }) => (
-              <div key={a.title} className="rounded-xl bg-white p-6 shadow-sm">
-                <h3 className="font-serif text-lg font-bold text-navy-dark">{a.title}</h3>
-                <p className="mt-2 text-sm text-navy-dim">{a.text}</p>
-              </div>
-            ))}
+            {t.audience.map((a: { title: string; text: string; href?: string }) =>
+              a.href ? (
+                <Link
+                  key={a.title}
+                  href={`/${locale}${a.href}`}
+                  className="rounded-xl bg-white p-6 shadow-sm transition hover:shadow-lg"
+                >
+                  <h3 className="font-serif text-lg font-bold text-navy-dark">{a.title}</h3>
+                  <p className="mt-2 text-sm text-navy-dim">{a.text}</p>
+                </Link>
+              ) : (
+                <div key={a.title} className="rounded-xl bg-white p-6 shadow-sm">
+                  <h3 className="font-serif text-lg font-bold text-navy-dark">{a.title}</h3>
+                  <p className="mt-2 text-sm text-navy-dim">{a.text}</p>
+                </div>
+              )
+            )}
           </div>
         </div>
       </section>
