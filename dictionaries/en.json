@@ -37,6 +37,10 @@
         "href": "/export"
       },
       {
+        "label": "Public Institutions",
+        "href": "/derzhavnym-zakladam"
+      },
+      {
         "label": "Partnership",
         "href": "/spivpratsya"
       },
@@ -192,7 +196,8 @@
       },
       {
         "title": "Public and Medical Institutions",
-        "text": "Schools, kindergartens, hospitals — we account for the higher sanitary and fire-safety requirements such buildings need."
+        "text": "Schools, kindergartens, hospitals — we account for the higher sanitary and fire-safety requirements such buildings need.",
+        "href": "/derzhavnym-zakladam"
       }
     ],
     "collectionsTitle": "Doors in the interior",
@@ -923,5 +928,36 @@
     ],
     "ctaTitle": "Interested in Becoming Our Export Partner?",
     "ctaText": "Tell us which country you're based in and what volumes you're interested in — we'll prepare a commercial offer for interior door export."
+  },
+  "derzhZaklady": {
+    "pageTitle": "IN WOOD Doors for Public and Medical Institutions — Schools, Hospitals, Kindergartens",
+    "metaDescription": "IN WOOD interior doors for schools, kindergartens, hospitals and public institutions — higher sanitary and fire-safety compliance, tender-ready documentation, wholesale supply from Poltava, Ukraine.",
+    "backLink": "← All cooperation options",
+    "heading": "Doors for Public and Medical Institutions",
+    "intro": "Schools, kindergartens, hospitals, administrative buildings — spaces with higher safety and hygiene requirements. IN WOOD accounts for these requirements at the production stage, rather than adapting a standard door after the fact.",
+    "benefitsTitle": "What Matters for These Spaces",
+    "benefitsText": "We know the specifics of public-sector supply — from sanitary standards to the paperwork tender procurement requires.",
+    "benefits": [
+      {
+        "title": "Higher Sanitary Requirements",
+        "text": "Smooth surfaces that hold up to frequent cleaning and disinfection — essential for hospitals, kindergartens and school cafeterias."
+      },
+      {
+        "title": "Fire-Safety Compliance",
+        "text": "We factor in fire-safety requirements for buildings with high occupancy already at the model-selection stage."
+      },
+      {
+        "title": "Durability Under Heavy Daily Use",
+        "text": "Schools and hospitals put doors under heavy daily strain — we select a construction built for exactly that."
+      },
+      {
+        "title": "Tender-Ready Documentation",
+        "text": "We prepare the technical documentation and specifications needed for public procurement tenders."
+      }
+    ],
+    "tenderTitle": "Supply Through Public Procurement",
+    "tenderText": "We work with publicly funded institutions through tender procedures — providing all the documents, certificates and technical specifications required to take part in a procurement process.",
+    "ctaTitle": "Preparing a Procurement for Your Institution?",
+    "ctaText": "Leave a request — we'll prepare a commercial offer and technical specification matching your requirements."
   }
 }
