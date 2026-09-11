@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { organizationJsonLd } from "@/lib/seo";
 import { playfairDisplay, manrope } from "@/lib/fonts";
 import KeepinCrmA11yPatch from "@/components/KeepinCrmA11yPatch";
+import DeferredChatWidget from "@/components/DeferredChatWidget";
 import "@/app/globals.css";
 
 export function generateStaticParams() {
@@ -67,10 +68,7 @@ export default async function LocaleLayout({
           addressLabel={common.footerAddressLabel}
           hoursLabel={common.hoursLabel}
         />
-        <Script
-          src="https://keepincrm.chat/chat-widget.js?widgetId=bSz1XhHCMkhe"
-          strategy="lazyOnload"
-        />
+        <DeferredChatWidget />
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
           strategy="afterInteractive"
