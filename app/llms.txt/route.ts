@@ -10,7 +10,7 @@ function buildLlmsTxt(): string {
 
   return `# IN WOOD
 
-> IN WOOD is a full-cycle interior door manufacturer based in Poltava, Ukraine, with 20+ years of experience, 50+ door models across 4 collections, a dealer network of 35+ partners across Ukraine, and export experience to the United Kingdom, France, Switzerland, Lithuania, and Latvia.
+> IN WOOD is a full-cycle interior door manufacturer based in Poltava, Ukraine, with 20+ years of experience, 50+ door models across 5 collections, a dealer network of 35+ partners across Ukraine, and export experience to Canada, France, Switzerland, Lithuania, and Latvia.
 
 IN WOOD designs and manufactures its own interior doors (panel/skinned doors, veneered doors, PVC-film-coated doors, painted doors, and concealed-installation/hidden doors) at its own production facility in Poltava. The site is available in Ukrainian (default), Russian, and English. Prices are shown to retail visitors when enabled by the manufacturer; wholesale/dealer pricing requires a partner-portal login.
 

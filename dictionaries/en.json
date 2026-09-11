@@ -196,7 +196,7 @@
       },
       {
         "title": "Public and Medical Institutions",
-        "text": "Schools, kindergartens, hospitals — we account for the higher sanitary and fire-safety requirements such buildings need.",
+        "text": "Schools, kindergartens, hospitals — real experience supplying educational institutions, open to discussing your requirements.",
         "href": "/derzhavnym-zakladam"
       }
     ],
@@ -239,7 +239,7 @@
       "title": "See how we make our doors",
       "text": "A short video about IN WOOD production — from raw materials to the finished door."
     },
-    "metaDescription": "IN WOOD is a Ukrainian interior door manufacturer with 20+ years of experience, exporting to the UK, France, Switzerland, Lithuania and Latvia. 5 collections, full-cycle in-house production in Poltava — wholesale and export partnerships welcome."
+    "metaDescription": "IN WOOD is a Ukrainian interior door manufacturer with 20+ years of experience, exporting to Canada, France, Switzerland, Lithuania and Latvia. 5 collections, full-cycle in-house production in Poltava — wholesale and export partnerships welcome."
   },
   "proNas": {
     "title": "IN WOOD — interior door manufacturer in Ukraine",
@@ -633,7 +633,7 @@
     "formMessage": "Message",
     "recruitCitiesTitle": "We're looking for dealers in these cities",
     "recruitCitiesText": "We're expanding our dealer network and inviting building-materials stores, furniture showrooms and entrepreneurs to partner with us.",
-    "metaDescription": "Partner with IN WOOD: dealer, distributor and export cooperation for interior doors. Already exporting to the UK, France, Switzerland, Lithuania and Latvia — join our international partner network."
+    "metaDescription": "Partner with IN WOOD: dealer, distributor and export cooperation for interior doors. Already exporting to Canada, France, Switzerland, Lithuania and Latvia — join our international partner network."
   },
   "kontakty": {
     "title": "IN WOOD — Interior door manufacturer contacts | Ukraine",
@@ -931,33 +931,29 @@
   },
   "derzhZaklady": {
     "pageTitle": "IN WOOD Doors for Public and Medical Institutions — Schools, Hospitals, Kindergartens",
-    "metaDescription": "IN WOOD interior doors for schools, kindergartens, hospitals and public institutions — higher sanitary and fire-safety compliance, tender-ready documentation, wholesale supply from Poltava, Ukraine.",
+    "metaDescription": "IN WOOD interior doors for schools, kindergartens, hospitals and public institutions — real experience supplying schools, in-house production in Poltava, wholesale supply.",
     "backLink": "← All cooperation options",
     "heading": "Doors for Public and Medical Institutions",
-    "intro": "Schools, kindergartens, hospitals, administrative buildings — spaces with higher safety and hygiene requirements. IN WOOD accounts for these requirements at the production stage, rather than adapting a standard door after the fact.",
-    "benefitsTitle": "What Matters for These Spaces",
-    "benefitsText": "We know the specifics of public-sector supply — from sanitary standards to the paperwork tender procurement requires.",
+    "intro": "Schools, kindergartens, hospitals, administrative buildings — institutions with their own door requirements. IN WOOD has real experience supplying schools, and we're open to discussing what your institution specifically needs.",
+    "benefitsTitle": "Why Institutions Work With IN WOOD",
+    "benefitsText": "We're open to working with schools, kindergartens, hospitals and other institutions — and ready to discuss your specific requirements honestly.",
     "benefits": [
       {
-        "title": "Higher Sanitary Requirements",
-        "text": "Smooth surfaces that hold up to frequent cleaning and disinfection — essential for hospitals, kindergartens and school cafeterias."
+        "title": "Real Experience Supplying Schools",
+        "text": "We have already supplied doors to schools — we know the specifics of working with educational institutions firsthand, not just in theory."
       },
       {
-        "title": "Fire-Safety Compliance",
-        "text": "We factor in fire-safety requirements for buildings with high occupancy already at the model-selection stage."
+        "title": "Consistent Quality on Every Order",
+        "text": "Our own production facility in Poltava with quality control at every stage — the same standard we apply to any order."
       },
       {
-        "title": "Durability Under Heavy Daily Use",
-        "text": "Schools and hospitals put doors under heavy daily strain — we select a construction built for exactly that."
-      },
-      {
-        "title": "Tender-Ready Documentation",
-        "text": "We prepare the technical documentation and specifications needed for public procurement tenders."
+        "title": "Let's Discuss Your Specific Requirements",
+        "text": "If your institution needs specific characteristics or documentation, tell us — we'll give you a straight answer on whether we can provide it."
       }
     ],
-    "tenderTitle": "Supply Through Public Procurement",
-    "tenderText": "We work with publicly funded institutions through tender procedures — providing all the documents, certificates and technical specifications required to take part in a procurement process.",
-    "ctaTitle": "Preparing a Procurement for Your Institution?",
-    "ctaText": "Leave a request — we'll prepare a commercial offer and technical specification matching your requirements."
+    "tenderTitle": "Open to Working With Publicly Funded Institutions",
+    "tenderText": "If your institution is running a procurement process, tell us what's actually needed — documents, specifications, volumes — and we'll give you a straight answer on whether we can provide it.",
+    "ctaTitle": "Choosing a Supplier for Your Institution?",
+    "ctaText": "Leave a request — we'll tell you how we can help your institution specifically."
   }
 }
