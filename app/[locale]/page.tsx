@@ -110,6 +110,7 @@ export default async function HomePage({
               fill
               sizes="(min-width: 1024px) 640px, 100vw"
               className="object-cover"
+              priority
             />
           </div>
           <div className="p-8 sm:p-12">
