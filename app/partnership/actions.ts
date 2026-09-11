@@ -2,6 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { sendLeadToKeepinCRM } from "@/lib/sendLead";
+import { sendCatalogToClient } from "@/lib/sendLeadEmail";
 
 // Окремі дії (не спільний app/actions/lead.ts submitLead) — на цій сторінці
 // дві незалежні форми (заявка на партнерство + каталог), і потрібно розрізняти
@@ -26,12 +27,21 @@ export async function submitPartnerForm(formData: FormData) {
 }
 
 export async function submitCatalogForm(formData: FormData) {
-  await sendLeadToKeepinCRM({
-    client: String(formData.get("name") ?? ""),
-    phone: String(formData.get("phone") ?? ""),
-    comment: "Запит каталогу з партнерського лендингу",
-    source: "Партнерський лендинг — каталог",
-  });
+  const name = String(formData.get("name") ?? "");
+  const email = String(formData.get("email") ?? "");
+
+  // Дві незалежні відправки паралельно: нам — заявка (CRM + пошта, як і
+  // раніше), клієнту — окремий лист з каталогом. Одна не залежить від іншої.
+  await Promise.all([
+    sendLeadToKeepinCRM({
+      client: name,
+      phone: String(formData.get("phone") ?? ""),
+      email,
+      comment: "Запит каталогу з партнерського лендингу",
+      source: "Партнерський лендинг — каталог",
+    }),
+    email ? sendCatalogToClient(name, email) : Promise.resolve(false),
+  ]);
 
   redirect(`/partnership?sent=catalog-${Date.now()}#catalog-section`);
 }

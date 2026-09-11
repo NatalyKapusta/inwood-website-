@@ -766,6 +766,10 @@ export default function PartnershipLanding({
                     invalidLabel="Перевірте номер телефону"
                   />
                 </div>
+                <div className="field">
+                  <label htmlFor="cemail">Email</label>
+                  <input type="email" id="cemail" name="email" placeholder="Ваш email" required />
+                </div>
                 <button type="submit" className="btn">Отримати каталог</button>
               </form>
             </div>
