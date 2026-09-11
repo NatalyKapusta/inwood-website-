@@ -29,7 +29,15 @@ export async function middleware(request: NextRequest) {
   const hostname = request.headers.get("host") ?? "";
   if (hostname.startsWith("partnership.")) {
     const url = request.nextUrl.clone();
-    url.pathname = pathname === "/" ? "/partnership" : `/partnership${pathname}`;
+    // Форми на сторінці редіректять на абсолютний "/partnership?sent=..."
+    // (той самий шлях, що й на inwood.com.ua/partnership) — якщо тут
+    // додати префікс і до вже префіксованого шляху, вийде неіснуючий
+    // /partnership/partnership. Додаємо префікс лише коли його ще нема.
+    url.pathname = pathname.startsWith("/partnership")
+      ? pathname
+      : pathname === "/"
+      ? "/partnership"
+      : `/partnership${pathname}`;
     const rewritten = NextResponse.rewrite(url);
     rewritten.headers.set("X-Robots-Tag", "noindex, nofollow");
     return rewritten;
