@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { organizationJsonLd } from "@/lib/seo";
 import { playfairDisplay, manrope } from "@/lib/fonts";
+import KeepinCrmA11yPatch from "@/components/KeepinCrmA11yPatch";
 import "@/app/globals.css";
 
 export function generateStaticParams() {
@@ -82,6 +83,7 @@ export default async function LocaleLayout({
             gtag('config', '${GA_MEASUREMENT_ID}');
           `}
         </Script>
+        <KeepinCrmA11yPatch />
       </body>
     </html>
   );
