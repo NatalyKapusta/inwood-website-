@@ -3,6 +3,7 @@ import { login } from "@/app/portal/actions";
 import { submitLead } from "@/app/actions/lead";
 import PasswordInput from "@/components/PasswordInput";
 import PhoneInput from "@/components/PhoneInput";
+import SentModal from "@/components/SentModal";
 
 export const metadata = { title: "Вхід — Партнерський портал IN WOOD" };
 
@@ -63,45 +64,42 @@ export default function PortalLoginPage({
           доступ після узгодження умов співпраці.
         </p>
 
-        {searchParams.sent ? (
-          <p className="mt-6 rounded-lg bg-green-50 px-4 py-3 text-sm text-green-700">
-            Дякуємо! Заявку надіслано, ми скоро з вами зв&apos;яжемось.
-          </p>
-        ) : (
-          <form action={submitLead} className="mt-6 flex flex-col gap-3">
-            <input type="hidden" name="source" value="Партнерський портал — заявка на доступ" />
-            <input
-              type="text"
-              name="name"
-              placeholder="Ім'я"
-              required
-              className="rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
-            />
-            <PhoneInput
-              placeholder="Телефон"
-              required
-              className="w-full rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Пошта"
-              className="rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
-            />
-            <input
-              type="text"
-              name="misto"
-              placeholder="Місто / компанія"
-              className="rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
-            />
-            <button
-              type="submit"
-              className="rounded-full border border-navy-dark px-7 py-3 font-semibold text-navy-dark transition hover:bg-navy-dark hover:text-white"
-            >
-              Подати заявку
-            </button>
-          </form>
+        {searchParams.sent && (
+          <SentModal message="Дякуємо! Заявку надіслано, ми скоро з вами зв'яжемось." />
         )}
+        <form action={submitLead} className="mt-6 flex flex-col gap-3">
+          <input type="hidden" name="source" value="Партнерський портал — заявка на доступ" />
+          <input
+            type="text"
+            name="name"
+            placeholder="Ім'я"
+            required
+            className="rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
+          />
+          <PhoneInput
+            placeholder="Телефон"
+            required
+            className="w-full rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Пошта"
+            className="rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
+          />
+          <input
+            type="text"
+            name="misto"
+            placeholder="Місто / компанія"
+            className="rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
+          />
+          <button
+            type="submit"
+            className="rounded-full border border-navy-dark px-7 py-3 font-semibold text-navy-dark transition hover:bg-navy-dark hover:text-white"
+          >
+            Подати заявку
+          </button>
+        </form>
       </div>
     </div>
   );
