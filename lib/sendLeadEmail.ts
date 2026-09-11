@@ -1,38 +1,27 @@
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 import type { LeadPayload } from "./sendLead";
 import { SITE_URL } from "./seo";
 
-// Дублюємо кожну заявку на пошту напряму (SMTP), незалежно від того, чи
+// Дублюємо кожну заявку на пошту напряму (Resend), незалежно від того, чи
 // пройшла вона в KeepinCRM — вебхук виявився ненадійним, і поки з ним
 // розбираємось, жодна заявка не має губитись. Отримувачі захардкожені
-// (це не секрет), а SMTP-доступ — через змінні середовища (реальний пароль
-// від поштової скриньки не можна тримати в репозиторії).
+// (це не секрет), а доступ до Resend — через змінну середовища RESEND_API_KEY
+// (ключ видає сам сервіс, це не пароль від поштової скриньки).
 const RECIPIENTS = ["info@inwood.com.ua", "hodes.nv@gmail.com"];
+const FROM = process.env.RESEND_FROM_EMAIL ?? "IN WOOD — сайт <site@inwood.com.ua>";
 
-function getTransporter() {
-  const host = process.env.SMTP_HOST;
-  const port = process.env.SMTP_PORT;
-  const user = process.env.SMTP_USER;
-  const pass = process.env.SMTP_PASS;
-  if (!host || !port || !user || !pass) {
-    console.error("SMTP не налаштовано (SMTP_HOST/SMTP_PORT/SMTP_USER/SMTP_PASS)");
+function getResend() {
+  const key = process.env.RESEND_API_KEY;
+  if (!key) {
+    console.error("Resend не налаштовано (RESEND_API_KEY)");
     return null;
   }
-  return {
-    user,
-    transporter: nodemailer.createTransport({
-      host,
-      port: Number(port),
-      secure: Number(port) === 465,
-      auth: { user, pass },
-    }),
-  };
+  return new Resend(key);
 }
 
 export async function sendLeadEmail(payload: LeadPayload) {
-  const smtp = getTransporter();
-  if (!smtp) return false;
-  const { user, transporter } = smtp;
+  const resend = getResend();
+  if (!resend) return false;
 
   const rows: [string, string | undefined][] = [
     ["Ім'я", payload.client],
@@ -49,16 +38,20 @@ export async function sendLeadEmail(payload: LeadPayload) {
     .join("");
 
   try {
-    await transporter.sendMail({
-      from: `"IN WOOD — сайт" <${user}>`,
+    const { error } = await resend.emails.send({
+      from: FROM,
       to: RECIPIENTS,
       subject: `Нова заявка з сайту — ${payload.source}`,
       text: textLines.join("\n"),
       html: `<table>${htmlRows}</table>`,
     });
+    if (error) {
+      console.error("Не вдалося надіслати заявку на пошту (Resend)", error);
+      return false;
+    }
     return true;
   } catch (err) {
-    console.error("Не вдалося надіслати заявку на пошту (SMTP)", err);
+    console.error("Не вдалося надіслати заявку на пошту (Resend)", err);
     return false;
   }
 }
@@ -69,13 +62,12 @@ export async function sendLeadEmail(payload: LeadPayload) {
 const CATALOG_URL = `${SITE_URL}/documents/catalog-ua.pdf`;
 
 export async function sendCatalogToClient(name: string, email: string) {
-  const smtp = getTransporter();
-  if (!smtp) return false;
-  const { user, transporter } = smtp;
+  const resend = getResend();
+  if (!resend) return false;
 
   try {
-    await transporter.sendMail({
-      from: `"IN WOOD" <${user}>`,
+    const { error } = await resend.emails.send({
+      from: FROM,
       to: email,
       subject: "Каталог продукції IN WOOD",
       text: `Вітаємо, ${name}!\n\nДякуємо за інтерес до IN WOOD. Ось посилання на каталог продукції (відкривається для перегляду):\n${CATALOG_URL}\n\nЯкщо виникнуть питання — пишіть на info@inwood.com.ua.`,
@@ -86,6 +78,10 @@ export async function sendCatalogToClient(name: string, email: string) {
         <p>Якщо виникнуть питання — пишіть на <a href="mailto:info@inwood.com.ua">info@inwood.com.ua</a>.</p>
       `,
     });
+    if (error) {
+      console.error("Не вдалося надіслати каталог клієнту на пошту (Resend)", error);
+      return false;
+    }
     return true;
   } catch (err) {
     console.error("Не вдалося надіслати каталог клієнту на пошту", err);
