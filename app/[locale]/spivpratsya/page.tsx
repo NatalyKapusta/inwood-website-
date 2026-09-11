@@ -102,17 +102,31 @@ export default async function SpivpratsyaPage({
             <p className="mx-auto mt-4 max-w-2xl text-navy-dim">{t.audienceText}</p>
           </div>
           <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
-            {t.audience.map((a, i) => (
-              <div
-                key={a}
-                className="flex flex-col items-center gap-2 rounded-xl bg-panel p-5 text-center"
-              >
+            {t.audience.map((a, i) => {
+              const badge = (
                 <span className="flex h-9 w-9 items-center justify-center rounded-full bg-navy-dark font-serif text-sm font-bold text-gold">
                   {i + 1}
                 </span>
-                <span className="text-sm font-semibold text-navy-dark">{a}</span>
-              </div>
-            ))}
+              );
+              return a.href ? (
+                <Link
+                  key={a.label}
+                  href={`/${params.locale}${a.href}`}
+                  className="flex flex-col items-center gap-2 rounded-xl bg-panel p-5 text-center transition hover:shadow-lg"
+                >
+                  {badge}
+                  <span className="text-sm font-semibold text-navy-dark">{a.label}</span>
+                </Link>
+              ) : (
+                <div
+                  key={a.label}
+                  className="flex flex-col items-center gap-2 rounded-xl bg-panel p-5 text-center"
+                >
+                  {badge}
+                  <span className="text-sm font-semibold text-navy-dark">{a.label}</span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -147,6 +161,12 @@ export default async function SpivpratsyaPage({
                   <p className="font-serif text-xl font-bold text-navy-dark">{t.exportIntro}</p>
                   <p className="mt-4 text-navy-dim">{t.exportText}</p>
                   <p className="mt-4 font-semibold text-navy-dark">{t.exportCountries}</p>
+                  <Link
+                    href={`/${params.locale}/export`}
+                    className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-gold-dim underline decoration-dotted underline-offset-4 hover:text-gold"
+                  >
+                    {t.exportMoreLink}
+                  </Link>
                 </div>
               ),
             },

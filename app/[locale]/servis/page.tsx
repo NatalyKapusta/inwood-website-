@@ -1,5 +1,6 @@
 import type { Locale } from "@/lib/i18n";
 import ContactCta from "@/components/ContactCta";
+import RelatedLinks from "@/components/RelatedLinks";
 import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata } from "@/lib/seo";
 
@@ -43,6 +44,14 @@ export default async function ServisPage({
           ))}
         </div>
       </section>
+
+      <RelatedLinks
+        locale={params.locale}
+        title={dict.common.relatedTitle}
+        links={dict.common.nav.filter((n) =>
+          ["/garantiya", "/oplata-dostavka", "/faq"].includes(n.href)
+        )}
+      />
 
       <ContactCta
         title={t.ctaTitle}

@@ -2,6 +2,7 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata } from "@/lib/seo";
 import ContactCta from "@/components/ContactCta";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
@@ -67,6 +68,14 @@ export default async function ProNasPage({
           </div>
         </div>
       </section>
+
+      <RelatedLinks
+        locale={params.locale}
+        title={c.relatedTitle}
+        links={c.nav.filter((n) =>
+          ["/galereya", "/harakterystyky", "/nashi-dileri"].includes(n.href)
+        )}
+      />
 
       <ContactCta
         title={c.ctaTitle}

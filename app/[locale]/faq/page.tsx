@@ -2,6 +2,7 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata, faqPageJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import ContactCta from "@/components/ContactCta";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
@@ -64,6 +65,12 @@ export default async function FaqPage({
           ))}
         </div>
       </section>
+
+      <RelatedLinks
+        locale={params.locale}
+        title={c.relatedTitle}
+        links={c.nav.filter((n) => ["/garantiya", "/servis", "/oplata-dostavka"].includes(n.href))}
+      />
 
       <ContactCta
         title={c.ctaTitle}

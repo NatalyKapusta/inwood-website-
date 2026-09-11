@@ -29,6 +29,10 @@
         "href": "/nashi-dileri"
       },
       {
+        "label": "Partnership",
+        "href": "/spivpratsya"
+      },
+      {
         "label": "For Developers",
         "href": "/dlya-zabudovnykiv"
       },
@@ -39,10 +43,6 @@
       {
         "label": "Public Institutions",
         "href": "/derzhavnym-zakladam"
-      },
-      {
-        "label": "Partnership",
-        "href": "/spivpratsya"
       },
       {
         "label": "Payment & Delivery",
@@ -80,6 +80,7 @@
     "phoneChooseCountry": "Choose a country from the list",
     "phoneInvalid": "Please check your phone number — enter a valid number",
     "breadcrumbHome": "Home",
+    "relatedTitle": "See also",
     "footerMailLabel": "Mail",
     "footerPhoneLabel": "Phone",
     "footerAddressLabel": "Address",
@@ -183,7 +184,8 @@
       },
       {
         "title": "Developers",
-        "text": "Serial supply for residential complexes: consistent quality, installation schedule, project support."
+        "text": "Serial supply for residential complexes: consistent quality, installation schedule, project support.",
+        "href": "/dlya-zabudovnykiv"
       },
       {
         "title": "International partners",
@@ -192,7 +194,8 @@
       },
       {
         "title": "Dealers and partners",
-        "text": "Wholesale terms, marketing materials, a dedicated account manager."
+        "text": "Wholesale terms, marketing materials, a dedicated account manager.",
+        "href": "/spivpratsya"
       },
       {
         "title": "Public and Medical Institutions",
@@ -524,14 +527,15 @@
     "audienceTitle": "Partnership for any type of business",
     "audienceText": "From retail shops to large dealer networks, developers and international partners — IN WOOD offers cooperation terms adapted to the scale and needs of your business.",
     "audience": [
-      "Dealers",
-      "Distributors",
-      "Residential construction",
-      "Commercial real estate",
-      "Hospitality business",
-      "Apartment complexes",
-      "International partnership",
-      "Designers"
+      { "label": "Dealers" },
+      { "label": "Distributors" },
+      { "label": "Residential construction", "href": "/dlya-zabudovnykiv" },
+      { "label": "Commercial real estate" },
+      { "label": "Hospitality business" },
+      { "label": "Apartment complexes" },
+      { "label": "International partnership", "href": "/export" },
+      { "label": "Designers" },
+      { "label": "Public and medical institutions", "href": "/derzhavnym-zakladam" }
     ],
     "toolsTitle": "Terms that work for your profit",
     "toolsText": "Direct prices from the manufacturer with no middlemen, a competitive offer for your customers, and ready-made tools for effective sales.",
@@ -625,6 +629,7 @@
     "exportIntro": "Looking for a reliable interior door manufacturer for export?",
     "exportText": "We are open to international cooperation and supply interior doors to partners in various countries around the world. IN WOOD is actively growing, offering its products to partners not only in Ukraine but abroad as well. Our doors are installed in private homes, apartments, offices, hotels and commercial premises worldwide.",
     "exportCountries": "We have successful export experience to Canada, France, Switzerland, Lithuania and Latvia, and we continue to expand our geographic presence.",
+    "exportMoreLink": "More about export terms →",
     "ctaTitle": "Become an IN WOOD partner",
     "ctaText": "We're not just building a partner network — we're building a strong team of like-minded people. Get a commercial offer and cooperation terms.",
     "formCountry": "Country",

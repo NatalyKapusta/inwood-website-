@@ -2,6 +2,7 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata } from "@/lib/seo";
 import ContactCta from "@/components/ContactCta";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
@@ -61,6 +62,14 @@ export default async function GarantiyaPage({
           </div>
         </div>
       </section>
+
+      <RelatedLinks
+        locale={params.locale}
+        title={dict.common.relatedTitle}
+        links={dict.common.nav.filter((n) =>
+          ["/servis", "/oplata-dostavka", "/faq"].includes(n.href)
+        )}
+      />
 
       <ContactCta
         title={t.ctaTitle}

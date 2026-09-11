@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { locales, localeLabels, type Locale } from "@/lib/i18n";
 import MailIcon from "@/components/MailIcon";
 
@@ -26,6 +27,8 @@ export default function Header({
   menuLabel: string;
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const pathWithoutLocale = pathname?.replace(new RegExp(`^/${locale}(?=/|$)`), "") || "";
 
   return (
     <header className="sticky top-0 z-50 bg-panel shadow-[0_4px_20px_-8px_rgba(51,57,88,0.25)]">
@@ -36,7 +39,7 @@ export default function Header({
             {locales.map((l) => (
               <Link
                 key={l}
-                href={`/${l}`}
+                href={`/${l}${pathWithoutLocale}`}
                 className={
                   l === locale
                     ? "font-bold text-gold"
