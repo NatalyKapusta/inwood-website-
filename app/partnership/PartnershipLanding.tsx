@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import PhoneInput from "@/components/PhoneInput";
 import { collections } from "@/lib/products";
 import { STANDARD_WIDTHS, STANDARD_HEIGHTS, NONSTD_WIDTHS, NONSTD_HEIGHTS, NONSTD_SURCHARGE } from "@/lib/doorSizes";
@@ -162,8 +163,8 @@ export default function PartnershipLanding({ sentState }: { sentState: "partner"
         .pl .reveal.in{opacity:1;transform:translateY(0);}
 
         .pl .hero{position:relative;padding:100px 0 76px;overflow:hidden;}
-        .pl .hero-bg{position:absolute;inset:-6% 0 0 0;z-index:0;}
-        .pl .hero-bg img{width:100%;height:112%;object-fit:cover;opacity:0.28;will-change:transform;}
+        .pl .hero-bg{position:absolute;inset:-15% 0 -15% 0;z-index:0;will-change:transform;}
+        .pl .hero-bg img{will-change:transform;}
         .pl .hero-bg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 30%, rgba(15,16,22,0.35), rgba(15,16,22,0.85) 65%, rgba(15,16,22,0.98) 100%), linear-gradient(180deg, rgba(15,16,22,0.5) 0%, rgba(15,16,22,0.95) 88%);}
         .pl .hero .wrap{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:40px;text-align:left;}
         .pl .hero-text{flex:1 1 480px;position:relative;}
@@ -240,9 +241,9 @@ export default function PartnershipLanding({ sentState }: { sentState: "partner"
         .pl .collections{display:grid;grid-template-columns:repeat(auto-fit, minmax(200px,1fr));gap:18px;}
         .pl .coll{background:var(--panel);border:1px solid rgba(255,255,255,0.06);border-radius:14px;overflow:hidden;transition:transform .35s ease, box-shadow .35s ease;box-shadow:0 16px 34px -22px rgba(0,0,0,0.7);}
         .pl .coll:hover{transform:translateY(-6px);box-shadow:0 20px 40px -20px rgba(0,0,0,0.6);}
-        .pl .coll .ph{background:#fff;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;overflow:hidden;}
-        .pl .coll .ph img{width:100%;height:100%;object-fit:contain;padding:14px;transition:transform .5s ease;}
-        .pl .coll .ph img.cover{object-fit:cover;padding:0;}
+        .pl .coll .ph{position:relative;background:#fff;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+        .pl .coll .ph img{padding:14px;transition:transform .5s ease;}
+        .pl .coll .ph img.cover{padding:0;}
         .pl .coll:hover .ph img{transform:scale(1.05);}
         .pl .coll .cap{padding:16px 18px;}
         .pl .coll .cap b{display:block;font-family:'Playfair Display',serif;font-size:16px;letter-spacing:.03em;margin-bottom:6px;}
@@ -288,8 +289,8 @@ export default function PartnershipLanding({ sentState }: { sentState: "partner"
         .pl .demo-card{max-width:880px;width:100%;margin:0 auto;background:var(--panel2);border:1px solid rgba(227,204,161,0.28);border-radius:16px;padding:34px 32px;position:relative;z-index:1;box-shadow:0 24px 55px -25px rgba(0,0,0,0.75);box-sizing:border-box;}
         .pl .demo-layout{display:grid;grid-template-columns:220px 1fr;gap:30px;align-items:start;min-width:0;}
         .pl .demo-photo-wrap{position:sticky;top:90px;min-width:0;}
-        .pl .demo-photo{background:#fff;border-radius:12px;aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;overflow:hidden;}
-        .pl .demo-photo img{width:100%;height:100%;object-fit:contain;padding:12px;}
+        .pl .demo-photo{position:relative;background:#fff;border-radius:12px;aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+        .pl .demo-photo img{padding:12px;}
         .pl .demo-fields-col{min-width:0;}
         .pl .demo-fields{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;min-width:0;}
         .pl .demo-fields .field{min-width:0;}
@@ -346,8 +347,14 @@ export default function PartnershipLanding({ sentState }: { sentState: "partner"
 
       <section className="hero">
         <div className="hero-bg" ref={heroBgRef}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/photos/interiors/etalon-et-01-zriz-kameniu.jpg" alt="" />
+          <Image
+            src="/photos/interiors/etalon-et-01-zriz-kameniu.jpg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            style={{ objectFit: "cover", opacity: 0.28 }}
+          />
         </div>
         <div className="wrap">
           <div className="hero-text">
@@ -366,8 +373,7 @@ export default function PartnershipLanding({ sentState }: { sentState: "partner"
           <div className="hero-visual">
             <div className="floating-door" ref={floatingDoorRef}>
               <div className="floating-door-inner">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/photos/etalon/et-01-dub-shato.png" alt="Двері IN WOOD, колекція Etalon" />
+                <Image src="/photos/etalon/et-01-dub-shato.png" alt="Двері IN WOOD, колекція Etalon" width={1000} height={1000} priority />
               </div>
             </div>
           </div>
@@ -391,8 +397,13 @@ export default function PartnershipLanding({ sentState }: { sentState: "partner"
                 <div className="demo-photo-wrap">
                   <div className="demo-photo">
                     {demoColor && (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={demoColor.image} alt={`${demoModel.code}, ${demoColor.label}`} />
+                      <Image
+                        src={demoColor.image}
+                        alt={`${demoModel.code}, ${demoColor.label}`}
+                        fill
+                        sizes="220px"
+                        style={{ objectFit: "contain" }}
+                      />
                     )}
                   </div>
                 </div>
@@ -661,7 +672,7 @@ export default function PartnershipLanding({ sentState }: { sentState: "partner"
           </div>
           <div className="collections">
             {[
-              { name: "Etalon", desc: "Щитові, гладкі або декоровані молдингом та дзеркальними вставками, покриття – ПВХ.", img: "/photos/etalon/et-01-dub-shato.png", cover: false },
+              { name: "Etalon", desc: "Щитові, гладкі або декоровані молдингом та дзеркальними вставками, покриття – ПВХ.", img: "/photos/etalon/et-01-chorna-korka.png", cover: false },
               { name: "Nominal", desc: "Щитові, бюджетна лінійка, декор — молдинг, покриття – ПВХ.", img: "/photos/nominal/nl-01-antratsyt.png", cover: false },
               { name: "Frezzatti", desc: "Щитові, декор — фрезерування, покриття – ПВХ-плівка або фарбування за картами RAL / NCS.", img: "/photos/frezzatti/fz-01-antratsyt.png", cover: false },
               { name: "Perfetto", desc: "Щитові, декор — фрезерування, покриття — фарбування за картами RAL / NCS.", img: "/photos/perfetto/pf-01.png", cover: false },
@@ -669,8 +680,14 @@ export default function PartnershipLanding({ sentState }: { sentState: "partner"
             ].map((c) => (
               <div className="coll reveal" key={c.name}>
                 <div className="ph">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img className={c.cover ? "cover" : ""} src={c.img} alt={`Колекція ${c.name} IN WOOD`} />
+                  <Image
+                    className={c.cover ? "cover" : ""}
+                    src={c.img}
+                    alt={`Колекція ${c.name} IN WOOD`}
+                    fill
+                    sizes="(min-width: 860px) 220px, 45vw"
+                    style={{ objectFit: c.cover ? "cover" : "contain" }}
+                  />
                 </div>
                 <div className="cap">
                   <b>{c.name}</b>
