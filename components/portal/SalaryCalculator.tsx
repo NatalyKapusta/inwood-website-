@@ -212,7 +212,7 @@ export default function SalaryCalculator({ initialPeople }: { initialPeople: Sal
 
       <div className="mt-6 grid gap-px overflow-hidden rounded-2xl border border-navy-dim/15 bg-navy-dim/15 shadow-sm sm:grid-cols-3 print:border-navy-dim/30">
         <div className="bg-navy-dark p-5">
-          <p className="text-xs font-bold uppercase tracking-wide text-gold-dim">До виплати всього</p>
+          <p className="text-xs font-bold uppercase tracking-wide text-gold">До виплати всього</p>
           <p className="mt-1.5 font-mono text-2xl font-bold tabular-nums text-white">{fmtMoney(totalPayout)}</p>
         </div>
         <div className="bg-panel p-5">

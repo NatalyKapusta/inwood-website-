@@ -53,7 +53,7 @@ export default function ConstructionDiagram({
         {/* Особливості та розміри */}
         <div className="space-y-8">
           <div>
-            <h3 className="font-serif text-lg font-bold text-gold-dim">{featuresTitle}</h3>
+            <h3 className="font-serif text-lg font-bold text-gold">{featuresTitle}</h3>
             <ul className="mt-3 space-y-2 text-sm text-white/85">
               {features.map((f) => (
                 <li key={f} className="flex items-start gap-2">
@@ -64,7 +64,7 @@ export default function ConstructionDiagram({
             </ul>
           </div>
           <div>
-            <h3 className="font-serif text-lg font-bold text-gold-dim">{dimensionsTitle}</h3>
+            <h3 className="font-serif text-lg font-bold text-gold">{dimensionsTitle}</h3>
             <ul className="mt-3 space-y-2 text-sm text-white/85">
               {dimensions.map((d) => (
                 <li key={d}>— {d}</li>

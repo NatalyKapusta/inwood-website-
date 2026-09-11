@@ -27,7 +27,7 @@ export default async function NashiDileriPage({ params }: { params: { locale: Lo
       <section className="bg-navy-dark text-white">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
-            <p className="text-sm uppercase tracking-wide text-gold-dim">{t.heroKicker}</p>
+            <p className="text-sm uppercase tracking-wide text-gold">{t.heroKicker}</p>
             <h1 className="mt-2 font-serif text-3xl font-bold leading-tight sm:text-4xl">
               {t.heroTitle}
             </h1>
