@@ -4,6 +4,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 import "@/app/globals.css";
+import { playfairDisplay, manrope } from "@/lib/fonts";
 import { createClient } from "@/lib/supabase/server";
 import LogoutButton from "@/components/portal/LogoutButton";
 import ViewAsSwitcher from "@/components/portal/ViewAsSwitcher";
@@ -54,7 +55,7 @@ export default async function PortalLayout({ children }: { children: ReactNode }
   const effectiveIsOwner = isOwner && !viewingAs;
 
   return (
-    <html lang="uk">
+    <html lang="uk" className={`${playfairDisplay.variable} ${manrope.variable}`}>
       <body className="min-h-screen bg-panel-alt">
         <header className="bg-navy-dark text-white">
           <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4">

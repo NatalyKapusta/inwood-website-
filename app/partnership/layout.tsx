@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import Script from "next/script";
 import "@/app/globals.css";
+import { playfairDisplay, manrope } from "@/lib/fonts";
 import { SITE_URL } from "@/lib/seo";
 
 // Окрема (поза [locale]) сторінка для партнерської програми — без шапки/футера/нав
@@ -42,7 +43,7 @@ export const metadata = {
 
 export default function PartnershipLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="uk">
+    <html lang="uk" className={`${playfairDisplay.variable} ${manrope.variable}`}>
       <body>
         <Script id="fb-pixel" strategy="afterInteractive">
           {`

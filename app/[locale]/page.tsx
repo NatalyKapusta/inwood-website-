@@ -8,6 +8,13 @@ import PhoneInput from "@/components/PhoneInput";
 import { submitLead } from "@/app/actions/lead";
 import LeadConversionTracker from "@/components/LeadConversionTracker";
 import SentModal from "@/components/SentModal";
+import YouTubeFacade from "@/components/YouTubeFacade";
+
+const playLabels: Record<Locale, string> = {
+  ua: "Відтворити відео",
+  ru: "Воспроизвести видео",
+  en: "Play video",
+};
 
 async function getDict(locale: Locale) {
   try {
@@ -145,12 +152,10 @@ export default async function HomePage({
       <section className="bg-panel-alt py-16 sm:py-24">
         <div className="mx-auto grid max-w-5xl gap-8 px-4 sm:grid-cols-[220px_1fr] sm:items-center lg:grid-cols-[280px_1fr]">
           <div className="relative mx-auto aspect-[9/16] w-full max-w-[220px] overflow-hidden rounded-2xl bg-navy-dark shadow-lg lg:max-w-[280px]">
-            <iframe
-              src="https://www.youtube.com/embed/6i9gj2CIQ7k"
+            <YouTubeFacade
+              videoId="6i9gj2CIQ7k"
               title={t.installTitle}
-              className="absolute inset-0 h-full w-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
+              playLabel={playLabels[locale]}
             />
           </div>
           <div className="text-center sm:text-left">
@@ -190,12 +195,10 @@ export default async function HomePage({
       <section className="bg-navy-dark py-16 text-white sm:py-24">
         <div className="mx-auto grid max-w-5xl gap-8 px-4 sm:grid-cols-[220px_1fr] sm:items-center lg:grid-cols-[280px_1fr]">
           <div className="relative mx-auto aspect-[9/16] w-full max-w-[220px] overflow-hidden rounded-2xl bg-black shadow-lg lg:max-w-[280px]">
-            <iframe
-              src="https://www.youtube.com/embed/ztZxnzij35w"
+            <YouTubeFacade
+              videoId="ztZxnzij35w"
               title={t.commercialTitle}
-              className="absolute inset-0 h-full w-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
+              playLabel={playLabels[locale]}
             />
           </div>
           <div className="text-center sm:text-left">
@@ -267,12 +270,10 @@ export default async function HomePage({
         </h2>
         <p className="mt-4 text-navy-dim">{t.videoSection.text}</p>
         <div className="relative mt-8 aspect-video overflow-hidden rounded-2xl bg-navy-dark shadow-lg">
-          <iframe
-            src="https://www.youtube.com/embed/D1vzqflg0u8"
+          <YouTubeFacade
+            videoId="D1vzqflg0u8"
             title={t.videoSection.title}
-            className="absolute inset-0 h-full w-full"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
+            playLabel={playLabels[locale]}
           />
         </div>
       </section>

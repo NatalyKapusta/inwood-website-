@@ -8,3 +8,11 @@ export const localeLabels: Record<Locale, string> = {
   ru: "RU",
   en: "EN",
 };
+
+// URL-префікс "ua" — не валідний код мови (BCP 47): "ua" означає країну
+// Україна, а не українську мову. Для <html lang> потрібен саме "uk".
+export const localeHtmlLang: Record<Locale, string> = {
+  ua: "uk",
+  ru: "ru",
+  en: "en",
+};

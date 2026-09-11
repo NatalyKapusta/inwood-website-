@@ -1,9 +1,10 @@
 import type { ReactNode } from "react";
 import Script from "next/script";
-import { locales, type Locale } from "@/lib/i18n";
+import { locales, localeHtmlLang, type Locale } from "@/lib/i18n";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { organizationJsonLd } from "@/lib/seo";
+import { playfairDisplay, manrope } from "@/lib/fonts";
 import "@/app/globals.css";
 
 export function generateStaticParams() {
@@ -33,7 +34,7 @@ export default async function LocaleLayout({
   const common = await getCommonDict(params.locale);
 
   return (
-    <html lang={params.locale}>
+    <html lang={localeHtmlLang[params.locale]} className={`${playfairDisplay.variable} ${manrope.variable}`}>
       <body>
         <script
           type="application/ld+json"

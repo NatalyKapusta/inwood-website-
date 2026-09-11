@@ -23,8 +23,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        serif: ["'Playfair Display'", "Georgia", "serif"],
-        sans: ["Manrope", "Arial", "sans-serif"],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
+        sans: ["var(--font-sans)", "Arial", "sans-serif"],
       },
     },
   },
