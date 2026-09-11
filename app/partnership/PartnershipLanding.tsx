@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import PhoneInput from "@/components/PhoneInput";
 import SentModal from "@/components/SentModal";
+import Honeypot from "@/components/Honeypot";
 import { collections } from "@/lib/products";
 import { STANDARD_WIDTHS, STANDARD_HEIGHTS, NONSTD_WIDTHS, NONSTD_HEIGHTS, NONSTD_SURCHARGE } from "@/lib/doorSizes";
 import { submitPartnerForm, submitCatalogForm } from "./actions";
@@ -752,6 +753,7 @@ export default function PartnershipLanding({
             )}
             <div className="catalog-gate">
               <form action={submitCatalogForm}>
+                <Honeypot />
                 <div className="field">
                   <label htmlFor="cname">Ім&apos;я</label>
                   <input type="text" id="cname" name="name" placeholder="Ваше ім'я" required />
@@ -791,6 +793,7 @@ export default function PartnershipLanding({
                 <h2>Стати партнером IN WOOD</h2>
                 <p className="sub">Заповніть форму та надішліть заявку — Ваш персональний менеджер зателефонує та проведе конструктивну консультацію.</p>
                 <form action={submitPartnerForm}>
+                  <Honeypot />
                   <div className="field">
                     <label htmlFor="name">ПІБ та компанія</label>
                     <input type="text" id="name" name="name" placeholder="ПІБ, назва компанії" required />

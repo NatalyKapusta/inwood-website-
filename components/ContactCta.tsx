@@ -2,6 +2,7 @@ import PhoneInput from "@/components/PhoneInput";
 import { submitLead } from "@/app/actions/lead";
 import LeadConversionTracker from "@/components/LeadConversionTracker";
 import SentModal from "@/components/SentModal";
+import Honeypot from "@/components/Honeypot";
 
 type ExtraField = {
   placeholder: string;
@@ -50,6 +51,7 @@ export default function ContactCta({
       )}
       <form action={submitLead} className="mx-auto mt-8 flex max-w-md flex-col gap-4">
         <input type="hidden" name="source" value={source} />
+        <Honeypot />
         <input
           type="text"
           name="name"

@@ -4,6 +4,7 @@ import { submitLead } from "@/app/actions/lead";
 import PasswordInput from "@/components/PasswordInput";
 import PhoneInput from "@/components/PhoneInput";
 import SentModal from "@/components/SentModal";
+import Honeypot from "@/components/Honeypot";
 
 export const metadata = { title: "Вхід — Партнерський портал IN WOOD" };
 
@@ -69,6 +70,7 @@ export default function PortalLoginPage({
         )}
         <form action={submitLead} className="mt-6 flex flex-col gap-3">
           <input type="hidden" name="source" value="Партнерський портал — заявка на доступ" />
+          <Honeypot />
           <input
             type="text"
             name="name"

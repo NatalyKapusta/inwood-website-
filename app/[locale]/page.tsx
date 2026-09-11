@@ -9,6 +9,7 @@ import { submitLead } from "@/app/actions/lead";
 import LeadConversionTracker from "@/components/LeadConversionTracker";
 import SentModal from "@/components/SentModal";
 import YouTubeFacade from "@/components/YouTubeFacade";
+import Honeypot from "@/components/Honeypot";
 
 const playLabels: Record<Locale, string> = {
   ua: "Відтворити відео",
@@ -293,6 +294,7 @@ export default async function HomePage({
         )}
         <form action={submitLead} className="mx-auto mt-8 flex max-w-md flex-col gap-4">
           <input type="hidden" name="source" value="Головна сторінка" />
+          <Honeypot />
           <input
             type="text"
             name="name"

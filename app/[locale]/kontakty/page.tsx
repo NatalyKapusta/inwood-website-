@@ -9,6 +9,7 @@ import ShowroomMap from "@/components/ShowroomMap";
 import { submitLead } from "@/app/actions/lead";
 import LeadConversionTracker from "@/components/LeadConversionTracker";
 import SentModal from "@/components/SentModal";
+import Honeypot from "@/components/Honeypot";
 
 const FEATURE_ICONS = [
   // Консультація та підтримка
@@ -169,6 +170,7 @@ export default async function KontaktyPage({
           )}
           <form action={submitLead} className="mt-6 flex flex-col gap-3">
             <input type="hidden" name="source" value="Контакти" />
+            <Honeypot />
             <input
               type="text"
               name="name"

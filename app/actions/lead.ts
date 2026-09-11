@@ -3,8 +3,18 @@
 import { redirect } from "next/navigation";
 import { headers } from "next/headers";
 import { sendLeadToKeepinCRM } from "@/lib/sendLead";
+import { isSpam } from "@/lib/isSpam";
 
 export async function submitLead(formData: FormData) {
+  const referer = (await headers()).get("referer") ?? "/";
+  if (isSpam(formData)) {
+    // Тихо ігноруємо — не видаємо боту, що його розпізнали, редіректимо
+    // так само, як при успішній відправці.
+    const url = new URL(referer);
+    url.searchParams.set("sent", "1");
+    redirect(url.pathname + url.search);
+  }
+
   const extraComments: string[] = [];
   for (const [key, value] of formData.entries()) {
     if (key.startsWith("comment_") && String(value).trim()) {
@@ -23,7 +33,6 @@ export async function submitLead(formData: FormData) {
     source: String(formData.get("source") ?? "з сайту"),
   });
 
-  const referer = (await headers()).get("referer") ?? "/";
   const url = new URL(referer);
   url.searchParams.set("sent", "1");
   redirect(url.pathname + url.search);

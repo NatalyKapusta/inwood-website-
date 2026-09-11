@@ -3,11 +3,16 @@
 import { redirect } from "next/navigation";
 import { sendLeadToKeepinCRM } from "@/lib/sendLead";
 import { sendCatalogToClient } from "@/lib/sendLeadEmail";
+import { isSpam } from "@/lib/isSpam";
 
 // Окремі дії (не спільний app/actions/lead.ts submitLead) — на цій сторінці
 // дві незалежні форми (заявка на партнерство + каталог), і потрібно розрізняти
 // в редіректі, яка саме форма відправлена, щоб показати правильне повідомлення.
 export async function submitPartnerForm(formData: FormData) {
+  if (isSpam(formData)) {
+    redirect(`/partnership?sent=partner-${Date.now()}#form-section`);
+  }
+
   const role = String(formData.get("role") ?? "").trim();
   const message = String(formData.get("message") ?? "").trim();
   const comment = [role ? `Варіант співпраці: ${role}` : "", message].filter(Boolean).join(". ");
@@ -27,6 +32,10 @@ export async function submitPartnerForm(formData: FormData) {
 }
 
 export async function submitCatalogForm(formData: FormData) {
+  if (isSpam(formData)) {
+    redirect(`/partnership?sent=catalog-${Date.now()}#catalog-section`);
+  }
+
   const name = String(formData.get("name") ?? "");
   const email = String(formData.get("email") ?? "");
 
