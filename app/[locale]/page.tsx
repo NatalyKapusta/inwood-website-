@@ -7,6 +7,7 @@ import { buildMetadata } from "@/lib/seo";
 import PhoneInput from "@/components/PhoneInput";
 import { submitLead } from "@/app/actions/lead";
 import LeadConversionTracker from "@/components/LeadConversionTracker";
+import SentModal from "@/components/SentModal";
 
 async function getDict(locale: Locale) {
   try {
@@ -282,39 +283,36 @@ export default async function HomePage({
           {c.ctaTitle}
         </h2>
         <p className="mt-4 text-navy-dim">{c.ctaText}</p>
-        {sent ? (
+        {sent && (
           <>
             <LeadConversionTracker source="Головна сторінка" />
-            <p className="mx-auto mt-8 max-w-md rounded-lg bg-panel-alt px-6 py-4 text-navy-dark">
-              {c.formSentMessage}
-            </p>
+            <SentModal message={c.formSentMessage} />
           </>
-        ) : (
-          <form action={submitLead} className="mx-auto mt-8 flex max-w-md flex-col gap-4">
-            <input type="hidden" name="source" value="Головна сторінка" />
-            <input
-              type="text"
-              name="name"
-              placeholder={c.formName}
-              required
-              className="rounded-lg border border-navy-dim/30 px-4 py-3 outline-none focus:border-gold"
-            />
-            <PhoneInput
-              placeholder={c.formPhone}
-              required
-              className="w-full rounded-lg border border-navy-dim/30 px-4 py-3 outline-none focus:border-gold"
-              manualLabel={c.phoneManual}
-              chooseCountryLabel={c.phoneChooseCountry}
-              invalidLabel={c.phoneInvalid}
-            />
-            <button
-              type="submit"
-              className="rounded-full bg-navy-dark px-7 py-3 font-semibold text-white transition hover:bg-gold hover:text-navy-dark"
-            >
-              {c.formSubmit}
-            </button>
-          </form>
         )}
+        <form action={submitLead} className="mx-auto mt-8 flex max-w-md flex-col gap-4">
+          <input type="hidden" name="source" value="Головна сторінка" />
+          <input
+            type="text"
+            name="name"
+            placeholder={c.formName}
+            required
+            className="rounded-lg border border-navy-dim/30 px-4 py-3 outline-none focus:border-gold"
+          />
+          <PhoneInput
+            placeholder={c.formPhone}
+            required
+            className="w-full rounded-lg border border-navy-dim/30 px-4 py-3 outline-none focus:border-gold"
+            manualLabel={c.phoneManual}
+            chooseCountryLabel={c.phoneChooseCountry}
+            invalidLabel={c.phoneInvalid}
+          />
+          <button
+            type="submit"
+            className="rounded-full bg-navy-dark px-7 py-3 font-semibold text-white transition hover:bg-gold hover:text-navy-dark"
+          >
+            {c.formSubmit}
+          </button>
+        </form>
       </section>
     </>
   );

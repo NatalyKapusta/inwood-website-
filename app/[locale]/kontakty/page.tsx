@@ -8,6 +8,7 @@ import MailIcon from "@/components/MailIcon";
 import ShowroomMap from "@/components/ShowroomMap";
 import { submitLead } from "@/app/actions/lead";
 import LeadConversionTracker from "@/components/LeadConversionTracker";
+import SentModal from "@/components/SentModal";
 
 const FEATURE_ICONS = [
   // Консультація та підтримка
@@ -160,51 +161,48 @@ export default async function KontaktyPage({
         <div className="rounded-xl bg-panel-alt p-6">
           <h2 className="font-serif text-lg font-bold text-navy-dark">{t.formTitle}</h2>
           <p className="mt-1 text-sm text-navy-dim">{t.formText}</p>
-          {sent ? (
+          {sent && (
             <>
               <LeadConversionTracker source="Контакти" />
-              <p className="mt-6 rounded-lg bg-panel px-4 py-3 text-navy-dark">
-                {c.formSentMessage}
-              </p>
+              <SentModal message={c.formSentMessage} />
             </>
-          ) : (
-            <form action={submitLead} className="mt-6 flex flex-col gap-3">
-              <input type="hidden" name="source" value="Контакти" />
-              <input
-                type="text"
-                name="name"
-                placeholder={c.formName}
-                required
-                className="rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
-              />
-              <PhoneInput
-                placeholder={c.formPhone}
-                required
-                className="w-full rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
-                manualLabel={c.phoneManual}
-                chooseCountryLabel={c.phoneChooseCountry}
-                invalidLabel={c.phoneInvalid}
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder={c.formEmailPlaceholder}
-                className="rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
-              />
-              <textarea
-                name="comment"
-                placeholder={c.formMessagePlaceholder}
-                rows={4}
-                className="rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
-              />
-              <button
-                type="submit"
-                className="rounded-full bg-navy-dark px-7 py-3 font-semibold text-white transition hover:bg-gold hover:text-navy-dark"
-              >
-                {c.formSubmit}
-              </button>
-            </form>
           )}
+          <form action={submitLead} className="mt-6 flex flex-col gap-3">
+            <input type="hidden" name="source" value="Контакти" />
+            <input
+              type="text"
+              name="name"
+              placeholder={c.formName}
+              required
+              className="rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
+            />
+            <PhoneInput
+              placeholder={c.formPhone}
+              required
+              className="w-full rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
+              manualLabel={c.phoneManual}
+              chooseCountryLabel={c.phoneChooseCountry}
+              invalidLabel={c.phoneInvalid}
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder={c.formEmailPlaceholder}
+              className="rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
+            />
+            <textarea
+              name="comment"
+              placeholder={c.formMessagePlaceholder}
+              rows={4}
+              className="rounded-lg border border-navy-dim/30 bg-panel px-4 py-3 outline-none focus:border-gold"
+            />
+            <button
+              type="submit"
+              className="rounded-full bg-navy-dark px-7 py-3 font-semibold text-white transition hover:bg-gold hover:text-navy-dark"
+            >
+              {c.formSubmit}
+            </button>
+          </form>
         </div>
       </div>
     </section>

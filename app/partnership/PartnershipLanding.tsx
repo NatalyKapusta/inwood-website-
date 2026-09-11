@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import PhoneInput from "@/components/PhoneInput";
+import SentModal from "@/components/SentModal";
 import { collections } from "@/lib/products";
 import { STANDARD_WIDTHS, STANDARD_HEIGHTS, NONSTD_WIDTHS, NONSTD_HEIGHTS, NONSTD_SURCHARGE } from "@/lib/doorSizes";
 import { submitPartnerForm, submitCatalogForm } from "./actions";
@@ -728,35 +729,40 @@ export default function PartnershipLanding({ sentState }: { sentState: "partner"
               <h3>Каталог продукції IN WOOD</h3>
               <p>Залиште своє ім'я та контактний номер телефону — каталог IN WOOD відразу відкриється для перегляду.</p>
             </div>
-            {sentState === "catalog" ? (
-              <div className="catalog-gate catalog-unlocked">
-                <div className="check">✓</div>
-                <p>Дякуємо! Ось ваш каталог:</p>
-                <a className="btn" href="/documents/catalog-ua.pdf" target="_blank" rel="noopener noreferrer">
+            {sentState === "catalog" && (
+              <SentModal>
+                <div className="check" style={{ fontSize: 32, marginBottom: 8 }}>✓</div>
+                <p className="mt-2 text-navy-dark">Дякуємо! Ось ваш каталог:</p>
+                <a
+                  className="btn"
+                  href="/documents/catalog-ua.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ display: "inline-block", marginTop: 16 }}
+                >
                   Переглянути каталог
                 </a>
-              </div>
-            ) : (
-              <div className="catalog-gate">
-                <form action={submitCatalogForm}>
-                  <div className="field">
-                    <label htmlFor="cname">Ім&apos;я</label>
-                    <input type="text" id="cname" name="name" placeholder="Ваше ім'я" required />
-                  </div>
-                  <div className="field">
-                    <label htmlFor="cphone">Телефон</label>
-                    <PhoneInput
-                      name="phone"
-                      required
-                      manualLabel="Немає моєї країни в списку — ввести номер вручну"
-                      chooseCountryLabel="Обрати країну зі списку"
-                      invalidLabel="Перевірте номер телефону"
-                    />
-                  </div>
-                  <button type="submit" className="btn">Отримати каталог</button>
-                </form>
-              </div>
+              </SentModal>
             )}
+            <div className="catalog-gate">
+              <form action={submitCatalogForm}>
+                <div className="field">
+                  <label htmlFor="cname">Ім&apos;я</label>
+                  <input type="text" id="cname" name="name" placeholder="Ваше ім'я" required />
+                </div>
+                <div className="field">
+                  <label htmlFor="cphone">Телефон</label>
+                  <PhoneInput
+                    name="phone"
+                    required
+                    manualLabel="Немає моєї країни в списку — ввести номер вручну"
+                    chooseCountryLabel="Обрати країну зі списку"
+                    invalidLabel="Перевірте номер телефону"
+                  />
+                </div>
+                <button type="submit" className="btn">Отримати каталог</button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
@@ -764,14 +770,14 @@ export default function PartnershipLanding({ sentState }: { sentState: "partner"
       <section id="form-section">
         <div className="wrap">
           <div className="form-card reveal">
-            {sentState === "partner" ? (
-              <div className="success-msg">
-                <div className="check">✓</div>
-                <h3>Заявку надіслано</h3>
-                <p>Дякуємо! Менеджер IN WOOD зв&apos;яжеться з вами найближчим часом.</p>
-              </div>
-            ) : (
-              <div>
+            {sentState === "partner" && (
+              <SentModal>
+                <div className="check" style={{ fontSize: 32, marginBottom: 8 }}>✓</div>
+                <h3 style={{ margin: "8px 0", color: "#14151C" }}>Заявку надіслано</h3>
+                <p className="text-navy-dark">Дякуємо! Менеджер IN WOOD зв&apos;яжеться з вами найближчим часом.</p>
+              </SentModal>
+            )}
+            <div>
                 <h2>Стати партнером IN WOOD</h2>
                 <p className="sub">Заповніть форму та надішліть заявку — Ваш персональний менеджер зателефонує та проведе конструктивну консультацію.</p>
                 <form action={submitPartnerForm}>
@@ -814,7 +820,6 @@ export default function PartnershipLanding({ sentState }: { sentState: "partner"
                 </form>
                 <p className="privacy-note">Натискаючи «Надіслати заявку», Ви погоджуєтесь на обробку контактних даних для зв&apos;язку щодо партнерства.</p>
               </div>
-            )}
           </div>
         </div>
       </section>
