@@ -19,7 +19,10 @@ export async function submitPartnerForm(formData: FormData) {
     source: "Партнерський лендинг — заявка",
   });
 
-  redirect("/partnership?sent=partner#form-section");
+  // Унікальний хвіст у "sent" — інакше повторна відправка (закрили спливаюче
+  // вікно й надіслали ще раз) веде на той самий URL, і React може не оновити
+  // компонент вікна, бо перехід "нікуди не змінився".
+  redirect(`/partnership?sent=partner-${Date.now()}#form-section`);
 }
 
 export async function submitCatalogForm(formData: FormData) {
@@ -30,5 +33,5 @@ export async function submitCatalogForm(formData: FormData) {
     source: "Партнерський лендинг — каталог",
   });
 
-  redirect("/partnership?sent=catalog#catalog-section");
+  redirect(`/partnership?sent=catalog-${Date.now()}#catalog-section`);
 }

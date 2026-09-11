@@ -21,7 +21,13 @@ function fmtUah(n: number) {
   return n.toLocaleString("uk-UA", { minimumFractionDigits: 0, maximumFractionDigits: 0 }) + " ₴";
 }
 
-export default function PartnershipLanding({ sentState }: { sentState: "partner" | "catalog" | null }) {
+export default function PartnershipLanding({
+  sentState,
+  sentKey,
+}: {
+  sentState: "partner" | "catalog" | null;
+  sentKey: string;
+}) {
   // ---- scroll reveal ----
   const rootRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -730,7 +736,7 @@ export default function PartnershipLanding({ sentState }: { sentState: "partner"
               <p>Залиште своє ім'я та контактний номер телефону — каталог IN WOOD відразу відкриється для перегляду.</p>
             </div>
             {sentState === "catalog" && (
-              <SentModal>
+              <SentModal key={sentKey}>
                 <div className="check" style={{ fontSize: 32, marginBottom: 8 }}>✓</div>
                 <p className="mt-2 text-navy-dark">Дякуємо! Ось ваш каталог:</p>
                 <a
@@ -771,7 +777,7 @@ export default function PartnershipLanding({ sentState }: { sentState: "partner"
         <div className="wrap">
           <div className="form-card reveal">
             {sentState === "partner" && (
-              <SentModal>
+              <SentModal key={sentKey}>
                 <div className="check" style={{ fontSize: 32, marginBottom: 8 }}>✓</div>
                 <h3 style={{ margin: "8px 0", color: "#14151C" }}>Заявку надіслано</h3>
                 <p className="text-navy-dark">Дякуємо! Менеджер IN WOOD зв&apos;яжеться з вами найближчим часом.</p>
