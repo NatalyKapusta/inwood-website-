@@ -100,6 +100,7 @@ export default async function DlyaZabudovnykivPage({
         nameLabel={c.formName}
         phoneLabel={c.formPhone}
         submitLabel={c.formSubmit}
+        sentLabel={c.formSentMessage}
         phoneManualLabel={c.phoneManual}
         phoneChooseCountryLabel={c.phoneChooseCountry}
         phoneInvalidLabel={c.phoneInvalid}
