@@ -66,7 +66,10 @@ export default async function DealerRecruitCityPage({
 
       <section className="bg-navy-dark py-16 text-center text-white sm:py-24">
         <div className="mx-auto max-w-3xl px-4">
-          <Link href={`/${params.locale}/spivpratsya`} className="text-sm text-white/60 underline decoration-dotted underline-offset-4 hover:text-gold">
+          <Link
+            href={`/${params.locale}/spivpratsya`}
+            className="inline-flex items-center gap-1 rounded-full border border-white/30 px-4 py-1.5 text-xs font-semibold text-white/80 transition hover:border-gold hover:text-gold"
+          >
             {t.backLink}
           </Link>
           <h1 className="mt-4 font-serif text-3xl font-bold sm:text-4xl">
