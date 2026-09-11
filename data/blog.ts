@@ -4,7 +4,8 @@ export type BlogBlock =
   | { type: "p"; text: string }
   | { type: "h2"; text: string }
   | { type: "h3"; text: string }
-  | { type: "ul"; items: string[] };
+  | { type: "ul"; items: string[] }
+  | { type: "link"; text: string; href: string };
 
 export type BlogPost = {
   slug: string;
@@ -246,6 +247,93 @@ const uaPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "dveri-dlia-vannoi-ta-volohykh-prymishchen",
+    title: "Двері для ванної кімнати та вологих приміщень: що варто знати перед покупкою",
+    excerpt:
+      "Ванна, санвузол, пральня — приміщення з підвищеною вологістю ставлять до дверей інші вимоги, ніж спальня чи вітальня. Розбираємо, яке покриття й конструкція витримають вологу без деформацій.",
+    blocks: [
+      {
+        type: "p",
+        text: "Двері у ванну кімнату часто обирають «як усі інші» в квартирі — і потім дивуються, чому за рік-два полотно почало розбухати знизу або жолобитися. Причина проста: вологість у санвузлі й пральні стабільно вища, ніж у житлових кімнатах, і матеріал дверей має бути готовий до цього наперед, а не «якось витримати».",
+      },
+      { type: "h2", text: "Чому звичайні двері не завжди підходять" },
+      {
+        type: "p",
+        text: "Класичне дерев'яне полотно — живий матеріал, який реагує на вологість: розширюється, вбирає пару, з часом може деформуватися по нижньому краю, де найдовше затримується волога після душу чи прання. У приміщеннях без хорошої вентиляції цей ефект посилюється.",
+      },
+      { type: "h2", text: "ПВХ-покриття чи фарбоване — що краще для вологих приміщень" },
+      {
+        type: "p",
+        text: "ПВХ-плівка створює додатковий бар'єр на поверхні полотна і краще переносить регулярну вологість та протирання, ніж фарбоване покриття — особливо в місцях, де двері часто витирають від бризок чи конденсату. Фарбовані двері теж можна ставити у ванну, але варто обирати моделі з якісним, рівномірним покриттям і уникати надмірного контакту з водою напряму.",
+      },
+      { type: "h2", text: "Алюмінієва крайка — головний захист знизу" },
+      {
+        type: "p",
+        text: "Найвразливіше місце будь-яких дверей у вологому приміщенні — нижній торець полотна, який найчастіше контактує з вологою підлогою. Алюмінієва крайка по периметру захищає полотно від набухання й сколів саме в цій зоні — це те, на що варто дивитися в характеристиках моделі в першу чергу, а не лише на колір чи текстуру.",
+      },
+      { type: "h3", text: "Поріг і зазор знизу" },
+      {
+        type: "p",
+        text: "У вологих приміщеннях особливо важливий правильний зазор між полотном і підлогою — він дає вентиляцію і не дає волозі накопичуватися впритул до дерева. Це питання монтажу, а не лише самих дверей, тому варто обговорити його з майстром заздалегідь.",
+      },
+      { type: "h2", text: "Підсумок" },
+      {
+        type: "p",
+        text: "Для ванної, санвузла чи пральні найбезпечніший вибір — двері з ПВХ-покриттям і алюмінієвою крайкою по периметру полотна. Це не міняє зовнішній вигляд чи вартість кардинально, зате додає роки служби там, де звичайні двері здаються найшвидше.",
+      },
+      {
+        type: "link",
+        text: "Подивитись, які колекції IN WOOD мають алюмінієву крайку",
+        href: "/catalog",
+      },
+    ],
+  },
+  {
+    slug: "yak-pidibraty-kolir-dverei-pid-pidlohu",
+    title: "Як підібрати колір дверей під підлогу та меблі",
+    excerpt:
+      "Двері — це велика вертикальна площина, яка або зв'язує інтер'єр, або спорить із ним. Розбираємо прості правила поєднання кольору дверей із підлогою, стінами й меблями.",
+    blocks: [
+      {
+        type: "p",
+        text: "Колір дверей часто обирають в останню чергу — коли ремонт майже завершено і підлога вже лежить. Але саме двері за площею одна з найбільших вертикальних поверхонь в інтер'єрі, тому промах із кольором помітний одразу, а виправити його дорожче, ніж перефарбувати стіну.",
+      },
+      { type: "h2", text: "Правило перше: контраст або злиття — але свідомо" },
+      {
+        type: "p",
+        text: "Є два робочі підходи. Перший — двері в тон підлоги або на 1-2 тони темніші/світліші: тоді вони «зникають» у просторі, а увагу забирають на себе меблі й декор. Другий — свідомий контраст, коли двері помітно темніші або світліші за підлогу і стіни: тоді вони стають самостійним акцентом. Проблема виникає, коли контраст виходить випадково — наприклад, двері підібрали під меблі, а вони не поєднались із підлогою.",
+      },
+      { type: "h2", text: "Теплі й холодні відтінки деревʼяних текстур" },
+      {
+        type: "p",
+        text: "Дерев'яні відтінки діляться на теплі (жовтуваті, помаранчеві, коричневі — дуб, горіх, вишня) і холодні (сірі, попелясті, вибілені). Головне правило: підлога і двері в одному приміщенні краще поєднувати в межах однієї «температури» — теплий дуб на підлозі з холодними сірими дверима часто виглядає неохайно, навіть якщо кожен елемент окремо гарний.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Тепла підлога (дуб, горіх) — добре поєднується з теплими відтінками дверей або з білим/кремовим кольором;",
+          "холодна підлога (сірий, вибілений дуб) — краще виглядає з холодними або нейтральними сірими дверима;",
+          "чорні чи графітові двері — універсальний контрастний акцент, який добре працює і з теплою, і з холодною підлогою, якщо в інтер'єрі є інші чорні деталі (фурнітура, рами, освітлення).",
+        ],
+      },
+      { type: "h2", text: "А стіни?" },
+      {
+        type: "p",
+        text: "Двері в колір стін — прийом, який візуально «розчиняє» дверний проріз і робить приміщення просторішим: часто так роблять у невеликих коридорах і санвузлах. Це протилежний підхід до поєднання з підлогою, і обирати варто один із двох — під підлогу або під стіни, а не намагатися поєднати з усім одразу.",
+      },
+      { type: "h2", text: "Підсумок" },
+      {
+        type: "p",
+        text: "Найпростіший безпечний варіант — обирати двері в межах однієї теплової гами з підлогою. Якщо хочеться акценту — свідомий контраст (наприклад, темні двері на світлій підлозі) працює краще, ніж випадковий збіг кольорів, що вийшов не за задумом.",
+      },
+      {
+        type: "link",
+        text: "Переглянути кольори та текстури колекцій IN WOOD",
+        href: "/catalog",
+      },
+    ],
+  },
 ];
 
 const ruPosts: BlogPost[] = [
@@ -481,6 +569,93 @@ const ruPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "dveri-dlia-vannoi-ta-volohykh-prymishchen",
+    title: "Двери для ванной комнаты и влажных помещений: что важно знать перед покупкой",
+    excerpt:
+      "Ванная, санузел, прачечная — помещения с повышенной влажностью предъявляют к дверям другие требования, чем спальня или гостиная. Разбираем, какое покрытие и конструкция выдержат влагу без деформаций.",
+    blocks: [
+      {
+        type: "p",
+        text: "Двери в ванную комнату часто выбирают «как все остальные» в квартире — а потом удивляются, почему через год-два полотно начало разбухать снизу или коробиться. Причина проста: влажность в санузле и прачечной стабильно выше, чем в жилых комнатах, и материал дверей должен быть готов к этому заранее, а не «как-то выдержать».",
+      },
+      { type: "h2", text: "Почему обычные двери подходят не всегда" },
+      {
+        type: "p",
+        text: "Классическое деревянное полотно — живой материал, который реагирует на влажность: расширяется, впитывает пар, со временем может деформироваться по нижнему краю, где дольше всего задерживается влага после душа или стирки. В помещениях без хорошей вентиляции этот эффект усиливается.",
+      },
+      { type: "h2", text: "ПВХ-покрытие или крашеное — что лучше для влажных помещений" },
+      {
+        type: "p",
+        text: "ПВХ-плёнка создаёт дополнительный барьер на поверхности полотна и лучше переносит регулярную влажность и протирание, чем крашеное покрытие — особенно в местах, где двери часто вытирают от брызг или конденсата. Крашеные двери тоже можно ставить в ванную, но стоит выбирать модели с качественным, равномерным покрытием и избегать избыточного прямого контакта с водой.",
+      },
+      { type: "h2", text: "Алюминиевая кромка — главная защита снизу" },
+      {
+        type: "p",
+        text: "Самое уязвимое место любых дверей во влажном помещении — нижний торец полотна, который чаще всего контактирует с влажным полом. Алюминиевая кромка по периметру защищает полотно от набухания и сколов именно в этой зоне — это то, на что стоит смотреть в характеристиках модели в первую очередь, а не только на цвет или текстуру.",
+      },
+      { type: "h3", text: "Порог и зазор снизу" },
+      {
+        type: "p",
+        text: "Во влажных помещениях особенно важен правильный зазор между полотном и полом — он даёт вентиляцию и не даёт влаге накапливаться вплотную к дереву. Это вопрос монтажа, а не только самих дверей, поэтому стоит обсудить его с мастером заранее.",
+      },
+      { type: "h2", text: "Итог" },
+      {
+        type: "p",
+        text: "Для ванной, санузла или прачечной самый безопасный выбор — двери с ПВХ-покрытием и алюминиевой кромкой по периметру полотна. Это не меняет внешний вид или стоимость кардинально, зато добавляет годы службы там, где обычные двери изнашиваются быстрее всего.",
+      },
+      {
+        type: "link",
+        text: "Посмотреть, какие коллекции IN WOOD имеют алюминиевую кромку",
+        href: "/catalog",
+      },
+    ],
+  },
+  {
+    slug: "yak-pidibraty-kolir-dverei-pid-pidlohu",
+    title: "Как подобрать цвет дверей под пол и мебель",
+    excerpt:
+      "Двери — это большая вертикальная плоскость, которая либо связывает интерьер, либо спорит с ним. Разбираем простые правила сочетания цвета дверей с полом, стенами и мебелью.",
+    blocks: [
+      {
+        type: "p",
+        text: "Цвет дверей часто выбирают в последнюю очередь — когда ремонт почти завершён и пол уже уложен. Но именно двери по площади одна из самых больших вертикальных поверхностей в интерьере, поэтому промах с цветом заметен сразу, а исправить его дороже, чем перекрасить стену.",
+      },
+      { type: "h2", text: "Правило первое: контраст или слияние — но осознанно" },
+      {
+        type: "p",
+        text: "Есть два рабочих подхода. Первый — двери в тон пола или на 1-2 тона темнее/светлее: тогда они «исчезают» в пространстве, а внимание забирают на себя мебель и декор. Второй — осознанный контраст, когда двери заметно темнее или светлее пола и стен: тогда они становятся самостоятельным акцентом. Проблема возникает, когда контраст получается случайно — например, двери подобрали под мебель, а они не сочетались с полом.",
+      },
+      { type: "h2", text: "Тёплые и холодные оттенки деревянных текстур" },
+      {
+        type: "p",
+        text: "Деревянные оттенки делятся на тёплые (желтоватые, оранжевые, коричневые — дуб, орех, вишня) и холодные (серые, пепельные, выбеленные). Главное правило: пол и двери в одном помещении лучше сочетать в пределах одной «температуры» — тёплый дуб на полу с холодными серыми дверями часто выглядит неряшливо, даже если каждый элемент по отдельности красив.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Тёплый пол (дуб, орех) — хорошо сочетается с тёплыми оттенками дверей или с белым/кремовым цветом;",
+          "холодный пол (серый, выбеленный дуб) — лучше смотрится с холодными или нейтральными серыми дверями;",
+          "чёрные или графитовые двери — универсальный контрастный акцент, который хорошо работает и с тёплым, и с холодным полом, если в интерьере есть другие чёрные детали (фурнитура, рамы, освещение).",
+        ],
+      },
+      { type: "h2", text: "А стены?" },
+      {
+        type: "p",
+        text: "Двери в цвет стен — приём, который визуально «растворяет» дверной проём и делает помещение просторнее: часто так делают в небольших коридорах и санузлах. Это противоположный подход сочетанию с полом, и стоит выбрать один из двух — под пол или под стены, а не пытаться сочетать со всем сразу.",
+      },
+      { type: "h2", text: "Итог" },
+      {
+        type: "p",
+        text: "Самый простой безопасный вариант — выбирать двери в пределах одной тепловой гаммы с полом. Если хочется акцента — осознанный контраст (например, тёмные двери на светлом полу) работает лучше, чем случайное совпадение цветов, получившееся не по задумке.",
+      },
+      {
+        type: "link",
+        text: "Посмотреть цвета и текстуры коллекций IN WOOD",
+        href: "/catalog",
+      },
+    ],
+  },
 ];
 
 const enPosts: BlogPost[] = [
@@ -713,6 +888,93 @@ const enPosts: BlogPost[] = [
       {
         type: "p",
         text: "So when a consultant says \"panel\" or \"stile-and-rail\", now you know what they mean. For most interiors, panel construction is a practical, proven choice — it's stable, holds its shape well, and leaves plenty of room for decor without complicating installation.",
+      },
+    ],
+  },
+  {
+    slug: "dveri-dlia-vannoi-ta-volohykh-prymishchen",
+    title: "Doors for Bathrooms and Humid Rooms: What to Know Before Buying",
+    excerpt:
+      "Bathrooms, utility rooms and laundries put different demands on a door than a bedroom or living room. Here's what coating and construction actually hold up against moisture.",
+    blocks: [
+      {
+        type: "p",
+        text: "Doors for a bathroom are often picked \"like all the others\" in the apartment — then a year or two later the bottom edge starts swelling or warping. The reason is simple: humidity in a bathroom or laundry room is consistently higher than in living spaces, and the door material needs to be chosen for that from the start, not hoped to just cope.",
+      },
+      { type: "h2", text: "Why a regular door isn't always the right fit" },
+      {
+        type: "p",
+        text: "A classic wooden door panel is a living material that reacts to humidity: it expands, absorbs moisture, and over time can warp along the bottom edge, where moisture lingers longest after a shower or a laundry cycle. In poorly ventilated rooms this effect is stronger.",
+      },
+      { type: "h2", text: "PVC film vs. painted finish for humid rooms" },
+      {
+        type: "p",
+        text: "PVC film creates an extra barrier on the door surface and holds up better against regular humidity and wiping down than a painted finish — especially where the door gets wiped clean of splashes or condensation often. Painted doors can go in a bathroom too, but it's worth choosing a model with a quality, even coating and avoiding excessive direct contact with water.",
+      },
+      { type: "h2", text: "Aluminium edging — the main protection at the bottom" },
+      {
+        type: "p",
+        text: "The most vulnerable spot on any door in a humid room is the bottom edge of the panel, which is in contact with a damp floor most often. Aluminium edging around the perimeter protects the panel from swelling and chipping right there — that's what to check in a model's specs first, not just the colour or texture.",
+      },
+      { type: "h3", text: "Threshold and floor gap" },
+      {
+        type: "p",
+        text: "In humid rooms, the gap between the door and the floor matters even more — it provides ventilation and keeps moisture from building up right against the wood. That's an installation question as much as a door one, worth discussing with the installer ahead of time.",
+      },
+      { type: "h2", text: "In summary" },
+      {
+        type: "p",
+        text: "For a bathroom, utility room or laundry, the safest choice is a door with PVC film and aluminium edging around the panel. It doesn't change the look or price dramatically, but it adds years of service exactly where a regular door wears out fastest.",
+      },
+      {
+        type: "link",
+        text: "See which IN WOOD collections come with aluminium edging",
+        href: "/catalog",
+      },
+    ],
+  },
+  {
+    slug: "yak-pidibraty-kolir-dverei-pid-pidlohu",
+    title: "How to Match Door Colour with Flooring and Furniture",
+    excerpt:
+      "A door is one of the largest vertical surfaces in a room — it either ties an interior together or fights with it. Simple rules for matching door colour to flooring, walls and furniture.",
+    blocks: [
+      {
+        type: "p",
+        text: "Door colour is often chosen last — once the renovation is nearly done and the flooring is already down. But a door is one of the largest vertical surfaces in a room by area, so a colour mismatch stands out immediately, and it's more expensive to fix than repainting a wall.",
+      },
+      { type: "h2", text: "Rule one: contrast or blend — but on purpose" },
+      {
+        type: "p",
+        text: "There are two approaches that work. First, match the door to the floor tone (or 1-2 shades darker/lighter): the door \"disappears\" into the space and attention goes to furniture and decor instead. Second, a deliberate contrast, where the door is noticeably darker or lighter than the floor and walls, turning it into a standalone accent. Problems come up when the contrast happens by accident — say, the door was picked to match the furniture but doesn't work with the floor.",
+      },
+      { type: "h2", text: "Warm and cool wood tones" },
+      {
+        type: "p",
+        text: "Wood tones split into warm (yellowish, orange, brown — oak, walnut, cherry) and cool (grey, ash, whitewashed). The main rule: floor and door in the same room work best within one \"temperature\" — a warm oak floor with cool grey doors often looks off, even if each element is attractive on its own.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Warm floor (oak, walnut) — pairs well with warm door tones or with white/cream;",
+          "cool floor (grey, whitewashed oak) — looks better with cool or neutral grey doors;",
+          "black or graphite doors — a versatile contrasting accent that works with both warm and cool floors, if the interior has other black details (hardware, frames, lighting).",
+        ],
+      },
+      { type: "h2", text: "What about the walls?" },
+      {
+        type: "p",
+        text: "Matching the door to the wall colour is a technique that visually \"dissolves\" the doorway and makes a room feel larger — common in small hallways and bathrooms. It's the opposite approach to matching the floor, so pick one or the other rather than trying to match everything at once.",
+      },
+      { type: "h2", text: "In summary" },
+      {
+        type: "p",
+        text: "The simplest safe choice is a door within the same warm/cool range as the floor. For an accent, a deliberate contrast (dark door on a light floor, for instance) works better than a colour mismatch that happened by accident.",
+      },
+      {
+        type: "link",
+        text: "Browse the colours and textures of IN WOOD collections",
+        href: "/catalog",
       },
     ],
   },

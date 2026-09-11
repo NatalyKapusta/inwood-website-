@@ -38,6 +38,9 @@ export default async function BlogPostPage({
   const dict = await getDictionary(params.locale);
   const t = dict.blog;
   const c = dict.common;
+  const relatedPosts = blogPosts[params.locale]
+    .filter((p) => p.slug !== post.slug)
+    .slice(0, 3);
 
   return (
     <>
@@ -75,6 +78,15 @@ export default async function BlogPostPage({
                 </ul>
               );
             }
+            if (block.type === "link") {
+              return (
+                <p key={i}>
+                  <Link href={`/${params.locale}${block.href}`} className="font-semibold text-gold-dim hover:text-navy-dark">
+                    {block.text} →
+                  </Link>
+                </p>
+              );
+            }
             return (
               <p key={i} className="text-navy-dim">
                 {block.text}
@@ -82,6 +94,33 @@ export default async function BlogPostPage({
             );
           })}
         </div>
+
+        <div className="mt-14 border-t border-navy-dim/15 pt-8">
+          <Link
+            href={`/${params.locale}/catalog`}
+            className="inline-block rounded-full bg-navy-dark px-6 py-3 text-sm font-semibold text-white transition hover:bg-gold hover:text-navy-dark"
+          >
+            {t.browseCatalog} →
+          </Link>
+        </div>
+
+        {relatedPosts.length > 0 && (
+          <div className="mt-10 border-t border-navy-dim/15 pt-8">
+            <h2 className="font-serif text-lg font-bold text-navy-dark">{t.relatedPostsTitle}</h2>
+            <ul className="mt-4 space-y-2">
+              {relatedPosts.map((p) => (
+                <li key={p.slug}>
+                  <Link
+                    href={`/${params.locale}/blog/${p.slug}`}
+                    className="text-navy-dim hover:text-gold-dim"
+                  >
+                    {p.title} →
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </article>
 
       <ContactCta

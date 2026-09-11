@@ -4,6 +4,7 @@ import { buildMetadata, productListJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import { collections, collectionOrder } from "@/lib/products";
 import { getPricesVisible } from "@/lib/siteSettings";
 import CatalogFilter from "@/components/CatalogFilter";
+import Link from "next/link";
 
 // Сторінка кешується статично, але раз на хвилину перевіряє
 // prices_visible наново — щоб перемикач у порталі діяв без редеплою.
@@ -84,6 +85,12 @@ export default async function CatalogPage({ params }: { params: { locale: Locale
           phoneLabel={dict.common.formPhone}
           formSentMessage={dict.common.formSentMessage}
         />
+      </div>
+
+      <div className="mt-12 text-center">
+        <Link href={`/${params.locale}/blog`} className="text-sm font-semibold text-gold-dim hover:text-navy-dark">
+          {dict.blog.heading}: {dict.blog.intro} →
+        </Link>
       </div>
     </div>
   );
