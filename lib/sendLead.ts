@@ -1,3 +1,5 @@
+import { sendLeadEmail } from "./sendLeadEmail";
+
 export type LeadPayload = {
   client: string;
   phone: string;
@@ -21,9 +23,7 @@ function normalizePhoneForKeepinCRM(phone: string): string {
   return phone;
 }
 
-// Той самий вебхук KeepinCRM, що працював на старому сайті (Weblium) —
-// приймає заявку одразу і в CRM, і на пошту менеджера.
-export async function sendLeadToKeepinCRM(payload: LeadPayload) {
+async function postToKeepinCRM(payload: LeadPayload) {
   const url = process.env.KEEPINCRM_WEBHOOK_URL;
   if (!url) {
     console.error("KEEPINCRM_WEBHOOK_URL не налаштовано");
@@ -45,4 +45,13 @@ export async function sendLeadToKeepinCRM(payload: LeadPayload) {
     console.error("Не вдалося надіслати заявку в KeepinCRM", err);
     return false;
   }
+}
+
+// Дублюємо кожну заявку одразу на пошту (SMTP, lib/sendLeadEmail.ts) —
+// вебхук KeepinCRM виявився ненадійним (422 при зміні формату номера
+// телефону), і поки з ним остаточно не розібрались, жодна заявка не має
+// губитись. Успіх — якщо спрацював БУДЬ-ЯКИЙ з двох каналів.
+export async function sendLeadToKeepinCRM(payload: LeadPayload) {
+  const [crmOk, emailOk] = await Promise.all([postToKeepinCRM(payload), sendLeadEmail(payload)]);
+  return crmOk || emailOk;
 }
