@@ -27,7 +27,13 @@ export default async function CatalogPage({ params }: { params: { locale: Locale
     .filter((id) => collections[id])
     .map((id) => ({ id, data: collections[id] }));
   const pricesVisible = await getPricesVisible();
-  const catalogPdf = params.locale === "en" ? "/documents/catalog-en.pdf" : "/documents/catalog-ua.pdf";
+  // Немає окремого PL-каталогу — для польської версії видаємо англійський
+  // PDF (зрозуміліший польському відвідувачу, ніж український), а не
+  // українську версію за замовчуванням.
+  const catalogPdf =
+    params.locale === "en" || params.locale === "pl"
+      ? "/documents/catalog-en.pdf"
+      : "/documents/catalog-ua.pdf";
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-16 sm:py-24">
