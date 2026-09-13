@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { locales, localeLabels, type Locale } from "@/lib/i18n";
 import MailIcon from "@/components/MailIcon";
+import SocialLinks from "@/components/SocialLinks";
 
 type NavItem = { label: string; href: string };
 
@@ -66,6 +67,7 @@ export default function Header({
               <MailIcon className="shrink-0" />
               {email}
             </a>
+            <SocialLinks tone="dark" size="compact" />
           </div>
         </div>
       </div>
