@@ -123,7 +123,7 @@ export default async function HomePage({
             <ul className="mt-6 space-y-2">
               {t.qualityBanner.points.map((p: string) => (
                 <li key={p} className="flex items-start gap-2 text-sm text-navy-dark">
-                  <span className="mt-0.5 text-gold">✔</span>
+                  <span className="mt-0.5 text-gold-dim">✔</span>
                   <span>{p}</span>
                 </li>
               ))}
@@ -140,7 +140,7 @@ export default async function HomePage({
         <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {t.strengths.map((s: { title: string; text: string }, i: number) => (
             <div key={s.title} className="rounded-xl bg-panel-alt p-6">
-              <span className="font-serif text-3xl font-bold text-gold">
+              <span className="font-serif text-3xl font-bold text-gold-dim">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <h3 className="mt-3 font-serif text-lg font-bold text-navy-dark">{s.title}</h3>
