@@ -88,7 +88,7 @@ export default function CatalogFilter({
                     <div className="relative aspect-square bg-panel-alt">
                       <Image
                         src={v.image}
-                        alt={v.label}
+                        alt={`Міжкімнатні двері IN WOOD ${s.data.label}, ${v.label}`}
                         fill
                         sizes="(min-width: 1280px) 300px, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                         className="object-contain p-4"

@@ -245,7 +245,7 @@ export default async function HomePage({
                 {collectionImages[col.name] && (
                   <Image
                     src={collectionImages[col.name]}
-                    alt={col.name}
+                    alt={`Міжкімнатні двері IN WOOD, колекція ${col.name}`}
                     fill
                     sizes="(min-width: 1024px) 320px, (min-width: 640px) 50vw, 100vw"
                     className="object-contain p-6 transition duration-300 group-hover:scale-105"

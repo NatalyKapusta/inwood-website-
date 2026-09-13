@@ -251,7 +251,7 @@ const uaPosts: BlogPost[] = [
     slug: "dveri-dlia-vannoi-ta-volohykh-prymishchen",
     title: "Двері для ванної кімнати та вологих приміщень: що варто знати перед покупкою",
     excerpt:
-      "Ванна, санвузол, пральня — приміщення з підвищеною вологістю ставлять до дверей інші вимоги, ніж спальня чи вітальня. Розбираємо, яке покриття й конструкція витримають вологу без деформацій.",
+      "Ванна, санвузол, пральня — приміщення з підвищеною вологістю. Розбираємо, яке покриття й конструкція витримають вологу без деформацій.",
     blocks: [
       {
         type: "p",
@@ -573,7 +573,7 @@ const ruPosts: BlogPost[] = [
     slug: "dveri-dlia-vannoi-ta-volohykh-prymishchen",
     title: "Двери для ванной комнаты и влажных помещений: что важно знать перед покупкой",
     excerpt:
-      "Ванная, санузел, прачечная — помещения с повышенной влажностью предъявляют к дверям другие требования, чем спальня или гостиная. Разбираем, какое покрытие и конструкция выдержат влагу без деформаций.",
+      "Ванная, санузел, прачечная — помещения с повышенной влажностью. Разбираем, какое покрытие и конструкция выдержат влагу без деформаций.",
     blocks: [
       {
         type: "p",
@@ -895,7 +895,7 @@ const enPosts: BlogPost[] = [
     slug: "dveri-dlia-vannoi-ta-volohykh-prymishchen",
     title: "Doors for Bathrooms and Humid Rooms: What to Know Before Buying",
     excerpt:
-      "Bathrooms, utility rooms and laundries put different demands on a door than a bedroom or living room. Here's what coating and construction actually hold up against moisture.",
+      "Bathrooms, utility rooms and laundries put different demands on doors than a bedroom. Here's what coating and construction hold up against moisture.",
     blocks: [
       {
         type: "p",

@@ -79,7 +79,7 @@ export function organizationJsonLd() {
     logo: `${SITE_URL}/logo/inwood-logo-gold.svg`,
     image: `${SITE_URL}/og-image.jpg`,
     description:
-      "Виробник міжкімнатних дверей повного циклу — Полтава, Україна. Дилерська мережа та експорт до Великої Британії, Франції, Швейцарії, Литви та Латвії.",
+      "Виробник міжкімнатних дверей повного циклу — Полтава, Україна. Дилерська мережа та експорт до Канади, Франції, Швейцарії, Литви та Латвії.",
     address: {
       "@type": "PostalAddress",
       streetAddress: "провулок Спортивний, 4",
@@ -102,7 +102,7 @@ export function organizationJsonLd() {
     // Реальні країни експорту (підтверджено власником) — конкретні країни
     // замість загального "worldwide" дають Google/AI-пошуковикам точніший
     // сигнал про те, куди саме постачається продукція.
-    areaServed: ["UA", "GB", "FR", "CH", "LT", "LV"],
+    areaServed: ["UA", "CA", "FR", "CH", "LT", "LV"],
     sameAs: ["https://www.facebook.com/inwood.official", "https://www.instagram.com/in_wood_official"],
     contactPoint: [
       {
@@ -116,7 +116,7 @@ export function organizationJsonLd() {
         "@type": "ContactPoint",
         telephone: "+380-50-308-18-99",
         contactType: "sales",
-        areaServed: ["UA", "GB", "FR", "CH", "LT", "LV"],
+        areaServed: ["UA", "CA", "FR", "CH", "LT", "LV"],
         availableLanguage: ["en", "uk"],
       },
     ],
@@ -210,6 +210,37 @@ export function productListJsonLd({
       "@type": "ListItem",
       position: i + 1,
       item: product,
+    })),
+  };
+}
+
+// Розмітка дилерів на сторінці міста — реальні дані (назва, адреса, телефони,
+// сайт) з data/dealers.json, без рейтингів/відгуків (їх у нас немає).
+export function dealerListJsonLd({
+  dealers,
+  cityName,
+}: {
+  dealers: { name: string; address: string; phonesTel: string[]; sites?: string[] }[];
+  cityName: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: dealers.map((dealer, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "LocalBusiness",
+        name: dealer.name,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: dealer.address,
+          addressLocality: cityName,
+          addressCountry: "UA",
+        },
+        telephone: dealer.phonesTel[0],
+        ...(dealer.sites && dealer.sites.length > 0 ? { url: dealer.sites[0] } : {}),
+      },
     })),
   };
 }

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
-import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
+import { buildMetadata, breadcrumbJsonLd, dealerListJsonLd } from "@/lib/seo";
 import dealers from "@/data/dealers.json";
 import { getCitiesWithDealers, getCityDisplayName } from "@/lib/dealers";
 import { locales } from "@/lib/i18n";
@@ -63,6 +63,13 @@ export default async function DealerCityPage({
               params.locale
             )
           ),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(dealerListJsonLd({ dealers: found.dealers, cityName })),
         }}
       />
       <section className="mx-auto max-w-4xl px-4 py-16 sm:py-24">

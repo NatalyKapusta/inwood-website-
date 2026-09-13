@@ -34,7 +34,12 @@ export default function GalleryFilter({
 
             <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {c.models.map((m) => (
-                <GalleryModelCard key={m.code} model={m} colorLabel={t.color} />
+                <GalleryModelCard
+                  key={m.code}
+                  model={m}
+                  collectionLabel={c.label}
+                  colorLabel={t.color}
+                />
               ))}
             </div>
           </section>
@@ -44,9 +49,20 @@ export default function GalleryFilter({
   );
 }
 
-function GalleryModelCard({ model, colorLabel }: { model: GalleryModel; colorLabel: string }) {
+function GalleryModelCard({
+  model,
+  collectionLabel,
+  colorLabel,
+}: {
+  model: GalleryModel;
+  collectionLabel: string;
+  colorLabel: string;
+}) {
   const [photoIdx, setPhotoIdx] = useState(0);
   const photo = model.photos[photoIdx];
+  const photoAlt = `Міжкімнатні двері IN WOOD ${collectionLabel} ${model.code}${
+    photo.colorLabel ? `, колір ${photo.colorLabel}` : ""
+  }, в інтер'єрі`;
 
   return (
     <div className="flex flex-col overflow-hidden rounded-xl border border-navy-dim/10 bg-panel">
@@ -54,7 +70,7 @@ function GalleryModelCard({ model, colorLabel }: { model: GalleryModel; colorLab
         <Image
           key={photo.src}
           src={photo.src}
-          alt={photo.colorLabel ? `${model.code} — ${photo.colorLabel}` : model.code}
+          alt={photoAlt}
           fill
           sizes="(min-width: 1280px) 300px, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           className="object-cover"

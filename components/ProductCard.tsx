@@ -157,7 +157,7 @@ export default function ProductCard({
           <Image
             key={color.image}
             src={color.image}
-            alt={`${model.code} — ${color.label}`}
+            alt={`Міжкімнатні двері IN WOOD ${collectionLabel} ${model.code}, колір ${color.label}`}
             fill
             sizes="(min-width: 1280px) 300px, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
             className="object-contain p-4"
