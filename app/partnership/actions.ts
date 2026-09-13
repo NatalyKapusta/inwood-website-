@@ -14,6 +14,12 @@ function getUtm(formData: FormData) {
   return utm;
 }
 
+// Провідний апостроф — стандартний спосіб змусити Google Таблиці показувати
+// номер як текст, а не намагатися порахувати "+380..." як формулу.
+function phoneForSheet(phone: string) {
+  return `'${phone}`;
+}
+
 // Окремі дії (не спільний app/actions/lead.ts submitLead) — на цій сторінці
 // дві незалежні форми (заявка на партнерство + каталог), і потрібно розрізняти
 // в редіректі, яка саме форма відправлена, щоб показати правильне повідомлення.
@@ -44,7 +50,7 @@ export async function submitPartnerForm(formData: FormData) {
       date: new Date().toISOString(),
       form_type: "partner",
       name,
-      phone,
+      phone: phoneForSheet(phone),
       city,
       product: role,
       comment: message,
@@ -84,7 +90,7 @@ export async function submitCatalogForm(formData: FormData) {
       date: new Date().toISOString(),
       form_type: "catalog",
       name,
-      phone,
+      phone: phoneForSheet(phone),
       email,
       ...utm,
     }),
