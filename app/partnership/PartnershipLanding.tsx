@@ -5,9 +5,12 @@ import Image from "next/image";
 import PhoneInput from "@/components/PhoneInput";
 import SentModal from "@/components/SentModal";
 import Honeypot from "@/components/Honeypot";
+import PartnershipLeadTracker from "@/components/PartnershipLeadTracker";
 import { collections } from "@/lib/products";
 import { STANDARD_WIDTHS, STANDARD_HEIGHTS, NONSTD_WIDTHS, NONSTD_HEIGHTS, NONSTD_SURCHARGE } from "@/lib/doorSizes";
 import { submitPartnerForm, submitCatalogForm } from "./actions";
+
+const UTM_PARAMS = ["utm_source", "utm_medium", "utm_campaign", "utm_content"] as const;
 
 const STANDARD_WIDTHS_TEXT = STANDARD_WIDTHS.join(", ") + " мм";
 const STANDARD_HEIGHTS_TEXT = `${STANDARD_HEIGHTS[0]}–${STANDARD_HEIGHTS[STANDARD_HEIGHTS.length - 1]} мм`;
@@ -125,6 +128,20 @@ export default function PartnershipLanding({
       window.removeEventListener("scroll", onScroll);
       if (canHover) document.removeEventListener("mousemove", onMouseMove);
     };
+  }, []);
+
+  // ---- utm-мітки з посилання, якщо є (реклама) — прокидаємо прихованими
+  // полями в обидві форми, щоб заявка в Make/Google Таблиці показувала,
+  // з якої кампанії прийшов лід ----
+  const [utm, setUtm] = useState<Record<string, string>>({});
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const found: Record<string, string> = {};
+    for (const key of UTM_PARAMS) {
+      const v = params.get(key);
+      if (v) found[key] = v;
+    }
+    setUtm(found);
   }, []);
 
   // ---- demo calculator ----
@@ -737,23 +754,29 @@ export default function PartnershipLanding({
               <p>Залиште своє ім'я та контактний номер телефону — каталог IN WOOD відразу відкриється для перегляду.</p>
             </div>
             {sentState === "catalog" && (
-              <SentModal key={sentKey}>
-                <div className="check" style={{ fontSize: 32, marginBottom: 8 }}>✓</div>
-                <p className="mt-2 text-navy-dark">Дякуємо! Ось ваш каталог:</p>
-                <a
-                  className="btn"
-                  href="/documents/catalog-ua.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ display: "inline-block", marginTop: 16 }}
-                >
-                  Переглянути каталог
-                </a>
-              </SentModal>
+              <>
+                <PartnershipLeadTracker formType="catalog" key={`t-${sentKey}`} />
+                <SentModal key={sentKey}>
+                  <div className="check" style={{ fontSize: 32, marginBottom: 8 }}>✓</div>
+                  <p className="mt-2 text-navy-dark">Дякуємо! Ось ваш каталог:</p>
+                  <a
+                    className="btn"
+                    href="/documents/catalog-ua.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ display: "inline-block", marginTop: 16 }}
+                  >
+                    Переглянути каталог
+                  </a>
+                </SentModal>
+              </>
             )}
             <div className="catalog-gate">
               <form action={submitCatalogForm}>
                 <Honeypot />
+                {Object.entries(utm).map(([k, v]) => (
+                  <input key={k} type="hidden" name={k} value={v} />
+                ))}
                 <div className="field">
                   <label htmlFor="cname">Ім&apos;я</label>
                   <input type="text" id="cname" name="name" placeholder="Ваше ім'я" required />
@@ -783,17 +806,23 @@ export default function PartnershipLanding({
         <div className="wrap">
           <div className="form-card reveal">
             {sentState === "partner" && (
-              <SentModal key={sentKey}>
-                <div className="check" style={{ fontSize: 32, marginBottom: 8 }}>✓</div>
-                <h3 style={{ margin: "8px 0", color: "#14151C" }}>Заявку надіслано</h3>
-                <p className="text-navy-dark">Дякуємо! Менеджер IN WOOD зв&apos;яжеться з вами найближчим часом.</p>
-              </SentModal>
+              <>
+                <PartnershipLeadTracker formType="partner" key={`t-${sentKey}`} />
+                <SentModal key={sentKey}>
+                  <div className="check" style={{ fontSize: 32, marginBottom: 8 }}>✓</div>
+                  <h3 style={{ margin: "8px 0", color: "#14151C" }}>Заявку надіслано</h3>
+                  <p className="text-navy-dark">Дякуємо! Менеджер IN WOOD зв&apos;яжеться з вами найближчим часом.</p>
+                </SentModal>
+              </>
             )}
             <div>
                 <h2>Стати партнером IN WOOD</h2>
                 <p className="sub">Заповніть форму та надішліть заявку — Ваш персональний менеджер зателефонує та проведе конструктивну консультацію.</p>
                 <form action={submitPartnerForm}>
                   <Honeypot />
+                  {Object.entries(utm).map(([k, v]) => (
+                    <input key={k} type="hidden" name={k} value={v} />
+                  ))}
                   <div className="field">
                     <label htmlFor="name">ПІБ та компанія</label>
                     <input type="text" id="name" name="name" placeholder="ПІБ, назва компанії" required />
