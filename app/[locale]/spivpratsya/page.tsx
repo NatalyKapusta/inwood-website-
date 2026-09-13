@@ -31,7 +31,7 @@ export default async function SpivpratsyaPage({
   const t = dict.spivpratsya;
   const c = dict.common;
   const demoModel = collections.etalon.models?.[0];
-  const pricesVisible = await getPricesVisible();
+  const pricesVisible = await getPricesVisible(params.locale);
 
   return (
     <>

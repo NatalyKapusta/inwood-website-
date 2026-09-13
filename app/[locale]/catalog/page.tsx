@@ -26,7 +26,7 @@ export default async function CatalogPage({ params }: { params: { locale: Locale
   const sections = collectionOrder
     .filter((id) => collections[id])
     .map((id) => ({ id, data: collections[id] }));
-  const pricesVisible = await getPricesVisible();
+  const pricesVisible = await getPricesVisible(params.locale);
   // Немає окремого PL-каталогу — для польської версії видаємо англійський
   // PDF (зрозуміліший польському відвідувачу, ніж український), а не
   // українську версію за замовчуванням.
