@@ -980,10 +980,333 @@ const enPosts: BlogPost[] = [
   },
 ];
 
+const plPosts: BlogPost[] = [
+  {
+    slug: "yak-obraty-mizhkimnatni-dveri",
+    title: "Jak wybrać drzwi wewnętrzne: co lepsze — lakierowane, PVC, ukryte czy frezowane?",
+    excerpt:
+      "Analizujemy okleinę, konstrukcję i montaż drzwi wewnętrznych po kolei — tak, jak robi to konsultant w salonie, gdy naprawdę chce pomóc, a nie tylko sprzedać.",
+    blocks: [
+      {
+        type: "p",
+        text: "Kiedy przychodzi do wyboru drzwi, większość ludzi się gubi. W katalogu dziesiątki modeli, sprzedawcy sypią terminami — „system ukryty”, „frezowanie”, „PVC” — i nie wiadomo, za co właściwie się płaci.",
+      },
+      {
+        type: "p",
+        text: "W rzeczywistości wszystko jest prostsze, niż się wydaje. Jest kilka kluczowych parametrów, które wpływają na wygląd, cenę i to, jak długo drzwi będą służyć. Omówimy je po kolei — tak, jak robi to konsultant w salonie, gdy naprawdę chce pomóc, a nie tylko sprzedać.",
+      },
+      { type: "h2", text: "Drzwi lakierowane czy okleina PVC: na czym polega różnica" },
+      { type: "p", text: "To pierwsze pytanie, które warto rozstrzygnąć, bo dotyczy samej okleiny skrzydła." },
+      { type: "h3", text: "Drzwi lakierowane" },
+      {
+        type: "p",
+        text: "Takie drzwi pokrywa się farbą — najczęściej emalią. Powierzchnia wychodzi równa, głęboka kolorystycznie i bez styków folii. Właśnie dlatego drzwi lakierowane są cenione za estetykę: kolor można dobrać praktycznie pod każde rozwiązanie wnętrza, a warianty matowe lub półmatowe wyglądają drogo i stonowanie.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Plusy: bogaty wybór kolorów i odcieni;",
+          "gładka, „żywa” powierzchnia bez szwów;",
+          "świetnie wyglądają we wnętrzach minimalistycznych i nowoczesnych.",
+        ],
+      },
+      {
+        type: "ul",
+        items: [
+          "Co warto wziąć pod uwagę: powłoka lakierowana jest bardziej wrażliwa na zarysowania i odpryski niż folia;",
+          "uszkodzenia na lakierze są bardziej widoczne, zwłaszcza na ciemnych kolorach;",
+          "pielęgnacja wymaga nieco większej ostrożności — bez środków ściernych do mycia.",
+        ],
+      },
+      { type: "h3", text: "Drzwi z okleiną PVC" },
+      {
+        type: "p",
+        text: "Tutaj skrzydło obklejane jest folią PVC, która imituje teksturę drewna, betonu lub jednolite kolory. To praktyczny i popularny wariant dla tych, którzy cenią sobie niewymagającą pielęgnację w codziennym użytkowaniu.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Plusy: odporność na wilgoć i codzienne obciążenia;",
+          "łatwa pielęgnacja — wystarczy przetrzeć wilgotną ściereczką;",
+          "zwykle bardziej dostępna cena w porównaniu z odpowiednikami lakierowanymi.",
+        ],
+      },
+      {
+        type: "ul",
+        items: [
+          "Co warto wziąć pod uwagę: wybór faktur i kolorów jest nieco ograniczony do tego, co oferuje producent;",
+          "pod względem głębi tonu folia rzadko dorówna farbie.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Prosty przykład: jeśli masz korytarz, którym codziennie chodzi cała rodzina z dziećmi i psem, drzwi z PVC wytrzymają takie tempo życia bez zbędnych kłopotów. A jeśli potrzebne są drzwi do sypialni czy gabinetu, gdzie liczy się właśnie wygląd i atmosfera — drzwi lakierowane głębiej rozświetlą wnętrze.",
+      },
+      { type: "h2", text: "Drzwi montażu ukrytego: kiedy przestrzeń jest ważniejsza niż detale" },
+      {
+        type: "p",
+        text: "Drzwi montażu ukrytego to konstrukcja, w której ościeżnica i listwy są ukryte pod tynkiem lub płytą gipsowo-kartonową. Na zewnątrz pozostaje tylko równe skrzydło, które jakby wyrasta ze ściany — bez widocznych listew i szczelin.",
+      },
+      { type: "h3", text: "Zalety takiego rozwiązania" },
+      {
+        type: "ul",
+        items: [
+          "Drzwi „zlewają się” ze ścianą, tworząc efekt jednolitej powierzchni — to szczególnie cenią miłośnicy minimalizmu i nowoczesnego stylu.",
+          "Przestrzeń wizualnie wygląda na większą i schludniejszą, bo nie ma zbędnych linii i ram.",
+          "Takie drzwi można pomalować na kolor ściany, dzięki czemu staną się niemal niewidoczne.",
+        ],
+      },
+      { type: "h3", text: "Kiedy warto wybrać właśnie system ukryty" },
+      { type: "p", text: "Ten wariant sprawdzi się, jeśli:" },
+      {
+        type: "ul",
+        items: [
+          "robisz remont „od zera” i planujesz instalacje oraz ościeżnice już na etapie prac budowlanych;",
+          "wnętrze utrzymane jest w stylu minimalizm, loft lub nowoczesna klasyka;",
+          "zależy Ci na maksymalnie „czystych” liniach bez elementów dekoracyjnych.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Ważny niuans: drzwi montażu ukrytego montuje się przed finalnym wykończeniem ścian, dlatego trudno je „dokupić” do już gotowego remontu. To rozwiązanie warto zaplanować z wyprzedzeniem razem z projektantem lub ekipą budowlaną.",
+      },
+      { type: "h2", text: "Drzwi frezowane: kiedy chce się faktury i charakteru" },
+      {
+        type: "p",
+        text: "Drzwi frezowane to skrzydła z reliefowym wzorem, który nanosi się metodą frezowania — czyli wycina się wzór bezpośrednio na powierzchni. Najczęściej są to linie geometryczne, płyciny lub klasyczne wzory.",
+      },
+      { type: "h3", text: "Czym różnią się od drzwi gładkich" },
+      {
+        type: "p",
+        text: "Drzwi gładkie to równe skrzydło bez żadnego reliefu. Są uniwersalne i dobrze wpisują się praktycznie w każdy styl, od klasyki po minimalizm.",
+      },
+      {
+        type: "p",
+        text: "Drzwi frezowane, wręcz przeciwnie, dodają wnętrzu wyrazistości. Relief tworzy grę światła i cienia, dzięki czemu drzwi wyglądają bardziej „luksusowo” i po swojemu dekoracyjnie.",
+      },
+      { type: "p", text: "Kiedy wybrać drzwi frezowane:" },
+      {
+        type: "ul",
+        items: [
+          "jeśli wnętrze ciąży ku klasyce, neoklasyce czy art déco, gdzie liczy się detal;",
+          "jeśli zależy Ci, aby drzwi stały się osobnym akcentem pokoju, a nie tylko elementem funkcjonalnym;",
+          "w przestronnych pomieszczeniach, gdzie relief się nie „zgubi”.",
+        ],
+      },
+      { type: "p", text: "Kiedy lepiej wybrać drzwi gładkie:" },
+      {
+        type: "ul",
+        items: [
+          "w niewielkich pomieszczeniach, gdzie nadmiar detali wizualnie „przeciąża” przestrzeń;",
+          "we wnętrzach minimalistycznych i nowoczesnych, gdzie ceni się prostotę linii.",
+        ],
+      },
+      { type: "h2", text: "Na co zwrócić uwagę przy wyborze" },
+      { type: "p", text: "Kiedy decydujesz się na konkretny model, miej w pamięci kilka praktycznych kwestii:" },
+      {
+        type: "ul",
+        items: [
+          "Natężenie ruchu w pomieszczeniu. Do korytarzy i pokoi z intensywnym użytkowaniem praktyczniej wybrać okleinę PVC.",
+          "Styl wnętrza. Minimalizm ciąży ku rozwiązaniom gładkim i ukrytym, klasyka — ku drzwiom frezowanym i lakierowanym.",
+          "Wielkość pomieszczenia. W małych pokojach drzwi z reliefem i mocne akcenty mogą wizualnie „zwężać” przestrzeń.",
+          "Etap remontu. Jeśli ściany są już gotowe, montaż ukryty najprawdopodobniej trzeba będzie odłożyć do kolejnego remontu.",
+          "Pielęgnacja. Jeśli zależy Ci na prostocie sprzątania — przyjrzyj się okleinie PVC.",
+        ],
+      },
+      { type: "h2", text: "Podsumowanie" },
+      {
+        type: "p",
+        text: "Nie ma drzwi „dobrych” czy „złych” — są drzwi, które pasują właśnie do Twoich warunków. Jeśli cenisz praktyczność i łatwą pielęgnację — przyjrzyj się okleinie PVC. Jeśli chcesz głębokiego koloru i estetyki — drzwi lakierowane nie zawiodą. Dla nowoczesnej minimalistycznej przestrzeni warto rozważyć ukryty system montażu, a jeśli wnętrze ciąży ku klasyce i zależy Ci na charakterze — zwróć uwagę na modele frezowane.",
+      },
+      {
+        type: "p",
+        text: "Główna rada jest prosta: przed zakupem pomyśl, jak dokładnie będziesz korzystać z drzwi na co dzień, w jakim stylu utrzymane jest wnętrze i na jakim etapie jest Twój remont. Odpowiedzi na te trzy pytania same podpowiedzą, który wariant będzie dla Ciebie najlepszy.",
+      },
+    ],
+  },
+  {
+    slug: "hto-zamovliaie-mizhkimnatni-dveri",
+    title: "Kto zamawia drzwi wewnętrzne: klienci prywatni, biznes i instytucje państwowe",
+    excerpt:
+      "Drzwi kupuje się nie tylko do jednego mieszkania. Opowiadamy, kto jeszcze zwraca się po drzwi wewnętrzne — od deweloperów i projektantów po hotele i kawiarnie.",
+    blocks: [
+      {
+        type: "p",
+        text: "Kiedy myślisz o kupującym drzwi, zwykle wyobrażasz sobie osobę robiącą remont we własnym mieszkaniu. W rzeczywistości krąg jest znacznie szerszy — drzwi zamawiają osoby prywatne, biznes, a nawet instytucje państwowe i komunalne. Każdy ma swoje wymagania co do wolumenu, terminów i tego, na co zwrócić uwagę w pierwszej kolejności.",
+      },
+      { type: "h2", text: "Klienci prywatni" },
+      {
+        type: "p",
+        text: "To najbardziej zrozumiała kategoria — ludzie, którzy kupują drzwi dla siebie.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Właściciele nowych mieszkań — najczęściej wymieniają drzwi „od dewelopera”, jeśli są niskiej jakości, albo wybierają drzwi od zera podczas remontu w nowym budynku.",
+          "Osoby robiące remont kosmetyczny lub kapitalny — wymieniają stare, zużyte drzwi na nowe pod odświeżone wnętrze.",
+        ],
+      },
+      { type: "h2", text: "Biznes i klienci hurtowi" },
+      {
+        type: "p",
+        text: "Tu wymagania są inne: liczy się nie tylko design i jakość, ale i zdolność producenta do zrealizowania dużego wolumenu w przewidywalnych terminach.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Deweloperzy i firmy budowlane — kupują drzwi wewnętrzne hurtowo do nowych osiedli mieszkaniowych i zabudowy szeregowej.",
+          "Architekci i projektanci wnętrz — dobierają drzwi pod konkretny projekt klienta, często kierując się kolorem i fakturą, a nie tylko ceną.",
+          "Kierownicy budowy i ekipy remontowe — niejednokrotnie sami biorą na siebie zakup drzwi podczas kapitalnego remontu mieszkania lub domu zamawiającego.",
+          "Lokale komercyjne — biura, hotele, restauracje i kawiarnie, które potrzebują drzwi o stylowym, a zarazem odpornym na zużycie wyglądzie.",
+        ],
+      },
+      { type: "h2", text: "Instytucje państwowe i komunalne" },
+      {
+        type: "p",
+        text: "Szkoły, przedszkola, szpitale i inne instytucje też regularnie wymieniają drzwi — najczęściej w drodze zamówień przetargowych. To odrębny segment rynku ze swoimi wymaganiami co do dokumentacji i terminów, i nie każdy producent w nim działa.",
+      },
+      { type: "h2", text: "Z kim współpracuje IN WOOD" },
+      {
+        type: "p",
+        text: "Specjalizujemy się w drzwiach wewnętrznych i budujemy współpracę z dilerami, dystrybutorami, deweloperami nieruchomości mieszkaniowych i komercyjnych, projektantami wnętrz, a także hotelami i aparthotelami. Jeśli rozpoznałeś się w jednej z tych kategorii — na stronie „Współpraca” możesz zostawić zgłoszenie i otrzymać indywidualne warunki.",
+      },
+    ],
+  },
+  {
+    slug: "shhytovi-chy-tsargovi-dveri",
+    title: "Drzwi płytowe czy ramiakowo-płycinowe: na czym polega różnica i jak się nie pogubić w wyborze",
+    excerpt:
+      "Wyjaśniamy, czym różni się konstrukcja drzwi „od środka” — i dlaczego sprzedawcy w ogóle używają tych terminów.",
+    blocks: [
+      {
+        type: "p",
+        text: "„Płytowe” i „ramiakowo-płycinowe” to pierwsze słowa, jakie można usłyszeć od konsultanta, gdy tylko rozmowa schodzi na konstrukcję drzwi. Ale mało kto wyjaśnia, co to właściwie oznacza i dlaczego w ogóle warto to wiedzieć przed zakupem.",
+      },
+      { type: "h2", text: "Drzwi płytowe" },
+      {
+        type: "p",
+        text: "Skrzydło drzwi płytowych to jednolita konstrukcja: listwa drewniana w środku, wypełniona wypełniaczem o strukturze plastra miodu, i okładzina z MDF na wierzchu. Powierzchnia wychodzi równa — gładka lub z dekorem: moldingiem, frezowaniem, wstawkami lustrzanymi. To najbardziej rozpowszechniony typ drzwi wewnętrznych na rynku.",
+      },
+      { type: "h2", text: "Drzwi ramiakowo-płycinowe" },
+      {
+        type: "p",
+        text: "Tu logika jest inna: skrzydło składa się z pełnodrewnianych pionowych słupków, połączonych ze sobą elementami poziomymi — poprzeczkami. Często w takiej konstrukcji przewidziane są wstawki szklane — satynowe lub czarne szkło.",
+      },
+      { type: "h2", text: "Jaka jest różnica w praktyce" },
+      {
+        type: "ul",
+        items: [
+          "Wygląd zewnętrzny — drzwi płytowe zwykle wyglądają bardziej jednolicie i lakonicznie, ramiakowo-płycinowe — bardziej reliefowo, dzięki widocznym słupkom i poprzeczkom.",
+          "Wstawki szklane — częściej spotykane właśnie w modelach ramiakowo-płycinowych.",
+          "Dekor — konstrukcja płytowa pozwala na molding, frezowanie, wstawki lustrzane na jednolitej powierzchni skrzydła.",
+        ],
+      },
+      { type: "h2", text: "Co produkuje IN WOOD" },
+      {
+        type: "p",
+        text: "Cały asortyment IN WOOD ma konstrukcję płytową: kolekcje ETALON, NOMINAL, FREZZATTI, PERFETTO oraz drzwi montażu ukrytego. Podstawą jest listwa drewniana 80×27 mm, wypełniacz o strukturze plastra miodu z komórką 18 mm, okładzina MDF (4–6 mm w zależności od kolekcji) oraz aluminiowa krawędź chroniąca przed wilgocią i uszkodzeniami. Okleina — folia PVC lub malowanie według wzorników RAL/NCS, w zależności od kolekcji.",
+      },
+      { type: "h2", text: "Podsumowanie" },
+      {
+        type: "p",
+        text: "Jeśli konsultant mówi „płytowe” lub „ramiakowo-płycinowe” — teraz wiadomo, o co chodzi. Dla większości wnętrz konstrukcja płytowa to praktyczny i sprawdzony wybór: jest stabilna, dobrze trzyma formę i daje przestrzeń na dekor bez zbędnego komplikowania montażu.",
+      },
+    ],
+  },
+  {
+    slug: "dveri-dlia-vannoi-ta-volohykh-prymishchen",
+    title: "Drzwi do łazienki i pomieszczeń wilgotnych: co warto wiedzieć przed zakupem",
+    excerpt:
+      "Łazienka, WC, pralnia — pomieszczenia o podwyższonej wilgotności. Wyjaśniamy, jaka okleina i konstrukcja wytrzymają wilgoć bez odkształceń.",
+    blocks: [
+      {
+        type: "p",
+        text: "Drzwi do łazienki często wybiera się „tak jak wszystkie inne” w mieszkaniu — a potem dziwi się, dlaczego po roku czy dwóch skrzydło zaczęło pęcznieć od dołu albo się wypaczać. Przyczyna jest prosta: wilgotność w łazience i pralni jest stabilnie wyższa niż w pomieszczeniach mieszkalnych, a materiał drzwi musi być na to przygotowany z góry, a nie „jakoś wytrzymać”.",
+      },
+      { type: "h2", text: "Dlaczego zwykłe drzwi nie zawsze się sprawdzają" },
+      {
+        type: "p",
+        text: "Klasyczne drewniane skrzydło to żywy materiał, który reaguje na wilgotność: rozszerza się, wchłania parę, z czasem może się odkształcić przy dolnej krawędzi, gdzie wilgoć po prysznicu czy praniu zalega najdłużej. W pomieszczeniach bez dobrej wentylacji ten efekt się nasila.",
+      },
+      { type: "h2", text: "Okleina PVC czy lakierowana — co lepsze do pomieszczeń wilgotnych" },
+      {
+        type: "p",
+        text: "Folia PVC tworzy dodatkową barierę na powierzchni skrzydła i lepiej znosi regularną wilgoć oraz przecieranie niż powłoka lakierowana — zwłaszcza w miejscach, gdzie drzwi są często wycierane z rozprysków czy skroplin. Drzwi lakierowane też można postawić w łazience, ale warto wybierać modele z jakościową, równomierną powłoką i unikać nadmiernego bezpośredniego kontaktu z wodą.",
+      },
+      { type: "h2", text: "Aluminiowa krawędź — główna ochrona od dołu" },
+      {
+        type: "p",
+        text: "Najbardziej wrażliwym miejscem każdych drzwi w wilgotnym pomieszczeniu jest dolna krawędź skrzydła, która najczęściej styka się z wilgotną podłogą. Aluminiowa krawędź na obwodzie chroni skrzydło przed pęcznieniem i odpryskami właśnie w tej strefie — to na to warto patrzeć w charakterystykach modelu w pierwszej kolejności, a nie tylko na kolor czy fakturę.",
+      },
+      { type: "h3", text: "Próg i szczelina od dołu" },
+      {
+        type: "p",
+        text: "W pomieszczeniach wilgotnych szczególnie ważna jest odpowiednia szczelina między skrzydłem a podłogą — zapewnia wentylację i nie pozwala wilgoci gromadzić się tuż przy drewnie. To kwestia montażu w takim samym stopniu, jak i samych drzwi, dlatego warto omówić ją z monterem z wyprzedzeniem.",
+      },
+      { type: "h2", text: "Podsumowanie" },
+      {
+        type: "p",
+        text: "Do łazienki, WC czy pralni najbezpieczniejszym wyborem są drzwi z okleiną PVC i aluminiową krawędzią na obwodzie skrzydła. Nie zmienia to zasadniczo wyglądu ani ceny, za to dodaje lata eksploatacji tam, gdzie zwykłe drzwi zużywają się najszybciej.",
+      },
+      {
+        type: "link",
+        text: "Zobacz, które kolekcje IN WOOD mają aluminiową krawędź",
+        href: "/catalog",
+      },
+    ],
+  },
+  {
+    slug: "yak-pidibraty-kolir-dverei-pid-pidlohu",
+    title: "Jak dobrać kolor drzwi do podłogi i mebli",
+    excerpt:
+      "Drzwi to duża pionowa płaszczyzna, która albo spaja wnętrze, albo się z nim kłóci. Wyjaśniamy proste zasady łączenia koloru drzwi z podłogą, ścianami i meblami.",
+    blocks: [
+      {
+        type: "p",
+        text: "Kolor drzwi często wybiera się na samym końcu — kiedy remont jest niemal zakończony, a podłoga już leży. Ale to właśnie drzwi, pod względem powierzchni, są jedną z największych pionowych płaszczyzn we wnętrzu, dlatego chybiony kolor od razu rzuca się w oczy, a poprawienie go jest droższe niż przemalowanie ściany.",
+      },
+      { type: "h2", text: "Zasada pierwsza: kontrast albo zlanie się z tłem — ale świadomie" },
+      {
+        type: "p",
+        text: "Są dwa sprawdzone podejścia. Pierwsze — drzwi w tonie podłogi lub o 1-2 tony ciemniejsze/jaśniejsze: wtedy „znikają” w przestrzeni, a uwagę przyciągają meble i dekor. Drugie — świadomy kontrast, kiedy drzwi są wyraźnie ciemniejsze lub jaśniejsze od podłogi i ścian: wtedy stają się samodzielnym akcentem. Problem pojawia się, gdy kontrast wychodzi przypadkowo — na przykład drzwi dobrano pod meble, ale nie zgrały się z podłogą.",
+      },
+      { type: "h2", text: "Ciepłe i chłodne odcienie faktur drewnianych" },
+      {
+        type: "p",
+        text: "Odcienie drewna dzielą się na ciepłe (żółtawe, pomarańczowe, brązowe — dąb, orzech, wiśnia) i chłodne (szare, popielate, bielone). Główna zasada: podłogę i drzwi w jednym pomieszczeniu lepiej łączyć w obrębie jednej „temperatury” — ciepły dąb na podłodze z chłodnymi szarymi drzwiami często wygląda niechlujnie, nawet jeśli każdy element osobno jest ładny.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Ciepła podłoga (dąb, orzech) — dobrze komponuje się z ciepłymi odcieniami drzwi lub z kolorem białym/kremowym;",
+          "chłodna podłoga (szary, bielony dąb) — lepiej wygląda z chłodnymi lub neutralnymi szarymi drzwiami;",
+          "czarne lub grafitowe drzwi — uniwersalny kontrastowy akcent, który dobrze sprawdza się zarówno z ciepłą, jak i chłodną podłogą, jeśli we wnętrzu są inne czarne detale (okucia, ramy, oświetlenie).",
+        ],
+      },
+      { type: "h2", text: "A ściany?" },
+      {
+        type: "p",
+        text: "Drzwi w kolorze ścian to zabieg, który wizualnie „rozpuszcza” otwór drzwiowy i sprawia, że pomieszczenie wydaje się przestronniejsze: często stosuje się to w niewielkich korytarzach i łazienkach. To podejście przeciwne dopasowaniu do podłogi, dlatego warto wybrać jedno z dwóch — pod podłogę albo pod ściany, a nie próbować dopasować wszystkiego naraz.",
+      },
+      { type: "h2", text: "Podsumowanie" },
+      {
+        type: "p",
+        text: "Najprostszy bezpieczny wariant to wybór drzwi w obrębie tej samej gamy temperaturowej co podłoga. Jeśli zależy Ci na akcencie — świadomy kontrast (na przykład ciemne drzwi na jasnej podłodze) sprawdza się lepiej niż przypadkowa zbieżność kolorów, która wyszła niezamierzenie.",
+      },
+      {
+        type: "link",
+        text: "Zobacz kolory i faktury kolekcji IN WOOD",
+        href: "/catalog",
+      },
+    ],
+  },
+];
+
 export const blogPosts: Record<Locale, BlogPost[]> = {
   ua: uaPosts,
   ru: ruPosts,
   en: enPosts,
+  pl: plPosts,
 };
 
 export function getBlogPost(locale: Locale, slug: string): BlogPost | undefined {

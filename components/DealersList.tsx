@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { groupByCity, CITY_SLUGS, getCityDisplayName, type Dealer } from "@/lib/dealers";
+import type { Locale } from "@/lib/i18n";
 
 export default function DealersList({
   dealers,
@@ -11,7 +12,7 @@ export default function DealersList({
   noResultsLabel,
 }: {
   dealers: Dealer[];
-  locale: "ua" | "ru" | "en";
+  locale: Locale;
   searchPlaceholder: string;
   noResultsLabel: string;
 }) {

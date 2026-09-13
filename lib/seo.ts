@@ -12,6 +12,7 @@ const ogLocale: Record<Locale, string> = {
   ua: "uk_UA",
   ru: "ru_UA",
   en: "en_US",
+  pl: "pl_PL",
 };
 
 // URL-префікс лишається "/ua/" (усталена адреса сайту), але правильний
@@ -20,6 +21,7 @@ export const hreflang: Record<Locale, string> = {
   ua: "uk",
   ru: "ru",
   en: "en",
+  pl: "pl",
 };
 
 export function buildMetadata({
@@ -66,7 +68,17 @@ export function buildMetadata({
   };
 }
 
-export function organizationJsonLd() {
+// Опис компанії в Organization-схемі — той самий факт, що й metaDescription
+// на кожній сторінці, але окремою мовною версією для кожного locale, а не
+// єдиним українським текстом на всіх мовних версіях сайту.
+const organizationDescription: Record<Locale, string> = {
+  ua: "Виробник міжкімнатних дверей повного циклу — Полтава, Україна. Дилерська мережа та експорт до Канади, Франції, Швейцарії, Литви та Латвії.",
+  ru: "Производитель межкомнатных дверей полного цикла — Полтава, Украина. Дилерская сеть и экспорт в Канаду, Францию, Швейцарию, Литву и Латвию.",
+  en: "Full-cycle interior door manufacturer — Poltava, Ukraine. Dealer network and export to Canada, France, Switzerland, Lithuania and Latvia.",
+  pl: "Producent drzwi wewnętrznych pełnego cyklu — Połtawa, Ukraina. Sieć dealerska oraz eksport do Kanady, Francji, Szwajcarii, Litwy i Łotwy.",
+};
+
+export function organizationJsonLd(locale: Locale) {
   return {
     "@context": "https://schema.org",
     // Подвійний тип: Organization (для бренду й експорту) + HomeGoodsStore
@@ -78,8 +90,7 @@ export function organizationJsonLd() {
     url: SITE_URL,
     logo: `${SITE_URL}/logo/inwood-logo-gold.svg`,
     image: `${SITE_URL}/og-image.jpg`,
-    description:
-      "Виробник міжкімнатних дверей повного циклу — Полтава, Україна. Дилерська мережа та експорт до Канади, Франції, Швейцарії, Литви та Латвії.",
+    description: organizationDescription[locale],
     address: {
       "@type": "PostalAddress",
       streetAddress: "провулок Спортивний, 4",

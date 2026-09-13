@@ -41,7 +41,7 @@ export default async function LocaleLayout({
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd()) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd(params.locale)) }}
         />
         <Header
           locale={params.locale}

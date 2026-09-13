@@ -1,0 +1,1004 @@
+{
+  "common": {
+    "phone": "+380 (50) 880-38-41",
+    "exportPhone": "+380 (50) 308-18-99",
+    "address": "Połtawa, zaułek Sportywny 4",
+    "email": "info@inwood.com.ua",
+    "exportEmail": "export@inwood.com.ua",
+    "hours": "Pon-Pt: 08:00 - 17:00, Sob-Nd: Nieczynne",
+    "portalLink": "Portal partnerski",
+    "nav": [
+      {
+        "label": "Asortyment drzwi",
+        "href": "/catalog"
+      },
+      {
+        "label": "Galeria",
+        "href": "/galereya"
+      },
+      {
+        "label": "O nas",
+        "href": "/pro-nas"
+      },
+      {
+        "label": "Charakterystyki drzwi",
+        "href": "/harakterystyky"
+      },
+      {
+        "label": "Nasi dilerzy",
+        "href": "/nashi-dileri"
+      },
+      {
+        "label": "Współpraca",
+        "href": "/spivpratsya"
+      },
+      {
+        "label": "Deweloperom",
+        "href": "/dlya-zabudovnykiv"
+      },
+      {
+        "label": "Eksport",
+        "href": "/export"
+      },
+      {
+        "label": "Instytucjom państwowym",
+        "href": "/derzhavnym-zakladam"
+      },
+      {
+        "label": "Płatność i dostawa",
+        "href": "/oplata-dostavka"
+      },
+      {
+        "label": "Obsługa serwisowa",
+        "href": "/servis"
+      },
+      {
+        "label": "Gwarancja",
+        "href": "/garantiya"
+      },
+      {
+        "label": "Pytania i odpowiedzi",
+        "href": "/faq"
+      },
+      {
+        "label": "Blog",
+        "href": "/blog"
+      },
+      {
+        "label": "Kontakt",
+        "href": "/kontakty"
+      }
+    ],
+    "footerTagline": "IN WOOD — sztuka otwiera drzwi!",
+    "ctaTitle": "Zostaw zgłoszenie do współpracy",
+    "ctaText": "Chcesz zostać oficjalnym dilerem IN WOOD lub omówić eksport produkcji? Zostaw swoje dane kontaktowe — nasz menedżer skontaktuje się z Tobą i przygotuje indywidualną ofertę handlową.",
+    "ctaButton": "Otrzymać ofertę",
+    "formName": "Imię",
+    "formPhone": "Telefon",
+    "formSubmit": "Wyślij wiadomość",
+    "phoneManual": "Mojego kraju nie ma na liście — wprowadzić numer ręcznie",
+    "phoneChooseCountry": "Wybrać kraj z listy",
+    "phoneInvalid": "Sprawdź numer telefonu — wprowadź poprawny numer",
+    "breadcrumbHome": "Strona główna",
+    "relatedTitle": "Zobacz również",
+    "footerMailLabel": "E-mail",
+    "footerPhoneLabel": "Telefon",
+    "footerAddressLabel": "Adres",
+    "hoursLabel": "Godziny pracy",
+    "formEmailPlaceholder": "E-mail",
+    "formMessagePlaceholder": "Wiadomość",
+    "formSentMessage": "Dziękujemy! Zgłoszenie zostało wysłane, wkrótce się z Tobą skontaktujemy.",
+    "noResultsFound": "Nic nie znaleziono",
+    "dealerSearchPlaceholder": "Szukaj miasta lub dilera...",
+    "menuLabel": "Menu",
+    "getDirections": "Wyznacz trasę →",
+    "sendFailedRetry": "Nie udało się wysłać. Spróbuj ponownie."
+  },
+  "home": {
+    "title": "Producent drzwi wewnętrznych w Ukrainie | Dilerzy | Eksport",
+    "heroTitle": "Drzwi wewnętrzne od producenta w Ukrainie — 20 lat doświadczenia",
+    "heroSubtitle": "Rozwijamy sieć dilerską w całej Ukrainie, zapraszamy do współpracy nowych partnerów oraz eksportujemy produkcję.",
+    "heroCta": "Przejdź do katalogu",
+    "counters": [
+      {
+        "to": 20,
+        "suffix": "+",
+        "label": "lat doświadczenia"
+      },
+      {
+        "to": 50,
+        "suffix": "+",
+        "label": "modeli drzwi"
+      },
+      {
+        "to": 35,
+        "suffix": "+",
+        "label": "dilerów w Ukrainie"
+      },
+      {
+        "to": 5,
+        "suffix": "",
+        "label": "krajów eksportu"
+      }
+    ],
+    "categories": [
+      "Drzwi płytowe",
+      "Drzwi z okleiną PVC",
+      "Drzwi lakierowane",
+      "Drzwi frezowane",
+      "Drzwi z dekorem",
+      "Drzwi montażu ukrytego",
+      "Drzwi z wstawkami lustrzanymi"
+    ],
+    "strengthsTitle": "Mocne strony drzwi wewnętrznych IN WOOD",
+    "strengths": [
+      {
+        "title": "Maksymalne przygotowanie fabryczne",
+        "text": "Wpuszczenie zamka w produkcji, przygotowanie miejsc pod zawiasy, wpuszczenie listwy w ościeżnicę, docięcie ościeżnicy pod kątem 45°, precyzyjna geometria wszystkich elementów — pełna gotowość do szybkiego montażu."
+      },
+      {
+        "title": "Niestandardowe wymiary co 50 mm bez dopłaty",
+        "text": "Szerokość bez dopłaty: 400–900 mm (co 50 mm). Wysokość bez dopłaty: 1800–2100 mm. Niestandardowe wymiary — szerokość do 1000 mm, wysokość do 2300 mm — za dodatkową opłatą."
+      },
+      {
+        "title": "Ościeżnica z materiału łączonego (naturalna sosna + MDF)",
+        "text": "Sosna nadaje ościeżnicy sztywność i niezawodność, a MDF zapewnia idealnie równą powierzchnię pod wysokiej jakości okleinę — ościeżnica jest odporna na odkształcenia przez wiele lat."
+      },
+      {
+        "title": "Gruba warstwa MDF (6 mm)",
+        "text": "Zwiększona sztywność skrzydła drzwiowego, odporność na odkształcenia i dłuższa żywotność."
+      },
+      {
+        "title": "Rama z suchego drewna",
+        "text": "Wytrzymałość konstrukcji i trwałość drzwi nawet po wielu latach użytkowania."
+      },
+      {
+        "title": "Gęsty wypełniacz plastra miodu 18 mm",
+        "text": "Lepsza stabilność konstrukcji i skrzydła drzwiowego jako całości."
+      },
+      {
+        "title": "Aluminiowa krawędź (montaż ukryty)",
+        "text": "Niezawodna ochrona przed uderzeniami, odpryskami, wilgocią i uszkodzeniami mechanicznymi."
+      }
+    ],
+    "installTitle": "Szybki montaż drzwi IN WOOD: dzięki maksymalnemu przygotowaniu fabrycznemu",
+    "installText": "Drzwi IN WOOD przyjeżdżają na obiekt już gotowe do montażu: wpuszczony zamek, przygotowane miejsca pod zawiasy, ościeżnica docięta pod kątem 45° — monterowi pozostaje jedynie złożyć konstrukcję i wypoziomować geometrię. Żadnych dodatkowych dopasowań na miejscu — tylko precyzyjne wymiary fabryczne.",
+    "installResult": "Efekt: montaż przebiega szybko, dokładnie i bez ryzyka uszkodzenia elementów już na obiekcie.",
+    "aboutText": "IN WOOD to ukraiński producent drzwi wewnętrznych z własną produkcją w Połtawie. Tworzymy nowoczesne drzwi do mieszkań, domów, biur i lokali komercyjnych, wykorzystując wysokiej jakości materiały i nowoczesne technologie produkcji. Nasze produkty są dostępne w całej Ukrainie poprzez sieć oficjalnych dilerów, a także eksportowane za granicę.",
+    "commercialTitle": "Realizujemy rozwiązania drzwiowe dla obiektów komercyjnych",
+    "commercialText": "IN WOOD to niezawodny producent drzwi wewnętrznych dla hoteli, aparthoteli, biur i kompleksów mieszkaniowych. Wytwarzamy partie seryjne, pracujemy zgodnie z harmonogramem budowy, gwarantujemy stabilną jakość, terminową dostawę i profesjonalną obsługę projektu.",
+    "audienceTitle": "Z kim współpracujemy",
+    "audienceText": "IN WOOD produkuje drzwi zarówno dla klientów prywatnych, jak i dla biznesu — niezależnie od skali zadania, dobierzemy optymalne rozwiązanie.",
+    "audience": [
+      {
+        "title": "Klientom prywatnym",
+        "text": "Wyposażenie nowego mieszkania w stanie deweloperskim, remont kapitalny czy wymiana jednych-dwóch drzwi — dobierzemy rozwiązanie pod Twoje wnętrze i budżet."
+      },
+      {
+        "title": "Kierownikom budowy i brygadom budowlanym",
+        "text": "Zakup materiałów w porozumieniu z inwestorem: podpowiemy parametry techniczne i rozwiązania łatwe w montażu."
+      },
+      {
+        "title": "Projektantom i architektom",
+        "text": "Szeroki wybór kolorów i wykończeń, w tym ukryte ościeżnice (drzwi-niewidki), możliwość rozwiązań indywidualnych pod projekt."
+      },
+      {
+        "title": "Deweloperom",
+        "text": "Dostawy seryjne dla kompleksów mieszkaniowych: stabilna jakość, harmonogram montażu, obsługa projektu.",
+        "href": "/dlya-zabudovnykiv"
+      },
+      {
+        "title": "Dilerom i partnerom",
+        "text": "Warunki hurtowe współpracy, materiały marketingowe, osobisty opiekun.",
+        "href": "/spivpratsya"
+      },
+      {
+        "title": "Partnerom międzynarodowym",
+        "text": "Eksportujemy do Kanady, Francji, Szwajcarii, Litwy i Łotwy — otwarci na nowe kraje.",
+        "href": "/export"
+      },
+      {
+        "title": "Instytucjom państwowym i medycznym",
+        "text": "Szkoły, przedszkola, szpitale — trwałe drzwi, są rozwiązania budżetowe, otwarci na rozmowę o Twoich wymaganiach.",
+        "href": "/derzhavnym-zakladam"
+      }
+    ],
+    "collectionsTitle": "Drzwi we wnętrzu",
+    "collectionsSubtitle": "Swoboda w realizacji pomysłów projektowych z drzwiami od IN WOOD",
+    "collections": [
+      {
+        "name": "ETALON",
+        "text": "Drzwi płytowe ETALON to minimalizm i uniwersalność. Dekorem dla modeli tej serii jest panel kompozytowy, który jednocześnie zdobi i nadaje ton stonowanemu stylowi. Okleina z folii PVC wyróżnia się prostotą w pielęgnacji drzwi."
+      },
+      {
+        "name": "NOMINAL",
+        "text": "Linia minimalistycznych drzwi płytowych o lekkim designie. Stworzą harmonię i uzupełnią wnętrze pomieszczeń mieszkalnych czy biurowych."
+      },
+      {
+        "name": "FREZZATTI",
+        "text": "Stonowana geometria, wyrafinowany styl i głębia wyboru — to oferuje kolekcja FREZZATTI. Szeroka paleta folii PVC oraz możliwość malowania według wzorników RAL i NCS poszerzą horyzonty rozwiązań projektowych."
+      },
+      {
+        "name": "PERFETTO",
+        "text": "Te drzwi to elegancja i nienaganna forma. Możliwość zastosowania wysokiej jakości szkła oraz malowania według wzorników RAL i NCS dają pełną swobodę wyboru."
+      }
+    ],
+    "hiddenDoorsTitle": "Drzwi montażu ukrytego",
+    "hiddenDoorsText": "Nowoczesne rozwiązanie dla minimalistycznych wnętrz. Skrzydło montowane jest w jednej płaszczyźnie ze ścianą, tworząc efekt \"ukrytych drzwi\". Typ otwierania INSIDE zapewnia eleganckie otwieranie do wnętrza pomieszczenia.",
+    "techTitle": "Technologia produkcji i materiały",
+    "techText": "Skrzydło i ościeżnica drzwi IN WOOD wykonane są z połączenia naturalnego drewna i MDF, co zapewnia wysoką wytrzymałość, stabilność konstrukcji i długi okres eksploatacji.",
+    "qualityBanner": {
+      "kicker": "Jakość gwarantowana",
+      "title": "Jakość gwarantowana przez IN WOOD",
+      "text": "Każde drzwi przechodzą pełny cykl przygotowania fabrycznego i kontrolę jakości przed wysyłką — do dilera lub bezpośrednio na obiekt. Odpowiadamy za wynik na każdym etapie: od produkcji po montaż.",
+      "imageAlt": "Drzwi wewnętrzne IN WOOD ETALON ET-01, kolor kamień cięty, we wnętrzu",
+      "points": [
+        "20+ lat produkcji w Ukrainie",
+        "Przygotowanie fabryczne pod szybki montaż",
+        "Osobisty konsultant przy każdym zamówieniu"
+      ]
+    },
+    "videoSection": {
+      "title": "Zobacz, jak produkujemy drzwi",
+      "text": "Krótki film o produkcji IN WOOD — od materiałów po gotowe drzwi."
+    },
+    "metaDescription": "IN WOOD — producent drzwi wewnętrznych w Połtawie. 5 kolekcji: ETALON, NOMINAL, FREZZATTI, PERFETTO, drzwi montażu ukrytego. Dilerstwo i eksport."
+  },
+  "proNas": {
+    "title": "IN WOOD — producent drzwi wewnętrznych w Ukrainie",
+    "heading": "O nas",
+    "intro": "IN WOOD to ukraiński producent drzwi wewnętrznych.",
+    "lead": "Jesteśmy na rynku ponad 20 lat i w tym czasie zbudowaliśmy własną produkcję pełnego cyklu — od obróbki materiału po gotowe skrzydło.",
+    "text": "Specjalizujemy się w drzwiach płytowych, lakierowanych, frezowanych, drzwiach z okleiną PVC, drzwiach montażu ukrytego, a także produkujemy wyroby profilowe. Współpracujemy z dilerami i partnerami hurtowymi w całej Ukrainie, eksportujemy produkcję za granicę.",
+    "points": [
+      "Produkujemy ekologiczne wyroby",
+      "Wykorzystujemy nowoczesny sprzęt",
+      "Rozwijamy moce produkcyjne",
+      "Wdrażamy nowe technologie produkcji",
+      "Opracowujemy łączone style we wnętrzach",
+      "Realizujemy zamówienia indywidualne"
+    ],
+    "principlesTitle": "Główne zasady pracy firmy",
+    "principles": [
+      "Pracujemy wyłącznie z jakościowym surowcem",
+      "Wykorzystujemy zaawansowane technologie produkcji",
+      "Cenimy każdego pracownika",
+      "Robimy wszystko, aby zaspokoić potrzeby naszych klientów"
+    ],
+    "valuesTitle": "Firma z historią i tradycjami",
+    "values": [
+      "Współpracujemy wyłącznie z profesjonalnymi wykonawcami",
+      "Zadowolony klient to nasza największa wartość",
+      "Nieustannie doskonalimy produkcję"
+    ],
+    "metaDescription": "IN WOOD — ukraiński producent drzwi wewnętrznych pełnego cyklu. Własna produkcja, kontrola jakości na każdym etapie, sieć dilerska i eksport."
+  },
+  "harakterystyky": {
+    "title": "Charakterystyki linii drzwi IN WOOD — wymiary i konstrukcja",
+    "heading": "Charakterystyki linii drzwi IN WOOD",
+    "subheading": "Parametry techniczne modeli: wysokość, szerokość, grubość skrzydła i okleina",
+    "lines": [
+      {
+        "name": "ETALON",
+        "params": [
+          "Wysokość skrzydła — standard 1800–2100 mm (maksymalna — 2300 mm, co 50 mm)",
+          "Szerokość — standard 400–900 mm (niestandardowa — do 1000 mm, co 50 mm)",
+          "Grubość skrzydła — 40 mm",
+          "MDF — 6 mm",
+          "Listwa drewniana — 80/27 mm",
+          "Okleina — folia PVC"
+        ]
+      },
+      {
+        "name": "NOMINAL",
+        "params": [
+          "Wysokość skrzydła — standard 1800–2100 mm (maksymalna — 2300 mm, co 50 mm)",
+          "Szerokość — standard 400–900 mm (niestandardowa — do 1000 mm, co 50 mm)",
+          "Grubość skrzydła — 34 mm",
+          "MDF — 6 mm",
+          "Listwa drewniana — 80/27 mm",
+          "Okleina — folia PVC"
+        ]
+      },
+      {
+        "name": "FREZZATTI",
+        "params": [
+          "Wysokość skrzydła — standard 1800–2100 mm (maksymalna — 2300 mm, co 50 mm)",
+          "Szerokość — standard 400–900 mm (niestandardowa — do 1000 mm, co 50 mm)",
+          "Grubość skrzydła — 34 mm",
+          "MDF — 4 mm",
+          "Listwa drewniana — 80/27 mm",
+          "Okleina — folia PVC lub malowanie według wzornika RAL i NCS"
+        ]
+      },
+      {
+        "name": "PERFETTO",
+        "params": [
+          "Wysokość skrzydła — standard 1800–2100 mm (maksymalna — 2300 mm, co 50 mm)",
+          "Szerokość — standard 400–900 mm (niestandardowa — do 1000 mm, co 50 mm)",
+          "Grubość skrzydła — 40 mm",
+          "MDF — 6 mm",
+          "Listwa drewniana — 80/27 mm",
+          "Okleina — malowanie według wzornika RAL i NCS"
+        ]
+      }
+    ],
+    "ctaTitle": "Potrzebujesz konsultacji w sprawie modelu?",
+    "ctaText": "Nie znalazłeś potrzebnych parametrów lub chcesz doprecyzować niestandardowe wymiary do zamówienia hurtowego? Zostaw kontakt — nasz menedżer dobierze optymalną linię pod Twój projekt.",
+    "metaDescription": "Charakterystyki techniczne kolekcji drzwi IN WOOD: wymiary skrzydła, konstrukcja ościeżnicy, listwy i przylgi dla ETALON, NOMINAL, FREZZATTI, PERFETTO.",
+    "constructionDiagram": {
+      "title": "Konstrukcja skrzydła",
+      "subtitle": "Drzwi płytowe ETALON / NOMINAL — z czego składa się skrzydło",
+      "layers": [
+        {
+          "label": "Listwa drewniana",
+          "value": "80 × 27 mm"
+        },
+        {
+          "label": "Wypełniacz plastra miodu",
+          "value": "komórka 18 mm"
+        },
+        {
+          "label": "MDF",
+          "value": "6 mm"
+        },
+        {
+          "label": "Aluminiowy profil ozdobny",
+          "value": ""
+        },
+        {
+          "label": "Folia PVC",
+          "value": ""
+        }
+      ],
+      "featuresTitle": "Dodatkowe cechy skrzydeł drzwiowych",
+      "features": [
+        "Suszenie komorowe listew do wilgotności 8–10%",
+        "Możliwość zastosowania materiałów wygłuszających o progu do 45 dB",
+        "Krawędź ABS lub aluminiowa — odporność na uderzenia i wilgoć, zachowanie kątów",
+        "Folia PVC łatwa w pielęgnacji drzwi"
+      ],
+      "dimensionsTitle": "Wymiary",
+      "dimensions": [
+        "Wysokość: standard 1800–2100 mm (maksymalna — 2300 mm, co 50 mm)",
+        "Szerokość: standard 400–900 mm (niestandardowa — do 1000 mm, co 50 mm)",
+        "Grubość: ETALON — 40 mm; NOMINAL — 34 mm"
+      ]
+    }
+  },
+  "garantiya": {
+    "title": "Gwarancja na drzwi IN WOOD — warunki dla dilerów i partnerów",
+    "heading": "Gwarancje",
+    "intro": "Odpowiadamy za jakość każdych drzwi opuszczających naszą produkcję — od materiałów po okucia. Poniżej warunki gwarancji dla dilerów i partnerów eksportowych.",
+    "sections": [
+      {
+        "title": "Gwarancja standardowa",
+        "text": "Na drzwi wewnętrzne produkcji IN WOOD udzielana jest gwarancja 1 rok od daty wysyłki. Gwarancja obejmuje wady produkcyjne i materiałowe pod warunkiem przestrzegania zasad przechowywania, transportu i montażu."
+      },
+      {
+        "title": "Gwarancja na okucia",
+        "text": "Gwarancja na okucia (zawiasy, zamki, klamki itp.) jest określana przez producenta okuć zgodnie z jego warunkami gwarancyjnymi i podawana w dokumentacji towarzyszącej partii towaru."
+      },
+      {
+        "title": "Warunki gwarancji",
+        "text": "Gwarancja obowiązuje pod warunkiem przestrzegania zaleceń dotyczących przechowywania, transportu, montażu i eksploatacji. Podstawą do zgłoszenia reklamacyjnego jest umowa dostawy oraz faktura."
+      },
+      {
+        "title": "Naprawa gwarancyjna",
+        "text": "W przypadku stwierdzenia wady w okresie gwarancyjnym partner zwraca się do swojego menedżera lub pod numer telefonu +38 050 880 38 41 w celu sporządzenia protokołu reklamacyjnego. Naprawa lub wymiana odbywa się bezpłatnie, jeśli wada nie jest związana z naruszeniem warunków transportu lub eksploatacji."
+      }
+    ],
+    "procedureTitle": "Procedura zgłoszenia przypadku gwarancyjnego",
+    "procedureIntro": "Aby zgłosić reklamację gwarancyjną, partner dostarcza:",
+    "procedure": [
+      "numer umowy lub faktury",
+      "opis wady oraz dokumentację fotograficzną",
+      "datę i okoliczności wykrycia wady"
+    ],
+    "exclusionsTitle": "Wyłączenia z gwarancji",
+    "exclusionsIntro": "Gwarancja nie obejmuje:",
+    "exclusions": [
+      "uszkodzeń spowodowanych naruszeniem zasad transportu lub przechowywania",
+      "naturalnego zużycia (zarysowania, przetarcia) wynikającego z eksploatacji",
+      "uszkodzeń spowodowanych czynnikami niezależnymi od producenta (wilgotność pomieszczenia, nieprawidłowy montaż itp.)"
+    ],
+    "ctaTitle": "Zostaw zapytanie dotyczące gwarancji",
+    "ctaText": "Masz pytania dotyczące warunków gwarancji lub chcesz zgłosić przypadek gwarancyjny? Zostaw kontakt — nasz menedżer skontaktuje się z Tobą i podpowie, co robić dalej.",
+    "metaDescription": "Warunki gwarancji na drzwi wewnętrzne IN WOOD dla dilerów i partnerów — terminy, zakres ochrony i procedura zgłoszenia przypadku gwarancyjnego."
+  },
+  "oplataDostavka": {
+    "title": "Warunki współpracy — płatność i dostawa dla dilerów | IN WOOD",
+    "heading": "Warunki współpracy",
+    "intro": "Płatność i dostawa dla dilerów i partnerów eksportowych — przejrzyste warunki na każdym etapie współpracy.",
+    "tabs": {
+      "payment": "Płatność",
+      "delivery": "Dostawa"
+    },
+    "payment": [
+      "Zgłoszenie — zostawiasz zapytanie o zamówienie.",
+      "Rozmowa telefoniczna — ustalamy szczegóły, specyfikację i wolumen.",
+      "Umowa — zawieramy umowę na dostawę.",
+      "Wpłata 70% — po podpisaniu umowy wpłacasz zaliczkę, a zamówienie trafia do produkcji.",
+      "Dopłata 30% — pozostała kwota płatna przed wysyłką produkcji.",
+      "Rozliczenie bezgotówkowe — wszystkie rozliczenia odbywają się przelewem bankowym na konto firmy na podstawie faktury."
+    ],
+    "delivery": [
+      {
+        "title": "Sposób odbioru towaru",
+        "text": "Partner może odebrać zamówienie samodzielnie z naszej produkcji, lub organizujemy dostawę przewoźnikiem — wybierasz opcję najwygodniejszą dla siebie."
+      },
+      {
+        "title": "Terminy",
+        "text": "Termin wysyłki ustalany jest indywidualnie w zależności od wielkości zamówienia i trasy dostawy."
+      },
+      {
+        "title": "Pakowanie",
+        "text": "Wszystkie drzwi są pakowane zgodnie z wymogami transportu — chroni to produkty przed uszkodzeniami podczas przewozu, w tym na duże odległości i przy eksporcie."
+      },
+      {
+        "title": "Eksport",
+        "text": "Przy dostawach międzynarodowych warunki dostawy i obieg dokumentów ustalamy indywidualnie z każdym partnerem."
+      }
+    ],
+    "metaDescription": "Warunki płatności i dostawy produktów IN WOOD dla dilerów i partnerów w całej Ukrainie oraz na eksport."
+  },
+  "servis": {
+    "title": "Obsługa serwisowa drzwi IN WOOD — dla dilerów",
+    "heading": "Obsługa serwisowa",
+    "intro": "Wspieramy dilerów i partnerów nie tylko na etapie dostawy, ale i po niej — od konsultacji po zapewnienie części zamiennych. Warunki naprawy gwarancyjnej i tryb zgłoszenia — na stronie „Gwarancje”.",
+    "sections": [
+      {
+        "title": "Wsparcie posprzedażowe",
+        "text": "Po dostawie partner może zwracać się do swojego menedżera z dowolnymi pytaniami dotyczącymi eksploatacji lub obsługi produktów. Udzielamy konsultacji i rekomendacji dotyczących dalszego użytkowania drzwi."
+      },
+      {
+        "title": "Regularna konserwacja",
+        "text": "W razie potrzeby udzielamy zaleceń dotyczących planowej konserwacji technicznej produktów w celu przedłużenia okresu ich eksploatacji."
+      },
+      {
+        "title": "Części zamienne i akcesoria",
+        "text": "Zapewniamy dostępność części zamiennych i akcesoriów do naszych produktów. Partner może zamówić je dodatkowo w celu obsługi drzwi u swoich klientów."
+      },
+      {
+        "title": "Wsparcie techniczne",
+        "text": "Partnerzy mogą kontaktować się pod numerem telefonu +38 050 880 38 41 lub przez swojego menedżera z dowolnymi pytaniami technicznymi dotyczącymi produktów."
+      },
+      {
+        "title": "Ocena jakości obsługi",
+        "text": "Zbieramy opinie od partnerów na temat jakości serwisu, aby usprawniać procesy współpracy."
+      },
+      {
+        "title": "Obsługa zgłoszeń",
+        "text": "Rozpatrujemy wszystkie zgłoszenia partnerów i informujemy o statusie rozpatrzenia, jeśli sprawa wymaga dodatkowego czasu."
+      }
+    ],
+    "ctaTitle": "Potrzebujesz pomocy w obsłudze serwisowej?",
+    "ctaText": "Masz pytania dotyczące wsparcia technicznego, części zamiennych lub planowej konserwacji produktów? Zostaw kontakt — nasz menedżer skontaktuje się z Tobą i podpowie, co robić dalej.",
+    "metaDescription": "Obsługa serwisowa drzwi IN WOOD dla dilerów — konsultacje, wsparcie i rozwiązywanie kwestii technicznych."
+  },
+  "spivpratsya": {
+    "title": "Zostań dilerem IN WOOD — dla dilerów, deweloperów, projektantów",
+    "heading": "Współpraca z IN WOOD",
+    "intro": "Ukraiński producent wysokiej jakości drzwi wewnętrznych. Niezawodna jakość. Elastyczne warunki współpracy. Dostawa po Ukrainie i eksport za granicę.",
+    "lead": "Jeśli szukasz niezawodnego producenta ze stabilną jakością i szerokim asortymentem — trafiłeś we właściwe miejsce.",
+    "tabs": {
+      "dealership": "Dilerstwo",
+      "export": "Eksport"
+    },
+    "dealership": [
+      {
+        "title": "Szeroki asortyment wysokiej jakości drzwi wewnętrznych",
+        "text": "Znajdziesz u nas drzwi na każdy gust i budżet — ponad 50 modeli w różnych kolorach i fakturach oraz wszystkie niezbędne akcesoria. Twoi klienci na pewno znajdą to, czego szukają!"
+      },
+      {
+        "title": "Obustronnie korzystne warunki współpracy",
+        "text": "Firma IN WOOD oferuje korzystne warunki dilerskie, próbki produktów do showroomu oraz szkolenia dla zespołu partnera. Pracujemy tak, aby było Ci to opłacalne!"
+      },
+      {
+        "title": "Produkcja i dostawa zamówień",
+        "text": "Dotrzymujemy uzgodnionych terminów produkcji i dostawy, informujemy o statusie zamówienia na każdym etapie. Dostarczamy po całej Ukrainie, solidnie pakujemy produkty do transportu."
+      },
+      {
+        "title": "Zamówienia indywidualne",
+        "text": "W razie potrzeby rozpatrujemy niestandardowe wymiary, kolory czy design pod konkretny projekt. Zapytaj swojego menedżera o możliwość i terminy realizacji takich zamówień."
+      }
+    ],
+    "stats": [
+      {
+        "to": 20,
+        "suffix": "+",
+        "label": "lat doświadczenia produkcyjnego"
+      },
+      {
+        "to": 35,
+        "suffix": "+",
+        "label": "partnerów już z nami współpracuje"
+      },
+      {
+        "to": 50,
+        "suffix": "+",
+        "label": "modeli drzwi w asortymencie"
+      }
+    ],
+    "calcKicker": "Wypróbuj już teraz",
+    "calcTitle": "Kalkulacja oferty handlowej — w kilka minut, a nie godzin",
+    "calcText": "Wybierz model, kolor i rozmiar — cena i zdjęcie aktualizują się od razu. Partnerzy IN WOOD otrzymują pełny kalkulator z ościeżnicą, listwą, wpuszczeniem okuć i błyskawicznym eksportem gotowej oferty do PDF.",
+    "calcCta": "Chcę taki kalkulator dla swojej firmy",
+    "audienceTitle": "Partnerstwo dla każdego formatu biznesu",
+    "audienceText": "Od sklepów detalicznych po duże sieci dilerskie, deweloperów i partnerów międzynarodowych — IN WOOD oferuje warunki współpracy dopasowane do skali i potrzeb Twojego biznesu.",
+    "audience": [
+      {
+        "label": "Dilerzy"
+      },
+      {
+        "label": "Dystrybutorzy"
+      },
+      {
+        "label": "Budownictwo mieszkaniowe",
+        "href": "/dlya-zabudovnykiv"
+      },
+      {
+        "label": "Nieruchomości komercyjne"
+      },
+      {
+        "label": "Branża hotelarska"
+      },
+      {
+        "label": "Aparthotele"
+      },
+      {
+        "label": "Partnerstwo międzynarodowe",
+        "href": "/export"
+      },
+      {
+        "label": "Projektanci"
+      },
+      {
+        "label": "Instytucje państwowe i medyczne",
+        "href": "/derzhavnym-zakladam"
+      }
+    ],
+    "toolsTitle": "Warunki, które pracują na Twój zysk",
+    "toolsText": "Ceny bezpośrednio od producenta bez pośredników, konkurencyjna oferta dla klientów i gotowe narzędzia do skutecznej sprzedaży.",
+    "tools": [
+      {
+        "title": "Katalog produktów",
+        "text": "Pełny asortyment drzwi z kolekcjami, wariantami wykonania i charakterystykami technicznymi do wygodnej prezentacji."
+      },
+      {
+        "title": "Cennik",
+        "text": "Aktualne ceny i warunki współpracy do przygotowania konkurencyjnej oferty."
+      },
+      {
+        "title": "Kalkulator online IN WOOD",
+        "text": "Przejmuje rutynowe obliczenia: oferta handlowa, która wcześniej zajmowała godziny, jest gotowa w kilka minut."
+      },
+      {
+        "title": "Osobisty menedżer",
+        "text": "Pełne wsparcie partnera: konsultacje, pomoc w doborze rozwiązań i sprawne rozwiązywanie bieżących spraw."
+      },
+      {
+        "title": "Zapewnienie materiałów informacyjnych",
+        "text": "Gotowe materiały elektroniczne i drukowane do promocji produktów IN WOOD: prezentacja, katalog, ulotki, cennik i inne narzędzia sprzedażowe."
+      },
+      {
+        "title": "Błyskawiczny eksport oferty do PDF",
+        "text": "Gotowa oferta handlowa ze zdjęciami, cenami i wszystkimi pozycjami zamówienia — jednym kliknięciem w PDF, gotowa do druku lub wysłania klientowi."
+      }
+    ],
+    "strengthsTitle": "Mocne strony produktu",
+    "strengthsText": "Rozwiązania techniczne zapewniające komfort i jakość, odczuwalne już od pierwszego dotyku.",
+    "strengths": [
+      {
+        "title": "Maksymalne przygotowanie fabryczne",
+        "text": "Wpuszczenie zamka, przygotowanie pod zawiasy, docięcie ościeżnicy pod kątem 45°, precyzyjna geometria wszystkich elementów — pełna gotowość do szybkiego montażu."
+      },
+      {
+        "title": "Niestandardowe wymiary co 50 mm bez dopłaty",
+        "text": "Szerokość 400–900 mm, wysokość 1800–2100 mm — bez dopłaty. Niestandardowe wymiary — szerokość do 1000 mm, wysokość do 2300 mm — za dodatkową opłatą."
+      },
+      {
+        "title": "Ościeżnica z materiału łączonego",
+        "text": "Naturalna sosna dla wytrzymałości i MDF dla idealnie równej powierzchni — ościeżnica odporna na odkształcenia przez wiele lat."
+      },
+      {
+        "title": "Gruba warstwa MDF (6 mm)",
+        "text": "Zwiększona sztywność skrzydła drzwiowego, odporność na odkształcenia i dłuższa żywotność."
+      },
+      {
+        "title": "Rama z suchego drewna",
+        "text": "Wytrzymałość konstrukcji i trwałość drzwi nawet po wielu latach użytkowania."
+      },
+      {
+        "title": "Gęsty wypełniacz plastra miodu 18 mm",
+        "text": "Lepsza stabilność konstrukcji i skrzydła drzwiowego jako całości."
+      },
+      {
+        "title": "Aluminiowa krawędź",
+        "text": "Niezawodna ochrona przed uderzeniami, odpryskami, wilgocią i uszkodzeniami mechanicznymi."
+      }
+    ],
+    "stepsTitle": "Cztery kroki od pierwszego kontaktu do startu sprzedaży",
+    "steps": [
+      {
+        "title": "Zgłoszenie",
+        "text": "Wypełnij krótki formularz — menedżer IN WOOD skontaktuje się z Tobą, aby omówić szczegóły współpracy."
+      },
+      {
+        "title": "Warunki współpracy",
+        "text": "Ustalenie formatu pracy, regionu, asortymentu i ogólnych warunków partnerstwa."
+      },
+      {
+        "title": "Materiały sprzedażowe",
+        "text": "Katalog produktów, cennik partnerski, kalkulator kosztów i inne narzędzia do pracy z klientami."
+      },
+      {
+        "title": "Start współpracy",
+        "text": "Wraz z osobistym menedżerem składasz pierwsze zamówienie i otrzymujesz wsparcie na wszystkich etapach."
+      }
+    ],
+    "formRole": "Format współpracy",
+    "formRoleOptions": [
+      "Diler",
+      "Dystrybutor",
+      "Deweloper nieruchomości mieszkaniowych",
+      "Deweloper nieruchomości komercyjnych",
+      "Partnerstwo międzynarodowe",
+      "Projektant",
+      "Inne"
+    ],
+    "exportIntro": "Szukasz niezawodnego producenta drzwi wewnętrznych na eksport?",
+    "exportText": "Jesteśmy otwarci na współpracę międzynarodową i dostarczamy drzwi wewnętrzne partnerom w różnych krajach świata. Firma IN WOOD aktywnie rozwija swoją działalność, oferując produkty partnerom nie tylko w Ukrainie, ale i za granicą. Drzwi wewnętrzne naszej produkcji zostały zainstalowane w domach prywatnych, mieszkaniach, biurach, hotelach i lokalach komercyjnych w różnych krajach świata.",
+    "exportCountries": "Mamy udane doświadczenie eksportu do Kanady, Francji, Szwajcarii, Litwy i Łotwy i wciąż rozszerzamy geografię naszej obecności.",
+    "exportMoreLink": "Więcej o warunkach eksportu →",
+    "ctaTitle": "Zostań partnerem IN WOOD",
+    "ctaText": "Nie tylko budujemy sieć partnerską, ale tworzymy silny zespół ludzi o wspólnych celach. Otrzymaj ofertę handlową i warunki współpracy.",
+    "formCountry": "Kraj",
+    "formCity": "Miasto",
+    "formEmail": "Adres e-mail",
+    "formMessage": "Wiadomość tekstowa",
+    "recruitCitiesTitle": "Szukamy dilerów w tych miastach",
+    "recruitCitiesText": "Rozszerzamy sieć dilerską i zapraszamy do współpracy sklepy z materiałami budowlanymi, salony meblowe i przedsiębiorców.",
+    "metaDescription": "Współpraca z IN WOOD dla dilerów, dystrybutorów, deweloperów nieruchomości i projektantów wnętrz — ceny hurtowe, osobisty menedżer i kalkulator online."
+  },
+  "kontakty": {
+    "title": "IN WOOD — Kontakt do producenta drzwi wewnętrznych | Ukraina",
+    "heading": "Kontakt",
+    "heroTitle": "Cieszymy się, że możemy być z Tobą w kontakcie",
+    "heroText": "Nasz zespół zawsze chętnie odpowie na Twoje pytania i pomoże wybrać najlepsze rozwiązania dla Twojego projektu czy biznesu.",
+    "heroImageAlt": "Drzwi wewnętrzne IN WOOD FREZZATTI FZ-02, kolor dąb portowy, we wnętrzu",
+    "heroFeatures": [
+      "Konsultacja i wsparcie",
+      "Indywidualne podejście",
+      "Współpraca na całym świecie",
+      "Szybkie odpowiedzi"
+    ],
+    "managerLabel": "Menedżer",
+    "exportManagerLabel": "International Sales Manager",
+    "formTitle": "Napisz do nas",
+    "formText": "Nasi specjaliści chętnie udzielą Ci wszelkich informacji",
+    "metaDescription": "Kontakt do producenta drzwi wewnętrznych IN WOOD: adres w Połtawie, telefony do zamówień w Ukrainie i zapytań eksportowych, e-mail, godziny pracy."
+  },
+  "catalog": {
+    "title": "Ceny drzwi wewnętrznych IN WOOD",
+    "kicker": "IN WOOD · ceny detaliczne",
+    "heading": "Sklep z drzwiami wewnętrznymi",
+    "intro": "Wybierz kolor, ościeżnicę, listwę i przylgę bezpośrednio w karcie produktu — cena zostanie obliczona od razu. Dokładna wycena pod Twój otwór drzwiowy — na zapytanie.",
+    "all": "Wszystkie",
+    "thickness": "Grubość skrzydła",
+    "color": "Kolor",
+    "korob": "Ościeżnica",
+    "lyshtva": "Listwa",
+    "dobir": "Przylga",
+    "none": "Nie wybrano",
+    "vrizka": "Wpuszczenie okuć",
+    "vrizkaNone": "Bez wpuszczenia",
+    "vrizkaLock": "Wpuszczenie pod zamek",
+    "vrizkaFull": "Pełne wpuszczenie okuć",
+    "shumo": "Wygłuszenie skrzydła drzwiowego",
+    "width": "Szerokość, mm",
+    "height": "Wysokość, mm",
+    "nonstdSuffix": "niestandard +20%",
+    "total": "Razem",
+    "from": "od",
+    "findOutPrice": "Sprawdź cenę",
+    "sendInquiry": "Wyślij zapytanie",
+    "close": "Zamknij",
+    "footnote": "Niestandardowy rozmiar jest uwzględniany automatycznie (+20% do ceny). Warianty aluminiowej krawędzi — pytaj o nie w zapytaniu. Wybór koloru w ramach standardowej palety nie wpływa na cenę; malowanie według RAL/NCS (tam, gdzie dostępne) ma osobną cenę.",
+    "metaDescription": "Katalog drzwi wewnętrznych IN WOOD z cenami detalicznymi: wybierz model, kolor, ościeżnicę, listwę i przylgę — kalkulator od razu obliczy koszt.",
+    "downloadCatalog": "Pobierz katalog (PDF)",
+    "finishBase": "Baza",
+    "finishRal": "Malowanie RAL/NCS",
+    "ralPlaceholder": "Kolor RAL/NCS, np. RAL 9010"
+  },
+  "nashiDileri": {
+    "title": "Drzwi IN WOOD w Ukrainie | Oficjalni dilerzy i partnerzy",
+    "heading": "Gdzie kupić drzwi IN WOOD w Ukrainie?",
+    "intro": "Sieć oficjalnych dilerów IN WOOD jest obecna w różnych miastach Ukrainy. Znajdź najbliższy salon na mapie lub wybierz swoje miasto z listy poniżej.",
+    "text": "Sieć oficjalnych dilerów IN WOOD jest obecna w różnych regionach Ukrainy. W naszych salonach partnerskich możesz zapoznać się z aktualnymi kolekcjami drzwi wewnętrznych, otrzymać konsultację i dobrać optymalne rozwiązanie do swojego wnętrza.",
+    "heroKicker": "SIEĆ PARTNERSKA",
+    "heroTitle": "Dilerzy IN WOOD w całej Ukrainie i za granicą",
+    "heroText": "Budujemy sieć niezawodnych partnerów — od salonów dilerskich w miastach Ukrainy po dostawy międzynarodowe. Znajdź najbliższy salon lub dołącz do naszego zespołu.",
+    "heroImageAlt": "Drzwi wewnętrzne IN WOOD NOMINAL NL-01, kolor biały, we wnętrzu",
+    "heroPoints": [
+      "50+ modeli drzwi w aktualnym asortymencie",
+      "Doświadczenie eksportu do Kanady, Francji, Szwajcarii, Litwy i Łotwy",
+      "Elastyczne warunki współpracy i wsparcie partnerów"
+    ],
+    "metaDescription": "Oficjalni dilerzy i partnerzy IN WOOD w całej Ukrainie — interaktywna mapa sieci dilerskiej, gdzie kupić drzwi IN WOOD w Twoim mieście.",
+    "cityTitlePrefix": "Drzwi IN WOOD —",
+    "cityTitleSuffix": "oficjalni dilerzy",
+    "cityMetaPrefix": "Oficjalni dilerzy IN WOOD —",
+    "cityMetaSuffix": "Adresy, kontakty i katalog drzwi wewnętrznych IN WOOD.",
+    "cityIntro": "Aktualne kontakty dilerów IN WOOD w tym mieście — adres, telefon i strona dilera.",
+    "cityDealersHeading": "Dilerzy",
+    "cityBackLink": "← Wszyscy dilerzy w Ukrainie",
+    "cityCatalogCta": "Zobacz katalog drzwi",
+    "dealersByCityHeading": "Dilerzy według miast",
+    "noDealerCtaTitle": "Nie masz dilera w swoim mieście?",
+    "noDealerCtaText": "Rozszerzamy sieć dilerską — być może Twoje miasto jest wśród tych, gdzie szukamy partnera.",
+    "noDealerCtaLink": "Zobacz miasta"
+  },
+  "dealerRecruit": {
+    "titlePrefix": "IN WOOD —",
+    "titleSuffix": "szukamy oficjalnego dilera",
+    "metaPrefix": "IN WOOD rozszerza sieć dilerską —",
+    "metaSuffix": "Oferujemy warunki hurtowe współpracy, wsparcie marketingowe i osobistego menedżera od producenta drzwi wewnętrznych z własną produkcją w Połtawie.",
+    "heading": "Szukamy dilera",
+    "intro": "IN WOOD to ukraiński producent drzwi wewnętrznych z własną produkcją w Połtawie. Rozszerzamy sieć dilerską i zapraszamy do współpracy sklepy z materiałami budowlanymi, salony meblowe i przedsiębiorców w tym mieście.",
+    "backLink": "← Wszystkie możliwości współpracy",
+    "ctaTitle": "Gotowy zostać oficjalnym dilerem IN WOOD?",
+    "ctaText": "Zostaw zgłoszenie — menedżer skontaktuje się z Tobą i opowie o warunkach współpracy dla Twojego miasta."
+  },
+  "faq": {
+    "title": "Pytania i odpowiedzi o drzwiach IN WOOD",
+    "heading": "Pytania i odpowiedzi",
+    "intro": "Odpowiedzi na najczęstsze pytania dotyczące drzwi wewnętrznych IN WOOD — produkcja, wymiary, materiały, montaż i gwarancja.",
+    "items": [
+      {
+        "q": "Jaki jest czas produkcji drzwi wewnętrznych w IN WOOD?",
+        "a": "Czas produkcji standardowych drzwi wewnętrznych wynosi 30 dni. Niestandardowe — 45 dni."
+      },
+      {
+        "q": "Jakie są standardowe wymiary drzwi wewnętrznych IN WOOD?",
+        "a": "Szerokość: 400–900 mm; wysokość: 1800–2100 mm."
+      },
+      {
+        "q": "Czy IN WOOD produkuje drzwi wewnętrzne w niestandardowych wymiarach?",
+        "a": "Tak, produkujemy drzwi w niestandardowych wymiarach: szerokość — 950, 1000 mm; wysokość — 2150, 2200, 2250, 2300 mm (co 50 mm). Niestandardowy wymiar wiąże się z dopłatą +20% do wartości skrzydła."
+      },
+      {
+        "q": "Jak prawidłowo zmierzyć otwór drzwiowy przed zamówieniem?",
+        "a": "Zmierz szerokość, wysokość i grubość ściany w kilku punktach, ponieważ otwór może być nierówny. Dla dokładnego wykonania drzwi zalecamy skorzystanie z usługi profesjonalnego pomiarowca, który uwzględni wszystkie niuanse montażu."
+      },
+      {
+        "q": "Kiedy najlepiej montować drzwi wewnętrzne podczas remontu?",
+        "a": "Drzwi wewnętrzne zaleca się montować na końcowym etapie remontu — po zakończeniu wykończenia ścian, sufitu i podłogi. Pomaga to uniknąć uszkodzeń skrzydeł i zapewnia dokładny montaż listew i okuć."
+      },
+      {
+        "q": "Czy można zamontować drzwi wewnętrzne po zakończeniu remontu?",
+        "a": "Tak, montaż drzwi wewnętrznych po zakończeniu remontu jest możliwy. Najważniejsze, aby otwory drzwiowe były przygotowane zgodnie z wymaganymi wymiarami, a ściany i podłoga miały zakończone wykończenie."
+      },
+      {
+        "q": "Z jakich materiałów wykonane są drzwi wewnętrzne IN WOOD?",
+        "a": "Materiałami drzwi wewnętrznych IN WOOD są rama z naturalnego drewna oraz MDF."
+      },
+      {
+        "q": "Które wykończenie drzwi wewnętrznych jest lepsze: PVC czy farba?",
+        "a": "Wybór wykończenia zależy od warunków eksploatacji i pożądanego designu. Okleina PVC wyróżnia się praktycznością, odpornością na wilgoć i łatwością pielęgnacji. Drzwi lakierowane mają bardziej premium wygląd, szeroką paletę kolorów i możliwość tworzenia bardziej złożonych rozwiązań projektowych."
+      },
+      {
+        "q": "Czym różnią się drzwi płytowe od ramiakowo-płycinowych?",
+        "a": "Drzwi płytowe mają jednolitą konstrukcję z gładką powierzchnią lub dekorem (molding, frezowanie, wstawki lustrzane itp.). Drzwi ramiakowo-płycinowe wykonuje się poprzez połączenie pełnodrewnianych pionowych słupków skrzydła za pomocą elementów poziomych (poprzeczek). Cały asortyment IN WOOD ma konstrukcję płytową."
+      },
+      {
+        "q": "Jaka jest grubość drzwi wewnętrznych IN WOOD?",
+        "a": "Firma IN WOOD produkuje drzwi wewnętrzne o grubości 34 mm i 40 mm."
+      },
+      {
+        "q": "Jakie wypełnienie stosowane jest wewnątrz drzwi wewnętrznych?",
+        "a": "Wypełnieniem drzwi płytowych IN WOOD jest wypełniacz o strukturze plastra miodu z drobną komórką (18 mm), który zapewnia równomierność, płaskość i sztywność skrzydła."
+      },
+      {
+        "q": "Czy drzwi wewnętrzne IN WOOD są odporne na wilgoć i uszkodzenia?",
+        "a": "Zamknięte krawędzie skrzydła oraz aluminiowa krawędź zapewniają dodatkową ochronę przed wilgocią i uszkodzeniami."
+      },
+      {
+        "q": "Czy wykończenie wypłowieje lub traci kolor na słońcu?",
+        "a": "Wykończenie drzwi wewnętrznych IN WOOD jest odporne na działanie promieni słonecznych."
+      },
+      {
+        "q": "Czy można pomalować drzwi wewnętrzne IN WOOD na dowolny kolor według wzorników RAL i NCS?",
+        "a": "W IN WOOD istnieje możliwość malowania drzwi w dowolnym kolorze dostępnym we wzornikach RAL / NCS."
+      },
+      {
+        "q": "Czy można zamówić drzwi wewnętrzne o wysokości powyżej 2100 mm?",
+        "a": "Maksymalna wysokość skrzydła drzwiowego to 2300 mm (od 2150 mm do 2300 mm — za dodatkową opłatą)."
+      },
+      {
+        "q": "Czym są drzwi montażu ukrytego?",
+        "a": "Drzwi montażu ukrytego to drzwi wewnętrzne z aluminiową ościeżnicą, która montowana jest w jednej płaszczyźnie ze ścianą, pozostając niewidoczna po wykończeniu, i mają dwa warianty otwierania — zwykłe oraz inside. Takie drzwi tworzą efekt jednolitej płaszczyzny ze ścianą i doskonale uzupełniają nowoczesne wnętrza."
+      },
+      {
+        "q": "Jakie są zalety drzwi montażu ukrytego?",
+        "a": "Drzwi montażu ukrytego tworzą nowoczesny, minimalistyczny wygląd wnętrza dzięki montażowi w jednej płaszczyźnie ze ścianą. Wizualnie powiększają przestrzeń, pozwalają malować lub wykańczać skrzydło w jednym stylu ze ścianami."
+      },
+      {
+        "q": "W jakie okucia IN WOOD wyposaża drzwi wewnętrzne?",
+        "a": "IN WOOD oferuje do wyposażenia drzwi okucia od producentów AGB, PALADII, Anselmi oraz МВМ."
+      },
+      {
+        "q": "Czy można kupić samo skrzydło drzwiowe bez ościeżnicy i listwy?",
+        "a": "W IN WOOD istnieje możliwość zakupu wyłącznie skrzydła drzwiowego, bez kompletu wyrobów profilowych."
+      },
+      {
+        "q": "Czy IN WOOD wykonuje montaż drzwi wewnętrznych?",
+        "a": "Specjaliści firmy wykonują montaż drzwi po uzgodnieniu z klientem i w zależności od wielkości zamówienia."
+      },
+      {
+        "q": "Jak prawidłowo pielęgnować drzwi wewnętrzne IN WOOD i jakich środków lepiej używać?",
+        "a": "Drzwi wewnętrzne IN WOOD są niewymagające w pielęgnacji — wystarczy regularnie przecierać powierzchnię miękką, wilgotną szmatką i stosować neutralne środki czyszczące bez środków ściernych i agresywnej chemii. Pomoże to zachować wykończenie, kolor i nienaganny wygląd drzwi na długie lata."
+      },
+      {
+        "q": "Jaka jest gwarancja na drzwi wewnętrzne IN WOOD i co ona obejmuje?",
+        "a": "Na drzwi wewnętrzne produkcji IN WOOD udzielana jest gwarancja 1 rok od daty wysyłki. Gwarancja obejmuje wady produkcyjne i materiałowe pod warunkiem przestrzegania zasad przechowywania, transportu i montażu."
+      },
+      {
+        "q": "Czy IN WOOD działa w całej Ukrainie?",
+        "a": "IN WOOD dostarcza drzwi wewnętrzne po całej Ukrainie i współpracuje z siecią oficjalnych partnerów w wielu miejscowościach."
+      },
+      {
+        "q": "Które drzwi wewnętrzne posłużą przez wiele lat?",
+        "a": "Wszystkie drzwi wewnętrzne produkcji IN WOOD wykonane są z wysokiej jakości materiałów zgodnie z nowoczesnymi technologiami produkcji, co zapewnia ich trwałość, niezawodność i nienaganny wygląd przez wiele lat eksploatacji."
+      }
+    ],
+    "metaDescription": "FAQ o drzwiach wewnętrznych IN WOOD — czas produkcji, wymiary, materiały, montaż, gwarancja i pielęgnacja."
+  },
+  "blog": {
+    "title": "Blog IN WOOD — artykuły o drzwiach wewnętrznych",
+    "heading": "Blog",
+    "intro": "Przydatne artykuły o wyborze, montażu i pielęgnacji drzwi wewnętrznych IN WOOD.",
+    "metaDescription": "Blog IN WOOD — porady dotyczące wyboru, montażu i pielęgnacji drzwi wewnętrznych.",
+    "readMore": "Czytaj artykuł",
+    "back": "← Wszystkie artykuły",
+    "relatedPostsTitle": "Czytaj również",
+    "browseCatalog": "Zobacz katalog drzwi IN WOOD"
+  },
+  "galereya": {
+    "title": "Zdjęcia drzwi IN WOOD we wnętrzu — galeria według modeli",
+    "heading": "Galeria",
+    "intro": "Drzwi IN WOOD w prawdziwych wnętrzach — wybierz kolekcję i model, aby zobaczyć dostępne kolory.",
+    "metaDescription": "Zdjęcia drzwi wewnętrznych IN WOOD we wnętrzu według modeli i kolorów — kolekcje ETALON, NOMINAL, FREZZATTI, PERFETTO.",
+    "all": "Wszystkie kolekcje",
+    "color": "Kolor"
+  },
+  "dlyaZabudovnykiv": {
+    "pageTitle": "Drzwi IN WOOD dla deweloperów — dostawy hurtowe",
+    "metaDescription": "Hurtowe dostawy drzwi wewnętrznych IN WOOD dla deweloperów i firm budowlanych. Własna produkcja w Połtawie, ceny hurtowe, dostawa po Ukrainie.",
+    "backLink": "← Wszystkie możliwości współpracy",
+    "heading": "Drzwi dla deweloperów i firm budowlanych",
+    "intro": "IN WOOD to producent drzwi wewnętrznych z własną produkcją w Połtawie. Dostarczamy drzwi hurtowo do wyposażenia nowych budynków, osiedli mieszkaniowych i obiektów komercyjnych — od jednej klatki schodowej po całe osiedle.",
+    "benefitsTitle": "Warunki dla deweloperów",
+    "benefitsText": "Pracujemy bezpośrednio z producentem — bez pośredników i narzutów.",
+    "benefits": [
+      {
+        "title": "Korzystne warunki dla deweloperów",
+        "text": "Osobna taryfa „Deweloper”, ceny bezpośrednio od producenta bez pośredników — nastawione na długoterminową współpracę."
+      },
+      {
+        "title": "Osobisty menedżer projektu",
+        "text": "Jeden kontakt na cały czas budowy: uzgadnianie specyfikacji, kolorów, terminów i harmonogramu dostaw."
+      },
+      {
+        "title": "Dostawy zgodnie z harmonogramem budowy",
+        "text": "Planujemy produkcję pod terminy oddania obiektu — partiami, pod konkretne klatki schodowe czy etapy budowy."
+      },
+      {
+        "title": "Dostawa w całej Ukrainie",
+        "text": "Własna produkcja w Połtawie — solidnie pakujemy produkty i dostarczamy na obiekt do dowolnego bezpiecznego miasta."
+      },
+      {
+        "title": "Kalkulator ofert handlowych",
+        "text": "Aktualne ceny i okucia od razu w wyliczeniu — gotowa oferta handlowa w 5 minut zamiast godzin, oszczędność do 90% czasu na wyliczeniach."
+      }
+    ],
+    "citiesTitle": "Współpracujemy z deweloperami w tych miastach",
+    "citiesText": "Przygotowujemy ofertę handlową pod obiekt niezależnie od miasta — oto gdzie już aktywnie współpracujemy z deweloperami.",
+    "ctaTitle": "Planujesz budowę?",
+    "ctaText": "Zostaw zgłoszenie — przygotujemy ofertę handlową pod Twój projekt i terminy budowy.",
+    "cityTitlePrefix": "Drzwi IN WOOD dla deweloperów —",
+    "cityTitleSuffix": "dostawy hurtowe",
+    "cityMetaPrefix": "Hurtowe dostawy drzwi IN WOOD dla deweloperów",
+    "cityMetaSuffix": "Własna produkcja w Połtawie, ceny hurtowe i dostawa zgodnie z harmonogramem budowy.",
+    "cityIntro": "Dostarczamy drzwi wewnętrzne hurtowo dla firm budowlanych i deweloperów — od jednego obiektu po całe osiedle mieszkaniowe.",
+    "cityBackLink": "← Drzwi dla deweloperów",
+    "cityCtaTitlePrefix": "Budujesz",
+    "cityCtaTitleSuffix": "?",
+    "cityCtaText": "Zostaw zgłoszenie — obliczymy koszt i terminy dostawy pod Twój projekt."
+  },
+  "export": {
+    "pageTitle": "Eksport drzwi wewnętrznych IN WOOD — producent z Ukrainy",
+    "metaDescription": "IN WOOD — ukraiński producent drzwi wewnętrznych pełnego cyklu. Eksportujemy do Kanady, Francji, Szwajcarii, Litwy i Łotwy. Otwarci na nowe kraje.",
+    "backLink": "← Wszystkie możliwości współpracy",
+    "heading": "Eksport drzwi wewnętrznych IN WOOD",
+    "intro": "IN WOOD to producent drzwi wewnętrznych pełnego cyklu z własną produkcją w Połtawie. Dostarczamy już produkty za granicę i aktywnie rozszerzamy geografię eksportu.",
+    "countriesTitle": "Kraje, do których już eksportujemy",
+    "countriesText": "To nie hasło marketingowe — to realne dostawy, które już się odbyły.",
+    "countries": [
+      {
+        "name": "Kanada",
+        "flag": "🇨🇦"
+      },
+      {
+        "name": "Francja",
+        "flag": "🇫🇷"
+      },
+      {
+        "name": "Szwajcaria",
+        "flag": "🇨🇭"
+      },
+      {
+        "name": "Litwa",
+        "flag": "🇱🇹"
+      },
+      {
+        "name": "Łotwa",
+        "flag": "🇱🇻"
+      }
+    ],
+    "openTitle": "Gotowi do współpracy",
+    "openText": "Ta lista to nie granica. Aktywnie szukamy nowych partnerów do eksportu i jesteśmy gotowi omówić dostawy do dowolnego kraju świata — od pierwszej partii próbnej po długoterminowy kontrakt.",
+    "whyTitle": "Dlaczego partnerzy wybierają IN WOOD",
+    "reasons": [
+      {
+        "title": "Pełny cykl produkcyjny",
+        "text": "Własna produkcja w Połtawie — kontrolujemy jakość na każdym etapie, od materiału po gotowe skrzydło."
+      },
+      {
+        "title": "Pakowanie pod długie transporty",
+        "text": "Wszystkie drzwi są pakowane z myślą o transporcie na duże odległości — produkty docierają bez uszkodzeń."
+      },
+      {
+        "title": "Elastyczne wolumeny dostaw",
+        "text": "Pracujemy zarówno z partiami próbnymi dla nowych partnerów, jak i z regularnymi dostawami kontenerowymi."
+      },
+      {
+        "title": "Osobisty menedżer eksportu",
+        "text": "Osobny kontakt dla partnerów międzynarodowych — uzgadnianie specyfikacji, dokumentów i logistyki w języku angielskim lub rosyjskim."
+      }
+    ],
+    "ctaTitle": "Chcesz zostać naszym partnerem eksportowym?",
+    "ctaText": "Powiedz nam, w jakim kraju działasz i jakie wolumeny Cię interesują — przygotujemy ofertę handlową."
+  },
+  "derzhZaklady": {
+    "pageTitle": "Drzwi IN WOOD dla instytucji państwowych i medycznych — szkoły, szpitale, przedszkola",
+    "metaDescription": "Drzwi wewnętrzne IN WOOD dla szkół, przedszkoli i szpitali — trwałe, własna produkcja w Połtawie, dostępne rozwiązania budżetowe, dostawy hurtowe.",
+    "backLink": "← Wszystkie możliwości współpracy",
+    "heading": "Drzwi dla instytucji państwowych i medycznych",
+    "intro": "Szkoły, przedszkola, szpitale, budynki administracyjne — instytucje z własnymi wymaganiami wobec drzwi. W IN WOOD znajdziesz trwałe i niezawodne drzwi, dostępne są rozwiązania budżetowe, a my jesteśmy otwarci na rozmowę o tym, czego potrzebuje właśnie Twoja instytucja.",
+    "benefitsTitle": "Dlaczego warto zwrócić się do IN WOOD",
+    "benefitsText": "Jesteśmy otwarci na współpracę ze szkołami, przedszkolami, szpitalami i innymi instytucjami — i gotowi uczciwie omówić właśnie Twoje wymagania.",
+    "benefits": [
+      {
+        "title": "Trwałe i niezawodne drzwi",
+        "text": "Konstrukcja przystosowana do intensywnej codziennej eksploatacji — wytrzymuje duży ruch ludzi w szkołach, szpitalach i innych instytucjach."
+      },
+      {
+        "title": "Dostępne rozwiązania budżetowe",
+        "text": "Oferujemy modele w różnych kategoriach cenowych — od wariantów budżetowych po kolekcje premium — aby dobrać rozwiązanie pod Twój budżet."
+      },
+      {
+        "title": "Stabilna jakość na każdej partii",
+        "text": "Własna produkcja w Połtawie z kontrolą jakości na każdym etapie — ten sam standard, co dla każdego innego zamówienia."
+      },
+      {
+        "title": "Omówimy Twoje wymagania indywidualnie",
+        "text": "Jeśli dla Twojej instytucji potrzebne są konkretne parametry czy dokumenty — powiedz nam, a my uczciwie powiemy, czy możemy to zapewnić."
+      }
+    ],
+    "tenderTitle": "Otwarci na współpracę z instytucjami budżetowymi",
+    "tenderText": "Jeśli Twoja instytucja prowadzi zakupy — napisz do nas, co dokładnie jest potrzebne (dokumenty, parametry, ilości), a my uczciwie powiemy, czy możemy to zapewnić.",
+    "ctaTitle": "Wybierasz dostawcę dla instytucji?",
+    "ctaText": "Zostaw zgłoszenie — powiemy, czym możemy być pomocni właśnie Twojej instytucji."
+  }
+}

@@ -1,4 +1,4 @@
-export const locales = ["ua", "ru", "en"] as const;
+export const locales = ["ua", "ru", "en", "pl"] as const;
 export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = "ua";
 
@@ -7,6 +7,7 @@ export const localeLabels: Record<Locale, string> = {
   ua: "UA",
   ru: "RU",
   en: "EN",
+  pl: "PL",
 };
 
 // URL-префікс "ua" — не валідний код мови (BCP 47): "ua" означає країну
@@ -15,4 +16,5 @@ export const localeHtmlLang: Record<Locale, string> = {
   ua: "uk",
   ru: "ru",
   en: "en",
+  pl: "pl",
 };

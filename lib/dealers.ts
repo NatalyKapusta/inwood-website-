@@ -76,26 +76,30 @@ export const CITY_SLUGS: Record<string, string> = {
 // Реальні назви цих самих міст іншими мовами сайту (звичайна географічна
 // назва, а не переклад бренду чи товару — тому локалізуємо, на відміну
 // від назв кольорів/моделей, які лишаються українською скрізь).
-export const CITY_NAMES: Record<string, { ru: string; en: string }> = {
-  Полтава: { ru: "Полтава", en: "Poltava" },
-  Одеса: { ru: "Одесса", en: "Odesa" },
-  Київ: { ru: "Киев", en: "Kyiv" },
-  Харків: { ru: "Харьков", en: "Kharkiv" },
-  Дніпро: { ru: "Днепр", en: "Dnipro" },
-  "Кривий Ріг": { ru: "Кривой Рог", en: "Kryvyi Rih" },
-  Черкаси: { ru: "Черкассы", en: "Cherkasy" },
-  Тернопіль: { ru: "Тернополь", en: "Ternopil" },
-  Житомир: { ru: "Житомир", en: "Zhytomyr" },
-  Рівне: { ru: "Ровно", en: "Rivne" },
-  Луцьк: { ru: "Луцк", en: "Lutsk" },
-  Кременчук: { ru: "Кременчуг", en: "Kremenchuk" },
-  Бровари: { ru: "Бровары", en: "Brovary" },
-  Бориспіль: { ru: "Борисполь", en: "Boryspil" },
-  "Кам'янець-Подільський": { ru: "Каменец-Подольский", en: "Kamianets-Podilskyi" },
-  Болград: { ru: "Болград", en: "Bolhrad" },
+export const CITY_NAMES: Record<string, { ru: string; en: string; pl: string }> = {
+  Полтава: { ru: "Полтава", en: "Poltava", pl: "Połtawa" },
+  Одеса: { ru: "Одесса", en: "Odesa", pl: "Odessa" },
+  Київ: { ru: "Киев", en: "Kyiv", pl: "Kijów" },
+  Харків: { ru: "Харьков", en: "Kharkiv", pl: "Charków" },
+  Дніпро: { ru: "Днепр", en: "Dnipro", pl: "Dnipro" },
+  "Кривий Ріг": { ru: "Кривой Рог", en: "Kryvyi Rih", pl: "Krzywy Róg" },
+  Черкаси: { ru: "Черкассы", en: "Cherkasy", pl: "Czerkasy" },
+  Тернопіль: { ru: "Тернополь", en: "Ternopil", pl: "Tarnopol" },
+  Житомир: { ru: "Житомир", en: "Zhytomyr", pl: "Żytomierz" },
+  Рівне: { ru: "Ровно", en: "Rivne", pl: "Równe" },
+  Луцьк: { ru: "Луцк", en: "Lutsk", pl: "Łuck" },
+  Кременчук: { ru: "Кременчуг", en: "Kremenchuk", pl: "Krzemieńczuk" },
+  Бровари: { ru: "Бровары", en: "Brovary", pl: "Browary" },
+  Бориспіль: { ru: "Борисполь", en: "Boryspil", pl: "Boryspol" },
+  "Кам'янець-Подільський": {
+    ru: "Каменец-Подольский",
+    en: "Kamianets-Podilskyi",
+    pl: "Kamieniec Podolski",
+  },
+  Болград: { ru: "Болград", en: "Bolhrad", pl: "Bołgrad" },
 };
 
-export function getCityDisplayName(cityUa: string, locale: "ua" | "ru" | "en"): string {
+export function getCityDisplayName(cityUa: string, locale: "ua" | "ru" | "en" | "pl"): string {
   if (locale === "ua") return cityUa;
   return CITY_NAMES[cityUa]?.[locale] ?? cityUa;
 }

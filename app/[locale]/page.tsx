@@ -15,6 +15,7 @@ const playLabels: Record<Locale, string> = {
   ua: "Відтворити відео",
   ru: "Воспроизвести видео",
   en: "Play video",
+  pl: "Odtwórz wideo",
 };
 
 async function getDict(locale: Locale) {
