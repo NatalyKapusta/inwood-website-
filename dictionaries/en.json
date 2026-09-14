@@ -96,7 +96,16 @@
     "dealerSearchPlaceholder": "Search by city or dealer...",
     "menuLabel": "Menu",
     "getDirections": "Get directions →",
-    "sendFailedRetry": "Couldn't send. Please try again."
+    "sendFailedRetry": "Couldn't send. Please try again.",
+    "addToCart": "Add to cart",
+    "addedToCart": "Added ✓",
+    "cartTitle": "Cart",
+    "cartEmpty": "Your cart is empty",
+    "cartTotal": "Total",
+    "cartFindOutPrice": "Get a quote",
+    "cartRemove": "Remove",
+    "cartSendInquiry": "Send request",
+    "cartClose": "Close"
   },
   "home": {
     "title": "Interior Door Manufacturer in Ukraine | Wholesale & Export",
@@ -702,6 +711,7 @@
     "metaDescription": "Interior door hardware from IN WOOD: handles, hinges, cylinders, sliding systems by MVM and Anselmi + AGB with retail prices. Door overlays, skirting.",
     "hardwareTitle": "Hardware",
     "pogonazhniTitle": "Frame Profiles (frame / casing / jamb extension, sold separately)",
+    "nakladkaShort": "Overlay",
     "nakladkaTitle": "Door Overlay (for metal doors, 10 mm)",
     "plintusTitle": "Skirting",
     "perMeter": "per running metre",

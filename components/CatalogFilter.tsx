@@ -3,12 +3,13 @@
 import { useState } from "react";
 import Image from "next/image";
 import ProductCard from "@/components/ProductCard";
-import SimpleOrderButton from "@/components/SimpleOrderButton";
+import AddToCartButton from "@/components/AddToCartButton";
 import type { Collection } from "@/lib/products";
 import type { Dictionary } from "@/lib/dictionary";
 
 const ADDON_TYPES = ["korob", "lishtva", "dobir"] as const;
 type AddonType = (typeof ADDON_TYPES)[number];
+type AddonFilter = AddonType | "nakladka_plintus" | "all";
 
 function fmtUah(n: number) {
   return `${new Intl.NumberFormat("uk-UA").format(n)} ₴`;
@@ -26,6 +27,10 @@ export default function CatalogFilter({
   nameLabel,
   phoneLabel,
   formSentMessage,
+  nakladkaLabel,
+  plintusLabel,
+  addToCartLabel,
+  addedToCartLabel,
 }: {
   sections: { id: string; data: Collection }[];
   orderEmail: string;
@@ -38,10 +43,18 @@ export default function CatalogFilter({
   nameLabel?: string;
   phoneLabel?: string;
   formSentMessage?: string;
+  nakladkaLabel: string;
+  plintusLabel: string;
+  addToCartLabel: string;
+  addedToCartLabel: string;
 }) {
   const [active, setActive] = useState<string>("all");
-  const [addonType, setAddonType] = useState<AddonType | "all">("all");
-  const addonTypeLabel: Record<AddonType, string> = { korob: t.korob, lishtva: t.lyshtva, dobir: t.dobir };
+  const [addonType, setAddonType] = useState<AddonFilter>("all");
+  const addonTypeLabel: Partial<Record<AddonType | "nakladka" | "plintus", string>> = {
+    korob: t.korob,
+    lishtva: t.lyshtva,
+    dobir: t.dobir,
+  };
 
   return (
     <div>
@@ -130,42 +143,54 @@ export default function CatalogFilter({
                       {addonTypeLabel[type]}
                     </SubFilterButton>
                   ))}
+                  <SubFilterButton
+                    active={addonType === "nakladka_plintus"}
+                    onClick={() => setAddonType("nakladka_plintus")}
+                  >
+                    {nakladkaLabel} / {plintusLabel}
+                  </SubFilterButton>
                 </div>
 
                 <div className="mt-6 space-y-8">
                   {Array.from(new Set(s.data.addons.map((a) => a.collectionLabel))).map((collectionLabel) => {
-                    const items = s.data.addons!.filter(
-                      (a) => a.collectionLabel === collectionLabel && (addonType === "all" || a.addon_type === addonType)
-                    );
+                    const items = s.data.addons!.filter((a) => {
+                      if (a.collectionLabel !== collectionLabel) return false;
+                      if (addonType === "all") return true;
+                      if (addonType === "nakladka_plintus") return a.addon_type === "nakladka" || a.addon_type === "plintus";
+                      return a.addon_type === addonType;
+                    });
                     if (items.length === 0) return null;
                     return (
                       <div key={collectionLabel}>
                         <h3 className="font-serif text-lg font-bold text-navy-dark">{collectionLabel}</h3>
                         <ul className="mt-3 divide-y divide-navy-dim/10 rounded-xl border border-navy-dim/10 bg-panel">
-                          {items.map((item) => (
-                            <li
-                              key={`${item.addon_type}-${item.item_label}`}
-                              className="flex flex-wrap items-center justify-between gap-2 px-4 py-3 text-sm"
-                            >
-                              <span className="text-navy-dark">
-                                {addonTypeLabel[item.addon_type]}: {item.item_label}
-                              </span>
-                              <SimpleOrderButton
-                                itemLabel={`${collectionLabel} — ${addonTypeLabel[item.addon_type]}: ${item.item_label}`}
-                                source="Каталог — Погонажні вироби"
-                                buttonLabel={pricesVisible ? fmtUah(item.price) : t.findOutPrice}
-                                sendInquiryLabel={t.sendInquiry}
-                                closeLabel={t.close}
-                                formSentMessage={formSentMessage ?? ""}
-                                nameLabel={nameLabel}
-                                phoneLabel={phoneLabel}
-                                phoneManual={phoneManual}
-                                phoneChooseCountry={phoneChooseCountry}
-                                phoneInvalid={phoneInvalid}
-                                sendFailedRetry={sendFailedRetry}
-                              />
-                            </li>
-                          ))}
+                          {items.map((item) => {
+                            const typePrefix = addonTypeLabel[item.addon_type];
+                            const priceLabel = pricesVisible
+                              ? `${fmtUah(item.price)}${item.unitSuffix ? ` ${item.unitSuffix}` : ""}`
+                              : t.findOutPrice;
+                            return (
+                              <li
+                                key={`${item.addon_type}-${item.item_label}`}
+                                className="flex flex-wrap items-center justify-between gap-2 px-4 py-3 text-sm"
+                              >
+                                <div>
+                                  <span className="text-navy-dark">
+                                    {typePrefix ? `${typePrefix}: ` : ""}
+                                    {item.item_label}
+                                  </span>
+                                  <p className="mt-0.5 text-xs text-navy-dim">{priceLabel}</p>
+                                </div>
+                                <AddToCartButton
+                                  id={`pog-${item.addon_type}-${item.item_label}`}
+                                  label={`${collectionLabel} — ${typePrefix ? `${typePrefix}: ` : ""}${item.item_label}${item.unitSuffix ? ` (${item.unitSuffix})` : ""}`}
+                                  price={pricesVisible ? item.price : null}
+                                  addLabel={addToCartLabel}
+                                  addedLabel={addedToCartLabel}
+                                />
+                              </li>
+                            );
+                          })}
                         </ul>
                       </div>
                     );

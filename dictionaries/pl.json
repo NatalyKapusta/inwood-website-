@@ -96,7 +96,16 @@
     "dealerSearchPlaceholder": "Szukaj miasta lub dilera...",
     "menuLabel": "Menu",
     "getDirections": "Wyznacz trasę →",
-    "sendFailedRetry": "Nie udało się wysłać. Spróbuj ponownie."
+    "sendFailedRetry": "Nie udało się wysłać. Spróbuj ponownie.",
+    "addToCart": "Dodaj do koszyka",
+    "addedToCart": "Dodano ✓",
+    "cartTitle": "Koszyk",
+    "cartEmpty": "Koszyk jest pusty",
+    "cartTotal": "Razem",
+    "cartFindOutPrice": "Zapytaj o cenę",
+    "cartRemove": "Usuń",
+    "cartSendInquiry": "Wyślij zapytanie",
+    "cartClose": "Zamknij"
   },
   "home": {
     "title": "Producent drzwi wewnętrznych w Ukrainie | Dilerzy | Eksport",
@@ -723,6 +732,7 @@
     "metaDescription": "Okucia do drzwi wewnętrznych IN WOOD: klamki, zawiasy, wkładki, systemy przesuwne MVM i Anselmi + AGB w cenach detalicznych. Nakładki drzwiowe, listwy przypodłogowe.",
     "hardwareTitle": "Okucia",
     "pogonazhniTitle": "Elementy profilowe (ościeżnica / listwa / przylga osobno)",
+    "nakladkaShort": "Nakładka",
     "nakladkaTitle": "Nakładka drzwiowa (do drzwi metalowych, 10 mm)",
     "plintusTitle": "Listwa przypodłogowa",
     "perMeter": "za 1 mb",

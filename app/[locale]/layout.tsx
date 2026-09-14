@@ -3,6 +3,7 @@ import Script from "next/script";
 import { locales, localeHtmlLang, type Locale } from "@/lib/i18n";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { CartProvider } from "@/components/CartContext";
 import { organizationJsonLd } from "@/lib/seo";
 import { playfairDisplay, manrope } from "@/lib/fonts";
 import KeepinCrmA11yPatch from "@/components/KeepinCrmA11yPatch";
@@ -43,16 +44,34 @@ export default async function LocaleLayout({
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd(params.locale)) }}
         />
-        <Header
-          locale={params.locale}
-          phone={common.phone}
-          address={common.address}
-          email={common.email}
-          nav={common.nav}
-          portalLabel={common.portalLink}
-          menuLabel={common.menuLabel}
-        />
-        <main>{children}</main>
+        <CartProvider>
+          <Header
+            locale={params.locale}
+            phone={common.phone}
+            address={common.address}
+            email={common.email}
+            nav={common.nav}
+            portalLabel={common.portalLink}
+            menuLabel={common.menuLabel}
+            cartLabels={{
+              title: common.cartTitle,
+              empty: common.cartEmpty,
+              total: common.cartTotal,
+              findOutPrice: common.cartFindOutPrice,
+              remove: common.cartRemove,
+              sendInquiry: common.cartSendInquiry,
+              close: common.cartClose,
+              formSentMessage: common.formSentMessage,
+              formName: common.formName,
+              formPhone: common.formPhone,
+              phoneManual: common.phoneManual,
+              phoneChooseCountry: common.phoneChooseCountry,
+              phoneInvalid: common.phoneInvalid,
+              sendFailedRetry: common.sendFailedRetry,
+            }}
+          />
+          <main>{children}</main>
+        </CartProvider>
         <Footer
           locale={params.locale}
           tagline={common.footerTagline}

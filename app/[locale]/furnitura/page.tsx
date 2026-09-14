@@ -6,7 +6,7 @@ import { HARDWARE_BRAND_LABELS, HARDWARE_BRAND_ORDER, hardwareCategoryLabels } f
 import { HARDWARE_CATEGORY_ORDER, getPublicHardware, getPublicPlintus, getPublicNakladka } from "@/lib/publicShop";
 import { getPricesVisible } from "@/lib/siteSettings";
 import ContactCta from "@/components/ContactCta";
-import SimpleOrderButton from "@/components/SimpleOrderButton";
+import AddToCartButton from "@/components/AddToCartButton";
 import FurnituraHardware from "@/components/FurnituraHardware";
 
 // Дані фурнітури/аксесуарів живуть у Supabase (не в products.json).
@@ -96,6 +96,8 @@ export default async function FurnituraPage({
                 categoryOrder={HARDWARE_CATEGORY_ORDER}
                 allLabel={catalogT.all}
                 noPhotoLabel={t.noPhoto}
+                addToCartLabel={c.addToCart}
+                addedToCartLabel={c.addedToCart}
               />
             </div>
           </section>
@@ -107,20 +109,18 @@ export default async function FurnituraPage({
             <ul className="mt-6 divide-y divide-navy-dim/10 rounded-xl border border-navy-dim/10 bg-panel">
               {nakladkaItems.map((item) => (
                 <li key={item.code} className="flex flex-wrap items-center justify-between gap-2 px-4 py-3 text-sm">
-                  <span className="text-navy-dark">{item.label}</span>
-                  <SimpleOrderButton
-                    itemLabel={`${t.nakladkaTitle}: ${item.label}`}
-                    source="Фурнітура — Дверна накладка"
-                    buttonLabel={pricesVisible ? fmtUah(item.price) : catalogT.findOutPrice}
-                    sendInquiryLabel={catalogT.sendInquiry}
-                    closeLabel={catalogT.close}
-                    formSentMessage={c.formSentMessage}
-                    nameLabel={c.formName}
-                    phoneLabel={c.formPhone}
-                    phoneManual={c.phoneManual}
-                    phoneChooseCountry={c.phoneChooseCountry}
-                    phoneInvalid={c.phoneInvalid}
-                    sendFailedRetry={c.sendFailedRetry}
+                  <div>
+                    <span className="text-navy-dark">{item.label}</span>
+                    <p className="mt-0.5 text-xs text-navy-dim">
+                      {pricesVisible ? fmtUah(item.price) : catalogT.findOutPrice}
+                    </p>
+                  </div>
+                  <AddToCartButton
+                    id={`nakladka-${item.code}`}
+                    label={`${t.nakladkaTitle}: ${item.label}`}
+                    price={pricesVisible ? item.price : null}
+                    addLabel={c.addToCart}
+                    addedLabel={c.addedToCart}
                   />
                 </li>
               ))}
@@ -134,20 +134,18 @@ export default async function FurnituraPage({
             <ul className="mt-6 divide-y divide-navy-dim/10 rounded-xl border border-navy-dim/10 bg-panel">
               {plintusItems.map((item) => (
                 <li key={item.code} className="flex flex-wrap items-center justify-between gap-2 px-4 py-3 text-sm">
-                  <span className="text-navy-dark">{item.label}</span>
-                  <SimpleOrderButton
-                    itemLabel={`${t.plintusTitle}: ${item.label}`}
-                    source="Фурнітура — Плінтус"
-                    buttonLabel={pricesVisible ? `${fmtUah(item.price)} ${t.perMeter}` : catalogT.findOutPrice}
-                    sendInquiryLabel={catalogT.sendInquiry}
-                    closeLabel={catalogT.close}
-                    formSentMessage={c.formSentMessage}
-                    nameLabel={c.formName}
-                    phoneLabel={c.formPhone}
-                    phoneManual={c.phoneManual}
-                    phoneChooseCountry={c.phoneChooseCountry}
-                    phoneInvalid={c.phoneInvalid}
-                    sendFailedRetry={c.sendFailedRetry}
+                  <div>
+                    <span className="text-navy-dark">{item.label}</span>
+                    <p className="mt-0.5 text-xs text-navy-dim">
+                      {pricesVisible ? `${fmtUah(item.price)} ${t.perMeter}` : catalogT.findOutPrice}
+                    </p>
+                  </div>
+                  <AddToCartButton
+                    id={`plintus-${item.code}`}
+                    label={`${t.plintusTitle}: ${item.label} (${t.perMeter})`}
+                    price={pricesVisible ? item.price : null}
+                    addLabel={c.addToCart}
+                    addedLabel={c.addedToCart}
                   />
                 </li>
               ))}

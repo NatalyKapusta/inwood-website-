@@ -7,8 +7,25 @@ import { usePathname } from "next/navigation";
 import { locales, localeLabels, type Locale } from "@/lib/i18n";
 import MailIcon from "@/components/MailIcon";
 import SocialLinks from "@/components/SocialLinks";
+import CartIcon from "@/components/CartIcon";
 
 type NavItem = { label: string; href: string };
+type CartLabels = {
+  title: string;
+  empty: string;
+  total: string;
+  findOutPrice: string;
+  remove: string;
+  sendInquiry: string;
+  close: string;
+  formSentMessage: string;
+  formName: string;
+  formPhone: string;
+  phoneManual: string;
+  phoneChooseCountry: string;
+  phoneInvalid: string;
+  sendFailedRetry: string;
+};
 
 export default function Header({
   locale,
@@ -18,6 +35,7 @@ export default function Header({
   nav,
   portalLabel,
   menuLabel,
+  cartLabels,
 }: {
   locale: Locale;
   phone: string;
@@ -26,6 +44,7 @@ export default function Header({
   nav: NavItem[];
   portalLabel: string;
   menuLabel: string;
+  cartLabels: CartLabels;
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -101,25 +120,59 @@ export default function Header({
             >
               {portalLabel}
             </Link>
+            <CartIcon
+              cartTitle={cartLabels.title}
+              cartEmpty={cartLabels.empty}
+              cartTotal={cartLabels.total}
+              findOutPriceLabel={cartLabels.findOutPrice}
+              removeLabel={cartLabels.remove}
+              sendInquiryLabel={cartLabels.sendInquiry}
+              closeLabel={cartLabels.close}
+              formSentMessage={cartLabels.formSentMessage}
+              nameLabel={cartLabels.formName}
+              phoneLabel={cartLabels.formPhone}
+              phoneManual={cartLabels.phoneManual}
+              phoneChooseCountry={cartLabels.phoneChooseCountry}
+              phoneInvalid={cartLabels.phoneInvalid}
+              sendFailedRetry={cartLabels.sendFailedRetry}
+            />
           </nav>
 
-          <button
-            type="button"
-            onClick={() => setMenuOpen((v) => !v)}
-            aria-label={menuLabel}
-            aria-expanded={menuOpen}
-            className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/20 text-white lg:hidden"
-          >
-            {menuOpen ? (
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M4 4l12 12M16 4L4 16" strokeLinecap="round" />
-              </svg>
-            ) : (
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M3 5h14M3 10h14M3 15h14" strokeLinecap="round" />
-              </svg>
-            )}
-          </button>
+          <div className="flex items-center gap-2 lg:hidden">
+            <CartIcon
+              cartTitle={cartLabels.title}
+              cartEmpty={cartLabels.empty}
+              cartTotal={cartLabels.total}
+              findOutPriceLabel={cartLabels.findOutPrice}
+              removeLabel={cartLabels.remove}
+              sendInquiryLabel={cartLabels.sendInquiry}
+              closeLabel={cartLabels.close}
+              formSentMessage={cartLabels.formSentMessage}
+              nameLabel={cartLabels.formName}
+              phoneLabel={cartLabels.formPhone}
+              phoneManual={cartLabels.phoneManual}
+              phoneChooseCountry={cartLabels.phoneChooseCountry}
+              phoneInvalid={cartLabels.phoneInvalid}
+              sendFailedRetry={cartLabels.sendFailedRetry}
+            />
+            <button
+              type="button"
+              onClick={() => setMenuOpen((v) => !v)}
+              aria-label={menuLabel}
+              aria-expanded={menuOpen}
+              className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/20 text-white"
+            >
+              {menuOpen ? (
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M4 4l12 12M16 4L4 16" strokeLinecap="round" />
+                </svg>
+              ) : (
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M3 5h14M3 10h14M3 15h14" strokeLinecap="round" />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
 
         {menuOpen && (

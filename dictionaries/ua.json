@@ -96,7 +96,16 @@
     "dealerSearchPlaceholder": "Пошук міста або дилера...",
     "menuLabel": "Меню",
     "getDirections": "Прокласти маршрут →",
-    "sendFailedRetry": "Не вдалося надіслати. Спробуйте ще раз."
+    "sendFailedRetry": "Не вдалося надіслати. Спробуйте ще раз.",
+    "addToCart": "Додати в кошик",
+    "addedToCart": "Додано ✓",
+    "cartTitle": "Кошик",
+    "cartEmpty": "Кошик порожній",
+    "cartTotal": "Разом",
+    "cartFindOutPrice": "Дізнатись ціну",
+    "cartRemove": "Прибрати",
+    "cartSendInquiry": "Надіслати заявку",
+    "cartClose": "Закрити"
   },
   "home": {
     "title": "Виробник міжкімнатних дверей в Україні | Дилери | Експорт",
@@ -702,6 +711,7 @@
     "metaDescription": "Фурнітура для міжкімнатних дверей IN WOOD: ручки, завіси, циліндри, розсувні системи MVM та Anselmi + AGB з роздрібними цінами. Дверні накладки, плінтус.",
     "hardwareTitle": "Фурнітура",
     "pogonazhniTitle": "Погонажні вироби (короб / лиштва / добір окремо)",
+    "nakladkaShort": "Накладка",
     "nakladkaTitle": "Дверна накладка (для металевих дверей, 10 мм)",
     "plintusTitle": "Плінтус",
     "perMeter": "за 1 пог. м",

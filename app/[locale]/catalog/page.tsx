@@ -3,7 +3,7 @@ import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata, productListJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import { collections, collectionOrder } from "@/lib/products";
 import { getPricesVisible } from "@/lib/siteSettings";
-import { getPublicPogonazhni } from "@/lib/publicShop";
+import { getPublicPogonazhni, getPublicPlintus, getPublicNakladka } from "@/lib/publicShop";
 import { catalogCategories, catalogCategorySlugs, type CatalogCategorySlug } from "@/lib/catalogCategories";
 import CatalogFilter from "@/components/CatalogFilter";
 import Link from "next/link";
@@ -67,24 +67,43 @@ export default async function CatalogPage({
     : undefined;
 
   // Остання вкладка "Погонажні вироби" — короб/лиштва/добір окремо від
-  // полотна, по всіх лініях. Показуємо лише в повному каталозі (без
-  // ?category=), бо це не частина жодної з існуючих категорій-пілів.
+  // полотна (по всіх лініях), плюс дверна накладка й плінтус (не прив'язані
+  // до лінії, тому groupуються під власною "псевдо-колекцією"). Показуємо
+  // лише в повному каталозі (без ?category=), бо це не частина жодної з
+  // існуючих категорій-пілів.
   if (!category) {
-    const pogonazhni = await getPublicPogonazhni();
-    if (pogonazhni.length > 0) {
+    const [pogonazhni, plintus, nakladka] = await Promise.all([
+      getPublicPogonazhni(),
+      getPublicPlintus(),
+      getPublicNakladka(),
+    ]);
+    const addons = [
+      ...pogonazhni.map((row) => ({
+        collectionLabel: collections[row.collection]?.label ?? row.collection,
+        addon_type: row.addon_type,
+        item_label: row.item_label,
+        price: row.price,
+      })),
+      ...nakladka.map((item) => ({
+        collectionLabel: dict.furnitura.nakladkaTitle,
+        addon_type: "nakladka" as const,
+        item_label: item.label,
+        price: item.price,
+      })),
+      ...plintus.map((item) => ({
+        collectionLabel: dict.furnitura.plintusTitle,
+        addon_type: "plintus" as const,
+        item_label: item.label,
+        price: item.price,
+        unitSuffix: dict.furnitura.perMeter,
+      })),
+    ];
+    if (addons.length > 0) {
       sections = [
         ...sections,
         {
           id: "pogonazhni",
-          data: {
-            label: dict.furnitura.pogonazhniTitle,
-            addons: pogonazhni.map((row) => ({
-              collectionLabel: collections[row.collection]?.label ?? row.collection,
-              addon_type: row.addon_type,
-              item_label: row.item_label,
-              price: row.price,
-            })),
-          },
+          data: { label: dict.furnitura.pogonazhniTitle, addons },
         },
       ];
     }
@@ -165,6 +184,10 @@ export default async function CatalogPage({
           nameLabel={dict.common.formName}
           phoneLabel={dict.common.formPhone}
           formSentMessage={dict.common.formSentMessage}
+          nakladkaLabel={dict.furnitura.nakladkaShort}
+          plintusLabel={dict.furnitura.plintusTitle}
+          addToCartLabel={dict.common.addToCart}
+          addedToCartLabel={dict.common.addedToCart}
         />
       </div>
 

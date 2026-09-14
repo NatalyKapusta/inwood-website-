@@ -13,9 +13,12 @@ export type HiddenVariant = { label: string; price: number; image: string };
 // проставляється при завантаженні на сторінці каталогу.
 export type PogonazhniAddon = {
   collectionLabel: string;
-  addon_type: "korob" | "lishtva" | "dobir";
+  addon_type: "korob" | "lishtva" | "dobir" | "nakladka" | "plintus";
   item_label: string;
   price: number;
+  // Суфікс одиниці виміру для позицій, де ціна вказана не за штуку
+  // (плінтус — за 1 пог. м).
+  unitSuffix?: string;
 };
 export type Collection = {
   label: string;
