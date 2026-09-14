@@ -15,14 +15,11 @@ import {
 import { getPricesVisible } from "@/lib/siteSettings";
 import ContactCta from "@/components/ContactCta";
 
-// Дані фурнітури/аксесуарів живуть у Supabase (не в products.json). Клієнт
-// Supabase читає cookies() — під час спроби Next.js згенерувати цю сторінку
-// статично це кидає внутрішній сигнал "Dynamic server usage", який наш
-// try/catch у lib/publicShop.ts перехоплював як звичайну помилку, тому
-// збірка "заморожувала" сторінку з порожніми даними назавжди. force-dynamic
-// прибирає спробу статичної генерації повністю — дані читаються наново на
-// кожен запит.
-export const dynamic = "force-dynamic";
+// Дані фурнітури/аксесуарів живуть у Supabase (не в products.json).
+// lib/publicShop.ts читає їх публічним клієнтом (не чіпає cookies()), тому
+// сторінка може безпечно лишатись ISR-кешованою — раз на хвилину дані
+// оновлюються наново, без повного force-dynamic на кожен запит.
+export const revalidate = 60;
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);

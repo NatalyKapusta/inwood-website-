@@ -1,4 +1,4 @@
-import { createClient } from "@/lib/supabase/server";
+import { createPublicReadClient } from "@/lib/supabase/publicRead";
 import { hardwareCategoryLabels, type HardwareCategory } from "@/lib/quote";
 
 export const HARDWARE_CATEGORY_ORDER = Object.keys(hardwareCategoryLabels) as HardwareCategory[];
@@ -18,7 +18,7 @@ export type PublicHardwareItem = {
 // решта тарифів (дилер/дистриб'ютор/...) лишається доступна тільки в порталі.
 export async function getPublicHardware(): Promise<PublicHardwareItem[]> {
   try {
-    const supabase = await createClient();
+    const supabase = createPublicReadClient();
     const { data, error } = await supabase
       .from("hardware_tariff_prices")
       .select("brand, category, article, name, material, price, photo")
@@ -47,7 +47,7 @@ export type PublicAddonItem = {
 // "Погонажні вироби" — короб/лиштва/добір окремо від полотна, по кожній лінії.
 export async function getPublicPogonazhni(): Promise<PublicAddonItem[]> {
   try {
-    const supabase = await createClient();
+    const supabase = createPublicReadClient();
     const { data, error } = await supabase
       .from("line_addon_prices")
       .select("collection, addon_type, item_label, price")
@@ -67,7 +67,7 @@ export type PublicFlatLineItem = { code: string; label: string; price: number };
 
 async function getPublicFlatLine(prefix: string): Promise<PublicFlatLineItem[]> {
   try {
-    const supabase = await createClient();
+    const supabase = createPublicReadClient();
     const { data, error } = await supabase
       .from("product_tariff_prices")
       .select("product_code, price")

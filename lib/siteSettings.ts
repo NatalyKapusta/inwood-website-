@@ -1,11 +1,16 @@
-import { createClient } from "@/lib/supabase/server";
+import { createPublicReadClient } from "@/lib/supabase/publicRead";
 import type { Locale } from "@/lib/i18n";
 
 async function getRawPricesVisible(): Promise<boolean> {
   // Безпечний дефолт (ціни видимі), якщо Supabase недоступний або
   // налаштування ще не створено — сайт не має "ламатись" через це.
+  // Публічний клієнт (не чіпає cookies()) — site_settings читається
+  // анонімно (RLS: select for all), а cookies()-клієнт зривав ISR-сторінки
+  // (catalog, spivpratsya тощо) у "Dynamic server usage", який try/catch
+  // тут перехоплював як звичайну помилку — переключач міг тихо не діяти
+  // на статично згенерованих сторінках.
   try {
-    const supabase = await createClient();
+    const supabase = createPublicReadClient();
     const { data } = await supabase
       .from("site_settings")
       .select("value")
