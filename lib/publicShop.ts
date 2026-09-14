@@ -26,9 +26,13 @@ export async function getPublicHardware(): Promise<PublicHardwareItem[]> {
       .order("brand")
       .order("category")
       .order("name");
-    if (error || !data) return [];
-    return data as PublicHardwareItem[];
-  } catch {
+    if (error) {
+      console.error("[getPublicHardware] Supabase error:", error.message, error.details, error.hint);
+      return [];
+    }
+    return (data ?? []) as PublicHardwareItem[];
+  } catch (err) {
+    console.error("[getPublicHardware] Exception:", err);
     return [];
   }
 }
@@ -48,9 +52,13 @@ export async function getPublicPogonazhni(): Promise<PublicAddonItem[]> {
       .from("line_addon_prices")
       .select("collection, addon_type, item_label, price")
       .eq("tariff", "retail");
-    if (error || !data) return [];
-    return data as PublicAddonItem[];
-  } catch {
+    if (error) {
+      console.error("[getPublicPogonazhni] Supabase error:", error.message, error.details, error.hint);
+      return [];
+    }
+    return (data ?? []) as PublicAddonItem[];
+  } catch (err) {
+    console.error("[getPublicPogonazhni] Exception:", err);
     return [];
   }
 }
@@ -66,13 +74,17 @@ async function getPublicFlatLine(prefix: string): Promise<PublicFlatLineItem[]> 
       .eq("tariff", "retail")
       .like("product_code", `${prefix}%`)
       .order("product_code");
-    if (error || !data) return [];
-    return data.map((r) => ({
+    if (error) {
+      console.error(`[getPublicFlatLine:${prefix}] Supabase error:`, error.message, error.details, error.hint);
+      return [];
+    }
+    return (data ?? []).map((r) => ({
       code: r.product_code,
       label: r.product_code.slice(prefix.length),
       price: r.price,
     }));
-  } catch {
+  } catch (err) {
+    console.error(`[getPublicFlatLine:${prefix}] Exception:`, err);
     return [];
   }
 }
