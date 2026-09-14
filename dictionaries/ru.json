@@ -711,6 +711,21 @@
     "hardwareTitle": "Фурнитура",
     "pogonazhniTitle": "Погонажные изделия (короб / наличник / добор отдельно)",
     "nakladkaShort": "Накладка",
+    "brands": {
+      "MVM": "Фурнитура MVM",
+      "AGB_BUONELLE": "Фурнитура Anselmi + AGB"
+    },
+    "categories": {
+      "ruchky": "Ручки",
+      "nakladky": "Накладки",
+      "zavisy": "Петли",
+      "upory": "Упоры",
+      "mekhanizmy": "Механизмы",
+      "tsylindry": "Цилиндры",
+      "rozsuvna": "Раздвижные системы",
+      "aksesuary": "Аксессуары",
+      "inshe": "Другое"
+    },
     "nakladkaTitle": "Дверная накладка (для металлических дверей, 10 мм)",
     "plintusTitle": "Плинтус",
     "perMeter": "за 1 пог. м",

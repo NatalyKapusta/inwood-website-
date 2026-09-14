@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
-import { HARDWARE_BRAND_LABELS, HARDWARE_BRAND_ORDER, hardwareCategoryLabels } from "@/lib/quote";
+import { HARDWARE_BRAND_ORDER } from "@/lib/quote";
 import { HARDWARE_CATEGORY_ORDER, getPublicHardware } from "@/lib/publicShop";
 import ContactCta from "@/components/ContactCta";
 import FurnituraHardware from "@/components/FurnituraHardware";
@@ -75,9 +75,9 @@ export default async function FurnituraPage({
             <div className="mt-8">
               <FurnituraHardware
                 items={hardwareItems}
-                brandLabels={HARDWARE_BRAND_LABELS}
+                brandLabels={t.brands}
                 brandOrder={HARDWARE_BRAND_ORDER}
-                categoryLabels={hardwareCategoryLabels}
+                categoryLabels={t.categories}
                 categoryOrder={HARDWARE_CATEGORY_ORDER}
                 allLabel={catalogT.all}
                 noPhotoLabel={t.noPhoto}

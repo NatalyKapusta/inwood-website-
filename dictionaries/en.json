@@ -711,6 +711,21 @@
     "hardwareTitle": "Hardware",
     "pogonazhniTitle": "Frame Profiles (frame / casing / jamb extension, sold separately)",
     "nakladkaShort": "Overlay",
+    "brands": {
+      "MVM": "MVM Hardware",
+      "AGB_BUONELLE": "Anselmi + AGB Hardware"
+    },
+    "categories": {
+      "ruchky": "Handles",
+      "nakladky": "Overlays",
+      "zavisy": "Hinges",
+      "upory": "Door stops",
+      "mekhanizmy": "Mechanisms",
+      "tsylindry": "Cylinders",
+      "rozsuvna": "Sliding systems",
+      "aksesuary": "Accessories",
+      "inshe": "Other"
+    },
     "nakladkaTitle": "Door Overlay (for metal doors, 10 mm)",
     "plintusTitle": "Skirting",
     "perMeter": "per running metre",

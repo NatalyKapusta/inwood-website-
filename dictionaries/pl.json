@@ -732,6 +732,21 @@
     "hardwareTitle": "Okucia",
     "pogonazhniTitle": "Elementy profilowe (ościeżnica / listwa / przylga osobno)",
     "nakladkaShort": "Nakładka",
+    "brands": {
+      "MVM": "Okucia MVM",
+      "AGB_BUONELLE": "Okucia Anselmi + AGB"
+    },
+    "categories": {
+      "ruchky": "Klamki",
+      "nakladky": "Nakładki",
+      "zavisy": "Zawiasy",
+      "upory": "Ograniczniki",
+      "mekhanizmy": "Mechanizmy",
+      "tsylindry": "Wkładki",
+      "rozsuvna": "Systemy przesuwne",
+      "aksesuary": "Akcesoria",
+      "inshe": "Inne"
+    },
     "nakladkaTitle": "Nakładka drzwiowa (do drzwi metalowych, 10 mm)",
     "plintusTitle": "Listwa przypodłogowa",
     "perMeter": "za 1 mb",
