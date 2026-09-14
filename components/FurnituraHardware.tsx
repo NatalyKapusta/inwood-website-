@@ -65,17 +65,21 @@ export default function FurnituraHardware({
                   key={`${item.brand}-${item.article}`}
                   className="overflow-hidden rounded-xl border border-navy-dim/10 bg-panel"
                 >
-                  <div className="relative flex aspect-square items-center justify-center bg-panel-alt">
+                  <div className="flex items-center justify-center bg-panel-alt p-4">
                     {item.photo ? (
-                      <Image
-                        src={item.photo}
-                        alt={`${item.name} ${item.article}, ${brandGroup.label}`}
-                        fill
-                        sizes="(min-width: 1280px) 200px, (min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
-                        className="object-contain p-3"
-                      />
+                      <div className="relative aspect-square w-full max-w-[110px]">
+                        <Image
+                          src={item.photo}
+                          alt={`${item.name} ${item.article}, ${brandGroup.label}`}
+                          fill
+                          sizes="110px"
+                          className="object-contain"
+                        />
+                      </div>
                     ) : (
-                      <span className="px-4 text-center text-xs text-navy-dim/60">{noPhotoLabel}</span>
+                      <span className="aspect-square w-full max-w-[110px] px-2 text-center text-xs text-navy-dim/60">
+                        {noPhotoLabel}
+                      </span>
                     )}
                   </div>
                   <div className="p-3">
