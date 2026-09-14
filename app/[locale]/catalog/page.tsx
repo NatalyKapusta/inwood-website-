@@ -3,6 +3,7 @@ import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata, productListJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import { collections, collectionOrder } from "@/lib/products";
 import { getPricesVisible } from "@/lib/siteSettings";
+import { getPublicPogonazhni } from "@/lib/publicShop";
 import { catalogCategories, catalogCategorySlugs, type CatalogCategorySlug } from "@/lib/catalogCategories";
 import CatalogFilter from "@/components/CatalogFilter";
 import Link from "next/link";
@@ -64,6 +65,30 @@ export default async function CatalogPage({
   const categoryLabel = categorySlug
     ? dict.home.categories[catalogCategorySlugs.indexOf(categorySlug)]
     : undefined;
+
+  // Остання вкладка "Погонажні вироби" — короб/лиштва/добір окремо від
+  // полотна, по всіх лініях. Показуємо лише в повному каталозі (без
+  // ?category=), бо це не частина жодної з існуючих категорій-пілів.
+  if (!category) {
+    const pogonazhni = await getPublicPogonazhni();
+    if (pogonazhni.length > 0) {
+      sections = [
+        ...sections,
+        {
+          id: "pogonazhni",
+          data: {
+            label: dict.furnitura.pogonazhniTitle,
+            addons: pogonazhni.map((row) => ({
+              collectionLabel: collections[row.collection]?.label ?? row.collection,
+              addon_type: row.addon_type,
+              item_label: row.item_label,
+              price: row.price,
+            })),
+          },
+        },
+      ];
+    }
+  }
 
   const pricesVisible = await getPricesVisible(params.locale);
   // Немає окремого PL-каталогу — для польської версії видаємо англійський

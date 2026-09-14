@@ -6,6 +6,13 @@ import ProductCard from "@/components/ProductCard";
 import type { Collection } from "@/lib/products";
 import type { Dictionary } from "@/lib/dictionary";
 
+const ADDON_TYPES = ["korob", "lishtva", "dobir"] as const;
+type AddonType = (typeof ADDON_TYPES)[number];
+
+function fmtUah(n: number) {
+  return `${new Intl.NumberFormat("uk-UA").format(n)} ₴`;
+}
+
 export default function CatalogFilter({
   sections,
   orderEmail,
@@ -32,6 +39,8 @@ export default function CatalogFilter({
   formSentMessage?: string;
 }) {
   const [active, setActive] = useState<string>("all");
+  const [addonType, setAddonType] = useState<AddonType | "all">("all");
+  const addonTypeLabel: Record<AddonType, string> = { korob: t.korob, lishtva: t.lyshtva, dobir: t.dobir };
 
   return (
     <div>
@@ -50,10 +59,12 @@ export default function CatalogFilter({
         {sections.map((s) => (
           <section key={s.id} id={s.id} hidden={active !== "all" && active !== s.id}>
             <h2 className="font-serif text-2xl font-bold text-navy-dark">{s.data.label}</h2>
-            <p className="mt-1 text-sm text-navy-dim">
-              {t.thickness}: {s.data.thickness}
-              {s.data.extra ? ` · ${s.data.extra}` : ""}
-            </p>
+            {s.data.thickness && (
+              <p className="mt-1 text-sm text-navy-dim">
+                {t.thickness}: {s.data.thickness}
+                {s.data.extra ? ` · ${s.data.extra}` : ""}
+              </p>
+            )}
 
             {s.data.variants && (
               <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -91,7 +102,7 @@ export default function CatalogFilter({
                     key={m.code}
                     collectionLabel={s.data.label}
                     model={m}
-                    komplekt={s.data.komplekt}
+                    komplekt={s.data.komplekt!}
                     orderEmail={orderEmail}
                     t={t}
                     pricesVisible={pricesVisible}
@@ -104,6 +115,50 @@ export default function CatalogFilter({
                     formSentMessage={formSentMessage}
                   />
                 ))}
+              </div>
+            )}
+
+            {s.data.addons && (
+              <div className="mt-6">
+                <div className="flex flex-wrap justify-center gap-2">
+                  <SubFilterButton active={addonType === "all"} onClick={() => setAddonType("all")}>
+                    {t.all}
+                  </SubFilterButton>
+                  {ADDON_TYPES.map((type) => (
+                    <SubFilterButton key={type} active={addonType === type} onClick={() => setAddonType(type)}>
+                      {addonTypeLabel[type]}
+                    </SubFilterButton>
+                  ))}
+                </div>
+
+                <div className="mt-6 space-y-8">
+                  {Array.from(new Set(s.data.addons.map((a) => a.collectionLabel))).map((collectionLabel) => {
+                    const items = s.data.addons!.filter(
+                      (a) => a.collectionLabel === collectionLabel && (addonType === "all" || a.addon_type === addonType)
+                    );
+                    if (items.length === 0) return null;
+                    return (
+                      <div key={collectionLabel}>
+                        <h3 className="font-serif text-lg font-bold text-navy-dark">{collectionLabel}</h3>
+                        <ul className="mt-3 divide-y divide-navy-dim/10 rounded-xl border border-navy-dim/10 bg-panel">
+                          {items.map((item) => (
+                            <li
+                              key={`${item.addon_type}-${item.item_label}`}
+                              className="flex flex-wrap items-center justify-between gap-2 px-4 py-3 text-sm"
+                            >
+                              <span className="text-navy-dark">
+                                {addonTypeLabel[item.addon_type]}: {item.item_label}
+                              </span>
+                              <span className="font-semibold text-navy-dark">
+                                {pricesVisible ? fmtUah(item.price) : t.findOutPrice}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             )}
           </section>
@@ -130,6 +185,30 @@ function FilterButton({
       onClick={onClick}
       className={`rounded-full px-5 py-2 text-sm font-semibold uppercase tracking-wide transition ${
         active ? "bg-navy-dark text-white" : "bg-panel-alt text-navy-dim hover:bg-navy-dark/10"
+      }`}
+    >
+      {children}
+    </button>
+  );
+}
+
+function SubFilterButton({
+  active,
+  onClick,
+  children,
+}: {
+  active: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={`rounded-full border px-4 py-1.5 text-xs font-semibold uppercase tracking-wide transition ${
+        active
+          ? "border-gold-dim bg-gold/15 text-gold-dim"
+          : "border-navy-dim/20 text-navy-dim hover:border-gold-dim hover:text-gold-dim"
       }`}
     >
       {children}

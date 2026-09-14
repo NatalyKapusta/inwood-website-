@@ -8,13 +8,23 @@ export type ColorOption = { slug: string; label: string; image: string };
 // принцип, що й у B2B-калькуляторі (data/model-variants.json, variantType "ral").
 export type ProductModel = { code: string; basePrice: number; ralPrice?: number; colors: ColorOption[] };
 export type HiddenVariant = { label: string; price: number; image: string };
+// Рядок "Погонажних виробів" (короб/лиштва/добір окремо) — приходить із
+// Supabase (lib/publicShop.ts), а не з products.json, тому colectionLabel
+// проставляється при завантаженні на сторінці каталогу.
+export type PogonazhniAddon = {
+  collectionLabel: string;
+  addon_type: "korob" | "lishtva" | "dobir";
+  item_label: string;
+  price: number;
+};
 export type Collection = {
   label: string;
-  thickness: string;
-  komplekt: Komplekt;
+  thickness?: string;
+  komplekt?: Komplekt;
   extra?: string;
   models?: ProductModel[];
   variants?: HiddenVariant[];
+  addons?: PogonazhniAddon[];
 };
 
 export const collections = products as Record<string, Collection>;

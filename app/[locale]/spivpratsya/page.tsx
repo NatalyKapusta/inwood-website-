@@ -76,7 +76,7 @@ export default async function SpivpratsyaPage({
             <ProductCard
               collectionLabel={collections.etalon.label}
               model={demoModel}
-              komplekt={collections.etalon.komplekt}
+              komplekt={collections.etalon.komplekt!}
               orderEmail={c.email}
               t={dict.catalog}
               pricesVisible={pricesVisible}
