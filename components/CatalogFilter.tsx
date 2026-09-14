@@ -55,29 +55,6 @@ export default function CatalogFilter({
               {s.data.extra ? ` · ${s.data.extra}` : ""}
             </p>
 
-            {s.data.models && (
-              <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {s.data.models.map((m) => (
-                  <ProductCard
-                    key={m.code}
-                    collectionLabel={s.data.label}
-                    model={m}
-                    komplekt={s.data.komplekt}
-                    orderEmail={orderEmail}
-                    t={t}
-                    pricesVisible={pricesVisible}
-                    phoneManual={phoneManual}
-                    phoneChooseCountry={phoneChooseCountry}
-                    phoneInvalid={phoneInvalid}
-                    sendFailedRetry={sendFailedRetry}
-                    nameLabel={nameLabel}
-                    phoneLabel={phoneLabel}
-                    formSentMessage={formSentMessage}
-                  />
-                ))}
-              </div>
-            )}
-
             {s.data.variants && (
               <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {s.data.variants.map((v) => (
@@ -98,11 +75,34 @@ export default function CatalogFilter({
                       <p className="text-sm text-navy-dark">{v.label}</p>
                       <p className="mt-2 font-serif text-lg font-bold text-navy-dark">
                         {pricesVisible
-                          ? `${t.from} ${new Intl.NumberFormat("uk-UA").format(v.price)} ₴`
+                          ? `${t.from} ${new Intl.NumberFormat("uk-UA").format(v.price)} ₴`
                           : t.findOutPrice}
                       </p>
                     </div>
                   </div>
+                ))}
+              </div>
+            )}
+
+            {s.data.models && (
+              <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {s.data.models.map((m) => (
+                  <ProductCard
+                    key={m.code}
+                    collectionLabel={s.data.label}
+                    model={m}
+                    komplekt={s.data.komplekt}
+                    orderEmail={orderEmail}
+                    t={t}
+                    pricesVisible={pricesVisible}
+                    phoneManual={phoneManual}
+                    phoneChooseCountry={phoneChooseCountry}
+                    phoneInvalid={phoneInvalid}
+                    sendFailedRetry={sendFailedRetry}
+                    nameLabel={nameLabel}
+                    phoneLabel={phoneLabel}
+                    formSentMessage={formSentMessage}
+                  />
                 ))}
               </div>
             )}
