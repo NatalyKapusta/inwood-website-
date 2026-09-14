@@ -3,13 +3,11 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { HARDWARE_BRAND_LABELS, HARDWARE_BRAND_ORDER, hardwareCategoryLabels } from "@/lib/quote";
-import { HARDWARE_CATEGORY_ORDER, getPublicHardware, getPublicPlintus, getPublicNakladka } from "@/lib/publicShop";
-import { getPricesVisible } from "@/lib/siteSettings";
+import { HARDWARE_CATEGORY_ORDER, getPublicHardware } from "@/lib/publicShop";
 import ContactCta from "@/components/ContactCta";
-import AddToCartButton from "@/components/AddToCartButton";
 import FurnituraHardware from "@/components/FurnituraHardware";
 
-// Дані фурнітури/аксесуарів живуть у Supabase (не в products.json).
+// Дані фурнітури живуть у Supabase (не в products.json).
 // lib/publicShop.ts читає їх публічним клієнтом (не чіпає cookies()), тому
 // сторінка може безпечно лишатись ISR-кешованою — раз на хвилину дані
 // оновлюються наново, без повного force-dynamic на кожен запит.
@@ -25,10 +23,6 @@ export async function generateMetadata({ params }: { params: { locale: Locale } 
   });
 }
 
-function fmtUah(n: number) {
-  return `${new Intl.NumberFormat("uk-UA").format(n)} ₴`;
-}
-
 export default async function FurnituraPage({
   params,
   searchParams,
@@ -41,14 +35,7 @@ export default async function FurnituraPage({
   const c = dict.common;
   const catalogT = dict.catalog;
 
-  const [hardwareItems, plintusItems, nakladkaItems, pricesVisible] = await Promise.all([
-    getPublicHardware(),
-    getPublicPlintus(),
-    getPublicNakladka(),
-    getPricesVisible(params.locale),
-  ]);
-
-  const hasAnything = hardwareItems.length > 0 || plintusItems.length > 0 || nakladkaItems.length > 0;
+  const hardwareItems = await getPublicHardware();
 
   return (
     <>
@@ -80,11 +67,9 @@ export default async function FurnituraPage({
           </Link>
         </div>
 
-        {!hasAnything && (
+        {hardwareItems.length === 0 ? (
           <p className="mx-auto mt-16 max-w-md text-center text-navy-dim">{t.comingSoon}</p>
-        )}
-
-        {hardwareItems.length > 0 && (
+        ) : (
           <section className="mt-16">
             <h2 className="font-serif text-2xl font-bold text-navy-dark">{t.hardwareTitle}</h2>
             <div className="mt-8">
@@ -100,56 +85,6 @@ export default async function FurnituraPage({
                 addedToCartLabel={c.addedToCart}
               />
             </div>
-          </section>
-        )}
-
-        {nakladkaItems.length > 0 && (
-          <section className="mt-16">
-            <h2 className="font-serif text-2xl font-bold text-navy-dark">{t.nakladkaTitle}</h2>
-            <ul className="mt-6 divide-y divide-navy-dim/10 rounded-xl border border-navy-dim/10 bg-panel">
-              {nakladkaItems.map((item) => (
-                <li key={item.code} className="flex flex-wrap items-center justify-between gap-2 px-4 py-3 text-sm">
-                  <div>
-                    <span className="text-navy-dark">{item.label}</span>
-                    <p className="mt-0.5 text-xs text-navy-dim">
-                      {pricesVisible ? fmtUah(item.price) : catalogT.findOutPrice}
-                    </p>
-                  </div>
-                  <AddToCartButton
-                    id={`nakladka-${item.code}`}
-                    label={`${t.nakladkaTitle}: ${item.label}`}
-                    price={pricesVisible ? item.price : null}
-                    addLabel={c.addToCart}
-                    addedLabel={c.addedToCart}
-                  />
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
-
-        {plintusItems.length > 0 && (
-          <section className="mt-16">
-            <h2 className="font-serif text-2xl font-bold text-navy-dark">{t.plintusTitle}</h2>
-            <ul className="mt-6 divide-y divide-navy-dim/10 rounded-xl border border-navy-dim/10 bg-panel">
-              {plintusItems.map((item) => (
-                <li key={item.code} className="flex flex-wrap items-center justify-between gap-2 px-4 py-3 text-sm">
-                  <div>
-                    <span className="text-navy-dark">{item.label}</span>
-                    <p className="mt-0.5 text-xs text-navy-dim">
-                      {pricesVisible ? `${fmtUah(item.price)} ${t.perMeter}` : catalogT.findOutPrice}
-                    </p>
-                  </div>
-                  <AddToCartButton
-                    id={`plintus-${item.code}`}
-                    label={`${t.plintusTitle}: ${item.label} (${t.perMeter})`}
-                    price={pricesVisible ? item.price : null}
-                    addLabel={c.addToCart}
-                    addedLabel={c.addedToCart}
-                  />
-                </li>
-              ))}
-            </ul>
           </section>
         )}
       </div>

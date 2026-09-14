@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useCart } from "@/components/CartContext";
+import { trackEvent } from "@/lib/gtag";
 
 export default function AddToCartButton({
   id,
@@ -23,6 +24,7 @@ export default function AddToCartButton({
 
   function handleClick() {
     addItem({ id, label, price });
+    trackEvent("add_to_cart", { item_name: label });
     setJustAdded(true);
     setTimeout(() => setJustAdded(false), 1200);
   }

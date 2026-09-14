@@ -17,32 +17,16 @@ function fmtUah(n: number) {
 
 export default function CatalogFilter({
   sections,
-  orderEmail,
   t,
   pricesVisible,
-  phoneManual,
-  phoneChooseCountry,
-  phoneInvalid,
-  sendFailedRetry,
-  nameLabel,
-  phoneLabel,
-  formSentMessage,
   nakladkaLabel,
   plintusLabel,
   addToCartLabel,
   addedToCartLabel,
 }: {
   sections: { id: string; data: Collection }[];
-  orderEmail: string;
   t: Dictionary["catalog"];
   pricesVisible: boolean;
-  phoneManual?: string;
-  phoneChooseCountry?: string;
-  phoneInvalid?: string;
-  sendFailedRetry?: string;
-  nameLabel?: string;
-  phoneLabel?: string;
-  formSentMessage?: string;
   nakladkaLabel: string;
   plintusLabel: string;
   addToCartLabel: string;
@@ -117,16 +101,10 @@ export default function CatalogFilter({
                     collectionLabel={s.data.label}
                     model={m}
                     komplekt={s.data.komplekt!}
-                    orderEmail={orderEmail}
                     t={t}
                     pricesVisible={pricesVisible}
-                    phoneManual={phoneManual}
-                    phoneChooseCountry={phoneChooseCountry}
-                    phoneInvalid={phoneInvalid}
-                    sendFailedRetry={sendFailedRetry}
-                    nameLabel={nameLabel}
-                    phoneLabel={phoneLabel}
-                    formSentMessage={formSentMessage}
+                    addToCartLabel={addToCartLabel}
+                    addedToCartLabel={addedToCartLabel}
                   />
                 ))}
               </div>

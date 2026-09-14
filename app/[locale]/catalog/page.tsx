@@ -174,16 +174,8 @@ export default async function CatalogPage({
       <div className="mt-12">
         <CatalogFilter
           sections={sections}
-          orderEmail={dict.common.email}
           t={t}
           pricesVisible={pricesVisible}
-          phoneManual={dict.common.phoneManual}
-          phoneChooseCountry={dict.common.phoneChooseCountry}
-          phoneInvalid={dict.common.phoneInvalid}
-          sendFailedRetry={dict.common.sendFailedRetry}
-          nameLabel={dict.common.formName}
-          phoneLabel={dict.common.formPhone}
-          formSentMessage={dict.common.formSentMessage}
           nakladkaLabel={dict.furnitura.nakladkaShort}
           plintusLabel={dict.furnitura.plintusTitle}
           addToCartLabel={dict.common.addToCart}

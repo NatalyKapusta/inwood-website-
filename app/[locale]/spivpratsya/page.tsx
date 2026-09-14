@@ -77,16 +77,10 @@ export default async function SpivpratsyaPage({
               collectionLabel={collections.etalon.label}
               model={demoModel}
               komplekt={collections.etalon.komplekt!}
-              orderEmail={c.email}
               t={dict.catalog}
               pricesVisible={pricesVisible}
-              phoneManual={c.phoneManual}
-              phoneChooseCountry={c.phoneChooseCountry}
-              phoneInvalid={c.phoneInvalid}
-              sendFailedRetry={c.sendFailedRetry}
-              nameLabel={c.formName}
-              phoneLabel={c.formPhone}
-              formSentMessage={c.formSentMessage}
+              addToCartLabel={c.addToCart}
+              addedToCartLabel={c.addedToCart}
             />
           </div>
           <p className="mx-auto mt-6 max-w-2xl text-center text-sm text-navy-dim">{t.calcCta}</p>
