@@ -145,8 +145,7 @@ export default async function CatalogPage({
         }}
       />
       <div className="text-center">
-        <p className="text-sm uppercase tracking-wide text-gold-dim">{t.kicker}</p>
-        <h1 className="mt-2 font-serif text-3xl font-bold text-navy-dark sm:text-4xl">
+        <h1 className="font-serif text-3xl font-bold text-navy-dark sm:text-4xl">
           {t.heading}
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-navy-dim">{t.intro}</p>
