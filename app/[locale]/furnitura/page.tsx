@@ -15,6 +15,12 @@ import {
 import { getPricesVisible } from "@/lib/siteSettings";
 import ContactCta from "@/components/ContactCta";
 
+// Дані фурнітури/аксесуарів живуть у Supabase (не в products.json) — без
+// revalidate сторінка була б статичною назавжди з моменту збірки сайту й не
+// підхопила б ні нові товари, ні щойно застосовану RLS-політику публічного
+// доступу (0025_public_retail_prices.sql).
+export const revalidate = 60;
+
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
   return buildMetadata({
@@ -108,7 +114,7 @@ export default async function FurnituraPage({
         </div>
 
         {!hasAnything && (
-          <p className="mx-auto mt-16 max-w-md text-center text-navy-dim">{catalogT.findOutPrice}</p>
+          <p className="mx-auto mt-16 max-w-md text-center text-navy-dim">{t.comingSoon}</p>
         )}
 
         {hardwareByBrand.length > 0 && (
