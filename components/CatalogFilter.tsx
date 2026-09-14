@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import ProductCard from "@/components/ProductCard";
+import SimpleOrderButton from "@/components/SimpleOrderButton";
 import type { Collection } from "@/lib/products";
 import type { Dictionary } from "@/lib/dictionary";
 
@@ -149,9 +150,20 @@ export default function CatalogFilter({
                               <span className="text-navy-dark">
                                 {addonTypeLabel[item.addon_type]}: {item.item_label}
                               </span>
-                              <span className="font-semibold text-navy-dark">
-                                {pricesVisible ? fmtUah(item.price) : t.findOutPrice}
-                              </span>
+                              <SimpleOrderButton
+                                itemLabel={`${collectionLabel} — ${addonTypeLabel[item.addon_type]}: ${item.item_label}`}
+                                source="Каталог — Погонажні вироби"
+                                buttonLabel={pricesVisible ? fmtUah(item.price) : t.findOutPrice}
+                                sendInquiryLabel={t.sendInquiry}
+                                closeLabel={t.close}
+                                formSentMessage={formSentMessage ?? ""}
+                                nameLabel={nameLabel}
+                                phoneLabel={phoneLabel}
+                                phoneManual={phoneManual}
+                                phoneChooseCountry={phoneChooseCountry}
+                                phoneInvalid={phoneInvalid}
+                                sendFailedRetry={sendFailedRetry}
+                              />
                             </li>
                           ))}
                         </ul>

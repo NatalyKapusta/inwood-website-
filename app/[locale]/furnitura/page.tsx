@@ -14,6 +14,7 @@ import {
 } from "@/lib/publicShop";
 import { getPricesVisible } from "@/lib/siteSettings";
 import ContactCta from "@/components/ContactCta";
+import SimpleOrderButton from "@/components/SimpleOrderButton";
 
 // Дані фурнітури/аксесуарів живуть у Supabase (не в products.json).
 // lib/publicShop.ts читає їх публічним клієнтом (не чіпає cookies()), тому
@@ -189,9 +190,20 @@ export default async function FurnituraPage({
                               className="flex flex-wrap items-center justify-between gap-2 px-4 py-3 text-sm"
                             >
                               <span className="text-navy-dark">{item.item_label}</span>
-                              <span className="font-semibold text-navy-dark">
-                                {pricesVisible ? fmtUah(item.price) : catalogT.findOutPrice}
-                              </span>
+                              <SimpleOrderButton
+                                itemLabel={`${col.label} — ${g.label}: ${item.item_label}`}
+                                source="Фурнітура — Погонажні вироби"
+                                buttonLabel={pricesVisible ? fmtUah(item.price) : catalogT.findOutPrice}
+                                sendInquiryLabel={catalogT.sendInquiry}
+                                closeLabel={catalogT.close}
+                                formSentMessage={c.formSentMessage}
+                                nameLabel={c.formName}
+                                phoneLabel={c.formPhone}
+                                phoneManual={c.phoneManual}
+                                phoneChooseCountry={c.phoneChooseCountry}
+                                phoneInvalid={c.phoneInvalid}
+                                sendFailedRetry={c.sendFailedRetry}
+                              />
                             </li>
                           ))}
                         </ul>
@@ -211,9 +223,20 @@ export default async function FurnituraPage({
               {nakladkaItems.map((item) => (
                 <li key={item.code} className="flex flex-wrap items-center justify-between gap-2 px-4 py-3 text-sm">
                   <span className="text-navy-dark">{item.label}</span>
-                  <span className="font-semibold text-navy-dark">
-                    {pricesVisible ? fmtUah(item.price) : catalogT.findOutPrice}
-                  </span>
+                  <SimpleOrderButton
+                    itemLabel={`${t.nakladkaTitle}: ${item.label}`}
+                    source="Фурнітура — Дверна накладка"
+                    buttonLabel={pricesVisible ? fmtUah(item.price) : catalogT.findOutPrice}
+                    sendInquiryLabel={catalogT.sendInquiry}
+                    closeLabel={catalogT.close}
+                    formSentMessage={c.formSentMessage}
+                    nameLabel={c.formName}
+                    phoneLabel={c.formPhone}
+                    phoneManual={c.phoneManual}
+                    phoneChooseCountry={c.phoneChooseCountry}
+                    phoneInvalid={c.phoneInvalid}
+                    sendFailedRetry={c.sendFailedRetry}
+                  />
                 </li>
               ))}
             </ul>
@@ -227,9 +250,20 @@ export default async function FurnituraPage({
               {plintusItems.map((item) => (
                 <li key={item.code} className="flex flex-wrap items-center justify-between gap-2 px-4 py-3 text-sm">
                   <span className="text-navy-dark">{item.label}</span>
-                  <span className="font-semibold text-navy-dark">
-                    {pricesVisible ? `${fmtUah(item.price)} ${t.perMeter}` : catalogT.findOutPrice}
-                  </span>
+                  <SimpleOrderButton
+                    itemLabel={`${t.plintusTitle}: ${item.label}`}
+                    source="Фурнітура — Плінтус"
+                    buttonLabel={pricesVisible ? `${fmtUah(item.price)} ${t.perMeter}` : catalogT.findOutPrice}
+                    sendInquiryLabel={catalogT.sendInquiry}
+                    closeLabel={catalogT.close}
+                    formSentMessage={c.formSentMessage}
+                    nameLabel={c.formName}
+                    phoneLabel={c.formPhone}
+                    phoneManual={c.phoneManual}
+                    phoneChooseCountry={c.phoneChooseCountry}
+                    phoneInvalid={c.phoneInvalid}
+                    sendFailedRetry={c.sendFailedRetry}
+                  />
                 </li>
               ))}
             </ul>
