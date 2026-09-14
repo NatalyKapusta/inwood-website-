@@ -9,6 +9,7 @@ import { RECRUIT_CITIES, getAllDealerRecruitCities } from "@/lib/recruitCities";
 const paths = [
   "",
   "/catalog",
+  "/furnitura",
   "/galereya",
   "/pro-nas",
   "/harakterystyky",

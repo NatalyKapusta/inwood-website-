@@ -13,6 +13,10 @@
         "href": "/catalog"
       },
       {
+        "label": "Hardware",
+        "href": "/furnitura"
+      },
+      {
         "label": "Gallery",
         "href": "/galereya"
       },
@@ -689,6 +693,22 @@
     "finishRal": "RAL/NCS Painting",
     "ralPlaceholder": "RAL/NCS color, e.g. RAL 9010",
     "showAllCatalog": "Show the full catalog"
+  },
+  "furnitura": {
+    "title": "IN WOOD Interior Door Hardware — Buy Online",
+    "kicker": "IN WOOD · hardware & accessories",
+    "heading": "Hardware & Accessories",
+    "intro": "Handles, hinges, cylinders, sliding systems and other hardware from MVM and Anselmi + AGB, plus standalone frame/casing profiles, door overlays and skirting — everything needed to install and maintain your doors.",
+    "metaDescription": "Interior door hardware from IN WOOD: handles, hinges, cylinders, sliding systems by MVM and Anselmi + AGB with retail prices. Standalone frame profiles, door overlays, skirting.",
+    "hardwareTitle": "Hardware",
+    "pogonazhniTitle": "Frame Profiles (frame / casing / jamb extension, sold separately)",
+    "nakladkaTitle": "Door Overlay (for metal doors, 10 mm)",
+    "plintusTitle": "Skirting",
+    "perMeter": "per running metre",
+    "noPhoto": "Photo on request",
+    "ctaTitle": "Need advice on hardware or accessories?",
+    "ctaText": "Leave a request — we'll pick the right items and quote the price.",
+    "backToCatalog": "← Door catalog"
   },
   "nashiDileri": {
     "title": "IN WOOD doors in Ukraine | Official dealers and partners",

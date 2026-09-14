@@ -13,6 +13,10 @@
         "href": "/catalog"
       },
       {
+        "label": "Okucia",
+        "href": "/furnitura"
+      },
+      {
         "label": "Galeria",
         "href": "/galereya"
       },
@@ -710,6 +714,22 @@
     "finishRal": "Malowanie RAL/NCS",
     "ralPlaceholder": "Kolor RAL/NCS, np. RAL 9010",
     "showAllCatalog": "Pokaż cały katalog"
+  },
+  "furnitura": {
+    "title": "Okucia do drzwi wewnętrznych IN WOOD — kup online",
+    "kicker": "IN WOOD · okucia i akcesoria",
+    "heading": "Okucia i akcesoria",
+    "intro": "Klamki, zawiasy, wkładki, systemy przesuwne i inne okucia MVM i Anselmi + AGB, a także ościeżnice/listwy/przylgi sprzedawane osobno, nakładki drzwiowe i listwy przypodłogowe — wszystko potrzebne do montażu i obsługi drzwi.",
+    "metaDescription": "Okucia do drzwi wewnętrznych IN WOOD: klamki, zawiasy, wkładki, systemy przesuwne MVM i Anselmi + AGB w cenach detalicznych. Ościeżnice/listwy/przylgi osobno, nakładki drzwiowe, listwy przypodłogowe.",
+    "hardwareTitle": "Okucia",
+    "pogonazhniTitle": "Elementy profilowe (ościeżnica / listwa / przylga osobno)",
+    "nakladkaTitle": "Nakładka drzwiowa (do drzwi metalowych, 10 mm)",
+    "plintusTitle": "Listwa przypodłogowa",
+    "perMeter": "za 1 mb",
+    "noPhoto": "Zdjęcie na zapytanie",
+    "ctaTitle": "Potrzebujesz porady w sprawie okuć lub akcesoriów?",
+    "ctaText": "Zostaw zapytanie — dobierzemy potrzebne pozycje i wycenimy koszt.",
+    "backToCatalog": "← Katalog drzwi"
   },
   "nashiDileri": {
     "title": "Drzwi IN WOOD w Ukrainie | Oficjalni dilerzy i partnerzy",

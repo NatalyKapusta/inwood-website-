@@ -144,6 +144,15 @@ export default async function CatalogPage({
       </div>
 
       <div className="mt-12 text-center">
+        <Link
+          href={`/${params.locale}/furnitura`}
+          className="inline-flex items-center gap-2 rounded-full border border-gold-dim/40 px-6 py-3 text-sm font-semibold text-navy-dark transition hover:border-gold hover:text-gold-dim"
+        >
+          {dict.furnitura.heading} →
+        </Link>
+      </div>
+
+      <div className="mt-6 text-center">
         <Link href={`/${params.locale}/blog`} className="text-sm font-semibold text-gold-dim hover:text-navy-dark">
           {dict.blog.heading}: {dict.blog.intro} →
         </Link>
