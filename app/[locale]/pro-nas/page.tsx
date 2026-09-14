@@ -69,6 +69,19 @@ export default async function ProNasPage({
         </div>
       </section>
 
+      <section className="mx-auto max-w-3xl px-4 py-16 text-center sm:py-24">
+        <h2 className="font-serif text-xl font-bold text-navy-dark">{t.certTitle}</h2>
+        <p className="mt-4 text-navy-dim">{t.certText}</p>
+        <ul className="mx-auto mt-6 max-w-md space-y-2 text-left text-sm text-navy-dark">
+          {t.certDetails.map((d) => (
+            <li key={d} className="flex items-start gap-2">
+              <span className="text-gold-dim">✔</span>
+              <span>{d}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       <RelatedLinks
         locale={params.locale}
         title={c.relatedTitle}
