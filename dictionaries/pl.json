@@ -708,7 +708,8 @@
     "downloadCatalog": "Pobierz katalog (PDF)",
     "finishBase": "Baza",
     "finishRal": "Malowanie RAL/NCS",
-    "ralPlaceholder": "Kolor RAL/NCS, np. RAL 9010"
+    "ralPlaceholder": "Kolor RAL/NCS, np. RAL 9010",
+    "showAllCatalog": "Pokaż cały katalog"
   },
   "nashiDileri": {
     "title": "Drzwi IN WOOD w Ukrainie | Oficjalni dilerzy i partnerzy",

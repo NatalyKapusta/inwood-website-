@@ -687,7 +687,8 @@
     "downloadCatalog": "Download catalog (PDF)",
     "finishBase": "Base",
     "finishRal": "RAL/NCS Painting",
-    "ralPlaceholder": "RAL/NCS color, e.g. RAL 9010"
+    "ralPlaceholder": "RAL/NCS color, e.g. RAL 9010",
+    "showAllCatalog": "Show the full catalog"
   },
   "nashiDileri": {
     "title": "IN WOOD doors in Ukraine | Official dealers and partners",

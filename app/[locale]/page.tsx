@@ -10,6 +10,7 @@ import LeadConversionTracker from "@/components/LeadConversionTracker";
 import SentModal from "@/components/SentModal";
 import YouTubeFacade from "@/components/YouTubeFacade";
 import Honeypot from "@/components/Honeypot";
+import { catalogCategorySlugs } from "@/lib/catalogCategories";
 
 const playLabels: Record<Locale, string> = {
   ua: "Відтворити відео",
@@ -82,13 +83,14 @@ export default async function HomePage({
               </Link>
             </div>
             <div className="mt-6 flex flex-wrap gap-2">
-              {t.categories.map((cat: string) => (
-                <span
+              {t.categories.map((cat: string, i: number) => (
+                <Link
                   key={cat}
-                  className="rounded-full border border-white/20 px-4 py-1.5 text-xs uppercase tracking-wide text-white/70"
+                  href={`/${locale}/catalog?category=${catalogCategorySlugs[i]}`}
+                  className="rounded-full border border-white/20 px-4 py-1.5 text-xs uppercase tracking-wide text-white/70 transition hover:border-gold hover:text-gold"
                 >
                   {cat}
-                </span>
+                </Link>
               ))}
             </div>
           </div>

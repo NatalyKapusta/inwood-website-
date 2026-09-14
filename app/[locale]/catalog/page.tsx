@@ -3,12 +3,17 @@ import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata, productListJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import { collections, collectionOrder } from "@/lib/products";
 import { getPricesVisible } from "@/lib/siteSettings";
+import { catalogCategories, catalogCategorySlugs, type CatalogCategorySlug } from "@/lib/catalogCategories";
 import CatalogFilter from "@/components/CatalogFilter";
 import Link from "next/link";
 
 // Сторінка кешується статично, але раз на хвилину перевіряє
 // prices_visible наново — щоб перемикач у порталі діяв без редеплою.
 export const revalidate = 60;
+
+function isCategorySlug(v: string | undefined): v is CatalogCategorySlug {
+  return !!v && (catalogCategorySlugs as string[]).includes(v);
+}
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
@@ -20,10 +25,16 @@ export async function generateMetadata({ params }: { params: { locale: Locale } 
   });
 }
 
-export default async function CatalogPage({ params }: { params: { locale: Locale } }) {
+export default async function CatalogPage({
+  params,
+  searchParams,
+}: {
+  params: { locale: Locale };
+  searchParams: { category?: string };
+}) {
   const dict = await getDictionary(params.locale);
   const t = dict.catalog;
-  const sections = collectionOrder
+  let sections = collectionOrder
     .filter((id) => collections[id])
     .map((id) => {
       const data = collections[id];
@@ -35,6 +46,25 @@ export default async function CatalogPage({ params }: { params: { locale: Locale
       }
       return { id, data };
     });
+
+  // Піли-категорії з головної сторінки ведуть сюди з ?category=... — звужуємо
+  // список секцій (і, для "dekor", ще й моделі всередині) під конкретну
+  // категорію, замість показу всього каталогу.
+  const categorySlug = isCategorySlug(searchParams.category) ? searchParams.category : undefined;
+  const category = categorySlug ? catalogCategories[categorySlug] : undefined;
+  if (category) {
+    sections = sections
+      .filter((s) => category.collections.includes(s.id))
+      .map((s) => {
+        const excluded = category.excludeModelCodes?.[s.id];
+        if (!excluded || !s.data.models) return s;
+        return { ...s, data: { ...s.data, models: s.data.models.filter((m) => !excluded.includes(m.code)) } };
+      });
+  }
+  const categoryLabel = categorySlug
+    ? dict.home.categories[catalogCategorySlugs.indexOf(categorySlug)]
+    : undefined;
+
   const pricesVisible = await getPricesVisible(params.locale);
   // Немає окремого PL-каталогу — для польської версії видаємо англійський
   // PDF (зрозуміліший польському відвідувачу, ніж український), а не
@@ -85,6 +115,17 @@ export default async function CatalogPage({ params }: { params: { locale: Locale
           {t.downloadCatalog}
         </a>
       </div>
+
+      {categoryLabel && (
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm">
+          <span className="rounded-full bg-gold/15 px-4 py-1.5 font-semibold text-gold-dim">
+            {categoryLabel}
+          </span>
+          <Link href={`/${params.locale}/catalog`} className="text-navy-dim underline decoration-dotted underline-offset-4 hover:text-navy-dark">
+            {t.showAllCatalog}
+          </Link>
+        </div>
+      )}
 
       <div className="mt-12">
         <CatalogFilter

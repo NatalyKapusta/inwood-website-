@@ -687,7 +687,8 @@
     "downloadCatalog": "Завантажити каталог (PDF)",
     "finishBase": "База",
     "finishRal": "Фарбування RAL/NCS",
-    "ralPlaceholder": "Колір RAL/NCS, напр. RAL 9010"
+    "ralPlaceholder": "Колір RAL/NCS, напр. RAL 9010",
+    "showAllCatalog": "Показати весь каталог"
   },
   "nashiDileri": {
     "title": "Двері IN WOOD в Україні | Офіційні дилери та партнери",
