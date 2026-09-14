@@ -266,7 +266,10 @@ export default function QuoteBuilder({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isHardwareLine, hardwareBrand, hardwareRows]);
-  const isHiddenDoors = collectionKey === "hidden-doors";
+  // "pid-farbuvannya" ("Двері під фарбування") — та сама лінія, продубльована в
+  // каталозі під іншою назвою (для покупців, що шукають саме "під фарбування", а
+  // не "прихований монтаж"); ціни та варіанти в порталі беремо з hidden-doors.
+  const isHiddenDoors = collectionKey === "hidden-doors" || collectionKey === "pid-farbuvannya";
   // Короб прихованого монтажу STANDART/LUX продається і в лінії ETALON (не лише на
   // "Двері під фарбування"), тож перевірка на RAL/NCS не має залежати від лінії —
   // інакше повторюється той самий баг, що й з кольором полотна PERFETTO/FREZZATTI.

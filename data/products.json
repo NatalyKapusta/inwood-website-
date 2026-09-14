@@ -2448,7 +2448,7 @@
             "image": "/photos/frezzatti/fz-01-white.png"
           }
         ],
-        "ralPrice": 10780.0
+        "ralPrice": 10780
       },
       {
         "code": "FZ-02",
@@ -2515,7 +2515,7 @@
             "image": "/photos/frezzatti/fz-02-white.png"
           }
         ],
-        "ralPrice": 10780.0
+        "ralPrice": 10780
       },
       {
         "code": "FZ-03",
@@ -2582,7 +2582,7 @@
             "image": "/photos/frezzatti/fz-03-white.png"
           }
         ],
-        "ralPrice": 10780.0
+        "ralPrice": 10780
       },
       {
         "code": "FZ-04",
@@ -2649,7 +2649,7 @@
             "image": "/photos/frezzatti/fz-04-white.png"
           }
         ],
-        "ralPrice": 10780.0
+        "ralPrice": 10780
       },
       {
         "code": "FZ-05",
@@ -2716,7 +2716,7 @@
             "image": "/photos/frezzatti/fz-05-white.png"
           }
         ],
-        "ralPrice": 10780.0
+        "ralPrice": 10780
       },
       {
         "code": "FZ-06",
@@ -2783,7 +2783,7 @@
             "image": "/photos/frezzatti/fz-06-white.png"
           }
         ],
-        "ralPrice": 10780.0
+        "ralPrice": 10780
       },
       {
         "code": "FZ-07",
@@ -2850,7 +2850,7 @@
             "image": "/photos/frezzatti/fz-07-white.png"
           }
         ],
-        "ralPrice": 10780.0
+        "ralPrice": 10780
       },
       {
         "code": "FZ-08",
@@ -2917,7 +2917,7 @@
             "image": "/photos/frezzatti/fz-08-white.png"
           }
         ],
-        "ralPrice": 10780.0
+        "ralPrice": 10780
       },
       {
         "code": "FZ-09",
@@ -2984,7 +2984,7 @@
             "image": "/photos/frezzatti/fz-09-white.png"
           }
         ],
-        "ralPrice": 10780.0
+        "ralPrice": 10780
       },
       {
         "code": "FZ-10",
@@ -3051,7 +3051,7 @@
             "image": "/photos/frezzatti/fz-10-white.png"
           }
         ],
-        "ralPrice": 10780.0
+        "ralPrice": 10780
       },
       {
         "code": "FZ-11",
@@ -3118,7 +3118,7 @@
             "image": "/photos/frezzatti/fz-11-white.png"
           }
         ],
-        "ralPrice": 10780.0
+        "ralPrice": 10780
       },
       {
         "code": "FZ-12",
@@ -3185,7 +3185,7 @@
             "image": "/photos/frezzatti/fz-12-white.png"
           }
         ],
-        "ralPrice": 10780.0
+        "ralPrice": 10780
       },
       {
         "code": "FZ-13",
@@ -3252,7 +3252,7 @@
             "image": "/photos/frezzatti/fz-13-white.png"
           }
         ],
-        "ralPrice": 10780.0
+        "ralPrice": 10780
       },
       {
         "code": "FZ-14",
@@ -3319,7 +3319,7 @@
             "image": "/photos/frezzatti/fz-14-white.png"
           }
         ],
-        "ralPrice": 10780.0
+        "ralPrice": 10780
       }
     ]
   },
@@ -3474,7 +3474,7 @@
             "image": "/photos/perfetto/pf-01.png"
           }
         ],
-        "ralPrice": 12733.0
+        "ralPrice": 12733
       },
       {
         "code": "PF-02",
@@ -3566,12 +3566,66 @@
             "image": "/photos/perfetto/pf-02.png"
           }
         ],
-        "ralPrice": 12733.0
+        "ralPrice": 12733
       }
     ]
   },
   "hidden-doors": {
     "label": "Двері прихованого монтажу",
+    "thickness": "40 мм",
+    "komplekt": {
+      "korob": [
+        {
+          "label": "Коробка прихованого монтажу STANDART (під шпатлівку)",
+          "price": 8424
+        },
+        {
+          "label": "Коробка прихованого монтажу LUX (під панелі)",
+          "price": 9752
+        }
+      ],
+      "lyshtva": [
+        {
+          "label": "Система алюм. профілів для торцювання 40 мм",
+          "price": 2788
+        },
+        {
+          "label": "Inside 56 мм",
+          "price": 5133
+        }
+      ],
+      "dobir": []
+    },
+    "variants": [
+      {
+        "label": "Плівка, крайка - грунт",
+        "price": 7390,
+        "image": "/photos/hidden-doors/primer.jpg"
+      },
+      {
+        "label": "Плівка, крайка - алюм. профіль (сіра)",
+        "price": 9830,
+        "image": "/photos/hidden-doors/aluminum-gray.jpg"
+      },
+      {
+        "label": "Плівка, крайка - алюм. профіль (чорна)",
+        "price": 10361,
+        "image": "/photos/hidden-doors/aluminum-black.jpg"
+      },
+      {
+        "label": "Плівка, Inside, крайка - алюм. профіль (сіра)",
+        "price": 11865,
+        "image": "/photos/hidden-doors/inside-aluminum-gray.jpg"
+      },
+      {
+        "label": "Плівка, Inside, крайка - алюм. профіль (чорна)",
+        "price": 12463,
+        "image": "/photos/hidden-doors/inside-aluminum-black.jpg"
+      }
+    ]
+  },
+  "pid-farbuvannya": {
+    "label": "Двері під фарбування",
     "thickness": "40 мм",
     "komplekt": {
       "korob": [

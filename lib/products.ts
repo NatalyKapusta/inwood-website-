@@ -19,4 +19,11 @@ export type Collection = {
 
 export const collections = products as Record<string, Collection>;
 
-export const collectionOrder = ["etalon", "nominal", "frezzatti", "perfetto", "hidden-doors"];
+export const collectionOrder = [
+  "etalon",
+  "nominal",
+  "frezzatti",
+  "perfetto",
+  "hidden-doors",
+  "pid-farbuvannya",
+];
