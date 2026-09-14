@@ -25,7 +25,16 @@ export default async function CatalogPage({ params }: { params: { locale: Locale
   const t = dict.catalog;
   const sections = collectionOrder
     .filter((id) => collections[id])
-    .map((id) => ({ id, data: collections[id] }));
+    .map((id) => {
+      const data = collections[id];
+      // Моделі ETALON можна монтувати і приховано — показуємо їх ще й у секції
+      // "Двері прихованого монтажу" (лише на сайті, komplekt цієї секції лишається
+      // рідний — коробка STANDART/LUX), не чіпаючи саму секцію ETALON і дані порталу.
+      if (id === "hidden-doors") {
+        return { id, data: { ...data, models: collections.etalon?.models } };
+      }
+      return { id, data };
+    });
   const pricesVisible = await getPricesVisible(params.locale);
   // Немає окремого PL-каталогу — для польської версії видаємо англійський
   // PDF (зрозуміліший польському відвідувачу, ніж український), а не
