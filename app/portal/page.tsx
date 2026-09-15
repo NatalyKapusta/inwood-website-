@@ -91,6 +91,23 @@ export default async function PortalDashboardPage() {
           </div>
         </div>
 
+        <div className="rounded-xl bg-panel p-6 shadow-sm">
+          <h2 className="font-serif text-lg font-bold text-navy-dark">Навчальні матеріали</h2>
+          <p className="mt-2 text-sm text-navy-dim">
+            Довідник по лінійках IN WOOD: кольори, короб/лиштва/добір і терміни — щоб краще розуміти продукт.
+          </p>
+          <div className="mt-3 flex flex-wrap gap-3">
+            <a
+              href="/documents/dovidnyk-spivrobitnykiv.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-navy-dark px-4 py-2 text-sm font-semibold text-navy-dark transition hover:bg-navy-dark hover:text-white"
+            >
+              Довідник по лінійках IN WOOD
+            </a>
+          </div>
+        </div>
+
         {effectiveRole === "staff" && (
           <Link
             href="/portal/overrides"
