@@ -38,13 +38,16 @@ export default async function PortalLayout({ children }: { children: ReactNode }
     }
     role = profile?.role ?? null;
     isOwner = profile?.is_owner ?? false;
-    hasSalaryAccess = (profile?.salary_access ?? false) || isOwner;
 
     if (isOwner) {
       const jar = await cookies();
       const cookieValue = jar.get(VIEW_AS_COOKIE)?.value;
       if (isPortalRole(cookieValue)) viewingAs = cookieValue;
     }
+
+    // Під час перегляду "чужими очима" власник не повинен бачити пункт
+    // "Зарплата" в навігації — так само, як ховається "Користувачі".
+    hasSalaryAccess = ((profile?.salary_access ?? false) || isOwner) && !viewingAs;
   }
 
   // Роль, за якою фактично рендеримо навігацію — справжня, або та, що
