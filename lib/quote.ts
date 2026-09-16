@@ -91,7 +91,9 @@ export function isAddonCompatible(collection: string, variantType: VariantType, 
     return variantType === "ral" ? isRal : !isRal;
   }
   if (collection === "etalon") {
-    return !itemLabel.includes("прихованого монтажу");
+    // ETALON без алюмінієвої крайки — короби/лиштви INSIDE (алюмінієвий
+    // профіль) для цієї лінії не продаються.
+    return !itemLabel.includes("прихованого монтажу") && !itemLabel.includes("INSIDE");
   }
   return true;
 }

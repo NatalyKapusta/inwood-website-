@@ -176,6 +176,7 @@ export default function QuoteBuilder({
   const [colorLabel, setColorLabel] = useState("");
   const [edgeColor, setEdgeColor] = useState("");
   const [insertColor, setInsertColor] = useState("");
+  const [openingSide, setOpeningSide] = useState("");
   const [korob, setKorob] = useState("");
   const [lishtvaFront, setLishtvaFront] = useState("");
   const [lishtvaBack, setLishtvaBack] = useState("");
@@ -313,7 +314,7 @@ export default function QuoteBuilder({
   const isAluEdge = isAluEdgeVariant(variantType);
   const isRalVariant = variantType === "ral";
 
-  // Колір кромки (торця полотна) — інформаційне поле, на ціну не впливає, але в
+  // Колір крайки (торця полотна) — інформаційне поле, на ціну не впливає, але в
   // оригінальному калькуляторі обов'язкове для всіх моделей ETALON/NOMINAL/FREZZATTI/PERFETTO,
   // щоб на заводі й у друкованій КП було видно, який колір торця замовлено.
   const isEdgeColorModel = !isSpecialLine && !isHiddenDoors && ["etalon", "nominal", "frezzatti", "perfetto"].includes(collectionKey) && !!modelCode;
@@ -326,6 +327,11 @@ export default function QuoteBuilder({
   const isInsertColorModel =
     (collectionKey === "etalon" && /^ET-(\d+)$/.test(modelCode) && Number(modelCode.slice(3)) >= 2) ||
     (collectionKey === "nominal" && /^NL-\d+$/.test(modelCode) && modelCode !== "NL-01");
+
+  // Сторона відкривання — інформаційне поле, на ціну не впливає, обов'язкове
+  // для звичайних моделей ETALON (без алюмінієвої крайки).
+  const isOpeningSideModel = collectionKey === "etalon" && !!modelCode;
+  const openingSideOptions = ["Ліва", "Права", "Розсувні"];
 
   const korobOptionsAll = addonRows.filter((r) => r.collection === collectionKey && r.addon_type === "korob" && r.tariff === tariff);
   const lishtvaOptionsAll = addonRows.filter((r) => r.collection === collectionKey && r.addon_type === "lishtva" && r.tariff === tariff);
@@ -552,8 +558,9 @@ export default function QuoteBuilder({
     }
     if (!modelCode || previewRows.length === 0) return;
     const colorNotes = [
-      isEdgeColorModel && edgeColor ? `кромка: ${edgeColor}` : "",
+      isEdgeColorModel && edgeColor ? `крайка: ${edgeColor}` : "",
       isInsertColorModel && insertColor ? `вставка: ${insertColor}` : "",
+      isOpeningSideModel && openingSide ? `сторона відкривання: ${openingSide}` : "",
     ].filter(Boolean);
     const position: QuotePosition = {
       id: crypto.randomUUID(),
@@ -568,6 +575,7 @@ export default function QuoteBuilder({
     setVariantCode(modelCode);
     setEdgeColor("");
     setInsertColor("");
+    setOpeningSide("");
     setWidth("");
     setHeight("");
     setKorob("");
@@ -870,6 +878,7 @@ export default function QuoteBuilder({
                 setColorLabel("");
                 setEdgeColor("");
                 setInsertColor("");
+                setOpeningSide("");
                 setPogItem("");
                 setFlatItemCode("");
                 setHardwareArticle("");
@@ -1031,6 +1040,7 @@ export default function QuoteBuilder({
                 setColorLabel("");
                 setEdgeColor("");
                 setInsertColor("");
+                setOpeningSide("");
                 setWidth("");
                 setHeight("");
               }}
@@ -1082,7 +1092,7 @@ export default function QuoteBuilder({
                 onChange={(e) => setEdgeColor(e.target.value)}
                 className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
               >
-                <option value="">Колір кромки...</option>
+                <option value="">Колір крайки...</option>
                 {edgeColorOptions.map((c) => (
                   <option key={c} value={c}>
                     {c}
@@ -1100,6 +1110,21 @@ export default function QuoteBuilder({
                 <option value="">Колір вставки...</option>
                 <option value="Сірий">Сірий</option>
                 <option value="Чорний">Чорний</option>
+              </select>
+            )}
+
+            {isOpeningSideModel && (
+              <select
+                value={openingSide}
+                onChange={(e) => setOpeningSide(e.target.value)}
+                className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+              >
+                <option value="">Сторона відкривання...</option>
+                {openingSideOptions.map((s) => (
+                  <option key={s} value={s}>
+                    {s}
+                  </option>
+                ))}
               </select>
             )}
 
@@ -1397,7 +1422,8 @@ export default function QuoteBuilder({
                   : !modelCode ||
                     (isKorobRalModel && !ralNcsColor.trim()) ||
                     (isEdgeColorModel && !edgeColor) ||
-                    (isInsertColorModel && !insertColor)
+                    (isInsertColorModel && !insertColor) ||
+                    (isOpeningSideModel && !openingSide)
               }
               className="rounded-full bg-navy-dark px-6 py-3 font-semibold text-white transition hover:bg-gold hover:text-navy-dark disabled:opacity-40"
             >
