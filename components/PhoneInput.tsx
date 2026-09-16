@@ -119,7 +119,12 @@ export default function PhoneInput({
             className={className ? `iw-phone ${className}` : "iw-phone"}
             style={invalid ? { borderColor: "#dc2626" } : undefined}
           />
-          <input type="hidden" name={name} value={current ? formatPhoneNumberIntl(current) : ""} />
+          {/* Якщо formatPhoneNumberIntl не може відформатувати номер (неповний
+              ввід, рідкісний формат тощо) — він повертає порожній рядок, і
+              прихований інпут йшов на сервер пустим, хоча видиме поле мало
+              required і виглядало заповненим: телефон мовчки губився.
+              Тому завжди підстраховуємось сирим значенням current. */}
+          <input type="hidden" name={name} value={current ? formatPhoneNumberIntl(current) || current : ""} />
         </>
       )}
       <button
