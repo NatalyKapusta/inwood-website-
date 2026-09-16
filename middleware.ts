@@ -61,11 +61,15 @@ export async function middleware(request: NextRequest) {
   const isPortalRoute = pathname === "/portal" || pathname.startsWith("/portal/");
   const isPartnershipRoute = pathname === "/partnership" || pathname.startsWith("/partnership/");
 
-  // Немає мовного префікса — редірект на дефолтну локаль (ua)
+  // Немає мовного префікса — редірект на дефолтну локаль (ua).
+  // 308 (постійний) — не 307 (тимчасовий, дефолт NextResponse.redirect) —
+  // інакше Google не консолідує сигнали на /ua і продовжує вважати
+  // канонічною сторінкою корінь домену "/" (саме це й було в Search Console:
+  // "Google вибрала іншу канонічну сторінку" для https://inwood.com.ua/ua).
   if (!isPortalRoute && !isPartnershipRoute && !getLocaleFromPath(pathname)) {
     const url = request.nextUrl.clone();
     url.pathname = `/${defaultLocale}${pathname === "/" ? "" : pathname}`;
-    return NextResponse.redirect(url);
+    return NextResponse.redirect(url, 308);
   }
 
   // Оновлюємо сесію Supabase (потрібно для закритого порталу /portal) —
