@@ -185,7 +185,7 @@ export default function QuoteBuilder({
   const [height, setHeight] = useState("");
   const [vrizka, setVrizka] = useState<"none" | "lock" | "full">("none");
   const [shumo, setShumo] = useState(false);
-  const [alumPaint, setAlumPaint] = useState(false);
+  const [alumPaintHiddenDoors, setAlumPaintHiddenDoors] = useState(false);
   const [ralNcsColor, setRalNcsColor] = useState("");
 
   // Ручне перевизначення — доступне staff і manager, як і в оригінальному калькуляторі.
@@ -314,24 +314,26 @@ export default function QuoteBuilder({
   const isAluEdge = isAluEdgeVariant(variantType);
   const isRalVariant = variantType === "ral";
 
-  // Колір крайки (торця полотна) — інформаційне поле, на ціну не впливає, але в
-  // оригінальному калькуляторі обов'язкове для всіх моделей ETALON/NOMINAL/FREZZATTI/PERFETTO,
-  // щоб на заводі й у друкованій КП було видно, який колір торця замовлено.
+  // Колір крайки (торця полотна) — обов'язкове поле для всіх моделей
+  // ETALON/NOMINAL/FREZZATTI/PERFETTO, щоб на заводі й у друкованій КП було
+  // видно, який колір торця замовлено. Для "Алюмінієва крайка INSIDE" —
+  // чорний і RAL додають автоматичну націнку (ALUM_PAINT_PRICE), сірий — без доплати.
   const isEdgeColorModel = !isSpecialLine && !isHiddenDoors && ["etalon", "nominal", "frezzatti", "perfetto"].includes(collectionKey) && !!modelCode;
   const edgeColorOptions = isAluEdge
-    ? ["Чорний", "Сірий"]
+    ? ["Сірий", "Чорний", "RAL"]
     : collectionKey === "etalon" || collectionKey === "perfetto"
     ? ["Чорний", "Білий", "В колір полотна"]
     : ["Чорний", "Білий"];
+  const isAlumEdgePaintSurcharge = isAluEdge && (edgeColor === "Чорний" || edgeColor === "RAL");
   // Колір вставки — інформаційне поле, лише для ETALON ЕТ-02…17 і NOMINAL NL-02…05.
   const isInsertColorModel =
     (collectionKey === "etalon" && /^ET-(\d+)$/.test(modelCode) && Number(modelCode.slice(3)) >= 2) ||
     (collectionKey === "nominal" && /^NL-\d+$/.test(modelCode) && modelCode !== "NL-01");
 
   // Сторона відкривання — інформаційне поле, на ціну не впливає, обов'язкове
-  // для звичайних моделей ETALON (без алюмінієвої крайки).
+  // для моделей ETALON. У "Алюмінієва крайка INSIDE" розсувних немає.
   const isOpeningSideModel = collectionKey === "etalon" && !!modelCode;
-  const openingSideOptions = ["Ліва", "Права", "Розсувні"];
+  const openingSideOptions = isAluEdge ? ["Ліва", "Права"] : ["Ліва", "Права", "Розсувні"];
 
   const korobOptionsAll = addonRows.filter((r) => r.collection === collectionKey && r.addon_type === "korob" && r.tariff === tariff);
   const lishtvaOptionsAll = addonRows.filter((r) => r.collection === collectionKey && r.addon_type === "lishtva" && r.tariff === tariff);
@@ -459,7 +461,10 @@ export default function QuoteBuilder({
         unitPrice: serviceePrice(isAluEdge ? "VRIZKA_FULL_PRICE_ALU" : "VRIZKA_FULL_PRICE"),
       });
     if (shumo) rows.push({ label: "Шумоізоляція", unitPrice: serviceePrice("SHUMO_PRICE") });
-    if (alumPaint) rows.push({ label: "Фарбування алюм. крайки", unitPrice: serviceePrice("ALUM_PAINT_PRICE") });
+    if (isAlumEdgePaintSurcharge)
+      rows.push({ label: `Фарбування алюм. крайки (${edgeColor})`, unitPrice: serviceePrice("ALUM_PAINT_PRICE") });
+    if (isHiddenDoors && alumPaintHiddenDoors)
+      rows.push({ label: "Фарбування алюм. крайки", unitPrice: serviceePrice("ALUM_PAINT_PRICE") });
     if (isKorobRalModel && ralNcsColor.trim())
       rows.push({ label: "Фарбування коробки прих. монтажу по RAL", unitPrice: serviceePrice("PAINT_KOROB_RAL_PRICE") });
     return rows;
@@ -484,7 +489,10 @@ export default function QuoteBuilder({
     dobir,
     vrizka,
     shumo,
-    alumPaint,
+    isAlumEdgePaintSurcharge,
+    edgeColor,
+    isHiddenDoors,
+    alumPaintHiddenDoors,
     isKorobRalModel,
     ralNcsColor,
     nonstdSize,
@@ -584,7 +592,7 @@ export default function QuoteBuilder({
     setDobir("");
     setVrizka("none");
     setShumo(false);
-    setAlumPaint(false);
+    setAlumPaintHiddenDoors(false);
     setRalNcsColor("");
     setNonstdSize(false);
     setManualWidth("");
@@ -1367,9 +1375,13 @@ export default function QuoteBuilder({
               </label>
             )}
 
-            {(collectionKey === "etalon" || isHiddenDoors) && (
+            {isHiddenDoors && (
               <label className="flex items-center gap-2 text-sm text-navy-dark">
-                <input type="checkbox" checked={alumPaint} onChange={(e) => setAlumPaint(e.target.checked)} />
+                <input
+                  type="checkbox"
+                  checked={alumPaintHiddenDoors}
+                  onChange={(e) => setAlumPaintHiddenDoors(e.target.checked)}
+                />
                 Фарбування алюм. крайки
               </label>
             )}

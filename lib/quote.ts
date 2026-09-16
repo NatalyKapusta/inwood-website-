@@ -91,9 +91,11 @@ export function isAddonCompatible(collection: string, variantType: VariantType, 
     return variantType === "ral" ? isRal : !isRal;
   }
   if (collection === "etalon") {
-    // ETALON без алюмінієвої крайки — короби/лиштви INSIDE (алюмінієвий
-    // профіль) для цієї лінії не продаються.
-    return !itemLabel.includes("прихованого монтажу") && !itemLabel.includes("INSIDE");
+    const isHiddenKorob = itemLabel.includes("прихованого монтажу");
+    // Короб прихованого монтажу STANDART/LUX продається тільки з варіантом
+    // "Алюмінієва крайка INSIDE" — для бази й немає сенсу, її там немає.
+    if (variantType === "alu-inside") return isHiddenKorob || !itemLabel.includes("INSIDE");
+    return !isHiddenKorob && !itemLabel.includes("INSIDE");
   }
   return true;
 }
