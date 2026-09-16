@@ -316,8 +316,9 @@ export default function QuoteBuilder({
 
   // Колір крайки (торця полотна) — обов'язкове поле для всіх моделей
   // ETALON/NOMINAL/FREZZATTI/PERFETTO, щоб на заводі й у друкованій КП було
-  // видно, який колір торця замовлено. Для "Алюмінієва крайка INSIDE" —
-  // чорний і RAL додають автоматичну націнку (ALUM_PAINT_PRICE), сірий — без доплати.
+  // видно, який колір торця замовлено. Для варіантів з алюмінієвою крайкою
+  // (звичайна й INSIDE) — чорний і RAL додають автоматичну націнку
+  // (ALUM_PAINT_PRICE), сірий — без доплати.
   const isEdgeColorModel = !isSpecialLine && !isHiddenDoors && ["etalon", "nominal", "frezzatti", "perfetto"].includes(collectionKey) && !!modelCode;
   const edgeColorOptions = isAluEdge
     ? ["Сірий", "Чорний", "RAL"]
@@ -331,9 +332,10 @@ export default function QuoteBuilder({
     (collectionKey === "nominal" && /^NL-\d+$/.test(modelCode) && modelCode !== "NL-01");
 
   // Сторона відкривання — інформаційне поле, на ціну не впливає, обов'язкове
-  // для моделей ETALON. У "Алюмінієва крайка INSIDE" розсувних немає.
+  // для моделей ETALON. Розсувних немає лише у варіанту "Алюмінієва крайка
+  // INSIDE" — у бази й у звичайної "Алюмінієва крайка" вони є.
   const isOpeningSideModel = collectionKey === "etalon" && !!modelCode;
-  const openingSideOptions = isAluEdge ? ["Ліва", "Права"] : ["Ліва", "Права", "Розсувні"];
+  const openingSideOptions = variantType === "alu-inside" ? ["Ліва", "Права"] : ["Ліва", "Права", "Розсувні"];
 
   const korobOptionsAll = addonRows.filter((r) => r.collection === collectionKey && r.addon_type === "korob" && r.tariff === tariff);
   const lishtvaOptionsAll = addonRows.filter((r) => r.collection === collectionKey && r.addon_type === "lishtva" && r.tariff === tariff);

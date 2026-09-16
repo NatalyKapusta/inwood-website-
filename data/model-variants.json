@@ -7,6 +7,11 @@
         "label": "База (ПВХ-кромка)"
       },
       {
+        "code": "ET-01-ALU",
+        "variantType": "alu",
+        "label": "Алюмінієва крайка"
+      },
+      {
         "code": "ET-01-ALU-INSIDE",
         "variantType": "alu-inside",
         "label": "Алюмінієва крайка INSIDE"
@@ -17,6 +22,11 @@
         "code": "ET-02",
         "variantType": "base",
         "label": "База (ПВХ-кромка)"
+      },
+      {
+        "code": "ET-02-ALU",
+        "variantType": "alu",
+        "label": "Алюмінієва крайка"
       },
       {
         "code": "ET-02-ALU-INSIDE",
@@ -31,6 +41,11 @@
         "label": "База (ПВХ-кромка)"
       },
       {
+        "code": "ET-03-ALU",
+        "variantType": "alu",
+        "label": "Алюмінієва крайка"
+      },
+      {
         "code": "ET-03-ALU-INSIDE",
         "variantType": "alu-inside",
         "label": "Алюмінієва крайка INSIDE"
@@ -41,6 +56,11 @@
         "code": "ET-04",
         "variantType": "base",
         "label": "База (ПВХ-кромка)"
+      },
+      {
+        "code": "ET-04-ALU",
+        "variantType": "alu",
+        "label": "Алюмінієва крайка"
       },
       {
         "code": "ET-04-ALU-INSIDE",
@@ -55,6 +75,11 @@
         "label": "База (ПВХ-кромка)"
       },
       {
+        "code": "ET-05-ALU",
+        "variantType": "alu",
+        "label": "Алюмінієва крайка"
+      },
+      {
         "code": "ET-05-ALU-INSIDE",
         "variantType": "alu-inside",
         "label": "Алюмінієва крайка INSIDE"
@@ -65,6 +90,11 @@
         "code": "ET-06",
         "variantType": "base",
         "label": "База (ПВХ-кромка)"
+      },
+      {
+        "code": "ET-06-ALU",
+        "variantType": "alu",
+        "label": "Алюмінієва крайка"
       },
       {
         "code": "ET-06-ALU-INSIDE",
@@ -79,6 +109,11 @@
         "label": "База (ПВХ-кромка)"
       },
       {
+        "code": "ET-07-ALU",
+        "variantType": "alu",
+        "label": "Алюмінієва крайка"
+      },
+      {
         "code": "ET-07-ALU-INSIDE",
         "variantType": "alu-inside",
         "label": "Алюмінієва крайка INSIDE"
@@ -89,6 +124,11 @@
         "code": "ET-08",
         "variantType": "base",
         "label": "База (ПВХ-кромка)"
+      },
+      {
+        "code": "ET-08-ALU",
+        "variantType": "alu",
+        "label": "Алюмінієва крайка"
       },
       {
         "code": "ET-08-ALU-INSIDE",
@@ -103,6 +143,11 @@
         "label": "База (ПВХ-кромка)"
       },
       {
+        "code": "ET-09-ALU",
+        "variantType": "alu",
+        "label": "Алюмінієва крайка"
+      },
+      {
         "code": "ET-09-ALU-INSIDE",
         "variantType": "alu-inside",
         "label": "Алюмінієва крайка INSIDE"
@@ -113,6 +158,11 @@
         "code": "ET-10",
         "variantType": "base",
         "label": "База (ПВХ-кромка)"
+      },
+      {
+        "code": "ET-10-ALU",
+        "variantType": "alu",
+        "label": "Алюмінієва крайка"
       },
       {
         "code": "ET-10-ALU-INSIDE",
@@ -127,6 +177,11 @@
         "label": "База (ПВХ-кромка)"
       },
       {
+        "code": "ET-11-ALU",
+        "variantType": "alu",
+        "label": "Алюмінієва крайка"
+      },
+      {
         "code": "ET-11-ALU-INSIDE",
         "variantType": "alu-inside",
         "label": "Алюмінієва крайка INSIDE"
@@ -137,6 +192,11 @@
         "code": "ET-12",
         "variantType": "base",
         "label": "База (ПВХ-кромка)"
+      },
+      {
+        "code": "ET-12-ALU",
+        "variantType": "alu",
+        "label": "Алюмінієва крайка"
       },
       {
         "code": "ET-12-ALU-INSIDE",
@@ -151,6 +211,11 @@
         "label": "База (ПВХ-кромка)"
       },
       {
+        "code": "ET-13-ALU",
+        "variantType": "alu",
+        "label": "Алюмінієва крайка"
+      },
+      {
         "code": "ET-13-ALU-INSIDE",
         "variantType": "alu-inside",
         "label": "Алюмінієва крайка INSIDE"
@@ -161,6 +226,11 @@
         "code": "ET-14",
         "variantType": "base",
         "label": "База (ПВХ-кромка)"
+      },
+      {
+        "code": "ET-14-ALU",
+        "variantType": "alu",
+        "label": "Алюмінієва крайка"
       },
       {
         "code": "ET-14-ALU-INSIDE",
@@ -175,6 +245,11 @@
         "label": "База (ПВХ-кромка)"
       },
       {
+        "code": "ET-15-ALU",
+        "variantType": "alu",
+        "label": "Алюмінієва крайка"
+      },
+      {
         "code": "ET-15-ALU-INSIDE",
         "variantType": "alu-inside",
         "label": "Алюмінієва крайка INSIDE"
@@ -187,6 +262,11 @@
         "label": "База (ПВХ-кромка)"
       },
       {
+        "code": "ET-16-ALU",
+        "variantType": "alu",
+        "label": "Алюмінієва крайка"
+      },
+      {
         "code": "ET-16-ALU-INSIDE",
         "variantType": "alu-inside",
         "label": "Алюмінієва крайка INSIDE"
@@ -197,6 +277,11 @@
         "code": "ET-17",
         "variantType": "base",
         "label": "База (ПВХ-кромка)"
+      },
+      {
+        "code": "ET-17-ALU",
+        "variantType": "alu",
+        "label": "Алюмінієва крайка"
       },
       {
         "code": "ET-17-ALU-INSIDE",
@@ -435,6 +520,23 @@
     "ET-14-ALU-INSIDE": "alu-inside",
     "ET-15-ALU-INSIDE": "alu-inside",
     "ET-16-ALU-INSIDE": "alu-inside",
-    "ET-17-ALU-INSIDE": "alu-inside"
+    "ET-17-ALU-INSIDE": "alu-inside",
+    "ET-01-ALU": "alu",
+    "ET-02-ALU": "alu",
+    "ET-03-ALU": "alu",
+    "ET-04-ALU": "alu",
+    "ET-05-ALU": "alu",
+    "ET-06-ALU": "alu",
+    "ET-07-ALU": "alu",
+    "ET-08-ALU": "alu",
+    "ET-09-ALU": "alu",
+    "ET-10-ALU": "alu",
+    "ET-11-ALU": "alu",
+    "ET-12-ALU": "alu",
+    "ET-13-ALU": "alu",
+    "ET-14-ALU": "alu",
+    "ET-15-ALU": "alu",
+    "ET-16-ALU": "alu",
+    "ET-17-ALU": "alu"
   }
 }

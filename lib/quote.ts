@@ -78,13 +78,9 @@ export function isAluEdgeVariant(variantType: VariantType) {
 
 // Мірить filterAddonsByRal-фільтр з оригінального калькулятора:
 // FREZZATTI/PERFETTO — короб/лиштва/добір фільтруються по підрядку "RAL/NCS".
-// ETALON — короб/лиштва/добір СПІЛЬНІ для всіх варіантів (база/алюм. крайка/INSIDE) —
-// в оригінальному калькуляторі вони ніколи не фільтруються по варіанту полотна
-// (це підтверджено кодом калькулятора: перефільтровується лише FREZZATTI/PERFETTO).
-// Добір узагалі не має окремих INSIDE-позицій, тож фільтр по "INSIDE" робив
-// добір (і лиштву) порожніми для варіанту "алюм. крайка INSIDE" — це був баг.
-// Короб прихованого монтажу лишається виключеним з цього списку — він продається
-// окремою колекцією "Двері прихованого монтажу".
+// ETALON — короб/лиштва/добір INSIDE (алюмінієвий профіль) не продаються в
+// жодному з варіантів; короб прихованого монтажу STANDART/LUX — тільки з
+// варіантами "Алюмінієва крайка" і "Алюмінієва крайка INSIDE", не з базою.
 export function isAddonCompatible(collection: string, variantType: VariantType, itemLabel: string) {
   if (collection === "frezzatti" || collection === "perfetto") {
     const isRal = itemLabel.includes("RAL/NCS");
@@ -92,9 +88,11 @@ export function isAddonCompatible(collection: string, variantType: VariantType, 
   }
   if (collection === "etalon") {
     const isHiddenKorob = itemLabel.includes("прихованого монтажу");
-    // Короб прихованого монтажу STANDART/LUX продається тільки з варіантом
-    // "Алюмінієва крайка INSIDE" — для бази й немає сенсу, її там немає.
-    if (variantType === "alu-inside") return isHiddenKorob || !itemLabel.includes("INSIDE");
+    // Короб прихованого монтажу STANDART/LUX продається з варіантами
+    // "Алюмінієва крайка" і "Алюмінієва крайка INSIDE" — для бази сенсу
+    // немає, її там немає. Короби INSIDE (Телескопічний/Компланарний INSIDE)
+    // не продаються в жодному з варіантів ETALON.
+    if (isAluEdgeVariant(variantType)) return isHiddenKorob || !itemLabel.includes("INSIDE");
     return !isHiddenKorob && !itemLabel.includes("INSIDE");
   }
   return true;
