@@ -61,13 +61,13 @@ export default async function PortalLayout({ children }: { children: ReactNode }
     <html lang="uk" className={`${playfairDisplay.variable} ${manrope.variable}`}>
       <body className="min-h-screen bg-panel-alt">
         <header className="bg-navy-dark text-white">
-          <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4">
-            <Link href="/portal" className="flex items-center gap-3">
+          <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-4 gap-y-2 px-4 py-4">
+            <Link href="/portal" className="flex shrink-0 items-center gap-3">
               <Image src="/logo/inwood-logo-gold.svg" alt="IN WOOD" width={90} height={62} priority />
               <span className="font-serif text-lg font-bold text-gold">Партнерський портал</span>
             </Link>
             {user && (
-              <nav className="flex items-center gap-6 text-sm uppercase tracking-wide">
+              <nav className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm uppercase tracking-wide">
                 <Link href="/portal" className="text-white/85 hover:text-gold">
                   Кабінет
                 </Link>
