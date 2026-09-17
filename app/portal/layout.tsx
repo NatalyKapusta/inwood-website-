@@ -94,6 +94,11 @@ export default async function PortalLayout({ children }: { children: ReactNode }
                     Дилери
                   </Link>
                 )}
+                {effectiveIsOwner && (
+                  <Link href="/portal/staff-notes" className="text-white/85 hover:text-gold">
+                    Співробітники
+                  </Link>
+                )}
                 {isOwner && <ViewAsSwitcher current={viewingAs ?? ""} returnTo="/portal" />}
                 <LogoutButton />
               </nav>

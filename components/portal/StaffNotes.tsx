@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
-import { emptyDealerNote, type DealerNote } from "@/lib/dealerNotes";
+import { emptyStaffNote, type StaffNote } from "@/lib/staffNotes";
 
 const inputCls =
   "w-full rounded-lg border border-navy-dim/20 bg-panel px-2.5 py-1.5 text-sm text-navy-dark outline-none focus:border-gold";
@@ -13,9 +13,9 @@ function csvCell(v: unknown): string {
   return /[";\n,]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
 }
 
-export default function DealerNotes({ initialNotes }: { initialNotes: DealerNote[] }) {
+export default function StaffNotes({ initialNotes }: { initialNotes: StaffNote[] }) {
   const supabase = createClient();
-  const [notes, setNotes] = useState<DealerNote[]>(initialNotes);
+  const [notes, setNotes] = useState<StaffNote[]>(initialNotes);
   const [busy, setBusy] = useState(false);
   const [refreshedNote, setRefreshedNote] = useState("");
   const [search, setSearch] = useState("");
@@ -23,14 +23,12 @@ export default function DealerNotes({ initialNotes }: { initialNotes: DealerNote
   const writeTimers = useRef<Record<string, ReturnType<typeof setTimeout>>>({});
 
   const refetch = useCallback(async () => {
-    const { data } = await supabase.from("dealer_notes").select("*").order("sort_order", { ascending: true });
+    const { data } = await supabase.from("staff_notes").select("*").order("sort_order", { ascending: true });
     if (!data) return;
-    setNotes(data as DealerNote[]);
+    setNotes(data as StaffNote[]);
     setRefreshedNote("Оновлено " + new Date().toLocaleTimeString("uk-UA", { hour: "2-digit", minute: "2-digit" }));
   }, [supabase]);
 
-  // Немає повноцінного realtime (це список для однієї людини) — просто
-  // підтягуємо свіжі дані, коли повертаються на вкладку.
   useEffect(() => {
     function onFocus() {
       refetch();
@@ -39,12 +37,12 @@ export default function DealerNotes({ initialNotes }: { initialNotes: DealerNote
     return () => window.removeEventListener("focus", onFocus);
   }, [refetch]);
 
-  function updateField<K extends keyof DealerNote>(id: string, field: K, value: DealerNote[K]) {
+  function updateField<K extends keyof StaffNote>(id: string, field: K, value: StaffNote[K]) {
     setNotes((prev) => prev.map((n) => (n.id === id ? { ...n, [field]: value } : n)));
     clearTimeout(writeTimers.current[id + ":" + field]);
     writeTimers.current[id + ":" + field] = setTimeout(() => {
       supabase
-        .from("dealer_notes")
+        .from("staff_notes")
         .update({ [field]: value })
         .eq("id", id)
         .then();
@@ -54,61 +52,31 @@ export default function DealerNotes({ initialNotes }: { initialNotes: DealerNote
   async function addNote() {
     setBusy(true);
     const { data, error } = await supabase
-      .from("dealer_notes")
-      .insert({ ...emptyDealerNote, sort_order: notes.length + 1 })
+      .from("staff_notes")
+      .insert({ ...emptyStaffNote, sort_order: notes.length + 1 })
       .select()
       .single();
     setBusy(false);
-    if (!error && data) setNotes((prev) => [...prev, data as DealerNote]);
+    if (!error && data) setNotes((prev) => [...prev, data as StaffNote]);
   }
 
   async function removeNote(id: string) {
     setNotes((prev) => prev.filter((n) => n.id !== id));
-    await supabase.from("dealer_notes").delete().eq("id", id);
+    await supabase.from("staff_notes").delete().eq("id", id);
   }
 
   function downloadCsv() {
-    const header = [
-      "Дилер",
-      "ФОП",
-      "Адреса",
-      "Телефон",
-      "Менеджер",
-      "Форма договору",
-      "Моделі",
-      "Останній контакт",
-      "Email",
-      "Коментар",
-      "Логін",
-      "Пароль",
-    ];
+    const header = ["Ім'я", "Посада", "Email", "Пароль", "Телефон", "Коментар"];
     const lines = [header.map(csvCell).join(";")];
     notes.forEach((n) => {
-      lines.push(
-        [
-          n.dealer_name,
-          n.company_name,
-          n.address,
-          n.phone,
-          n.manager,
-          n.contract_form,
-          n.models_discussed,
-          n.last_contact_date ?? "",
-          n.email,
-          n.comment,
-          n.portal_login,
-          n.portal_password,
-        ]
-          .map(csvCell)
-          .join(";")
-      );
+      lines.push([n.full_name, n.position, n.email, n.password, n.phone, n.comment].map(csvCell).join(";"));
     });
     const csv = "﻿" + lines.join("\r\n");
     const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "dilery-" + new Date().toISOString().slice(0, 10) + ".csv";
+    a.download = "spivrobitnyky-" + new Date().toISOString().slice(0, 10) + ".csv";
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -118,9 +86,7 @@ export default function DealerNotes({ initialNotes }: { initialNotes: DealerNote
   const filtered = notes.filter((n) => {
     if (!search.trim()) return true;
     const q = search.trim().toLowerCase();
-    return [n.dealer_name, n.company_name, n.address, n.phone, n.manager, n.email, n.comment].some((v) =>
-      v.toLowerCase().includes(q)
-    );
+    return [n.full_name, n.position, n.email, n.phone, n.comment].some((v) => v.toLowerCase().includes(q));
   });
 
   return (
@@ -128,12 +94,12 @@ export default function DealerNotes({ initialNotes }: { initialNotes: DealerNote
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <p className="text-xs font-bold uppercase tracking-wide text-gold-dim">IN WOOD · приватно, тільки ви</p>
-          <h1 className="font-serif text-2xl font-bold text-navy-dark sm:text-3xl">Дилери</h1>
+          <h1 className="font-serif text-2xl font-bold text-navy-dark sm:text-3xl">Співробітники</h1>
         </div>
         <input
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          placeholder="Пошук за назвою, телефоном, email..."
+          placeholder="Пошук за іменем, поштою, телефоном..."
           className="w-full max-w-xs rounded-lg border border-navy-dim/20 bg-panel px-3 py-2 text-sm text-navy-dark outline-none focus:border-gold"
         />
       </div>
@@ -144,15 +110,15 @@ export default function DealerNotes({ initialNotes }: { initialNotes: DealerNote
             <div className="flex flex-wrap items-start gap-3 border-b border-navy-dim/10 bg-panel-alt px-5 py-4">
               <div className="min-w-[200px] flex-1">
                 <input
-                  value={n.dealer_name}
-                  onChange={(e) => updateField(n.id, "dealer_name", e.target.value)}
-                  placeholder="Назва дилера"
+                  value={n.full_name}
+                  onChange={(e) => updateField(n.id, "full_name", e.target.value)}
+                  placeholder="Ім'я співробітника"
                   className="w-full border-none bg-transparent font-serif text-lg font-bold text-navy-dark outline-none"
                 />
                 <input
-                  value={n.company_name}
-                  onChange={(e) => updateField(n.id, "company_name", e.target.value)}
-                  placeholder="ФОП / ТОВ"
+                  value={n.position}
+                  onChange={(e) => updateField(n.id, "position", e.target.value)}
+                  placeholder="посада"
                   className="w-full border-none bg-transparent text-xs text-navy-dim outline-none"
                 />
               </div>
@@ -165,49 +131,12 @@ export default function DealerNotes({ initialNotes }: { initialNotes: DealerNote
               </button>
             </div>
 
-            <div className="grid grid-cols-1 gap-3 px-5 py-4 sm:grid-cols-2 lg:grid-cols-3">
-              <label className="flex flex-col gap-1">
-                <span className={labelCls}>Адреса</span>
-                <input value={n.address} onChange={(e) => updateField(n.id, "address", e.target.value)} className={inputCls} />
-              </label>
+            <div className="grid grid-cols-1 gap-3 px-5 py-4 sm:grid-cols-2">
               <label className="flex flex-col gap-1">
                 <span className={labelCls}>Телефон</span>
                 <input value={n.phone} onChange={(e) => updateField(n.id, "phone", e.target.value)} className={inputCls} />
               </label>
-              <label className="flex flex-col gap-1">
-                <span className={labelCls}>Email</span>
-                <input value={n.email} onChange={(e) => updateField(n.id, "email", e.target.value)} className={inputCls} />
-              </label>
-              <label className="flex flex-col gap-1">
-                <span className={labelCls}>Менеджер</span>
-                <input value={n.manager} onChange={(e) => updateField(n.id, "manager", e.target.value)} className={inputCls} />
-              </label>
-              <label className="flex flex-col gap-1">
-                <span className={labelCls}>Форма договору</span>
-                <input
-                  value={n.contract_form}
-                  onChange={(e) => updateField(n.id, "contract_form", e.target.value)}
-                  className={inputCls}
-                />
-              </label>
-              <label className="flex flex-col gap-1">
-                <span className={labelCls}>Останній контакт</span>
-                <input
-                  type="date"
-                  value={n.last_contact_date ?? ""}
-                  onChange={(e) => updateField(n.id, "last_contact_date", e.target.value || null)}
-                  className={inputCls}
-                />
-              </label>
-              <label className="flex flex-col gap-1 sm:col-span-2 lg:col-span-3">
-                <span className={labelCls}>Моделі / що обговорювали</span>
-                <input
-                  value={n.models_discussed}
-                  onChange={(e) => updateField(n.id, "models_discussed", e.target.value)}
-                  className={inputCls}
-                />
-              </label>
-              <label className="flex flex-col gap-1 sm:col-span-2 lg:col-span-3">
+              <label className="flex flex-col gap-1 sm:col-span-2">
                 <span className={labelCls}>Коментар</span>
                 <input value={n.comment} onChange={(e) => updateField(n.id, "comment", e.target.value)} className={inputCls} />
               </label>
@@ -215,11 +144,10 @@ export default function DealerNotes({ initialNotes }: { initialNotes: DealerNote
 
             <div className="grid grid-cols-1 gap-3 border-t border-navy-dim/10 bg-panel-alt/60 px-5 py-4 sm:grid-cols-2">
               <label className="flex flex-col gap-1">
-                <span className={labelCls}>Логін у кабінеті (якщо створено)</span>
+                <span className={labelCls}>Email (логін у кабінеті)</span>
                 <input
-                  value={n.portal_login}
-                  onChange={(e) => updateField(n.id, "portal_login", e.target.value)}
-                  placeholder="email для входу"
+                  value={n.email}
+                  onChange={(e) => updateField(n.id, "email", e.target.value)}
                   autoComplete="off"
                   data-lpignore="true"
                   data-1p-ignore
@@ -231,8 +159,8 @@ export default function DealerNotes({ initialNotes }: { initialNotes: DealerNote
                 <div className="flex items-center gap-2">
                   <input
                     type={visiblePasswords[n.id] ? "text" : "password"}
-                    value={n.portal_password}
-                    onChange={(e) => updateField(n.id, "portal_password", e.target.value)}
+                    value={n.password}
+                    onChange={(e) => updateField(n.id, "password", e.target.value)}
                     autoComplete="new-password"
                     data-lpignore="true"
                     data-1p-ignore
@@ -252,7 +180,7 @@ export default function DealerNotes({ initialNotes }: { initialNotes: DealerNote
         ))}
         {filtered.length === 0 && (
           <p className="rounded-2xl bg-panel px-5 py-6 text-center text-sm text-navy-dim shadow-sm">
-            {notes.length === 0 ? "Поки що порожньо — додайте першого дилера." : "Нічого не знайдено за пошуком."}
+            {notes.length === 0 ? "Поки що порожньо — додайте першого співробітника." : "Нічого не знайдено за пошуком."}
           </p>
         )}
       </div>
@@ -262,7 +190,7 @@ export default function DealerNotes({ initialNotes }: { initialNotes: DealerNote
         disabled={busy}
         className="mt-5 w-full rounded-2xl border-2 border-dashed border-navy-dim/25 bg-panel py-3.5 text-sm font-bold text-gold-dim hover:border-gold hover:bg-panel-alt"
       >
-        + Додати дилера
+        + Додати співробітника
       </button>
 
       <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
