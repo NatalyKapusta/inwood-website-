@@ -205,7 +205,6 @@ export default function QuoteBuilder({
   const [qty, setQty] = useState(1);
 
   const [positions, setPositions] = useState<QuotePosition[]>([]);
-  const [saveMessage, setSaveMessage] = useState<string | null>(null);
 
   useEffect(() => {
     const supabase = createClient();
@@ -787,31 +786,6 @@ export default function QuoteBuilder({
     win.document.close();
     win.focus();
     setTimeout(() => win.print(), 300);
-  }
-
-  async function saveToHistory() {
-    const supabase = createClient();
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-    if (!user || !tariff) return;
-    const { error } = await supabase.from("quotes").insert({
-      client_name: clientName || null,
-      client_contact: clientContact || null,
-      consultant_name: consultantName || null,
-      consultant_contact: consultantPhone || null,
-      comment: comment || null,
-      tariff,
-      discount_type: discountValue > 0 ? discountType : null,
-      discount_value: discountValue > 0 ? discountValue : null,
-      currency: currency === "none" ? "UAH" : currency,
-      exchange_rate: hasRate ? exchangeRate : null,
-      items: positions,
-      subtotal,
-      total,
-      created_by: user.id,
-    });
-    setSaveMessage(error ? `Помилка збереження: ${error.message}` : "Збережено в історію КП");
   }
 
   if (loading) return <p className="mt-6 text-navy-dim">Завантаження цін...</p>;
@@ -1580,15 +1554,7 @@ export default function QuoteBuilder({
               >
                 Друкувати / PDF
               </button>
-              <button
-                type="button"
-                onClick={saveToHistory}
-                className="rounded-full border border-navy-dim/30 px-6 py-3 font-semibold text-navy-dim transition hover:border-gold hover:text-navy-dark"
-              >
-                Зберегти в історію
-              </button>
             </div>
-            {saveMessage && <p className="mt-2 text-sm text-navy-dim">{saveMessage}</p>}
           </div>
         )}
       </div>
