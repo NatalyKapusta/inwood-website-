@@ -78,21 +78,20 @@ export function isAluEdgeVariant(variantType: VariantType) {
 
 // Мірить filterAddonsByRal-фільтр з оригінального калькулятора:
 // FREZZATTI/PERFETTO — короб/лиштва/добір фільтруються по підрядку "RAL/NCS".
-// ETALON — короб/лиштва/добір INSIDE (алюмінієвий профіль) не продаються в
-// жодному з варіантів; короб прихованого монтажу STANDART/LUX — тільки з
-// варіантами "Алюмінієва крайка" і "Алюмінієва крайка INSIDE", не з базою.
+// ETALON — короб прихованого монтажу STANDART/LUX продається з варіантами
+// "Алюмінієва крайка" і "Алюмінієва крайка INSIDE", не з базою. Короби
+// Телескопічний/Компланарний INSIDE — тільки з "Алюмінієва крайка INSIDE"
+// (кожен зі своєю ціною за прайсом для всіх тарифів); з базою і зі звичайною
+// "Алюмінієва крайка" не продаються.
 export function isAddonCompatible(collection: string, variantType: VariantType, itemLabel: string) {
   if (collection === "frezzatti" || collection === "perfetto") {
     const isRal = itemLabel.includes("RAL/NCS");
     return variantType === "ral" ? isRal : !isRal;
   }
   if (collection === "etalon") {
+    if (variantType === "alu-inside") return true;
     const isHiddenKorob = itemLabel.includes("прихованого монтажу");
-    // Короб прихованого монтажу STANDART/LUX продається з варіантами
-    // "Алюмінієва крайка" і "Алюмінієва крайка INSIDE" — для бази сенсу
-    // немає, її там немає. Короби INSIDE (Телескопічний/Компланарний INSIDE)
-    // не продаються в жодному з варіантів ETALON.
-    if (isAluEdgeVariant(variantType)) return isHiddenKorob || !itemLabel.includes("INSIDE");
+    if (variantType === "alu") return isHiddenKorob || !itemLabel.includes("INSIDE");
     return !isHiddenKorob && !itemLabel.includes("INSIDE");
   }
   return true;
