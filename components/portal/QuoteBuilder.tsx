@@ -726,6 +726,12 @@ export default function QuoteBuilder({
   .addon-photo { width: 28px; height: 20px; object-fit: contain; vertical-align: middle; margin-right: 6px; border-radius: 3px; background: #F7F6F2; }
   .totals { text-align: right; margin-top: 16px; font-size: 20px; font-weight: bold; color: #333958; }
   .footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid #eee; font-size: 12px; color: #8A90A6; text-align: center; }
+  /* html2pdf ріже документ на сторінки по фіксованій висоті пікселів канви —
+     без цього правила рядок таблиці чи блок підсумку, що потрапляє на межу
+     сторінки, розрізається навпіл. break-inside/page-break-inside: avoid
+     розпізнається плагіном html2pdf і переносить елемент цілком на наступну
+     сторінку, якщо він не влазить у поточну. */
+  tr, .totals, .footer, .box { break-inside: avoid; page-break-inside: avoid; }
   @media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } .table-wrap { overflow-x: visible; } table { min-width: 0; } }
 </style>
 </head><body>
