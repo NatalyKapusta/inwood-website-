@@ -792,12 +792,45 @@ export default function QuoteBuilder({
   // отримати PDF було натиснути "Друкувати" і вручну обрати "Зберегти як
   // PDF" у списку принтерів, що люди губили. Тепер окрема кнопка одразу
   // генерує й скачує PDF-файл.
+  //
+  // html2pdf .from(htmlString) рендерить рядок у відʼєднаний від документа
+  // <div> і одразу його клонує — стилі з вбудованого <style> ще не встигають
+  // застосуватись до відʼєднаного вузла, тому PDF виходив без жодного
+  // оформлення. Замість цього пишемо документ у прихований iframe (з
+  // власним, ізольованим document — щоб не зачепити стилі самого порталу)
+  // і віддаємо в html2pdf вже готовий <html>, де стилі реально застосовані.
   const [pdfLoading, setPdfLoading] = useState(false);
   async function downloadPdf() {
     setPdfLoading(true);
+    const iframe = document.createElement("iframe");
     try {
       const html = buildDocumentHtml();
       const stamp = new Date().toISOString().slice(0, 16).replace(/[-:T]/g, "");
+
+      iframe.style.position = "fixed";
+      iframe.style.left = "-10000px";
+      iframe.style.top = "0";
+      iframe.style.width = "800px";
+      iframe.style.height = "1px";
+      document.body.appendChild(iframe);
+      const doc = iframe.contentDocument;
+      if (!doc) throw new Error("iframe document unavailable");
+      doc.open();
+      doc.write(html);
+      doc.close();
+
+      const images = Array.from(doc.images);
+      await Promise.all(
+        images.map((img) =>
+          img.complete
+            ? Promise.resolve()
+            : new Promise<void>((resolve) => {
+                img.onload = () => resolve();
+                img.onerror = () => resolve();
+              })
+        )
+      );
+
       const html2pdf = (await import("html2pdf.js")).default;
       await html2pdf()
         .set({
@@ -806,9 +839,10 @@ export default function QuoteBuilder({
           html2canvas: { scale: 2, useCORS: true },
           jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
         })
-        .from(html)
+        .from(doc.documentElement)
         .save();
     } finally {
+      iframe.remove();
       setPdfLoading(false);
     }
   }
