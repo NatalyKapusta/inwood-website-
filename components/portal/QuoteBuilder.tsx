@@ -788,6 +788,31 @@ export default function QuoteBuilder({
     setTimeout(() => win.print(), 300);
   }
 
+  // Пряме збереження в PDF без діалогу друку — раніше єдиним способом
+  // отримати PDF було натиснути "Друкувати" і вручну обрати "Зберегти як
+  // PDF" у списку принтерів, що люди губили. Тепер окрема кнопка одразу
+  // генерує й скачує PDF-файл.
+  const [pdfLoading, setPdfLoading] = useState(false);
+  async function downloadPdf() {
+    setPdfLoading(true);
+    try {
+      const html = buildDocumentHtml();
+      const stamp = new Date().toISOString().slice(0, 16).replace(/[-:T]/g, "");
+      const html2pdf = (await import("html2pdf.js")).default;
+      await html2pdf()
+        .set({
+          margin: 0,
+          filename: `komertsiyna_propozytsiya_${stamp}.pdf`,
+          html2canvas: { scale: 2, useCORS: true },
+          jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+        })
+        .from(html)
+        .save();
+    } finally {
+      setPdfLoading(false);
+    }
+  }
+
   if (loading) return <p className="mt-6 text-navy-dim">Завантаження цін...</p>;
   if (loadError) return <p className="mt-6 rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">{loadError}</p>;
   if (availableTariffs.length === 0)
@@ -1542,8 +1567,16 @@ export default function QuoteBuilder({
             <div className="mt-4 flex flex-wrap gap-3">
               <button
                 type="button"
+                onClick={downloadPdf}
+                disabled={pdfLoading}
+                className="rounded-full bg-navy-dark px-6 py-3 font-semibold text-white transition hover:bg-gold hover:text-navy-dark disabled:opacity-60"
+              >
+                {pdfLoading ? "Формування PDF..." : "Зберегти PDF"}
+              </button>
+              <button
+                type="button"
                 onClick={downloadDocument}
-                className="rounded-full bg-navy-dark px-6 py-3 font-semibold text-white transition hover:bg-gold hover:text-navy-dark"
+                className="rounded-full border border-navy-dark px-6 py-3 font-semibold text-navy-dark transition hover:bg-navy-dark hover:text-white"
               >
                 Зберегти файл
               </button>
@@ -1552,7 +1585,7 @@ export default function QuoteBuilder({
                 onClick={printDocument}
                 className="rounded-full border border-navy-dark px-6 py-3 font-semibold text-navy-dark transition hover:bg-navy-dark hover:text-white"
               >
-                Друкувати / PDF
+                Друкувати
               </button>
             </div>
           </div>
