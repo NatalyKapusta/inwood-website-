@@ -332,9 +332,9 @@ export default function QuoteBuilder({
     (collectionKey === "nominal" && /^NL-\d+$/.test(modelCode) && modelCode !== "NL-01");
 
   // Сторона відкривання — інформаційне поле, на ціну не впливає, обов'язкове
-  // для моделей ETALON. Розсувних немає лише у варіанту "Алюмінієва крайка
-  // INSIDE" — у бази й у звичайної "Алюмінієва крайка" вони є.
-  const isOpeningSideModel = collectionKey === "etalon" && !!modelCode;
+  // для всіх моделей ETALON/NOMINAL/FREZZATTI/PERFETTO. Розсувних немає лише
+  // у варіанту "Алюмінієва крайка INSIDE" (тільки ETALON) — у решти вони є.
+  const isOpeningSideModel = !isSpecialLine && !isHiddenDoors && ["etalon", "nominal", "frezzatti", "perfetto"].includes(collectionKey) && !!modelCode;
   const openingSideOptions = variantType === "alu-inside" ? ["Ліва", "Права"] : ["Ліва", "Права", "Розсувні"];
 
   const korobOptionsAll = addonRows.filter((r) => r.collection === collectionKey && r.addon_type === "korob" && r.tariff === tariff);
