@@ -37,6 +37,10 @@
         "href": "/spivpratsya"
       },
       {
+        "label": "3D Fitting",
+        "href": "/3d-prymirka-dverei"
+      },
+      {
         "label": "For Developers",
         "href": "/dlya-zabudovnykiv"
       },
@@ -599,7 +603,7 @@
       { "label": "Hospitality business" },
       { "label": "Apartment complexes" },
       { "label": "International partnership", "href": "/export" },
-      { "label": "Designers", "href": "/spivpratsya#door-fit" },
+      { "label": "Designers", "href": "/3d-prymirka-dverei" },
       { "label": "Public and medical institutions", "href": "/derzhavnym-zakladam" }
     ],
     "toolsTitle": "Terms that work for your profit",
@@ -633,6 +637,7 @@
     "doorFitKicker": "A tool for designers and architects",
     "doorFitTitle": "3D door fitting — ETALON collection",
     "doorFitText": "Pick a model, leaf size, film colour, insert and hardware, place the door into your own interior, and download a ready 3D file (GLB/OBJ) for your project in CAD or BIM software.",
+    "doorFitCta": "Try the 3D fitting tool →",
     "strengthsTitle": "Product strengths",
     "strengthsText": "Technical solutions that deliver comfort and quality you can feel from the first touch.",
     "strengths": [
@@ -707,6 +712,31 @@
     "recruitCitiesTitle": "We're looking for dealers in these cities",
     "recruitCitiesText": "We're expanding our dealer network and inviting building-materials stores, furniture showrooms and entrepreneurs to partner with us.",
     "metaDescription": "Partner with IN WOOD: dealer, distributor and export cooperation for interior doors. Already exporting to Canada, France, Switzerland, Lithuania and Latvia — join our international partner network."
+  },
+  "doorFit3d": {
+    "pageTitle": "3D Door Fitting Tool — ETALON Collection | IN WOOD",
+    "metaDescription": "Free 3D configurator for ETALON doors: pick a model, size, film colour and hardware, place the door into your own interior, and download a ready GLB/OBJ file for your CAD or BIM project.",
+    "backLink": "← Cooperation",
+    "heading": "3D door fitting — ETALON collection",
+    "intro": "An online tool for architects, interior designers and developers: configure an ETALON door's model, size and colour, see how it looks in your space, and get a 3D file for your project right away.",
+    "benefitsTitle": "Why architects and designers use this tool",
+    "benefitsText": "Skip the back-and-forth with a manager — configure it yourself and get a project-ready file in minutes.",
+    "benefits": [
+      { "title": "20 ETALON models", "text": "The full ETALON range with frame, edge and film colour options — all in one tool." },
+      { "title": "GLB and OBJ export", "text": "The ready 3D file opens directly in CAD or BIM software and drops straight into your project." },
+      { "title": "Realistic interior scene", "text": "Place the door in a furnished room and check proportions, clearances and how it reads next to other materials." },
+      { "title": "No waiting on a manager", "text": "Change size, colour, insert and hardware yourself — the result updates on screen instantly." }
+    ],
+    "howTitle": "How it works",
+    "howText": "Four steps from picking a model to a project-ready file.",
+    "steps": [
+      { "title": "Pick a model", "text": "Choose one of the 20 ETALON collection models and a frame type." },
+      { "title": "Configure the look", "text": "Set the leaf size, film colour, insert and hardware." },
+      { "title": "Check it in a room", "text": "Place the door in the 3D room scene and view it from every angle." },
+      { "title": "Download the file", "text": "Download the finished model as GLB or OBJ for your CAD or BIM software." }
+    ],
+    "ctaTitle": "Need help with a project?",
+    "ctaText": "Leave a request — an IN WOOD manager will help you pick the right solution and send a commercial offer."
   },
   "kontakty": {
     "title": "IN WOOD — Interior door manufacturer contacts | Ukraine",

@@ -37,6 +37,10 @@
         "href": "/spivpratsya"
       },
       {
+        "label": "Przymiarka 3D",
+        "href": "/3d-prymirka-dverei"
+      },
+      {
         "label": "Deweloperom",
         "href": "/dlya-zabudovnykiv"
       },
@@ -617,7 +621,7 @@
       },
       {
         "label": "Projektanci",
-        "href": "/spivpratsya#door-fit"
+        "href": "/3d-prymirka-dverei"
       },
       {
         "label": "Instytucje państwowe i medyczne",
@@ -655,6 +659,7 @@
     "doorFitKicker": "Narzędzie dla projektantów i architektów",
     "doorFitTitle": "Przymiarka 3D drzwi ETALON",
     "doorFitText": "Wybierz model, rozmiar skrzydła, kolor okleiny, wstawkę i okucia, ustaw drzwi we własnym wnętrzu i od razu pobierz gotowy plik 3D (GLB/OBJ) do projektu w programie CAD lub BIM.",
+    "doorFitCta": "Wypróbuj przymiarkę 3D →",
     "strengthsTitle": "Mocne strony produktu",
     "strengthsText": "Rozwiązania techniczne zapewniające komfort i jakość, odczuwalne już od pierwszego dotyku.",
     "strengths": [
@@ -729,6 +734,31 @@
     "recruitCitiesTitle": "Szukamy dilerów w tych miastach",
     "recruitCitiesText": "Rozszerzamy sieć dilerską i zapraszamy do współpracy sklepy z materiałami budowlanymi, salony meblowe i przedsiębiorców.",
     "metaDescription": "Współpraca z IN WOOD dla dilerów, dystrybutorów, deweloperów nieruchomości i projektantów wnętrz — ceny hurtowe, osobisty menedżer i kalkulator online."
+  },
+  "doorFit3d": {
+    "pageTitle": "Przymiarka 3D drzwi ETALON online — dla architektów i projektantów | IN WOOD",
+    "metaDescription": "Darmowy konfigurator 3D drzwi ETALON: wybierz model, rozmiar, kolor okleiny i okucia, ustaw drzwi we własnym wnętrzu i pobierz gotowy plik GLB/OBJ do projektu w programie CAD lub BIM.",
+    "backLink": "← Współpraca",
+    "heading": "Przymiarka 3D drzwi ETALON",
+    "intro": "Narzędzie online dla architektów, projektantów wnętrz i deweloperów: dobierz model, rozmiar i kolor drzwi ETALON, sprawdź jak wyglądają w Twojej przestrzeni i od razu pobierz plik 3D do projektu.",
+    "benefitsTitle": "Po co to narzędzie architektowi lub projektantowi",
+    "benefitsText": "Zamiast długich ustaleń z opiekunem — samodzielny dobór i gotowy plik do projektu w kilka minut.",
+    "benefits": [
+      { "title": "20 modeli ETALON", "text": "Cała kolekcja ETALON z wariantami ościeżnicy, krawędzi i kolorów okleiny — w jednym narzędziu." },
+      { "title": "Eksport do GLB i OBJ", "text": "Gotowy plik 3D otwiera się bezpośrednio w programie CAD lub BIM i trafia do projektu bez przerysowywania." },
+      { "title": "Realistyczna scena wnętrza", "text": "Ustaw drzwi w umeblowanym pokoju i sprawdź proporcje, odstępy i zestawienie z innymi materiałami." },
+      { "title": "Bez czekania na opiekuna", "text": "Zmieniaj rozmiar, kolor, wstawkę i okucia samodzielnie — wynik widać od razu na ekranie." }
+    ],
+    "howTitle": "Jak to działa",
+    "howText": "Cztery kroki od wyboru modelu do gotowego pliku dla projektu.",
+    "steps": [
+      { "title": "Wybierz model", "text": "Wybierz jeden z 20 modeli kolekcji ETALON i typ ościeżnicy." },
+      { "title": "Dopracuj wygląd", "text": "Dobierz rozmiar skrzydła, kolor okleiny, wstawkę i okucia." },
+      { "title": "Sprawdź we wnętrzu", "text": "Ustaw drzwi w scenie 3D pokoju i obejrzyj z każdej strony." },
+      { "title": "Pobierz plik", "text": "Pobierz gotowy model w formacie GLB lub OBJ do programu CAD lub BIM." }
+    ],
+    "ctaTitle": "Potrzebujesz konsultacji dotyczącej projektu?",
+    "ctaText": "Zostaw zapytanie — opiekun IN WOOD pomoże dobrać rozwiązanie do Twojego projektu i wyśle ofertę handlową."
   },
   "kontakty": {
     "title": "IN WOOD — Kontakt do producenta drzwi wewnętrznych | Ukraina",
