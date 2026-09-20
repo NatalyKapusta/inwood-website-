@@ -91,8 +91,12 @@ body {
 /* Тренди 2026 на головній: повільна безшовна автопрокрутка по колу.
    Трек містить два однакових набори карток підряд — рух рівно на 50%
    його ширини повертає до візуально ідентичного кадру, і петля непомітна.
-   Пауза при наведенні/фокусі — щоб посилання всередині картки можна було
-   клікнути, поки вона не втекла вбік. */
+   Пауза при наведенні — щоб посилання всередині картки можна було
+   клікнути, поки вона не втекла вбік. Пауза лише на `hover: hover`
+   (пристрої з мишкою) — на тачскрінах мобільний Safari/Chrome "залипає"
+   в :hover після одного дотику й назавжди заморожує анімацію, тому на
+   телефоні картки просто крутяться без паузи (тап все одно клікає
+   посилання, бо рух дуже повільний). */
 @keyframes trends-marquee-scroll {
   from {
     transform: translateX(0);
@@ -104,7 +108,11 @@ body {
 .trends-marquee-track {
   animation: trends-marquee-scroll 45s linear infinite;
 }
-.trends-marquee:hover .trends-marquee-track,
+@media (hover: hover) {
+  .trends-marquee:hover .trends-marquee-track {
+    animation-play-state: paused;
+  }
+}
 .trends-marquee:focus-within .trends-marquee-track {
   animation-play-state: paused;
 }
