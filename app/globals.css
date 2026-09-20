@@ -87,3 +87,29 @@ body {
 .focus\:border-gold:focus {
   box-shadow: 0 0 0 3px rgba(227, 204, 161, 0.25);
 }
+
+/* Тренди 2026 на головній: повільна безшовна автопрокрутка по колу.
+   Трек містить два однакових набори карток підряд — рух рівно на 50%
+   його ширини повертає до візуально ідентичного кадру, і петля непомітна.
+   Пауза при наведенні/фокусі — щоб посилання всередині картки можна було
+   клікнути, поки вона не втекла вбік. */
+@keyframes trends-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.trends-marquee-track {
+  animation: trends-marquee-scroll 45s linear infinite;
+}
+.trends-marquee:hover .trends-marquee-track,
+.trends-marquee:focus-within .trends-marquee-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .trends-marquee-track {
+    animation: none;
+  }
+}

@@ -59,6 +59,9 @@ const trends2026Items = [
   { image: "/photos/frezzatti/fz-06-oksyd-temnyi.png", anchor: "frezzatti-FZ-06:oksyd-temnyi", imageScale: 1.06 },
   { image: "/photos/etalon/et-09-beton-siryi.png", anchor: "etalon-ET-09:beton-siryi" },
   { image: "/photos/nominal/nl-04-oksyd-svitlyi.png", anchor: "nominal-NL-04:oksyd-svitlyi" },
+  { image: "/photos/etalon/et-01-white.png", anchor: "etalon-ET-01:white" },
+  { image: "/photos/nominal/nl-05-oksyd-bilyi.png", anchor: "nominal-NL-05:oksyd-bilyi" },
+  { image: "/photos/frezzatti/fz-07-dub-nemo-late.png", anchor: "frezzatti-FZ-07:dub-nemo-late" },
 ];
 
 export default async function HomePage({
@@ -295,46 +298,62 @@ export default async function HomePage({
             {t.trends2026.title}
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-navy-dim">{t.trends2026.subtitle}</p>
+        </div>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {t.trends2026.items.map((item: { title: string; text: string; model: string }, i: number) => {
-              const { image, anchor, imageScale } = trends2026Items[i];
-              const [modelLine, colorLine] = item.model.split(" · ");
-              return (
-                <div key={item.title} className="overflow-hidden rounded-xl bg-panel shadow-sm">
-                  <div className="relative aspect-square bg-panel-alt">
-                    <Image
-                      src={image}
-                      alt={`Міжкімнатні двері IN WOOD, ${item.model}`}
-                      fill
-                      sizes="(min-width: 1024px) 300px, (min-width: 640px) 50vw, 100vw"
-                      className="object-contain p-4"
-                      style={imageScale ? { transform: `scale(${imageScale})` } : undefined}
-                    />
+        {/* Повільна автопрокрутка по колу: рендеримо картки двічі підряд і
+            анімуємо трек на -50% його ширини (keyframes у globals.css) —
+            стик двох копій непомітний, бо вони однакові. Пауза на hover/focus
+            дає змогу клікнути посилання "Асортимент → Модель → Колір";
+            анімація не заважає кліку й на телефоні (transform не блокує tap). */}
+        <div className="trends-marquee group relative mt-12 overflow-hidden">
+          <div className="trends-marquee-track flex w-max gap-6 px-4">
+            {[0, 1].map((dup) =>
+              t.trends2026.items.map((item: { title: string; text: string; model: string }, i: number) => {
+                const { image, anchor, imageScale } = trends2026Items[i];
+                const [modelLine, colorLine] = item.model.split(" · ");
+                return (
+                  <div
+                    key={`${dup}-${item.title}`}
+                    aria-hidden={dup === 1 ? true : undefined}
+                    className="w-64 shrink-0 overflow-hidden rounded-xl bg-panel shadow-sm sm:w-72"
+                  >
+                    <div className="relative aspect-square bg-panel-alt">
+                      <Image
+                        src={image}
+                        alt={`Міжкімнатні двері IN WOOD, ${item.model}`}
+                        fill
+                        sizes="(min-width: 640px) 288px, 256px"
+                        className="object-contain p-4"
+                        style={imageScale ? { transform: `scale(${imageScale})` } : undefined}
+                      />
+                    </div>
+                    <div className="p-5">
+                      <h3 className="font-serif text-base font-bold text-navy-dark">{item.title}</h3>
+                      <p className="mt-2 text-sm text-navy-dim">{item.text}</p>
+                      <Link
+                        href={`/${locale}/catalog#${anchor}`}
+                        tabIndex={dup === 1 ? -1 : undefined}
+                        className="mt-4 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-gold-dim hover:text-navy-dark"
+                      >
+                        <span>{t.trends2026.assortment}</span>
+                        <span aria-hidden="true">→</span>
+                        <span>{modelLine}</span>
+                        {colorLine && (
+                          <>
+                            <span aria-hidden="true">→</span>
+                            <span>{colorLine}</span>
+                          </>
+                        )}
+                      </Link>
+                    </div>
                   </div>
-                  <div className="p-5">
-                    <h3 className="font-serif text-base font-bold text-navy-dark">{item.title}</h3>
-                    <p className="mt-2 text-sm text-navy-dim">{item.text}</p>
-                    <Link
-                      href={`/${locale}/catalog#${anchor}`}
-                      className="mt-4 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-gold-dim hover:text-navy-dark"
-                    >
-                      <span>{t.trends2026.assortment}</span>
-                      <span aria-hidden="true">→</span>
-                      <span>{modelLine}</span>
-                      {colorLine && (
-                        <>
-                          <span aria-hidden="true">→</span>
-                          <span>{colorLine}</span>
-                        </>
-                      )}
-                    </Link>
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })
+            )}
           </div>
+        </div>
 
+        <div className="mx-auto max-w-7xl px-4">
           <div className="mt-10 text-center">
             <Link
               href={`/${locale}/blog/trendy-mizhkimnatnykh-dverei-2026`}

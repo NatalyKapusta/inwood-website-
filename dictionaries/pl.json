@@ -264,6 +264,21 @@
           "title": "Wysokie drzwi na wymiar",
           "text": "Skrzydła o zwiększonej wysokości (do 2300 mm) wizualnie wydłużają przestrzeń i wspierają nowoczesną architekturę.",
           "model": "NOMINAL NL-04 · Oksyd jasny"
+        },
+        {
+          "title": "Czysty biały minimalizm",
+          "text": "Gładka, jednolita płaszczyzna bez wizualnego szumu — uniwersalna baza dla stylu skandynawskiego, loftu czy klasyki.",
+          "model": "ETALON ET-01 · Biały"
+        },
+        {
+          "title": "Miękkie neutralne odcienie",
+          "text": "Ciepły biały oksyd zamiast zimnej szarości — tło, które pasuje do każdego wnętrza i się nie nudzi.",
+          "model": "NOMINAL NL-05 · Oksyd biały"
+        },
+        {
+          "title": "Ciepła faktura drewna",
+          "text": "Wyrazisty rysunek drewna w odcieniach latte wraca w miejsce zimnych faktur betonu i kamienia.",
+          "model": "FREZZATTI FZ-07 · Dąb Nemo Latte"
         }
       ]
     },
