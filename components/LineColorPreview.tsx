@@ -33,9 +33,10 @@ export default function LineColorPreview({
               type="button"
               onClick={() => setIdx(i)}
               title={c.label}
-              className={`h-6 w-6 rounded-full border-2 ${i === idx ? "border-gold" : "border-navy-dim/20"}`}
-              style={{ backgroundImage: `url(${c.image})`, backgroundSize: "cover", backgroundPosition: "center" }}
-            />
+              className={`relative h-6 w-6 overflow-hidden rounded-full border-2 ${i === idx ? "border-gold" : "border-navy-dim/20"}`}
+            >
+              <Image src={c.image} alt={c.label} fill sizes="24px" className="object-cover" />
+            </button>
           ))}
         </div>
       )}

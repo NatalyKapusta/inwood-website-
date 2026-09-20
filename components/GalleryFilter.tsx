@@ -92,19 +92,14 @@ function GalleryModelCard({
                   type="button"
                   onClick={() => setPhotoIdx(i)}
                   title={p.colorLabel ?? undefined}
-                  className={`h-6 w-6 rounded-full border-2 ${
+                  className={`relative h-6 w-6 overflow-hidden rounded-full border-2 ${
                     i === photoIdx ? "border-gold" : "border-navy-dim/20"
                   }`}
-                  style={
-                    p.swatchImage
-                      ? {
-                          backgroundImage: `url(${p.swatchImage})`,
-                          backgroundSize: "cover",
-                          backgroundPosition: "center",
-                        }
-                      : undefined
-                  }
-                />
+                >
+                  {p.swatchImage && (
+                    <Image src={p.swatchImage} alt={p.colorLabel ?? ""} fill sizes="24px" className="object-cover" />
+                  )}
+                </button>
               ))}
             </div>
           </div>

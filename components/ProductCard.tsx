@@ -189,15 +189,12 @@ export default function ProductCard({
                     type="button"
                     onClick={() => setColorIdx(i)}
                     title={c.label}
-                    className={`h-6 w-6 rounded-full border-2 ${
+                    className={`relative h-6 w-6 overflow-hidden rounded-full border-2 ${
                       i === colorIdx ? "border-gold" : "border-navy-dim/20"
                     }`}
-                    style={{
-                      backgroundImage: `url(${c.image})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }}
-                  />
+                  >
+                    <Image src={c.image} alt={c.label} fill sizes="24px" className="object-cover" />
+                  </button>
                 ))}
               </div>
             </div>
