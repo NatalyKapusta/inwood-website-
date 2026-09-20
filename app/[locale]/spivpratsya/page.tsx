@@ -191,6 +191,25 @@ export default async function SpivpratsyaPage({
         </div>
       </section>
 
+      <section id="door-fit" className="mx-auto max-w-5xl scroll-mt-24 px-4 py-16 sm:py-24">
+        <div className="text-center">
+          <p className="text-sm font-bold uppercase tracking-wide text-gold-dim">{t.doorFitKicker}</p>
+          <h2 className="mt-2 font-serif text-2xl font-bold text-navy-dark sm:text-3xl">
+            {t.doorFitTitle}
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-navy-dim">{t.doorFitText}</p>
+        </div>
+        <div className="mt-10 overflow-hidden rounded-2xl border border-navy-dim/10 shadow-sm">
+          <iframe
+            src="/tools/door-fit.html"
+            title={t.doorFitTitle}
+            className="h-[850px] w-full"
+            style={{ border: 0 }}
+            loading="lazy"
+          />
+        </div>
+      </section>
+
       <section className="mx-auto max-w-5xl px-4 py-16 sm:py-24">
         <div className="text-center">
           <h2 className="font-serif text-2xl font-bold text-navy-dark sm:text-3xl">

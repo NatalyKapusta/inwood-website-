@@ -584,7 +584,7 @@
       { "label": "Hospitality business" },
       { "label": "Apartment complexes" },
       { "label": "International partnership", "href": "/export" },
-      { "label": "Designers" },
+      { "label": "Designers", "href": "/spivpratsya#door-fit" },
       { "label": "Public and medical institutions", "href": "/derzhavnym-zakladam" }
     ],
     "toolsTitle": "Terms that work for your profit",
@@ -615,6 +615,9 @@
         "text": "A ready commercial offer with photos, prices and all order line items — exported to PDF in one click, ready to print or send to the client."
       }
     ],
+    "doorFitKicker": "A tool for designers and architects",
+    "doorFitTitle": "3D door fitting — ETALON collection",
+    "doorFitText": "Pick a model, leaf size, film colour, insert and hardware, place the door into your own interior, and download a ready 3D file (GLB/OBJ) for your project in CAD or BIM software.",
     "strengthsTitle": "Product strengths",
     "strengthsText": "Technical solutions that deliver comfort and quality you can feel from the first touch.",
     "strengths": [

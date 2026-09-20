@@ -601,7 +601,8 @@
         "href": "/export"
       },
       {
-        "label": "Projektanci"
+        "label": "Projektanci",
+        "href": "/spivpratsya#door-fit"
       },
       {
         "label": "Instytucje państwowe i medyczne",
@@ -636,6 +637,9 @@
         "text": "Gotowa oferta handlowa ze zdjęciami, cenami i wszystkimi pozycjami zamówienia — jednym kliknięciem w PDF, gotowa do druku lub wysłania klientowi."
       }
     ],
+    "doorFitKicker": "Narzędzie dla projektantów i architektów",
+    "doorFitTitle": "Przymiarka 3D drzwi ETALON",
+    "doorFitText": "Wybierz model, rozmiar skrzydła, kolor okleiny, wstawkę i okucia, ustaw drzwi we własnym wnętrzu i od razu pobierz gotowy plik 3D (GLB/OBJ) do projektu w programie CAD lub BIM.",
     "strengthsTitle": "Mocne strony produktu",
     "strengthsText": "Rozwiązania techniczne zapewniające komfort i jakość, odczuwalne już od pierwszego dotyku.",
     "strengths": [
