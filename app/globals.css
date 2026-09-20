@@ -108,8 +108,3 @@ body {
 .trends-marquee:focus-within .trends-marquee-track {
   animation-play-state: paused;
 }
-@media (prefers-reduced-motion: reduce) {
-  .trends-marquee-track {
-    animation: none;
-  }
-}

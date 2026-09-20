@@ -304,7 +304,9 @@ export default async function HomePage({
             анімуємо трек на -50% його ширини (keyframes у globals.css) —
             стик двох копій непомітний, бо вони однакові. Пауза на hover/focus
             дає змогу клікнути посилання "Асортимент → Модель → Колір";
-            анімація не заважає кліку й на телефоні (transform не блокує tap). */}
+            анімація не заважає кліку й на телефоні (transform не блокує tap).
+            Анімація крутиться завжди, без урахування prefers-reduced-motion,
+            за проханням клієнта. */}
         <div className="trends-marquee group relative mt-12 overflow-hidden">
           <div className="trends-marquee-track flex w-max gap-6 px-4">
             {[0, 1].map((dup) =>
