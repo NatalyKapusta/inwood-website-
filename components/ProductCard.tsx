@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import type { Komplekt, ProductModel } from "@/lib/products";
 import type { Dictionary } from "@/lib/dictionary";
@@ -28,6 +28,7 @@ function fmt(n: number) {
 }
 
 export default function ProductCard({
+  anchorId,
   collectionLabel,
   model,
   komplekt,
@@ -36,6 +37,7 @@ export default function ProductCard({
   addToCartLabel,
   addedToCartLabel,
 }: {
+  anchorId: string;
   collectionLabel: string;
   model: ProductModel;
   komplekt: Komplekt;
@@ -49,6 +51,25 @@ export default function ProductCard({
     0
   );
   const [colorIdx, setColorIdx] = useState(defaultColorIdx);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  // Глибоке посилання виду #anchorId:colorSlug (напр. з блоку "Тренди 2026" на
+  // головній) — одразу відкриває картку з потрібним кольором, а не білим за
+  // замовчуванням. window.location.hash недоступний під час SSR, тому це не
+  // можна визначити в useState() (гідратація зафіксує серверне значення) —
+  // робимо це в ефекті вже на клієнті, і тоді ж доскролюємо до картки, бо
+  // двокрапка в хеші ламає нативний скрол браузера (він шукає
+  // id="anchorId:colorSlug", якого не існує).
+  useEffect(() => {
+    const hash = window.location.hash.slice(1);
+    const [hashAnchor, slug] = hash.split(":");
+    if (hashAnchor !== anchorId || !slug) return;
+    const idx = model.colors.findIndex((c) => c.slug === slug);
+    if (idx !== -1) setColorIdx(idx);
+    cardRef.current?.scrollIntoView({ block: "start" });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const hasRal = typeof model.ralPrice === "number";
   const [finish, setFinish] = useState<"base" | "ral">("base");
   const [ralColor, setRalColor] = useState("");
@@ -118,7 +139,11 @@ export default function ProductCard({
   ].join("|");
 
   return (
-    <div className="flex flex-col overflow-hidden rounded-xl border border-navy-dim/10 bg-panel">
+    <div
+      ref={cardRef}
+      id={anchorId}
+      className="flex scroll-mt-40 flex-col overflow-hidden rounded-xl border border-navy-dim/10 bg-panel"
+    >
       <div className="relative aspect-square bg-panel-alt">
         {color && (
           <Image

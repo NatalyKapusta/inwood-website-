@@ -237,6 +237,36 @@
     ],
     "hiddenDoorsTitle": "Drzwi montażu ukrytego",
     "hiddenDoorsText": "Nowoczesne rozwiązanie dla minimalistycznych wnętrz. Skrzydło montowane jest w jednej płaszczyźnie ze ścianą, tworząc efekt \"ukrytych drzwi\". Typ otwierania INSIDE zapewnia eleganckie otwieranie do wnętrza pomieszczenia.",
+    "trends2026": {
+      "kicker": "Trendy drzwi 2026",
+      "title": "Co jest teraz w trendzie — i co z tego już oferuje IN WOOD",
+      "subtitle": "Główne kierunki 2026 roku w drzwiach wewnętrznych i modele z naszej oferty, które już im odpowiadają.",
+      "assortment": "Oferta",
+      "cta": "Zobacz model",
+      "readFull": "Przeczytaj cały artykuł o trendach 2026",
+      "items": [
+        {
+          "title": "Montaż ukryty, w jednej płaszczyźnie ze ścianą",
+          "text": "Drzwi-widma bez widocznej ościeżnicy i listew — architektoniczna czystość zamiast dekoracji.",
+          "model": "ETALON ET-01 · Drzwi montażu ukrytego"
+        },
+        {
+          "title": "Ciemne, premium akcenty",
+          "text": "Grafit, antracyt, wenge — kontrastowe, matowe odcienie zamiast połysku dla nowoczesnego wnętrza.",
+          "model": "FREZZATTI FZ-01 · Antracyt"
+        },
+        {
+          "title": "Naturalne tekstury kamienia i betonu",
+          "text": "Spokojne, matowe faktury zamiast błyszczących powierzchni — kamień, beton, naturalne drewno.",
+          "model": "ETALON ET-01 · Przekrój kamienia"
+        },
+        {
+          "title": "Wysokie drzwi na wymiar",
+          "text": "Skrzydła o zwiększonej wysokości (do 2300 mm) wizualnie wydłużają przestrzeń i wspierają nowoczesną architekturę.",
+          "model": "NOMINAL NL-01 · Dąb Chateau"
+        }
+      ]
+    },
     "techTitle": "Technologia produkcji i materiały",
     "techText": "Skrzydło i ościeżnica drzwi IN WOOD wykonane są z połączenia naturalnego drewna i MDF, co zapewnia wysoką wytrzymałość, stabilność konstrukcji i długi okres eksploatacji.",
     "qualityBanner": {

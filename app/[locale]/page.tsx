@@ -45,6 +45,19 @@ const collectionImages: Record<string, string> = {
   PERFETTO: "/photos/perfetto/pf-01.png",
 };
 
+// Кожен пункт відповідає своєму елементу dict.home.trends2026.items (за
+// індексом) — модель+колір, які реально є в асортименті й ілюструють цей
+// тренд. anchor веде на конкретну картку моделі в каталозі (див.
+// components/CatalogFilter.tsx і components/ProductCard.tsx: id картки —
+// "<collectionId>-<modelCode>"), суфікс ":slug" одразу відкриває потрібний
+// колір замість білого за замовчуванням.
+const trends2026Items = [
+  { image: "/photos/etalon/et-01-bila-teksturna.png", anchor: "hidden-doors-ET-01:bila-teksturna" },
+  { image: "/photos/frezzatti/fz-01-antratsyt.png", anchor: "frezzatti-FZ-01:antratsyt" },
+  { image: "/photos/etalon/et-01-zriz-kameniu.png", anchor: "etalon-ET-01:zriz-kameniu" },
+  { image: "/photos/nominal/nl-01-dub-shato.png", anchor: "nominal-NL-01:dub-shato" },
+];
+
 export default async function HomePage({
   params,
   searchParams,
@@ -266,6 +279,66 @@ export default async function HomePage({
         <div className="mt-10 rounded-xl bg-navy-dark p-8 text-white sm:p-10">
           <h3 className="font-serif text-xl font-bold text-gold">{t.hiddenDoorsTitle}</h3>
           <p className="mt-3 max-w-2xl text-white/80">{t.hiddenDoorsText}</p>
+        </div>
+      </section>
+
+      {/* ТРЕНДИ 2026 */}
+      <section className="bg-panel-alt py-16 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4">
+          <p className="text-center text-sm font-bold uppercase tracking-wide text-gold-dim">
+            {t.trends2026.kicker}
+          </p>
+          <h2 className="mt-2 text-center font-serif text-2xl font-bold text-navy-dark sm:text-3xl">
+            {t.trends2026.title}
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-navy-dim">{t.trends2026.subtitle}</p>
+
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {t.trends2026.items.map((item: { title: string; text: string; model: string }, i: number) => {
+              const { image, anchor } = trends2026Items[i];
+              const [modelLine, colorLine] = item.model.split(" · ");
+              return (
+                <div key={item.title} className="overflow-hidden rounded-xl bg-panel shadow-sm">
+                  <div className="relative aspect-square bg-panel-alt">
+                    <Image
+                      src={image}
+                      alt={`Міжкімнатні двері IN WOOD, ${item.model}`}
+                      fill
+                      sizes="(min-width: 1024px) 300px, (min-width: 640px) 50vw, 100vw"
+                      className="object-contain p-4"
+                    />
+                  </div>
+                  <div className="p-5">
+                    <h3 className="font-serif text-base font-bold text-navy-dark">{item.title}</h3>
+                    <p className="mt-2 text-sm text-navy-dim">{item.text}</p>
+                    <Link
+                      href={`/${locale}/catalog#${anchor}`}
+                      className="mt-4 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-gold-dim hover:text-navy-dark"
+                    >
+                      <span>{t.trends2026.assortment}</span>
+                      <span aria-hidden="true">→</span>
+                      <span>{modelLine}</span>
+                      {colorLine && (
+                        <>
+                          <span aria-hidden="true">→</span>
+                          <span>{colorLine}</span>
+                        </>
+                      )}
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link
+              href={`/${locale}/blog/trendy-mizhkimnatnykh-dverei-2026`}
+              className="text-sm font-semibold text-gold-dim hover:text-navy-dark"
+            >
+              {t.trends2026.readFull} →
+            </Link>
+          </div>
         </div>
       </section>
 

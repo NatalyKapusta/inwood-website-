@@ -74,6 +74,7 @@ export default async function SpivpratsyaPage({
           </div>
           <div className="mx-auto mt-10 max-w-sm">
             <ProductCard
+              anchorId={`spivpratsya-demo-${demoModel.code}`}
               collectionLabel={collections.etalon.label}
               model={demoModel}
               komplekt={collections.etalon.komplekt!}

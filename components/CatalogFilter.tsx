@@ -98,6 +98,7 @@ export default function CatalogFilter({
                 {s.data.models.map((m) => (
                   <ProductCard
                     key={m.code}
+                    anchorId={`${s.id}-${m.code}`}
                     collectionLabel={s.data.label}
                     model={m}
                     komplekt={s.data.komplekt!}

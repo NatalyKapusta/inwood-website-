@@ -237,6 +237,36 @@
     ],
     "hiddenDoorsTitle": "Flush (hidden) installation doors",
     "hiddenDoorsText": "A modern solution for minimalist interiors. The door leaf is installed flush with the wall, creating a \"hidden door\" effect. The INSIDE opening type ensures a neat opening into the room.",
+    "trends2026": {
+      "kicker": "2026 door trends",
+      "title": "What's trending now — and what IN WOOD already offers",
+      "subtitle": "The leading 2026 interior door trends, matched with real models from our range.",
+      "assortment": "Range",
+      "cta": "View model",
+      "readFull": "Read the full 2026 trends article",
+      "items": [
+        {
+          "title": "Flush, hidden installation",
+          "text": "Invisible doors with no visible frame or casing — architectural clarity instead of decoration.",
+          "model": "ETALON ET-01 · Flush installation doors"
+        },
+        {
+          "title": "Dark premium accents",
+          "text": "Graphite, anthracite, wenge — contrasting matte tones instead of gloss for a modern interior.",
+          "model": "FREZZATTI FZ-01 · Anthracite"
+        },
+        {
+          "title": "Natural stone and concrete textures",
+          "text": "Calm matte finishes instead of glossy surfaces — stone, concrete, natural wood.",
+          "model": "ETALON ET-01 · Stone cut"
+        },
+        {
+          "title": "Tall doors, built to spec",
+          "text": "Extra-tall leaves (up to 2300 mm) visually stretch the space and support modern architecture.",
+          "model": "NOMINAL NL-01 · Oak Chateau"
+        }
+      ]
+    },
     "techTitle": "Production technology and materials",
     "techText": "IN WOOD door leaves and frames are made from a combination of solid wood and MDF, ensuring high strength, structural stability and a long service life.",
     "qualityBanner": {

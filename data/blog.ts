@@ -334,6 +334,74 @@ const uaPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "trendy-mizhkimnatnykh-dverei-2026",
+    title: "Тренди міжкімнатних дверей 2026: що обрати для сучасного інтер'єру",
+    excerpt:
+      "Прихований монтаж, темні акценти, натуральні текстури каменю й дерева, високі полотна — розбираємо головні тренди 2026 року і показуємо, які моделі з асортименту IN WOOD їм вже відповідають.",
+    blocks: [
+      {
+        type: "p",
+        text: "У 2026 році двері перестали бути просто функціональним елементом — вони стали частиною архітектурного рішення. Мода змістилась від глянцю та декору до спокійних, дорогих і мінімалістичних рішень: природні відтінки, матові фактури і двері, які «зливаються» зі стіною, а не виділяються на ній.",
+      },
+      { type: "h2", text: "Головні тренди 2026 року" },
+      { type: "h3", text: "1. Прихований монтаж і двері врівень зі стіною" },
+      {
+        type: "p",
+        text: "Двері-невидимки без коробки та наличників на видноті лишаються одним з найпомітніших трендів 2026 року — вони дають візуальну чистоту й архітектурну цілісність простору.",
+      },
+      {
+        type: "link",
+        text: "Переглянути двері прихованого монтажу ETALON ET-01",
+        href: "/catalog#hidden-doors-ET-01",
+      },
+      { type: "h3", text: "2. Натуральне дерево і теплі деревні відтінки" },
+      {
+        type: "p",
+        text: "Після холодних і стерильних рішень ринок зміщується до живих відтінків дуба, венге та інших природних текстур замість однотонних холодних кольорів.",
+      },
+      {
+        type: "link",
+        text: "Переглянути NOMINAL NL-01 у кольорі дуб шато",
+        href: "/catalog#nominal-NL-01",
+      },
+      { type: "h3", text: "3. Матові та тактильні поверхні" },
+      {
+        type: "p",
+        text: "Глянець поступається місцем глибоким матовим фактурам — вони виглядають спокійніше і дорожче, і саме тому такий вибір частіше роблять для сучасних інтер'єрів.",
+      },
+      { type: "h3", text: "4. Темні акцентні кольори" },
+      {
+        type: "p",
+        text: "Графіт, антрацит, чорний та глибокий венге використовуються як контрастне рішення в сучасних інтер'єрах — особливо там, де двері мають стати виразним акцентом, а не нейтральним тлом.",
+      },
+      {
+        type: "link",
+        text: "Переглянути FREZZATTI FZ-01 у кольорі антрацит",
+        href: "/catalog#frezzatti-FZ-01",
+      },
+      { type: "h3", text: "5. Високі двері «в стелю»" },
+      {
+        type: "p",
+        text: "Двері збільшеної висоти лишаються затребуваними, бо візуально витягують простір і підтримують сучасну архітектурну логіку. У калькуляторі кожної моделі IN WOOD доступна висота полотна до 2300 мм під конкретний проєм.",
+      },
+      { type: "h3", text: "6. Єдиний стиль по всьому будинку" },
+      {
+        type: "p",
+        text: "У 2026 році посилюється тренд на єдину модель і колір дверей у всіх приміщеннях замість набору розрізнених рішень — це дає інтер'єру відчуття цілісності й продуманості.",
+      },
+      { type: "h2", text: "Що це означає для вибору дверей" },
+      {
+        type: "p",
+        text: "Найкраще зараз продаються рішення, які легко вписуються в проєктну логіку: прихований монтаж, спокійні деревні фактури, матові покриття і нейтральні, але виразні відтінки. Виграють не найяскравіші моделі, а ті, що дають архітектурну чистоту і стабільний візуал у будь-якому інтер'єрі.",
+      },
+      {
+        type: "link",
+        text: "Переглянути весь асортимент IN WOOD",
+        href: "/catalog",
+      },
+    ],
+  },
 ];
 
 const ruPosts: BlogPost[] = [
@@ -652,6 +720,74 @@ const ruPosts: BlogPost[] = [
       {
         type: "link",
         text: "Посмотреть цвета и текстуры коллекций IN WOOD",
+        href: "/catalog",
+      },
+    ],
+  },
+  {
+    slug: "trendy-mizhkimnatnykh-dverei-2026",
+    title: "Тренды межкомнатных дверей 2026: что выбрать для современного интерьера",
+    excerpt:
+      "Скрытый монтаж, тёмные акценты, натуральные текстуры камня и дерева, высокие полотна — разбираем главные тренды 2026 года и показываем, какие модели из ассортимента IN WOOD им уже соответствуют.",
+    blocks: [
+      {
+        type: "p",
+        text: "В 2026 году двери перестали быть просто функциональным элементом — они стали частью архитектурного решения. Мода сместилась от глянца и декора к спокойным, дорогим и минималистичным решениям: природные оттенки, матовые фактуры и двери, которые «сливаются» со стеной, а не выделяются на ней.",
+      },
+      { type: "h2", text: "Главные тренды 2026 года" },
+      { type: "h3", text: "1. Скрытый монтаж и двери вровень со стеной" },
+      {
+        type: "p",
+        text: "Двери-невидимки без короба и наличников на виду остаются одним из самых заметных трендов 2026 года — они дают визуальную чистоту и архитектурную целостность пространства.",
+      },
+      {
+        type: "link",
+        text: "Посмотреть двери скрытого монтажа ETALON ET-01",
+        href: "/catalog#hidden-doors-ET-01",
+      },
+      { type: "h3", text: "2. Натуральное дерево и тёплые древесные тона" },
+      {
+        type: "p",
+        text: "После холодных и стерильных решений рынок смещается к более живым оттенкам дуба, венге и другим природным текстурам вместо однотонных холодных цветов.",
+      },
+      {
+        type: "link",
+        text: "Посмотреть NOMINAL NL-01 в цвете дуб шато",
+        href: "/catalog#nominal-NL-01",
+      },
+      { type: "h3", text: "3. Матовые и тактильные поверхности" },
+      {
+        type: "p",
+        text: "Глянец уступает место глубоким матовым фактурам — они выглядят спокойнее и дороже, поэтому именно такой выбор чаще делают для современных интерьеров.",
+      },
+      { type: "h3", text: "4. Тёмные акцентные цвета" },
+      {
+        type: "p",
+        text: "Графит, антрацит, чёрный и глубокий венге используются как контрастное решение в современных интерьерах — особенно там, где двери должны стать выразительным акцентом, а не нейтральным фоном.",
+      },
+      {
+        type: "link",
+        text: "Посмотреть FREZZATTI FZ-01 в цвете антрацит",
+        href: "/catalog#frezzatti-FZ-01",
+      },
+      { type: "h3", text: "5. Высокие двери «в потолок»" },
+      {
+        type: "p",
+        text: "Двери увеличенной высоты остаются востребованными, потому что визуально вытягивают пространство и поддерживают современную архитектурную логику. В калькуляторе каждой модели IN WOOD доступна высота полотна до 2300 мм под конкретный проём.",
+      },
+      { type: "h3", text: "6. Единый стиль по всему дому" },
+      {
+        type: "p",
+        text: "В 2026 году усиливается тренд на единую модель и цвет дверей во всех помещениях вместо набора разрозненных решений — это даёт интерьеру ощущение целостности и продуманности.",
+      },
+      { type: "h2", text: "Что это значит для выбора дверей" },
+      {
+        type: "p",
+        text: "Лучше всего сейчас продаются решения, которые легко вписываются в проектную логику: скрытый монтаж, спокойные древесные фактуры, матовые покрытия и нейтральные, но выразительные оттенки. Выигрывают не самые яркие модели, а те, что дают архитектурную чистоту и стабильный визуал в любом интерьере.",
+      },
+      {
+        type: "link",
+        text: "Посмотреть весь ассортимент IN WOOD",
         href: "/catalog",
       },
     ],
@@ -978,6 +1114,74 @@ const enPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "trendy-mizhkimnatnykh-dverei-2026",
+    title: "Interior door trends 2026: what to choose for a modern interior",
+    excerpt:
+      "Flush installation, dark accents, natural stone and wood textures, tall leaves — the leading 2026 interior door trends, matched with real models from the IN WOOD range.",
+    blocks: [
+      {
+        type: "p",
+        text: "In 2026, doors stopped being just a functional element — they became part of the architectural statement. The trend has shifted away from gloss and decoration toward calm, expensive-looking, minimalist solutions: natural tones, matte textures, and doors that blend into the wall instead of standing out from it.",
+      },
+      { type: "h2", text: "The leading 2026 trends" },
+      { type: "h3", text: "1. Flush, hidden installation" },
+      {
+        type: "p",
+        text: "Invisible doors with no visible frame or casing remain one of the most notable 2026 trends — they give visual clarity and architectural integrity to a space.",
+      },
+      {
+        type: "link",
+        text: "View the ETALON ET-01 flush installation door",
+        href: "/catalog#hidden-doors-ET-01",
+      },
+      { type: "h3", text: "2. Natural wood and warm wood tones" },
+      {
+        type: "p",
+        text: "After cold, sterile finishes, the market is shifting toward more lively oak and wenge tones and other natural textures instead of flat cold colours.",
+      },
+      {
+        type: "link",
+        text: "View NOMINAL NL-01 in Oak Chateau",
+        href: "/catalog#nominal-NL-01",
+      },
+      { type: "h3", text: "3. Matte, tactile surfaces" },
+      {
+        type: "p",
+        text: "Gloss is giving way to deep matte textures — they look calmer and more expensive, which is why they're increasingly chosen for modern interiors.",
+      },
+      { type: "h3", text: "4. Dark accent colours" },
+      {
+        type: "p",
+        text: "Graphite, anthracite, black and deep wenge are used as a contrasting statement in modern interiors — especially where the door should be a bold accent rather than a neutral background.",
+      },
+      {
+        type: "link",
+        text: "View FREZZATTI FZ-01 in Anthracite",
+        href: "/catalog#frezzatti-FZ-01",
+      },
+      { type: "h3", text: "5. Extra-tall, floor-to-ceiling doors" },
+      {
+        type: "p",
+        text: "Taller door leaves remain in demand because they visually stretch the space and support modern architectural logic. Every IN WOOD model's calculator supports a leaf height of up to 2300 mm to match your exact opening.",
+      },
+      { type: "h3", text: "6. One consistent style throughout the home" },
+      {
+        type: "p",
+        text: "In 2026 there's a growing trend toward a single door model and colour across every room, instead of a mismatched set — it gives the interior a sense of cohesion and intent.",
+      },
+      { type: "h2", text: "What this means when choosing doors" },
+      {
+        type: "p",
+        text: "Right now, the best-selling solutions are the ones that fit easily into a project's logic: flush installation, calm wood textures, matte finishes and neutral yet expressive tones. It's not the boldest models that win, but the ones that deliver architectural clarity and a stable look in any interior.",
+      },
+      {
+        type: "link",
+        text: "Browse the full IN WOOD range",
+        href: "/catalog",
+      },
+    ],
+  },
 ];
 
 const plPosts: BlogPost[] = [
@@ -1296,6 +1500,74 @@ const plPosts: BlogPost[] = [
       {
         type: "link",
         text: "Zobacz kolory i faktury kolekcji IN WOOD",
+        href: "/catalog",
+      },
+    ],
+  },
+  {
+    slug: "trendy-mizhkimnatnykh-dverei-2026",
+    title: "Trendy drzwi wewnętrznych 2026: co wybrać do nowoczesnego wnętrza",
+    excerpt:
+      "Montaż ukryty, ciemne akcenty, naturalne tekstury kamienia i drewna, wysokie skrzydła — omawiamy główne trendy 2026 roku i pokazujemy, które modele z oferty IN WOOD już im odpowiadają.",
+    blocks: [
+      {
+        type: "p",
+        text: "W 2026 roku drzwi przestały być tylko elementem funkcjonalnym — stały się częścią rozwiązania architektonicznego. Moda przesunęła się od połysku i dekoracji w stronę spokojnych, eleganckich, minimalistycznych rozwiązań: naturalnych odcieni, matowych faktur i drzwi, które „zlewają się” ze ścianą, zamiast się na niej wyróżniać.",
+      },
+      { type: "h2", text: "Główne trendy 2026 roku" },
+      { type: "h3", text: "1. Montaż ukryty, drzwi w jednej płaszczyźnie ze ścianą" },
+      {
+        type: "p",
+        text: "Drzwi-widma bez widocznej ościeżnicy i listew pozostają jednym z najbardziej zauważalnych trendów 2026 roku — dają wizualną czystość i architektoniczną spójność przestrzeni.",
+      },
+      {
+        type: "link",
+        text: "Zobacz drzwi montażu ukrytego ETALON ET-01",
+        href: "/catalog#hidden-doors-ET-01",
+      },
+      { type: "h3", text: "2. Naturalne drewno i ciepłe odcienie drewna" },
+      {
+        type: "p",
+        text: "Po chłodnych i sterylnych rozwiązaniach rynek przesuwa się w stronę bardziej żywych odcieni dębu, wenge i innych naturalnych tekstur zamiast jednolitych, chłodnych kolorów.",
+      },
+      {
+        type: "link",
+        text: "Zobacz NOMINAL NL-01 w kolorze dąb Chateau",
+        href: "/catalog#nominal-NL-01",
+      },
+      { type: "h3", text: "3. Matowe, dotykowe powierzchnie" },
+      {
+        type: "p",
+        text: "Połysk ustępuje miejsca głębokim, matowym fakturom — wyglądają spokojniej i bardziej elegancko, dlatego coraz częściej wybiera się je do nowoczesnych wnętrz.",
+      },
+      { type: "h3", text: "4. Ciemne kolory akcentujące" },
+      {
+        type: "p",
+        text: "Grafit, antracyt, czerń i głębokie wenge są stosowane jako kontrastowe rozwiązanie w nowoczesnych wnętrzach — zwłaszcza tam, gdzie drzwi mają być wyrazistym akcentem, a nie neutralnym tłem.",
+      },
+      {
+        type: "link",
+        text: "Zobacz FREZZATTI FZ-01 w kolorze antracyt",
+        href: "/catalog#frezzatti-FZ-01",
+      },
+      { type: "h3", text: "5. Wysokie drzwi „pod sufit”" },
+      {
+        type: "p",
+        text: "Drzwi o zwiększonej wysokości pozostają popularne, ponieważ wizualnie wydłużają przestrzeń i wspierają nowoczesną logikę architektoniczną. W kalkulatorze każdego modelu IN WOOD dostępna jest wysokość skrzydła do 2300 mm dopasowana do konkretnego otworu.",
+      },
+      { type: "h3", text: "6. Spójny styl w całym domu" },
+      {
+        type: "p",
+        text: "W 2026 roku nasila się trend na jeden model i kolor drzwi we wszystkich pomieszczeniach zamiast zestawu przypadkowych rozwiązań — daje to wnętrzu poczucie spójności i przemyślanej koncepcji.",
+      },
+      { type: "h2", text: "Co to oznacza przy wyborze drzwi" },
+      {
+        type: "p",
+        text: "Najlepiej sprzedają się teraz rozwiązania, które łatwo wpisują się w logikę projektu: montaż ukryty, spokojne faktury drewna, matowe wykończenia i neutralne, ale wyraziste odcienie. Wygrywają nie najbardziej efektowne modele, ale te, które dają architektoniczną czystość i stabilny wygląd w każdym wnętrzu.",
+      },
+      {
+        type: "link",
+        text: "Zobacz całą ofertę IN WOOD",
         href: "/catalog",
       },
     ],
