@@ -52,13 +52,13 @@ const collectionImages: Record<string, string> = {
 // "<collectionId>-<modelCode>"), суфікс ":slug" одразу відкриває потрібний
 // колір замість білого за замовчуванням.
 const trends2026Items = [
-  { image: "/photos/etalon/et-01-bila-teksturna.png", anchor: "hidden-doors-ET-01:bila-teksturna" },
+  { image: "/photos/etalon/et-03-dub-shato.png", anchor: "hidden-doors-ET-03:dub-shato" },
   // Двері на цьому конкретному фото зайняті меншу частину кадру (~408×854 з
-  // 1000×1000), ніж на інших трьох (431×901) — компенсуємо невеликим
+  // 1000×1000), ніж на інших трьох (~430×900) — компенсуємо невеликим
   // масштабуванням, щоб полотно виглядало одного розміру з рештою карток.
-  { image: "/photos/frezzatti/fz-01-antratsyt.png", anchor: "frezzatti-FZ-01:antratsyt", imageScale: 1.06 },
-  { image: "/photos/etalon/et-01-zriz-kameniu.png", anchor: "etalon-ET-01:zriz-kameniu" },
-  { image: "/photos/nominal/nl-01-dub-shato.png", anchor: "nominal-NL-01:dub-shato" },
+  { image: "/photos/frezzatti/fz-06-oksyd-temnyi.png", anchor: "frezzatti-FZ-06:oksyd-temnyi", imageScale: 1.06 },
+  { image: "/photos/etalon/et-09-beton-siryi.png", anchor: "etalon-ET-09:beton-siryi" },
+  { image: "/photos/nominal/nl-04-oksyd-svitlyi.png", anchor: "nominal-NL-04:oksyd-svitlyi" },
 ];
 
 export default async function HomePage({
