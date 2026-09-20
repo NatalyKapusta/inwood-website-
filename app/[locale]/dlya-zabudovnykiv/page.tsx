@@ -4,6 +4,7 @@ import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { RECRUIT_CITIES, getRecruitCityDisplayName } from "@/lib/recruitCities";
 import ContactCta from "@/components/ContactCta";
+import DoorFit3dBanner from "@/components/DoorFit3dBanner";
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
@@ -79,6 +80,15 @@ export default async function DlyaZabudovnykivPage({
             ))}
           </div>
         </div>
+      </section>
+
+      <section className="py-16 sm:py-24">
+        <DoorFit3dBanner
+          locale={params.locale}
+          kicker={s.doorFitKicker}
+          title={s.doorFitTitle}
+          cta={s.doorFitCta}
+        />
       </section>
 
       <section className="mx-auto max-w-5xl px-4 py-16 text-center sm:py-24">

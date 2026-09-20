@@ -6,6 +6,7 @@ import { getPricesVisible } from "@/lib/siteSettings";
 import { getPublicPogonazhni, getPublicPlintus, getPublicNakladka } from "@/lib/publicShop";
 import { catalogCategories, catalogCategorySlugs, type CatalogCategorySlug } from "@/lib/catalogCategories";
 import CatalogFilter from "@/components/CatalogFilter";
+import DoorFit3dBanner from "@/components/DoorFit3dBanner";
 import Link from "next/link";
 
 // Сторінка кешується статично, але раз на хвилину перевіряє
@@ -171,6 +172,15 @@ export default async function CatalogPage({
       )}
 
       <div className="mt-12">
+        <DoorFit3dBanner
+          locale={params.locale}
+          kicker={dict.spivpratsya.doorFitKicker}
+          title={dict.spivpratsya.doorFitTitle}
+          cta={dict.spivpratsya.doorFitCta}
+        />
+      </div>
+
+      <div className="mt-8">
         <CatalogFilter
           sections={sections}
           t={t}

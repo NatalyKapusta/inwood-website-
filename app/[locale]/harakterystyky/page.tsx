@@ -5,6 +5,7 @@ import { collections } from "@/lib/products";
 import ContactCta from "@/components/ContactCta";
 import LineColorPreview from "@/components/LineColorPreview";
 import ConstructionDiagram from "@/components/ConstructionDiagram";
+import DoorFit3dBanner from "@/components/DoorFit3dBanner";
 
 // Яку модель показувати як приклад у картці колекції на цій сторінці —
 // за замовчуванням береться перша модель колекції, тут навмисний вибір.
@@ -73,6 +74,15 @@ export default async function CharacteristicsPage({
           features={t.constructionDiagram.features}
           dimensionsTitle={t.constructionDiagram.dimensionsTitle}
           dimensions={t.constructionDiagram.dimensions}
+        />
+      </section>
+
+      <section className="pb-16 sm:pb-24">
+        <DoorFit3dBanner
+          locale={params.locale}
+          kicker={dict.spivpratsya.doorFitKicker}
+          title={dict.spivpratsya.doorFitTitle}
+          cta={dict.spivpratsya.doorFitCta}
         />
       </section>
 

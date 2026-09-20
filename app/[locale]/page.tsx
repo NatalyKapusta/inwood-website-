@@ -10,6 +10,7 @@ import LeadConversionTracker from "@/components/LeadConversionTracker";
 import SentModal from "@/components/SentModal";
 import YouTubeFacade from "@/components/YouTubeFacade";
 import Honeypot from "@/components/Honeypot";
+import DoorFit3dBanner from "@/components/DoorFit3dBanner";
 import { catalogCategorySlugs } from "@/lib/catalogCategories";
 
 const playLabels: Record<Locale, string> = {
@@ -365,6 +366,15 @@ export default async function HomePage({
             </Link>
           </div>
         </div>
+      </section>
+
+      <section className="py-16 sm:py-24">
+        <DoorFit3dBanner
+          locale={locale}
+          kicker={dict.spivpratsya.doorFitKicker}
+          title={dict.spivpratsya.doorFitTitle}
+          cta={dict.spivpratsya.doorFitCta}
+        />
       </section>
 
       {/* ТЕХНОЛОГІЯ */}
