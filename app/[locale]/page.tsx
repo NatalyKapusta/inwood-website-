@@ -53,7 +53,10 @@ const collectionImages: Record<string, string> = {
 // колір замість білого за замовчуванням.
 const trends2026Items = [
   { image: "/photos/etalon/et-01-bila-teksturna.png", anchor: "hidden-doors-ET-01:bila-teksturna" },
-  { image: "/photos/frezzatti/fz-01-antratsyt.png", anchor: "frezzatti-FZ-01:antratsyt" },
+  // Двері на цьому конкретному фото зайняті меншу частину кадру (~408×854 з
+  // 1000×1000), ніж на інших трьох (431×901) — компенсуємо невеликим
+  // масштабуванням, щоб полотно виглядало одного розміру з рештою карток.
+  { image: "/photos/frezzatti/fz-01-antratsyt.png", anchor: "frezzatti-FZ-01:antratsyt", imageScale: 1.06 },
   { image: "/photos/etalon/et-01-zriz-kameniu.png", anchor: "etalon-ET-01:zriz-kameniu" },
   { image: "/photos/nominal/nl-01-dub-shato.png", anchor: "nominal-NL-01:dub-shato" },
 ];
@@ -295,7 +298,7 @@ export default async function HomePage({
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {t.trends2026.items.map((item: { title: string; text: string; model: string }, i: number) => {
-              const { image, anchor } = trends2026Items[i];
+              const { image, anchor, imageScale } = trends2026Items[i];
               const [modelLine, colorLine] = item.model.split(" · ");
               return (
                 <div key={item.title} className="overflow-hidden rounded-xl bg-panel shadow-sm">
@@ -306,6 +309,7 @@ export default async function HomePage({
                       fill
                       sizes="(min-width: 1024px) 300px, (min-width: 640px) 50vw, 100vw"
                       className="object-contain p-4"
+                      style={imageScale ? { transform: `scale(${imageScale})` } : undefined}
                     />
                   </div>
                   <div className="p-5">
