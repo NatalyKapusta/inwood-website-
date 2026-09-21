@@ -12,7 +12,7 @@ function buildLlmsTxt(): string {
 
 > IN WOOD is a full-cycle interior door manufacturer based in Poltava, Ukraine, with 20+ years of experience, 50+ door models across 5 collections, a dealer network of 35+ partners across Ukraine, and export experience to Canada, France, Switzerland, Lithuania, and Latvia.
 
-IN WOOD designs and manufactures its own interior doors (panel/skinned doors, veneered doors, PVC-film-coated doors, painted doors, and concealed-installation/hidden doors) at its own production facility in Poltava. The site is available in Ukrainian (default), Russian, and English. Prices are shown to retail visitors when enabled by the manufacturer; wholesale/dealer pricing requires a partner-portal login.
+IN WOOD designs and manufactures its own interior doors (panel/skinned doors, veneered doors, PVC-film-coated doors, painted doors, and concealed-installation/hidden doors) at its own production facility in Poltava. The site is available in Ukrainian (default), Russian, English, and Polish. Prices are shown to retail visitors when enabled by the manufacturer; wholesale/dealer pricing requires a partner-portal login.
 
 ## Product collections
 
@@ -27,6 +27,7 @@ Standard slab sizes: height 1800-2100 mm (max 2300 mm, 50 mm step), width 600-90
 ## Key pages
 
 - [Catalog](${u("/ua/catalog")}): full retail catalog with an interactive price calculator (color, frame/casing/jamb-extension, hardware routing, soundproofing, custom sizing).
+- [3D door fitting tool](${u("/ua/3d-prymirka-dverei")}): interactive 3D configurator to preview a door model with a chosen film/paint color, frame, and hardware before ordering.
 - [Gallery](${u("/ua/galereya")}): real interior photos grouped by model and color across all 4 collections.
 - [About us](${u("/ua/pro-nas")}): company background and production facts.
 - [Specifications](${u("/ua/harakterystyky")}): technical construction details per collection (materials, layer thicknesses, sizing).
