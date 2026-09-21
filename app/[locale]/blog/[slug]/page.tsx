@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, articleJsonLd } from "@/lib/seo";
 import { blogPosts, getBlogPost } from "@/data/blog";
 import ContactCta from "@/components/ContactCta";
 
@@ -44,6 +44,20 @@ export default async function BlogPostPage({
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            articleJsonLd({
+              locale: params.locale,
+              path: `/blog/${params.slug}`,
+              title: post.title,
+              description: post.excerpt,
+            })
+          ),
+        }}
+      />
       <article className="mx-auto max-w-3xl px-4 py-16 sm:py-24">
         <Link href={`/${params.locale}/blog`} className="text-sm text-navy-dim hover:text-gold-dim">
           {t.back}

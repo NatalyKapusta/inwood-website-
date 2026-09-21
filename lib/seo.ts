@@ -149,6 +149,41 @@ export function faqPageJsonLd(items: { q: string; a: string }[]) {
   };
 }
 
+export function articleJsonLd({
+  locale,
+  path,
+  title,
+  description,
+}: {
+  locale: Locale;
+  path: string;
+  title: string;
+  description: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    url: `${SITE_URL}/${locale}${path}`,
+    inLanguage: hreflang[locale],
+    image: `${SITE_URL}/og-image.jpg`,
+    author: {
+      "@type": "Organization",
+      name: "IN WOOD",
+      url: SITE_URL,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "IN WOOD",
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/logo/inwood-logo-gold.svg`,
+      },
+    },
+  };
+}
+
 export function breadcrumbJsonLd(items: { name: string; path: string }[], locale: Locale) {
   return {
     "@context": "https://schema.org",

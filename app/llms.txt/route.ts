@@ -41,6 +41,19 @@ Standard slab sizes: height 1800-2100 mm (max 2300 mm, 50 mm step), width 600-90
 - [Contacts](${u("/ua/kontakty")}): address, phone, email, and contact form.
 - [Partner portal](${u("/portal/login")}): login for dealers, distributors, and staff to view wholesale pricing and place orders (not indexed by search engines).
 
+## Frequently asked questions
+
+- **How long does it take to manufacture IN WOOD interior doors?** Standard interior doors take 30 days to manufacture. Custom sizes take 45 days.
+- **What are the standard sizes of IN WOOD interior doors?** Width: 400-900 mm; height: 1800-2100 mm (up to 2300 mm for an extra fee).
+- **What materials are IN WOOD interior doors made of, and how thick are they?** A frame of solid wood and MDF, with a honeycomb core infill; manufactured in 34 mm and 40 mm thickness.
+- **Which door finish is better: PVC film or paint?** PVC-film finish is practical, moisture-resistant and easy to maintain. Painted doors have a more premium look, a wide colour palette, and allow more complex design solutions; IN WOOD can paint doors in any colour from the RAL/NCS catalogues.
+- **What are flush (hidden) installation doors?** Interior doors with an aluminum frame installed flush with the wall, staying invisible after finishing, with standard and inside opening options — they create the effect of a single plane with the wall.
+- **What warranty applies to IN WOOD interior doors?** A 1-year warranty from the shipping date, covering manufacturing and material defects when storage, transport and installation guidelines are followed.
+- **Can I buy just the door leaf, without the frame and casing?** Yes, the door leaf can be purchased separately from the frame and casing set.
+- **Does IN WOOD operate across all of Ukraine?** Yes, IN WOOD delivers across Ukraine and works with a network of official dealers in many cities (see the dealers page above).
+
+Full list: ${u("/ua/faq")} (also available at /ru/faq, /en/faq, /pl/faq).
+
 ## Contact
 
 - Address: 4 Sportyvnyi Lane, Poltava, Ukraine
