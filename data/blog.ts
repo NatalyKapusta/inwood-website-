@@ -352,14 +352,24 @@ const uaPosts: BlogPost[] = [
         text: "Двері-невидимки без коробки та наличників на видноті лишаються одним з найпомітніших трендів 2026 року — вони дають візуальну чистоту й архітектурну цілісність простору.",
       },
       {
+        type: "image",
+        src: "/photos/hidden-doors/aluminum-black.jpg",
+        alt: "Двері прихованого монтажу IN WOOD — крайка алюм. профіль чорна",
+      },
+      {
         type: "link",
-        text: "Переглянути двері прихованого монтажу ETALON ET-01",
-        href: "/catalog#hidden-doors-ET-01",
+        text: "Переглянути двері прихованого монтажу",
+        href: "/catalog#hidden-doors",
       },
       { type: "h3", text: "2. Натуральне дерево і теплі деревні відтінки" },
       {
         type: "p",
         text: "Після холодних і стерильних рішень ринок зміщується до живих відтінків дуба, венге та інших природних текстур замість однотонних холодних кольорів.",
+      },
+      {
+        type: "image",
+        src: "/photos/gallery/nominal/nl-01-dub-shato.jpg",
+        alt: "NOMINAL NL-01, колір дуб шато",
       },
       {
         type: "link",
@@ -385,6 +395,11 @@ const uaPosts: BlogPost[] = [
       {
         type: "p",
         text: "Графіт, антрацит, чорний та глибокий венге використовуються як контрастне рішення в сучасних інтер'єрах — особливо там, де двері мають стати виразним акцентом, а не нейтральним тлом.",
+      },
+      {
+        type: "image",
+        src: "/photos/gallery/frezzatti/fz-01-antratsyt.jpg",
+        alt: "FREZZATTI FZ-01, колір антрацит",
       },
       {
         type: "link",
@@ -757,14 +772,24 @@ const ruPosts: BlogPost[] = [
         text: "Двери-невидимки без короба и наличников на виду остаются одним из самых заметных трендов 2026 года — они дают визуальную чистоту и архитектурную целостность пространства.",
       },
       {
+        type: "image",
+        src: "/photos/hidden-doors/aluminum-black.jpg",
+        alt: "Двери скрытого монтажа IN WOOD — кромка алюм. профиль чёрная",
+      },
+      {
         type: "link",
-        text: "Посмотреть двери скрытого монтажа ETALON ET-01",
-        href: "/catalog#hidden-doors-ET-01",
+        text: "Посмотреть двери скрытого монтажа",
+        href: "/catalog#hidden-doors",
       },
       { type: "h3", text: "2. Натуральное дерево и тёплые древесные тона" },
       {
         type: "p",
         text: "После холодных и стерильных решений рынок смещается к более живым оттенкам дуба, венге и другим природным текстурам вместо однотонных холодных цветов.",
+      },
+      {
+        type: "image",
+        src: "/photos/gallery/nominal/nl-01-dub-shato.jpg",
+        alt: "NOMINAL NL-01, цвет дуб шато",
       },
       {
         type: "link",
@@ -790,6 +815,11 @@ const ruPosts: BlogPost[] = [
       {
         type: "p",
         text: "Графит, антрацит, чёрный и глубокий венге используются как контрастное решение в современных интерьерах — особенно там, где двери должны стать выразительным акцентом, а не нейтральным фоном.",
+      },
+      {
+        type: "image",
+        src: "/photos/gallery/frezzatti/fz-01-antratsyt.jpg",
+        alt: "FREZZATTI FZ-01, цвет антрацит",
       },
       {
         type: "link",
@@ -1162,14 +1192,24 @@ const enPosts: BlogPost[] = [
         text: "Invisible doors with no visible frame or casing remain one of the most notable 2026 trends — they give visual clarity and architectural integrity to a space.",
       },
       {
+        type: "image",
+        src: "/photos/hidden-doors/aluminum-black.jpg",
+        alt: "IN WOOD flush installation door — black aluminum edge trim",
+      },
+      {
         type: "link",
-        text: "View the ETALON ET-01 flush installation door",
-        href: "/catalog#hidden-doors-ET-01",
+        text: "View flush installation doors",
+        href: "/catalog#hidden-doors",
       },
       { type: "h3", text: "2. Natural wood and warm wood tones" },
       {
         type: "p",
         text: "After cold, sterile finishes, the market is shifting toward more lively oak and wenge tones and other natural textures instead of flat cold colours.",
+      },
+      {
+        type: "image",
+        src: "/photos/gallery/nominal/nl-01-dub-shato.jpg",
+        alt: "NOMINAL NL-01 in Oak Chateau",
       },
       {
         type: "link",
@@ -1195,6 +1235,11 @@ const enPosts: BlogPost[] = [
       {
         type: "p",
         text: "Graphite, anthracite, black and deep wenge are used as a contrasting statement in modern interiors — especially where the door should be a bold accent rather than a neutral background.",
+      },
+      {
+        type: "image",
+        src: "/photos/gallery/frezzatti/fz-01-antratsyt.jpg",
+        alt: "FREZZATTI FZ-01 in Anthracite",
       },
       {
         type: "link",
@@ -1567,14 +1612,24 @@ const plPosts: BlogPost[] = [
         text: "Drzwi-widma bez widocznej ościeżnicy i listew pozostają jednym z najbardziej zauważalnych trendów 2026 roku — dają wizualną czystość i architektoniczną spójność przestrzeni.",
       },
       {
+        type: "image",
+        src: "/photos/hidden-doors/aluminum-black.jpg",
+        alt: "Drzwi montażu ukrytego IN WOOD — czarna listwa aluminiowa",
+      },
+      {
         type: "link",
-        text: "Zobacz drzwi montażu ukrytego ETALON ET-01",
-        href: "/catalog#hidden-doors-ET-01",
+        text: "Zobacz drzwi montażu ukrytego",
+        href: "/catalog#hidden-doors",
       },
       { type: "h3", text: "2. Naturalne drewno i ciepłe odcienie drewna" },
       {
         type: "p",
         text: "Po chłodnych i sterylnych rozwiązaniach rynek przesuwa się w stronę bardziej żywych odcieni dębu, wenge i innych naturalnych tekstur zamiast jednolitych, chłodnych kolorów.",
+      },
+      {
+        type: "image",
+        src: "/photos/gallery/nominal/nl-01-dub-shato.jpg",
+        alt: "NOMINAL NL-01 w kolorze dąb Chateau",
       },
       {
         type: "link",
@@ -1600,6 +1655,11 @@ const plPosts: BlogPost[] = [
       {
         type: "p",
         text: "Grafit, antracyt, czerń i głębokie wenge są stosowane jako kontrastowe rozwiązanie w nowoczesnych wnętrzach — zwłaszcza tam, gdzie drzwi mają być wyrazistym akcentem, a nie neutralnym tłem.",
+      },
+      {
+        type: "image",
+        src: "/photos/gallery/frezzatti/fz-01-antratsyt.jpg",
+        alt: "FREZZATTI FZ-01 w kolorze antracyt",
       },
       {
         type: "link",
