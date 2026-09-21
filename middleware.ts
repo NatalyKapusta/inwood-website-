@@ -9,6 +9,18 @@ function getLocaleFromPath(pathname: string) {
   );
 }
 
+// Проста сторінка-заглушка для заблокованих відвідувачів — без React/
+// дерева сторінок, миттєво з middleware, до будь-якої іншої логіки.
+const BLOCKED_HTML = `<!DOCTYPE html>
+<html lang="uk"><head><meta charset="utf-8" />
+<title>IN WOOD</title>
+<meta name="robots" content="noindex, nofollow" />
+<style>body{font-family:Arial,sans-serif;background:#333958;color:#fff;display:flex;
+align-items:center;justify-content:center;min-height:100vh;margin:0;padding:24px;
+text-align:center}p{max-width:32em;line-height:1.5}</style></head>
+<body><p>Доступ до сайту з цього регіону обмежено.<br />
+Access to this site is restricted from this region.</p></body></html>`;
+
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
@@ -19,6 +31,17 @@ export async function middleware(request: NextRequest) {
     pathname.includes(".")
   ) {
     return NextResponse.next();
+  }
+
+  // Блокуємо відвідувачів з росії за геолокацією IP. Це не стовідсотковий
+  // захист (VPN обходить), але відсікає пряме відвідування. Якщо хостинг
+  // не віддає geo (локальна розробка, деякі середовища) — request.geo
+  // буде undefined, і ми нікого не блокуємо (fail open, а не fail closed).
+  if (request.geo?.country === "RU") {
+    return new NextResponse(BLOCKED_HTML, {
+      status: 403,
+      headers: { "Content-Type": "text/html; charset=utf-8" },
+    });
   }
 
   // Рекламний піддомен partnership.inwood.com.ua — на нього ллють платний
