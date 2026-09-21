@@ -1310,7 +1310,7 @@ export default function QuoteBuilder({
                 type="text"
                 value={ralNcsColor}
                 onChange={(e) => setRalNcsColor(e.target.value)}
-                placeholder="Колір RAL/NCS, напр. RAL 9010"
+                placeholder="Колір RAL/NCS (необов'язково), напр. RAL 9010"
                 className="rounded-lg border border-gold-dim bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
               />
             )}
@@ -1473,7 +1473,6 @@ export default function QuoteBuilder({
                   : isHardwareLine
                   ? !hardwareArticle
                   : !modelCode ||
-                    (isKorobRalModel && !ralNcsColor.trim()) ||
                     (isEdgeColorModel && !edgeColor) ||
                     (isInsertColorModel && !insertColor) ||
                     (isOpeningSideModel && !openingSide)
