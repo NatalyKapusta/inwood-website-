@@ -1,144 +1,29 @@
 "use client";
 
-import { useState } from "react";
-import PhoneInputWithCountrySelect, {
-  formatPhoneNumberIntl,
-  isValidPhoneNumber,
-  type Country,
-} from "react-phone-number-input";
-import flags from "react-phone-number-input/flags";
-import countryLabels from "react-phone-number-input/locale/en.json";
-import "react-phone-number-input/style.css";
+import { lazy, Suspense } from "react";
+import type { PhoneInputProps } from "./PhoneInputImpl";
 
-// Ключові країни для селектора: Україна (за замовчуванням) + реальні країни
-// експорту IN WOOD (Канада, Франція, Швейцарія, Литва, Латвія) + решта
-// Європи й найпоширеніші напрямки звернень. Для будь-якої іншої країни є
-// перемикач "Ввести номер вручну" — простий текстовий ввід без маски.
-const COUNTRIES: Country[] = [
-  "UA",
-  "CA",
-  "FR",
-  "CH",
-  "LT",
-  "LV",
-  "PL",
-  "DE",
-  "CZ",
-  "SK",
-  "RO",
-  "MD",
-  "HU",
-  "IT",
-  "ES",
-  "PT",
-  "NL",
-  "BE",
-  "AT",
-  "IE",
-  "SE",
-  "NO",
-  "DK",
-  "FI",
-  "EE",
-  "BG",
-  "HR",
-  "GR",
-  "US",
-  "GB",
-  "IL",
-  "AE",
-  "TR",
-  "GE",
-  "AZ",
-  "KZ",
-];
+// react-phone-number-input тягне за собою прапорці ~200 країн (~50 КБ JS +
+// власний CSS) — важко для першого завантаження сторінки, хоча спочатку
+// видно лише один прапорець. Лінива підвантажка виносить це в окремий
+// чанк, що вантажиться вже після гідратації, а не в спільному бандлі
+// кожної сторінки із формою заявки.
+const PhoneInputImpl = lazy(() => import("./PhoneInputImpl"));
 
-export default function PhoneInput({
-  name = "phone",
-  placeholder,
-  required,
-  className,
-  value,
-  onChange,
-  manualLabel = "Немає моєї країни в списку — ввести номер вручну",
-  chooseCountryLabel = "Обрати країну зі списку",
-  invalidLabel = "Перевірте номер телефону — введіть коректний номер",
-}: {
-  name?: string;
-  placeholder?: string;
-  required?: boolean;
-  className?: string;
-  value?: string;
-  onChange?: (value: string) => void;
-  manualLabel?: string;
-  chooseCountryLabel?: string;
-  invalidLabel?: string;
-}) {
-  const [internalValue, setInternalValue] = useState("");
-  const [touched, setTouched] = useState(false);
-  const [manual, setManual] = useState(false);
-  const current = value ?? internalValue;
-  const invalid = touched && current.length > 0 && !manual && !isValidPhoneNumber(current);
-
-  function handleChange(next?: string) {
-    if (onChange) onChange(next ?? "");
-    else setInternalValue(next ?? "");
-  }
-
-  function handleManualChange(e: React.ChangeEvent<HTMLInputElement>) {
-    handleChange(e.target.value);
-  }
-
+export default function PhoneInput(props: PhoneInputProps) {
   return (
-    <div>
-      {manual ? (
+    <Suspense
+      fallback={
         <input
           type="tel"
-          name={name}
-          placeholder={placeholder ?? "+"}
-          required={required}
-          value={current}
-          onChange={handleManualChange}
-          onBlur={() => setTouched(true)}
-          className={className}
+          placeholder={props.placeholder}
+          required={props.required}
+          className={props.className}
+          disabled
         />
-      ) : (
-        <>
-          <PhoneInputWithCountrySelect
-            international
-            defaultCountry="UA"
-            countries={COUNTRIES}
-            labels={countryLabels}
-            flags={flags}
-            addInternationalOption={false}
-            required={required}
-            value={current}
-            onChange={handleChange}
-            onBlur={() => setTouched(true)}
-            placeholder={placeholder ?? "+380 XX XXX XX XX"}
-            className={className ? `iw-phone ${className}` : "iw-phone"}
-            style={invalid ? { borderColor: "#dc2626" } : undefined}
-          />
-          {/* Якщо formatPhoneNumberIntl не може відформатувати номер (неповний
-              ввід, рідкісний формат тощо) — він повертає порожній рядок, і
-              прихований інпут йшов на сервер пустим, хоча видиме поле мало
-              required і виглядало заповненим: телефон мовчки губився.
-              Тому завжди підстраховуємось сирим значенням current. */}
-          <input type="hidden" name={name} value={current ? formatPhoneNumberIntl(current) || current : ""} />
-        </>
-      )}
-      <button
-        type="button"
-        onClick={() => {
-          setManual((m) => !m);
-          handleChange("");
-          setTouched(false);
-        }}
-        className="mt-1 text-xs text-navy-dim underline decoration-dotted hover:text-gold-dim"
-      >
-        {manual ? chooseCountryLabel : manualLabel}
-      </button>
-      {invalid && <p className="mt-1 text-xs text-red-600">{invalidLabel}</p>}
-    </div>
+      }
+    >
+      <PhoneInputImpl {...props} />
+    </Suspense>
   );
 }

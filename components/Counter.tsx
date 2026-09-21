@@ -26,10 +26,20 @@ export default function Counter({
           const duration = 1200;
           const start = performance.now();
 
+          let last = -1;
           function tick(now: number) {
             const progress = Math.min((now - start) / duration, 1);
             const eased = 1 - Math.pow(1 - progress, 3);
-            setValue(Math.round(eased * to));
+            const next = Math.round(eased * to);
+            // setValue на кожному кадрі (до 60 разів/с) змушує React
+            // перерендерювати компонент навіть коли видиме число не
+            // змінилось — зайве навантаження на головний потік саме в
+            // момент першого завантаження сторінки. Оновлюємо стан лише
+            // коли ціле число справді нове.
+            if (next !== last) {
+              last = next;
+              setValue(next);
+            }
             if (progress < 1) requestAnimationFrame(tick);
           }
           requestAnimationFrame(tick);
