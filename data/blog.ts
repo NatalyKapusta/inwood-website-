@@ -358,8 +358,8 @@ const uaPosts: BlogPost[] = [
       },
       {
         type: "link",
-        text: "Переглянути двері прихованого монтажу",
-        href: "/catalog#hidden-doors",
+        text: "Переглянути двері прихованого монтажу ETALON ET-01",
+        href: "/catalog#hidden-doors-ET-01",
       },
       { type: "h3", text: "2. Натуральне дерево і теплі деревні відтінки" },
       {
@@ -778,8 +778,8 @@ const ruPosts: BlogPost[] = [
       },
       {
         type: "link",
-        text: "Посмотреть двери скрытого монтажа",
-        href: "/catalog#hidden-doors",
+        text: "Посмотреть двери скрытого монтажа ETALON ET-01",
+        href: "/catalog#hidden-doors-ET-01",
       },
       { type: "h3", text: "2. Натуральное дерево и тёплые древесные тона" },
       {
@@ -1198,8 +1198,8 @@ const enPosts: BlogPost[] = [
       },
       {
         type: "link",
-        text: "View flush installation doors",
-        href: "/catalog#hidden-doors",
+        text: "View the ETALON ET-01 flush installation door",
+        href: "/catalog#hidden-doors-ET-01",
       },
       { type: "h3", text: "2. Natural wood and warm wood tones" },
       {
@@ -1618,8 +1618,8 @@ const plPosts: BlogPost[] = [
       },
       {
         type: "link",
-        text: "Zobacz drzwi montażu ukrytego",
-        href: "/catalog#hidden-doors",
+        text: "Zobacz drzwi montażu ukrytego ETALON ET-01",
+        href: "/catalog#hidden-doors-ET-01",
       },
       { type: "h3", text: "2. Naturalne drewno i ciepłe odcienie drewna" },
       {
