@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Locale } from "@/lib/i18n";
@@ -90,6 +91,19 @@ export default async function BlogPostPage({
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
+              );
+            }
+            if (block.type === "image") {
+              return (
+                <div key={i} className="relative aspect-[4/3] overflow-hidden rounded-xl">
+                  <Image
+                    src={block.src}
+                    alt={block.alt}
+                    fill
+                    sizes="(min-width: 768px) 768px, 100vw"
+                    className="object-cover"
+                  />
+                </div>
               );
             }
             if (block.type === "link") {

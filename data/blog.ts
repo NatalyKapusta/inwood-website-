@@ -5,7 +5,8 @@ export type BlogBlock =
   | { type: "h2"; text: string }
   | { type: "h3"; text: string }
   | { type: "ul"; items: string[] }
-  | { type: "link"; text: string; href: string };
+  | { type: "link"; text: string; href: string }
+  | { type: "image"; src: string; alt: string };
 
 export type BlogPost = {
   slug: string;
@@ -370,6 +371,16 @@ const uaPosts: BlogPost[] = [
         type: "p",
         text: "Глянець поступається місцем глибоким матовим фактурам — вони виглядають спокійніше і дорожче, і саме тому такий вибір частіше роблять для сучасних інтер'єрів.",
       },
+      {
+        type: "image",
+        src: "/photos/gallery/etalon/et-09-beton-siryi.jpg",
+        alt: "ETALON ET-09, колір бетон сірий — матова текстура",
+      },
+      {
+        type: "link",
+        text: "Переглянути ETALON ET-09 у кольорі бетон сірий",
+        href: "/catalog#etalon-ET-09",
+      },
       { type: "h3", text: "4. Темні акцентні кольори" },
       {
         type: "p",
@@ -389,6 +400,11 @@ const uaPosts: BlogPost[] = [
       {
         type: "p",
         text: "У 2026 році посилюється тренд на єдину модель і колір дверей у всіх приміщеннях замість набору розрізнених рішень — це дає інтер'єру відчуття цілісності й продуманості.",
+      },
+      {
+        type: "link",
+        text: "Підібрати одну колекцію для всього будинку",
+        href: "/catalog",
       },
       { type: "h2", text: "Що це означає для вибору дверей" },
       {
@@ -760,6 +776,16 @@ const ruPosts: BlogPost[] = [
         type: "p",
         text: "Глянец уступает место глубоким матовым фактурам — они выглядят спокойнее и дороже, поэтому именно такой выбор чаще делают для современных интерьеров.",
       },
+      {
+        type: "image",
+        src: "/photos/gallery/etalon/et-09-beton-siryi.jpg",
+        alt: "ETALON ET-09, цвет бетон серый — матовая текстура",
+      },
+      {
+        type: "link",
+        text: "Посмотреть ETALON ET-09 в цвете бетон серый",
+        href: "/catalog#etalon-ET-09",
+      },
       { type: "h3", text: "4. Тёмные акцентные цвета" },
       {
         type: "p",
@@ -779,6 +805,11 @@ const ruPosts: BlogPost[] = [
       {
         type: "p",
         text: "В 2026 году усиливается тренд на единую модель и цвет дверей во всех помещениях вместо набора разрозненных решений — это даёт интерьеру ощущение целостности и продуманности.",
+      },
+      {
+        type: "link",
+        text: "Подобрать одну коллекцию для всего дома",
+        href: "/catalog",
       },
       { type: "h2", text: "Что это значит для выбора дверей" },
       {
@@ -1150,6 +1181,16 @@ const enPosts: BlogPost[] = [
         type: "p",
         text: "Gloss is giving way to deep matte textures — they look calmer and more expensive, which is why they're increasingly chosen for modern interiors.",
       },
+      {
+        type: "image",
+        src: "/photos/gallery/etalon/et-09-beton-siryi.jpg",
+        alt: "ETALON ET-09 in Grey Concrete — matte texture",
+      },
+      {
+        type: "link",
+        text: "View ETALON ET-09 in Grey Concrete",
+        href: "/catalog#etalon-ET-09",
+      },
       { type: "h3", text: "4. Dark accent colours" },
       {
         type: "p",
@@ -1169,6 +1210,11 @@ const enPosts: BlogPost[] = [
       {
         type: "p",
         text: "In 2026 there's a growing trend toward a single door model and colour across every room, instead of a mismatched set — it gives the interior a sense of cohesion and intent.",
+      },
+      {
+        type: "link",
+        text: "Browse collections to find one style for the whole home",
+        href: "/catalog",
       },
       { type: "h2", text: "What this means when choosing doors" },
       {
@@ -1540,6 +1586,16 @@ const plPosts: BlogPost[] = [
         type: "p",
         text: "Połysk ustępuje miejsca głębokim, matowym fakturom — wyglądają spokojniej i bardziej elegancko, dlatego coraz częściej wybiera się je do nowoczesnych wnętrz.",
       },
+      {
+        type: "image",
+        src: "/photos/gallery/etalon/et-09-beton-siryi.jpg",
+        alt: "ETALON ET-09 w kolorze beton szary — matowa tekstura",
+      },
+      {
+        type: "link",
+        text: "Zobacz ETALON ET-09 w kolorze beton szary",
+        href: "/catalog#etalon-ET-09",
+      },
       { type: "h3", text: "4. Ciemne kolory akcentujące" },
       {
         type: "p",
@@ -1559,6 +1615,11 @@ const plPosts: BlogPost[] = [
       {
         type: "p",
         text: "W 2026 roku nasila się trend na jeden model i kolor drzwi we wszystkich pomieszczeniach zamiast zestawu przypadkowych rozwiązań — daje to wnętrzu poczucie spójności i przemyślanej koncepcji.",
+      },
+      {
+        type: "link",
+        text: "Wybierz jedną kolekcję do całego domu",
+        href: "/catalog",
       },
       { type: "h2", text: "Co to oznacza przy wyborze drzwi" },
       {
