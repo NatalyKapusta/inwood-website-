@@ -49,9 +49,18 @@ export default function Header({
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
   const pathWithoutLocale = pathname?.replace(new RegExp(`^/${locale}(?=/|$)`), "") || "";
+  // На сторінці 3D-примірки шапка, що прилипає зверху, забирає забагато
+  // вертикального простору — тулу й так не вистачає висоти на екрані.
+  // Тому саме тут робимо шапку звичайною (прокручується разом зі сторінкою),
+  // на решті сайту лишаємо sticky як було.
+  const isDoorFit3d = pathWithoutLocale === "/3d-prymirka-dverei";
 
   return (
-    <header className="sticky top-0 z-50 bg-panel shadow-[0_4px_20px_-8px_rgba(51,57,88,0.25)]">
+    <header
+      className={`${
+        isDoorFit3d ? "" : "sticky top-0"
+      } z-50 bg-panel shadow-[0_4px_20px_-8px_rgba(51,57,88,0.25)]`}
+    >
       {/* Верхня контактна панель */}
       <div className="bg-navy text-white text-sm">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-4 py-2">
