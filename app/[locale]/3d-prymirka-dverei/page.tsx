@@ -4,6 +4,7 @@ import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import ContactCta from "@/components/ContactCta";
 import DoorFitFrame from "@/components/DoorFitFrame";
+import ScrollHint from "@/components/ScrollHint";
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
@@ -83,8 +84,11 @@ export default async function DoorFit3dPage({
       </section>
 
       <section className="mx-auto max-w-5xl px-4 py-16 sm:py-24">
-        <div className="overflow-hidden rounded-2xl border border-navy-dim/10 shadow-sm">
-          <DoorFitFrame locale={params.locale} title={t.heading} />
+        <div className="flex flex-col items-stretch gap-2 lg:flex-row lg:gap-4">
+          <div className="min-w-0 flex-1 overflow-hidden rounded-2xl border border-navy-dim/10 shadow-sm">
+            <DoorFitFrame locale={params.locale} title={t.heading} />
+          </div>
+          <ScrollHint label={t.scrollHint} />
         </div>
       </section>
 

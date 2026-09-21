@@ -116,3 +116,44 @@ body {
 .trends-marquee:focus-within .trends-marquee-track {
   animation-play-state: paused;
 }
+
+/* Підказка "гортайте тут" біля 3D-примірки дверей — класична іконка
+   мишки з крапкою коліщатка, що повільно їздить вниз-вгору по колу. */
+.scroll-hint-mouse {
+  position: relative;
+  display: block;
+  width: 22px;
+  height: 34px;
+  border: 2px solid currentColor;
+  border-radius: 11px;
+  opacity: 0.6;
+}
+.scroll-hint-dot {
+  position: absolute;
+  left: 50%;
+  top: 6px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: currentColor;
+  transform: translateX(-50%);
+  animation: scroll-hint-wheel 1.6s ease-in-out infinite;
+}
+@keyframes scroll-hint-wheel {
+  0% {
+    top: 6px;
+    opacity: 1;
+  }
+  60% {
+    top: 18px;
+    opacity: 0.2;
+  }
+  61% {
+    top: 6px;
+    opacity: 0;
+  }
+  100% {
+    top: 6px;
+    opacity: 1;
+  }
+}
