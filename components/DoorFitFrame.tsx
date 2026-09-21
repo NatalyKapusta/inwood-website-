@@ -3,10 +3,11 @@
 import { useEffect, useState } from "react";
 import type { Locale } from "@/lib/i18n";
 
-// Інструмент door-fit підтримує лише uk/en — інші мови сайту (ru/pl)
-// показуємо англійською як найнейтральніший варіант.
+// Інструмент door-fit підтримує лише uk/en. Українська й російська версії
+// сайту показують інструмент українською (аудиторія ru — здебільшого з
+// України), англійська й польська — англійською.
 function toolLang(locale: Locale) {
-  return locale === "ua" ? "uk" : "en";
+  return locale === "ua" || locale === "ru" ? "uk" : "en";
 }
 
 export default function DoorFitFrame({ locale, title }: { locale: Locale; title: string }) {
