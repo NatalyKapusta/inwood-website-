@@ -1,0 +1,1298 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Примірка дверей</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap&subset=cyrillic">
+<style>
+:root{
+  color-scheme:light;
+  /* палітра з inwood.com.ua: navy #333958, navy-dim #626998, тепле золото #8A6836, панель #F7F6F2 */
+  --bg:#F7F6F2; --panel:#FFFFFF; --ink:#333958; --muted:#626998; --line:#E1E2EC; --chip:#F3F2EC;
+  --accent:#333958; --accent-soft:#E6E7F0; --on-accent:#FFFFFF; --gold:#8A6836;
+  --stage-a:#FBFAF7; --stage-b:#E4E2DA; --shadow:rgba(51,57,88,.18);
+}
+:root[data-theme="dark"]{
+  --bg:#15182B; --panel:#1E2238; --ink:#EEEFF6; --muted:#A5AAD0; --line:#343A5C; --chip:#272C47;
+  --accent:#E3CCA1; --accent-soft:#33395C; --on-accent:#262B47; --gold:#E3CCA1;
+  --stage-a:#2A2F4B; --stage-b:#15182B; --shadow:rgba(0,0,0,.5);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 "Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+button,input{font:inherit;color:inherit}
+button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.app{display:grid;grid-template-columns:minmax(0,1fr) 380px;height:100%}
+.stage{position:relative;min-height:0;overflow:hidden;background:linear-gradient(180deg,var(--stage-a),var(--stage-b))}
+#gl,#dims{position:absolute;inset:0;width:100%;height:100%;display:block}
+#gl{touch-action:none;cursor:grab}
+#gl:active{cursor:grabbing}
+#dims{pointer-events:none}
+.overlay{position:absolute;top:16px;left:16px;right:16px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;pointer-events:none}
+.overlay>*{pointer-events:auto}
+.orow{display:flex;flex-wrap:wrap;gap:8px;width:100%;justify-content:space-between;align-items:flex-start;pointer-events:none}
+.orow>*{pointer-events:auto}
+.langs button{padding:6px 11px;font-size:12px;letter-spacing:.04em}
+@media (max-width:480px){.overlay .pillbar button{padding:6px 10px}.overlay .langs button{padding:6px 9px}}
+.pillbar{display:inline-flex;gap:2px;padding:3px;background:color-mix(in srgb,var(--panel) 92%,transparent);border:1px solid var(--line);border-radius:999px;box-shadow:0 1px 3px var(--shadow)}
+.pillbar button{border:0;background:transparent;color:var(--muted);padding:6px 14px;border-radius:999px;cursor:pointer;font-weight:600}
+.pillbar button:hover{color:var(--ink)}
+.pillbar button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent);font-weight:600}
+.tog{display:inline-flex;align-items:center;gap:7px;padding:6px 13px;background:color-mix(in srgb,var(--panel) 92%,transparent);border:1px solid var(--line);border-radius:999px;cursor:pointer;box-shadow:0 1px 3px var(--shadow);font-size:13px}
+.tog input{accent-color:var(--accent);margin:0}
+.togs{display:flex;flex-wrap:wrap;gap:8px}
+.hint{position:absolute;left:16px;right:16px;bottom:14px;margin:0;color:var(--muted);font-size:12px;pointer-events:none}
+.toast{position:absolute;left:50%;bottom:44px;transform:translateX(-50%);background:var(--ink);color:var(--panel);padding:9px 14px;border-radius:8px;font-size:13px;max-width:calc(100% - 32px);text-align:center}
+.nogl{position:absolute;inset:0;display:grid;place-items:center;padding:24px;text-align:center;color:var(--muted)}
+
+.panel{background:var(--panel);border-left:1px solid var(--line);overflow-y:auto;padding:22px 20px 32px;display:flex;flex-direction:column;gap:20px}
+.eyebrow{margin:0;font:600 11px "Manrope",system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+h1{margin:6px 0 8px;font:700 30px/1.15 "Playfair Display",Georgia,serif;letter-spacing:0;text-wrap:balance}
+.lede{margin:0;color:var(--muted);max-width:36ch}
+.panel section{display:grid;gap:12px;padding-top:18px;border-top:1px solid var(--line)}
+h2{margin:0;display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+h2 .val{font-size:13px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--ink);text-align:right}
+.field{display:grid;gap:6px}
+[hidden]{display:none!important}
+.lbl{font-size:12.5px;color:var(--muted)}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.row input[type="checkbox"]{accent-color:var(--accent);width:18px;height:18px;margin:0}
+.row output{font:600 12.5px "Manrope",system-ui,sans-serif;font-variant-numeric:tabular-nums}
+.flag{margin-left:6px;padding:1px 6px;border:1px solid var(--accent);border-radius:5px;color:var(--accent);font:600 10.5px "Manrope",system-ui,sans-serif;letter-spacing:.02em}
+
+.seg{display:flex;gap:2px;padding:3px;background:var(--chip);border-radius:12px}
+.seg.wrap{flex-wrap:wrap}.seg.wrap button{flex:1 1 30%}
+.colorrow{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.colorrow input[type=color]{width:44px;height:30px;padding:0;border:1px solid var(--line);border-radius:8px;background:var(--panel);cursor:pointer}
+.seg button{flex:1;min-width:0;padding:7px 4px;border:0;border-radius:9px;font-weight:500;background:transparent;color:var(--muted);cursor:pointer;font-variant-numeric:tabular-nums;white-space:nowrap}
+.seg.grid{display:grid;grid-template-columns:repeat(6,1fr)}
+.seg.colls{display:grid;grid-template-columns:repeat(3,1fr)}
+.seg.colls button{padding:8px 4px;font-size:12.5px;letter-spacing:.02em}
+.film.custom{position:relative;overflow:hidden;background:conic-gradient(#e3b6b6,#e3d6b0,#b9dfb5,#b0d6e3,#b9b5e3,#e3b0d9,#e3b6b6)}
+.film.custom input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;border:0;padding:0}
+.film.custom span{position:absolute;inset:0;display:grid;place-items:center;font:700 9.5px/1 "Manrope",sans-serif;color:#333958;text-align:center;pointer-events:none;letter-spacing:.02em}
+.seg button:hover{color:var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--panel);color:var(--ink);font-weight:600;box-shadow:0 0 0 1px var(--line),0 1px 2px var(--shadow)}
+
+.films{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.film{aspect-ratio:1;padding:0;border-radius:10px;border:1px solid var(--line);background-size:cover;background-position:center;cursor:pointer}
+.film[aria-pressed="true"]{outline:2px solid var(--accent);outline-offset:2px}
+.dots{display:flex;gap:10px;flex-wrap:wrap}
+.dot{width:30px;height:30px;padding:0;border-radius:50%;border:1px solid var(--line);cursor:pointer}
+.dot[aria-pressed="true"]{outline:2px solid var(--accent);outline-offset:2px}
+
+input[type="range"]{width:100%;accent-color:var(--accent);margin:0}
+.angle{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}
+.angle output{font:600 13px "Manrope",system-ui,sans-serif;min-width:4ch;text-align:right;font-variant-numeric:tabular-nums}
+.btn{padding:11px 16px;border-radius:999px;border:1px solid var(--line);background:var(--panel);cursor:pointer;font-weight:600}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--on-accent);border-color:transparent}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btns{display:grid;gap:8px}
+.btnrow{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+a.btn{display:block;text-align:center;text-decoration:none;color:var(--ink)}
+.dot.custom{position:relative;overflow:hidden;background:conic-gradient(#e3b6b6,#e3d6b0,#b9dfb5,#b0d6e3,#b9b5e3,#e3b0d9,#e3b6b6)}
+.dot.custom input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;border:0;padding:0}
+.hexin{width:96px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--ink);font:inherit;font-size:12px}
+.shareout{width:100%;padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--ink);font:inherit;font-size:12px}
+
+dl{display:grid;grid-template-columns:auto 1fr;gap:7px 14px;margin:0;font-size:13px}
+dt{color:var(--muted)}
+dd{margin:0;text-align:right;font:600 12.5px "Manrope",system-ui,sans-serif;font-variant-numeric:tabular-nums}
+.note{margin:0;font-size:12px;color:var(--muted)}
+
+@media (max-width:860px){
+  html,body{height:auto}
+  .app{display:block;height:auto}
+  .stage{height:min(64vh,540px)}
+  .panel{border-left:0;border-top:1px solid var(--line);overflow:visible}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preload" as="image" type="image/webp" href="textures/astana-merle.webp?v=1" crossorigin>
+</head>
+<body>
+
+<div class="app">
+  <main class="stage" id="stage">
+    <canvas id="gl" aria-label="3D-модель дверей: тягніть, щоб обертати" data-i18n-aria="canvas_aria"></canvas>
+    <canvas id="dims" aria-hidden="true"></canvas>
+    <div class="overlay">
+      <div class="orow">
+      <div class="pillbar" role="group" aria-label="Вигляд" data-i18n-aria="aria_view" id="views">
+        <button id="view-persp" data-view="persp" aria-pressed="true">3D</button>
+        <button id="view-front" data-view="front" aria-pressed="false" data-i18n="v_front">Фасад</button>
+        <button id="view-side" data-view="side" aria-pressed="false" data-i18n="v_side">Збоку</button>
+        <button id="view-plan" data-view="plan" aria-pressed="false" data-i18n="v_plan">План</button>
+      </div>
+      <div class="pillbar langs" id="langs" role="group" aria-label="Мова" data-i18n-aria="aria_lang"></div>
+      </div>
+      <div class="togs">
+        <label class="tog" for="tDims"><input type="checkbox" id="tDims" checked><span data-i18n="t_dims">Розміри</span></label>
+        <label class="tog" for="tRoom"><input type="checkbox" id="tRoom" checked><span data-i18n="t_room">Стіна й підлога</span></label>
+      </div>
+    </div>
+    <p class="hint" data-i18n="hint">Тягніть — обертати · прокрутка — масштаб · права кнопка — зсув</p>
+    <div class="toast" id="toast" role="status" hidden></div>
+  </main>
+
+  <aside class="panel" aria-label="Параметри дверей" data-i18n-aria="aria_params">
+    <header>
+      <p class="eyebrow" data-i18n="eyebrow">IN WOOD · міжкімнатні двері</p>
+      <h1 data-i18n="title">Примірка дверей</h1>
+      <p class="lede" data-i18n="lede">Оберіть колекцію, модель, розмір і колір, приміряйте двері в стіні та завантажте 3D-файл для проєкту інтер'єру.</p>
+    </header>
+
+    <section>
+      <h2><span data-i18n="s_coll">Колекція</span> <span class="val" id="collName"></span></h2>
+      <div class="seg colls" id="segColl" role="group" aria-label="Колекція" data-i18n-aria="aria_coll"></div>
+      <p class="note" id="collNote"></p>
+    </section>
+
+    <section>
+      <h2><span data-i18n="s_model">Модель</span> <span class="val" id="modelName"></span></h2>
+      <div class="seg grid" id="segModel" role="group" aria-label="Модель" data-i18n-aria="aria_modelseg"></div>
+      <p class="note" id="modelNote"></p>
+    </section>
+
+    <section>
+      <h2 data-i18n="s_size">Розмір полотна</h2>
+      <div class="field">
+        <div class="row"><label class="lbl" for="rngW" data-i18n="l_w">Ширина</label><output id="wOut" for="rngW"></output></div>
+        <input type="range" id="rngW" min="400" max="1000" step="50" value="800">
+      </div>
+      <div class="field">
+        <div class="row"><label class="lbl" for="rngH" data-i18n="l_h">Висота</label><output id="hOut" for="rngH"></output></div>
+        <input type="range" id="rngH" min="1800" max="2300" step="50" value="2000">
+      </div>
+      <div class="field" id="fieldFt"><span class="lbl" data-i18n="l_ft">Тип короба</span><div class="seg" id="segFt" role="group" aria-label="Тип короба" data-i18n-aria="aria_ft"></div></div>
+      <div class="field" id="fieldBox"><span class="lbl" id="boxLbl">Короб телескопічний, мм (глибина = товщина стіни)</span><div class="seg" id="segT" role="group" aria-label="Короб" data-i18n-aria="aria_frame"></div></div>
+      <div class="field" id="fieldDob"><span class="lbl" data-i18n="l_dob">Добір телескопічний, мм</span><div class="seg" id="segDob" role="group" aria-label="Добір телескопічний" data-i18n-aria="aria_dob"></div></div>
+      <div class="field" id="fieldHi"><span class="lbl" data-i18n="l_hi">Полотно: товщина, мм (Inside — 56 мм, лише з алюмінієвою кромкою)</span><div class="seg" id="segHi" role="group" aria-label="Товщина полотна" data-i18n-aria="aria_hi"></div></div>
+      <div class="field" id="fieldHb"><span class="lbl" data-i18n="l_hb">Коробка прихованого монтажу (STANDART — під шпатлівку, LUX — під панелі)</span><div class="seg" id="segHb" role="group" aria-label="Коробка прихованого монтажу" data-i18n-aria="aria_hb"></div></div>
+    </section>
+
+    <section>
+      <h2><span id="filmTitle">Плівка ПВХ</span> <span class="val" id="filmName"></span></h2>
+      <div class="films" id="films" role="group" aria-label="Палітра плівок" data-i18n-aria="aria_films"></div>
+    </section>
+
+    <section>
+      <h2 data-i18n="s_insedge">Вставка й кромка</h2>
+      <div class="field" id="fieldInsert"><span class="lbl" data-i18n="l_insert">Колір вставки</span><div class="seg" id="segInsert" role="group" aria-label="Колір вставки" data-i18n-aria="aria_insert"></div></div>
+      <div class="field"><span class="lbl" id="edgeLbl">Колір кромки</span><div class="seg" id="segEdge" role="group" aria-label="Колір кромки" data-i18n-aria="aria_edge"></div></div>
+      <div class="colorrow" id="rowEdgeRal" hidden><span class="lbl" data-i18n="l_edgeral">Колір алюмінієвої кромки за RAL (наближено)</span><input type="color" id="edgeIn" value="#8C8F93" aria-label="Колір алюмінієвої кромки" data-i18n-aria="aria_edgeral"></div>
+    </section>
+
+    <section>
+      <h2 data-i18n="s_kit">Комплектація</h2>
+      <div class="field"><span class="lbl" data-i18n="l_hinge">Сторона відкривання (вид з боку відкривання)</span><div class="seg" id="segHinge" role="group" aria-label="Сторона відкривання" data-i18n-aria="aria_hinge"></div></div>
+      <div class="field" id="fieldCs"><span class="lbl" data-i18n="l_cs">Лиштва 80 мм</span><div class="seg" id="segCs" role="group" aria-label="Сторони лиштви" data-i18n-aria="aria_cs"></div></div>
+      <div class="field" id="fieldCt"><span class="lbl" data-i18n="l_ct">Тип лиштви</span><div class="seg" id="segCt" role="group" aria-label="Тип лиштви" data-i18n-aria="aria_ct"></div></div>
+      <div class="field"><span class="lbl" data-i18n="l_handle">Ручка (для візуалізації)</span><div class="seg" id="segHandle" role="group" aria-label="Ручка" data-i18n-aria="aria_handle"></div></div>
+      <div class="field" id="fieldShape"><span class="lbl" data-i18n="l_shape">Форма розетки ручки</span><div class="seg" id="segShape" role="group" aria-label="Форма розетки" data-i18n-aria="aria_shape"></div></div>
+      <div class="field" id="fieldHgc"><span class="lbl" data-i18n="l_hgc">Колір прихованих петель ANSELMI</span><div class="seg" id="segHgc" role="group" aria-label="Колір петель" data-i18n-aria="aria_hgc"></div></div>
+      <p class="note" id="kitNote" data-i18n="kit_note"></p>
+    </section>
+
+    <section>
+      <h2 data-i18n="s_interior">Інтер'єр</h2>
+      <div class="field"><span class="lbl" data-i18n="l_wall">Колір стіни</span><div class="dots" id="walls" role="group" aria-label="Колір стіни" data-i18n-aria="l_wall"></div></div>
+      <div class="field"><span class="lbl" data-i18n="l_floor">Підлога</span><div class="seg" id="segFloor" role="group" aria-label="Підлога" data-i18n-aria="aria_floor"></div></div>
+    </section>
+
+    <section>
+      <h2 data-i18n="s_open">Відкривання</h2>
+      <div class="angle"><input type="range" id="angle" min="0" max="105" step="1" value="24" aria-label="Кут відкривання" data-i18n-aria="aria_angle"><output id="angleOut" for="angle">24°</output></div>
+      <button class="btn" id="openBtn" type="button">Відкрити</button>
+    </section>
+
+    <section>
+      <h2 data-i18n="s_spec">Специфікація</h2>
+      <dl id="spec"></dl>
+      <p class="note" data-i18n="spec_note">Отвір — орієнтовний: полотно + коробка + монтажні зазори.</p>
+    </section>
+
+    <section>
+      <h2 data-i18n="s_project">Для проєкту</h2>
+      <div class="btns">
+        <button class="btn primary" id="dlZip" type="button" data-i18n="b_zip">Завантажити 3D (.zip: GLB + OBJ)</button>
+        <button class="btn" id="dlPng" type="button" data-i18n="b_png">Знімок поточного виду (PNG)</button>
+        <div class="btnrow"><button class="btn" id="cardPdf" type="button" data-i18n="b_cardpdf">Картка для клієнта (PDF)</button><button class="btn" id="cardPng" type="button" data-i18n="b_cardpng">Картка (PNG)</button></div>
+        <button class="btn" id="shareBtn" type="button" data-i18n="b_share">Скопіювати посилання на цю конфігурацію</button>
+        <input class="shareout" id="shareOut" readonly hidden data-i18n-aria="aria_share" aria-label="Посилання на конфігурацію">
+      </div>
+      <p class="note" id="exportNote" data-i18n="note_export">Масштаб 1:1, метри, вісь Y угору. Початок координат — центр отвору на рівні підлоги; стіна й підлога в файл не входять. GLB зберігає матеріали й текстуру плівки, OBJ — лише геометрію.</p>
+      <p class="note" data-i18n="note_models">Кольори, рисунок і положення елементів зняті з візуалізацій IN WOOD. Профілі коробки, лиштва й ручка змодельовані орієнтовно — для точних розмірів потрібні креслення перерізів.</p>
+    </section>
+  </aside>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+(function(){
+'use strict';
+var $=function(s){return document.querySelector(s)};
+var rad=function(d){return d*Math.PI/180};
+var D={"title":["Примірка дверей","Door fitting"],"aria_lang":["Мова","Language"],"aria_view":["Вигляд","View"],"v_front":["Фасад","Front"],"v_side":["Збоку","Side"],"v_plan":["План","Plan"],"canvas_aria":["3D-модель дверей: тягніть, щоб обертати","3D door model: drag to rotate"],"t_dims":["Розміри","Dimensions"],"t_room":["Стіна й підлога","Wall and floor"],"hint":["Тягніть — обертати · прокрутка — масштаб · права кнопка — зсув","Drag to rotate · scroll to zoom · right button to pan"],"aria_params":["Параметри дверей","Door options"],"eyebrow":["IN WOOD · міжкімнатні двері","IN WOOD · interior doors"],"lede":["Оберіть колекцію, модель, розмір і колір, приміряйте двері в стіні та завантажте 3D-файл для проєкту інтер'єру.","Choose a collection, model, size and colour, try the door in the wall and download a 3D file for your interior project."],"s_coll":["Колекція","Collection"],"s_model":["Модель","Model"],"aria_coll":["Колекція","Collection"],"aria_modelseg":["Модель","Model"],"s_size":["Розмір полотна","Door leaf size"],"l_w":["Ширина","Width"],"l_h":["Висота","Height"],"aria_frame":["Короб","Frame"],"aria_films":["Палітра плівок","Film palette"],"s_insedge":["Вставка й кромка","Insert and edge"],"l_insert":["Колір вставки","Insert colour"],"aria_insert":["Колір вставки","Insert colour"],"aria_edge":["Колір кромки","Edge colour"],"s_kit":["Комплектація","Configuration"],"l_hinge":["Сторона відкривання (вид з боку відкривання)","Opening side (viewed from the opening side)"],"aria_hinge":["Сторона відкривання","Opening side"],"l_casing":["Лиштва 80 мм з обох боків","80 mm casing on both sides"],"l_handle":["Ручка (для візуалізації)","Handle (for visualisation)"],"aria_handle":["Ручка","Handle"],"l_shape":["Форма розетки ручки","Handle rose shape"],"aria_shape":["Форма розетки","Rose shape"],"s_interior":["Інтер'єр","Interior"],"l_wall":["Колір стіни","Wall colour"],"l_floor":["Підлога","Floor"],"aria_floor":["Підлога","Floor"],"s_open":["Відкривання","Opening"],"aria_angle":["Кут відкривання","Opening angle"],"s_spec":["Специфікація","Specification"],"spec_note":["Отвір — орієнтовний: полотно + коробка + монтажні зазори.","The opening is approximate: leaf + frame + installation gaps."],"s_project":["Для проєкту","For your project"],"b_zip":["Завантажити 3D (.zip: GLB + OBJ)","Download 3D (.zip: GLB + OBJ)"],"b_png":["Знімок поточного виду (PNG)","Snapshot of the current view (PNG)"],"note_export":["Масштаб 1:1, метри, вісь Y угору. Початок координат — центр отвору на рівні підлоги; стіна й підлога в файл не входять. GLB зберігає матеріали й текстуру плівки, OBJ — лише геометрію.","Scale 1:1, metres, Y axis up. The origin is the centre of the opening at floor level; the wall and floor are not included in the file. GLB keeps the materials and the film texture, OBJ contains geometry only."],"note_models":["Кольори, рисунок і положення елементів зняті з візуалізацій IN WOOD. Профілі коробки, лиштва й ручка змодельовані орієнтовно — для точних розмірів потрібні креслення перерізів.","Colours, patterns and element positions are taken from IN WOOD visuals. Frame profiles, casing and handle are modelled approximately; use the section drawings for exact dimensions."],"box_tel":["Короб, мм (глибина = товщина стіни)","Frame, mm (depth = wall thickness)"],"box_flush":["Товщина стіни, мм (коробка прихованого монтажу)","Wall thickness, mm (concealed-installation frame)"],"edge_leaf":["Кромка полотна","Door leaf edge"],"edge_color":["Колір кромки","Edge colour"],"film_pvc":["Плівка ПВХ","PVC film"],"film_pvcpaint":["Плівка ПВХ або фарба","PVC film or paint"],"film_paint":["Фарбування RAL / NCS","Painting RAL / NCS"],"open_btn":["Відкрити","Open"],"close_btn":["Закрити","Close"],"flag_ns":["нестандарт","non-standard"],"mm":["мм","mm"],"wall_dim":["стіна","wall"],"nogl_lib":["Не вдалося завантажити 3D-бібліотеку. Перевірте з'єднання та оновіть сторінку.","Could not load the 3D library. Check your connection and reload the page."],"nogl_gl":["Ваш браузер не запустив WebGL, тому 3D-модель недоступна.","Your browser could not start WebGL, so the 3D model is unavailable."],"paint_title":["Фарбування RAL / NCS: оберіть колір","RAL / NCS paint: choose a colour"],"aria_paint":["Колір фарбування RAL / NCS","RAL / NCS paint colour"],"ral_approx":["RAL / NCS (наближено)","RAL / NCS (approximate)"],"cn_ETALON":["Рисунок вставок і кольори знято з візуалів IN WOOD (ET-01…ET-20).","Insert patterns and colours are taken from IN WOOD visuals (ET-01…ET-20)."],"cm_ETALON":["ET-19 і ET-20 - із дзеркальною вставкою, у палітрі є колір із візуала.","ET-19 and ET-20 have a mirror insert; the palette includes the colour from the visual."],"cn_NOMINAL":["Дизайнерські двері з вставками. Колір вставки за візуалами: на темних плівках - сірий.","Designer doors with inserts. Insert colour follows the visuals: grey on dark films."],"cm_NOMINAL":["NL-01 - без вставок; у NL-02…NL-10 колір вставки можна змінити.","NL-01 has no inserts; in NL-02…NL-10 the insert colour can be changed."],"cn_FREZZATTI":["Двері з фрезеруванням (V-канавки). Плівка ПВХ або фарбування RAL / NCS.","Doors with milled V-grooves. PVC film or RAL / NCS paint."],"cm_FREZZATTI":["Рисунок фрезерування знято з візуалів IN WOOD (FZ-01…FZ-14).","The milling pattern is taken from IN WOOD visuals (FZ-01…FZ-14)."],"cn_PERFETTO":["Філенчасті двері. Плівка ПВХ (палітра як у ETALON) або фарбування RAL / NCS.","Panelled doors. PVC film (same palette as ETALON) or RAL / NCS paint."],"cm_PERFETTO":["Візуали PERFETTO є лише в одному кольорі, тому кольори плівок взято з ETALON.","PERFETTO visuals exist in one colour only, so the film colours are taken from ETALON."],"cn_HIDDEN":["Двері прихованого монтажу: полотно МДФ під фарбування врівень зі стіною, коробка не видна.","Concealed doors: MDF leaf for painting, flush with the wall, frame not visible."],"cm_HIDDEN":["Колір фарбування можна підібрати під стіну; кромка - ґрунт або алюмінієвий профіль.","The paint colour can be matched to the wall; the edge is primer or an aluminium profile."],"e_film":["В колір","Match"],"e_black":["Чорна","Black"],"e_white":["Біла","White"],"e_agrey":["Алюм., сірий","Alu, grey"],"e_ablack":["Алюм., чорний","Alu, black"],"en_film":["в колір полотна","matches the leaf"],"en_black":["чорна","black"],"en_white":["біла","white"],"en_agrey":["алюмінієвий профіль, сірий","aluminium profile, grey"],"en_ablack":["алюмінієвий профіль, чорний","aluminium profile, black"],"ins_black":["чорний","black"],"ins_grey":["сірий","grey"],"insl_black":["Чорний","Black"],"insl_grey":["Сірий","Grey"],"h_graphite":["Графіт","Graphite"],"h_black":["Чорна матова","Matt black"],"h_chrome":["Хром","Chrome"],"h_brass":["Латунь","Brass"],"hl_graphite":["Графіт","Graphite"],"hl_black":["Чорна","Black"],"hl_chrome":["Хром","Chrome"],"hl_brass":["Латунь","Brass"],"w0":["Тепла біла","Warm white"],"w1":["Грейдж","Greige"],"w2":["Світла шавлія","Light sage"],"w3":["Сіро-блакитна","Grey-blue"],"w4":["Мокко","Mocha"],"w5":["Темна зелень","Deep green"],"f_light":["Світла","Light"],"f_grey":["Бетон","Concrete"],"f_dark":["Темна","Dark"],"shape_sq":["Квадратна","Square"],"shape_rd":["Кругла","Round"],"hinge_l":["Ліва","Left"],"hinge_r":["Права","Right"],"sp_coll":["Колекція / модель","Collection / model"],"sp_leaf":["Полотно","Door leaf"],"sp_ns":["(нестандарт)","(non-standard)"],"sp_paint":["Фарбування","Painting"],"sp_film":["Плівка","Film"],"sp_edge":["Кромка","Edge"],"sp_insert":["Вставка","Insert"],"sp_box":["Коробка","Frame"],"sp_box_flush":["прихованого монтажу","concealed installation"],"sp_wall":["Стіна","Wall"],"sp_frame":["Короб телеск.","Telescopic frame"],"sp_casing":["Лиштва","Casing"],"sp_casing_yes":["80 мм, 2 сторони","80 mm, both sides"],"sp_casing_no":["без лиштви","no casing"],"sp_open":["Відкривання","Opening"],"sp_left":["ліве","left"],"sp_right":["праве","right"],"sp_handle":["Ручка","Handle"],"sp_outer":["Коробка, зовн.","Frame, outer"],"sp_hole":["Отвір, орієнт.","Opening, approx."],"sp_approx":["(наближено)","(approximate)"],"t_declined":["Збереження скасовано","Saving cancelled"],"t_rate":["Зачекайте кілька секунд і спробуйте ще раз","Wait a few seconds and try again"],"t_savefail":["Не вдалося зберегти файл","Could not save the file"],"t_nodl":["Завантаження недоступне у цьому вікні","Downloads are not available in this window"],"t_prep":["Готую файли…","Preparing files…"],"t_done":["Готово: архів збережено","Done: archive saved"],"t_png":["Знімок збережено","Snapshot saved"],"e_img":["не вдалося створити зображення","could not create the image"],"e_lib":["Не вдалося завантажити бібліотеку експорту","Could not load the export library"],"r_head":["IN WOOD, колекція {0}, модель {1}: {2} x {3} мм - 3D-модель","IN WOOD, collection {0}, model {1}: {2} x {3} mm - 3D model"],"r_head_flush":["IN WOOD, колекція {0}: {2} x {3} мм - 3D-модель","IN WOOD, collection {0}: {2} x {3} mm - 3D model"],"r_files":["Файли: {0}.glb (геометрія, матеріали й текстура плівки), {0}.obj (лише геометрія).","Files: {0}.glb (geometry, materials and film texture), {0}.obj (geometry only)."],"r_units":["Одиниці: метри. Масштаб 1:1.","Units: metres. Scale 1:1."],"r_origin":["Початок координат: центр отвору на рівні підлоги. Вісь Y угору, глядач з боку +Z. Стіна лежить у площині XY, її товщина - вздовж Z.","Origin: centre of the opening at floor level. Y axis up, viewer on the +Z side. The wall lies in the XY plane, its thickness runs along Z."],"r_mesh":["Окремі елементи (меші): leaf_*, frame_*, casing_*, handle_*, hinge, box_*. Кут відкривання полотна збережено як у вікні перегляду ({0} град.).","Separate elements (meshes): leaf_*, frame_*, casing_*, handle_*, hinge, box_*. The opening angle of the leaf is saved as in the viewer ({0} deg.)."],"r_color_paint":["Фарбування: RAL / NCS, наближений колір {0}.","Painting: RAL / NCS, approximate colour {0}."],"r_color_film":["Плівка ПВХ: {0}.","PVC film: {0}."],"r_leaf":["Полотно: {0} x {1} x {5} мм. {2} Кромка: {3}.{4}","Door leaf: {0} x {1} x {5} mm. {2} Edge: {3}.{4}"],"r_ins":[" Вставка: {0}."," Insert: {0}."],"r_frame_flush":["Коробка прихованого монтажу; товщина стіни: {0} мм. ","Concealed-installation frame; wall thickness: {0} mm. "],"r_frame":["Короб телескопічний: {0} мм. Лиштва: {1}. ","Telescopic frame: {0} mm. Casing: {1}. "],"r_casing_yes":["80 мм з двох боків","80 mm on both sides"],"r_casing_no":["немає","none"],"r_open":["Відкривання: {0}.","Opening: {0}."],"r_outer":["Коробка зовнішня (орієнт.): {0} x {1} мм. ","Outer frame (approx.): {0} x {1} mm. "],"r_hole":["Орієнтовний отвір: {0} x {1} мм.","Approximate opening: {0} x {1} mm."],"r_nowall":["Стіна й підлога в експорт не входять.","The wall and floor are not included in the export."],"r_foot":["Колір плівки й рисунок взято з візуалізацій IN WOOD. Профілі коробки й лиштви та ручка змодельовані орієнтовно; для точних розмірів використовуйте креслення виробника.","Film colour and pattern are taken from IN WOOD visuals. Frame and casing profiles and the handle are modelled approximately; use the manufacturer's drawings for exact dimensions."],"wall_custom":["Свій колір стіни (HEX)","Custom wall colour (HEX)"],"aria_hex":["Колір стіни у форматі HEX","Wall colour as HEX code"],"b_share":["Скопіювати посилання на цю конфігурацію","Copy link to this configuration"],"t_copied":["Посилання скопійовано","Link copied"],"t_copy_manual":["Скопіюйте посилання вручну","Copy the link manually"],"aria_share":["Посилання на конфігурацію","Configuration link"],"b_cardpdf":["Картка для клієнта (PDF)","Client card (PDF)"],"b_cardpng":["Картка (PNG)","Card (PNG)"],"t_card":["Готую картку…","Preparing the card…"],"t_card_done":["Картку збережено","Card saved"],"card_title":["Картка дверей","Door card"],"card_note":["Візуалізація й розміри орієнтовні. Сполучення опцій підтверджує менеджер.","Visual and dimensions are approximate. Options are confirmed by your manager."],"card_link":["Відкрити цю конфігурацію:","Open this configuration:"],"card_wall":["Колір стіни на візуалізації","Wall colour in the visual"],"l_ft":["Тип короба","Frame type"],"aria_ft":["Тип короба","Frame type"],"ft_tel":["Телескопічний","Telescopic"],"ft_cop":["Компланарний","Coplanar"],"ftv_tel":["телескопічний","telescopic"],"ftv_cop":["компланарний","coplanar"],"l_dob":["Добір телескопічний, мм (розширює короб, якщо стіна товща)","Extension board, mm (widens the frame for a thicker wall)"],"aria_dob":["Добір телескопічний","Extension board"],"dob_0":["Без","None"],"l_cs":["Лиштва 80 мм (лицьова, з боку відкривання; тильна, з протилежного)","Casing 80 mm (front = opening side, back = opposite side)"],"aria_cs":["Сторони лиштви","Casing sides"],"cs_both":["Обидві","Both"],"cs_front":["Лицьова","Front"],"cs_back":["Тильна","Back"],"cs_none":["Без","None"],"l_ct":["Тип лиштви (телескопічна: крило, мм; компланарна)","Casing type (telescopic: wing, mm; coplanar)"],"aria_ct":["Тип лиштви","Casing type"],"ct_std":["Крило 20","Wing 20"],"ct_w40":["Крило 40","Wing 40"],"ct_cop":["Компланарна","Coplanar"],"kit_note":["У 3D видно положення полотна (компланарний короб — полотно врівень із коробом), добір і сторони лиштви. Крило лиштви прихована деталь, воно є в специфікації. Сполучення опцій підтверджує менеджер.","The 3D view shows the leaf position (coplanar frame: leaf flush with the frame), the extension board and the casing sides. The casing wing is a hidden part and appears in the specification only. Option combinations are confirmed by the manager."],"sp_frame2":["Короб","Frame"],"sp_dob":["Добір","Extension board"],"csv_both":["обидві сторони","both sides"],"csv_front":["лицьова","front side"],"csv_back":["тильна","back side"],"ctv_std":["телескопічна 80 мм (крило 20 мм)","telescopic 80 mm (wing 20 mm)"],"ctv_w40":["телескопічна 80 мм (крило 40 мм)","telescopic 80 mm (wing 40 mm)"],"ctv_cop":["компланарна 80 мм","coplanar 80 mm"],"r_frame2":["Короб {0}: {1} мм.{2} Лиштва: {3}. ","Frame, {0}: {1} mm.{2} Casing: {3}. "],"r_dob":[" Добір: {0} мм."," Extension board: {0} mm."],"e_aral":["Алюм., RAL","Alu, RAL"],"en_aral":["алюмінієвий профіль, RAL","aluminium profile, RAL"],"l_edgeral":["Колір алюмінієвої кромки за RAL (наближено)","Aluminium edge colour by RAL (approximate)"],"aria_edgeral":["Колір алюмінієвої кромки","Aluminium edge colour"],"l_hi":["Товщина полотна (Inside — 56 мм, з алюмінієвою кромкою)","Leaf thickness (Inside = 56 mm, aluminium edge)"],"aria_hi":["Товщина полотна","Leaf thickness"],"hi_0":["40 мм","40 mm"],"hi_1":["Inside 56 мм","Inside 56 mm"],"l_hb":["Коробка прихованого монтажу (STANDART — під шпатлівку, LUX — під панелі)","Concealed-installation frame (STANDART for putty finish, LUX for panels)"],"aria_hb":["Тип коробки прихованого монтажу","Concealed frame type"],"hb_std":["STANDART (під шпатлівку)","STANDART (for putty finish)"],"hb_lux":["LUX (під панелі)","LUX (for panels)"],"hb_std_s":["STANDART","STANDART"],"hb_lux_s":["LUX","LUX"],"r_hbox":["Тип коробки: {0}. ","Frame type: {0}. "],"l_hgc":["Колір прихованих петель ANSELMI","Concealed hinge colour (ANSELMI)"],"aria_hgc":["Колір петель","Hinge colour"],"hgcs_std":["Сірі","Grey"],"hgcs_black":["Чорні","Black"],"hgcs_white":["Білі","White"],"hgc_std":["ANSELMI, сірі","ANSELMI, grey"],"hgc_black":["ANSELMI, чорні","ANSELMI, black"],"hgc_white":["ANSELMI, білі","ANSELMI, white"],"sp_hinges":["Петлі","Hinges"]};
+var LANGS=[['uk','UA'],['en','EN']],LANG='uk';
+(function(){
+  var q='';try{q=(new URLSearchParams(location.search).get('lang')||'').toLowerCase()}catch(e){}
+  if(q==='ua')q='uk';
+  if(q!=='uk'&&q!=='en'){q='';try{q=localStorage.getItem('inwood-door-lang')||''}catch(e){}}
+  if(q==='uk'||q==='en')LANG=q;
+})();
+function tr(k,a){var v=D[k];if(!v)return k;var s=v[LANG==='en'?1:0]||v[0];if(a)for(var i=0;i<a.length;i++)s=s.split('{'+i+'}').join(a[i]);return s}
+function fname(f){if(f.id==='paint')return tr('ral_approx');return (LANG==='en'&&f.en)?f.en:f.name}
+function applyStatic(){
+  document.documentElement.lang=LANG;
+  document.title=tr('title');
+  Array.prototype.forEach.call(document.querySelectorAll('[data-i18n]'),function(e){e.textContent=tr(e.getAttribute('data-i18n'))});
+  Array.prototype.forEach.call(document.querySelectorAll('[data-i18n-aria]'),function(e){e.setAttribute('aria-label',tr(e.getAttribute('data-i18n-aria')))});
+}
+var stage=$('#stage');
+
+if(typeof THREE==='undefined'){
+  stage.insertAdjacentHTML('beforeend','<div class="nogl">'+tr('nogl_lib')+'</div>');
+  return;
+}
+var col=function(hex){return new THREE.Color(hex).convertSRGBToLinear()};
+var hexA=function(hex,a){var n=parseInt(hex.slice(1),16);return 'rgba('+(n>>16&255)+','+(n>>8&255)+','+(n&255)+','+a+')'};
+var rng=function(seed){var s=seed>>>0;return function(){s=(s*1664525+1013904223)>>>0;return s/4294967296}};
+
+/* ---------- data: IN WOOD, ETALON ---------- */
+var FILMS=[{"id":"white","name":"Білий","r":0.5,"s":0.586,"co":["ETALON","PERFETTO"],"t":1,"c":"data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAABQBQCdASpgAGAAPmEwlkikIqIhIOgAgAwJaQAABbtYhUP4s55V/h5zL3GnvJvp06dOjgAA/vT3R3sc9xDaQjAgAAAAAAAA","m":"#c7c7c9","en":"White"},{"id":"astana-merle","name":"Астана мерле","r":0.65,"s":0.586,"co":["ETALON","PERFETTO"],"t":1,"c":"data:image/webp;base64,UklGRh4FAABXRUJQVlA4IBIFAADwGQCdASpgAGAAPmEqkEakIiGhKBOdCIAMCWlMG7H12cmSOKzmt0neXAeF5d54cll9KfbwjmXF9n/tB/ju/bvPfo76Fq0R9Odb9N2wLwBbltVtq+S8vkb6fpY01F7/fonL4NgUX+r7UpaxyPoau9YBVc4zLYxrojGKstFxKyWDcn84ugzNCV/OKKnm65vskwmpy2asRFQk4xoMt+mrRUqFMzjD8sglayGvW0Gpj30Nz4OFEBsU5s4OaOsd4ncJQuqK3otNgkVkJEqu2hDNrBS/GWjKCG0TnAAA+Z6QxXt63lu5r7IEPgkIEFXAqnvTNbd15wE713WkQg/tlAn4yQVGCMDcnQ9FVgeFC2ftg0S1g0NWA71JTYZM1vj2tERdi+Ceb+rkAoe3J7lw3sXSKRBzHn5xZe+WFGoxcEFOpzHKjl+dP2JJxhZ6sMgOM6S58XJzfOjzv0Nv/RoqL275e1ysBX780KDNlsV0h6vm5Joshc2sprp27fBZ/ebELPuTG6l5qpVew26U/cy5m+lh1t29VzUNatImgXtpgknXfVoeWnGhSlvc2HmUOnm+ii3/l/fiWfKSvbkKeyGtc41JXJj1jsDf51G79v6xf4tX3ceFvlO9O3tbPYRL6mqKWbyGe1ccbUZnNDHYVfkMJnEYYxbQKQqPCxRhQe2uYS1PGo7RSyv/4XaI8IBEKQnAGs27ratanTy8AfMvhDDSzhUSmW50ZkNVNZn+uunijXgJCAiHQMZP7BexGEzrDGKCM3r4sz09mbhge/J9KHONj7/9PveEkVtndviliV8sq1xebbwX0aa+CAePQxttS2PliCC+YNir7ht84nv6WROqJA9Vma+8R5uEQBYmGKporiDc/z0eg3zx5KJcwaSDdGIJHc+S2Xb4KjZNXKMarJa0o4yV7hrvMvAkwfwf3+opIZ53QJ5ie4/plj5+04dNi/fPNTqvfUJnHzuQl5AelJP+QYECu8Fxr1XpZAlI9eFAFxabC6eUha7kQEUf4Ze3tsLqrVF8v/AqWLy3OrfrC5Ain6JYSQ9NfFnQ+4ZZUs5kuIcxLocbFzIyBulfX/roTFTVLxOta8FLhQMwME9N9nzKCOdrOU6x+e4mHXyaX4op14LnzE80jlIsK/AAkbtGzpF9VRowfWjGLqcQPmZ+cBTM2gCN1VGjIpPfV/t8cTZxZgnkMnKURoaWJUhMNHCA+NbMiuIC9gVWQv3xMi5ht1tsZlnEH8eyyh1DfxAj0uFlu1R7KnLg7cP3R4T1jbHgvzLqKZpOknLBZbay01rq6EdtBiB6f5vcwP5CkSzbpWVaAV0v4enyxEEvWHeZCCygciBrE8DyYxUKdclLobNYzBOaWZiZebQ929Y76ADxJQJcZuUfft1SAsTkd3E6/n1KV3cpa/ZAQX6cgJjSNthxrsBfOfZysUzBEYxd6U6fLJXirT1rQFmTtmZMDpeqSG9zDQx1RdZTh1S8A4xSmhVnabSt7BnFiHqriIGJUk5PrNJfWB8AOWxccAj5RJI82MJ8BMB2RV8UYOMBokEURnn5KIi2VTsOEUxv28BaDEXxpZ4JcT0EIxqsFQrS9+wepxoaUy9MpSNlHuHahGwKo5k5Jb54uapJhDWQBPtnPkHmtEEIHEbjWHTmMUq6m8wa8P3aIwqDQrTkLqsdHXGbzm32KcHilnCjRYHsUzkW8tDXvx4IbnSBxwDIXn0ta5aBJ3nfaXNgnDNptRwAAA==","m":"#91817c","en":"Astana merle"},{"id":"concrete-snow","name":"Бетон сніжний","r":0.85,"s":0.586,"co":["ETALON","PERFETTO"],"t":1,"c":"data:image/webp;base64,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","m":"#a2a5ab","en":"Concrete snow"},{"id":"concrete-grey","name":"Бетон сірий","r":0.85,"s":0.586,"co":["ETALON","PERFETTO"],"t":1,"c":"data:image/webp;base64,UklGRjoBAABXRUJQVlA4IC4BAADwBwCdASpgAGAAPmEwk0gkIqGjoOh4gAwJaWu5sA5EsCYQHAPwKEkvlKLNkpvNyvN+QvKxLXefhnaeB4dUNtY025kmDR9KY6AA/tR/EyvUzbmKJIg6KAErRk5aCKfe0iBXfQXjFlRGBJshCboNmKVOgTxUHvMA0sZVukUnMxyVBzzb+23990ku8rCOW3+AszMgY3TOLjjRyErnlHnlDPDnwcCqOz9Vt5erEoG030qvW/dWlkaVz70wmVPkybt3tW352pGpgo3j1LvfZnzJcx7VE7UuF6aoYRTpPOvQ2mRz/MmSJ9X1Wsjg4C9kvtg8KN78enCikF/QWF450m75cu0O00SheLHzAT3uP7TW84kiYbShG9Qt/XxEf7akTE1qgW1QvAECZ9mcsowR0oAAAA==","m":"#aea8a8","en":"Concrete grey"},{"id":"concrete-dark","name":"Бетон темний","r":0.85,"s":0.586,"co":["ETALON","PERFETTO"],"g":[1.08,1.08,1.08],"t":1,"c":"data:image/webp;base64,UklGRroEAABXRUJQVlA4IK4EAAAQFwCdASpgAGAAPmEskkakIqGhJzQLIIAMCWlklLYV8aWOWhnsMuxI8XJmyrWP1HX0wiu3z2a/v+Zpw91HS/yB7ag48VwD4e2ybV0Q4NVyBdOnZn/A1FumiNHtq1gIhiGK9ogsZarRURs8/yEuoQgSAngqs70pNKI+Fg87dmtiuLETu48N+OXIr9nFy5Q7bw/mCTkSAm7fGdZv/QKJhtDYo5/qd6w5Dn/JzoTyLS6gBv5AOK5CeUBiO+yNx8Cq3DaAAP7wV1/77clcI9YroJkhAd94mhsMd0w51ZsCpKAtoKD7PwkhaGmADso7r9FKr28NnQqoN9cQrG4t55hE7qI/lM57gnQgOJo9i7954SKxyp2iQKA8FWDS4cG/57Jl60tjDLoNIEu4EDxbONXCRzGMOdDEfOEj2MbHx6S154lFeP5SC9OjusVks2piihGp1keiISJEf5LiOuIB4KnFzBLuKwX9fnyYvj2LRMQyzAiRzK1jZEKNoQWt2e+EEyF5ovORKoNRJRuDPq44W1tB8Zyp75sJ8tYoPgPEdmKv2hl9yVsXbdRNDgfO21MVt2XL07hdypIn1xbXsyOkSZL9BQC4NfDPPxUHqAyycuNW3Flv7KiXb16nTQ1rnSWBakGI9hdKn9xjO0p4bTC2ATW2jhYjycvHdNLNk6hpvIxVhNI9VwtlmY34pedDXiEdO6K/SR438CI4EeCManWMXU+y5mMRK4OFrqQhvAgmKICUdLUVIsQ/tJwYOBvLoXDB6zCP7MCUIwNa3QR3v7jD6pb3ACmSZAOpUQfl2zh7czMo2H9iZQTTjHJvlvUNSFps5Pehxt1LFH7fDs/wMEV8K++/rT3iHhjWMTzoN2hHut5qewaVP0asHYM6v64YHxwrKqcEdLxZJbZaYe7RJlf9RyTaNvopDb6IbbWlopnmBFmu+sBPVoGmS131GKTtHvnELCzBjYY8IVYIaYpd2A1wxbQ3vS9+R2gEz+5XkED+cWP3AXAOozvjHpKPxemSaQn9e4TnuJATyxX5Xjs6Clw6PwPhfLRzYLH/iQHUk1lGdOFbSYvIU2JgsXgK2rdID0HxXTE86e7H1cZPRB8iKwj0OGYm1ml6HoofE8Sfz0v6weC4jd9D7d98kLn/tLxMNA33Lr54bgAVCFvOUqvHwc1xMWjagf58EtFodM8S9B+18ocjkgdpiankzq7oxLL2LI4RRtoQyRFMWYAuwptSjrg0hpFhKwcy/SMv8zjMZPnqBvdNPY4ifWNn2C45fHm3CLax5o8dgapT25lv5WHAaarofMBgmyhsM5ymyBSMut0qpIxYfJayMl4di0x1zZXJ9dOrtRqklIP17YGCjZHw67XwdvZhnrlit8Z0YhyZ608rV2XRKnOGQZ1dascCOvYRY7oanNtlnLtycVg0eGjbDFzB5gdXfcxC0pega6CKxAYZ1Nyo28HF9YijbxX5r6jKcrSc6xE33N1KSsPcnziskPr6/+fKiybpU/RCCBc6l8Io4XY+stqxJ8dyKKZRX+lVpcAiUrkcr/2QC7RxMIV6W85uYrMEYMBjOmr5rTgvGjf9B4MPSKEPQ8sf73aEzHC6KZibAAAA","m":"#615d59","en":"Concrete dark"},{"id":"white-textured","name":"Білий текстурний","r":0.65,"s":0.586,"co":["ETALON","PERFETTO"],"t":1,"c":"data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAAAQBwCdASpgAGAAPmEwlkikIqIiIOgAgAwJaQOwAvJ+32A1P49z6HpKzWnNnOxp8ZoPFpGuB90a+NGMqjBYFMUbAAD+36OcLTeSbOebpKe+7sERsvzWd8RaT+qEYudlBkVpnF7riiRWAuUjgErC4blJmS1W9/fr8SH7TmmKBJ9FBeSoi9BATVpE1fplQPmSar4x8laMv9QBQejGVgpxAAAA","m":"#b4adad","en":"White textured"},{"id":"wenge-south","name":"Венге південне тиснене","r":0.55,"s":0.586,"co":["ETALON","PERFETTO"],"g":[1.28,1.28,1.28],"t":1,"c":"data:image/webp;base64,UklGRlQBAABXRUJQVlA4IEgBAACwCgCdASpgAGAAPmEwlUikIqIiIOgAgAwJaWv4VrcOH9sr//n/AgWjP8A5//l+fhyADT/gEjCOM842/E3cvi2+FifL1Kp+pveyoDUkIyv6cVJLE9YbvtIV1Re58SUAAP74RoP/y3aY95ltGUjuX2RyHyV2xCS/gA8gf0wiLj/2XXRaYZETyrifeIO2hA2n/igt9/PR6MEsJrFHlflGcMqPrR2vHyUSnaqCmshTW5GHtq20YrqqKsQislUlFt7wVHiDSnAD+EGvxbPKoUrh4VLAgy8XX3Ta1Snztiji2yq/RzvO91/JeXthPn0VJSxIShQsSebmTa9mEdkNMLvEM1xJX63bWmcDsSZz0jKBdkfqKF17kBlr0jkvNZZVHSCflkJwYbQAa7mhmZrDAfsyeqx58Llf1paKU3dJOlPIwF0XWBTATNt+EQAA","m":"#2d2b2c","en":"Wenge southern embossed"},{"id":"oak-glasgow","name":"Дуб Глазго Еко","r":0.6,"s":0.586,"co":["ETALON","PERFETTO"],"t":1,"c":"data:image/webp;base64,UklGRloFAABXRUJQVlA4IE4FAACQHACdASpgAGAAPmEqj0WkIqEWqq5IQAYEtJ4ZUTNl2r3PGIFp/m+0SeSf8Y/qH6wdTjlz/HP8f5Tv9AJ0z9d8epwm8E8TXT2Ct4d7S/5DwivPXgrf159vDW+/83OGnx8/lP/X9S70svKSGnHmQYw5czyDgxYzpBYPAawx86l4UC8OKg+UHLcYrh3LnKfGIz6/BVXl71pPcy01vPTzyijD5KFTGq5X399jAJtPeMS1/t96gHiPM2Sbt5ELITloaTimneC2zvWzq2PDKh16U8b92Rrz5Gc2aDtwLPrxfbEjtw7r/Z93+aAkK2014MAA/tWWAqcqIHQ99y10vELsBQyAHLcT3BDka/yIZ0PbgxabBEc7mxqi90HY47UmUBd67qaA6Ta3W0koLaiqIk6oA0vClBKAeRiWN91+yso14Gpb2UoeJ2SqDMcnwNsqx4ZPrEE50PGGT0n098mFk4FYu7zVWkhji79ngD21rywkM5z5f9m2Qrz3LfBsKoPrLRJ5+DNtLAPpFP8tR84FjR4+DH5F5v3hyo4eWMU+OaFWqW8+SNxgx756SxSOc1IzPhUclifi1Q/9v/HFztWizSaGnRpd2MaFFW21Xw/MKV529mP6+Ak26ooY1OGo2MdWZgXj+9e0Ey1DcQ8h0nuaTYlX/3+xEiMZpqa59HWvEHw09gZe4O0Cf30/sb+/Wrvu8js1eWsG5Dacl1WA42k/gagyoU5Hf2W/6HWAPnknLU+hrfI0AQnL5U9+HCgk0oQXdg/JrLtewvB3w2rYmxSMUFC+kLPaVemgzym9S8J6QK9D8mxRT9wAPE/TS7M299h4WtdsC2i8BJ6EGeokt2iERxQC05LI9iAVPc+vi56JnW+AoKfyg2yiZbVpquhnTbQFp/3qJbIepQyGX581EdWNUJ77bzKuMafrmtfBKmZ/4MzQg45wc5mZIWEjSd995PG9+RFY334n8bimHpIjWs5cJn0YfVQC1+42P56mPk6j7GLM2fsx5dzc4wGI04XdGMqTkvY33Bj6OPqH/wtTnjBQkE+v3GuMxfiZd35MA243LdLpjGdr9BCZST/R39l3LFVn6hYEC/8anG0+QVeDfJPnzbn1h+y+vhRrzc7i/iVWJltL2KG5hAGtW4vPtQ0+yQ2JIMF4fOrgL0MhANSjgoH/lV6pE+8Ef9RZ6WTXpfQCRlbpSRPip9ZxaNkQ1At/ixOZY0ULxN+pEpWly8LwytJWwpoYmojiVMvphu6YdBco9kYCbzJk2MwTYt69oKBvNSyz46aXxpgn0cSIBDnNYjUVIoTeCl+bGLPRsPSmTsjQ0R0WNR4LTotbolTRnIQs2nTFnsXIdrpNZChTTPnBP41MIWwsk7b17uhroJyVAGVqO8SYmXn0skrnrf7eajJcjwPc3n3cWrNNJcYRuukNj5bPdktrroCN1cfPoz4jIdHhb58sZlAo/evfbeVAvWDvCRTOml3Y8MTaBVJzLWJ5T+WqBrAQaRphbJgT2yGgeRDBridKOrhllYixcY1YQdvdaKa11qcO4WM89r8iSt25pgfGzzkphKkFJvl+PJGr4fxgLvBvR/hPlNEbBq0yK11/cE/FL7aodzlRiDwBikZwp7CcOmqF6RpebjSFsnXSvg1aBH4MY8WUv9ZzPRT32bVxiXo/aGSIjgjiNmqxSgnqqzaSxHFEKh2Kks15Ynlf6+YE7+6C9X1RT/+JY6LdeWD2xflSiYSSKrEAGmNHf+ZAy/3x1TNHnQYctOivnFbLspeu2ixVJaUPfn4zvB3VsOdq/qJOeD1N+M0HH0D9TOQQPiFrIF4uAA==","m":"#a1a19d","en":"Oak Glasgow IVF"},{"id":"oak-chateau","name":"Дуб Шато","r":0.6,"s":0.586,"co":["ETALON","PERFETTO"],"t":1,"c":"data:image/webp;base64,UklGRrICAABXRUJQVlA4IKYCAADQEQCdASpgAGAAPmEwkkgkIqGhIOr4gAwJaT4YqEvY2RwWabBuRxvGB4/t1fYGBjM/aDy3M9Nas+wuCG3eNrq3ql2016BAWQtlaTVpzWJto7RURqYfyPrVIOzcZLWnMplHUAlj/HwZMmCh0faj7wjloe5PwGqgR1HtN52ofH1nPJOi2AbtJq9/kGAqfokORVgiDvk/Tq4AAP658uuBgyWl/ZrZaKyzWNgBkq4/s5KM5GeansN3QosG0ryemjp3lbJ44WUMGGJQ1MxFYHRxAm5Erfoz8N9w/1/jeJRi/vGtLD3L01ijnEiUoUOgk8FE3ZKohrjS6NQz/PZ7pkSnjN3e7lJdtJuMpLIQ+cjl+pQ1RU45xwgUOGcHS4OG1CUYk0WEz7Fk/J4WW5ELpIejSP/nKaGQ7QUpA+n+ljUy9Z/Sy3P/9IUDfwDoF2NZONpvZBWj6WicDgbr9531SBwYfA8dSq9gBHi0jJdd1o7fnijzexjlr7ylawDfiVnUYVAfVPW9LQvd7idX6wIiQXnJDCHaVi1gUiS2MewC/ugJAzmGwMh2E49s03SG2rBdbl6U8tnLNoI9xazyC8d5CvtuWv84InuLSStXIVrDM/iQ8bkB3lhbYm2TsHSdWrPEoVk11fAdy5u9/sIjoeafFHckZ0yl/BrcVsixGqgBzlUygBzGRHbqmm9W+nm4h48ZHdhZq9adB5keHSQwjmlxzn5en87TfZO5n9eObRqzuI+Er6eGwwOUtIbzVe6u1CYr3KTuUfPd1PQhGIP2x2XKKacMFbJXut/nOWOYBzbzvewJ5F8+HmTAQ3yMohDWud46g3B0zWad3uKecDlbMy2yz6A534joEgDoStH4oi+6QrXcEkxgNbLvZXal6ba5LQeW3dvp6judRWCAAAA=","m":"#68655e","en":"Oak chateau"},{"id":"stone-cut","name":"Зріз каменю","r":0.85,"s":0.586,"co":["ETALON","PERFETTO"],"g":[1.05,1.05,1.05],"t":1,"c":"data:image/webp;base64,UklGRnIDAABXRUJQVlA4IGYDAABwDgCdASpgAGAAPmEukkckIqGhJXgKIIAMCWle+iFWnZyUpXkH/lE5iuWYRcxziAont5m5iSGcY0Z1+U3YA78F0/d0jhXrYU27TbMWdlkiYARoH6pYqXfcaU5ZBtjTMhj6enCiMsFEeC4qc0UVghekrPLpiYUtTViChbqAAP7stss10AbnYhA45XRIwk98+xy2hnj4mTbrH6l+uL6FeHQwQcPRVKjolOKHI3390Vi3zswd6Zs3CMzwJB8sHugfkQCP7PbNIi+hgZEZgLmFEswhDWGVUduRnz85w86GQ19Anko4to67QtHfR1INeri5kqRGI+vn7juYx4KWSQBKI61Ikww4bu2Gr5LD6fZYlqcftYvL/QlBWio09INIo9KNm2/3XdIzP+RBF/29HK3DYXOADHtlVk0ojTSmSdmAD4GSxcMeGqNT28T0q/WFyAF2uCoFcrjcQTIMHM06MNFNqiJXIJkBo0KTQf664GMbixs77y5OYlmu/9xm/6v+GPUPlEgWQdwwmE7D8y+ZQCBZ4Mt1RaRRmEXMmAvUxK+SiUqkAKgzoA9F3DBDd4N5RgZvqIyqYsqzU6uoq12sVQWoDsg49mUmHhvtBbWquAKkH0ZDVWPu+svosxxARGvObW71CSJSpHaIR6f/nUSMhlERemDWJOCvqG0JeqUaY0T3RE1zpV/CdI4iEQc7mTuDYXc8DBPi36iBzYKZYZg56Dh5PRx9HGSZUSVGx6xb0UFaNHVf//NdaxnwE8sfQSlGca0ijPh/wUtKQmea2uyBk1KdHBwp/CNGxpaN+L1OoMbufvPlq96bmS72uMjPGFP6Tlw+wUHA7jhnt83pCHRAkh7BaZ/6qztyJHrkZte2prwxGwu8Fyibe91gS2sNUlt3orkO3HnJ9t0QyKg41itNOYufTnDJCFsa7bSLRAUE05NCXsNmMS72SXInkX1ro9GaEpQS+f/owLaZ5ZqehuyW3Toz6nE3ezaCsefq2DFJ47BcRE7ZOYj0c9LFS6KYjGcOgYU8AKCfXIvxUet+Gip5tMvKmJMOuWfpK3AYvn2f9cU043zrIvBVVIdLauDQvlKKS8KTSSkGPKMY+wTW+i6OE9OIKaukReayUQ461vTj/MR7OqFVhBNyC0USwDM3LQ8V8P5AnXecASW1wAA=","m":"#696560","en":"Slice stone"},{"id":"carpathian-spruce","name":"Карпатська ялина","r":0.6,"s":0.586,"co":["ETALON","PERFETTO"],"t":1,"c":"data:image/webp;base64,UklGRo4DAABXRUJQVlA4IIIDAADwFACdASpgAGAAPmEqkUYkIqGhLHJLQIAMCWldnDX214B65mcS+KoHafmiHV94sM9FKSsmt2fC/WU47h1fip7jbouixpDea8ggeYKtl0A+7xMx7dxXj63jvmMTRTqsay+upMekpDa/Xp92CjIyQ7/7IzsxyAdbZYBiixrNcY9lPCvm5Wei2Gxht1e6p6UzjGhWGB2epz/KxAGnfTa838MAfQB9WcVaCgHputu/GnnSgAD6ibV/YoPT3yWuhm1XFg+vgj/1VT1+tb7pP1pi77kGmePSznBZfk4y7mmbjUitLlkB/lyWRL+sIaQku8q8Cd28Xuipyu7bGNli6ZITRm670Zdeys/XlGY4Z2ESXvcjm3autE0EIBxHdrWZn4FWhwhu6u67baEg1NYKnR+MN1TCnhtXLT764VFE4+Ni1DCco5TXNVFfRXICpMUzgTXpBRF0uKFFbE8EHr3IlFKELPEpraaY8xbuTltGrUTBDELRTVR5sOpF3crEbo+VGbDs1+sXUfJrzxlga3O3jltSMzDOY13GTosDfZ1yMTlIeJlrqFdCjYU37bqC+8w8rTxaAoa2+qWo9HqsWyM4NYcOvnj1eM1w6DjX2EMtLrpYAs6z5kOLFebIDhf8cReLHZ2ZVbQVcmWGbMjUASjeEpVehzW5v1dAjjkbuPdbnUSanxPxOmE3fg8OGCLW3I5ArGZw0/omhCLGS1zQuwM+1kIxP0Rjddz5nKLwjeP5Ja8F9vBlRACXFIZe44jN678mQITu8cC4WFI6cFiTRxOaYLA3Psu2yzrAIHRxzk8RiVlIKZVKtiv9J/apmz5kKedvf+F0QDlRLjVr4CMlxbUgexJuiVg1+LcEzLIf7gLDyQTXo7rZtj8S7UnYpyPfOGHFZwfhUZTL8G8qyteuFgLEmC8g58teeykNyh0ETJPMs6mrkeXNwXDo1nR97aCcQmaihka1D3BivAmYQUfD4xsm5Tl7FF+tMq6apO+ANUofWkNEbJWBhud9YVfHH8oIq6uc825ywuwhj0T3oQwsHlvf/p/duk52+yztY2kg87lO2bBx00CvgbTwfh8XgEhFjm1DR91PcQaOckD2QwfCW6cy3LMnIaxY6JO8sQH3mb6mBGwmX5CSG5OC+GwD0ksDdxn7USkNU3MhQl0xVphW32yyrifmN13Zi/2O0XSW3Lj1CQuotn6iAAAA","m":"#9b897d","en":"Carpathian spruce"},{"id":"ash-softtouch","name":"Попелястий софттач","r":0.85,"s":0.586,"co":["ETALON","PERFETTO"],"t":1,"c":"data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAABwBQCdASpgAGAAPmEwk0gkIyGhIOkggAwJaQAABbj12ObAhfSvXyC8+pfv4B740NPotVQAAPedAI0F2yoDKQAAAAAAAA==","m":"#909591","en":"Ashen softtouch"},{"id":"rustic-gold","name":"Рустик золотий","r":0.6,"s":0.586,"co":["ETALON","PERFETTO"],"t":1,"c":"data:image/webp;base64,UklGRr4FAABXRUJQVlA4ILIFAADwGACdASpgAGAAPmEskkakIqGhJzYMAIAMCWlMHDX0hXuMf7F8trhAIYAX4NGBaY+qa3SI7bq7M/4HL94R8WXhxfZgRSzeUklBOTg3uXzjeET8w4daU4CBdpQJqRmdzXs9cfjljM+KZnKY5equpuc0EETJ1W7lL9cevsZZPDLhtQDBtEsgfdwKktlW5VP39Y/d7LQ6yOoB6Ium11s7MADcthUsHV5X4sFwUaFvh3CO4lOTtSmBtuflK4YOY+8Am8nsXL71PKlv0gV5kO1HyNBgAP7vlbZykGjK/+Jb9VJqI75nvMEY60p//XlPibb/yKRYwfk8A+o+chMTwDQ8HZ7qE6Nbht6Odtf5aOPdXowt2QCJG7h0TsvdepH+Npmg9bodQYKI78QLX8JALyzfFZl40foeGKIWQj3uuTlSNPYex+PoU9muznPNdWi2rXabfQtxTY8DPpIlg895ndWjj0FIAysHxUQ3e5DR4Y8yt+EXmDyFL4hFZpk4Mj00yW1iYAkQSDha2yix6Csh6JB38VSl+F1QqhxPghb7lFo+nctP0RutK3kF9qRa5k7o9s4c9YFVFDCTz1WZ9ewSBExo6RM37/2wlq2GvAvbHv9jhFvfeuHhrMetTvmC1kez6EPFhk64uZ19JSLMr3xQnJpFCKABwfeCxeXvrV/KCJUFRWdlKlUnIWOBkZkJnaIrTC6n6L9BqNxrrqpwVOOn7YIGBukXOUXa2n44QLadwe7Go0ltGX2Ld2mKFOFSdx+IktPaZbsVI5Kcyp3uyDoCiyA6ubjb0Me7IirSchpdyBFrcl9104HxmAsK9kXJHRiR4BF5AxEjoEC1n16npuK70v1jM88R5i3u8VlG84WVK0qC6auDi4/Ym9cwyL8Fm2+5to5tpU1F8ouJYOHEJiCi3SfKjjFKjMhwg1FYR5M5I74UxC+jJMlFbHFlFD+aUi26FsB1ScGxHx2sIOh2epdJCoeyHNk+ZtpmLfOQHMPnHBnlmsZ+3sh2yM0vm6vaCoF/Ps95IHcFIIkwHCb4BrtHaBq3e9yPlbFF4oQKpzgEnetJ2NqGKJWnBRzVwsgEbhqY23hWGaxk/RcklKwszOAnelrY3tLOTYXCy81fF1py6AZ3K82LT6lVbJ7Ns6bXICpz1nkdRtYa6BrJvZyPyeD9ZGRKew1ujgDsCzMduf4TN7I1QgPqzYOMlaE3tDsbuvq8iZc+M39Ef3XEXefUSsQeX/7egTSJc47bOHliTco96RSpOarGAkeAxF+XZla9F0mfRC2NAYMSFLnYNQJSsVAHooK9VfeN56vgZcEo3bJq0LuQg4l0s5Eum3HMhWeQ90gYpwXjYXOB2+2ROOL7PLVuEr5o4uDl3uHTqs5Qo6rnrQF8cdPR2DpiWRbkzuX7rgpkWK3c8QgeOKv9o/AeMb+NX+GsWI2zJnPkLLnoUPzByCpzwA7KoXKIwauBOBJVnNd1JCwsgvkZYbQL9VF0NtemGXbuK3Npf+eeLNm8NgPJc6rnIenjUy69LNQunJkOSgYuxV/OWXLhcKszDqf6UkheQbyQ5q3ji9l8RAHVNl/PHprjZ6AgZtZ+KzsPsSUMQ/6li7Z55yRP68iaweoxow/Vjvy1NmbwXFPS6D1p8kEJlipKrm08uGreHC/Tj1S43VIDkLk8zBoALznr5DDtvzePP5Xe4s3XR7UdzY8CKdQussnTfJ9CtJSdkA8raO1pknUsWL9zLbY2SRSNOFYNk0zgyAI9+elb9Sfw/wX2P0uRGld/AO9FCKRuDluRp01zyqAfJaOlakRI4oI/uomXDGhGU1n9Qk+MXe38CmsOYwHwa4+b/sFAQZuQ8QgMBlVNqLQQwAw+nAbkOKT89OYyiCLDrkmD0KB1OnUMNZnV+VIrYhR8COaJmbuYHPxkOcZtkiu5VHfbzNSe5KByiwqnX+mp0/z8qVZi0AA=","m":"#c5a890","en":"Rustic gold"},{"id":"rustic-avignon","name":"Рустик Авінон білий","r":0.65,"s":0.586,"co":["ETALON","PERFETTO"],"t":1,"c":"data:image/webp;base64,UklGRnwEAABXRUJQVlA4IHAEAAAwEgCdASpgAGAAPmEqkkekIiGhJlJKMIAMCWliZYi73wymhlfwi+iebs+3fmeYGeh5sPmBzBs4NtLzbJIgsOm+t/uNdr/9TmqsLuJjuKAGJInO6WYptF2cVLe1Ln8SFLdi71lFYLvAoo2q7a6zNpOG+r0dXV1OQjWi6qeV9BYAdgJa4E5d1jobZEMkoVuReN2G4Aqv0hbzixAAAP73LbMvihgCXf97/tPWuyZlvIWdj3B37osc0dek+I3qRfIPJEDHJWpE9YDztk+T2LK+JIc93ypz6d1LzhvizkGY9WMm/QRrL5gQARrI8nymxd1dsUjRpFIHYb5gFblx2LgZsBD0PQoB5g8Ga4/Q27rtcBt+P5uLCEbS7skv/6Rpp/New1nt5mIrGshvVevLbhitCmZ8nPlnp8O6nD0NXh5tqIwUbeusG39dd68WvTsfBC8B/zrkmPC39RJAfbZrKVAYLKX7sdDLe+M3uaUyuHyeFaHL15p49zT96s/QHtQ6LjvbXnt0ir95baNHFif00cUdvjcIQMkHAvt/qBvgATrFI1ttt3JKBUzKcFKcRyx8ViA1YqVNZYJadlRjpUOfYy2U1D/yDYTsYJKmvNy3gtLyY6horNxvuIoEMddK7d0kuNIChPv+bncbrWOS4kEF7WID7zrv4zYS03/GFuZ0tpkzi5J8fA8WKhmp8rPufDM9h6rFYcKsXFKsdUdHcZFgA5HfQxEi5puM2kGpiww9QuTAAI2Dn+EqtXD+PHr/yaBxEiPTyyi811iPWxvTK9W+OZxiYaKrPLbBJi+MUu86kUm4oJUhaBe8eQSORPAhDiEGB3bC3FJhZnWoa99SWDpvdxf8ihpNrTi8PGlgHuAghmjl4PTvDPYi0orkKx91zhMP4iB4d0oID/LRGQurZt8gUvt4lZJS5I/zP5hH5TgLxqwYgTHAhgaQCNBqu4yvmBFURdFBxE2lFMjkX17BMK5O/XWjc1FRHI1RRSCYPHzsfQguUiEzdnHWlLJZDOpGwS+KcI6fguh2TYLgv+MLx//MwxN8ND3/h7kQNcfxBGgUdBOnoTmektQx38zU81xapsFaSyRFRwa5IFbSsNHxYIYefr7RWX7rqvxlAkvpEpfupXoUS4fwtv2dcOHA052DAAKL4NHk1hmt3rwNMHqatmetsu+erD1s5m2a226GZbsiR0yMbtdD3IL/Yd+S+cdMvoei1uQ+ucZXcX+SJl6pmhpNrIXsAVWQ3XmTzfvTUXkV4N3/o0EyNhWGOK7DYzlzJbZq1hxeB5Y5OyvmIIMAXk71483DdQBRVUNF1Pcd8Kqo3MANqJoGjDrnt/qeSTfyCvSRvXHObgknuYa2SuKwOi3RWSwisowsz8evNsqvx+j3GDuVnLdzUqHyGR/q4pRd9Tj4ZByGxmKhqGEUS3vnUD00IkkBR4gUm3MojteeThZBVCw2D/LDjhzsV35g6nw88DUq8EgmtsH06mvKp4ioh+YOUzjUC43vYm+F+i2DqEentyRK68AAAA==","m":"#d8cfcf","en":"Rustic Avinon white"},{"id":"pine-provence","name":"Сосна Прованс","r":0.6,"s":0.586,"co":["ETALON","PERFETTO"],"t":1,"c":"data:image/webp;base64,UklGRkYBAABXRUJQVlA4IDoBAAAQCwCdASpgAGAAPmEwlEgkIqIjoOjogAwJaWwTjtf8eBL/3KA7b/WwBMIjfnlAaytnvhqusAMJtmcpLAVFVN/jKVPhaYVxhT20mWF/HpJzgmQnFnzjB+eFZvU80iHPtfCAAP6xdGQF5sm5a8ZEwhKeQQuiNR58GaOSkSX/STXt+68zYygaRXxXMd+ZUW5w7S0vb4s/+AjSug0jh+sTWuS92C590EJvXjrWG6kCNvGv+lOnta4IQGV41TKBGTL0Ef3v72YS/s5YAQsZ5/HyyYuAT9L+tC5Bo2VHhrsianP5QP3mg2AqT2hoMQui5I6fmdtUp2NtKC4qykDlMkFuiToO0lnZXJyFiPomOvg4JUiFo0U8eUZwXylyhTlNF6LtbmRv1fErcnRQ4oe1xwA0wi80Rcokp+PzZIwAAA==","m":"#a1a3aa","en":"Pine Provence"},{"id":"black-cork","name":"Чорна корка","r":0.7,"s":0.586,"co":["ETALON","PERFETTO"],"g":[1.27,1.27,1.27],"t":1,"c":"data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACwBACdASpgAGAAPmEwlkikIyIhIOgAgAwJaQAAB3ZVfL3GnvJvp06dOnTp03wAAP734IAAAAAAAA==","m":"#2f2f2f","en":"Black crust"},{"id":"veneer-brown","name":"Шпон коричневий","r":0.5,"s":0.586,"co":["ETALON","PERFETTO"],"g":[1.4,1.4,1.4],"t":1,"c":"data:image/webp;base64,UklGRnoBAABXRUJQVlA4IG4BAADwCgCdASpgAGAAPmEwk0gkIqGhIOjogAwJaWoOd3f5//P+BAl/Pl90Qbbli2w/8CHfB08KD69Na0wRwxxYreIVUhHb2BVq5P04o4E9C9OXaCpLAus+t1hPk9XmSQZGlNAA/vgN60mT+zDODdH1RQWlosuXouUkxmU6IVrSWO2pc4q1NiXFbo09wB8NJYjcE3WaSqw/7psAQ+xHk3KR69i+o6wILcFhHuOvJYc+VTFkq2jgi1paTyBVgFLShqhqhK6tVPRFh1c/COgaE1oCuhfIiG4oGEjuv4bOJK884jZXhcIea47Lbi1t9rE+3/7irth/U32HoIS0rURxITMheRx0IGtrVlJ6U10gTKUaAg5ZJqZ6FiLw8LcV7BygzRfIAFeJFful9xQj/p4svV/PlikGhk48IPYclTMNsMds1SrKOLrL4B0iwBOrckGN5m7TfxN18jwpfeKk2Ba0gRhS32UvYuP/3sb8cCBCHmgAAAA=","m":"#362a29","en":"Veneer brown"},{"id":"nl-white","name":"Білий","r":0.5,"s":0.588,"ins":"black","co":["NOMINAL"],"gs":{"b1":[1.07,1.07,1.081]},"t":1,"c":"data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAACwBACdASpgAGAAPmEwlkikIyIhIOgAgAwJaQAAB3ZVfL3GnvJvp06dOnTp03wAAP7zShYXfEgi/gAAAAA=","m":"#c1c1c1","en":"White"},{"id":"nl-anthracite","name":"Антрацит","r":0.55,"s":0.588,"ins":"grey","co":["NOMINAL"],"gs":{"b1":[1.201,1.146,1.143]},"t":1,"c":"data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAACwBACdASpgAGAAPmEwlkikIyIhIOgAgAwJaQAAB3ZVfL3GnvJvp06dOnTp03wAAP735GZNLuQgAAAAAAA=","m":"#2f2f30","en":"Anthracite"},{"id":"nl-wenge","name":"Венге південне","r":0.55,"s":0.588,"ins":"grey","co":["NOMINAL"],"gs":{"b1":[1.781,1.386,1.308]},"t":1,"c":"data:image/webp;base64,UklGRugAAABXRUJQVlA4INwAAADwBgCdASpgAGAAPmEwlUikIqIiIOgAgAwJaWxXHpKGWDR880gEWphv/9kKl0CCjXQgNixSzK888ZREhOxvsQAAAP73okjU0H+nZsUzCXq4E/0vfMUZcZx9T5/fJpIUCb/eZ2YZ5vTxg/uo/ewMC3vHnR9hGn2CXoUUjWooCjTz2JI+qg/dsmTffsL9wL2jfC8LW+vADjPsteEn4uqmLa94viuW1Xjuc7lp5MfsjFXOlkuuKumq754o3oEyM7WAoPsNL+kb6LbWY9eSnE0Jo75CamODe8z2YzpUIEAA","m":"#283235","en":"Wenge southern"},{"id":"nl-nemo-latte","name":"Дуб Немо Лате","r":0.6,"s":0.588,"ins":"black","co":["NOMINAL"],"gs":{"b1":[1.0,0.988,0.987]},"t":1,"c":"data:image/webp;base64,UklGRpYBAABXRUJQVlA4IIoBAABQDQCdASpgAGAAPmEwkkglIqQhoOmYoAwJaWq1bRf8eBL7UKCHcQlTi/z8gDunMGYcQj4StT5BMEcEXqwh+UgJDfbwOI0rKKZBiV6F3DDdw0ytpDiuDtEaPzt5ON72a6n9uMj8CciNPiteesgo5aybCasAAP7vt7Lzc2974SzSkwOtKDlhLCXzYLxaiLSxl/uGLJYCWm31z6J3nBqx4aXhMBgd2KsslZxtolj1sPjQyPmEb78ho5hOjXGZHfqC2m5i/5BNc/xaRwVZJAatWqbAfUcH47dfatGvHohlL12q/yiEwwDuuFCbf7O5aZQBXuHIKaIBdDaLZR/r0bRH8EkRF8c5ELOPHZe+pNRX5yWset0n8hhWkHb+B4HVFJunnYQ2audyQgJy7R77fbsXq6Nx9mlRpyJOgE1LJyjvnz31Rh5vEtVPpP5Sd+f3Y7vKPq0tKUHUrSgKcm8yL6QLIGyGVhIl3GcLiU6E5l4AOwqx2C4q8R4Lb/QkaBdWHi1LGKjTediH66sjAAAA","m":"#b5b1aa","en":"Nemo oak latte"},{"id":"nl-nemo-silver","name":"Дуб Немо Сріблястий","r":0.6,"s":0.588,"ins":"black","co":["NOMINAL"],"gs":{"b1":[0.761,0.694,0.687]},"t":1,"c":"data:image/webp;base64,UklGRkoDAABXRUJQVlA4ID4DAAAwEACdASpgAGAAPmEqkUYkIqGhKdXb0IAMCWlgnlb3teoXg/F57j3eZgeB57PohxAH0Ap5L/cyVLPuo+tVx8AGYJm8k/KKz3I+mI9K55CR6lFF1hiST5Oc5IuYJH5AzI8H7aDEHjswaieHXH1GpUzqpAnXxIsVwDzLLXTIan4DIgXy8u6XgTrWVoAA/twNbft6K5G2ub78vIaTZO9L2vR8nJ0KiQC+iwAINm3JqjV7S/3tQ97xB3k5ZBHKGIrZlPCIb2JUKXekY9h2EDvw6a2DHN31ulSxrj+WVG71g1udKNC0Lwk2l7gvIb3pp/QBPjdE/6SZfSamrVE8YrYHfzbD2mbL0aGWZGqFCIFlIzj5ETDSl7zMJf/GQA24FvvibvgR0uAd4PcvZ+JExzbRdWiROyu9MpWlvA6+k0avro6x93LDdwovHOQEuRaHaTYyp6IbZUV6B1Jkgylno6zLi+cUukAhcvRAulisGiG0tX8+vJgxoglLLhPsnT2RaUmlIqfYwseIpiwROgwN298m9/ti7sTVrdfVCYOl1sdGQ40a9mTJKiAY9geZnAWaBUjtEUj5qHIgGwvU+8QOkpYMqIUa7fc0/C2VjaFP3TL/6KIW1Ia77tGxER71pCfIDiiLCj18GvdFhTh1mZPJnG1MAHh8TFiL47K+a46vMKPRYZ8L1HiwKg3URC/Wgkly86cOyrAMtLomhtYxSnGOurtHzDBQrGNLPK9/dE+nnDyYWYb9IVLdW+GTJIuU7ZF80gPH7fQyDkigiLXuh6gyFf6dydZ86yKRSXuhHLKmY3Pyexa3mKn7GFrjaRNDTZ/lHIQEQnbHUkOfniT1svn7rjqyMRdwMKlYsgymMEKsJvuFFah//jxNw6+6DweQJm5p0kWynGbvEBaWD+mCfXWiRISxHUtmpJANMB7V9SbnVCe995yY3ALi/PCcgTX0pFJtX9NowuHiZecCQhUliMUHUWue4of0W7c3dzzAhJ29AI3b9HV3bgG/PDd5bQY3x6BKAuzjgGmJcZLK1kTaf3y9BMgCquld/Q6msYHgohnVbizwnI79n4TLljhoNhd2+Lo/vTksApe7aFsEdTAIZI7gWeAAAA==","m":"#9b908e","en":"Nemo oak silver"},{"id":"nl-pasadena","name":"Дуб Пасадена","r":0.6,"s":0.588,"ins":"black","co":["NOMINAL"],"gs":{"b1":[0.873,0.861,0.835]},"t":1,"c":"data:image/webp;base64,UklGRiIDAABXRUJQVlA4IBYDAAAwEACdASpgAGAAPmEqkkYkIqGhKrQKqIAMCWlkCcI5PfGaj/k58zfDFPor/RGSBKSYoFw84Z61nHef8a1UCpMmm4E5aBwqHmB5ZNwtp1Ps0QmTfgwGhg1K2DX45JEBxOmOrL7Z2ESB9mOiCN8yr+3zhifTmb/TBavHEnhtsDhJSvFrcDyb34d7YAAA/vDiVXc9DNKOZhAqVzS+LxFKtTrlZnPbypYpSShgambxmSCfSwbg9++NmiIqOcGBQAOvMI9q22qDYcpo4Q40YVLvwzSw2CBej0h0ArCzk73/4XQWj4HADtWe0BCePG0mh/unFkIBFipYTyxfPbr/Iu6ttfQmz3+NPR6xlgtFFdv/CJxxvtuYpQAZwYVss5XBjheLGHfcl2sYRTh7ipCGlgaAbMmT4vLsrgbGVAcOuFlYk6VTed3rJcO0tgi4AtfU+0JNBMfCBV5ngVmKbFwt1A5jiHE9JAO8rWIjzMUnZcQ/Nu/iJFHGpYNTw7vmi7DBAz63yPGJzxLWAvIRYUPwmKnyl41a5VYTLwYSB6pfKF7uWj4H4y+mFeaiBf6z5nQsWwbKe+R4m0hDvY1VxYgvcyH6dMulW5+PzT9EeNukp+He8YUSNFALNi/MsfxjbGBwoJeYpZn2hoFRwD9/0nASBJbw+DOdi86yE46ledlcuCBG9Rkw2XlEu2cirXzn9N5DqloOR9cHx78QTpMLtt6FeR/TsHbncGK6+my5z3Cs+lU8HVXyM8pj+NUecsWiPQnfcRNwyppH+2elYETC3FJeHJm7aOr+1fzFlV7jHcb0VmvwiW4zbzJpCeysxv4b2IvueJeCe7mibP76YMcGFGNBe+nb0kk6w5YLs48ZX1c/dIW9FfrpoelQoGizl6CtMWCI0RZR5c670+k5EgAJyN8doUXkkq1ZtxkH4M92VE8FV5uMlqLAf1TfvJuc3nRTLbf1307IpbovbtsXho1Kl243L7ahMrNBB4SVawD0wrCQye3MGsrLw4fKWAVoJ002VuB4wteCH5xWLmdMNLnnSUilgGKra/3oKBrd7kgA","m":"#b6b4b0","en":"Oak Pasadena"},{"id":"nl-portovy","name":"Дуб Портовий","r":0.6,"s":0.588,"ins":"grey","co":["NOMINAL"],"gs":{"b1":[1.093,1.378,1.91]},"t":1,"c":"data:image/webp;base64,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","m":"#4b3629","en":"Oak port"},{"id":"nl-chateau","name":"Дуб Шато","r":0.6,"s":0.588,"ins":"black","co":["NOMINAL"],"gs":{"b1":[0.762,0.77,0.807]},"t":1,"c":"data:image/webp;base64,UklGRgoGAABXRUJQVlA4IP4FAADwGgCdASpgAGAAPmEskUYkIqGhKBccuIAMCWk8F6JbnxZcH+Xvyz1OJ4oxlkAnSrWFhFLg/af/SeEruCvu/Nr7I893/O8ln630SIHPPQSwqwgaSMVmE9mEgs+5i5ASLNRi44Z1fu5z63J0FW0/SW8qvoaNQm/TAJfp4D756TB9Fnmrp7PAd+Xd+VEQ6JBXVwBvFLQ9EkwUcmBkjZKiCsYG7aqRuvD+RXlxMS0SPa38LY/i1cuhTCw/U/f3ywgfXmjai+FQtDnendFBc6CW4iqduCZ/LnUr7Fz8sVlm//cIAAD+zFvnDXFzvQpkrWFHTpWOCMKmOYAyNb4PX8tRb112LIIJHvZ/+AJLIEzHHHglbMujBqmDMkbFypbnAljL26mBAXx4zYYOuG//0ODvtt3kGXerXefBnKn6ewleUEah+XNNRi4nmeAuZPAdDDZ1fPOd/8oPDXBwG9fXZ0Fe6NRiMQ7tr0bDzWBCAMpXpOZ1VJkS1aYu0n7gssYuMGyLbMLQL02Qt+oUq0GH5TkinzwSrCCXWn/ui/CaCFV1iOP02B7pjjmqHP+H2qNrmM5eDNkbCtpfNnNUBD6ubo+c/etI9Q+Anulq/1AvE+89ODeYyw2nGekbQ/7+ozX4CLf4zSWUejzJkwgKEHwmKrU9b6JDJR6bvV+YiVEqHmaDueQftRlI34omPfNMTHrcMf30qxXzLVTepFRcI72g2f2bf1SLzfJZjs1QhvwzLDuuMp5XLfEH5XiQyUv8umNksk02vYFLRowEwiMYgBZrmw3u6X0gpXTtxc46H63TsTQuzBicOv9rO7otsNU0D9t5s8X7VOw9Opi6TplANgG6tGOfeueFhjo08JuM3B8whLDEP/wXSRYhBl8aRyFlsgVXZrzWWC2yFWgT72a0t4ozyymVSa2NhXUKBTEt4SPkcev9sP6SbXMKLaCIqyngBLW3RELfRo7iYXB0b74VlmzaZGcPCp2ouKdXcwQSkvwt2YQPM6zg5qH//W0kq7cEc0i79lm3utg9dZAd/0Acw/CPdaoKEGEXJUoPQULRojMUvWHG8HM+cRT5bwr8bP/VzV3sFOroPbEhjP4sBlg1v5GEwzKJsbK5MlFsn1LPz9mVSsOG4BefXli1rEVtnqSxD3VJsrGcPLobIB70AE2wxuBklK5r+GHyc3F4pcPoGk57jkd4Wh/PzSE3qC56uEf9+iJgNHetQUznlVoA8WvRiDs886BX3fu6JXYBrS/vzGclDuGeodWuk6Bc2MeUohrsB3YIhcrzGRzd20elni1HSX2opQWyG9XfSjurpa7MuUYGO4LK0Yt9Z0f0At3cwndYr2yPkN4BYtNuYEqsKjTt4ZdPYZulu3tKBtkoupgepOqIkaxCJmKboavxj6K7WwCvChxcXQs/Eeh5HJChgv8bl2sWFVwzdvI7bz0+xQBTGGW4SUjEIeK6ZDfv2kuLzAPQaXW7BdWzzchDGt5iw4sUYjtkNmvwoy35VBv2ZDkN5vL80gg/jwhF/HywpPhKGfiNqF6NoB2xPdpDVNwaES945opEMpkrBDIc4AZcdTppDlbopIBXgY+3xa3QTg4VFflNTgzDD6sblnJKcO3E8JKy/EQBH4ZlrbDZfcw2MOoZJo5mF1vE/KDcPb8A9HRevBOoq+mDGWk6l9isdmnidBduIdSvlt98pfFR9hK4Uhmf/ge8mp4zlGctiyh/3f9NQU/ElQQUw+mDGZPdIfCtmhsKRGmxbRE0UoGNcZmJeLzmP8tBFs83NCDAJucZwc22Pd1ufuaojmD9HNWQEcL/JKQVUHx9c97Bpie3HU6QVXhGJwD9Wd+gfkeL5eQj5+QGdkknXjF55AkygoJ9xtUKvoQhma6foe0PLa9IR8yG3f006h+B8nMwyi474WW3CKUtyL3UD5WkwIIlUG/vbAWDAmbFXLDsUMB5hoQeM5+AyoQg651DpmcZqPXTggO7tlVv1SXM6ZFsOqBoTXtZJ+9bdBWl7nLvywCuulcT3/4UAHW8VRpqwqWzJm/Io2lULcfPgnXww/sJwAAA","m":"#6e6b61","en":"Oak chateau"},{"id":"nl-oxide-white","name":"Оксид білий","r":0.8,"s":0.588,"ins":"black","co":["NOMINAL"],"gs":{"b1":[1.273,1.235,1.274]},"t":1,"c":"data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAABwBgCdASpgAGAAPmEwkkgkIqIjoOmYgAwJaW3IyAHGoAT4CMepmk5abodwwm6L7sVemj9S1ph8+0PMNQAA/r1xCt4oc0jQ1KHWlkZkjgsO/zEnlykgrnJ0g/wJ69QKmrisbHxMZRAK38OJIWHA+KPJaPhgyLvU6FjQkPVI0aXe+OkRNOjtzKCDJn2Yow7jmt6AAA==","m":"#bebcbd","en":"Oxide white"},{"id":"nl-oxide-light","name":"Оксид світлий","r":0.8,"s":0.588,"ins":"black","co":["NOMINAL"],"gs":{"b1":[0.679,0.679,0.692]},"t":1,"c":"data:image/webp;base64,UklGRogBAABXRUJQVlA4IHwBAACQCgCdASpgAGAAPmEukkekIqGhIrqq6IAMCWlnnnx4ACGXTO5bEu3GcS1QhbZm7wNLoaZj+6nHAGIYS7LDm2gJZqK7jvTOfvDCDRfHViswWJhdnJC9a5epO7mIBgAA/usXa/YWALp7Oa8d5CWQYGdvuKhqLcXWFVdtLG9/alWvKzW63FJKVTk5wcBe4g8lF90xJGkLZEvS9R8+xIdWenC24a1EJAnS+3R3lk0pAqMEkZ/UTnuHHRKKVexakgBahSiFGAl+yYkVDgym5wHPAV9Z+qv5ne66jucETYuKioagHFkvmDjFsxxt5jyiNjg+qzNuyueeYIXrCHrcELe0nvA83ujxciwoMw1Kifdb5NutWGbIq4vxQe2zyZA3Eq7wsJzBOYwBYs/udStnpQ8vxwt66HIJjLR5MMDHPAxW/DDNHRzdycdcXQocv4lRzwie7z0otoVWDu0BLwsnRkHOoQmxLFEX302joHQJ8Aw8n83GG0jWPzAThRr6VZ8AAA==","m":"#9b9b9b","en":"Oxide light"},{"id":"nl-oxide-dark","name":"Оксид темний","r":0.8,"s":0.588,"ins":"black","co":["NOMINAL"],"gs":{"b1":[0.615,0.615,0.606]},"t":1,"c":"data:image/webp;base64,UklGRogEAABXRUJQVlA4IHwEAAAQEwCdASpgAGAAPmEqkUakIiGhKPZrEIAMCWlXuvw3Xc+O6Fuyu9+7YMeMgzflq766ZR3LR0K22NTjMLWOdg4ZBBYZ/sT4OtKFeG5GcGEutD1e3PUXhRtpayGhesnHGtSh065BJoknr4KJ69/cXyrev74u7a4zXz9i349xj+5eMcy2V1v1ztN+HOCyzFgWZ6wbzuolO2dUqVG4anhqfNQ5gAD+6PrUe3GlCcPoaoJ6PTC83oBoNUoRgvvIq6/etmb+6pWQns8cxmV0AAQJ1hwFJPnUeKq2VTncUKYTKH3Wk+Rr6OQz5axN3lQ+CzWZRIgMaJGnw/TthRwvWA0jFjnl/XV9Y3b6KlnMqOpX4l+ehePNPCjGIG498TvvToKQEYo9EmAvlUGvFnSTZ8/24WLbiG4AxPF4IGzr3Iln1BiSciTBTvw/nAm2+8GR6A9QgQWyEu0tQhbeXzXVHKAjYfTOchh5jFRe5EIO7T9WDwQ6MMCaop72hp0fkHlW9Is+7wCTIhJd8SZ/Y1SbGlH/tYlCaIxEUTv9uz/ShSAThFMr0LTclXKHFihaP8u1HLcqB0FzAmbJPnNcPWvIOOzChUcVnxnlSYnhPmHN0zgfCM1Lnf/BnJ6vijo9C98k1DRo5clYWAWjhD6c2238QRZpZs0N7mo9Ek/0Xp1G4CSWY6XWp8xvNqqN3apiD/SMFb7bQ2MNq/RcWwfLJZgv0vjhrtMgBnNpeZ1yC45fqzaNOvz+y7uPLAwy6FrcjZnOblC7qNOF1ly7MIow7gT3VE9RFbSlOTHTCiUcYEytTKqB7ah2rLrCPoRI2d7rX5pTznLg2zDg1gB2joVB9S5INxzyuhfSuNVAtdILEXy7hHujtZmG5EA0N0mHJc9aoxHZ7TIrQSAQCTctd6TLOVxPWOFvvlJIHZoVnVkZ/WrhW8pXN6w0+uYKprVXPoYigFz1Wnp7b3CkurYdLZD8nwxfBUCuxbf/9vObeIR2sC69QmWRGr9ympB6Ps2fsuXeJvt/Fa+jCiOQCHuS5DfyQD98Uy7m3YSrsrq2RnGPj5nUz7i0X+6JOb2k4+fIwJzJBnNFCxQdIdVSRBhIhKx8T2p6RHoQjoXB4ntnR2nIQ+EkJgmyRvlHv0BNnPM9A+bwlV5BNGkU9j7MWw25EEKJHV8SUQonnFxOSZLje3MZdDdu7zJmJ3EXQid1o8sZugLOhWDpi+wXbOuWxw6ajICvrKpl1EaA/CQ4Ah2Kk3jS2q3+vF1ajnJHg902Ijg2JpIIYobwRTE2LCaGb+R6wW1JJK8iqq6o8RV2886zz7t2hARym4TZ9bMwrOKP2Q/V+TSbFo1TFVgBkWECPYaB3dpEyIzz6mAWOvvSX3nXFrwtDpzaf2zbLxm2kiBMDij92VBLvmQHbikq51zDifJcPXUOdWty63/Sf5xegzvnrMSK4+tLB2gH0torl1+gqKEcDwowVwrR+n46bLgYOjybTfGwdRNOwiZrnJ//sz2eerLx8RzQk/qjJYxjiDgyYj2XZuqXLYAAAA==","m":"#757575","en":"Oxide dark"},{"id":"nl-feldgrau","name":"Фельдграу","r":0.7,"s":0.588,"ins":"black","co":["NOMINAL"],"gs":{"b1":[0.96,0.947,0.974]},"t":1,"c":"data:image/webp;base64,UklGRoIEAABXRUJQVlA4IHYEAAAwCQCdASpgAGAAPmEuk0ekIiGhIrVbIIAMCWlXus9Xe2S/D4u1DxoaMA8uM//R6djK3UL6bYAHNbf3HUIHlLZr36Uil4VkXC9LkTF+l89T3LwAAP7tsF+TWKTcL/TjbLYJUeAU0/enzywxTTIjLo2jyLaPqUA+KFJU67idCFA4FmOX7pm7BcHbW/xwwKnHwVW9qZgnWUw/MVH7nMbu18UbpHZHah1DM9Py0LN65EWRyAIUusZUGwT1KQw9OCCZFxNsyrXWMTzz3ShX4ESY682lqYjpQvQNvYpYcSKyn76DpiGSiieIUYujsB4nTQddQDfzMve5F9w/hrhV3xhuwNvhmX+621HluPg5Mad4EOiQR8J+Uk4Df1V3q9aeR7R70ZrjkcggMLVJSJn9w+JqVh9lLoI88USg7tKJDcjmAqkxMv02+hJdI1FK135Qs376maim65mYXyb25oxsgHxaRvyl7PneO8EPl46josqWp7OPIObmAJRi6h0MIdTqxS4Z0rLrvqbim1F2YGBXWFG1axAqhjmxPW1j8Z9pV9m5miuxlBrpUjWGOoEGGRiBuEgg15mWakU35FNoI+KwNKLT7eYFyYpMh8j0adNzNVWrUYx1rsC8g8TOAENYhBvpl7HSe/8djngGFNUmmchcglQf1Z526MJEVpdt6xgQMi74WoEUXHXIvtHcfYTYXP1WQfunEpGe10HIcS/ltZk1UMbK6m2vvOFwGhJpRrWRUB+QrpJP2Mk33yCj0dYgXfObkBtUbzQSrVNrEynYWj31w3C/kBR0GABcp+QZE8R0cCpppuB0BpINFNRfXHPsbqvlLKs5LMel3dJ0PPBVMM37pxAvX8l7Rr/bjZp0fOrV1HwTJSd/Nc0YhUbxN3tjuM6B6KUTHXn0b3WJ2mUg1jkZUCZtxaz6UlTI9FXGN8YArvTcwKpw26/GhTL2tub82dg8dAJ72jGVuip9V1L/9g7L+f7NTQUKOwY1C8+sJnlquZ7ym9p26TO8oSH+cRouYzQDIhI2sgqCyYHVGN0/MbPp+LUoZ5ELa/8/7StdA365fM2vNGQtF+3xeZHlHCjlwhPHdNat0DgSLlH8JKTw/7EXdSIg+v0PVVf3Ps959DossPBSlSb8hzz0g9e7FuXuDReff++l8cpllEn1X6+qcuSzSWmwVJDSAWLg8aeas1MudhwSzZLmaNkWBxp4ippCgk3aPo6nWOyJQQRm7lVexDYMlzUZt4P7aBdrm/653EoyA8vXmFMWv5nb+Pm+PUh2Q1NrWd8JmSzSw68IXpZrCcwwaM7/C5nQA+7NcPUCA1jwTz9Y6rxdQasx3GwnO9Ih10GtaVZghnYBO7+b5N3pDE/4zYUx6+AAY/2iYN+t7EKh5WuKi69o0mmPD6pIjm+iyhrsgoMaG0wu8h9F7/zx8OHOoTXlospOaYoA0qd7omrTs4GyBwD1KVjdpeRQI6z35D58NnvCVDVHZWkiiXTAhNckiw6YUoza0k4R5tAEHmCRzpxlN7w7fiVHnVNAAA==","m":"#a5a5a5","en":"Feldgrau"},{"id":"fz-white","name":"Білий","base":"nl-white","g":[0.969,0.969,0.972],"r":0.5,"s":0.588,"ins":"black","co":["FREZZATTI"],"c":"data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAACwBACdASpgAGAAPmEwlkikIyIhIOgAgAwJaQAAB3ZVfL3GnvJvp06dOnTp03wAAP7zShYXfEgi/gAAAAA=","en":"White"},{"id":"fz-anthracite","name":"Антрацит","base":"nl-anthracite","g":[0.514,0.522,0.528],"r":0.55,"s":0.588,"ins":"grey","co":["FREZZATTI"],"c":"data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAACwBACdASpgAGAAPmEwlkikIyIhIOgAgAwJaQAAB3ZVfL3GnvJvp06dOnTp03wAAP735GZNLuQgAAAAAAA=","en":"Anthracite"},{"id":"fz-wenge","name":"Венге південне","base":"nl-wenge","g":[0.865,0.877,0.891],"r":0.55,"s":0.588,"ins":"grey","co":["FREZZATTI"],"c":"data:image/webp;base64,UklGRugAAABXRUJQVlA4INwAAADwBgCdASpgAGAAPmEwlUikIqIiIOgAgAwJaWxXHpKGWDR880gEWphv/9kKl0CCjXQgNixSzK888ZREhOxvsQAAAP73okjU0H+nZsUzCXq4E/0vfMUZcZx9T5/fJpIUCb/eZ2YZ5vTxg/uo/ewMC3vHnR9hGn2CXoUUjWooCjTz2JI+qg/dsmTffsL9wL2jfC8LW+vADjPsteEn4uqmLa94viuW1Xjuc7lp5MfsjFXOlkuuKumq754o3oEyM7WAoPsNL+kb6LbWY9eSnE0Jo75CamODe8z2YzpUIEAA","en":"Wenge southern"},{"id":"fz-nemo-latte","name":"Дуб Немо Лате","base":"nl-nemo-latte","g":[0.967,0.967,0.969],"r":0.6,"s":0.588,"ins":"black","co":["FREZZATTI"],"c":"data:image/webp;base64,UklGRpYBAABXRUJQVlA4IIoBAABQDQCdASpgAGAAPmEwkkglIqQhoOmYoAwJaWq1bRf8eBL7UKCHcQlTi/z8gDunMGYcQj4StT5BMEcEXqwh+UgJDfbwOI0rKKZBiV6F3DDdw0ytpDiuDtEaPzt5ON72a6n9uMj8CciNPiteesgo5aybCasAAP7vt7Lzc2974SzSkwOtKDlhLCXzYLxaiLSxl/uGLJYCWm31z6J3nBqx4aXhMBgd2KsslZxtolj1sPjQyPmEb78ho5hOjXGZHfqC2m5i/5BNc/xaRwVZJAatWqbAfUcH47dfatGvHohlL12q/yiEwwDuuFCbf7O5aZQBXuHIKaIBdDaLZR/r0bRH8EkRF8c5ELOPHZe+pNRX5yWset0n8hhWkHb+B4HVFJunnYQ2audyQgJy7R77fbsXq6Nx9mlRpyJOgE1LJyjvnz31Rh5vEtVPpP5Sd+f3Y7vKPq0tKUHUrSgKcm8yL6QLIGyGVhIl3GcLiU6E5l4AOwqx2C4q8R4Lb/QkaBdWHi1LGKjTediH66sjAAAA","en":"Nemo oak latte"},{"id":"fz-nemo-silver","name":"Дуб Немо Сріблястий","base":"nl-nemo-silver","g":[0.954,0.95,0.95],"r":0.6,"s":0.588,"ins":"black","co":["FREZZATTI"],"c":"data:image/webp;base64,UklGRkoDAABXRUJQVlA4ID4DAAAwEACdASpgAGAAPmEqkUYkIqGhKdXb0IAMCWlgnlb3teoXg/F57j3eZgeB57PohxAH0Ap5L/cyVLPuo+tVx8AGYJm8k/KKz3I+mI9K55CR6lFF1hiST5Oc5IuYJH5AzI8H7aDEHjswaieHXH1GpUzqpAnXxIsVwDzLLXTIan4DIgXy8u6XgTrWVoAA/twNbft6K5G2ub78vIaTZO9L2vR8nJ0KiQC+iwAINm3JqjV7S/3tQ97xB3k5ZBHKGIrZlPCIb2JUKXekY9h2EDvw6a2DHN31ulSxrj+WVG71g1udKNC0Lwk2l7gvIb3pp/QBPjdE/6SZfSamrVE8YrYHfzbD2mbL0aGWZGqFCIFlIzj5ETDSl7zMJf/GQA24FvvibvgR0uAd4PcvZ+JExzbRdWiROyu9MpWlvA6+k0avro6x93LDdwovHOQEuRaHaTYyp6IbZUV6B1Jkgylno6zLi+cUukAhcvRAulisGiG0tX8+vJgxoglLLhPsnT2RaUmlIqfYwseIpiwROgwN298m9/ti7sTVrdfVCYOl1sdGQ40a9mTJKiAY9geZnAWaBUjtEUj5qHIgGwvU+8QOkpYMqIUa7fc0/C2VjaFP3TL/6KIW1Ia77tGxER71pCfIDiiLCj18GvdFhTh1mZPJnG1MAHh8TFiL47K+a46vMKPRYZ8L1HiwKg3URC/Wgkly86cOyrAMtLomhtYxSnGOurtHzDBQrGNLPK9/dE+nnDyYWYb9IVLdW+GTJIuU7ZF80gPH7fQyDkigiLXuh6gyFf6dydZ86yKRSXuhHLKmY3Pyexa3mKn7GFrjaRNDTZ/lHIQEQnbHUkOfniT1svn7rjqyMRdwMKlYsgymMEKsJvuFFah//jxNw6+6DweQJm5p0kWynGbvEBaWD+mCfXWiRISxHUtmpJANMB7V9SbnVCe995yY3ALi/PCcgTX0pFJtX9NowuHiZecCQhUliMUHUWue4of0W7c3dzzAhJ29AI3b9HV3bgG/PDd5bQY3x6BKAuzjgGmJcZLK1kTaf3y9BMgCquld/Q6msYHgohnVbizwnI79n4TLljhoNhd2+Lo/vTksApe7aFsEdTAIZI7gWeAAAA==","en":"Nemo oak silver"},{"id":"fz-pasadena","name":"Дуб Пасадена","base":"nl-pasadena","g":[0.963,0.963,0.961],"r":0.6,"s":0.588,"ins":"black","co":["FREZZATTI"],"c":"data:image/webp;base64,UklGRiIDAABXRUJQVlA4IBYDAAAwEACdASpgAGAAPmEqkkYkIqGhKrQKqIAMCWlkCcI5PfGaj/k58zfDFPor/RGSBKSYoFw84Z61nHef8a1UCpMmm4E5aBwqHmB5ZNwtp1Ps0QmTfgwGhg1K2DX45JEBxOmOrL7Z2ESB9mOiCN8yr+3zhifTmb/TBavHEnhtsDhJSvFrcDyb34d7YAAA/vDiVXc9DNKOZhAqVzS+LxFKtTrlZnPbypYpSShgambxmSCfSwbg9++NmiIqOcGBQAOvMI9q22qDYcpo4Q40YVLvwzSw2CBej0h0ArCzk73/4XQWj4HADtWe0BCePG0mh/unFkIBFipYTyxfPbr/Iu6ttfQmz3+NPR6xlgtFFdv/CJxxvtuYpQAZwYVss5XBjheLGHfcl2sYRTh7ipCGlgaAbMmT4vLsrgbGVAcOuFlYk6VTed3rJcO0tgi4AtfU+0JNBMfCBV5ngVmKbFwt1A5jiHE9JAO8rWIjzMUnZcQ/Nu/iJFHGpYNTw7vmi7DBAz63yPGJzxLWAvIRYUPwmKnyl41a5VYTLwYSB6pfKF7uWj4H4y+mFeaiBf6z5nQsWwbKe+R4m0hDvY1VxYgvcyH6dMulW5+PzT9EeNukp+He8YUSNFALNi/MsfxjbGBwoJeYpZn2hoFRwD9/0nASBJbw+DOdi86yE46ledlcuCBG9Rkw2XlEu2cirXzn9N5DqloOR9cHx78QTpMLtt6FeR/TsHbncGK6+my5z3Cs+lU8HVXyM8pj+NUecsWiPQnfcRNwyppH+2elYETC3FJeHJm7aOr+1fzFlV7jHcb0VmvwiW4zbzJpCeysxv4b2IvueJeCe7mibP76YMcGFGNBe+nb0kk6w5YLs48ZX1c/dIW9FfrpoelQoGizl6CtMWCI0RZR5c670+k5EgAJyN8doUXkkq1ZtxkH4M92VE8FV5uMlqLAf1TfvJuc3nRTLbf1307IpbovbtsXho1Kl243L7ahMrNBB4SVawD0wrCQye3MGsrLw4fKWAVoJ002VuB4wteCH5xWLmdMNLnnSUilgGKra/3oKBrd7kgA","en":"Oak Pasadena"},{"id":"fz-portovy","name":"Дуб Портовий","base":"nl-portovy","g":[0.92,0.895,0.867],"r":0.6,"s":0.588,"ins":"grey","co":["FREZZATTI"],"c":"data:image/webp;base64,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","en":"Oak port"},{"id":"fz-chateau","name":"Дуб Шато","base":"nl-chateau","g":[0.969,0.969,0.976],"r":0.6,"s":0.588,"ins":"black","co":["FREZZATTI"],"c":"data:image/webp;base64,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","en":"Oak chateau"},{"id":"fz-oxide-white","name":"Оксид білий","base":"nl-oxide-white","g":[0.963,0.961,0.961],"r":0.8,"s":0.588,"ins":"black","co":["FREZZATTI"],"c":"data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAABwBgCdASpgAGAAPmEwkkgkIqIjoOmYgAwJaW3IyAHGoAT4CMepmk5abodwwm6L7sVemj9S1ph8+0PMNQAA/r1xCt4oc0jQ1KHWlkZkjgsO/zEnlykgrnJ0g/wJ69QKmrisbHxMZRAK38OJIWHA+KPJaPhgyLvU6FjQkPVI0aXe+OkRNOjtzKCDJn2Yow7jmt6AAA==","en":"Oxide white"},{"id":"fz-oxide-light","name":"Оксид світлий","base":"nl-oxide-light","g":[0.965,0.965,0.967],"r":0.8,"s":0.588,"ins":"black","co":["FREZZATTI"],"c":"data:image/webp;base64,UklGRogBAABXRUJQVlA4IHwBAACQCgCdASpgAGAAPmEukkekIqGhIrqq6IAMCWlnnnx4ACGXTO5bEu3GcS1QhbZm7wNLoaZj+6nHAGIYS7LDm2gJZqK7jvTOfvDCDRfHViswWJhdnJC9a5epO7mIBgAA/usXa/YWALp7Oa8d5CWQYGdvuKhqLcXWFVdtLG9/alWvKzW63FJKVTk5wcBe4g8lF90xJGkLZEvS9R8+xIdWenC24a1EJAnS+3R3lk0pAqMEkZ/UTnuHHRKKVexakgBahSiFGAl+yYkVDgym5wHPAV9Z+qv5ne66jucETYuKioagHFkvmDjFsxxt5jyiNjg+qzNuyueeYIXrCHrcELe0nvA83ujxciwoMw1Kifdb5NutWGbIq4vxQe2zyZA3Eq7wsJzBOYwBYs/udStnpQ8vxwt66HIJjLR5MMDHPAxW/DDNHRzdycdcXQocv4lRzwie7z0otoVWDu0BLwsnRkHOoQmxLFEX302joHQJ8Aw8n83GG0jWPzAThRr6VZ8AAA==","en":"Oxide light"},{"id":"fz-oxide-dark","name":"Оксид темний","base":"nl-oxide-dark","g":[0.813,0.813,0.817],"r":0.8,"s":0.588,"ins":"black","co":["FREZZATTI"],"c":"data:image/webp;base64,UklGRogEAABXRUJQVlA4IHwEAAAQEwCdASpgAGAAPmEqkUakIiGhKPZrEIAMCWlXuvw3Xc+O6Fuyu9+7YMeMgzflq766ZR3LR0K22NTjMLWOdg4ZBBYZ/sT4OtKFeG5GcGEutD1e3PUXhRtpayGhesnHGtSh065BJoknr4KJ69/cXyrev74u7a4zXz9i349xj+5eMcy2V1v1ztN+HOCyzFgWZ6wbzuolO2dUqVG4anhqfNQ5gAD+6PrUe3GlCcPoaoJ6PTC83oBoNUoRgvvIq6/etmb+6pWQns8cxmV0AAQJ1hwFJPnUeKq2VTncUKYTKH3Wk+Rr6OQz5axN3lQ+CzWZRIgMaJGnw/TthRwvWA0jFjnl/XV9Y3b6KlnMqOpX4l+ehePNPCjGIG498TvvToKQEYo9EmAvlUGvFnSTZ8/24WLbiG4AxPF4IGzr3Iln1BiSciTBTvw/nAm2+8GR6A9QgQWyEu0tQhbeXzXVHKAjYfTOchh5jFRe5EIO7T9WDwQ6MMCaop72hp0fkHlW9Is+7wCTIhJd8SZ/Y1SbGlH/tYlCaIxEUTv9uz/ShSAThFMr0LTclXKHFihaP8u1HLcqB0FzAmbJPnNcPWvIOOzChUcVnxnlSYnhPmHN0zgfCM1Lnf/BnJ6vijo9C98k1DRo5clYWAWjhD6c2238QRZpZs0N7mo9Ek/0Xp1G4CSWY6XWp8xvNqqN3apiD/SMFb7bQ2MNq/RcWwfLJZgv0vjhrtMgBnNpeZ1yC45fqzaNOvz+y7uPLAwy6FrcjZnOblC7qNOF1ly7MIow7gT3VE9RFbSlOTHTCiUcYEytTKqB7ah2rLrCPoRI2d7rX5pTznLg2zDg1gB2joVB9S5INxzyuhfSuNVAtdILEXy7hHujtZmG5EA0N0mHJc9aoxHZ7TIrQSAQCTctd6TLOVxPWOFvvlJIHZoVnVkZ/WrhW8pXN6w0+uYKprVXPoYigFz1Wnp7b3CkurYdLZD8nwxfBUCuxbf/9vObeIR2sC69QmWRGr9ympB6Ps2fsuXeJvt/Fa+jCiOQCHuS5DfyQD98Uy7m3YSrsrq2RnGPj5nUz7i0X+6JOb2k4+fIwJzJBnNFCxQdIdVSRBhIhKx8T2p6RHoQjoXB4ntnR2nIQ+EkJgmyRvlHv0BNnPM9A+bwlV5BNGkU9j7MWw25EEKJHV8SUQonnFxOSZLje3MZdDdu7zJmJ3EXQid1o8sZugLOhWDpi+wXbOuWxw6ajICvrKpl1EaA/CQ4Ah2Kk3jS2q3+vF1ajnJHg902Ijg2JpIIYobwRTE2LCaGb+R6wW1JJK8iqq6o8RV2886zz7t2hARym4TZ9bMwrOKP2Q/V+TSbFo1TFVgBkWECPYaB3dpEyIzz6mAWOvvSX3nXFrwtDpzaf2zbLxm2kiBMDij92VBLvmQHbikq51zDifJcPXUOdWty63/Sf5xegzvnrMSK4+tLB2gH0torl1+gqKEcDwowVwrR+n46bLgYOjybTfGwdRNOwiZrnJ//sz2eerLx8RzQk/qjJYxjiDgyYj2XZuqXLYAAAA==","en":"Oxide dark"},{"id":"fz-feldgrau","name":"Фельдграу","base":"nl-feldgrau","g":[0.954,0.954,0.959],"r":0.7,"s":0.588,"ins":"black","co":["FREZZATTI"],"c":"data:image/webp;base64,UklGRoIEAABXRUJQVlA4IHYEAAAwCQCdASpgAGAAPmEuk0ekIiGhIrVbIIAMCWlXus9Xe2S/D4u1DxoaMA8uM//R6djK3UL6bYAHNbf3HUIHlLZr36Uil4VkXC9LkTF+l89T3LwAAP7tsF+TWKTcL/TjbLYJUeAU0/enzywxTTIjLo2jyLaPqUA+KFJU67idCFA4FmOX7pm7BcHbW/xwwKnHwVW9qZgnWUw/MVH7nMbu18UbpHZHah1DM9Py0LN65EWRyAIUusZUGwT1KQw9OCCZFxNsyrXWMTzz3ShX4ESY682lqYjpQvQNvYpYcSKyn76DpiGSiieIUYujsB4nTQddQDfzMve5F9w/hrhV3xhuwNvhmX+621HluPg5Mad4EOiQR8J+Uk4Df1V3q9aeR7R70ZrjkcggMLVJSJn9w+JqVh9lLoI88USg7tKJDcjmAqkxMv02+hJdI1FK135Qs376maim65mYXyb25oxsgHxaRvyl7PneO8EPl46josqWp7OPIObmAJRi6h0MIdTqxS4Z0rLrvqbim1F2YGBXWFG1axAqhjmxPW1j8Z9pV9m5miuxlBrpUjWGOoEGGRiBuEgg15mWakU35FNoI+KwNKLT7eYFyYpMh8j0adNzNVWrUYx1rsC8g8TOAENYhBvpl7HSe/8djngGFNUmmchcglQf1Z526MJEVpdt6xgQMi74WoEUXHXIvtHcfYTYXP1WQfunEpGe10HIcS/ltZk1UMbK6m2vvOFwGhJpRrWRUB+QrpJP2Mk33yCj0dYgXfObkBtUbzQSrVNrEynYWj31w3C/kBR0GABcp+QZE8R0cCpppuB0BpINFNRfXHPsbqvlLKs5LMel3dJ0PPBVMM37pxAvX8l7Rr/bjZp0fOrV1HwTJSd/Nc0YhUbxN3tjuM6B6KUTHXn0b3WJ2mUg1jkZUCZtxaz6UlTI9FXGN8YArvTcwKpw26/GhTL2tub82dg8dAJ72jGVuip9V1L/9g7L+f7NTQUKOwY1C8+sJnlquZ7ym9p26TO8oSH+cRouYzQDIhI2sgqCyYHVGN0/MbPp+LUoZ5ELa/8/7StdA365fM2vNGQtF+3xeZHlHCjlwhPHdNat0DgSLlH8JKTw/7EXdSIg+v0PVVf3Ps959DossPBSlSb8hzz0g9e7FuXuDReff++l8cpllEn1X6+qcuSzSWmwVJDSAWLg8aeas1MudhwSzZLmaNkWBxp4ippCgk3aPo6nWOyJQQRm7lVexDYMlzUZt4P7aBdrm/653EoyA8vXmFMWv5nb+Pm+PUh2Q1NrWd8JmSzSw68IXpZrCcwwaM7/C5nQA+7NcPUCA1jwTz9Y6rxdQasx3GwnO9Ih10GtaVZghnYBO7+b5N3pDE/4zYUx6+AAY/2iYN+t7EKh5WuKi69o0mmPD6pIjm+iyhrsgoMaG0wu8h9F7/zx8OHOoTXlospOaYoA0qd7omrTs4GyBwD1KVjdpeRQI6z35D58NnvCVDVHZWkiiXTAhNckiw6YUoza0k4R5tAEHmCRzpxlN7w7fiVHnVNAAA==","en":"Feldgrau"},{"id":"p-slate","name":"Колір за візуалом","k":"#646E72","r":0.55,"s":0.5,"co":[],"only":"ET-19","en":"Colour as in the visual"},{"id":"p-sage","name":"Колір за візуалом","k":"#969A96","r":0.55,"s":0.5,"co":[],"only":"ET-20","en":"Colour as in the visual"}];
+
+/* Візерунок вставок знято з візуалів IN WOOD (полотно 800x2000, мм). Координати: x від лівого краю зображення, y від верху полотна.
+   Прив'язки: L/T - від початку, R/B - від кінця (відступ фіксований), P - пропорційно розміру, C - від центру.
+   nh - сторона петель на візуалі (L/R), hs - форма розетки ручки на візуалі, hy - висота ручки, м. */
+var MODELS=[
+ {id:'ET-01',ins:false,nh:'R',hs:'sq',hy:.956,els:[]},
+ {id:'ET-02',ins:true,nh:'L',hs:'sq',hy:1.028,els:[['r',5,'L',742,'R',971,'B',985,'B']]},
+ {id:'ET-03',ins:true,nh:'L',hs:'sq',hy:1.028,els:[
+   ['r',4.9,'L',793.2,'R',277.4,'T',284.8,'T'],['r',4.9,'L',793.2,'R',421.7,'T',429,'T'],
+   ['r',4.9,'L',793.2,'R',1549.7,'B',1557.1,'B'],['r',4.9,'L',793.2,'R',1694,'B',1701.3,'B']]},
+ {id:'ET-04',ins:true,nh:'L',hs:'sq',hy:1.028,els:[
+   ['r',6.1,'L',794.4,'R',410.7,'P',418,'P'],['r',6.1,'L',794.4,'R',799.3,'P',806.6,'P'],
+   ['r',6.1,'L',794.4,'R',1185.5,'P',1192.9,'P'],['r',6.1,'L',794.4,'R',1569.3,'P',1576.6,'P']]},
+ {id:'ET-05',ins:true,nh:'R',hs:'rd',hy:1.011,els:[
+   ['r',8.6,'L',792,'R',894.6,'B',902,'B'],['r',8.6,'L',792,'R',1087.8,'B',1095.1,'B']]},
+ {id:'ET-06',ins:true,nh:'L',hs:'sq',hy:1.028,els:[['r',563.4,'R',647.8,'R',0,'T',2000,'B']]},
+ {id:'ET-07',ins:true,nh:'L',hs:'sq',hy:1.028,els:[['r',161.3,'L',177.2,'L',0,'T',2000,'B'],['r',636.8,'R',651.4,'R',0,'T',2000,'B']]},
+ {id:'ET-08',ins:false,nh:'L',hs:'sq',hy:1.028,els:[['g',574.4,'R',580.6,'R',0,'T',2000,'B'],['g',660,'R',666.2,'R',0,'T',2000,'B']]},
+ {id:'ET-09',ins:true,nh:'L',hs:'sq',hy:1.028,els:[
+   ['r',565.9,'R',572,'R',0,'T',2000,'B'],['r',650.2,'R',656.3,'R',0,'T',2000,'B'],
+   ['r',7,'L',566,'R',1052,'B',1058,'B'],['r',7,'L',566,'R',1133,'B',1139,'B']]},
+ {id:'ET-10',ins:true,nh:'R',hs:'rd',hy:1.011,els:[
+   ['l',97.8,6,793,482,14,1,1],['l',8.6,249,792,1498,14,1,1],['l',8.6,397,730,1996,14,1,1],['l',792,797,8.6,1828,14,1,1]]},
+ {id:'ET-11',ins:true,nh:'R',hs:'rd',hy:1.011,els:[
+   ['l',793,607,167,1996,14,1,1],['l',793,505,8.6,1359,14,1,1],['l',596,6,8.6,363,14,1,1],
+   ['l',8.6,433,452.1,876.2,14,1,0],['l',397.6,1484.5,793,1669,14,0,1]]},
+ {id:'ET-12',ins:true,nh:'R',hs:'rd',hy:1.011,els:[['r',8.6,'L',792,'R',924,'B',1070.6,'B']]},
+ {id:'ET-13',ins:true,nh:'R',hs:'rd',hy:1.011,els:[['r',106.3,'L',127.1,'L',0,'T',2000,'B'],['r',205.3,'L',271.3,'L',0,'T',2000,'B']]},
+ {id:'ET-14',ins:true,nh:'R',hs:'rd',hy:1.011,els:[['r',238.3,'C',304.3,'C',0,'T',2000,'B'],['r',497.4,'C',563.4,'C',0,'T',2000,'B']]},
+ {id:'ET-15',ins:true,nh:'R',hs:'rd',hy:1.011,els:[['r',101.4,'L',167.4,'L',0,'T',2000,'B'],['r',244.4,'L',267.7,'L',0,'T',2000,'B']]},
+ {id:'ET-16',ins:true,nh:'R',hs:'rd',hy:1.011,els:[['r',152.8,'L',297,'L',0,'T',2000,'B']]},
+ {id:'ET-17',ins:true,nh:'R',hs:'rd',hy:1.011,els:[['r',8.6,'L',792,'R',947.2,'B',1003.4,'B'],['r',8.6,'L',792,'R',1190.4,'B',1246.6,'B']]}
+];
+MODELS.forEach(function(m){m.c='ETALON'});
+MODELS=MODELS.concat([{"id":"ET-18","ins":true,"nh":"L","hs":"sq","hy":1.015,"gk":0.95,"els":[["r",0,"L",800,"R",481.4,"P",513.8,"P"],["r",0,"L",800,"R",974,"P",1007,"P"],["r",0,"L",800,"R",1487.6,"P",1521,"P"]],"c":"ETALON"},{"id":"ET-19","ins":false,"nh":"R","hs":"sq","hy":1.048,"solid":"p-slate","els":[["m",143,"L",243,"L",0,"T",2000,"B"]],"c":"ETALON"},{"id":"ET-20","ins":false,"nh":"R","hs":"sq","hy":1.048,"solid":"p-sage","els":[["m",143,"L",674,"R",0,"T",2000,"B"]],"c":"ETALON"},{"id":"NL-01","ins":false,"nh":"R","hs":"sq","hy":1.02,"hg":[[109,192],[1746,1830]],"els":[],"gs":"b1","c":"NOMINAL"},{"id":"NL-02","ins":true,"nh":"R","hs":"sq","hy":1.02,"hg":[[109,192],[1746,1830]],"els":[["r",4.9,"L",793.9,"R",852.7,"B",861.3,"B"],["r",4.9,"L",793.9,"R",882.1,"B",890.7,"B"],["r",4.9,"L",793.9,"R",1097.8,"B",1106.3,"B"],["r",4.9,"L",793.9,"R",1128.4,"B",1137.0,"B"]],"gs":"b1","c":"NOMINAL"},{"id":"NL-03","ins":true,"nh":"R","hs":"sq","hy":1.02,"hg":[[109,192],[1746,1830]],"els":[["r",4.9,"L",796.4,"R",354.1,"T",373.7,"T"],["r",4.9,"L",796.4,"R",390.8,"T",410.4,"T"],["r",4.9,"L",796.4,"R",763.3,"P",782.9,"P"],["r",4.9,"L",796.4,"R",800,"P",819.7,"P"],["r",4.9,"L",796.4,"R",1171.3,"P",1190.9,"P"],["r",4.9,"L",796.4,"R",1208,"P",1227.6,"P"],["r",4.9,"L",796.4,"R",1578,"B",1598.5,"B"],["r",4.9,"L",796.4,"R",1616,"B",1636.5,"B"]],"gs":"b1","c":"NOMINAL"},{"id":"NL-04","ins":true,"nh":"R","hs":"sq","hy":1.02,"hg":[[109,192],[1746,1830]],"els":[["r",548.6,"R",560.2,"R",0,"T",2000,"B"],["r",608.6,"R",620.2,"R",0,"T",2000,"B"],["r",668.6,"R",680.2,"R",0,"T",2000,"B"]],"gs":"b1","c":"NOMINAL"},{"id":"NL-05","ins":true,"nh":"R","hs":"sq","hy":1.02,"hg":[[109,192],[1746,1830]],"els":[["r",309.6,"C",321.2,"C",0,"T",2000,"B"],["r",370,"C",430,"C",0,"T",2000,"B"],["r",477.4,"C",489,"C",0,"T",2000,"B"]],"gs":"b1","c":"NOMINAL"},{"id":"NL-06","ins":true,"nh":"L","hs":"sq","hy":0.991,"hg":[[115,209],[1781,1876]],"els":[["r",72.5,"L",84,"L",0,"T",2000,"B"],["r",125.4,"L",137,"L",0,"T",2000,"B"],["r",586.9,"R",665.3,"R",0,"T",2000,"B"]],"c":"NOMINAL"},{"id":"NL-07","ins":true,"nh":"L","hs":"sq","hy":0.929,"hg":[[115,209],[1781,1876]],"els":[["r",586.9,"R",665.3,"R",0,"T",2000,"B"],["r",6.1,"L",600,"R",1016.4,"B",1028.4,"B"],["r",6.1,"L",600,"R",1076.4,"B",1088.4,"B"],["r",6.1,"L",600,"R",1134.4,"B",1146.4,"B"]],"c":"NOMINAL"},{"id":"NL-08","ins":true,"nh":"R","hs":"sq","hy":0.924,"hg":[[40,135],[1855,1950]],"els":[["r",385.4,"C",396.2,"C",0,"T",2000,"B"],["r",7.4,"L",391,"C",361,"T",372.5,"T"],["r",391,"C",793.9,"R",1629,"B",1640,"B"]],"c":"NOMINAL"},{"id":"NL-09","ins":true,"nh":"R","hs":"sq","hy":0.924,"hg":[[40,135],[1855,1950]],"els":[["l",416.6,3.7,147.0,1994.6,10,1,1],["l",645.7,3.7,374.9,1994.6,10,1,1],["l",4.9,975.3,793.9,1082,10,0,0],["l",4.9,1205.9,793.9,1312.5,10,0,0]],"c":"NOMINAL"},{"id":"NL-10","ins":true,"nh":"L","hs":"sq","hy":1.038,"hg":[[115,209],[1781,1876]],"els":[["r",7.4,"L",793.9,"R",144.6,"T",168.2,"T"],["r",7.4,"L",793.9,"R",245,"T",265.9,"T"],["r",7.4,"L",793.9,"R",925,"B",1024,"B"],["r",7.4,"L",793.9,"R",1704.2,"B",1725,"B"],["r",7.4,"L",793.9,"R",1802.3,"B",1825.5,"B"]],"c":"NOMINAL"},{"id":"FZ-01","ins":false,"nh":"R","hs":"sq","hy":1.007,"els":[["g",104.9,"L",111.9,"L",157,"T",1838,"B"],["g",682.6,"R",689.6,"R",157,"T",1838,"B"],["g",108,"L",640,"R",987.9,"B",994.9,"B"]],"c":"FREZZATTI","hg":[[113.5,201.2],[1746.2,1832.6]]},{"id":"FZ-02","ins":false,"nh":"R","hs":"sq","hy":1.007,"els":[["g",104.9,"L",111.9,"L",156,"T",1843,"B"]],"c":"FREZZATTI","hg":[[113.5,201.2],[1746.2,1832.6]]},{"id":"FZ-03","ins":false,"nh":"R","hs":"sq","hy":1.007,"els":[["g",95.2,"L",102.2,"L",134,"T",1864,"B"],["g",681.2,"R",688.2,"R",135,"T",1862,"B"]],"c":"FREZZATTI","hg":[[113.5,201.2],[1746.2,1832.6]]},{"id":"FZ-04","ins":false,"nh":"R","hs":"sq","hy":1.007,"els":[["g",120.1,"L",127.1,"L",0,"T",2000,"B"],["g",123.6,"L",748,"R",994.9,"B",1001.9,"B"]],"c":"FREZZATTI","hg":[[113.5,201.2],[1746.2,1832.6]]},{"id":"FZ-05","ins":false,"nh":"R","hs":"sq","hy":1.007,"els":[["g",104.5,"L",696.0,"R",101.0,"T",108.0,"T"],["g",104.5,"L",696.0,"R",1113.3,"B",1120.3,"B"],["g",104.5,"L",111.5,"L",101.0,"T",1120.3,"B"],["g",689.0,"R",696.0,"R",101.0,"T",1120.3,"B"],["g",103.5,"L",695.5,"R",1323.5,"B",1330.5,"B"],["g",103.5,"L",695.5,"R",1890.5,"B",1897.5,"B"],["g",103.5,"L",110.5,"L",1323.5,"B",1897.5,"B"],["g",688.5,"R",695.5,"R",1323.5,"B",1897.5,"B"]],"c":"FREZZATTI","hg":[[113.5,201.2],[1746.2,1832.6]]},{"id":"FZ-06","ins":false,"nh":"R","hs":"sq","hy":1.007,"els":[["g",104.8,"L",694.8,"R",101.2,"T",108.2,"T"],["g",104.8,"L",694.8,"R",1088.4,"B",1095.4,"B"],["g",104.8,"L",111.8,"L",101.2,"T",1095.4,"B"],["g",687.8,"R",694.8,"R",101.2,"T",1095.4,"B"],["g",105.3,"L",694.8,"R",1182.2,"B",1189.2,"B"],["g",105.3,"L",694.8,"R",1413.1,"B",1420.1,"B"],["g",105.3,"L",112.3,"L",1182.2,"B",1420.1,"B"],["g",687.8,"R",694.8,"R",1182.2,"B",1420.1,"B"],["g",105.3,"L",695.0,"R",1509.9,"B",1516.9,"B"],["g",105.3,"L",695.0,"R",1888.4,"B",1895.4,"B"],["g",105.3,"L",112.3,"L",1509.9,"B",1895.4,"B"],["g",688.0,"R",695.0,"R",1509.9,"B",1895.4,"B"]],"c":"FREZZATTI","hg":[[113.5,201.2],[1746.2,1832.6]]},{"id":"FZ-07","ins":false,"nh":"R","hs":"sq","hy":1.007,"els":[["g",314.4,"C",321.4,"C",0,"T",1180,"B"],["g",379.5,"C",386.5,"C",0,"T",2000,"B"],["g",445.3,"C",452.3,"C",819,"B",2000,"B"]],"c":"FREZZATTI","hg":[[113.5,201.2],[1746.2,1832.6]]},{"id":"FZ-08","ins":false,"nh":"R","hs":"sq","hy":1.007,"els":[["g",331.2,"C",338.2,"C",819,"P",1762,"P"],["g",379.5,"C",386.5,"C",324,"P",1585,"P"],["g",429.2,"C",436.2,"C",819,"P",1762,"P"]],"c":"FREZZATTI","hg":[[113.5,201.2],[1746.2,1832.6]]},{"id":"FZ-09","ins":false,"nh":"R","hs":"sq","hy":1.007,"els":[["g",298.3,"C",305.3,"C",190,"P",1134,"P"],["g",379.5,"C",386.5,"C",324,"P",1585,"P"],["g",452.5,"C",459.5,"C",856,"P",1799,"P"]],"c":"FREZZATTI","hg":[[113.5,201.2],[1746.2,1832.6]]},{"id":"FZ-10","ins":false,"nh":"R","hs":"sq","hy":1.007,"els":[["g",103.5,"L",110.5,"L",0,"T",2000,"B"],["g",689.0,"R",696.0,"R",0,"T",2000,"B"],["g",107,"L",692.5,"R",171.9,"T",178.9,"T"],["g",107,"L",692.5,"R",529.1,"T",536.1,"T"],["g",107,"L",692.5,"R",616.2,"T",623.2,"T"],["g",107,"L",692.5,"R",946.2,"B",953.2,"B"],["g",107,"L",692.5,"R",1042.4,"B",1049.4,"B"],["g",107,"L",692.5,"R",1372.6,"B",1379.6,"B"],["g",107,"L",692.5,"R",1458.6,"B",1465.6,"B"],["g",107,"L",692.5,"R",1817.5,"B",1824.5,"B"]],"c":"FREZZATTI","hg":[[113.5,201.2],[1746.2,1832.6]]},{"id":"FZ-11","ins":false,"nh":"R","hs":"sq","hy":1.007,"els":[["g",102.5,"L",109.5,"L",0,"T",2000,"B"],["g",689.0,"R",696.0,"R",0,"T",2000,"B"],["g",106,"L",692.5,"R",177.9,"T",184.9,"T"],["g",106,"L",692.5,"R",566.5,"T",573.5,"T"],["g",106,"L",692.5,"R",994.7,"B",1001.7,"B"],["g",106,"L",692.5,"R",1336.7,"B",1343.7,"B"],["g",106,"L",692.5,"R",1670.2,"B",1677.2,"B"]],"c":"FREZZATTI","hg":[[113.5,201.2],[1746.2,1832.6]]},{"id":"FZ-12","ins":false,"nh":"R","hs":"sq","hy":1.007,"els":[["g",114.9,"L",121.9,"L",0,"T",2000,"B"],["g",150.7,"L",157.7,"L",0,"T",2000,"B"],["g",184.7,"L",191.7,"L",0,"T",2000,"B"]],"c":"FREZZATTI","hg":[[113.5,201.2],[1746.2,1832.6]]},{"id":"FZ-13","ins":false,"nh":"R","hs":"sq","hy":1.007,"els":[["p",7,[[149,"L",0,"T"],[149,"L",822,"B"],[153,"L",840,"B"],[178,"L",860,"B"],[198,"L",880,"B"],[206,"L",900,"B"],[210,"L",920,"B"],[219,"L",940,"B"],[226,"L",960,"B"],[229,"L",980,"B"],[231,"L",1000,"B"],[230,"L",1020,"B"],[227,"L",1040,"B"],[222,"L",1060,"B"],[214,"L",1080,"B"],[204,"L",1100,"B"],[189,"L",1120,"B"],[171,"L",1140,"B"],[151,"L",1160,"B"],[149,"L",1175,"B"],[149,"L",2000,"B"]]],["p",7,[[186.8,"L",0,"T"],[186.8,"L",822,"B"],[190.8,"L",840,"B"],[215.8,"L",860,"B"],[235.8,"L",880,"B"],[243.8,"L",900,"B"],[247.8,"L",920,"B"],[256.8,"L",940,"B"],[263.8,"L",960,"B"],[266.8,"L",980,"B"],[268.8,"L",1000,"B"],[267.8,"L",1020,"B"],[264.8,"L",1040,"B"],[259.8,"L",1060,"B"],[251.8,"L",1080,"B"],[241.8,"L",1100,"B"],[226.8,"L",1120,"B"],[208.8,"L",1140,"B"],[188.8,"L",1160,"B"],[186.8,"L",1175,"B"],[186.8,"L",2000,"B"]]],["p",7,[[225,"L",0,"T"],[225,"L",822,"B"],[229,"L",840,"B"],[254,"L",860,"B"],[274,"L",880,"B"],[282,"L",900,"B"],[286,"L",920,"B"],[295,"L",940,"B"],[302,"L",960,"B"],[305,"L",980,"B"],[307,"L",1000,"B"],[306,"L",1020,"B"],[303,"L",1040,"B"],[298,"L",1060,"B"],[290,"L",1080,"B"],[280,"L",1100,"B"],[265,"L",1120,"B"],[247,"L",1140,"B"],[227,"L",1160,"B"],[225,"L",1175,"B"],[225,"L",2000,"B"]]]],"c":"FREZZATTI","hg":[[113.5,201.2],[1746.2,1832.6]]},{"id":"FZ-14","ins":false,"nh":"R","hs":"sq","hy":1.007,"els":[["g",123.7,"L",130.7,"L",0,"T",2000,"B"],["g",127.2,"L",786.7,"R",496.9,"T",503.9,"T"],["g",127.2,"L",786.7,"R",995.2,"B",1002.2,"B"],["g",127.2,"L",786.7,"R",1493.6,"B",1500.6,"B"]],"c":"FREZZATTI","hg":[[113.5,201.2],[1746.2,1832.6]]},{"id":"PF-01","ins":false,"nh":"R","hs":"sq","hy":0.9,"gk":0.92,"pf":{"n":3,"g":[[0,0],[1,1],[2,2]]},"els":[],"c":"PERFETTO"},{"id":"PF-02","ins":false,"nh":"L","hs":"sq","hy":0.9,"gk":0.92,"pf":{"n":3,"g":[[0,1],[2,2]]},"els":[],"c":"PERFETTO"},{"id":"HD-01","ins":false,"nh":"R","hs":"sq","hy":1.0,"els":[],"c":"HIDDEN"}]);
+function curModel(){return MODELS.filter(function(m){return m.id===S.model})[0]}
+function collModels(id){return MODELS.filter(function(m){return m.c===id})}
+
+var ET_FILMS=['white','astana-merle','concrete-snow','concrete-grey','concrete-dark','white-textured','wenge-south','oak-glasgow','oak-chateau','stone-cut','carpathian-spruce','ash-softtouch','rustic-gold','rustic-avignon','pine-provence','black-cork','veneer-brown'];
+var NL_FILMS=['white','anthracite','wenge','nemo-latte','nemo-silver','pasadena','portovy','chateau','oxide-white','oxide-light','oxide-dark','feldgrau'];
+/* колекції: films - палітра плівок, paint - можливе фарбування RAL/NCS, edges - варіанти кромки, hinges - видимі петлі на візуалах */
+var COLL={
+ ETALON:{name:'ETALON',lt:40,def:'ET-02',films:ET_FILMS,fdef:'astana-merle',edges:['film','black','white','agrey','ablack','aral'],paint:false,hinges:false,cop:true,grv:.3,
+   note:'cn_ETALON',mnote:'cm_ETALON'},
+ NOMINAL:{name:'NOMINAL',lt:34,def:'NL-05',films:NL_FILMS.map(function(x){return 'nl-'+x}),fdef:'nl-white',edges:['black','white'],paint:false,hinges:true,grv:.3,
+   note:'cn_NOMINAL',mnote:'cm_NOMINAL'},
+ FREZZATTI:{name:'FREZZATTI',lt:34,def:'FZ-01',films:NL_FILMS.map(function(x){return 'fz-'+x}),fdef:'fz-white',edges:['black','white'],paint:true,hinges:true,grv:.22,
+   note:'cn_FREZZATTI',mnote:'cm_FREZZATTI'},
+ PERFETTO:{name:'PERFETTO',lt:40,def:'PF-01',films:ET_FILMS,fdef:'white',edges:['film','black','white'],paint:true,hinges:false,cop:true,grv:.3,
+   note:'cn_PERFETTO',mnote:'cm_PERFETTO'},
+ HIDDEN:{name:'HIDDEN DOORS',lt:40,def:'HD-01',films:[],fdef:'paint',edges:['film','agrey','ablack','aral'],paint:true,hinges:false,flush:true,grv:.3,
+   note:'cn_HIDDEN',mnote:'cm_HIDDEN'}
+};
+var COLL_ORDER=['ETALON','NOMINAL','FREZZATTI','PERFETTO','HIDDEN'];
+function curColl(){return COLL[S.coll]}
+
+var EDGES_ALL={aral:['aral','Алюм., RAL'],film:['film','В колір'],black:['black','Чорна'],white:['white','Біла'],agrey:['agrey','Алюм., сірий'],ablack:['ablack','Алюм., чорний']};
+var EDGE_NAME={film:'в колір полотна',black:'чорна',white:'біла',agrey:'алюмінієвий профіль, сірий',ablack:'алюмінієвий профіль, чорний'};
+var EDGE_COL={aral:null,film:null,black:'#141414',white:'#F1F1EE',agrey:'#A7AAAD',ablack:'#1C1C1D'};
+var INSERTS={black:{name:'чорний',c:'#3C3C3D'},grey:{name:'сірий',c:'#7B7E82'}};
+var HANDLES={
+  graphite:{name:'Графіт',label:'Графіт',c:'#46474A',m:.35,r:.48},
+  black:{name:'Чорна матова',label:'Чорна',c:'#1E1F20',m:.55,r:.5},
+  chrome:{name:'Хром',label:'Хром',c:'#DADDDF',m:1,r:.18},
+  brass:{name:'Латунь',label:'Латунь',c:'#C9A24C',m:1,r:.28}
+};
+var WALLS=[
+  {c:'#ECE8E1',n:'Тепла біла'},{c:'#D9D4CA',n:'Грейдж'},{c:'#C3CCC0',n:'Світла шавлія'},
+  {c:'#B4BEC7',n:'Сіро-блакитна'},{c:'#8D7F72',n:'Мокко'},{c:'#33403C',n:'Темна зелень'}
+];
+var FLOORS=[
+  {id:'light',name:'Світла',base:'#A9A8A5',kind:'noise'},
+  {id:'grey',name:'Бетон',base:'#8E9190',kind:'noise'},
+  {id:'dark',name:'Темна',base:'#3F3E3D',kind:'noise'}
+];
+function filmById(id){
+  if(id==='paint')return {id:'paint',name:'RAL / NCS (наближено)',k:S.paint,r:.55,s:.5};
+  return FILMS.filter(function(f){return f.id===id})[0];
+}
+
+var S={coll:'ETALON',model:'ET-02',W:800,H:2000,T:100,film:'astana-merle',edge:'film',insert:'black',hinge:'L',casing:true,ft:'tel',cs:'both',ct:'std',dob:0,edgeHex:'#8c8f93',hi:0,hb:'std',hgc:'std',handle:'graphite',hshape:'sq',paint:'#ECE8E1',paintAuto:true,
+       room:true,dims:true,wall:0,wallHex:'#D8D2C8',floor:'light',open:24,cur:24,view:'persp'};
+
+/* ---------- floor textures ---------- */
+function floorCanvas(f){
+  var s=512,c=document.createElement('canvas');c.width=s;c.height=s;
+  var g=c.getContext('2d'),r=rng(f.id.length*131+7),i;
+  g.fillStyle=f.base;g.fillRect(0,0,s,s);
+  if(f.kind==='planks'){
+    var pw=64;
+    for(var p=0;p<s/pw;p++){
+      var y=0;
+      while(y<s){
+        var len=140+r()*200,tone=r()>.5?'#FFFFFF':'#000000';
+        g.fillStyle=hexA(tone,.03+r()*.07);g.fillRect(p*pw,y,pw,len);
+        for(i=0;i<18;i++){g.strokeStyle=hexA(r()>.5?'#000000':'#FFFFFF',.04+r()*.05);g.lineWidth=.6+r();
+          var gx=p*pw+r()*pw;g.beginPath();g.moveTo(gx,y);g.lineTo(gx+(r()-.5)*4,Math.min(s,y+len));g.stroke()}
+        g.fillStyle='rgba(0,0,0,.3)';g.fillRect(p*pw,y,pw,1.5);
+        y+=len;
+      }
+      g.fillStyle='rgba(0,0,0,.35)';g.fillRect(p*pw,0,1.5,s);
+    }
+  }else{
+    for(i=0;i<5000;i++){g.fillStyle=hexA(r()>.5?'#FFFFFF':'#000000',.02+r()*.05);g.fillRect(r()*s,r()*s,1+r()*3,1+r()*3)}
+  }
+  return c;
+}
+function prepTex(t,aniso){t.wrapS=t.wrapT=THREE.RepeatWrapping;t.encoding=THREE.sRGBEncoding;t.anisotropy=aniso||8;return t}
+
+/* ---------- renderer / scene ---------- */
+var glCanvas=$('#gl'),dimCanvas=$('#dims'),dctx=dimCanvas.getContext('2d');
+var renderer;
+try{
+  renderer=new THREE.WebGLRenderer({canvas:glCanvas,antialias:true,alpha:true});
+}catch(e){
+  stage.insertAdjacentHTML('beforeend','<div class="nogl">'+tr('nogl_gl')+'</div>');
+  return;
+}
+renderer.outputEncoding=THREE.sRGBEncoding;
+renderer.toneMapping=THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure=.48;
+renderer.shadowMap.enabled=true;
+renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+renderer.setClearColor(0x000000,0);
+
+var scene=new THREE.Scene();
+(function(){
+  var c=document.createElement('canvas');c.width=1024;c.height=512;var g=c.getContext('2d');
+  var gr=g.createLinearGradient(0,0,0,512);
+  gr.addColorStop(0,'#c9d9e6');gr.addColorStop(.48,'#ffffff');gr.addColorStop(.52,'#b7b2a7');gr.addColorStop(1,'#4d4a44');
+  g.fillStyle=gr;g.fillRect(0,0,1024,512);
+  g.fillStyle='#ffffff';g.fillRect(120,120,200,150);g.fillRect(560,150,260,120);g.fillRect(900,140,90,130);
+  g.fillStyle='#8a94a0';g.fillRect(360,150,120,100);
+  var t=new THREE.CanvasTexture(c);t.mapping=THREE.EquirectangularReflectionMapping;t.encoding=THREE.sRGBEncoding;
+  var pm=new THREE.PMREMGenerator(renderer);scene.environment=pm.fromEquirectangular(t).texture;pm.dispose();t.dispose();
+})();
+scene.add(new THREE.HemisphereLight(0xffffff,0x8c887f,.44));
+var sun=new THREE.DirectionalLight(0xfffbf6,1.7);
+sun.position.set(3.2,5.4,4.6);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);
+var sc=sun.shadow.camera;sc.left=-4.5;sc.right=4.5;sc.top=4.5;sc.bottom=-4.5;sc.near=1;sc.far=18;
+sun.shadow.bias=-0.0004;sun.shadow.normalBias=.012;sun.shadow.radius=3;
+sun.target.position.set(0,1,0);scene.add(sun);scene.add(sun.target);
+
+var camera=new THREE.PerspectiveCamera(32,1,.1,60);
+var controls=new THREE.OrbitControls(camera,glCanvas);
+controls.enableDamping=true;controls.dampingFactor=.09;controls.minDistance=1.2;controls.maxDistance=11;
+controls.maxPolarAngle=Math.PI*.495;controls.screenSpacePanning=true;
+
+/* ---------- materials ---------- */
+var dirty=true;
+function std(o){return new THREE.MeshStandardMaterial(o)}
+var M={
+  film:std({color:0xffffff,roughness:.6,metalness:0,envMapIntensity:.45}),
+  edge:std({color:col('#141414'),roughness:.55,envMapIntensity:.3}),
+  insert:std({color:col('#3C3C3D'),roughness:.42,metalness:0,envMapIntensity:.3}),
+  groove:std({color:0x000000,roughness:1,transparent:true,opacity:.3,depthWrite:false,envMapIntensity:0,side:THREE.DoubleSide}),
+  mirror:std({color:col('#C9CDD0'),roughness:.05,metalness:1,envMapIntensity:1.15}),
+  hinge:std({color:col('#8D8F93'),metalness:.55,roughness:.4,envMapIntensity:.8}),
+  reveal:std({color:col('#232324'),roughness:.9,envMapIntensity:.1}),
+  handle:std({color:col('#4A4D51'),metalness:.85,roughness:.38,envMapIntensity:1}),
+  wall:std({color:col(WALLS[0].c),roughness:.95,envMapIntensity:.25}),
+  back:std({color:col(WALLS[0].c),roughness:.95,envMapIntensity:.25}),
+  skirt:std({color:col('#F1F0EC').multiplyScalar(1.3),roughness:.6,envMapIntensity:.3}),
+  floor:std({color:0xffffff,roughness:.55,metalness:0,envMapIntensity:.35}),
+  catcher:new THREE.ShadowMaterial({opacity:.24})
+};
+M.film.name='door_film';M.edge.name='door_edge';M.insert.name='door_insert';M.groove.name='door_groove';M.handle.name='hardware_metal';M.mirror.name='door_mirror';M.hinge.name='hardware_hinge';M.reveal.name='wall_reveal';
+
+/* текстури плівок вантажаться окремими файлами й лише коли колір обрано (або наведено курсор) */
+var TEX_BASE='textures/',TEX_VER='1';
+var loader=new THREE.TextureLoader(),filmTex={},texReady={};
+function getTex(id){
+  if(filmTex[id])return filmTex[id];
+  var t=loader.load(TEX_BASE+id+'.webp?v='+TEX_VER,function(){
+    texReady[id]=true;dirty=true;
+    var f=filmById(S.film);if(f&&(f.base||f.id)===id)applyFilm();
+  },undefined,function(){});
+  return filmTex[id]=prepTex(t);
+}
+var floorTex={};
+FLOORS.forEach(function(f){var t=prepTex(new THREE.CanvasTexture(floorCanvas(f)),8);t.repeat.set(7/1.2,7.5/1.2);floorTex[f.id]=t});
+
+function applyFilm(){
+  var f=filmById(S.film);
+  if(f.k){M.film.map=null;M.film.color.copy(col(f.k))}
+  else{
+    var tid=f.base||f.id,tf=filmById(tid),tx=getTex(tid),m=curModel(),g=f.g;
+    if(m.gs&&f.gs&&f.gs[m.gs])g=f.gs[m.gs];
+    if(texReady[tid]){M.film.map=tx;if(g)M.film.color.setRGB(g[0],g[1],g[2]);else M.film.color.set(0xffffff)}
+    else{/* доки файл вантажиться - рівний середній колір плівки */
+      M.film.map=null;M.film.color.copy(col(tf.m||'#8a8a8a'));if(g)M.film.color.multiply(new THREE.Color(g[0],g[1],g[2]))}
+    if(m.gk)M.film.color.multiplyScalar(m.gk);
+  }
+  M.film.roughness=f.r;M.film.needsUpdate=true;TILE=f.s||.25;
+  $('#filmName').textContent=fname(f);M.groove.opacity=curColl().grv;dirty=true;
+}
+function applyEdge(){
+  var c=S.edge==='aral'?S.edgeHex:EDGE_COL[S.edge];
+  if(S.edge==='agrey'||S.edge==='ablack'||S.edge==='aral'){M.edge.metalness=.75;M.edge.roughness=.4}else{M.edge.metalness=0;M.edge.roughness=.55}
+  M.edge.needsUpdate=true;M.edge.color.copy(col(c||'#141414'));dirty=true;
+}
+var HGC={std:'#8D8F93',black:'#1E1F20',white:'#ECECEA'};
+function applyHinge(){M.hinge.color.copy(col(HGC[S.hgc]));M.hinge.needsUpdate=true;dirty=true}
+function edgeName(){return tr('en_'+S.edge)+(S.edge==='aral'?' '+S.edgeHex.toUpperCase():'')}
+function applyInsert(){M.insert.color.copy(col(INSERTS[S.insert].c));dirty=true}
+function applyHandle(){var h=HANDLES[S.handle];M.handle.color.copy(col(h.c));M.handle.metalness=h.m;M.handle.roughness=h.r;M.handle.needsUpdate=true;dirty=true}
+var RB=1.3; /* компенсація низької експозиції, підібраної під кольори плівок */
+function wallHex(){return S.wall>=0?WALLS[S.wall].c:S.wallHex}
+function applyWall(){var w=wallHex();M.wall.color.copy(col(w)).multiplyScalar(RB);M.back.color.copy(col(w)).multiplyScalar(.82*RB);dirty=true}
+function applyFloor(){M.floor.color.setScalar(RB);M.floor.map=floorTex[S.floor];M.floor.needsUpdate=true;floorMesh.material=S.room?M.floor:M.catcher;dirty=true}
+
+/* ---------- geometry ---------- */
+var TILE=.25,UVOFF=[0,0];
+function box(w,h,d,mat,x,y,z,o){
+  o=o||{};
+  var g=new THREE.BoxGeometry(w,h,d);
+  if(mat===M.film||Array.isArray(mat)){
+    var uv=g.attributes.uv,ox=o.uv?UVOFF[0]:Math.random(),oy=o.uv?UVOFF[1]:Math.random();
+    var dims=[[d,h],[d,h],[w,d],[w,d],[w,h],[w,h]];
+    for(var f=0;f<6;f++)for(var i=0;i<4;i++){
+      var k=f*4+i,u=uv.getX(k),v=uv.getY(k),U=u*dims[f][0]/TILE,V=v*dims[f][1]/TILE;
+      if(o.gx&&f>=4){U=v*dims[f][1]/TILE;V=u*dims[f][0]/TILE}
+      if(o.uv&&f>=4){U=(((f===4?u-.5:.5-u)*w)+o.uv[0]+(x||0))/TILE;V=(((v-.5)*h)+o.uv[1]+(y||0))/TILE}
+      uv.setXY(k,U+ox,V+oy);
+    }
+  }
+  var m=new THREE.Mesh(g,mat);m.position.set(x||0,y||0,z||0);m.castShadow=true;m.receiveShadow=true;if(o.n)m.name=o.n;return m;
+}
+function cyl(r,len,axis,mat,x,y,z,n){
+  var g=new THREE.CylinderGeometry(r,r,len,28);
+  if(axis==='z')g.rotateX(Math.PI/2);else if(axis==='x')g.rotateZ(Math.PI/2);
+  var m=new THREE.Mesh(g,mat);m.position.set(x,y,z);m.castShadow=true;m.receiveShadow=true;m.name=n||'part';return m;
+}
+function geom(){
+  var hid=!!curColl().flush;
+  var W=S.W/1000,H=S.H/1000,T=S.T/1000,jt=hid?.004:.03,gap=hid?.003:.004,fg=hid?.004:.006,lt=((hid&&S.hi)?56:(curColl().lt||40))/1000,cw=.08,ct=(S.ct==='cop'?.007:.01),d=hid?0:S.dob/1000,cop=!hid&&S.ft==='cop',csF=!hid&&S.casing&&(S.cs==='both'||S.cs==='front'),csB=!hid&&S.casing&&(S.cs==='both'||S.cs==='back');
+  var inW=W+2*gap,inH=H+fg+gap,outW=inW+2*jt,outH=inH+jt;
+  return {W:W,H:H,T:T,jt:jt,gap:gap,fg:fg,lt:lt,cw:cw,ct:ct,inW:inW,inH:inH,outW:outW,outH:outH,hid:hid,
+          ceF:csF?inW/2+.016+cw:outW/2,ceB:csB?inW/2+.016+cw:outW/2,d:d,cop:cop,csF:csF,csB:csB,dir:S.hinge==='L'?1:-1,hy:curModel().hy,lz:(hid||cop)?T/2-lt/2:0};
+}
+function disposeGroup(g){if(!g)return;g.traverse(function(o){if(o.geometry)o.geometry.dispose()});if(g.parent)g.parent.remove(g)}
+
+function pv(v,a,size,base){
+  if(a==='L'||a==='T')return v;
+  if(a==='R'||a==='B')return size-(base-v);
+  if(a==='P')return v*size/base;
+  return size/2+(v-base/2);
+}
+function clipPoly(poly,W,H){
+  var edges=[[function(p){return p[0]>=0},function(a,b){var t=(0-a[0])/(b[0]-a[0]);return [0,a[1]+t*(b[1]-a[1])]}],
+             [function(p){return p[0]<=W},function(a,b){var t=(W-a[0])/(b[0]-a[0]);return [W,a[1]+t*(b[1]-a[1])]}],
+             [function(p){return p[1]>=0},function(a,b){var t=(0-a[1])/(b[1]-a[1]);return [a[0]+t*(b[0]-a[0]),0]}],
+             [function(p){return p[1]<=H},function(a,b){var t=(H-a[1])/(b[1]-a[1]);return [a[0]+t*(b[0]-a[0]),H]}]];
+  edges.forEach(function(e){
+    var inp=poly;poly=[];
+    for(var i=0;i<inp.length;i++){
+      var a=inp[i],b=inp[(i+1)%inp.length],ia=e[0](a),ib=e[0](b);
+      if(ia){poly.push(a);if(!ib)poly.push(e[1](a,b))}else if(ib){poly.push(e[1](a,b));}
+    }
+  });
+  return poly;
+}
+function lineMesh(el,W,H,t,mir){
+  /* діагональна вставка: смуга завширшки w мм між точками, обрізана по контуру полотна */
+  var sx=W*1000/800,sy=H*1000/2000,x0=el[1]*sx,y0=el[2]*sy,x1=el[3]*sx,y1=el[4]*sy,w=el[5];
+  var dx=x1-x0,dy=y1-y0,L=Math.sqrt(dx*dx+dy*dy);dx/=L;dy/=L;
+  if(el[6]){x0-=dx*90;y0-=dy*90}if(el[7]){x1+=dx*90;y1+=dy*90}
+  var nx=-dy*w/2,ny=dx*w/2;
+  var poly=[[x0+nx,y0+ny],[x1+nx,y1+ny],[x1-nx,y1-ny],[x0-nx,y0-ny]];
+  if(mir)poly=poly.map(function(p){return [W*1000-p[0],p[1]]}).reverse();
+  poly=clipPoly(poly,W*1000,H*1000);
+  if(poly.length<3)return null;
+  var sh=new THREE.Shape(poly.map(function(p){return new THREE.Vector2(p[0]/1000-W/2,H/2-p[1]/1000)}));
+  var d=t+.0012,ge=new THREE.ExtrudeGeometry(sh,{depth:d,bevelEnabled:false});
+  ge.translate(0,0,-d/2);
+  var m=new THREE.Mesh(ge,M.insert);m.castShadow=true;m.receiveShadow=true;m.name='leaf_insert_diag';return m;
+}
+function pathMesh(el,W,H,t,mir){
+  /* фрезерована канавка по ламаній: стрічка завширшки el[1] мм з обох боків полотна */
+  var pts=el[2].map(function(p){return [pv(p[0],p[1],W*1000,800),pv(p[2],p[3],H*1000,2000)]});
+  if(mir)pts=pts.map(function(p){return [W*1000-p[0],p[1]]});
+  var hw=el[1]/2,pos=[],idx=[],n=pts.length,i;
+  var X=function(v){return v/1000-W/2},Y=function(v){return H/2-v/1000};
+  [t/2+.0006,-t/2-.0006].forEach(function(z){
+    var b=pos.length/3;
+    for(i=0;i<n;i++){
+      var a=pts[Math.max(0,i-1)],c=pts[Math.min(n-1,i+1)],tx=c[0]-a[0],ty=c[1]-a[1],L=Math.sqrt(tx*tx+ty*ty)||1;
+      var nx=-ty/L*hw,ny=tx/L*hw;
+      pos.push(X(pts[i][0]+nx),Y(pts[i][1]+ny),z,X(pts[i][0]-nx),Y(pts[i][1]-ny),z);
+    }
+    for(i=0;i<n-1;i++){var q=b+i*2;idx.push(q,q+1,q+2,q+1,q+3,q+2)}
+  });
+  var ge=new THREE.BufferGeometry();
+  ge.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));ge.setIndex(idx);ge.computeVertexNormals();
+  var m=new THREE.Mesh(ge,M.groove);m.name='leaf_groove_path';return m;
+}
+function bevelRing(g,o,i,zo,zi,mat){
+  /* скошена рамка філенки: контур o=[x0,x1,y0,y1] на глибині zo -> контур i на глибині zi (обидві сторони полотна) */
+  var pos=[],uv=[],C=function(r){return[[r[0],r[2]],[r[1],r[2]],[r[1],r[3]],[r[0],r[3]]]};
+  [1,-1].forEach(function(sg){
+    var A=C(o),B=C(i);
+    for(var k=0;k<4;k++){
+      var k2=(k+1)%4,q=sg>0?[A[k],A[k2],B[k2],B[k]]:[A[k],B[k],B[k2],A[k2]],zs=sg>0?[zo,zo,zi,zi]:[zo,zi,zi,zo];
+      [[0,1,2],[0,2,3]].forEach(function(t){t.forEach(function(j){
+        var pt=q[j],z=zs[j]*sg;pos.push(pt[0],pt[1],z);
+        uv.push((sg>0?pt[0]:-pt[0])/TILE+UVOFF[0],pt[1]/TILE+UVOFF[1]);
+      })});
+    }
+  });
+  var ge=new THREE.BufferGeometry();
+  ge.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));ge.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));ge.computeVertexNormals();
+  var m=new THREE.Mesh(ge,mat);m.castShadow=true;m.receiveShadow=true;m.name='leaf_panel_bevel';g.add(m);
+}
+function buildPanels(g,G,mdl,e){
+  /* філенчасте полотно: стійки й перемички на повну товщину, поля заглиблені, усередині - підвищена філенка зі скошеною рамкою */
+  var W=G.W,H=G.H,t=G.lt,rd=.010,st=Math.min(.105,W*.13),rl=.093,n=mdl.pf.n,fh=(H-(n+1)*rl)/n,F=M.film;
+  g.add(box(W-.0008,H-.0008,t-2*rd,[e,e,e,e,F,F],0,0,0,{n:'leaf_core',uv:[0,0]}));
+  g.add(box(st,H,t,[F,e,e,e,F,F],-(W/2-st/2),0,0,{n:'leaf_stile_left',uv:[0,0]}));
+  g.add(box(st,H,t,[e,F,e,e,F,F],(W/2-st/2),0,0,{n:'leaf_stile_right',uv:[0,0]}));
+  for(var k=0;k<=n;k++){
+    if(mdl.pf.g.some(function(gr){return gr[0]<=k-1&&k<=gr[1]}))continue;
+    var y0=k*(fh+rl),mats=k===0?[F,F,e,F,F,F]:(k===n?[F,F,F,e,F,F]:[F,F,F,F,F,F]);
+    g.add(box(W-2*st,rl,t,mats,0,H/2-y0-rl/2,0,{n:'leaf_rail',uv:[0,0]}));
+  }
+  var m0=.004,ip=.036,zo=t/2-rd,zi=t/2-.003;
+  mdl.pf.g.forEach(function(gr){
+    var top=rl+gr[0]*(fh+rl),bot=rl+gr[1]*(fh+rl)+fh,xa=W/2-st,ya=H/2-top,yb=H/2-bot;
+    bevelRing(g,[-xa+m0,xa-m0,yb+m0,ya-m0],[-xa+ip,xa-ip,yb+ip,ya-ip],zo,zi,F);
+    g.add(box(2*xa-2*ip,ya-yb-2*ip,2*zi,F,0,(ya+yb)/2,0,{n:'leaf_panel',uv:[0,0]}));
+  });
+}
+function buildLeaf(G){
+  var W=G.W,H=G.H,t=G.lt,g=new THREE.Group();g.name='leaf';
+  var e=S.edge==='film'?M.film:M.edge;
+  UVOFF=[Math.random(),Math.random()];
+  var mdl=curModel(),mir=S.hinge!==mdl.nh;
+  if(mdl.pf)buildPanels(g,G,mdl,e);
+  else g.add(box(W,H,t,[e,e,e,e,M.film,M.film],0,0,0,{n:'leaf_body',uv:[0,0]}));
+  mdl.els.forEach(function(el){
+    if(el[0]==='l'){var m=lineMesh(el,W,H,t,mir);if(m)g.add(m);return}
+    if(el[0]==='p'){var pm=pathMesh(el,W,H,t,mir);if(pm)g.add(pm);return}
+    var X0=pv(el[1],el[2],W*1000,800),X1=pv(el[3],el[4],W*1000,800),Y0=pv(el[5],el[6],H*1000,2000),Y1=pv(el[7],el[8],H*1000,2000);
+    if(mir){var q=X0;X0=W*1000-X1;X1=W*1000-q}
+    var w=(X1-X0)/1000,h=(Y1-Y0)/1000,full=(Y1-Y0)>H*1000-1;
+    if(full)h+=.0008;
+    var kind=el[0],gr=kind==='g',mr=kind==='m';
+    g.add(box(w,h,t+(gr?.0006:.0012),gr?M.groove:(mr?M.mirror:M.insert),-W/2+(X0+X1)/2000,H/2-(Y0+Y1)/2000,0,{n:gr?'leaf_groove':(mr?'leaf_mirror':'leaf_insert')}));
+  });
+  return g;
+}
+function buildHandle(G){
+  var g=new THREE.Group();g.name='handle';var lt=G.lt,sq=S.hshape!=='rd';
+  [1,-1].forEach(function(f){
+    if(sq){
+      g.add(box(.072,.072,.010,M.handle,0,0,f*(lt/2+.005),{n:'handle_rose'}));
+      g.add(box(.016,.016,.030,M.handle,0,0,f*(lt/2+.025),{n:'handle_neck'}));
+      g.add(box(.140,.023,.023,M.handle,-G.dir*.048,0,f*(lt/2+.0525),{n:'handle_lever'}));
+    }else{
+      g.add(cyl(.0235,.01,'z',M.handle,0,0,f*(lt/2+.005),'handle_rose'));
+      g.add(cyl(.009,.03,'z',M.handle,0,0,f*(lt/2+.025),'handle_neck'));
+      g.add(cyl(.0085,.125,'x',M.handle,-G.dir*.05,0,f*(lt/2+.0485),'handle_lever'));
+    }
+  });
+  return g;
+}
+
+var door=null,pivot=null,room=null,floorMesh=null;
+function buildDoor(){
+  disposeGroup(door);
+  var G=geom(),F=M.film,mdl=curModel();
+  door=new THREE.Group();door.name=curColl().name.replace(/\s+/g,'_')+'_'+S.model+'_'+S.W+'x'+S.H;
+  if(!G.hid){
+    var frame=new THREE.Group();frame.name='frame';
+    frame.add(box(G.jt,G.outH,G.T,F,-(G.inW/2+G.jt/2),G.outH/2,0,{n:'frame_jamb_left'}));
+    frame.add(box(G.jt,G.outH,G.T,F,(G.inW/2+G.jt/2),G.outH/2,0,{n:'frame_jamb_right'}));
+    frame.add(box(G.inW,G.jt,G.T,F,0,G.inH+G.jt/2,0,{gx:1,n:'frame_head'}));
+    if(G.d>0){var zx=-(G.T/2+G.d/2);
+      frame.add(box(G.jt,G.outH,G.d,F,-(G.inW/2+G.jt/2),G.outH/2,zx,{n:'extension_left'}));
+      frame.add(box(G.jt,G.outH,G.d,F,(G.inW/2+G.jt/2),G.outH/2,zx,{n:'extension_right'}));
+      frame.add(box(G.inW,G.jt,G.d,F,0,G.inH+G.jt/2,zx,{gx:1,n:'extension_head'}));
+    }
+    door.add(frame);
+  }else{
+    var rv=new THREE.Group();rv.name='hidden_box';
+    rv.add(box(G.jt,G.outH,G.T,M.reveal,-(G.inW/2+G.jt/2),G.outH/2,0,{n:'box_left'}));
+    rv.add(box(G.jt,G.outH,G.T,M.reveal,(G.inW/2+G.jt/2),G.outH/2,0,{n:'box_right'}));
+    rv.add(box(G.inW,G.jt,G.T,M.reveal,0,G.inH+G.jt/2,0,{n:'box_head'}));
+    door.add(rv);
+  }
+  if(G.csF||G.csB){
+    var cs=new THREE.Group();cs.name='casing';
+    [1,-1].forEach(function(s){
+      if(s>0?!G.csF:!G.csB)return;
+      var z=s>0?(G.T/2+G.ct/2):-(G.T/2+G.d+G.ct/2),rv=.016,vx=G.inW/2+rv+G.cw/2,vh=G.inH+rv+G.cw;
+      cs.add(box(G.cw,vh,G.ct,F,-vx,vh/2,z,{n:'casing_left'}));
+      cs.add(box(G.cw,vh,G.ct,F,vx,vh/2,z,{n:'casing_right'}));
+      cs.add(box(G.inW+2*rv,G.cw,G.ct,F,0,G.inH+rv+G.cw/2,z,{gx:1,n:'casing_head'}));
+    });
+    door.add(cs);
+  }
+  pivot=new THREE.Group();pivot.name='leaf_pivot';
+  pivot.position.set(-G.dir*G.W/2,G.fg,G.lz+G.lt/2);
+  var leaf=buildLeaf(G);leaf.position.set(G.dir*G.W/2,G.H/2,-G.lt/2);
+  var hd=buildHandle(G);hd.position.set(G.dir*(G.W/2-(S.hshape==='rd'?.05:.062)),G.hy-G.fg-G.H/2,0);leaf.add(hd);
+  pivot.add(leaf);pivot.rotation.y=-G.dir*rad(S.cur);
+  door.add(pivot);
+  if(curColl().hinges&&mdl.hg){
+    var hg=new THREE.Group();hg.name='hinges';
+    mdl.hg.forEach(function(h,i){
+      var a=i?'B':'T',y0=pv(h[0],a,G.H*1000,2000),y1=pv(h[1],a,G.H*1000,2000);
+      hg.add(cyl(.0055,(y1-y0)/1000,null,M.hinge,-G.dir*(G.W/2-.0035),G.fg+G.H-(y0+y1)/2000,G.lz+G.lt/2,'hinge'));
+    });
+    door.add(hg);
+  }
+  scene.add(door);dirty=true;
+}
+function buildRoom(){
+  disposeGroup(room);
+  var G=geom(),T=G.T,Tt=G.T+G.d,zc=-G.d/2,wallW=3.6,wallH=2.7;
+  room=new THREE.Group();room.name='room';
+  function seg(w,h,x,y){var m=new THREE.Mesh(new THREE.BoxGeometry(w,h,Tt),M.wall);m.position.set(x,y,zc);m.castShadow=true;m.receiveShadow=true;return m}
+  var sideW=wallW/2-G.outW/2;
+  room.add(seg(sideW,wallH,-(G.outW/2+sideW/2),wallH/2));
+  room.add(seg(sideW,wallH,(G.outW/2+sideW/2),wallH/2));
+  room.add(seg(G.outW,wallH-G.outH,0,G.outH+(wallH-G.outH)/2));
+  var skH=.08,skT=.008;
+  [-1,1].forEach(function(sx){[-1,1].forEach(function(sz){
+    var ce=sz>0?G.ceF:G.ceB,skL=wallW/2-ce;
+    var m=new THREE.Mesh(new THREE.BoxGeometry(skL,skH,skT),M.skirt);
+    m.position.set(sx*(ce+skL/2),skH/2,sz>0?(T/2+skT/2):-(T/2+G.d+skT/2));m.castShadow=true;m.receiveShadow=true;room.add(m);
+  })});
+  var back=new THREE.Mesh(new THREE.PlaneGeometry(7,wallH),M.back);back.position.set(0,wallH/2,-2.9);back.receiveShadow=true;room.add(back);
+  room.visible=S.room;scene.add(room);dirty=true;
+}
+floorMesh=new THREE.Mesh(new THREE.PlaneGeometry(7,7.5),M.floor);
+floorMesh.rotation.x=-Math.PI/2;floorMesh.position.set(0,0,.75);floorMesh.receiveShadow=true;scene.add(floorMesh);
+
+/* ---------- camera views ---------- */
+var tw=null,RM=false;
+try{RM=matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){}
+function stageSize(){return {w:Math.max(1,stage.clientWidth),h:Math.max(1,stage.clientHeight)}}
+function goView(name,instant){
+  var sz=stageSize(),k=Math.min(1.5,Math.max(1,.95/(sz.w/sz.h)));
+  var V=THREE.Vector3,tgt,dir,d;
+  if(name==='front'){tgt=new V(0,1.15,0);dir=new V(0,.03,1);d=7.6}
+  else if(name==='side'){tgt=new V(0,1.15,.35);dir=new V(1,.03,.12);d=7.4}
+  else if(name==='plan'){tgt=new V(0,0,.9);dir=new V(0,1,.02);d=8.2}
+  else{tgt=new V(0,1.15,0);dir=new V(.62,.17,1);d=6.3}
+  var pos=tgt.clone().add(dir.normalize().multiplyScalar(d*k));
+  S.view=name;
+  Array.prototype.forEach.call(document.querySelectorAll('#views button'),function(b){b.setAttribute('aria-pressed',String(b.dataset.view===name))});
+  if(instant||RM){camera.position.copy(pos);controls.target.copy(tgt);controls.update();dirty=true;tw=null;return}
+  tw={p0:camera.position.clone(),t0:controls.target.clone(),p1:pos,t1:tgt,t:0};
+}
+controls.addEventListener('start',function(){tw=null});
+controls.addEventListener('change',function(){dirty=true});
+Array.prototype.forEach.call(document.querySelectorAll('#views button'),function(b){b.addEventListener('click',function(){goView(b.dataset.view)})});
+
+function resize(){
+  var sz=stageSize(),dpr=Math.min(window.devicePixelRatio||1,2);
+  renderer.setPixelRatio(dpr);renderer.setSize(sz.w,sz.h,false);
+  camera.aspect=sz.w/sz.h;camera.updateProjectionMatrix();
+  dimCanvas.width=Math.round(sz.w*dpr);dimCanvas.height=Math.round(sz.h*dpr);
+  dctx.setTransform(dpr,0,0,dpr,0,0);dirty=true;
+}
+if(window.ResizeObserver)new ResizeObserver(resize).observe(stage);else window.addEventListener('resize',resize);
+
+/* ---------- dimension overlay ---------- */
+var tok={};
+function readTok(){
+  var cs=getComputedStyle(document.documentElement);
+  ['accent','panel','ink','stage-a','stage-b','line'].forEach(function(k){tok[k]=cs.getPropertyValue('--'+k).trim()});dirty=true;
+}
+new MutationObserver(readTok).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+readTok();
+
+function P(x,y,z){var v=new THREE.Vector3(x,y,z).project(camera),s=stageSize();return {x:(v.x*.5+.5)*s.w,y:(-v.y*.5+.5)*s.h,ok:v.z>-1&&v.z<1}}
+function line(a,b,alpha,dash){
+  var pa=P(a[0],a[1],a[2]),pb=P(b[0],b[1],b[2]);if(!pa.ok||!pb.ok)return null;
+  dctx.globalAlpha=alpha;dctx.setLineDash(dash||[]);dctx.beginPath();dctx.moveTo(pa.x,pa.y);dctx.lineTo(pb.x,pb.y);dctx.stroke();
+  dctx.setLineDash([]);dctx.globalAlpha=1;return [pa,pb];
+}
+function dim(a,b,label){
+  var r=line(a,b,1);if(!r)return;
+  var pa=r[0],pb=r[1],dx=pb.x-pa.x,dy=pb.y-pa.y,L=Math.hypot(dx,dy)||1,nx=-dy/L*6,ny=dx/L*6;
+  [pa,pb].forEach(function(p){dctx.beginPath();dctx.moveTo(p.x-nx,p.y-ny);dctx.lineTo(p.x+nx,p.y+ny);dctx.stroke()});
+  var mx=(pa.x+pb.x)/2,my=(pa.y+pb.y)/2;
+  dctx.font='600 12px "Manrope",system-ui,sans-serif';
+  var w=dctx.measureText(label).width+14;
+  dctx.fillStyle=tok.panel;dctx.globalAlpha=.94;dctx.fillRect(mx-w/2,my-11,w,22);dctx.globalAlpha=1;
+  dctx.strokeRect(mx-w/2+.5,my-10.5,w-1,21);
+  dctx.fillStyle=tok.ink;dctx.textAlign='center';dctx.textBaseline='middle';dctx.fillText(label,mx,my+.5);
+}
+function drawDims(){
+  var s=stageSize();dctx.clearRect(0,0,s.w,s.h);
+  if(!S.dims)return;
+  var G=geom();dctx.strokeStyle=tok.accent;dctx.lineWidth=1.25;
+  var zF=G.T/2+(G.csF?G.ct:0)+.012,cw=G.csF?G.cw:0;
+  var yTop=G.fg+G.H,dimY=(G.csF?G.inH+.016+cw:G.outH)+.16,dimX=-(G.outW/2+cw+.16);
+  line([-G.W/2,yTop,zF],[-G.W/2,dimY,zF],.5,[3,3]);line([G.W/2,yTop,zF],[G.W/2,dimY,zF],.5,[3,3]);
+  dim([-G.W/2,dimY,zF],[G.W/2,dimY,zF],S.W+' '+tr('mm'));
+  line([-G.W/2,G.fg,zF],[dimX,G.fg,zF],.5,[3,3]);line([-G.W/2,yTop,zF],[dimX,yTop,zF],.5,[3,3]);
+  dim([dimX,G.fg,zF],[dimX,yTop,zF],S.H+' '+tr('mm'));
+  if(S.view==='plan'||S.view==='side'){
+    var xs=S.view==='plan'?-(G.outW/2+.4):G.outW/2+.4;
+    dim([xs,2.7,-(G.T/2+G.d)],[xs,2.7,G.T/2],tr('wall_dim')+' '+Math.round((G.T+G.d)*1000));
+  }
+}
+
+/* ---------- UI ---------- */
+var segs=[];
+function mountSeg(id,items,key,num,after){
+  var host=$('#'+id);
+  items.forEach(function(it){
+    var b=document.createElement('button');b.type='button';b.id=id+'-'+it[0];b.dataset.v=it[0];if(D[it[1]]){b.dataset.lk=it[1];b.textContent=tr(it[1])}else b.textContent=it[1];
+    b.addEventListener('click',function(){S[key]=num?+it[0]:it[0];after();syncUI()});host.appendChild(b);
+  });
+  segs.push({host:host,key:key,num:num});
+}
+function nonstd(){return {w:S.W>900,h:S.H>2100}}
+function palette(){
+  var C=curColl(),ids=C.films.slice(),m=curModel();
+  if(m.solid)ids.push(m.solid);
+  return ids;
+}
+function defaultInsert(){
+  var f=filmById(S.film);
+  S.insert=(f&&f.ins)||'black';applyInsert();
+}
+function syncUI(){
+  var C=curColl(),m=curModel();
+  segs.forEach(function(s){Array.prototype.forEach.call(s.host.children,function(b){b.setAttribute('aria-pressed',String((s.num?+b.dataset.v:b.dataset.v)===S[s.key]))})});
+  Array.prototype.forEach.call(document.querySelectorAll('.film'),function(b){b.setAttribute('aria-pressed',String(b.dataset.v===S.film))});
+  Array.prototype.forEach.call(document.querySelectorAll('.dot:not(.custom)'),function(b){b.setAttribute('aria-pressed',String(+b.dataset.v===S.wall))});
+  var wc=$('#wall-custom');if(wc){wc.setAttribute('aria-pressed',String(S.wall===-1));var wi=$('#wallIn'),wh=$('#wallHex');if(wi&&S.wall===-1)wi.value=S.wallHex;if(wh&&document.activeElement!==wh)wh.value=wallHex().toUpperCase()}
+  var ns=nonstd(),fl='<span class="flag">'+tr('flag_ns')+'</span>';
+  $('#wOut').innerHTML=S.W+' '+tr('mm')+(ns.w?fl:'');$('#hOut').innerHTML=S.H+' '+tr('mm')+(ns.h?fl:'');
+  $('#fieldInsert').hidden=!m.ins;
+  $('#fieldShape').hidden=S.coll!=='ETALON';
+  $('#fieldBox').hidden=false;
+  $('#fieldFt').hidden=!!C.flush||!C.cop;$('#fieldDob').hidden=!!C.flush;$('#fieldCs').hidden=!!C.flush;$('#fieldCt').hidden=!!C.flush||S.cs==='none';$('#kitNote').hidden=!!C.flush;
+  var cpb=$('#segCt-cop');if(cpb)cpb.hidden=!C.cop;
+  $('#fieldHi').hidden=!C.flush;$('#fieldHb').hidden=!C.flush;$('#fieldHgc').hidden=!C.hinges;
+  var fe=$('#segEdge-film');if(fe&&C.flush)fe.hidden=!!S.hi;
+  var er=$('#rowEdgeRal');if(er){er.hidden=S.edge!=='aral';var ei=$('#edgeIn');if(ei&&ei.value!==S.edgeHex)ei.value=S.edgeHex}
+  $('#boxLbl').textContent=tr(C.flush?'box_flush':'box_tel');
+  $('#edgeLbl').textContent=tr(C.flush?'edge_leaf':'edge_color');
+  $('#filmTitle').textContent=tr(C.flush?'film_paint':(C.paint?'film_pvcpaint':'film_pvc'));
+  $('#collName').textContent=C.name;$('#collNote').textContent=tr(C.note);$('#filmName').textContent=fname(filmById(S.film));
+  $('#modelName').textContent=m.id;$('#modelNote').textContent=tr(C.mnote);
+  var pc=$('#paintIn');if(pc&&pc.value!==S.paint)pc.value=S.paint;
+  $('#openBtn').textContent=tr(S.open>=45?'close_btn':'open_btn');
+  updateSpec();
+}
+var SPEC_ROWS=[];
+function updateSpec(){
+  var C=curColl(),ns=nonstd(),m=curModel(),hasIns=m.ins;
+  var lt=Math.round(geom().lt*1000);
+  var rows=[
+    [tr('sp_coll'),C.name+(C.flush?'':' · '+S.model)],
+    [tr('sp_leaf'),S.W+' × '+S.H+' × '+lt+((C.flush&&S.hi)?' · Inside':'')+((ns.w||ns.h)?' '+tr('sp_ns'):'')],
+    [tr(C.flush||S.film==='paint'?'sp_paint':'sp_film'),S.film==='paint'?'RAL / NCS '+S.paint.toUpperCase()+' '+tr('sp_approx'):fname(filmById(S.film))],
+    [tr('sp_edge'),edgeName()]
+  ];
+  if(hasIns)rows.push([tr('sp_insert'),tr('ins_'+S.insert)]);
+  if(C.flush)rows.push([tr('sp_box'),tr('sp_box_flush')+', '+tr('hb_'+S.hb)],[tr('sp_wall'),S.T+' '+tr('mm')]);
+  else{
+    rows.push([tr('sp_frame2'),tr('ftv_'+S.ft)+' '+S.T+' '+tr('mm')]);
+    if(S.dob)rows.push([tr('sp_dob'),S.dob+' '+tr('mm')]);
+    rows.push([tr('sp_casing'),S.casing?tr('csv_'+S.cs)+', '+tr('ctv_'+S.ct):tr('sp_casing_no')]);
+  }
+  if(C.hinges)rows.push([tr('sp_hinges'),tr('hgc_'+S.hgc)]);
+  rows.push([tr('sp_open'),tr(S.hinge==='L'?'sp_left':'sp_right')],[tr('sp_handle'),tr('h_'+S.handle)]);
+  if(!C.flush)rows.push([tr('sp_outer'),(S.W+68)+' × '+(S.H+40)]);
+  rows.push([tr('sp_hole'),(S.W+(C.flush?14:88))+' × '+(S.H+(C.flush?18:50))]);
+  SPEC_ROWS=rows;
+  $('#spec').innerHTML=rows.map(function(r){return '<dt>'+r[0]+'</dt><dd>'+r[1]+'</dd>'}).join('');
+}
+function rebuildAll(){buildDoor();buildRoom()}
+
+/* --- колекції, моделі, палітра --- */
+function mountModels(){
+  var host=$('#segModel');host.innerHTML='';
+  var ms=collModels(S.coll);
+  host.className='seg grid';
+  ms.forEach(function(m){
+    var b=document.createElement('button');b.type='button';b.id='segModel-'+m.id;b.textContent=m.id.replace(/^[A-Z]+-/,'');b.dataset.v=m.id;b.title=m.id;
+    b.addEventListener('click',function(){
+      S.model=m.id;S.hshape=m.hs;
+      if(edgesFor().indexOf(S.edge)<0){S.edge='film';applyEdge()}
+      mountEdges();
+      var pal=palette();
+      if(m.solid)S.film=m.solid;else if(pal.indexOf(S.film)<0&&S.film!=='paint')S.film=curColl().fdef;
+      applyFilm();buildDoor();mountFilms();syncUI();
+    });
+    host.appendChild(b);
+  });
+  if(!segs.some(function(s){return s.host===host}))segs.push({host:host,key:'model',num:false});
+}
+function edgesFor(){var e=curColl().edges;if(S.coll==='ETALON'){var n=parseInt(String(S.model).replace(/\D/g,''),10);if(n>17)e=e.filter(function(k){return k!=='agrey'&&k!=='ablack'&&k!=='aral'})}return e}
+function mountEdges(){
+  var host=$('#segEdge');host.innerHTML='';host.classList.toggle('wrap',edgesFor().length>3);
+  edgesFor().forEach(function(k){
+    var b=document.createElement('button');b.type='button';b.id='segEdge-'+k;b.dataset.lk='e_'+k;b.textContent=tr('e_'+k);b.dataset.v=k;
+    b.addEventListener('click',function(){S.edge=k;applyEdge();buildDoor();syncUI()});host.appendChild(b);
+  });
+  if(!segs.some(function(s){return s.host===host}))segs.push({host:host,key:'edge',num:false});
+}
+function mountFilms(){
+  var host=$('#films');host.innerHTML='';
+  palette().forEach(function(id){
+    var f=filmById(id);
+    var b=document.createElement('button');b.type='button';b.className='film';b.id='film-'+f.id;b.dataset.v=f.id;b.title=fname(f);b.setAttribute('aria-label',fname(f));
+    if(f.c)b.style.backgroundImage='url('+f.c+')';else b.style.background=f.k;
+    var pre=function(){if(f.t||f.base)getTex(f.base||f.id)};b.addEventListener('pointerenter',pre);b.addEventListener('focus',pre);b.addEventListener('touchstart',pre,{passive:true});
+    b.addEventListener('click',function(){S.film=f.id;S.paintAuto=false;applyFilm();defaultInsert();buildDoor();syncUI()});host.appendChild(b);
+  });
+  if(curColl().paint){
+    var l=document.createElement('label');l.className='film custom';l.id='film-paint';l.dataset.v='paint';l.title=tr('paint_title');
+    l.innerHTML='<span>RAL<br>NCS</span><input type="color" id="paintIn" aria-label="'+tr('aria_paint')+'">';
+    var inp=l.querySelector('input');inp.value=S.paint;
+    inp.addEventListener('input',function(){S.paint=inp.value;S.film='paint';S.paintAuto=false;applyFilm();buildDoor();syncUI()});
+    inp.addEventListener('click',function(){if(S.film!=='paint'){S.film='paint';applyFilm();buildDoor();syncUI()}});
+    host.appendChild(l);
+  }
+}
+function mountColls(){
+  var host=$('#segColl');
+  COLL_ORDER.forEach(function(id){
+    var b=document.createElement('button');b.type='button';b.id='segColl-'+id;b.textContent=COLL[id].name==='HIDDEN DOORS'?'HIDDEN':COLL[id].name;b.dataset.v=id;b.title=COLL[id].name;
+    b.addEventListener('click',function(){setColl(id)});host.appendChild(b);
+  });
+  segs.push({host:host,key:'coll',num:false});
+}
+function setColl(id){
+  S.coll=id;var C=COLL[id];
+  S.model=C.def;S.hshape=curModel().hs;
+  S.cs=C.flush?'none':'both';S.casing=!C.flush;
+  if(!C.cop){S.ft='tel';if(S.ct==='cop')S.ct='std'}
+  if(edgesFor().indexOf(S.edge)<0)S.edge=edgesFor()[0];
+  if(!C.flush)S.hi=0;
+  if(C.flush){S.film='paint';S.paint=wallHex();S.paintAuto=true}
+  else{if(S.film==='paint'&&!C.paint)S.film=C.fdef;else if(S.film!=='paint')S.film=C.fdef}
+  applyFilm();applyEdge();defaultInsert();
+  mountModels();mountEdges();mountFilms();
+  rebuildAll();syncUI();
+}
+function applyPaintAuto(){if(S.paintAuto&&curColl().flush){S.paint=wallHex();applyFilm();buildDoor()}}
+
+/* --- мова інтерфейсу --- */
+function refreshLabels(){
+  segs.forEach(function(sg){Array.prototype.forEach.call(sg.host.children,function(b){if(b.dataset&&b.dataset.lk)b.textContent=tr(b.dataset.lk)})});
+  Array.prototype.forEach.call(document.querySelectorAll('.film'),function(b){
+    if(b.classList.contains('custom')){b.title=tr('paint_title');var i=b.querySelector('input');if(i)i.setAttribute('aria-label',tr('aria_paint'));return}
+    var f=filmById(b.dataset.v);if(f){b.title=fname(f);b.setAttribute('aria-label',fname(f))}
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('.dot:not(.custom)'),function(b){b.title=tr('w'+b.dataset.v);b.setAttribute('aria-label',tr('w'+b.dataset.v))});
+  var wc2=$('#wall-custom');if(wc2){wc2.title=tr('wall_custom');var wi2=wc2.querySelector('input');if(wi2)wi2.setAttribute('aria-label',tr('wall_custom'))}
+  var wh2=$('#wallHex');if(wh2)wh2.setAttribute('aria-label',tr('aria_hex'));
+  Array.prototype.forEach.call(document.querySelectorAll('#langs button'),function(b){b.setAttribute('aria-pressed',String(b.dataset.v===LANG))});
+}
+function setLang(l,silent){
+  if(l!=='uk'&&l!=='en')return;
+  LANG=l;
+  try{localStorage.setItem('inwood-door-lang',l)}catch(e){}
+  applyStatic();refreshLabels();syncUI();dirty=true;
+  if(!silent){try{if(window.parent&&window.parent!==window)window.parent.postMessage({type:'inwood-door-lang-changed',lang:l},'*')}catch(e){}}
+}
+function mountLangs(){
+  var host=$('#langs');host.innerHTML='';
+  LANGS.forEach(function(x){
+    var b=document.createElement('button');b.type='button';b.id='lang-'+x[0];b.dataset.v=x[0];b.textContent=x[1];b.lang=x[0];
+    b.setAttribute('aria-pressed',String(x[0]===LANG));b.addEventListener('click',function(){setLang(x[0])});host.appendChild(b);
+  });
+}
+window.addEventListener('message',function(e){var m=e.data;if(m&&m.type==='inwood-door-lang'&&(m.lang==='uk'||m.lang==='en'))setLang(m.lang,true)});
+
+mountColls();
+mountSeg('segShape',[['sq','shape_sq'],['rd','shape_rd']],'hshape',false,buildDoor);
+mountSeg('segT',[[80,'80'],[100,'100'],[120,'120']],'T',true,rebuildAll);
+mountSeg('segFt',[['tel','ft_tel'],['cop','ft_cop']],'ft',false,function(){if(S.ft==='cop')S.ct='cop';else if(S.ct==='cop')S.ct='std';rebuildAll()});
+mountSeg('segDob',[[0,'dob_0'],[100,'100'],[150,'150'],[200,'200']],'dob',true,rebuildAll);
+mountSeg('segCs',[['both','cs_both'],['front','cs_front'],['back','cs_back'],['none','cs_none']],'cs',false,function(){S.casing=S.cs!=='none';rebuildAll()});
+mountSeg('segCt',[['std','ct_std'],['w40','ct_w40'],['cop','ct_cop']],'ct',false,rebuildAll);
+mountSeg('segHi',[[0,'hi_0'],[1,'hi_1']],'hi',true,function(){if(S.hi&&S.edge==='film'){S.edge='agrey';applyEdge()}rebuildAll()});
+mountSeg('segHb',[['std','hb_std_s'],['lux','hb_lux_s']],'hb',false,function(){});
+mountSeg('segHgc',[['std','hgcs_std'],['black','hgcs_black'],['white','hgcs_white']],'hgc',false,applyHinge);
+$('#edgeIn').addEventListener('input',function(e){S.edgeHex=e.target.value;applyEdge();syncUI()});
+mountSeg('segInsert',[['black','insl_black'],['grey','insl_grey']],'insert',false,applyInsert);
+mountSeg('segHinge',[['L','hinge_l'],['R','hinge_r']],'hinge',false,buildDoor);
+mountSeg('segHandle',Object.keys(HANDLES).map(function(k){return [k,'hl_'+k]}),'handle',false,applyHandle);
+mountSeg('segFloor',FLOORS.map(function(f){return [f.id,'f_'+f.id]}),'floor',false,applyFloor);
+
+var wallHost=$('#walls');
+WALLS.forEach(function(w,i){
+  var b=document.createElement('button');b.type='button';b.className='dot';b.id='wall-'+i;b.dataset.v=i;b.title=tr('w'+i);b.setAttribute('aria-label',tr('w'+i));b.style.background=w.c;
+  b.addEventListener('click',function(){S.wall=i;applyWall();applyPaintAuto();syncUI()});wallHost.appendChild(b);
+});
+(function(){
+  var l=document.createElement('label');l.className='dot custom';l.id='wall-custom';l.title=tr('wall_custom');
+  l.innerHTML='<input type="color" id="wallIn" aria-label="'+tr('wall_custom')+'">';
+  var pk=l.querySelector('input');pk.value=S.wallHex;
+  var hx=document.createElement('input');hx.type='text';hx.id='wallHex';hx.className='hexin';hx.maxLength=7;hx.placeholder='#RRGGBB';hx.setAttribute('aria-label',tr('aria_hex'));hx.value=S.wallHex.toUpperCase();
+  function setWall(v){S.wallHex=v;S.wall=-1;applyWall();applyPaintAuto();syncUI()}
+  pk.addEventListener('input',function(){setWall(pk.value)});
+  pk.addEventListener('click',function(){if(S.wall!==-1)setWall(pk.value)});
+  function normHex(v){v=String(v||'').trim();if(v&&v[0]!=='#')v='#'+v;if(/^#[0-9a-fA-F]{3}$/.test(v))v='#'+v[1]+v[1]+v[2]+v[2]+v[3]+v[3];return /^#[0-9a-fA-F]{6}$/.test(v)?v.toLowerCase():null}
+  hx.addEventListener('input',function(){var v=normHex(hx.value);if(v&&hx.value.replace('#','').length===6){pk.value=v;setWall(v)}});
+  hx.addEventListener('change',function(){var v=normHex(hx.value);if(v){pk.value=v;setWall(v)}hx.value=wallHex().toUpperCase()});
+  wallHost.appendChild(l);wallHost.appendChild(hx);
+})();
+
+/* --- посилання на конфігурацію --- */
+var SHARE_BASE=null,NOSHARE=false;
+try{var _b=new URLSearchParams(location.search).get('base');if(_b&&/^https?:\/\//i.test(_b))SHARE_BASE=_b}catch(e){}
+function configQuery(){
+  var p=[['c',S.coll],['m',S.model],['w',S.W],['h',S.H],['t',S.T],['f',S.film],['e',S.edge],['i',S.insert],['hg',S.hinge],['cs',S.cs],['ft',S.ft],['ct',S.ct],['db',S.dob],['hd',S.handle],['hs',S.hshape],['wl',S.wall>=0?S.wall:S.wallHex],['fl',S.floor],['o',Math.round(S.open)]];
+  if(S.film==='paint'){if(S.paintAuto)p.push(['pa',1]);else p.push(['p',String(S.paint).toLowerCase()])}
+  if(S.edge==='aral')p.push(['eh',S.edgeHex.toLowerCase()]);
+  if(curColl().flush)p.push(['hi',S.hi],['hb',S.hb]);
+  if(curColl().hinges)p.push(['hc',S.hgc]);
+  p.push(['lang',LANG]);
+  return p.map(function(kv){return encodeURIComponent(kv[0])+'='+encodeURIComponent(kv[1])}).join('&');
+}
+function shareURL(){
+  var base=SHARE_BASE||(location.origin&&location.origin!=='null'?location.origin:'')+location.pathname;
+  return base+(base.indexOf('?')<0?'?':'&')+configQuery();
+}
+function copyText(t){
+  return new Promise(function(res){
+    function fb(){var ta=document.createElement('textarea');ta.value=t;ta.setAttribute('readonly','');ta.style.cssText='position:fixed;opacity:0;top:0;left:0';document.body.appendChild(ta);ta.select();var ok=false;try{ok=document.execCommand('copy')}catch(e){}document.body.removeChild(ta);return ok}
+    try{if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){res(true)},function(){res(fb())});return}}catch(e){}
+    res(fb());
+  });
+}
+$('#shareBtn').addEventListener('click',async function(){
+  var u=shareURL(),ok=await copyText(u),out=$('#shareOut');
+  if(ok){toast(tr('t_copied'));out.hidden=true}
+  else{out.hidden=false;out.value=u;out.focus();out.select();toast(tr('t_copy_manual'),4000)}
+});
+function applyConfig(q){
+  var g=function(k){return q.get(k)},el=function(id){return document.getElementById(id)},ck=function(id){var e=el(id);if(e)e.click();return !!e};
+  var c=g('c');if(c&&COLL[c]&&c!==S.coll)setColl(c);
+  var m=g('m');if(m)ck('segModel-'+m);
+  var f=g('f');
+  if(f==='paint'){var p=g('p');if(/^#[0-9a-fA-F]{6}$/.test(p||'')&&curColl().paint){S.paint=p.toLowerCase();S.film='paint';S.paintAuto=false;applyFilm();buildDoor();syncUI()}}
+  else if(f)ck('film-'+f);
+  var w=+g('w'),h=+g('h');
+  if(w>=400&&w<=1000&&w%50===0){el('rngW').value=w;el('rngW').dispatchEvent(new Event('input'))}
+  if(h>=1800&&h<=2300&&h%50===0){el('rngH').value=h;el('rngH').dispatchEvent(new Event('input'))}
+  var t=g('t');if(t)ck('segT-'+t);
+  var e=g('e');if(e)ck('segEdge-'+e);
+  var i=g('i');if(i)ck('segInsert-'+i);
+  var hg=g('hg');if(hg)ck('segHinge-'+hg);
+  if(!curColl().flush){
+    var ft=g('ft');if(ft==='tel'||(ft==='cop'&&curColl().cop))ck('segFt-'+ft);
+    var db=g('db');if(db==='0'||db==='100'||db==='150'||db==='200')ck('segDob-'+db);
+    var cs=g('cs');if(cs==='0')cs='none';if(cs==='1')cs='both';if(cs==='both'||cs==='front'||cs==='back'||cs==='none')ck('segCs-'+cs);
+    var ct=g('ct');if(ct==='std'||ct==='w40'||(ct==='cop'&&curColl().cop))ck('segCt-'+ct);
+  }
+  var hd=g('hd');if(hd)ck('segHandle-'+hd);
+  var hs=g('hs');if(hs)ck('segShape-'+hs);
+  var eh=g('eh');if(/^#[0-9a-fA-F]{6}$/.test(eh||'')){S.edgeHex=eh.toLowerCase();var eq=g('e');if(eq==='aral'&&edgesFor().indexOf('aral')>=0){S.edge='aral';applyEdge();buildDoor();syncUI()}}
+  if(curColl().flush){var hi=g('hi');if(hi==='0'||hi==='1')ck('segHi-'+hi);var hb=g('hb');if(hb==='std'||hb==='lux')ck('segHb-'+hb)}
+  var hc=g('hc');if(curColl().hinges&&(hc==='std'||hc==='black'||hc==='white'))ck('segHgc-'+hc);
+  var wl=g('wl');
+  if(/^\d$/.test(wl||''))ck('wall-'+wl);
+  else if(/^#[0-9a-fA-F]{6}$/.test(wl||'')){S.wallHex=wl.toLowerCase();S.wall=-1;applyWall();applyPaintAuto();syncUI()}
+  if(g('pa')==='1'&&curColl().flush&&curColl().paint){S.film='paint';S.paintAuto=true;S.paint=wallHex();applyFilm();buildDoor();syncUI()}
+  var fl=g('fl');if(fl)ck('segFloor-'+fl);
+  var o=+g('o');if(g('o')!==null&&o>=0&&o<=105)setOpen(o);
+  dirty=true;
+}
+function initFromURL(){try{var q=new URLSearchParams(location.search);if(q.get('m')||q.get('c'))applyConfig(q)}catch(e){}}
+
+/* --- картка для клієнта (PNG / PDF), без цін --- */
+function renderFront(pw,ph){
+  var G=geom(),pos0=camera.position.clone(),tgt0=controls.target.clone();
+  renderer.setPixelRatio(1);renderer.setSize(pw,ph,false);camera.aspect=pw/ph;camera.updateProjectionMatrix();
+  var top=G.fg+G.H+(G.csF?G.cw+.03:.12),ym=top/2,asp=pw/ph;
+  var visH=Math.max(top*1.16,(G.outW+(G.csF?2*G.cw:0)+.3)/asp),dist=visH/(2*Math.tan(camera.fov*Math.PI/360));
+  camera.position.set(0,ym,dist);controls.target.set(0,ym,0);camera.lookAt(0,ym,0);
+  pivot.rotation.y=0;door.updateMatrixWorld(true);
+  renderer.render(scene,camera);
+  var c=document.createElement('canvas');c.width=pw;c.height=ph;c.getContext('2d').drawImage(glCanvas,0,0);
+  camera.position.copy(pos0);controls.target.copy(tgt0);controls.update();
+  pivot.rotation.y=-G.dir*rad(S.cur);resize();dirty=true;
+  return c;
+}
+function wrapText(g,text,x,y,maxW,lh){
+  var words=String(text).split(' '),line='',yy=y;
+  words.forEach(function(w){var t=line?line+' '+w:w;if(g.measureText(t).width>maxW&&line){g.fillText(line,x,yy);line=w;yy+=lh}else line=t});
+  if(line){g.fillText(line,x,yy);yy+=lh}
+  return yy;
+}
+function rrect(g,x,y,w,h,r){g.beginPath();g.moveTo(x+r,y);g.arcTo(x+w,y,x+w,y+h,r);g.arcTo(x+w,y+h,x,y+h,r);g.arcTo(x,y+h,x,y,r);g.arcTo(x,y,x+w,y,r);g.closePath()}
+var LOGO_SRC='data:image/png;base64,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';
+function loadLogo(){return new Promise(function(res){var im=new Image();im.onload=function(){res(im)};im.onerror=function(){res(null)};im.src=LOGO_SRC})}
+async function makeCard(){
+  var logo=await loadLogo();
+  var f=filmById(S.film),tid=f&&!f.k?(f.base||f.id):null;
+  if(tid){getTex(tid);for(var w=0;!texReady[tid]&&w<40;w++)await new Promise(function(r){setTimeout(r,100)})}
+  try{if(document.fonts&&document.fonts.ready)await document.fonts.ready}catch(e){}
+  updateSpec();
+  var W=1240,H=1754,cv=document.createElement('canvas');cv.width=W;cv.height=H;var g=cv.getContext('2d');
+  var ink='#333958',muted='#626998',gold='#8A6836',line='#E1E2EC';
+  var sans='"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif',serif='"Playfair Display",Georgia,serif';
+  g.fillStyle='#F7F6F2';g.fillRect(0,0,W,H);
+  g.fillStyle='#FFFFFF';rrect(g,40,40,W-80,H-80,28);g.fill();
+  g.textBaseline='alphabetic';
+  if(logo){var lw=Math.round(104*logo.width/logo.height);g.drawImage(logo,80,52,lw,104);g.fillStyle=gold;g.font='700 20px '+sans;g.fillText(tr('eyebrow').toUpperCase().replace('IN WOOD · ',''),80+lw+28,112)}
+  else{g.fillStyle=ink;g.font='700 46px '+serif;g.fillText('IN WOOD',80,128);g.fillStyle=gold;g.font='700 17px '+sans;g.fillText(tr('eyebrow').toUpperCase().replace('IN WOOD · ',''),82,158)}
+  g.textAlign='right';g.fillStyle=muted;g.font='600 22px '+sans;g.fillText(tr('card_title'),W-80,128);g.textAlign='left';
+  g.strokeStyle=line;g.lineWidth=2;g.beginPath();g.moveTo(80,190);g.lineTo(W-80,190);g.stroke();
+  /* зображення двері */
+  var ix=80,iy=222,iw=560,ih=1027,img=renderFront(900,1650);
+  g.save();rrect(g,ix,iy,iw,ih,22);g.clip();
+  var gr=g.createLinearGradient(0,iy,0,iy+ih);gr.addColorStop(0,'#FBFAF7');gr.addColorStop(1,'#E4E2DA');g.fillStyle=gr;g.fillRect(ix,iy,iw,ih);
+  g.drawImage(img,ix,iy,iw,ih);g.restore();
+  /* правий стовпчик */
+  var x0=690,cw=W-80-x0,y=300;
+  g.fillStyle=ink;g.font='700 72px '+serif;g.fillText(curColl().flush?'HD-01':S.model,x0,y);
+  y+=48;g.fillStyle=muted;g.font='600 26px '+sans;g.fillText(curColl().name,x0,y);
+  y+=56;
+  var sw=112;
+  g.save();rrect(g,x0,y,sw,sw,16);g.clip();
+  if(f.k||S.film==='paint'){g.fillStyle=S.film==='paint'?S.paint:f.k;g.fillRect(x0,y,sw,sw)}
+  else if(texReady[tid]&&filmTex[tid].image){g.drawImage(filmTex[tid].image,0,0,filmTex[tid].image.width,filmTex[tid].image.height,x0,y,sw,sw)}
+  else{g.fillStyle=f.m||'#999';g.fillRect(x0,y,sw,sw)}
+  g.restore();g.strokeStyle=line;g.lineWidth=2;rrect(g,x0,y,sw,sw,16);g.stroke();
+  g.fillStyle=ink;g.font='700 30px '+sans;
+  var fy=wrapText(g,S.film==='paint'?'RAL / NCS '+S.paint.toUpperCase():fname(f),x0+sw+24,y+46,cw-sw-24,38);
+  y+=sw+52;
+  SPEC_ROWS.forEach(function(r,idx){
+    if(idx===0||r[1]===fname(f))return;
+    var val=String(r[1]).replace(/ (мм|mm)/g,'\u00a0$1');val=val.charAt(0).toUpperCase()+val.slice(1);
+    g.fillStyle=muted;g.font='600 19px '+sans;g.fillText(String(r[0]).toUpperCase(),x0,y);
+    g.fillStyle=ink;g.font='600 28px '+sans;var yy=wrapText(g,val,x0,y+32,cw,33);
+    y=Math.max(y+62,yy+10);
+    g.strokeStyle=line;g.lineWidth=1;g.beginPath();g.moveTo(x0,y-28);g.lineTo(x0+cw,y-28);g.stroke();
+  });
+  /* стіна */
+  g.fillStyle=muted;g.font='600 19px '+sans;g.fillText(tr('card_wall').toUpperCase(),x0,y);
+  g.fillStyle=wallHex();rrect(g,x0,y+16,44,44,10);g.fill();g.strokeStyle=line;g.lineWidth=2;rrect(g,x0,y+16,44,44,10);g.stroke();
+  g.fillStyle=ink;g.font='600 24px '+sans;g.fillText(wallHex().toUpperCase(),x0+60,y+48);
+  /* низ */
+  var by=Math.max(1300,y+84);
+  g.strokeStyle=line;g.lineWidth=2;g.beginPath();g.moveTo(80,by-10);g.lineTo(W-80,by-10);g.stroke();
+  var ly=by+20;
+  if(!NOSHARE){
+    g.fillStyle=muted;g.font='600 19px '+sans;g.fillText(tr('card_link').toUpperCase(),80,by+30);
+    g.fillStyle=ink;g.font='500 17px '+sans;
+    var u=shareURL(),cur='',maxw=W-190;ly=by+58;
+    for(var k=0;k<u.length;k++){cur+=u[k];if(g.measureText(cur).width>maxw||k===u.length-1){g.fillText(cur,80,ly);cur='';ly+=25;if(ly>1620)break}}
+  }
+  g.fillStyle=muted;g.font='500 21px '+sans;wrapText(g,tr('card_note'),80,Math.max(ly+16,1626),W-160,30);
+  g.textAlign='right';g.fillStyle=gold;g.font='700 21px '+sans;g.fillText('inwood.com.ua',W-80,H-70);g.textAlign='left';
+  return cv;
+}
+function pdfFromJpeg(jpg,wpx,hpx){
+  var enc=new TextEncoder(),parts=[],off=[],len=0;
+  function add(x){var b=typeof x==='string'?enc.encode(x):x;parts.push(b);len+=b.length}
+  add('%PDF-1.4\n');
+  off[1]=len;add('1 0 obj\n<< /Type /Catalog /Pages 2 0 R >>\nendobj\n');
+  off[2]=len;add('2 0 obj\n<< /Type /Pages /Kids [3 0 R] /Count 1 >>\nendobj\n');
+  off[3]=len;add('3 0 obj\n<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /XObject << /Im0 4 0 R >> >> /Contents 5 0 R >>\nendobj\n');
+  off[4]=len;add('4 0 obj\n<< /Type /XObject /Subtype /Image /Width '+wpx+' /Height '+hpx+' /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length '+jpg.length+' >>\nstream\n');add(jpg);add('\nendstream\nendobj\n');
+  var cs='q 595 0 0 842 0 0 cm /Im0 Do Q';
+  off[5]=len;add('5 0 obj\n<< /Length '+cs.length+' >>\nstream\n'+cs+'\nendstream\nendobj\n');
+  var xr=len;
+  add('xref\n0 6\n0000000000 65535 f \n'+[1,2,3,4,5].map(function(i){return ('0000000000'+off[i]).slice(-10)+' 00000 n \n'}).join('')+'trailer\n<< /Size 6 /Root 1 0 R >>\nstartxref\n'+xr+'\n%%EOF\n');
+  return new Blob(parts,{type:'application/pdf'});
+}
+function cardHandler(kind){
+  return async function(){
+    var btn=this;
+    if(!downloads){toast(tr('t_nodl'));return}
+    btn.disabled=true;toast(tr('t_card'),8000);
+    try{
+      var cv=await makeCard(),name=fileBase()+'-card';
+      if(kind==='png'){
+        var blob=await new Promise(function(r){cv.toBlob(r,'image/png')});
+        if(!blob)throw new Error(tr('e_img'));
+        await downloads.save({filename:name+'.png',data:blob});
+      }else{
+        var jb=await new Promise(function(r){cv.toBlob(r,'image/jpeg',.93)});
+        if(!jb)throw new Error(tr('e_img'));
+        var jpg=new Uint8Array(await jb.arrayBuffer());
+        await downloads.save({filename:name+'.pdf',data:pdfFromJpeg(jpg,cv.width,cv.height)});
+      }
+      toast(tr('t_card_done'));
+    }catch(e){toast(errText(e),4200)}
+    finally{btn.disabled=false}
+  };
+}
+$('#cardPng').addEventListener('click',cardHandler('png'));
+$('#cardPdf').addEventListener('click',cardHandler('pdf'));
+
+$('#rngW').addEventListener('input',function(e){S.W=+e.target.value;rebuildAll();syncUI()});
+$('#rngH').addEventListener('input',function(e){S.H=+e.target.value;rebuildAll();syncUI()});
+$('#tDims').addEventListener('change',function(e){S.dims=e.target.checked;dirty=true});
+$('#tRoom').addEventListener('change',function(e){S.room=e.target.checked;room.visible=S.room;floorMesh.material=S.room?M.floor:M.catcher;dirty=true});
+var angleEl=$('#angle');
+function setOpen(v){S.open=v;angleEl.value=v;$('#angleOut').textContent=Math.round(v)+'°';syncUI()}
+angleEl.addEventListener('input',function(){setOpen(+angleEl.value)});
+$('#openBtn').addEventListener('click',function(){setOpen(S.open>=45?0:85)});
+
+var toastEl=$('#toast'),toastT=0;
+function toast(msg,ms){toastEl.textContent=msg;toastEl.hidden=false;clearTimeout(toastT);toastT=setTimeout(function(){toastEl.hidden=true},ms||3000)}
+
+/* ---------- export ---------- */
+var downloads=null;
+(async function(){
+  try{downloads=(window.claude&&window.claude.use)?await window.claude.use('downloads'):null}catch(e){downloads=null}
+  if(!downloads){
+    /* звичайне завантаження браузером - для сторінки на власному сайті або відкритої як файл */
+    downloads={save:function(r){return new Promise(function(res){
+      var u=URL.createObjectURL(r.data),a=document.createElement('a');
+      a.href=u;a.download=r.filename;document.body.appendChild(a);a.click();document.body.removeChild(a);
+      setTimeout(function(){URL.revokeObjectURL(u)},4000);res({status:'saved'});
+    })}};
+  }
+})();
+function fileBase(){return 'IN-WOOD_'+curColl().name.replace(/\s+/g,'-')+'_'+S.model+'_'+S.W+'x'+S.H+'_'+(S.film==='paint'?'paint-'+S.paint.slice(1).toUpperCase():S.film)}
+function errText(e){
+  if(e&&e.code==='declined')return tr('t_declined');
+  if(e&&e.code==='rate_limited')return tr('t_rate');
+  return tr('t_savefail')+(e&&e.message?': '+e.message:'');
+}
+function readme(){
+  var C=curColl(),hasIns=curModel().ins,paint=S.film==='paint',lt=Math.round(geom().lt*1000);
+  var colorLine=(C.flush||paint?tr('r_color_paint',[S.paint.toUpperCase()]):tr('r_color_film',[fname(filmById(S.film))]));
+  var frame=C.flush?tr('r_frame_flush',[S.T])+tr('r_hbox',[tr('hb_'+S.hb)]):tr('r_frame2',[tr('ftv_'+S.ft),S.T,S.dob?tr('r_dob',[S.dob]):'',S.casing?tr('csv_'+S.cs)+', '+tr('ctv_'+S.ct):tr('r_casing_no')]);
+  return [C.flush?tr('r_head_flush',[C.name,S.model,S.W,S.H]):tr('r_head',[C.name,S.model,S.W,S.H]),
+  '',
+  tr('r_files',[fileBase()]),
+  tr('r_units'),
+  tr('r_origin'),
+  tr('r_mesh',[Math.round(S.open)]),
+  '',
+  tr('r_leaf',[S.W,S.H,colorLine,edgeName(),hasIns?tr('r_ins',[tr('ins_'+S.insert)]):'',lt]),
+  frame+tr('r_open',[tr(S.hinge==='L'?'sp_left':'sp_right')]),
+  (C.flush?'':tr('r_outer',[S.W+68,S.H+40]))+tr('r_hole',[S.W+(C.flush?14:88),S.H+(C.flush?18:50)]),
+  tr('r_nowall'),
+  '',
+  tr('r_foot')].join('\r\n');
+}
+/* бібліотеки експорту (GLB, OBJ, ZIP) вантажаться лише за потреби */
+var libsP=null;
+function loadScript(u){return new Promise(function(res,rej){var s=document.createElement('script');s.src=u;s.onload=res;s.onerror=function(){rej(new Error(tr('e_lib')))};document.head.appendChild(s)})}
+function loadExportLibs(){
+  if(THREE.GLTFExporter&&THREE.OBJExporter&&window.JSZip)return Promise.resolve();
+  if(!libsP)libsP=Promise.all([
+    THREE.GLTFExporter?0:loadScript('https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/exporters/GLTFExporter.js'),
+    THREE.OBJExporter?0:loadScript('https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/exporters/OBJExporter.js'),
+    window.JSZip?0:loadScript('https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js')
+  ]).catch(function(e){libsP=null;throw e});
+  return libsP;
+}
+['pointerenter','focus','touchstart'].forEach(function(ev){$('#dlZip').addEventListener(ev,function(){loadExportLibs().catch(function(){})},{passive:true})});
+$('#dlZip').addEventListener('click',async function(){
+  var btn=$('#dlZip');
+  if(!downloads){toast(tr('t_nodl'));return}
+  btn.disabled=true;toast(tr('t_prep'),8000);
+  var G=geom();
+  try{
+    await loadExportLibs();
+    var cf=filmById(S.film),ct=cf&&!cf.k?(cf.base||cf.id):null;
+    for(var w=0;ct&&!texReady[ct]&&w<40;w++)await new Promise(function(r){setTimeout(r,100)});
+    pivot.rotation.y=-G.dir*rad(S.open);door.updateMatrixWorld(true);
+    var glb=await new Promise(function(res,rej){
+      try{new THREE.GLTFExporter().parse(door,res,{binary:true})}catch(e){rej(e)}
+    });
+    var obj=new THREE.OBJExporter().parse(door);
+    var zip=new JSZip(),base=fileBase();
+    zip.file(base+'.glb',glb);zip.file(base+'.obj',obj);zip.file('README.txt',readme());
+    var blob=await zip.generateAsync({type:'blob',compression:'DEFLATE'});
+    await downloads.save({filename:base+'.zip',data:blob});
+    toast(tr('t_done'));
+  }catch(e){toast(errText(e),4200)}
+  finally{pivot.rotation.y=-G.dir*rad(S.cur);dirty=true;btn.disabled=false}
+});
+$('#dlPng').addEventListener('click',async function(){
+  var btn=$('#dlPng');
+  if(!downloads){toast(tr('t_nodl'));return}
+  btn.disabled=true;
+  try{
+    renderer.render(scene,camera);
+    var w=glCanvas.width,h=glCanvas.height,c=document.createElement('canvas');c.width=w;c.height=h;
+    var g=c.getContext('2d'),gr=g.createLinearGradient(0,0,0,h);gr.addColorStop(0,tok['stage-a']);gr.addColorStop(1,tok['stage-b']);
+    g.fillStyle=gr;g.fillRect(0,0,w,h);g.drawImage(glCanvas,0,0);g.drawImage(dimCanvas,0,0);
+    var blob=await new Promise(function(r){c.toBlob(r,'image/png')});
+    if(!blob)throw new Error(tr('e_img'));
+    await downloads.save({filename:fileBase()+'.png',data:blob});
+    toast(tr('t_png'));
+  }catch(e){toast(errText(e),4200)}
+  finally{btn.disabled=false}
+});
+
+/* ---------- loop ---------- */
+var last=performance.now();
+function frame(now){
+  var dt=Math.min(.05,(now-last)/1000);last=now;
+  if(tw){
+    tw.t=Math.min(1,tw.t+dt/.7);var e=tw.t<.5?2*tw.t*tw.t:1-Math.pow(-2*tw.t+2,2)/2;
+    camera.position.lerpVectors(tw.p0,tw.p1,e);controls.target.lerpVectors(tw.t0,tw.t1,e);
+    if(tw.t>=1)tw=null;dirty=true;
+  }
+  if(S.cur!==S.open){
+    var diff=S.open-S.cur;
+    S.cur=(RM||Math.abs(diff)<.05)?S.open:S.cur+diff*Math.min(1,dt*7);
+    pivot.rotation.y=-geom().dir*rad(S.cur);dirty=true;
+  }
+  if(controls.update())dirty=true;
+  if(dirty){dirty=false;renderer.render(scene,camera);drawDims()}
+  requestAnimationFrame(frame);
+}
+
+mountLangs();applyStatic();
+applyFilm();applyEdge();applyHinge();applyInsert();applyHandle();applyWall();applyFloor();
+mountModels();mountEdges();mountFilms();
+buildDoor();buildRoom();syncUI();resize();goView('persp',true);
+initFromURL();
+requestAnimationFrame(frame);
+window.__door={S:S,goView:goView,setOpen:setOpen,setColl:setColl,setLang:setLang,shareURL:shareURL,makeCard:makeCard};
+})();
+</script>
+</body>
+</html>

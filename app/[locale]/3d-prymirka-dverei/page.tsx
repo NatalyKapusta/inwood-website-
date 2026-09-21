@@ -3,6 +3,7 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import ContactCta from "@/components/ContactCta";
+import DoorFitFrame from "@/components/DoorFitFrame";
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
@@ -83,13 +84,7 @@ export default async function DoorFit3dPage({
 
       <section className="mx-auto max-w-5xl px-4 py-16 sm:py-24">
         <div className="overflow-hidden rounded-2xl border border-navy-dim/10 shadow-sm">
-          <iframe
-            src="/tools/door-fit.html"
-            title={t.heading}
-            className="h-[850px] w-full"
-            style={{ border: 0 }}
-            loading="lazy"
-          />
+          <DoorFitFrame locale={params.locale} title={t.heading} />
         </div>
       </section>
 
