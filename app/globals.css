@@ -116,20 +116,3 @@ body {
 .trends-marquee:focus-within .trends-marquee-track {
   animation-play-state: paused;
 }
-
-/* Підказка "гортайте тут" біля 3D-примірки дверей — стрілка вниз, що
-   повільно підстрибує. Просто анімований знак напрямку, без жодного
-   натяку на кнопку/клік. */
-.scroll-hint-chevron {
-  opacity: 0.6;
-  animation: scroll-hint-bounce 1.6s ease-in-out infinite;
-}
-@keyframes scroll-hint-bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(5px);
-  }
-}

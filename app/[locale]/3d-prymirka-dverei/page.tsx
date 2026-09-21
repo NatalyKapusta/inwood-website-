@@ -3,8 +3,7 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import ContactCta from "@/components/ContactCta";
-import DoorFitFrame from "@/components/DoorFitFrame";
-import ScrollHint from "@/components/ScrollHint";
+import { DoorFitLoader, getDoorFitDictionary } from "@/components/door-fit";
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
@@ -28,6 +27,7 @@ export default async function DoorFit3dPage({
   const t = dict.doorFit3d;
   const s = dict.spivpratsya;
   const c = dict.common;
+  const doorFitDict = await getDoorFitDictionary(params.locale);
 
   return (
     <>
@@ -83,13 +83,11 @@ export default async function DoorFit3dPage({
         </div>
       </section>
 
-      <section className="mx-auto max-w-5xl px-4 py-16 sm:py-24">
-        <div className="flex flex-col items-stretch gap-2 lg:flex-row lg:gap-4">
-          <div className="min-w-0 flex-1 overflow-hidden rounded-2xl border border-navy-dim/10 shadow-sm">
-            <DoorFitFrame locale={params.locale} title={t.heading} />
-          </div>
-          <ScrollHint label={t.scrollHint} />
-        </div>
+      <section className="mx-auto max-w-[1400px] px-4 py-16 sm:py-24">
+        {/* Шапка сайту на цій сторінці навмисно не sticky (див. Header.tsx) —
+            тому зверху немає чужого фіксованого бару, під який підлаштовувати
+            stickyTop; 16px — просто невеликий відступ від краю вʼюпорту. */}
+        <DoorFitLoader dict={doorFitDict} stickyTop={16} showHeader={false} />
       </section>
 
       <section className="bg-navy-dark py-16 text-white sm:py-24">
