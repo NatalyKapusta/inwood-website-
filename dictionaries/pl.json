@@ -1160,7 +1160,24 @@
       }
     ],
     "moreSegmentsTitle": "Współpracujemy też z:",
-    "moreSegments": ["Fabrykami mebli", "Projektantami i architektami", "Firmami montażowymi", "Klientami indywidualnymi"],
+    "moreSegments": [
+      {
+        "title": "Fabrykom mebli",
+        "text": "Ten sam MDF i wykończenie, co przy drzwiach, sprawdza się też we frontach meblowych. Wykonujemy niestandardowe wymiary i frezowanie według Twojego rysunku."
+      },
+      {
+        "title": "Projektantom i architektom",
+        "text": "Pomożemy dobrać okleinę pod kolor i styl projektu — dla mieszkania, biura lub lokalu komercyjnego."
+      },
+      {
+        "title": "Firmom montażowym",
+        "text": "Przyjmujemy wymiary prosto z obiektu i szybko liczymy koszt — wygodne, gdy polecasz okleinę klientowi."
+      },
+      {
+        "title": "Klientom indywidualnym",
+        "text": "Odśwież wygląd starych drzwi, wymień uszkodzony panel lub dobierz okleinę pod wnętrze — bez wymiany całego zestawu drzwiowego."
+      }
+    ],
     "offerTitle": "Co oferujemy",
     "offerText": "Produkujemy okleiny MDF o grubości 10 mm do metalowych drzwi wejściowych we własnej produkcji w Połtawie. Konkretne wymiary, dekor i warunki dostawy omawiamy indywidualnie pod Twój projekt — zostaw zgłoszenie, a menedżer prześle aktualny katalog kolorów i wycenę.",
     "formSizes": "Wymiary okleiny (Sz×W)",

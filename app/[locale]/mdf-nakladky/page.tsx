@@ -77,18 +77,16 @@ export default async function MdfNakladkyPage({
             ))}
           </div>
 
-          <div className="mx-auto mt-10 max-w-2xl text-center">
+          <div className="mt-14 text-center">
             <p className="text-sm font-semibold uppercase tracking-wide text-navy-dim">
               {t.moreSegmentsTitle}
             </p>
-            <div className="mt-3 flex flex-wrap justify-center gap-2">
-              {t.moreSegments.map((label) => (
-                <span
-                  key={label}
-                  className="rounded-full bg-panel px-4 py-1.5 text-sm text-navy-dark"
-                >
-                  {label}
-                </span>
+            <div className="mx-auto mt-6 grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {t.moreSegments.map((s) => (
+                <div key={s.title} className="rounded-xl bg-panel p-5 text-left">
+                  <h3 className="font-serif text-base font-bold text-navy-dark">{s.title}</h3>
+                  <p className="mt-2 text-sm text-navy-dim">{s.text}</p>
+                </div>
               ))}
             </div>
           </div>
