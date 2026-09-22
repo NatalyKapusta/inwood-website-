@@ -45,6 +45,10 @@
         "href": "/dlya-zabudovnykiv"
       },
       {
+        "label": "MDF Door Facings",
+        "href": "/mdf-nakladky"
+      },
+      {
         "label": "Export",
         "href": "/export"
       },
@@ -1095,5 +1099,37 @@
     "tenderText": "If your institution is running a procurement process, tell us what's actually needed — documents, specifications, volumes — and we'll give you a straight answer on whether we can provide it.",
     "ctaTitle": "Choosing a Supplier for Your Institution?",
     "ctaText": "Leave a request — we'll tell you how we can help your institution specifically."
+  },
+  "mdfNakladky": {
+    "pageTitle": "MDF Door Facings from the Manufacturer — IN WOOD",
+    "metaDescription": "10 mm MDF door facings for metal entrance doors from manufacturer IN WOOD — wholesale terms for door factories, dealers and developers.",
+    "backLink": "← All cooperation options",
+    "heading": "MDF Door Facings for Entrance Door Manufacturers and Door Showrooms",
+    "intro": "10 mm MDF facing panels for metal entrance doors — manufactured in-house by IN WOOD in Poltava. We work to the sizes and requirements of your project.",
+    "segmentsTitle": "Who We Work With First",
+    "segmentsText": "This works best for those who order facing panels regularly and in batches — not one at a time.",
+    "segments": [
+      {
+        "title": "Entrance Door Manufacturers",
+        "text": "A ready-made MDF facing for completing your doors — without keeping your own milling and finishing line."
+      },
+      {
+        "title": "Door Showrooms and Dealers",
+        "text": "An extra product for your range — a facing panel as a standalone way to refresh a door's look or complete a new door set."
+      },
+      {
+        "title": "Developers and Contractors",
+        "text": "Batch supply for a project — apartments, aparthotels, offices — with agreed specifications matched to the project schedule."
+      }
+    ],
+    "moreSegmentsTitle": "We also work with:",
+    "moreSegments": ["Furniture Factories", "Designers and Architects", "Installation Companies", "Private Customers"],
+    "offerTitle": "What We Offer",
+    "offerText": "We manufacture 10 mm MDF facing panels for metal entrance doors at our own production facility in Poltava. Specific sizes, finishes and delivery terms are discussed individually for your project — leave a request and our manager will send the current colour catalogue and a quote.",
+    "formSizes": "Facing size (W×H)",
+    "formQuantity": "Quantity, pcs",
+    "formCoating": "Finish/colour preferences",
+    "ctaTitle": "Request MDF Door Facings",
+    "ctaText": "Tell us the sizes, quantity and finish preferences — we'll send the current catalogue and a commercial offer."
   }
 }

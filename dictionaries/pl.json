@@ -45,6 +45,10 @@
         "href": "/dlya-zabudovnykiv"
       },
       {
+        "label": "Okleiny MDF",
+        "href": "/mdf-nakladky"
+      },
+      {
         "label": "Eksport",
         "href": "/export"
       },
@@ -1132,5 +1136,37 @@
     "tenderText": "Jeśli Twoja instytucja prowadzi zakupy — napisz do nas, co dokładnie jest potrzebne (dokumenty, parametry, ilości), a my uczciwie powiemy, czy możemy to zapewnić.",
     "ctaTitle": "Wybierasz dostawcę dla instytucji?",
     "ctaText": "Zostaw zgłoszenie — powiemy, czym możemy być pomocni właśnie Twojej instytucji."
+  },
+  "mdfNakladky": {
+    "pageTitle": "Okleiny MDF do drzwi od producenta — IN WOOD",
+    "metaDescription": "Okleiny MDF 10 mm do metalowych drzwi wejściowych od producenta IN WOOD — warunki hurtowe dla fabryk drzwi, dilerów i deweloperów.",
+    "backLink": "← Wszystkie możliwości współpracy",
+    "heading": "Okleiny MDF dla producentów drzwi wejściowych i salonów drzwiowych",
+    "intro": "Okleiny MDF o grubości 10 mm do metalowych drzwi wejściowych — własna produkcja IN WOOD w Połtawie. Pracujemy pod wymiary i zadania Twojego projektu.",
+    "segmentsTitle": "Komu proponujemy w pierwszej kolejności",
+    "segmentsText": "Współpraca ma największy sens dla tych, którzy zamawiają okleiny regularnie i partiami — a nie pojedynczo.",
+    "segments": [
+      {
+        "title": "Producentom drzwi wejściowych",
+        "text": "Gotowa okleina MDF do kompletacji drzwi — bez potrzeby utrzymywania własnego działu frezowania i wykończenia."
+      },
+      {
+        "title": "Salonom drzwiowym i dilerom",
+        "text": "Dodatkowy produkt do asortymentu — okleina jako samodzielne rozwiązanie do odświeżenia wyglądu drzwi lub kompletacji nowego zestawu."
+      },
+      {
+        "title": "Deweloperom i wykonawcom",
+        "text": "Dostawy seryjne pod obiekt — mieszkania, aparthotele, biura — z uzgodnionymi parametrami dopasowanymi do harmonogramu projektu."
+      }
+    ],
+    "moreSegmentsTitle": "Współpracujemy też z:",
+    "moreSegments": ["Fabrykami mebli", "Projektantami i architektami", "Firmami montażowymi", "Klientami indywidualnymi"],
+    "offerTitle": "Co oferujemy",
+    "offerText": "Produkujemy okleiny MDF o grubości 10 mm do metalowych drzwi wejściowych we własnej produkcji w Połtawie. Konkretne wymiary, dekor i warunki dostawy omawiamy indywidualnie pod Twój projekt — zostaw zgłoszenie, a menedżer prześle aktualny katalog kolorów i wycenę.",
+    "formSizes": "Wymiary okleiny (Sz×W)",
+    "formQuantity": "Ilość, szt.",
+    "formCoating": "Preferencje co do dekoru/koloru",
+    "ctaTitle": "Zostaw zgłoszenie na okleiny MDF",
+    "ctaText": "Podaj wymiary, ilość i preferencje co do dekoru — wyślemy aktualny katalog i ofertę handlową."
   }
 }

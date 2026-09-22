@@ -18,6 +18,7 @@ const paths = [
   "/3d-prymirka-dverei",
   "/export",
   "/derzhavnym-zakladam",
+  "/mdf-nakladky",
   "/oplata-dostavka",
   "/servis",
   "/garantiya",
