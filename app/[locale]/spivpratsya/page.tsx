@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Locale } from "@/lib/i18n";
 import Tabs from "@/components/Tabs";
 import ContactCta from "@/components/ContactCta";
+import RelatedLinks from "@/components/RelatedLinks";
 import Counter from "@/components/Counter";
 import ProductCard from "@/components/ProductCard";
 import { getDictionary } from "@/lib/dictionary";
@@ -264,6 +265,12 @@ export default async function SpivpratsyaPage({
         </div>
       </section>
 
+      <RelatedLinks
+        locale={params.locale}
+        title={c.relatedTitle}
+        links={c.nav.filter((n) => ["/mdf-nakladky", "/dlya-zabudovnykiv", "/derzhavnym-zakladam"].includes(n.href))}
+      />
+
       <ContactCta
         title={t.ctaTitle}
         text={t.ctaText}
@@ -284,14 +291,6 @@ export default async function SpivpratsyaPage({
           { placeholder: t.formMessage },
         ]}
       />
-
-      {params.locale === "ua" && (
-        <p className="mx-auto max-w-5xl px-4 pb-6 text-center text-xs text-navy-dim/50">
-          <Link href="/partnership" className="hover:text-navy-dim">
-            Детальніше про партнерську програму IN WOOD
-          </Link>
-        </p>
-      )}
     </>
   );
 }

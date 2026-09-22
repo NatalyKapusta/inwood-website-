@@ -6,6 +6,7 @@ import ContactCta from "@/components/ContactCta";
 import LineColorPreview from "@/components/LineColorPreview";
 import ConstructionDiagram from "@/components/ConstructionDiagram";
 import DoorFit3dBanner from "@/components/DoorFit3dBanner";
+import RelatedLinks from "@/components/RelatedLinks";
 
 // Яку модель показувати як приклад у картці колекції на цій сторінці —
 // за замовчуванням береться перша модель колекції, тут навмисний вибір.
@@ -85,6 +86,12 @@ export default async function CharacteristicsPage({
           cta={dict.spivpratsya.doorFitCta}
         />
       </section>
+
+      <RelatedLinks
+        locale={params.locale}
+        title={c.relatedTitle}
+        links={c.nav.filter((n) => ["/catalog", "/mdf-nakladky"].includes(n.href))}
+      />
 
       <ContactCta
         title={t.ctaTitle}
