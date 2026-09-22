@@ -1147,6 +1147,29 @@
     "formQuantity": "Quantity, pcs",
     "formCoating": "Finish/colour preferences",
     "ctaTitle": "Request MDF Door Facings",
-    "ctaText": "Tell us the sizes, quantity and finish preferences — we'll send the current catalogue and a commercial offer."
+    "ctaText": "Tell us the sizes, quantity and finish preferences — we'll send the current catalogue and a commercial offer.",
+    "faqTitle": "Questions About MDF Door Facings",
+    "faq": [
+      {
+        "q": "How thick is an IN WOOD MDF door facing?",
+        "a": "10 mm — the standard thickness for our MDF facings for metal entrance doors."
+      },
+      {
+        "q": "Which doors does the MDF facing fit?",
+        "a": "Metal entrance doors — for apartments, houses and offices."
+      },
+      {
+        "q": "Does IN WOOD manufacture the facings, or is it a reseller?",
+        "a": "IN WOOD manufactures the facings at its own production facility in Poltava, with no intermediaries."
+      },
+      {
+        "q": "Can I order MDF facings in wholesale batches?",
+        "a": "Yes, we work with door factories, dealers and developers on wholesale terms — volume and pricing are discussed individually."
+      },
+      {
+        "q": "How do I order an MDF facing for my project?",
+        "a": "Leave a request on the site with sizes, quantity and finish preferences — our manager will get in touch with a quote."
+      }
+    ]
   }
 }

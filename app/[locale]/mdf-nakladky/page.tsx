@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
-import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
+import { buildMetadata, breadcrumbJsonLd, faqPageJsonLd } from "@/lib/seo";
 import ContactCta from "@/components/ContactCta";
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
@@ -42,6 +42,11 @@ export default async function MdfNakladkyPage({
             )
           ),
         }}
+      />
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageJsonLd(t.faq)) }}
       />
 
       <section className="bg-navy-dark py-16 text-center text-white sm:py-24">
@@ -96,6 +101,23 @@ export default async function MdfNakladkyPage({
       <section className="mx-auto max-w-3xl px-4 py-16 text-center sm:py-24">
         <h2 className="font-serif text-2xl font-bold text-navy-dark sm:text-3xl">{t.offerTitle}</h2>
         <p className="mt-4 text-navy-dim">{t.offerText}</p>
+      </section>
+
+      <section className="mx-auto max-w-3xl px-4 pb-16 sm:pb-24">
+        <h2 className="text-center font-serif text-2xl font-bold text-navy-dark sm:text-3xl">
+          {t.faqTitle}
+        </h2>
+        <div className="mt-8 divide-y divide-navy-dim/10 overflow-hidden rounded-xl bg-panel shadow-sm">
+          {t.faq.map((item) => (
+            <details key={item.q} className="group p-5">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-serif text-base font-bold text-navy-dark marker:content-none">
+                {item.q}
+                <span className="shrink-0 text-xl text-gold-dim transition group-open:rotate-45">+</span>
+              </summary>
+              <p className="mt-3 text-sm text-navy-dim">{item.a}</p>
+            </details>
+          ))}
+        </div>
       </section>
 
       <ContactCta

@@ -1184,6 +1184,29 @@
     "formQuantity": "Ilość, szt.",
     "formCoating": "Preferencje co do dekoru/koloru",
     "ctaTitle": "Zostaw zgłoszenie na okleiny MDF",
-    "ctaText": "Podaj wymiary, ilość i preferencje co do dekoru — wyślemy aktualny katalog i ofertę handlową."
+    "ctaText": "Podaj wymiary, ilość i preferencje co do dekoru — wyślemy aktualny katalog i ofertę handlową.",
+    "faqTitle": "Pytania o okleiny MDF",
+    "faq": [
+      {
+        "q": "Jaka jest grubość okleiny MDF IN WOOD?",
+        "a": "10 mm — standardowa grubość okleiny do metalowych drzwi wejściowych w naszej produkcji."
+      },
+      {
+        "q": "Do jakich drzwi pasuje okleina MDF?",
+        "a": "Do metalowych drzwi wejściowych — do mieszkań, domów i biur."
+      },
+      {
+        "q": "Czy IN WOOD produkuje okleiny samodzielnie, czy jest pośrednikiem?",
+        "a": "IN WOOD produkuje okleiny we własnej fabryce w Połtawie, bez pośredników."
+      },
+      {
+        "q": "Czy można zamówić okleiny MDF partią hurtową?",
+        "a": "Tak, współpracujemy z fabrykami drzwi, dilerami i deweloperami na warunkach hurtowych — ilość i wycenę ustalamy indywidualnie."
+      },
+      {
+        "q": "Jak zamówić okleinę MDF pod swój projekt?",
+        "a": "Zostaw zgłoszenie na stronie z wymiarami, ilością i preferencjami dekoru — menedżer skontaktuje się z wyceną."
+      }
+    ]
   }
 }
