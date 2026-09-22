@@ -294,7 +294,7 @@ const uaPosts: BlogPost[] = [
     slug: "yak-pidibraty-kolir-dverei-pid-pidlohu",
     title: "Як підібрати колір дверей під підлогу та меблі",
     excerpt:
-      "Двері — це велика вертикальна площина, яка або зв'язує інтер'єр, або спорить із ним. Розбираємо прості правила поєднання кольору дверей із підлогою, стінами й меблями.",
+      "Двері — велика вертикальна площина, яка або зв'язує інтер'єр, або спорить із ним. Правила поєднання кольору дверей із підлогою, стінами й меблями.",
     blocks: [
       {
         type: "p",
@@ -339,7 +339,7 @@ const uaPosts: BlogPost[] = [
     slug: "trendy-mizhkimnatnykh-dverei-2026",
     title: "Тренди міжкімнатних дверей 2026: що обрати для сучасного інтер'єру",
     excerpt:
-      "Прихований монтаж, темні акценти, натуральні текстури каменю й дерева, високі полотна — розбираємо головні тренди 2026 року і показуємо, які моделі з асортименту IN WOOD їм вже відповідають.",
+      "Прихований монтаж, темні акценти, натуральні текстури каменю й дерева, високі полотна — головні тренди 2026 і моделі IN WOOD, що їм відповідають.",
     blocks: [
       {
         type: "p",
@@ -440,7 +440,7 @@ const ruPosts: BlogPost[] = [
     slug: "yak-obraty-mizhkimnatni-dveri",
     title: "Как выбрать межкомнатные двери: что лучше — крашеные, ПВХ, скрытые или фрезерованные?",
     excerpt:
-      "Разбираем покрытие, конструкцию и монтаж межкомнатных дверей по порядку — так, как это делает консультант в салоне, когда действительно хочет помочь, а не просто продать.",
+      "Разбираем покрытие, конструкцию и монтаж межкомнатных дверей по порядку — как консультант в салоне, когда действительно хочет помочь, а не продать.",
     blocks: [
       {
         type: "p",
@@ -714,7 +714,7 @@ const ruPosts: BlogPost[] = [
     slug: "yak-pidibraty-kolir-dverei-pid-pidlohu",
     title: "Как подобрать цвет дверей под пол и мебель",
     excerpt:
-      "Двери — это большая вертикальная плоскость, которая либо связывает интерьер, либо спорит с ним. Разбираем простые правила сочетания цвета дверей с полом, стенами и мебелью.",
+      "Двери — большая вертикальная плоскость, которая либо связывает интерьер, либо спорит с ним. Правила сочетания цвета дверей с полом, стенами и мебелью.",
     blocks: [
       {
         type: "p",
@@ -759,7 +759,7 @@ const ruPosts: BlogPost[] = [
     slug: "trendy-mizhkimnatnykh-dverei-2026",
     title: "Тренды межкомнатных дверей 2026: что выбрать для современного интерьера",
     excerpt:
-      "Скрытый монтаж, тёмные акценты, натуральные текстуры камня и дерева, высокие полотна — разбираем главные тренды 2026 года и показываем, какие модели из ассортимента IN WOOD им уже соответствуют.",
+      "Скрытый монтаж, тёмные акценты, натуральные текстуры камня и дерева, высокие полотна — главные тренды 2026 и модели IN WOOD, которые им соответствуют.",
     blocks: [
       {
         type: "p",
@@ -1134,7 +1134,7 @@ const enPosts: BlogPost[] = [
     slug: "yak-pidibraty-kolir-dverei-pid-pidlohu",
     title: "How to Match Door Colour with Flooring and Furniture",
     excerpt:
-      "A door is one of the largest vertical surfaces in a room — it either ties an interior together or fights with it. Simple rules for matching door colour to flooring, walls and furniture.",
+      "A door is one of the largest vertical surfaces in a room, tying the interior together or fighting it. Rules for matching door colour to flooring, walls, furniture.",
     blocks: [
       {
         type: "p",
@@ -1179,7 +1179,7 @@ const enPosts: BlogPost[] = [
     slug: "trendy-mizhkimnatnykh-dverei-2026",
     title: "Interior door trends 2026: what to choose for a modern interior",
     excerpt:
-      "Flush installation, dark accents, natural stone and wood textures, tall leaves — the leading 2026 interior door trends, matched with real models from the IN WOOD range.",
+      "Flush installation, dark accents, natural stone and wood textures, tall leaves — the leading 2026 door trends and matching IN WOOD models.",
     blocks: [
       {
         type: "p",
@@ -1599,7 +1599,7 @@ const plPosts: BlogPost[] = [
     slug: "trendy-mizhkimnatnykh-dverei-2026",
     title: "Trendy drzwi wewnętrznych 2026: co wybrać do nowoczesnego wnętrza",
     excerpt:
-      "Montaż ukryty, ciemne akcenty, naturalne tekstury kamienia i drewna, wysokie skrzydła — omawiamy główne trendy 2026 roku i pokazujemy, które modele z oferty IN WOOD już im odpowiadają.",
+      "Montaż ukryty, ciemne akcenty, naturalne tekstury kamienia i drewna, wysokie skrzydła — główne trendy 2026 i modele IN WOOD, które im odpowiadają.",
     blocks: [
       {
         type: "p",

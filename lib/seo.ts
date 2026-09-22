@@ -210,24 +210,31 @@ export function productListJsonLd({
 }) {
   const catalogUrl = `${SITE_URL}/${locale}/catalog`;
   const products = sections.flatMap(({ id, data }) => {
-    const fromModels = (data.models ?? []).map((model) => ({
-      "@type": "Product" as const,
-      name: `${data.label} ${model.code}`,
-      image: model.colors[0] ? `${SITE_URL}${model.colors[0].image}` : undefined,
-      url: `${catalogUrl}#${id}`,
-      brand: { "@type": "Brand", name: "IN WOOD" },
-      ...(pricesVisible
-        ? {
-            offers: {
-              "@type": "Offer",
-              price: model.basePrice,
-              priceCurrency: "UAH",
-              availability: "https://schema.org/InStock",
-              url: `${catalogUrl}#${id}`,
-            },
-          }
-        : {}),
-    }));
+    const fromModels = (data.models ?? []).map((model) => {
+      // Той самий формат id, що й anchorId картки товару в
+      // components/CatalogFilter.tsx ("<collectionId>-<modelCode>") —
+      // щоб посилання в структурованих даних вели на конкретну модель,
+      // а не просто на початок секції колекції.
+      const anchor = `${catalogUrl}#${id}-${model.code}`;
+      return {
+        "@type": "Product" as const,
+        name: `${data.label} ${model.code}`,
+        image: model.colors[0] ? `${SITE_URL}${model.colors[0].image}` : undefined,
+        url: anchor,
+        brand: { "@type": "Brand", name: "IN WOOD" },
+        ...(pricesVisible
+          ? {
+              offers: {
+                "@type": "Offer",
+                price: model.basePrice,
+                priceCurrency: "UAH",
+                availability: "https://schema.org/InStock",
+                url: anchor,
+              },
+            }
+          : {}),
+      };
+    });
     const fromVariants = (data.variants ?? []).map((variant) => ({
       "@type": "Product" as const,
       name: `${data.label} — ${variant.label}`,
