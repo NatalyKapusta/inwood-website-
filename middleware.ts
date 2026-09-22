@@ -34,16 +34,19 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
+  // ТИМЧАСОВО ВИМКНЕНО (Наталія перевіряє, чи саме блок Росії пов'язаний
+  // зі зниженням трафіку) — щоб повернути, розкоментувати блок нижче.
+  //
   // Блокуємо відвідувачів з росії за геолокацією IP. Це не стовідсотковий
   // захист (VPN обходить), але відсікає пряме відвідування. Якщо хостинг
   // не віддає geo (локальна розробка, деякі середовища) — request.geo
   // буде undefined, і ми нікого не блокуємо (fail open, а не fail closed).
-  if (request.geo?.country === "RU") {
-    return new NextResponse(BLOCKED_HTML, {
-      status: 403,
-      headers: { "Content-Type": "text/html; charset=utf-8" },
-    });
-  }
+  // if (request.geo?.country === "RU") {
+  //   return new NextResponse(BLOCKED_HTML, {
+  //     status: 403,
+  //     headers: { "Content-Type": "text/html; charset=utf-8" },
+  //   });
+  // }
 
   // Рекламний піддомен partnership.inwood.com.ua лили платним трафіком по
   // дилерству; рекламу зняли, а сама сторінка /partnership дублювала
