@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 import { locales, defaultLocale } from "./lib/i18n";
 import { resolveLegacyRedirect } from "./lib/legacyRedirects";
+import { SITE_URL } from "./lib/seo";
 
 function getLocaleFromPath(pathname: string) {
   return locales.find(
@@ -44,26 +45,13 @@ export async function middleware(request: NextRequest) {
     });
   }
 
-  // Рекламний піддомен partnership.inwood.com.ua — на нього ллють платний
-  // трафік по дилерству. Віддаємо звідти окрему (поза [locale]) сторінку
-  // /partnership — rewrite, адреса в браузері лишається
-  // partnership.inwood.com.ua — і ховаємо від індексації, щоб вона не
-  // спорила з рештою сайту в пошуку.
+  // Рекламний піддомен partnership.inwood.com.ua лили платним трафіком по
+  // дилерству; рекламу зняли, а сама сторінка /partnership дублювала
+  // /spivpratsya майже дослівно — тому піддомен більше не рендерить
+  // окрему сторінку, а веде на основний сайт.
   const hostname = request.headers.get("host") ?? "";
   if (hostname.startsWith("partnership.")) {
-    const url = request.nextUrl.clone();
-    // Форми на сторінці редіректять на абсолютний "/partnership?sent=..."
-    // (той самий шлях, що й на inwood.com.ua/partnership) — якщо тут
-    // додати префікс і до вже префіксованого шляху, вийде неіснуючий
-    // /partnership/partnership. Додаємо префікс лише коли його ще нема.
-    url.pathname = pathname.startsWith("/partnership")
-      ? pathname
-      : pathname === "/"
-      ? "/partnership"
-      : `/partnership${pathname}`;
-    const rewritten = NextResponse.rewrite(url);
-    rewritten.headers.set("X-Robots-Tag", "noindex, nofollow");
-    return rewritten;
+    return NextResponse.redirect(new URL("/ua/spivpratsya", SITE_URL), 301);
   }
 
   // Редіректи зі старого сайту inwood.com.ua — перевіряємо ПЕРШИМ, до
@@ -79,17 +67,15 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(url, 301);
   }
 
-  // Закритий B2B-портал і рекламний лендинг партнерства — без мовного
-  // префікса, живуть поза [locale]
+  // Закритий B2B-портал — без мовного префікса, живе поза [locale]
   const isPortalRoute = pathname === "/portal" || pathname.startsWith("/portal/");
-  const isPartnershipRoute = pathname === "/partnership" || pathname.startsWith("/partnership/");
 
   // Немає мовного префікса — редірект на дефолтну локаль (ua).
   // 308 (постійний) — не 307 (тимчасовий, дефолт NextResponse.redirect) —
   // інакше Google не консолідує сигнали на /ua і продовжує вважати
   // канонічною сторінкою корінь домену "/" (саме це й було в Search Console:
   // "Google вибрала іншу канонічну сторінку" для https://inwood.com.ua/ua).
-  if (!isPortalRoute && !isPartnershipRoute && !getLocaleFromPath(pathname)) {
+  if (!isPortalRoute && !getLocaleFromPath(pathname)) {
     const url = request.nextUrl.clone();
     url.pathname = `/${defaultLocale}${pathname === "/" ? "" : pathname}`;
     return NextResponse.redirect(url, 308);

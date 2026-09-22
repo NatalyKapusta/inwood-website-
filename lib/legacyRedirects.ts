@@ -102,6 +102,11 @@ export const LEGACY_EXACT_REDIRECTS: Record<string, string> = {
   "/ru/dveri-bolhrad": "/ru/nashi-dileri/bolhrad",
   "/ru/dveri-kamianets-podilskyi": "/ru/nashi-dileri/kamianets-podilskyi",
   "/ru/dveri-kremenchuk": "/ru/nashi-dileri/kremenchuk",
+
+  // ---- Не зі старого сайту: рекламний лендинг /partnership, знятий з
+  // реклами й переведений на основну сторінку співпраці — дублював її
+  // майже дослівно, а без реклами вже тільки конкурував з нею в пошуку.
+  "/partnership": "/ua/spivpratsya",
 };
 
 // Старий інтернет-магазин (/shop/...) — 339 URL (13 категорій + 99 товарів,
