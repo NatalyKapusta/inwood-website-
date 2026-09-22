@@ -6,6 +6,7 @@ import { HARDWARE_BRAND_ORDER } from "@/lib/quote";
 import { HARDWARE_CATEGORY_ORDER, getPublicHardware } from "@/lib/publicShop";
 import ContactCta from "@/components/ContactCta";
 import FurnituraHardware from "@/components/FurnituraHardware";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 // Дані фурнітури живуть у Supabase (не в products.json).
 // lib/publicShop.ts читає їх публічним клієнтом (не чіпає cookies()), тому
@@ -36,6 +37,10 @@ export default async function FurnituraPage({
   const catalogT = dict.catalog;
 
   const hardwareItems = await getPublicHardware();
+  const breadcrumbItems = [
+    { name: c.breadcrumbHome, path: "" },
+    { name: t.heading, path: "/furnitura" },
+  ];
 
   return (
     <>
@@ -43,17 +48,10 @@ export default async function FurnituraPage({
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            breadcrumbJsonLd(
-              [
-                { name: c.breadcrumbHome, path: "" },
-                { name: t.heading, path: "/furnitura" },
-              ],
-              params.locale
-            )
-          ),
+          __html: JSON.stringify(breadcrumbJsonLd(breadcrumbItems, params.locale)),
         }}
       />
+      <Breadcrumbs items={breadcrumbItems} locale={params.locale} />
       <div className="mx-auto max-w-7xl px-4 py-16 sm:py-24">
         <div className="text-center">
           <p className="text-sm uppercase tracking-wide text-gold-dim">{t.kicker}</p>

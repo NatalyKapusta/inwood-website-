@@ -3,6 +3,7 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import ContactCta from "@/components/ContactCta";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
@@ -26,6 +27,10 @@ export default async function ExportPage({
   const t = dict.export;
   const s = dict.spivpratsya;
   const c = dict.common;
+  const breadcrumbItems = [
+    { name: c.breadcrumbHome, path: "" },
+    { name: t.heading, path: "/export" },
+  ];
 
   return (
     <>
@@ -33,17 +38,10 @@ export default async function ExportPage({
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            breadcrumbJsonLd(
-              [
-                { name: c.breadcrumbHome, path: "" },
-                { name: t.heading, path: "/export" },
-              ],
-              params.locale
-            )
-          ),
+          __html: JSON.stringify(breadcrumbJsonLd(breadcrumbItems, params.locale)),
         }}
       />
+      <Breadcrumbs items={breadcrumbItems} locale={params.locale} />
 
       <section className="bg-navy-dark py-16 text-center text-white sm:py-24">
         <div className="mx-auto max-w-3xl px-4">

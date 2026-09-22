@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, type Locale } from "@/lib/i18n";
+import { locales, defaultLocale, type Locale } from "@/lib/i18n";
 import type { Collection } from "@/lib/products";
 
 // Готово до перенесення на inwood.com.ua — сайт весь час посилається сюди
@@ -38,9 +38,10 @@ export function buildMetadata({
   image?: string;
 }): Metadata {
   const url = `${SITE_URL}/${locale}${path}`;
-  const languages = Object.fromEntries(
-    locales.map((l) => [hreflang[l], `${SITE_URL}/${l}${path}`])
-  );
+  const languages = {
+    ...Object.fromEntries(locales.map((l) => [hreflang[l], `${SITE_URL}/${l}${path}`])),
+    "x-default": `${SITE_URL}/${defaultLocale}${path}`,
+  };
   const ogImage = image ?? `${SITE_URL}/og-image.jpg`;
 
   return {

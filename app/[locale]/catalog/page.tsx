@@ -7,6 +7,7 @@ import { getPublicPogonazhni, getPublicPlintus, getPublicNakladka } from "@/lib/
 import { catalogCategories, catalogCategorySlugs, type CatalogCategorySlug } from "@/lib/catalogCategories";
 import CatalogFilter from "@/components/CatalogFilter";
 import DoorFit3dBanner from "@/components/DoorFit3dBanner";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import Link from "next/link";
 
 // Сторінка кешується статично, але раз на хвилину перевіряє
@@ -118,6 +119,10 @@ export default async function CatalogPage({
     params.locale === "en" || params.locale === "pl"
       ? "/documents/catalog-en.pdf"
       : "/documents/catalog-ua.pdf";
+  const breadcrumbItems = [
+    { name: dict.common.breadcrumbHome, path: "" },
+    { name: t.heading, path: "/catalog" },
+  ];
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-16 sm:py-24">
@@ -134,17 +139,10 @@ export default async function CatalogPage({
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            breadcrumbJsonLd(
-              [
-                { name: dict.common.breadcrumbHome, path: "" },
-                { name: t.heading, path: "/catalog" },
-              ],
-              params.locale
-            )
-          ),
+          __html: JSON.stringify(breadcrumbJsonLd(breadcrumbItems, params.locale)),
         }}
       />
+      <Breadcrumbs items={breadcrumbItems} locale={params.locale} />
       <div className="text-center">
         <h1 className="font-serif text-3xl font-bold text-navy-dark sm:text-4xl">
           {t.heading}

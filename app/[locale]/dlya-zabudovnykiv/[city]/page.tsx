@@ -10,6 +10,7 @@ import {
   getRecruitCityInPhrase,
 } from "@/lib/recruitCities";
 import ContactCta from "@/components/ContactCta";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export function generateStaticParams() {
   return locales.flatMap((locale) => RECRUIT_CITIES.map((c) => ({ locale, city: c.slug })));
@@ -51,6 +52,11 @@ export default async function DlyaZabudovnykivCityPage({
   const c = dict.common;
   const cityName = getRecruitCityDisplayName(found, params.locale);
   const inCityPhrase = getRecruitCityInPhrase(found, params.locale);
+  const breadcrumbItems = [
+    { name: c.breadcrumbHome, path: "" },
+    { name: t.heading, path: "/dlya-zabudovnykiv" },
+    { name: cityName, path: `/dlya-zabudovnykiv/${params.city}` },
+  ];
 
   return (
     <>
@@ -58,18 +64,10 @@ export default async function DlyaZabudovnykivCityPage({
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            breadcrumbJsonLd(
-              [
-                { name: c.breadcrumbHome, path: "" },
-                { name: t.heading, path: "/dlya-zabudovnykiv" },
-                { name: cityName, path: `/dlya-zabudovnykiv/${params.city}` },
-              ],
-              params.locale
-            )
-          ),
+          __html: JSON.stringify(breadcrumbJsonLd(breadcrumbItems, params.locale)),
         }}
       />
+      <Breadcrumbs items={breadcrumbItems} locale={params.locale} />
 
       <section className="bg-navy-dark py-16 text-center text-white sm:py-24">
         <div className="mx-auto max-w-3xl px-4">

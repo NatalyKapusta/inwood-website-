@@ -10,6 +10,7 @@ import { submitLead } from "@/app/actions/lead";
 import LeadConversionTracker from "@/components/LeadConversionTracker";
 import SentModal from "@/components/SentModal";
 import Honeypot from "@/components/Honeypot";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const FEATURE_ICONS = [
   // Консультація та підтримка
@@ -54,6 +55,10 @@ export default async function KontaktyPage({
   const t = dict.kontakty;
   const c = dict.common;
   const sent = searchParams.sent === "1";
+  const breadcrumbItems = [
+    { name: c.breadcrumbHome, path: "" },
+    { name: t.heading, path: "/kontakty" },
+  ];
 
   return (
     <>
@@ -61,17 +66,10 @@ export default async function KontaktyPage({
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            breadcrumbJsonLd(
-              [
-                { name: c.breadcrumbHome, path: "" },
-                { name: t.heading, path: "/kontakty" },
-              ],
-              params.locale
-            )
-          ),
+          __html: JSON.stringify(breadcrumbJsonLd(breadcrumbItems, params.locale)),
         }}
       />
+      <Breadcrumbs items={breadcrumbItems} locale={params.locale} />
       <section className="bg-navy-dark text-white">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>

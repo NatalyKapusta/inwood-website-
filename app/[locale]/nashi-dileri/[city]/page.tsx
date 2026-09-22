@@ -5,6 +5,7 @@ import { buildMetadata, breadcrumbJsonLd, dealerListJsonLd } from "@/lib/seo";
 import dealers from "@/data/dealers.json";
 import { getCitiesWithDealers, getCityDisplayName } from "@/lib/dealers";
 import { locales } from "@/lib/i18n";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export function generateStaticParams() {
   const cities = getCitiesWithDealers(dealers);
@@ -46,6 +47,11 @@ export default async function DealerCityPage({
   const t = dict.nashiDileri;
   const c = dict.common;
   const cityName = getCityDisplayName(found.city, params.locale);
+  const breadcrumbItems = [
+    { name: c.breadcrumbHome, path: "" },
+    { name: t.heading, path: "/nashi-dileri" },
+    { name: cityName, path: `/nashi-dileri/${params.city}` },
+  ];
 
   return (
     <>
@@ -53,16 +59,7 @@ export default async function DealerCityPage({
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            breadcrumbJsonLd(
-              [
-                { name: c.breadcrumbHome, path: "" },
-                { name: t.heading, path: "/nashi-dileri" },
-                { name: cityName, path: `/nashi-dileri/${params.city}` },
-              ],
-              params.locale
-            )
-          ),
+          __html: JSON.stringify(breadcrumbJsonLd(breadcrumbItems, params.locale)),
         }}
       />
       <script
@@ -72,6 +69,7 @@ export default async function DealerCityPage({
           __html: JSON.stringify(dealerListJsonLd({ dealers: found.dealers, cityName })),
         }}
       />
+      <Breadcrumbs items={breadcrumbItems} locale={params.locale} />
       <section className="mx-auto max-w-4xl px-4 py-16 sm:py-24">
         <Link
           href={`/${params.locale}/nashi-dileri`}
