@@ -17,6 +17,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import RichText from "@/components/RichText";
 import SpecsTable from "@/components/SpecsTable";
 import ContactCta from "@/components/ContactCta";
+import HardwareCrossSell from "@/components/HardwareCrossSell";
 
 // Дані (видимість цін) читаються з Supabase публічним клієнтом (без
 // cookies()) — сторінка лишається статичною/ISR, але оновлюється частіше,
@@ -133,6 +134,22 @@ export default async function CollectionPage({
         </div>
       </section>
 
+      {/* "Приховані двері" тимчасово без блоку: медіана по загальній категорії
+          "Завіси" підставила б звичайні петлі, а не приховані/магнітні —
+          питання підбору позицій для цієї сторінки лишається відкритим. */}
+      {params.collection !== "pryhovani-dveri" && (
+        <HardwareCrossSell
+          locale={params.locale}
+          heading={dict.hardwareCrossSell.heading}
+          intro={dict.hardwareCrossSell.intro}
+          cardLabels={dict.hardwareCrossSell.cardLabels}
+          linkLabel={dict.hardwareCrossSell.linkLabel}
+          noPhotoLabel={dict.furnitura.noPhoto}
+          addToCartLabel={c.addToCart}
+          addedToCartLabel={c.addedToCart}
+        />
+      )}
+
       <ContactCta
         title={dict.poltava.ctaTitle}
         text={dict.poltava.ctaText}
@@ -192,6 +209,17 @@ async function ThematicPage({
       <section className="mx-auto max-w-3xl px-4 pb-16">
         <SpecsTable title={cp.specsTitle} rows={item.specs} />
       </section>
+
+      <HardwareCrossSell
+        locale={params.locale}
+        heading={dict.hardwareCrossSell.heading}
+        intro={dict.hardwareCrossSell.intro}
+        cardLabels={dict.hardwareCrossSell.cardLabels}
+        linkLabel={dict.hardwareCrossSell.linkLabel}
+        noPhotoLabel={dict.furnitura.noPhoto}
+        addToCartLabel={c.addToCart}
+        addedToCartLabel={c.addedToCart}
+      />
 
       <ContactCta
         title={dict.poltava.ctaTitle}

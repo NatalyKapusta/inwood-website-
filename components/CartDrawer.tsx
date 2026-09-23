@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useCart } from "@/components/CartContext";
 import PhoneInput from "@/components/PhoneInput";
@@ -51,10 +51,28 @@ export default function CartDrawer({
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState(false);
+  const beginCheckoutTracked = useRef(false);
+
+  const total = items.reduce((sum, i) => sum + (i.price ?? 0) * i.qty, 0);
+
+  // "Оформлення" в цьому кошику — це саме відкриття кошика з товарами
+  // (окремої сторінки чекауту немає), тож begin_checkout трекаємо тут, а
+  // не по кліку в формі. Скидаємо прапорець при закритті — повторне
+  // відкриття вважаємо новою спробою оформлення.
+  useEffect(() => {
+    if (open && items.length > 0 && !beginCheckoutTracked.current) {
+      beginCheckoutTracked.current = true;
+      trackEvent("begin_checkout", {
+        value: total,
+        items: items.map((i) => ({ item_id: i.id, item_name: i.label, price: i.price, quantity: i.qty })),
+      });
+    }
+    if (!open) beginCheckoutTracked.current = false;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open]);
 
   if (!open) return null;
 
-  const total = items.reduce((sum, i) => sum + (i.price ?? 0) * i.qty, 0);
   const hasUnknownPrice = items.some((i) => i.price == null);
 
   async function sendInquiry(e: React.FormEvent) {
@@ -72,6 +90,11 @@ export default function CartDrawer({
       if (data.ok) {
         setSent(true);
         trackEvent("generate_lead", { form_source: "Кошик — сайт" });
+        trackEvent("purchase", {
+          transaction_id: `lead-${Date.now()}`,
+          value: total,
+          items: items.map((i) => ({ item_id: i.id, item_name: i.label, price: i.price, quantity: i.qty })),
+        });
         clear();
       } else setError(true);
     } catch {

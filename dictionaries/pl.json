@@ -1203,6 +1203,17 @@
     "relatedPostsTitle": "Czytaj również",
     "browseCatalog": "Zobacz katalog drzwi IN WOOD"
   },
+  "hardwareCrossSell": {
+    "heading": "Wszystko do drzwi w jednym zamówieniu",
+    "intro": "Klamka, zawiasy, zamek i odbojnik — wszystko, czego potrzeba do montażu, jest u nas. Drzwi przyjeżdżają z zamontowanymi okuciami, gotowe do instalacji: nie trzeba szukać po sklepach ani zgadywać, czy pasuje.",
+    "cardLabels": {
+      "ruchky": "Klamka",
+      "zavisy": "Zawiasy",
+      "mekhanizmy": "Mechanizm zamka",
+      "upory": "Odbojnik"
+    },
+    "linkLabel": "Wszystkie okucia i akcesoria →"
+  },
   "galereya": {
     "title": "Drzwi IN WOOD we wnętrzach — galeria zdjęć",
     "heading": "Drzwi IN WOOD we wnętrzach",

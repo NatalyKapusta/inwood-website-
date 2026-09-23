@@ -8,6 +8,7 @@ export default function AddToCartButton({
   id,
   label,
   price,
+  category,
   addLabel,
   addedLabel,
   className,
@@ -15,6 +16,7 @@ export default function AddToCartButton({
   id: string;
   label: string;
   price: number | null;
+  category?: string;
   addLabel: string;
   addedLabel: string;
   className?: string;
@@ -24,7 +26,12 @@ export default function AddToCartButton({
 
   function handleClick() {
     addItem({ id, label, price });
-    trackEvent("add_to_cart", { item_name: label });
+    trackEvent("add_to_cart", {
+      item_id: id,
+      item_name: label,
+      price,
+      ...(category ? { item_category: category } : {}),
+    });
     setJustAdded(true);
     setTimeout(() => setJustAdded(false), 1200);
   }

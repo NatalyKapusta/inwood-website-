@@ -9,6 +9,7 @@ import { COLLECTION_PAGE_SLUGS, THEMATIC_PAGE_SLUGS } from "@/lib/collectionPage
 import CatalogFilter from "@/components/CatalogFilter";
 import CategoryBanner from "@/components/CategoryBanner";
 import DoorFit3dBanner from "@/components/DoorFit3dBanner";
+import HardwareCrossSell from "@/components/HardwareCrossSell";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Link from "next/link";
 
@@ -193,14 +194,16 @@ export default async function CatalogPage({ params }: { params: { locale: Locale
         />
       </div>
 
-      <div className="mt-12 text-center">
-        <Link
-          href={`/${params.locale}/furnitura`}
-          className="inline-flex items-center gap-2 rounded-full border border-gold-dim/40 px-6 py-3 text-sm font-semibold text-navy-dark transition hover:border-gold hover:text-gold-dim"
-        >
-          {dict.furnitura.heading} →
-        </Link>
-      </div>
+      <HardwareCrossSell
+        locale={params.locale}
+        heading={dict.hardwareCrossSell.heading}
+        intro={dict.hardwareCrossSell.intro}
+        cardLabels={dict.hardwareCrossSell.cardLabels}
+        linkLabel={dict.hardwareCrossSell.linkLabel}
+        noPhotoLabel={dict.furnitura.noPhoto}
+        addToCartLabel={dict.common.addToCart}
+        addedToCartLabel={dict.common.addedToCart}
+      />
 
       <div className="mt-6 text-center">
         <Link href={`/${params.locale}/blog`} className="text-sm font-semibold text-gold-dim hover:text-navy-dark">

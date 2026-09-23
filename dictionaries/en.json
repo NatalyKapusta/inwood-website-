@@ -1181,6 +1181,17 @@
     "relatedPostsTitle": "You might also like",
     "browseCatalog": "Browse the IN WOOD door catalog"
   },
+  "hardwareCrossSell": {
+    "heading": "Everything for your doors, in one order",
+    "intro": "Handle, hinges, lock and door stop — everything the installation needs is here. Doors arrive with the hardware already fitted, ready to install: no hunting through shops and no guessing whether it will fit.",
+    "cardLabels": {
+      "ruchky": "Handle",
+      "zavisy": "Hinges",
+      "mekhanizmy": "Lock mechanism",
+      "upory": "Door stop"
+    },
+    "linkLabel": "All hardware and accessories →"
+  },
   "galereya": {
     "title": "IN WOOD doors in real interiors — photo gallery",
     "heading": "IN WOOD doors in real interiors",
