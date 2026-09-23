@@ -10,14 +10,17 @@ import {
   COLLECTION_PAGE_SLUGS,
   COLLECTION_PAGE_TO_ID,
   isCollectionPageSlug,
+  THEMATIC_PAGE_SLUGS,
+  isThematicPageSlug,
 } from "@/lib/collectionPages";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RichText from "@/components/RichText";
 import SpecsTable from "@/components/SpecsTable";
+import ContactCta from "@/components/ContactCta";
 
 export function generateStaticParams() {
   return locales.flatMap((locale) =>
-    COLLECTION_PAGE_SLUGS.map((collection) => ({ locale, collection }))
+    [...COLLECTION_PAGE_SLUGS, ...THEMATIC_PAGE_SLUGS].map((collection) => ({ locale, collection }))
   );
 }
 
@@ -26,22 +29,38 @@ export async function generateMetadata({
 }: {
   params: { locale: Locale; collection: string };
 }) {
-  if (!isCollectionPageSlug(params.collection)) return {};
   const dict = await getDictionary(params.locale);
-  const item = dict.collectionPages.items[params.collection];
-  return buildMetadata({
-    locale: params.locale,
-    path: `/catalog/${params.collection}`,
-    title: item.title,
-    description: item.metaDescription,
-  });
+  if (isCollectionPageSlug(params.collection)) {
+    const item = dict.collectionPages.items[params.collection];
+    return buildMetadata({
+      locale: params.locale,
+      path: `/catalog/${params.collection}`,
+      title: item.title,
+      description: item.metaDescription,
+    });
+  }
+  if (isThematicPageSlug(params.collection)) {
+    const item = dict.catalogThemePages.items[params.collection];
+    return buildMetadata({
+      locale: params.locale,
+      path: `/catalog/${params.collection}`,
+      title: item.title,
+      description: item.metaDescription,
+    });
+  }
+  return {};
 }
 
 export default async function CollectionPage({
   params,
+  searchParams,
 }: {
   params: { locale: Locale; collection: string };
+  searchParams: { sent?: string };
 }) {
+  if (isThematicPageSlug(params.collection)) {
+    return <ThematicPage params={params} searchParams={searchParams} />;
+  }
   if (!isCollectionPageSlug(params.collection)) notFound();
 
   const dict = await getDictionary(params.locale);
@@ -110,6 +129,83 @@ export default async function CollectionPage({
           </div>
         </div>
       </section>
+
+      <ContactCta
+        title={dict.poltava.ctaTitle}
+        text={dict.poltava.ctaText}
+        nameLabel={c.formName}
+        phoneLabel={c.formPhone}
+        submitLabel={c.formSubmit}
+        sentLabel={c.formSentMessage}
+        phoneManualLabel={c.phoneManual}
+        phoneChooseCountryLabel={c.phoneChooseCountry}
+        phoneInvalidLabel={c.phoneInvalid}
+        source={`${item.breadcrumbName} — сторінка колекції`}
+        sent={searchParams.sent === "1"}
+      />
+    </>
+  );
+}
+
+// Тематичні підсторінки (RAL/NCS-фарбування, нестандартні розміри) — не
+// прив'язані до однієї колекції, тому без ItemList-розмітки й без кнопки
+// на конкретний якір /catalog: тільки текст, характеристики й форма.
+async function ThematicPage({
+  params,
+  searchParams,
+}: {
+  params: { locale: Locale; collection: string };
+  searchParams: { sent?: string };
+}) {
+  if (!isThematicPageSlug(params.collection)) notFound();
+
+  const dict = await getDictionary(params.locale);
+  const c = dict.common;
+  const cp = dict.collectionPages;
+  const item = dict.catalogThemePages.items[params.collection];
+
+  const breadcrumbItems = [
+    { name: c.breadcrumbHome, path: "" },
+    { name: cp.breadcrumbSection, path: "/catalog" },
+    { name: item.breadcrumbName, path: `/catalog/${params.collection}` },
+  ];
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbJsonLd(breadcrumbItems, params.locale)),
+        }}
+      />
+      <Breadcrumbs items={breadcrumbItems} locale={params.locale} />
+
+      <section className="mx-auto max-w-3xl px-4 pb-8 pt-6 text-center sm:pt-8">
+        <h1 className="font-serif text-3xl font-bold text-navy-dark sm:text-4xl">{item.h1}</h1>
+      </section>
+
+      <section className="mx-auto max-w-3xl px-4 pb-12">
+        <RichText paragraphs={item.body} locale={params.locale} />
+      </section>
+
+      <section className="mx-auto max-w-3xl px-4 pb-16">
+        <SpecsTable title={cp.specsTitle} rows={item.specs} />
+      </section>
+
+      <ContactCta
+        title={dict.poltava.ctaTitle}
+        text={dict.poltava.ctaText}
+        nameLabel={c.formName}
+        phoneLabel={c.formPhone}
+        submitLabel={c.formSubmit}
+        sentLabel={c.formSentMessage}
+        phoneManualLabel={c.phoneManual}
+        phoneChooseCountryLabel={c.phoneChooseCountry}
+        phoneInvalidLabel={c.phoneInvalid}
+        source={`${item.breadcrumbName} — тематична сторінка`}
+        sent={searchParams.sent === "1"}
+      />
     </>
   );
 }

@@ -3,6 +3,7 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata } from "@/lib/seo";
 import { blogPosts } from "@/data/blog";
+import { COLLECTION_PAGE_SLUGS } from "@/lib/collectionPages";
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
@@ -17,6 +18,7 @@ export async function generateMetadata({ params }: { params: { locale: Locale } 
 export default async function BlogIndexPage({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
   const t = dict.blog;
+  const cp = dict.collectionPages;
   const posts = blogPosts[params.locale];
 
   return (
@@ -36,6 +38,18 @@ export default async function BlogIndexPage({ params }: { params: { locale: Loca
             <h2 className="font-serif text-lg font-bold text-navy-dark">{post.title}</h2>
             <p className="mt-3 flex-1 text-sm text-navy-dim">{post.excerpt}</p>
             <span className="mt-4 text-sm font-semibold text-gold-dim">{t.readMore} →</span>
+          </Link>
+        ))}
+      </div>
+
+      <div className="mt-14 flex flex-wrap items-center justify-center gap-3 border-t border-navy-dim/15 pt-10 text-sm">
+        {COLLECTION_PAGE_SLUGS.map((slug) => (
+          <Link
+            key={slug}
+            href={`/${params.locale}/catalog/${slug}`}
+            className="rounded-full border border-navy-dim/25 px-5 py-2 text-navy-dark transition hover:border-gold hover:text-gold-dim"
+          >
+            {cp.items[slug].breadcrumbName}
           </Link>
         ))}
       </div>

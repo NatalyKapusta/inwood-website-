@@ -8,6 +8,8 @@ import { organizationJsonLd } from "@/lib/seo";
 import { playfairDisplay, manrope } from "@/lib/fonts";
 import KeepinCrmA11yPatch from "@/components/KeepinCrmA11yPatch";
 import DeferredChatWidget from "@/components/DeferredChatWidget";
+import StickyCallButton from "@/components/StickyCallButton";
+import ClickTracking from "@/components/ClickTracking";
 import "@/app/globals.css";
 
 export function generateStaticParams() {
@@ -70,7 +72,7 @@ export default async function LocaleLayout({
               sendFailedRetry: common.sendFailedRetry,
             }}
           />
-          <main>{children}</main>
+          <main className="pb-14 sm:pb-0">{children}</main>
         </CartProvider>
         <Footer
           locale={params.locale}
@@ -88,6 +90,8 @@ export default async function LocaleLayout({
           hoursLabel={common.hoursLabel}
         />
         <DeferredChatWidget />
+        <StickyCallButton phone={common.phone} />
+        <ClickTracking />
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
           strategy="afterInteractive"

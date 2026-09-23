@@ -12,6 +12,7 @@ import YouTubeFacade from "@/components/YouTubeFacade";
 import Honeypot from "@/components/Honeypot";
 import DoorFit3dBanner from "@/components/DoorFit3dBanner";
 import { catalogCategorySlugs } from "@/lib/catalogCategories";
+import { blogPosts } from "@/data/blog";
 
 const playLabels: Record<Locale, string> = {
   ua: "Відтворити відео",
@@ -365,6 +366,24 @@ export default async function HomePage({
               {t.trends2026.readFull} →
             </Link>
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-4 py-16 sm:py-24">
+        <h2 className="text-center font-serif text-2xl font-bold text-navy-dark sm:text-3xl">
+          {t.usefulArticlesTitle}
+        </h2>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {blogPosts[locale].slice(-4).reverse().map((post) => (
+            <Link
+              key={post.slug}
+              href={`/${locale}/blog/${post.slug}`}
+              className="flex flex-col rounded-xl bg-panel-alt p-5 transition hover:shadow-lg"
+            >
+              <h3 className="font-serif text-sm font-bold text-navy-dark">{post.title}</h3>
+              <span className="mt-3 text-xs font-semibold text-gold-dim">{dict.blog.readMore} →</span>
+            </Link>
+          ))}
         </div>
       </section>
 

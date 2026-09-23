@@ -22,3 +22,19 @@ export const COLLECTION_PAGE_TO_ID: Record<CollectionPageSlug, string> = {
 export function isCollectionPageSlug(v: string): v is CollectionPageSlug {
   return (COLLECTION_PAGE_SLUGS as string[]).includes(v);
 }
+
+// Тематичні підсторінки каталогу — не прив'язані до однієї колекції
+// (RAL/NCS-фарбування доступне в FREZZATTI і PERFETTO, нестандартні
+// розміри — в усіх), тому без ItemList-розмітки й без кнопки "Розрахувати
+// вартість" на конкретний якір /catalog — лише текст, характеристики й
+// форма. Той самий /catalog/<слаг> URL-простір, що й сторінки колекцій.
+export type ThematicPageSlug = "dveri-pid-farbuvannya-ral" | "nestandartni-rozmiry";
+
+export const THEMATIC_PAGE_SLUGS: ThematicPageSlug[] = [
+  "dveri-pid-farbuvannya-ral",
+  "nestandartni-rozmiry",
+];
+
+export function isThematicPageSlug(v: string): v is ThematicPageSlug {
+  return (THEMATIC_PAGE_SLUGS as string[]).includes(v);
+}

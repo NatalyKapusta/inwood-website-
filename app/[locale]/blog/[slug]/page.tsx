@@ -206,8 +206,8 @@ export default async function BlogPostPage({
       </article>
 
       <ContactCta
-        title={c.ctaTitle}
-        text={c.ctaText}
+        title={dict.poltava.ctaTitle}
+        text={dict.poltava.ctaText}
         nameLabel={c.formName}
         phoneLabel={c.formPhone}
         submitLabel={c.formSubmit}

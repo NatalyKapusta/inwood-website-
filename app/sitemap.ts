@@ -5,7 +5,7 @@ import { blogPosts } from "@/data/blog";
 import dealers from "@/data/dealers.json";
 import { getCitiesWithDealers } from "@/lib/dealers";
 import { RECRUIT_CITIES, getAllDealerRecruitCities } from "@/lib/recruitCities";
-import { COLLECTION_PAGE_SLUGS } from "@/lib/collectionPages";
+import { COLLECTION_PAGE_SLUGS, THEMATIC_PAGE_SLUGS } from "@/lib/collectionPages";
 
 const paths = [
   "",
@@ -33,6 +33,7 @@ const paths = [
   "/dlya-zabudovnykiv",
   ...RECRUIT_CITIES.map((c) => `/dlya-zabudovnykiv/${c.slug}`),
   ...COLLECTION_PAGE_SLUGS.map((slug) => `/catalog/${slug}`),
+  ...THEMATIC_PAGE_SLUGS.map((slug) => `/catalog/${slug}`),
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

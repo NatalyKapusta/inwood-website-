@@ -307,6 +307,7 @@
       "title": "Zobacz, jak produkujemy drzwi",
       "text": "Krótki film o produkcji IN WOOD — od materiałów po gotowe drzwi."
     },
+    "usefulArticlesTitle": "Przydatne artykuły",
     "metaDescription": "IN WOOD — producent drzwi wewnętrznych w Połtawie. 5 kolekcji: ETALON, NOMINAL, FREZZATTI, PERFETTO, drzwi montażu ukrytego. Dilerstwo i eksport."
   },
   "proNas": {
@@ -851,6 +852,8 @@
     "title": "Drzwi IN WOOD w Ukrainie | Oficjalni dilerzy i partnerzy",
     "heading": "Gdzie kupić drzwi IN WOOD w Ukrainie?",
     "intro": "Sieć oficjalnych dilerów IN WOOD jest obecna w różnych miastach Ukrainy. Znajdź najbliższy salon na mapie lub wybierz swoje miasto z listy poniżej.",
+    "notReachedTitle": "Nie udało się dodzwonić?",
+    "notReachedText": "Zostaw kontakt — przekażemy twoje zgłoszenie dilerowi w twoim mieście.",
     "text": "Sieć oficjalnych dilerów IN WOOD jest obecna w różnych regionach Ukrainy. W naszych salonach partnerskich możesz zapoznać się z aktualnymi kolekcjami drzwi wewnętrznych, otrzymać konsultację i dobrać optymalne rozwiązanie do swojego wnętrza.",
     "heroKicker": "SIEĆ PARTNERSKA",
     "heroTitle": "Dilerzy IN WOOD w całej Ukrainie i za granicą",
@@ -1379,5 +1382,54 @@
     "ctaTitle": "Oblicz cenę kompletu",
     "ctaText": "Zostaw zgłoszenie — wycenimy w jeden dzień roboczy.",
     "dealersLinkText": "Inne miasto? Zobacz naszych dilerów"
+  },
+  "catalogThemePages": {
+    "items": {
+      "dveri-pid-farbuvannya-ral": {
+        "title": "Drzwi malowane w kolorze RAL i NCS — od producenta | IN WOOD",
+        "metaDescription": "Drzwi wewnętrzne w dowolnym kolorze RAL lub NCS: kolekcje FREZZATTI i PERFETTO, ościeżnica i opaska w tym samym kolorze. Wycena w jeden dzień roboczy.",
+        "h1": "Drzwi malowane w dokładnym kolorze RAL lub NCS",
+        "breadcrumbName": "Malowane RAL/NCS",
+        "body": [
+          "Gotowa paleta folii zamyka większość zadań, ale nie wszystkie. Kiedy projekt wnętrza wskazuje konkretny kod koloru, kiedy drzwi mają zniknąć w ścianie albo meble są już zrobione i trzeba trafić dokładnie w ich odcień — wybieranie z listy nie ma sensu. Potrzebny jest właśnie ten kolor.",
+          "Malujemy drzwi w dowolnym kolorze według palety RAL lub NCS. Podajesz kod, my wykonujemy.",
+          "**Co można malować.** Dwie kolekcje: [FREZZATTI](/catalog/frezzatti) — 14 modeli frezowanych z reliefem, oraz [PERFETTO](/catalog/perfetto) — dwa gładkie modele do wnętrz minimalistycznych. Osobno są skrzydła pod malowanie do [drzwi ukrytych](/catalog/pryhovani-dveri), które maluje się już po montażu, razem ze ścianą.",
+          "**Nie tylko skrzydło.** Ościeżnica, opaska i poszerzenie również wykonywane są w tym samym kolorze, jako osobne pozycje. To istotne: drzwi układają się w jedną bryłę, bez jasnej ramy wokół kolorowego skrzydła. Właśnie o to zwykle chodzi przy wyborze malowania.",
+          "**Co warto wiedzieć z góry.** Nie będzie gotowego zdjęcia koloru, jedynie próbka orientacyjna — żaden monitor nie oddaje odcienia wiernie. Czas realizacji jest dłuższy niż standardowy, a cena wyższa niż przy folii. To uczciwa cena za precyzję i lepiej wiedzieć o niej przed zamówieniem niż po. Jak dobrać kolor do wnętrza — w artykule [„Jak dobrać kolor drzwi do podłogi i mebli”](/blog/yak-pidibraty-kolir-dverei-pid-pidlohu).",
+          "**Wymiary** — standardowa siatka 400–900 mm szerokości i 1800–2100 mm wysokości co 50 mm, bez dopłaty za wymiar.",
+          "Produkujemy we własnym zakładzie w Połtawie, od 20 lat. Drzwi przyjeżdżają z wciętymi okuciami."
+        ],
+        "specs": [
+          { "label": "Kolekcje dostępne malowane", "value": "FREZZATTI (14 modeli), PERFETTO (2 modele)" },
+          { "label": "Palety", "value": "RAL, NCS — dowolny kod" },
+          { "label": "Elementy w kolorze", "value": "ościeżnica, opaska, poszerzenie" },
+          { "label": "Grubość skrzydła", "value": "34 mm (FREZZATTI), 40 mm (PERFETTO)" },
+          { "label": "Termin", "value": "dłuższy niż standardowy" }
+        ]
+      },
+      "nestandartni-rozmiry": {
+        "title": "Drzwi w nietypowych wymiarach — bez dopłaty do 900×2100 | IN WOOD",
+        "metaDescription": "Drzwi wewnętrzne pod twój otwór: szerokość 400–900 mm, wysokość 1800–2100 mm co 50 mm bez dopłaty za wymiar. Szersze i wyższe na zamówienie.",
+        "h1": "Drzwi pod twój otwór, a nie otwór pod drzwi",
+        "breadcrumbName": "Nietypowe wymiary",
+        "body": [
+          "Typowa historia: otwór ma 830 mm. W sklepie słyszysz — weź 800 i zakryj różnicę poszerzeniem, albo weź 900 i skuj ścianę. Oba warianty oznaczają dodatkową robotę, dodatkowe pieniądze i efekt, który widać.",
+          "Nasza siatka wymiarów idzie **co 50 mm**: 400, 450, 500 i dalej do 900 mm szerokości, od 1800 do 2100 mm wysokości. **W tym zakresie nie ma żadnej dopłaty za wymiar.** To nie promocja i nie wyjątek — to zwykła cena z cennika.",
+          "Czyli do otworu 830 mm bierzesz skrzydło 800 mm i normalną ościeżnicę, a drzwi stają tak, jakby otwór robiono pod nie.",
+          "**Szersze i wyższe też wykonujemy.** Szerokość 950 i 1000 mm, wysokość 2150, 2200, 2250 i 2300 mm — na zamówienie, z dopłatą 20% do ceny skrzydła. Ościeżnice i poszerzenia w nietypowym wymiarze liczone są tak samo. Mówimy o tym z góry, żeby nie było niespodzianki na fakturze.",
+          "**Drzwi do sufitu** to osobny temat. Skrzydło 2300 mm zmienia odbiór pomieszczenia mocniej niż jakakolwiek dekoracja i najlepiej wygląda w [drzwiach ukrytych](/catalog/pryhovani-dveri), gdzie nie ma ramy.",
+          "**Wymiar jest dostępny we wszystkich kolekcjach** — [ETALON](/catalog/etalon), [NOMINAL](/catalog/nominal), [FREZZATTI](/catalog/frezzatti), [PERFETTO](/catalog/perfetto) i w drzwiach ukrytych. Nietypowy rozmiar nie ogranicza wyboru modelu ani koloru. Jak wybrać model ogólnie — w artykule [„Jak wybrać drzwi wewnętrzne”](/blog/yak-obraty-mizhkimnatni-dveri).",
+          "Produkcja własna, w Połtawie. Drzwi przyjeżdżają z wciętymi okuciami, gotowe do montażu."
+        ],
+        "specs": [
+          { "label": "Szerokość bez dopłaty", "value": "400–900 mm, co 50 mm" },
+          { "label": "Wysokość bez dopłaty", "value": "1800–2100 mm, co 50 mm" },
+          { "label": "Szerokość na zamówienie", "value": "950, 1000 mm — +20% do skrzydła" },
+          { "label": "Wysokość na zamówienie", "value": "2150–2300 mm — +20% do skrzydła" },
+          { "label": "Ościeżnice i poszerzenia", "value": "liczone tak samo, +20%" },
+          { "label": "Dostępne w kolekcjach", "value": "wszystkich" }
+        ]
+      }
+    }
   }
 }

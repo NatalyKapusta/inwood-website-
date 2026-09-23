@@ -6,6 +6,7 @@ import dealers from "@/data/dealers.json";
 import { getCitiesWithDealers, getCityDisplayName } from "@/lib/dealers";
 import { locales } from "@/lib/i18n";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import ContactCta from "@/components/ContactCta";
 
 export function generateStaticParams() {
   const cities = getCitiesWithDealers(dealers);
@@ -36,8 +37,10 @@ export async function generateMetadata({
 
 export default async function DealerCityPage({
   params,
+  searchParams,
 }: {
   params: { locale: Locale; city: string };
+  searchParams: { sent?: string };
 }) {
   const found = findCity(params.city);
   if (!found) {
@@ -126,6 +129,22 @@ export default async function DealerCityPage({
           ))}
         </div>
       </section>
+
+      <div className="bg-panel-alt">
+        <ContactCta
+          title={t.notReachedTitle}
+          text={t.notReachedText}
+          nameLabel={c.formName}
+          phoneLabel={c.formPhone}
+          submitLabel={c.formSubmit}
+          sentLabel={c.formSentMessage}
+          phoneManualLabel={c.phoneManual}
+          phoneChooseCountryLabel={c.phoneChooseCountry}
+          phoneInvalidLabel={c.phoneInvalid}
+          source={`/${params.locale}/nashi-dileri/${params.city}`}
+          sent={searchParams.sent === "1"}
+        />
+      </div>
     </>
   );
 }

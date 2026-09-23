@@ -307,6 +307,7 @@
       "title": "See how we make our doors",
       "text": "A short video about IN WOOD production — from raw materials to the finished door."
     },
+    "usefulArticlesTitle": "Useful articles",
     "metaDescription": "IN WOOD is a Ukrainian door manufacturer in Poltava, 20+ years of experience, 5 collections. Exports to Canada, France, Switzerland, Lithuania and Latvia."
   },
   "proNas": {
@@ -829,6 +830,8 @@
     "title": "IN WOOD doors in Ukraine | Official dealers and partners",
     "heading": "Where to buy IN WOOD doors in Ukraine?",
     "intro": "The official IN WOOD dealer network is present in cities across Ukraine. Find the nearest showroom on the map or choose your city from the list below.",
+    "notReachedTitle": "Couldn't reach them?",
+    "notReachedText": "Leave your details — we'll pass your request on to the dealer in your city.",
     "text": "The official IN WOOD dealer network is present in regions across Ukraine. In our partner showrooms you can explore the current interior door collections, get advice and find the best solution for your interior.",
     "heroKicker": "PARTNER NETWORK",
     "heroTitle": "IN WOOD dealers across Ukraine and abroad",
@@ -1342,5 +1345,54 @@
     "ctaTitle": "Get a quote for your set",
     "ctaText": "Leave a request — we will price it within one working day.",
     "dealersLinkText": "In a different city? See our dealers"
+  },
+  "catalogThemePages": {
+    "items": {
+      "dveri-pid-farbuvannya-ral": {
+        "title": "Doors Painted to Any RAL or NCS Colour — from the Factory | IN WOOD",
+        "metaDescription": "Interior doors in any RAL or NCS shade: FREZZATTI and PERFETTO collections, frame and architrave to match. Own production, quote within a working day.",
+        "h1": "Doors painted to an exact RAL or NCS colour",
+        "breadcrumbName": "RAL/NCS Painted",
+        "body": [
+          "A ready palette of films covers most jobs, but not all of them. When a design project specifies a colour code, or the door has to disappear into the wall, or the furniture is already made and the door must match it exactly, choosing from a list makes no sense. You need that specific shade.",
+          "We paint doors in any RAL or NCS colour. You give the code, we make it.",
+          "**What can be painted.** Two collections: [FREZZATTI](/catalog/frezzatti), 14 milled models with relief patterns, and [PERFETTO](/catalog/perfetto), two plain models for minimalist interiors. Separately, there are unfinished leaves for [concealed doors](/catalog/pryhovani-dveri), which you paint after installation together with the wall.",
+          "**Not just the leaf.** The frame, architrave and extension are made in the same colour as separate items. This matters: the door reads as a single mass, with no pale frame around a coloured leaf. That is usually the whole point of choosing paint.",
+          "**Worth knowing in advance.** There is no finished photograph of the colour, only an indicative sample — no monitor reproduces a shade accurately. Production takes longer than standard and costs more than film. That is the fair price of precision, and it is better known before ordering than after. See [\"How to Match Door Colour with Flooring and Furniture\"](/blog/yak-pidibraty-kolir-dverei-pid-pidlohu) for more on choosing a colour.",
+          "**Sizes** — the standard grid is 400–900 mm wide and 1800–2100 mm high in 50 mm steps, with no size surcharge.",
+          "Made at our own factory in Poltava, 20 years in operation. Doors arrive with hardware already cut in."
+        ],
+        "specs": [
+          { "label": "Collections available painted", "value": "FREZZATTI (14 models), PERFETTO (2 models)" },
+          { "label": "Palettes", "value": "RAL, NCS — any code" },
+          { "label": "Matching trim", "value": "frame, architrave, extension" },
+          { "label": "Leaf thickness", "value": "34 mm (FREZZATTI), 40 mm (PERFETTO)" },
+          { "label": "Lead time", "value": "longer than standard" }
+        ]
+      },
+      "nestandartni-rozmiry": {
+        "title": "Non-Standard Door Sizes — No Surcharge up to 900×2100 | IN WOOD",
+        "metaDescription": "Interior doors made to your opening: 400–900 mm wide, 1800–2100 mm high in 50 mm steps with no size surcharge. Wider and taller made to order.",
+        "h1": "Doors made to your opening, not the other way round",
+        "breadcrumbName": "Non-standard sizes",
+        "body": [
+          "A familiar story: the opening is 830 mm. The shop tells you to take 800 and cover the gap with an extension, or take 900 and cut back the wall. Both mean extra work, extra money and a result you can see.",
+          "Our size grid runs **in 50 mm steps**: 400, 450, 500 and on up to 900 mm wide, and 1800 to 2100 mm high. **Within that range there is no size surcharge at all.** Not a promotion, not an exception — it is the ordinary list price.",
+          "So for an 830 mm opening you take an 800 mm leaf and a normal frame, and the door sits as though the opening had been built for it.",
+          "**Wider and taller are made too.** Widths of 950 and 1000 mm and heights of 2150, 2200, 2250 and 2300 mm are made to order at +20% on the leaf price. Non-standard frames and extensions are priced the same way. We say this up front so there is no surprise on the invoice.",
+          "**Floor-to-ceiling doors** are worth a separate mention. A 2300 mm leaf changes how a room feels more than any decoration, and looks best in [concealed doors](/catalog/pryhovani-dveri), where there is no frame at all.",
+          "**Any size works with any collection** — [ETALON](/catalog/etalon), [NOMINAL](/catalog/nominal), [FREZZATTI](/catalog/frezzatti), [PERFETTO](/catalog/perfetto) and concealed doors. A non-standard size does not limit the model or the colour. See [\"How to choose interior doors\"](/blog/yak-obraty-mizhkimnatni-dveri) for the bigger picture.",
+          "Made at our own factory in Poltava. Doors arrive with hardware cut in, ready to install."
+        ],
+        "specs": [
+          { "label": "Width, no surcharge", "value": "400–900 mm, 50 mm steps" },
+          { "label": "Height, no surcharge", "value": "1800–2100 mm, 50 mm steps" },
+          { "label": "Width to order", "value": "950, 1000 mm — +20% on the leaf" },
+          { "label": "Height to order", "value": "2150–2300 mm — +20% on the leaf" },
+          { "label": "Frames and extensions", "value": "priced the same way, +20%" },
+          { "label": "Available in", "value": "all collections" }
+        ]
+      }
+    }
   }
 }
