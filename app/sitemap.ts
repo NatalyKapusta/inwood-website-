@@ -31,10 +31,11 @@ const paths = [
   ...getAllDealerRecruitCities().map((c) => `/staty-dylerom/${c.slug}`),
   "/dlya-zabudovnykiv",
   ...RECRUIT_CITIES.map((c) => `/dlya-zabudovnykiv/${c.slug}`),
+  ...COLLECTION_PAGE_SLUGS.map((slug) => `/catalog/${slug}`),
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const localizedEntries = paths.flatMap((path) =>
+  return paths.flatMap((path) =>
     locales.map((locale) => ({
       url: `${SITE_URL}/${locale}${path}`,
       lastModified: new Date(),
@@ -45,24 +46,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     }))
   );
-
-  // Сторінки колекцій (/catalog/etalon тощо) — поки тільки українською:
-  // переклади ru/en/pl ще не передані (див. коментар у сторінці), тому не
-  // додаємо в sitemap мовні версії, яких на сайті ще немає (вели б на 404).
-  // alternates обмежені однією мовою — x-default теж на ua, без інших
-  // hreflang, яких поки немає.
-  const collectionEntries = COLLECTION_PAGE_SLUGS.map((slug) => {
-    const url = `${SITE_URL}/ua/catalog/${slug}`;
-    return {
-      url,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-      alternates: {
-        languages: { uk: url, "x-default": url },
-      },
-    };
-  });
-
-  return [...localizedEntries, ...collectionEntries];
 }

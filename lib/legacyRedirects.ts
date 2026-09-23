@@ -15,11 +15,8 @@ export const LEGACY_EXACT_REDIRECTS: Record<string, string> = {
   "/storinka-vdyachnosti": "/ua",
   "/chim-vidriznyayutsya-nashi-dveri": "/ua/harakterystyky",
   "/servisne-obslugovuvannya": "/ua/servis",
-  // На окремі сторінки колекцій (з'явились 23.09.2026) — точніше, ніж
-  // якір на загальному каталозі. RU/EN-версії цих сторінок ще нема
-  // (переклади не передані), тому нижче в RU-блоці ці самі редіректи
-  // поки лишаються на якір /catalog#... — не можна вести на неіснуючу
-  // сторінку.
+  // На окремі сторінки колекцій (з'явились 23.09.2026, переклади — 23.09.2026) —
+  // точніше, ніж якір на загальному каталозі.
   "/etalon": "/ua/catalog/etalon",
   "/nominal": "/ua/catalog/nominal",
   "/frezzatti": "/ua/catalog/frezzatti",
@@ -66,11 +63,11 @@ export const LEGACY_EXACT_REDIRECTS: Record<string, string> = {
   "/en/gallery-frezzatti": "/en/galereya",
   "/en/gallery-perfetto": "/en/galereya",
   "/en/video": "/en",
-  "/en/hidden-doors": "/en/catalog#hidden-doors",
-  "/en/flush-doors": "/en/catalog#hidden-doors",
+  "/en/hidden-doors": "/en/catalog/pryhovani-dveri",
+  "/en/flush-doors": "/en/catalog/pryhovani-dveri",
   "/en/pvc-coated-doors": "/en/catalog",
   "/en/painted-doors": "/en/catalog",
-  "/en/concealed-doors": "/en/catalog#hidden-doors",
+  "/en/concealed-doors": "/en/catalog/pryhovani-dveri",
   "/en/mouldings": "/en/catalog",
 
   // ---- RU (старий сайт: ті самі слаги, що й UA, з префіксом /ru/) ----
@@ -79,16 +76,16 @@ export const LEGACY_EXACT_REDIRECTS: Record<string, string> = {
   "/ru/chim-vidriznyayutsya-nashi-dveri": "/ru/harakterystyky",
   "/ru/servisne-obslugovuvannya": "/ru/servis",
   "/ru/cooperation": "/ru/spivpratsya",
-  "/ru/etalon": "/ru/catalog#etalon",
-  "/ru/nominal": "/ru/catalog#nominal",
-  "/ru/frezzatti": "/ru/catalog#frezzatti",
-  "/ru/perfetto": "/ru/catalog#perfetto",
+  "/ru/etalon": "/ru/catalog/etalon",
+  "/ru/nominal": "/ru/catalog/nominal",
+  "/ru/frezzatti": "/ru/catalog/frezzatti",
+  "/ru/perfetto": "/ru/catalog/perfetto",
   "/ru/video": "/ru",
-  "/ru/dveri-pryhovanoho-montazhu": "/ru/catalog#hidden-doors",
+  "/ru/dveri-pryhovanoho-montazhu": "/ru/catalog/pryhovani-dveri",
   "/ru/dveri/shchytovi": "/ru/blog/shhytovi-chy-tsargovi-dveri",
   "/ru/dveri-z-pokryttyam": "/ru/catalog",
   "/ru/farbovani-dveri": "/ru/catalog",
-  "/ru/pryhovani-dveri": "/ru/catalog#hidden-doors",
+  "/ru/pryhovani-dveri": "/ru/catalog/pryhovani-dveri",
   "/ru/pogonazhni-vyroby": "/ru/catalog",
   "/ru/standart": "/ru/catalog",
   "/ru/blog-mizhkimnatni-dveri": "/ru/blog",
@@ -130,9 +127,8 @@ const SHOP_COLLECTION_ANCHOR: Record<string, string> = {
   "prihovanogo-montazhu": "hidden-doors",
 };
 
-// Той самий анкор колекції -> слаг окремої сторінки колекції (тільки для
-// ua — див. коментар у LEGACY_EXACT_REDIRECTS вище).
-const ANCHOR_TO_UA_COLLECTION_PAGE: Record<string, string> = {
+// Той самий анкор колекції -> слаг окремої сторінки колекції.
+const ANCHOR_TO_COLLECTION_PAGE: Record<string, string> = {
   etalon: "etalon",
   nominal: "nominal",
   frezzatti: "frezzatti",
@@ -164,10 +160,7 @@ export function resolveLegacyRedirect(pathname: string): string | null {
     if (rest[1] === "cat" && rest[2]) {
       const anchor = SHOP_COLLECTION_ANCHOR[rest[2]];
       if (!anchor) return `/${locale}/catalog`;
-      // Для ua вже є окрема сторінка колекції — точніше, ніж якір.
-      // Для ru/en сторінки ще нема (переклади не передані), лишаємо якір.
-      if (locale === "ua") return `/ua/catalog/${ANCHOR_TO_UA_COLLECTION_PAGE[anchor]}`;
-      return `/${locale}/catalog#${anchor}`;
+      return `/${locale}/catalog/${ANCHOR_TO_COLLECTION_PAGE[anchor]}`;
     }
     return `/${locale}/catalog`;
   }

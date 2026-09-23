@@ -27,8 +27,6 @@ export async function generateMetadata({
   params: { locale: Locale; collection: string };
 }) {
   if (!isCollectionPageSlug(params.collection)) return {};
-  // Переклади ще не передані — метадані поки тільки для ua (див. коментар нижче).
-  if (params.locale !== "ua") return {};
   const dict = await getDictionary(params.locale);
   const item = dict.collectionPages.items[params.collection];
   return buildMetadata({
@@ -45,13 +43,6 @@ export default async function CollectionPage({
   params: { locale: Locale; collection: string };
 }) {
   if (!isCollectionPageSlug(params.collection)) notFound();
-  // Переклади для ru/en/pl ще не передані власницею сайту (ТЗ: "Переклади
-  // будуть передані окремо") — публікуємо поки лише українську версію, щоб
-  // не показати Google/відвідувачу українську прозу під тегом hreflang="ru"
-  // тощо. Коли переклади прийдуть — додати їх у collectionPages кожного
-  // dictionaries/{ru,en,pl}.json і прибрати цю перевірку, структура вже
-  // готова під усі 4 мови.
-  if (params.locale !== "ua") notFound();
 
   const dict = await getDictionary(params.locale);
   const c = dict.common;

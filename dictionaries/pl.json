@@ -1208,5 +1208,129 @@
         "a": "Zostaw zgłoszenie na stronie z wymiarami, ilością i preferencjami dekoru — menedżer skontaktuje się z wyceną."
       }
     ]
+  },
+  "collectionPages": {
+    "breadcrumbSection": "Asortyment",
+    "specsTitle": "Charakterystyka",
+    "ctaLabel": "Oblicz cenę",
+    "sharedBlockTitle": "Wymiary, wcinanie okuć, otwieranie",
+    "sharedBlock": [
+      "**Wymiary i nietypowe rozmiary.** Standardowa siatka to szerokość 400–900 mm i wysokość 1800–2100 mm, co 50 mm. W tym zakresie nie ma dopłaty za wymiar. Szerokość 950–1000 mm i wysokość 2150–2300 mm wykonujemy na zamówienie, +20% do ceny skrzydła; ościeżnice i poszerzenia w nietypowym wymiarze liczone są tak samo.",
+      "**Wcinanie okuć.** Bez wcinania, wcięcie zamka (tylko zamek) albo pełne wcięcie okuć (zamek, zawiasy i dopasowanie ościeżnicy). Drzwi z wciętymi okuciami przyjeżdżają gotowe do montażu.",
+      "**Strona otwierania.** Lewa, prawa lub przesuwna — podawana w zamówieniu."
+    ],
+    "items": {
+      "etalon": {
+        "title": "Drzwi ETALON — drzwi wewnętrzne 40 mm od producenta IN WOOD",
+        "metaDescription": "Kolekcja ETALON: 17 modeli, 17 kolorów folii, skrzydło 40 mm. Krawędź aluminiowa, ościeżnica bezprzylgowa i ukryta, wygłuszenie. Wycena w jeden dzień roboczy.",
+        "h1": "Kolekcja ETALON — drzwi wewnętrzne 40 mm",
+        "breadcrumbName": "ETALON",
+        "body": [
+          "ETALON to najbogatsza linia IN WOOD. Jeśli nie wiesz jeszcze, od czego zacząć wybór, zacznij właśnie tutaj: najwięcej modeli, najszerszy wybór ościeżnic i opcje, których nie ma w żadnej innej kolekcji.",
+          "Skrzydło ma 40 mm grubości — o 6 mm więcej niż w NOMINAL i FREZZATTI. Różnicy nie widać na zdjęciu, ale czuć ją w dłoni: drzwi są cięższe, bardziej zwarte, inaczej się domykają. Ta grubość daje też miejsce na dodatkowe wygłuszenie, którego nie oferuje żadna inna linia. Więcej o budowie skrzydła — w artykule [„Drzwi płytowe czy ramiakowo-płycinowe”](/blog/shhytovi-chy-tsargovi-dveri).",
+          "**Siedemnaście modeli.** ET-01 to gładkie skrzydło bez dekoru, podstawa dla wnętrz minimalistycznych. ET-02 — ET-17 to skrzydła z listwami: od pojedynczej pionowej linii po rozbudowane wzory geometryczne. Kolor skrzydła wybiera się spośród 17 folii — od bieli po „Przekrój kamienia”, „Świerk karpacki” i „Czarną korę”.",
+          "**Trzy warianty krawędzi to praktycznie trzy różne drzwi.**",
+          "**Podstawowy** — krawędź wykończona folią PVC. Najpopularniejszy i najtańszy wariant.",
+          "**Krawędź aluminiowa** — obrzeże wykończone profilem metalowym. Wygląda drożej i lepiej znosi uderzenia: to właśnie krawędź obrywa najpierw od wózka, odkurzacza czy hulajnogi. Kolor krawędzi: czarny, biały lub w kolorze skrzydła.",
+          "**Krawędź INSIDE** — to samo plus dekoracyjna wstawka aluminiowa na samym skrzydle, czarna lub szara. Wstawkę dobiera się niezależnie od koloru krawędzi, więc zestawienie można ułożyć pod konkretne wnętrze.",
+          "**Najszerszy wybór ościeżnic w ofercie.** Poza standardową regulowaną, tylko w ETALON dostępne są ościeżnica bezprzylgowa w licu ściany oraz ościeżnica ukryta — STANDART pod gładź lub LUX pod panele. Przy ościeżnicy ukrytej opaski i poszerzenia nie są potrzebne: styk szpachluje się razem ze ścianą i drzwi wyglądają, jakby ramy w ogóle nie było. Samą ościeżnicę można pomalować według kodu RAL. Więcej o tym wariancie — na stronie [„Drzwi ukryte”](/catalog/pryhovani-dveri), a o dokładnym doborze koloru według RAL — w kolekcji [PERFETTO](/catalog/perfetto).",
+          "**Wymiary.** Szerokość od 400 do 900 mm, wysokość od 1800 do 2100 mm, co 50 mm — w tym zakresie bez dopłaty za wymiar. Szersze niż 900 lub wyższe niż 2100 wykonujemy na zamówienie, odpowiednio do 1000 i 2300 mm."
+        ],
+        "specs": [
+          { "label": "Grubość skrzydła", "value": "40 mm" },
+          { "label": "Modele", "value": "17" },
+          { "label": "Kolory folii", "value": "17" },
+          { "label": "Warianty krawędzi", "value": "folia PVC, profil aluminiowy, profil aluminiowy INSIDE" },
+          { "label": "Ościeżnica", "value": "regulowana, bezprzylgowa, ukryta (STANDART / LUX)" },
+          { "label": "Opcje dodatkowe", "value": "wygłuszenie, malowanie krawędzi aluminiowej" }
+        ]
+      },
+      "perfetto": {
+        "title": "Drzwi PERFETTO — minimalizm i kolor według RAL | IN WOOD",
+        "metaDescription": "PERFETTO: dwa modele, 17 kolorów folii lub dowolny kolor RAL/NCS. Skrzydło 40 mm, ościeżnica bezprzylgowa. Wycena w jeden dzień roboczy.",
+        "h1": "Kolekcja PERFETTO — drzwi w dokładnym kolorze",
+        "breadcrumbName": "PERFETTO",
+        "body": [
+          "PERFETTO to najkrótsza linia w ofercie i jednocześnie najdroższa. Dwa modele, PF-01 i PF-02. To nie ograniczenie, tylko zamysł: kolekcja powstała do wnętrz, w których drzwi nie powinny zwracać na siebie uwagi wzorem. Szukasz reliefu i malowania w jednym? To raczej [FREZZATTI](/catalog/frezzatti).",
+          "Skrzydło 40 mm, jak w ETALON, ale bez listew i frezowania. Cała wyrazistość jest tu w kolorze i w tym, jak drzwi wpisują się w ścianę.",
+          "**Kolor gotowy albo własny.** W wersji podstawowej dostępnych jest 17 folii — tych samych co w ETALON: betony, kamień, drewno z teksturą, czarna kora. Jeśli żaden nie pasuje, jest wariant na zamówienie: podajesz kod z palety RAL lub NCS, a skrzydło zostaje pomalowane dokładnie w tym odcieniu. Dzięki temu drzwi zgadzają się ze ścianą, listwą przysufitową czy meblami dokładnie, a nie w przybliżeniu. Jak dobrać kolor do wnętrza — w artykule [„Jak dobrać kolor drzwi do podłogi i mebli”](/blog/yak-pidibraty-kolir-dverei-pid-pidlohu).",
+          "Warto wiedzieć z góry: w wersji RAL/NCS nie ma gotowego zdjęcia koloru, jedynie próbka orientacyjna, a czas realizacji jest dłuższy niż standardowy. To uczciwa cena za precyzję.",
+          "**Ościeżnica bezprzylgowa.** W PERFETTO dostępna na równi z regulowaną i to przy niej kolekcja pokazuje, o co w niej chodzi: skrzydło staje w jednej płaszczyźnie ze ścianą, bez wystającej ramy. Opaska do ościeżnicy bezprzylgowej również jest płaska. Jeśli chcesz pójść dalej i usunąć ramę całkowicie — zobacz [drzwi ukryte](/catalog/pryhovani-dveri).",
+          "**Wymiary.** Szerokość 400–900 mm, wysokość 1800–2100 mm co 50 mm, bez dopłaty za wymiar w tym zakresie."
+        ],
+        "specs": [
+          { "label": "Grubość skrzydła", "value": "40 mm" },
+          { "label": "Modele", "value": "2 (PF-01, PF-02)" },
+          { "label": "Kolory", "value": "17 folii lub dowolny RAL / NCS na zamówienie" },
+          { "label": "Ościeżnica", "value": "regulowana, bezprzylgowa" },
+          { "label": "Krawędź", "value": "czarna, biała lub w kolorze skrzydła" }
+        ]
+      },
+      "frezzatti": {
+        "title": "Drzwi frezowane FREZZATTI — relief i kolor RAL | IN WOOD",
+        "metaDescription": "FREZZATTI: 14 modeli frezowanych, 12 kolorów folii lub malowanie według RAL/NCS. Skrzydło 34 mm. Wycena w jeden dzień roboczy.",
+        "h1": "Kolekcja FREZZATTI — frezowane drzwi wewnętrzne",
+        "breadcrumbName": "FREZZATTI",
+        "body": [
+          "W FREZZATTI wzór nie jest nakładany na skrzydło, tylko w nim wycinany. Frez zbiera materiał, a relief staje się częścią drzwi — nie odklei się i nie odpryśnie od rogu mebla, w odróżnieniu od [listwy](/catalog/etalon).",
+          "Czternaście modeli: od jednej czy dwóch linii po gęstą geometrię na całym skrzydle. Grubość 34 mm.",
+          "**Dwie drogi do koloru.** Pierwsza — wybór spośród 12 gotowych folii: biel, antracyt, feldgrau, trzy tlenki, kilka dębów, wenge. Kolor znany z góry, czas realizacji standardowy.",
+          "Druga — podanie kodu RAL lub NCS. Skrzydło jest wtedy malowane na zamówienie, a w tym samym kolorze można wykonać ościeżnicę, opaskę i poszerzenie — drzwi układają się w jedną bryłę bez obcych elementów. Ten wariant wybiera się zwykle wtedy, gdy jest projekt wnętrza z rozpisanymi kolorami. Gładkie skrzydło z takim samym dokładnym malowaniem według RAL — w kolekcji [PERFETTO](/catalog/perfetto).",
+          "Jedno warto rozumieć: malowany relief czyta się inaczej niż foliowany. Matowa farba daje miękki cień w rowkach, folia — ostrzejszy i bardziej błyszczący. Jeśli wzór jest dla ciebie najważniejszy, to argument za malowaniem. Jak podejść do wyboru w ogóle — w artykule [„Jak wybrać drzwi wewnętrzne”](/blog/yak-obraty-mizhkimnatni-dveri).",
+          "**Ościeżnica** regulowana, 80, 100 lub 120 mm. Przy modelach RAL/NCS ościeżnica, opaska i poszerzenie to osobne pozycje malowane.",
+          "**Wymiary.** Szerokość 400–900 mm, wysokość 1800–2100 mm, co 50 mm, bez dopłaty w tym zakresie."
+        ],
+        "specs": [
+          { "label": "Grubość skrzydła", "value": "34 mm" },
+          { "label": "Modele", "value": "14" },
+          { "label": "Kolory", "value": "12 folii lub dowolny RAL / NCS" },
+          { "label": "Ościeżnica", "value": "regulowana 80 / 100 / 120 mm" },
+          { "label": "Krawędź", "value": "czarna lub biała" }
+        ]
+      },
+      "nominal": {
+        "title": "Drzwi NOMINAL — praktyczna seria od producenta | IN WOOD",
+        "metaDescription": "NOMINAL: 10 modeli, 12 kolorów, skrzydło 34 mm. Rozsądny wybór do mieszkań na wynajem, biur i dużych zamówień. Wycena w jeden dzień.",
+        "h1": "Kolekcja NOMINAL — praktyczne drzwi wewnętrzne",
+        "breadcrumbName": "NOMINAL",
+        "body": [
+          "NOMINAL to linia na sytuacje, w których drzwi mają dobrze wyglądać i długo służyć, ale nie być głównym elementem wnętrza. Mieszkanie na wynajem, biuro, hotel, akademik, dom na kilka kondygnacji, gdzie drzwi jest dużo i każda dodatkowa kwota na komplecie mnoży się przez dziesięć. Kto zwykle wybiera takie drzwi — w artykule [„Kto zamawia drzwi wewnętrzne”](/blog/hto-zamovliaie-mizhkimnatni-dveri).",
+          "Skrzydło 34 mm, dziesięć modeli: NL-01 bez dekoru oraz NL-02 — NL-10 z listwami. Dwanaście kolorów: biel, antracyt, feldgrau, trzy tlenki, dęby, wenge południowe. Zestaw roboczy, który zamyka większość wnętrz bez zbędnych rozważań.",
+          "**Uczciwie o różnicy wobec ETALON.** Cieńsze skrzydło, mniej modeli i kolorów, brak krawędzi aluminiowej, brak ościeżnicy bezprzylgowej i ukrytej, brak opcji wygłuszenia. Ościeżnica wyłącznie regulowana, 80, 100 lub 120 mm.",
+          "To nie są „gorsze drzwi”, tylko inny zestaw możliwości w innej cenie. Konstrukcyjnie skrzydło jest to samo: MDF, przygotowanie fabryczne, okucia wcinane jeszcze w zakładzie. Jeśli potrzebna jest cisza w sypialni albo ościeżnica bezprzylgowa — zobacz [ETALON](/catalog/etalon). Jeśli potrzebne są solidne drzwi w odpowiedniej liczbie i bez dopłaty za opcje, z których nie skorzystasz — NOMINAL.",
+          "**Dla inwestycji.** Przy dużych zamówieniach obowiązują osobne warunki — wyposażenie nowych budynków, hoteli, biur. Napisz, ile drzwi potrzebujesz, policzymy pod wolumen. Warunki dla dealerów i deweloperów — na stronie [„Współpraca”](/spivpratsya).",
+          "**Wymiary.** Szerokość 400–900 mm, wysokość 1800–2100 mm, co 50 mm, bez dopłaty w tym zakresie. Wygodne, gdy otwory w budynku są różne: nie trzeba przerabiać ściany pod drzwi."
+        ],
+        "specs": [
+          { "label": "Grubość skrzydła", "value": "34 mm" },
+          { "label": "Modele", "value": "10" },
+          { "label": "Kolory folii", "value": "12" },
+          { "label": "Ościeżnica", "value": "regulowana 80 / 100 / 120 mm" },
+          { "label": "Krawędź", "value": "czarna lub biała" }
+        ]
+      },
+      "pryhovani-dveri": {
+        "title": "Drzwi ukryte — montaż bez widocznej ościeżnicy | IN WOOD",
+        "metaDescription": "Drzwi ukryte IN WOOD: skrzydło 40 mm pod malowanie, ościeżnica STANDART pod gładź lub LUX pod panele. Własna produkcja, wycena w jeden dzień.",
+        "h1": "Drzwi ukryte",
+        "breadcrumbName": "Drzwi ukryte",
+        "body": [
+          "Zwykłe drzwi widać zawsze — nawet zamknięte pozostają ramą na ścianie. Drzwi ukryte usuwają tę ramę całkowicie: ościeżnica chowa się w ścianie, styk szpachluje się i maluje razem z nią, a w miejscu drzwi zostaje ściana z ledwie widoczną linią krawędzi.",
+          "Skrzydło 40 mm, MDF, bez gotowego wykończenia — malowane dopiero po montażu, tą samą farbą co ściany. Właśnie dlatego drzwi znikają: kolor zgadza się dokładnie, a nie w przybliżeniu — tak samo, jak w kolekcji [PERFETTO](/catalog/perfetto), gdzie kolor też dobiera się na zamówienie.",
+          "**Dwie ościeżnice pod różne wykończenia.** STANDART — pod gładź, do ścian malowanych lub tapetowanych. LUX — pod panele, gdy ściana wykańczana jest drewnem, lamelami lub panelami dekoracyjnymi. Wybierać trzeba razem z wykończeniem ściany, a nie po nim: drzwi najlepiej zamawiać wtedy, gdy planowany jest sufit i elektryka, inaczej trzeba będzie rozbierać gotową ścianę. Ta sama ukryta ościeżnica dostępna jest też w kolekcji [ETALON](/catalog/etalon) — ze wszystkimi pozostałymi opcjami linii.",
+          "**Pięć wariantów krawędzi.** Najprostszy — krawędź gruntowana, malowana razem ze skrzydłem i znikająca całkowicie. Dalej profil aluminiowy, szary lub czarny: cienka metalowa linia po obwodzie, zostawiana celowo jako akcent. Oraz warianty Inside z szerszym profilem 56 mm — te same linie, ale wyraźniejsze.",
+          "**Czego tu nie ma.** Opasek i poszerzeń — nie są potrzebne, ościeżnica chowa się w ścianie. Zamiast nich stosuje się system aluminiowych profili krawędziowych. Samą ościeżnicę można pomalować według kodu RAL.",
+          "**Wymiary.** Szerokość 400–900 mm, wysokość 1800–2100 mm co 50 mm, bez dopłaty. Wyższe skrzydła do 2300 mm na zamówienie — i to właśnie w drzwiach ukrytych wysokość do sufitu wygląda najefektowniej — jeden z trendów, o których pisaliśmy w artykule [„Trendy drzwi wewnętrznych 2026”](/blog/trendy-mizhkimnatnykh-dverei-2026).",
+          "Produkujemy we własnym zakładzie w Połtawie. Drzwi przyjeżdżają z wciętymi okuciami, gotowe do montażu."
+        ],
+        "specs": [
+          { "label": "Grubość skrzydła", "value": "40 mm" },
+          { "label": "Wykończenie", "value": "bez wykończenia, malowanie po stronie klienta" },
+          { "label": "Ościeżnica", "value": "ukryta STANDART (pod gładź) lub LUX (pod panele)" },
+          { "label": "Warianty krawędzi", "value": "grunt, profil aluminiowy szary / czarny, Inside szary / czarny" },
+          { "label": "Dodatkowo", "value": "malowanie ościeżnicy według RAL" }
+        ]
+      }
+    }
   }
 }

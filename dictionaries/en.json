@@ -1171,5 +1171,129 @@
         "a": "Leave a request on the site with sizes, quantity and finish preferences — our manager will get in touch with a quote."
       }
     ]
+  },
+  "collectionPages": {
+    "breadcrumbSection": "Door Range",
+    "specsTitle": "Specifications",
+    "ctaLabel": "Get a quote",
+    "sharedBlockTitle": "Sizes, hardware cutting, opening side",
+    "sharedBlock": [
+      "**Sizes and non-standard orders.** The standard grid is 400–900 mm wide and 1800–2100 mm high, in 50 mm steps. There is no size surcharge within that range. Widths of 950–1000 mm and heights of 2150–2300 mm are made to order at +20% on the leaf price; non-standard frames and extensions are priced the same way.",
+      "**Hardware cutting.** None, lock only, or full hardware fitting (lock, hinges and frame adjustment). Doors with hardware fitted arrive ready to install.",
+      "**Opening side.** Left, right or sliding — specified with the order."
+    ],
+    "items": {
+      "etalon": {
+        "title": "ETALON Doors — 40 mm Interior Doors from IN WOOD Factory",
+        "metaDescription": "ETALON collection: 17 models, 17 film colours, 40 mm leaf. Aluminium edging, flush and concealed frames, sound insulation. Quote within one working day.",
+        "h1": "ETALON collection — 40 mm interior doors",
+        "breadcrumbName": "ETALON",
+        "body": [
+          "ETALON is the broadest line IN WOOD makes. If you have not yet decided where to start, start here: it has the most models, the widest choice of frames, and options available nowhere else in the range.",
+          "The leaf is 40 mm thick — 6 mm more than NOMINAL and FREZZATTI. You will not see the difference in a photo, but you will feel it: the door is heavier, denser, and closes differently. That thickness is also what leaves room for optional sound insulation, which no other line offers. Read more about what the leaf is made of in [\"Panel vs. stile-and-rail doors\"](/blog/shhytovi-chy-tsargovi-dveri).",
+          "**Seventeen models.** ET-01 is a plain leaf with no decor, a base for minimalist interiors. ET-02 to ET-17 carry moulding: from a single vertical line to dense geometric patterns. The leaf colour is chosen from 17 films, from plain white to Stone Cut, Carpathian Spruce and Black Bark.",
+          "**Three edge options — effectively three different doors.**",
+          "**Standard edge** is finished in PVC film. The most common and most affordable choice.",
+          "**Aluminium edging** finishes the edge with a metal profile. It looks more expensive and takes knocks better — the edge is what a trolley, a vacuum cleaner or a child's scooter hits first. The edging comes in black, white, or matched to the leaf.",
+          "**INSIDE edging** adds a decorative aluminium inlay on the leaf itself, black or grey. The inlay is chosen separately from the edging, so the combination can be built around a specific interior.",
+          "**The widest frame choice in the range.** Beyond the standard telescopic frame, ETALON alone offers a flush frame — the leaf sits level with the wall, with no protruding frame — and a concealed frame, STANDART for plastering or LUX for panelling. With a concealed frame no architrave or extension is needed: the joint is filled and painted together with the wall, and the door reads as no frame at all. The frame itself can be painted to a RAL code. Read more about this option on the [\"Concealed doors\"](/catalog/pryhovani-dveri) page, and about exact RAL colour matching in the [PERFETTO](/catalog/perfetto) collection.",
+          "**Sizes.** Width 400–900 mm, height 1800–2100 mm, in 50 mm steps — no size surcharge within that range. Wider than 900 or taller than 2100 is made to order, up to 1000 and 2300 mm respectively."
+        ],
+        "specs": [
+          { "label": "Leaf thickness", "value": "40 mm" },
+          { "label": "Models", "value": "17" },
+          { "label": "Film colours", "value": "17" },
+          { "label": "Edge options", "value": "PVC edging, aluminium profile, aluminium profile INSIDE" },
+          { "label": "Frame", "value": "telescopic, flush, concealed (STANDART / LUX)" },
+          { "label": "Optional extras", "value": "sound insulation, painted aluminium edging" }
+        ]
+      },
+      "perfetto": {
+        "title": "PERFETTO Doors — Minimalist Doors in Any RAL Colour | IN WOOD",
+        "metaDescription": "PERFETTO: two models, 17 film colours or any RAL/NCS shade to order. 40 mm leaf, flush frame available. Quote within one working day.",
+        "h1": "PERFETTO collection — doors in an exact colour",
+        "breadcrumbName": "PERFETTO",
+        "body": [
+          "PERFETTO is the shortest line in the range and the most expensive. Two models, PF-01 and PF-02. That is by design, not by limitation: the collection is made for interiors where the door should not draw attention with a pattern. Looking for relief and paint together? That's closer to [FREZZATTI](/catalog/frezzatti).",
+          "The leaf is 40 mm, as in ETALON, but without mouldings or milling. Everything expressive here lives in the colour and in how the door sits in the wall.",
+          "**Take a ready colour or name your own.** The standard version offers the same 17 films as ETALON: concretes, stone, textured wood, black bark. If none of them fits, there is a made-to-order option: you give a RAL or NCS code and the leaf is painted in exactly that shade. The door then matches the wall, the cornice or the furniture precisely rather than approximately. See [\"How to Match Door Colour with Flooring and Furniture\"](/blog/yak-pidibraty-kolir-dverei-pid-pidlohu) for more on choosing a colour.",
+          "Worth knowing in advance: made-to-order shades have no finished colour photograph, only an indicative sample, and production takes longer than standard. That is the fair price of precision.",
+          "**Flush frame.** In PERFETTO it is available alongside the telescopic frame, and it is where the collection comes into its own: the leaf sits in the same plane as the wall, with no protruding frame. The architrave for a flush frame is flat as well. If you want to go further and remove the frame entirely, look at [concealed doors](/catalog/pryhovani-dveri).",
+          "**Sizes.** Width 400–900 mm, height 1800–2100 mm in 50 mm steps, with no size surcharge in that range."
+        ],
+        "specs": [
+          { "label": "Leaf thickness", "value": "40 mm" },
+          { "label": "Models", "value": "2 (PF-01, PF-02)" },
+          { "label": "Colours", "value": "17 films, or any RAL / NCS to order" },
+          { "label": "Frame", "value": "telescopic, flush" },
+          { "label": "Edging", "value": "black, white, or matched to the leaf" }
+        ]
+      },
+      "frezzatti": {
+        "title": "FREZZATTI Milled Doors — Relief Patterns and RAL Colours | IN WOOD",
+        "metaDescription": "FREZZATTI: 14 milled models, 12 film colours or painted to any RAL/NCS code. 34 mm leaf. Quote within one working day.",
+        "h1": "FREZZATTI collection — milled interior doors",
+        "breadcrumbName": "FREZZATTI",
+        "body": [
+          "In FREZZATTI the pattern is not applied to the leaf — it is cut into it. The cutter removes material and the relief becomes part of the door: unlike [moulding](/catalog/etalon), it cannot peel off or be knocked loose by a corner of furniture.",
+          "Fourteen models, from one or two lines to dense geometry across the whole leaf. Thickness 34 mm.",
+          "**Two ways to get the colour.** The first is to choose from 12 ready films: white, anthracite, feldgrau, three oxides, several oaks, wenge. The colour is known in advance and production runs to standard lead times.",
+          "The second is to give a RAL or NCS code. The leaf is then painted to order, and the frame, architrave and extension can be painted to match — the door reads as a single mass with no foreign parts. This is the option usually chosen when there is a design project with specified colours. A smooth leaf with the same precise RAL painting is available in the [PERFETTO](/catalog/perfetto) collection.",
+          "One thing worth understanding: painted relief reads differently from film. Matt paint casts a soft shadow in the grooves; film gives a sharper, glossier line. If the pattern is what matters most to you, that is an argument for paint. See [\"How to choose interior doors\"](/blog/yak-obraty-mizhkimnatni-dveri) for the bigger picture.",
+          "**The frame** is telescopic, 80, 100 or 120 mm. For RAL/NCS models the frame, architrave and extension are supplied as separate painted items.",
+          "**Sizes.** Width 400–900 mm, height 1800–2100 mm in 50 mm steps, no surcharge within that range."
+        ],
+        "specs": [
+          { "label": "Leaf thickness", "value": "34 mm" },
+          { "label": "Models", "value": "14" },
+          { "label": "Colours", "value": "12 films, or any RAL / NCS" },
+          { "label": "Frame", "value": "telescopic 80 / 100 / 120 mm" },
+          { "label": "Edging", "value": "black or white" }
+        ]
+      },
+      "nominal": {
+        "title": "NOMINAL Doors — Practical Range from the Manufacturer | IN WOOD",
+        "metaDescription": "NOMINAL: 10 models, 12 colours, 34 mm leaf. A rational choice for rental flats, offices and large orders. Quote within a day.",
+        "h1": "NOMINAL collection — practical interior doors",
+        "breadcrumbName": "NOMINAL",
+        "body": [
+          "NOMINAL is the line for situations where doors should look good and last, without being the main feature of the interior. A rental flat, an office, a hotel, a hall of residence, a multi-storey house where there are many doors and every extra thousand per set is multiplied by ten. See [\"Who orders interior doors\"](/blog/hto-zamovliaie-mizhkimnatni-dveri) for more on who typically chooses this line.",
+          "The leaf is 34 mm, with ten models: NL-01 without decor and NL-02 to NL-10 with moulding. Twelve colours — white, anthracite, feldgrau, three oxides, oaks, southern wenge. A working set that covers most interiors without overthinking.",
+          "**Honestly about the difference from ETALON.** The leaf is thinner, there are fewer models and colours, there is no aluminium edging, no flush or concealed frame, and no sound insulation option. The frame is telescopic only, 80, 100 or 120 mm.",
+          "These are not \"worse doors\" — they are a different set of possibilities at a different price. Structurally the leaf is the same: MDF, factory preparation, hardware cut in at the plant. If you need quiet in a bedroom or a flush frame, look at [ETALON](/catalog/etalon). If you need reliable doors in quantity without paying for options you will not use, NOMINAL is the answer.",
+          "**For projects.** Large orders have separate terms — fitting out new developments, hotels and offices. Write to us with the number of doors and we will price it for the volume. Terms for dealers and developers are on the [\"Partnership\"](/spivpratsya) page.",
+          "**Sizes.** Width 400–900 mm, height 1800–2100 mm in 50 mm steps, no surcharge within that range. Convenient when openings across a building differ: there is no need to rebuild the wall to fit the door."
+        ],
+        "specs": [
+          { "label": "Leaf thickness", "value": "34 mm" },
+          { "label": "Models", "value": "10" },
+          { "label": "Film colours", "value": "12" },
+          { "label": "Frame", "value": "telescopic 80 / 100 / 120 mm" },
+          { "label": "Edging", "value": "black or white" }
+        ]
+      },
+      "pryhovani-dveri": {
+        "title": "Concealed Doors — Hidden Frame Doors from the Factory | IN WOOD",
+        "metaDescription": "IN WOOD concealed doors: 40 mm leaf ready for painting, STANDART frame for plaster or LUX for panelling. Own production, quote within a day.",
+        "h1": "Concealed doors",
+        "breadcrumbName": "Concealed doors",
+        "body": [
+          "An ordinary door is always visible — even closed, it stays a frame on the wall. A concealed door removes that frame completely: the frame hides inside the wall, the joint is filled and painted along with it, and what remains is a wall with a barely visible line along the edge.",
+          "The leaf is 40 mm MDF with no finish — it is painted after installation, in the same paint as the walls. That is exactly why the door disappears: the colour matches precisely rather than approximately, the same way it does in the [PERFETTO](/catalog/perfetto) collection, where colour is also made to order.",
+          "**Two frames for two kinds of finish.** STANDART is for plaster, for walls that will be painted or papered. LUX is for panelling, where the wall is finished in timber, slats or decorative panels. Choose it together with the wall finish, not after: order the doors when the ceiling and electrics are being planned, or the finished wall will have to be opened up again. The same concealed frame is also available within the [ETALON](/catalog/etalon) collection, with all its other options.",
+          "**Five edge options.** The simplest is a primed edge, painted together with the leaf and disappearing entirely. Then an aluminium profile, grey or black: a thin metal line around the perimeter, left visible on purpose as an accent. And the Inside versions with a wider 56 mm profile — the same lines, more pronounced.",
+          "**What is not here.** No architrave and no extension — they are not needed, since the frame hides in the wall. A system of aluminium edge profiles is used instead. The frame itself can be painted to a RAL code.",
+          "**Sizes.** Width 400–900 mm, height 1800–2100 mm in 50 mm steps, no surcharge. Taller leaves up to 2300 mm are made to order, and floor-to-ceiling height is where concealed doors look their best — one of the trends we cover in [\"Interior door trends 2026\"](/blog/trendy-mizhkimnatnykh-dverei-2026).",
+          "Made at our own plant in Poltava. Doors arrive with hardware already cut in, ready to install."
+        ],
+        "specs": [
+          { "label": "Leaf thickness", "value": "40 mm" },
+          { "label": "Finish", "value": "unfinished, painted by the customer" },
+          { "label": "Frame", "value": "concealed STANDART (for plaster) or LUX (for panelling)" },
+          { "label": "Edge options", "value": "primed, aluminium profile grey / black, Inside grey / black" },
+          { "label": "Optional", "value": "frame painted to RAL" }
+        ]
+      }
+    }
   }
 }
