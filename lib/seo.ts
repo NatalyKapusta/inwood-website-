@@ -30,12 +30,14 @@ export function buildMetadata({
   title,
   description,
   image,
+  noindex,
 }: {
   locale: Locale;
   path: string;
   title: string;
   description: string;
   image?: string;
+  noindex?: boolean;
 }): Metadata {
   const url = `${SITE_URL}/${locale}${path}`;
   const languages = {
@@ -47,6 +49,7 @@ export function buildMetadata({
   return {
     title,
     description,
+    ...(noindex ? { robots: { index: false, follow: true } } : {}),
     alternates: {
       canonical: url,
       languages,

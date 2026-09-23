@@ -5,7 +5,7 @@ import { collections, collectionOrder } from "@/lib/products";
 import { getPricesVisible } from "@/lib/siteSettings";
 import { getPublicPogonazhni, getPublicPlintus, getPublicNakladka } from "@/lib/publicShop";
 import { catalogCategories, catalogCategorySlugs, type CatalogCategorySlug } from "@/lib/catalogCategories";
-import { COLLECTION_PAGE_SLUGS } from "@/lib/collectionPages";
+import { COLLECTION_PAGE_SLUGS, THEMATIC_PAGE_SLUGS } from "@/lib/collectionPages";
 import CatalogFilter from "@/components/CatalogFilter";
 import DoorFit3dBanner from "@/components/DoorFit3dBanner";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -167,6 +167,18 @@ export default async function CatalogPage({
             className="rounded-full border border-navy-dim/25 px-5 py-2 text-navy-dark transition hover:border-gold hover:text-gold-dim"
           >
             {dict.collectionPages.items[slug].breadcrumbName}
+          </Link>
+        ))}
+      </div>
+
+      <div className="mt-3 flex flex-wrap items-center justify-center gap-3 text-xs">
+        {THEMATIC_PAGE_SLUGS.map((slug) => (
+          <Link
+            key={slug}
+            href={`/${params.locale}/catalog/${slug}`}
+            className="rounded-full border border-navy-dim/15 px-4 py-1.5 text-navy-dim transition hover:border-gold hover:text-gold-dim"
+          >
+            {dict.catalogThemePages.items[slug].breadcrumbName}
           </Link>
         ))}
       </div>

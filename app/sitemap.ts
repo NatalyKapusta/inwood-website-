@@ -4,7 +4,6 @@ import { SITE_URL, hreflang } from "@/lib/seo";
 import { blogPosts } from "@/data/blog";
 import dealers from "@/data/dealers.json";
 import { getCitiesWithDealers } from "@/lib/dealers";
-import { RECRUIT_CITIES, getAllDealerRecruitCities } from "@/lib/recruitCities";
 import { COLLECTION_PAGE_SLUGS, THEMATIC_PAGE_SLUGS } from "@/lib/collectionPages";
 
 const paths = [
@@ -29,9 +28,7 @@ const paths = [
   "/kontakty",
   ...blogPosts.ua.map((post) => `/blog/${post.slug}`),
   ...getCitiesWithDealers(dealers).map((c) => `/nashi-dileri/${c.slug}`),
-  ...getAllDealerRecruitCities().map((c) => `/staty-dylerom/${c.slug}`),
   "/dlya-zabudovnykiv",
-  ...RECRUIT_CITIES.map((c) => `/dlya-zabudovnykiv/${c.slug}`),
   ...COLLECTION_PAGE_SLUGS.map((slug) => `/catalog/${slug}`),
   ...THEMATIC_PAGE_SLUGS.map((slug) => `/catalog/${slug}`),
 ];

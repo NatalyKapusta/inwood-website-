@@ -28,11 +28,21 @@ export function isCollectionPageSlug(v: string): v is CollectionPageSlug {
 // розміри — в усіх), тому без ItemList-розмітки й без кнопки "Розрахувати
 // вартість" на конкретний якір /catalog — лише текст, характеристики й
 // форма. Той самий /catalog/<слаг> URL-простір, що й сторінки колекцій.
-export type ThematicPageSlug = "dveri-pid-farbuvannya-ral" | "nestandartni-rozmiry";
+export type ThematicPageSlug =
+  | "dveri-pid-farbuvannya-ral"
+  | "nestandartni-rozmiry"
+  | "bili-dveri"
+  | "chorni-dveri"
+  | "dveri-pid-derevo"
+  | "dveri-z-moldyngom";
 
 export const THEMATIC_PAGE_SLUGS: ThematicPageSlug[] = [
   "dveri-pid-farbuvannya-ral",
   "nestandartni-rozmiry",
+  "bili-dveri",
+  "chorni-dveri",
+  "dveri-pid-derevo",
+  "dveri-z-moldyngom",
 ];
 
 export function isThematicPageSlug(v: string): v is ThematicPageSlug {

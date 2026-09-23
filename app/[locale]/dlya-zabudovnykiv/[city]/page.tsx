@@ -32,6 +32,7 @@ export async function generateMetadata({
     path: `/dlya-zabudovnykiv/${params.city}`,
     title: `${t.cityTitlePrefix} ${cityName}: ${t.cityTitleSuffix}`,
     description: `${t.cityMetaPrefix} ${inCityPhrase}. ${t.cityMetaSuffix}`,
+    noindex: true,
   });
 }
 

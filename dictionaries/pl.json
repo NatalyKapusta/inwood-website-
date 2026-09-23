@@ -1429,6 +1429,92 @@
           { "label": "Ościeżnice i poszerzenia", "value": "liczone tak samo, +20%" },
           { "label": "Dostępne w kolekcjach", "value": "wszystkich" }
         ]
+      },
+      "bili-dveri": {
+        "title": "Białe drzwi wewnętrzne od producenta — 4 odcienie bieli | IN WOOD",
+        "metaDescription": "Białe drzwi IN WOOD: biel gładka, biel strukturalna, oksyd biały, rustik awinion. Wszystkie kolekcje, wymiary bez dopłaty. Wycena w jeden dzień roboczy.",
+        "h1": "Białe drzwi wewnętrzne",
+        "breadcrumbName": "Białe drzwi",
+        "body": [
+          "Biel wybiera się częściej niż wszystkie pozostałe kolory razem — i niemal zawsze bez sprawdzenia, że biel bywa różna.",
+          "**Mamy cztery.** Biel gładka to równa powierzchnia bez faktury, klasyka do jasnych wnętrz. Biel strukturalna ma wyczuwalny relief pod drewno: mniej przypomina plastik i lepiej ukrywa drobne ślady. Oksyd biały ma chłodny, szarawy podton i dobrze wygląda obok betonu i szarych ścian. Rustik awinion biały ma wyraźną strukturę drewna, do wnętrz, w których biel ma być ciepła.",
+          "Różnicę widać w dłoni, a nie na ekranie. Jeśli wybierasz biel na poważnie — przyjedź do zakładu w Połtawie i zobacz na żywo.",
+          "**Gdzie są dostępne.** Biel gładka jest we wszystkich liniach — [ETALON](/catalog/etalon), [NOMINAL](/catalog/nominal), FREZZATTI, PERFETTO. Strukturalna i rustik — w ETALON i PERFETTO. Oksyd biały — w NOMINAL i FREZZATTI.",
+          "**Jeśli potrzebny jest konkretny odcień** — dokładnie w kolorze ścian czy sufitu — [malujemy według kodu RAL lub NCS](/catalog/dveri-pid-farbuvannya-ral).",
+          "**Uczciwie o minusie.** Białe drzwi pokazują ślady palców szybciej niż ciemne, zwłaszcza gładkie. Struktury są pod tym względem praktyczniejsze.",
+          "**Wymiary** — 400–900 mm szerokości, 1800–2100 mm wysokości co 50 mm, bez dopłaty za wymiar. Więcej o doborze koloru — w artykule [„Jak dobrać kolor drzwi do podłogi i mebli”](/blog/yak-pidibraty-kolir-dverei-pid-pidlohu)."
+        ],
+        "specs": [
+          { "label": "Odcienie bieli", "value": "4 — gładka, strukturalna, oksyd, rustik awinion" },
+          { "label": "Biel gładka", "value": "wszystkie linie — ETALON, NOMINAL, FREZZATTI, PERFETTO" },
+          { "label": "Strukturalna i rustik awinion", "value": "ETALON, PERFETTO" },
+          { "label": "Oksyd biały", "value": "NOMINAL, FREZZATTI" },
+          { "label": "Wymiary", "value": "400–900 × 1800–2100 mm, co 50 mm, bez dopłaty" }
+        ]
+      },
+      "chorni-dveri": {
+        "title": "Czarne drzwi wewnętrzne od producenta | IN WOOD",
+        "metaDescription": "Czarne i ciemne drzwi: czarna kora, antracyt, wenge, beton ciemny. Czarna krawędź aluminiowa i wstawka. Malowanie według RAL. Wycena w jeden dzień.",
+        "h1": "Czarne i ciemne drzwi wewnętrzne",
+        "breadcrumbName": "Czarne drzwi",
+        "body": [
+          "Ciemne drzwi przestały być ryzykiem. Kilka lat temu wybierali je nieliczni, dziś to jeden z głównych kierunków — i widać to w naszych zamówieniach.",
+          "**Co jest w palecie.** Czarna kora to głęboka czerń z drobną fakturą, najbliżej prawdziwej czerni. Antracyt to ciemna szarość, łagodniejsza od czerni i łatwiejsza w zestawieniach. Wenge południowe to ciemne drewno z wyraźnym rysunkiem. Beton ciemny i oksyd ciemny to chłodne szarości do wnętrz minimalistycznych. Feldgrau to szarozielony, rzadki i bardzo charakterystyczny.",
+          "**Czerń to nie tylko skrzydło.** W kolekcji [ETALON](/catalog/etalon) kolor krawędzi aluminiowej wybiera się osobno — czarna krawędź na jasnym skrzydle rysuje cienką linię po obwodzie. W wersji INSIDE dochodzi jeszcze czarna wstawka dekoracyjna na samym skrzydle. To dwa różne zabiegi i działają zupełnie inaczej.",
+          "Jeśli potrzebna jest konkretna czerń — [malujemy według RAL lub NCS](/catalog/dveri-pid-farbuvannya-ral), razem z ościeżnicą i opaską w tym samym kolorze.",
+          "**Uczciwie o minusie.** Ciemne gładkie powierzchnie pokazują kurz i ślady nie mniej niż białe, tylko inaczej. Faktury takie jak czarna kora radzą sobie wyraźnie lepiej.",
+          "**Gdzie są dostępne.** Czarna kora i beton ciemny — w [ETALON](/catalog/etalon) i [PERFETTO](/catalog/perfetto). Antracyt, oksyd ciemny i feldgrau — w NOMINAL i [FREZZATTI](/catalog/frezzatti). Wenge południowe — w większości linii.",
+          "**Wymiary** — 400–900 × 1800–2100 mm co 50 mm, bez dopłaty."
+        ],
+        "specs": [
+          { "label": "Odcienie", "value": "czarna kora, antracyt, wenge południowe, beton ciemny, oksyd ciemny, feldgrau" },
+          { "label": "Czarna kora, beton ciemny", "value": "ETALON, PERFETTO" },
+          { "label": "Antracyt, oksyd ciemny, feldgrau", "value": "NOMINAL, FREZZATTI" },
+          { "label": "Wenge południowe", "value": "większość linii" },
+          { "label": "Wymiary", "value": "400–900 × 1800–2100 mm, co 50 mm, bez dopłaty" }
+        ]
+      },
+      "dveri-pid-derevo": {
+        "title": "Drzwi w dekorze drewna — dąb, wenge, sosna | IN WOOD",
+        "metaDescription": "Drzwi wewnętrzne z teksturą drewna: dąb chateau, dąb pasadena, wenge, sosna prowansalska, świerk karpacki. Własna produkcja, wymiary bez dopłaty.",
+        "h1": "Drzwi wewnętrzne w dekorze drewna",
+        "breadcrumbName": "W dekorze drewna",
+        "body": [
+          "Drzwi z litego drewna kosztują wielokrotnie więcej, wymagają pielęgnacji i źle znoszą wahania wilgotności. Folia z teksturą drewna daje ten sam wygląd bez żadnego z tych problemów — dlatego wybiera ją niemal każdy, kto chciał „drewniane drzwi”.",
+          "**Dąb to największa grupa.** Dąb chateau to średni ciepły odcień, najbardziej uniwersalny. Dąb pasadena jest jaśniejszy, z szarawym podtonem. Dąb nemo latte to miękki beż. Dąb nemo srebrny to chłodny szary dąb do wnętrz współczesnych. Dąb portowy i dąb glasgow eco są ciemniejsze, z wyraźną strukturą.",
+          "**Ciemne drewno.** Wenge południowe i wenge południowe tłoczone to klasyka ciemnego drewna, drugie dodatkowo z wyczuwalnym reliefem.",
+          "**Iglaste i rustykalne.** Sosna prowansalska jest jasna, z charakterystycznymi sękami. Świerk karpacki jest cieplejszy i bardziej matowy. Rustik złoty ma wyraźną strukturę starego drewna.",
+          "**Dlaczego faktura znaczy więcej niż kolor.** Folia tłoczona zgodnie z rysunkiem drewna różni się od gładkiej nie tylko w dotyku. Inaczej łapie światło i właśnie dlatego drzwi czyta się jako drewniane, a nie jako „drzwi w kolorze dębu”. Faktury mają też zaletę praktyczną: drobnych rys prawie nie widać.",
+          "**Gdzie są dostępne.** Najszerszy wybór tekstur jest w [ETALON](/catalog/etalon) i [PERFETTO](/catalog/perfetto) — 17 kolorów. W [NOMINAL](/catalog/nominal) i FREZZATTI jest ich 12, głównie dęby i wenge.",
+          "**Wymiary** — 400–900 × 1800–2100 mm co 50 mm, bez dopłaty. Więcej o doborze koloru drewna — w artykule [„Jak dobrać kolor drzwi do podłogi i mebli”](/blog/yak-pidibraty-kolir-dverei-pid-pidlohu)."
+        ],
+        "specs": [
+          { "label": "Grupy tekstur", "value": "dąb, ciemne drewno (wenge), iglaste i rustykalne" },
+          { "label": "ETALON, PERFETTO", "value": "17 kolorów tekstur" },
+          { "label": "NOMINAL, FREZZATTI", "value": "12 kolorów, głównie dęby i wenge" },
+          { "label": "Wymiary", "value": "400–900 × 1800–2100 mm, co 50 mm, bez dopłaty" }
+        ]
+      },
+      "dveri-z-moldyngom": {
+        "title": "Drzwi z listwami dekoracyjnymi — 25 modeli | IN WOOD",
+        "metaDescription": "Drzwi wewnętrzne z listwami: ETALON ET-02 — ET-17 oraz NOMINAL NL-02 — NL-10. Od pojedynczej linii po złożoną geometrię. Wymiary bez dopłaty.",
+        "h1": "Drzwi wewnętrzne z listwami dekoracyjnymi",
+        "breadcrumbName": "Z listwami",
+        "body": [
+          "Listwa dekoracyjna to nakładka na skrzydle, która tworzy wzór. Najpowszechniejszy sposób, by drzwi nie były zwykłym prostokątem, bez przechodzenia do droższych wersji frezowanych czy malowanych.",
+          "**Dwadzieścia pięć modeli** z listwami w dwóch liniach: [ETALON](/catalog/etalon), modele ET-02 — ET-17, oraz [NOMINAL](/catalog/nominal), modele NL-02 — NL-10.",
+          "**Wzory różnią się charakterem.** Pojedyncza pionowa linia pośrodku to wariant najbardziej powściągliwy, pasuje niemal wszędzie. Dwie czy trzy poziome linie to spokojna klasyka. Bardziej złożona geometria z prostokątami i przecięciami jest wyrazistsza, ale wnętrze musi to udźwignąć.",
+          "Prosta zasada: **im mniej innych akcentów wizualnych w pomieszczeniu, tym bardziej złożony wzór można sobie pozwolić.** W korytarzu z gołymi ścianami rozbudowana listwa wygląda na miejscu, w pokoju z wzorzystą tapetą — spiera się ze ścianami.",
+          "**Listwa czy frezowanie.** Listwa jest nakładana na skrzydło, frezowanie wycinane w nim. Frezowanie jest trwalsze — nie odklei się i nie odpryśnie od mebla — ale droższe. Jeśli drzwi stoją tam, gdzie stale się o nie zahacza, warto zobaczyć [FREZZATTI](/catalog/frezzatti).",
+          "**Czym różnią się linie.** ETALON ma skrzydło 40 mm, 17 kolorów oraz dostępne krawędzie aluminiowe, ościeżnicę bezprzylgową i wygłuszenie. NOMINAL ma skrzydło 34 mm, 12 kolorów i wyłącznie ościeżnicę regulowaną — w niższej cenie.",
+          "**Wymiary** — 400–900 × 1800–2100 mm co 50 mm, bez dopłaty. Więcej o różnicy w konstrukcji — w artykule [„Drzwi płytowe czy ramiakowo-płycinowe”](/blog/shhytovi-chy-tsargovi-dveri)."
+        ],
+        "specs": [
+          { "label": "Modele z listwami", "value": "25 — ETALON ET-02–ET-17, NOMINAL NL-02–NL-10" },
+          { "label": "ETALON", "value": "skrzydło 40 mm, 17 kolorów, krawędź aluminiowa, ościeżnica bezprzylgowa, wygłuszenie" },
+          { "label": "NOMINAL", "value": "skrzydło 34 mm, 12 kolorów, ościeżnica regulowana" },
+          { "label": "Wymiary", "value": "400–900 × 1800–2100 mm, co 50 mm, bez dopłaty" }
+        ]
       }
     }
   }
