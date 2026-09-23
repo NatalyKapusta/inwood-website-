@@ -20,9 +20,15 @@ export const playfairDisplay = Playfair_Display({
   display: "optional",
 });
 
+// Той самий фікс і для основного тексту: на /furnitura LCP-елементом
+// виявився не заголовок, а звичайний абзац (font-sans/Manrope) — 1360 з
+// 4,6с LCP йшло на заміну саме цього шрифту. "Найбільший елемент" на
+// кожній сторінці свій (десь заголовок, десь абзац), тож обидва шрифти
+// сайту мають той самий недолік — виправляємо обидва одразу, а не по
+// сторінці за раз.
 export const manrope = Manrope({
   subsets: ["latin", "latin-ext", "cyrillic"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-sans",
-  display: "swap",
+  display: "optional",
 });
