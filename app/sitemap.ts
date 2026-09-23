@@ -5,6 +5,7 @@ import { blogPosts } from "@/data/blog";
 import dealers from "@/data/dealers.json";
 import { getCitiesWithDealers } from "@/lib/dealers";
 import { RECRUIT_CITIES, getAllDealerRecruitCities } from "@/lib/recruitCities";
+import { COLLECTION_PAGE_SLUGS } from "@/lib/collectionPages";
 
 const paths = [
   "",
@@ -45,5 +46,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  return localizedEntries;
+  // Сторінки колекцій (/catalog/etalon тощо) — поки тільки українською:
+  // переклади ru/en/pl ще не передані (див. коментар у сторінці), тому не
+  // додаємо в sitemap мовні версії, яких на сайті ще немає (вели б на 404).
+  // alternates обмежені однією мовою — x-default теж на ua, без інших
+  // hreflang, яких поки немає.
+  const collectionEntries = COLLECTION_PAGE_SLUGS.map((slug) => {
+    const url = `${SITE_URL}/ua/catalog/${slug}`;
+    return {
+      url,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+      alternates: {
+        languages: { uk: url, "x-default": url },
+      },
+    };
+  });
+
+  return [...localizedEntries, ...collectionEntries];
 }

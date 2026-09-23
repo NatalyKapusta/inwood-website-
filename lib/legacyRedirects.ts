@@ -15,16 +15,21 @@ export const LEGACY_EXACT_REDIRECTS: Record<string, string> = {
   "/storinka-vdyachnosti": "/ua",
   "/chim-vidriznyayutsya-nashi-dveri": "/ua/harakterystyky",
   "/servisne-obslugovuvannya": "/ua/servis",
-  "/etalon": "/ua/catalog#etalon",
-  "/nominal": "/ua/catalog#nominal",
-  "/frezzatti": "/ua/catalog#frezzatti",
-  "/perfetto": "/ua/catalog#perfetto",
+  // На окремі сторінки колекцій (з'явились 23.09.2026) — точніше, ніж
+  // якір на загальному каталозі. RU/EN-версії цих сторінок ще нема
+  // (переклади не передані), тому нижче в RU-блоці ці самі редіректи
+  // поки лишаються на якір /catalog#... — не можна вести на неіснуючу
+  // сторінку.
+  "/etalon": "/ua/catalog/etalon",
+  "/nominal": "/ua/catalog/nominal",
+  "/frezzatti": "/ua/catalog/frezzatti",
+  "/perfetto": "/ua/catalog/perfetto",
   "/video": "/ua",
-  "/dveri-pryhovanoho-montazhu": "/ua/catalog#hidden-doors",
+  "/dveri-pryhovanoho-montazhu": "/ua/catalog/pryhovani-dveri",
   "/dveri/shchytovi": "/ua/blog/shhytovi-chy-tsargovi-dveri",
   "/dveri-z-pokryttyam": "/ua/catalog",
   "/farbovani-dveri": "/ua/catalog",
-  "/pryhovani-dveri": "/ua/catalog#hidden-doors",
+  "/pryhovani-dveri": "/ua/catalog/pryhovani-dveri",
   "/pogonazhni-vyroby": "/ua/catalog",
   "/standart": "/ua/catalog",
   "/vidhuk": "/ua",
@@ -125,6 +130,16 @@ const SHOP_COLLECTION_ANCHOR: Record<string, string> = {
   "prihovanogo-montazhu": "hidden-doors",
 };
 
+// Той самий анкор колекції -> слаг окремої сторінки колекції (тільки для
+// ua — див. коментар у LEGACY_EXACT_REDIRECTS вище).
+const ANCHOR_TO_UA_COLLECTION_PAGE: Record<string, string> = {
+  etalon: "etalon",
+  nominal: "nominal",
+  frezzatti: "frezzatti",
+  perfetto: "perfetto",
+  "hidden-doors": "pryhovani-dveri",
+};
+
 export function resolveLegacyRedirect(pathname: string): string | null {
   const exact = LEGACY_EXACT_REDIRECTS[pathname];
   if (exact) return exact;
@@ -148,7 +163,11 @@ export function resolveLegacyRedirect(pathname: string): string | null {
   if (rest[0] === "shop") {
     if (rest[1] === "cat" && rest[2]) {
       const anchor = SHOP_COLLECTION_ANCHOR[rest[2]];
-      return anchor ? `/${locale}/catalog#${anchor}` : `/${locale}/catalog`;
+      if (!anchor) return `/${locale}/catalog`;
+      // Для ua вже є окрема сторінка колекції — точніше, ніж якір.
+      // Для ru/en сторінки ще нема (переклади не передані), лишаємо якір.
+      if (locale === "ua") return `/ua/catalog/${ANCHOR_TO_UA_COLLECTION_PAGE[anchor]}`;
+      return `/${locale}/catalog#${anchor}`;
     }
     return `/${locale}/catalog`;
   }
