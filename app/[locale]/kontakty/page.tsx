@@ -7,8 +7,7 @@ import SocialLinks from "@/components/SocialLinks";
 import MailIcon from "@/components/MailIcon";
 import ShowroomMap from "@/components/ShowroomMap";
 import { submitLead } from "@/app/actions/lead";
-import LeadConversionTracker from "@/components/LeadConversionTracker";
-import SentModal from "@/components/SentModal";
+import SentNotice from "@/components/SentNotice";
 import Honeypot from "@/components/Honeypot";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
@@ -34,6 +33,11 @@ const FEATURE_ICONS = [
   </svg>,
 ];
 
+// Публічна сторінка з рідкісним оновленням даних — статична генерація
+// з ISR раз на годину (замість повністю динамічного рендеру на кожен
+// запит), щоб сторінка кешувалась на CDN Vercel.
+export const revalidate = 3600;
+
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
   return buildMetadata({
@@ -46,15 +50,12 @@ export async function generateMetadata({ params }: { params: { locale: Locale } 
 
 export default async function KontaktyPage({
   params,
-  searchParams,
 }: {
   params: { locale: Locale };
-  searchParams: { sent?: string };
 }) {
   const dict = await getDictionary(params.locale);
   const t = dict.kontakty;
   const c = dict.common;
-  const sent = searchParams.sent === "1";
   const breadcrumbItems = [
     { name: c.breadcrumbHome, path: "" },
     { name: t.heading, path: "/kontakty" },
@@ -160,12 +161,7 @@ export default async function KontaktyPage({
         <div className="rounded-xl bg-panel-alt p-6">
           <h2 className="font-serif text-lg font-bold text-navy-dark">{t.formTitle}</h2>
           <p className="mt-1 text-sm text-navy-dim">{t.formText}</p>
-          {sent && (
-            <>
-              <LeadConversionTracker source="Контакти" />
-              <SentModal message={c.formSentMessage} />
-            </>
-          )}
+          <SentNotice source="Контакти" sentLabel={c.formSentMessage} />
           <form action={submitLead} className="mt-6 flex flex-col gap-3">
             <input type="hidden" name="source" value="Контакти" />
             <Honeypot />

@@ -1,7 +1,6 @@
 import PhoneInput from "@/components/PhoneInput";
 import { submitLead } from "@/app/actions/lead";
-import LeadConversionTracker from "@/components/LeadConversionTracker";
-import SentModal from "@/components/SentModal";
+import SentNotice from "@/components/SentNotice";
 import Honeypot from "@/components/Honeypot";
 
 type ExtraField = {
@@ -19,7 +18,6 @@ export default function ContactCta({
   submitLabel,
   extraFields,
   source,
-  sent,
   sentLabel,
   phoneManualLabel,
   phoneChooseCountryLabel,
@@ -32,7 +30,6 @@ export default function ContactCta({
   submitLabel: string;
   extraFields?: ExtraField[];
   source: string;
-  sent?: boolean;
   sentLabel?: string;
   phoneManualLabel?: string;
   phoneChooseCountryLabel?: string;
@@ -43,12 +40,7 @@ export default function ContactCta({
       <h2 className="font-serif text-2xl font-bold text-navy-dark sm:text-3xl">{title}</h2>
       <p className="mt-4 text-navy-dim">{text}</p>
 
-      {sent && (
-        <>
-          <LeadConversionTracker source={source} />
-          <SentModal message={sentLabel ?? "Дякуємо! Заявку надіслано, ми скоро з вами зв'яжемось."} />
-        </>
-      )}
+      <SentNotice source={source} sentLabel={sentLabel} />
       <form action={submitLead} className="mx-auto mt-8 flex max-w-md flex-col gap-4">
         <input type="hidden" name="source" value={source} />
         <Honeypot />

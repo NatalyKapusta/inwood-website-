@@ -7,6 +7,11 @@ import { getAllDealerRecruitCities, findDealerRecruitCity, getRecruitCityDisplay
 import ContactCta from "@/components/ContactCta";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
+// Публічна сторінка з рідкісним оновленням даних — статична генерація
+// з ISR раз на годину (замість повністю динамічного рендеру на кожен
+// запит), щоб сторінка кешувалась на CDN Vercel.
+export const revalidate = 3600;
+
 export function generateStaticParams() {
   return locales.flatMap((locale) => getAllDealerRecruitCities().map((c) => ({ locale, city: c.slug })));
 }
@@ -32,10 +37,8 @@ export async function generateMetadata({
 
 export default async function DealerRecruitCityPage({
   params,
-  searchParams,
 }: {
   params: { locale: Locale; city: string };
-  searchParams: { sent?: string };
 }) {
   const found = findDealerRecruitCity(params.city);
   if (!found) {
@@ -130,7 +133,6 @@ export default async function DealerRecruitCityPage({
         phoneChooseCountryLabel={c.phoneChooseCountry}
         phoneInvalidLabel={c.phoneInvalid}
         source={`Шукаємо дилера — ${found.city}`}
-        sent={searchParams.sent === "1"}
         extraFields={[
           { placeholder: s.formRole, options: s.formRoleOptions },
           { placeholder: s.formEmail, type: "email", name: "email" },

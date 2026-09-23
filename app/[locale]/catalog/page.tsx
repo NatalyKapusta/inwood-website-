@@ -7,6 +7,7 @@ import { getPublicPogonazhni, getPublicPlintus, getPublicNakladka } from "@/lib/
 import { catalogCategories, catalogCategorySlugs, type CatalogCategorySlug } from "@/lib/catalogCategories";
 import { COLLECTION_PAGE_SLUGS, THEMATIC_PAGE_SLUGS } from "@/lib/collectionPages";
 import CatalogFilter from "@/components/CatalogFilter";
+import CategoryBanner from "@/components/CategoryBanner";
 import DoorFit3dBanner from "@/components/DoorFit3dBanner";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Link from "next/link";
@@ -14,10 +15,6 @@ import Link from "next/link";
 // Сторінка кешується статично, але раз на хвилину перевіряє
 // prices_visible наново — щоб перемикач у порталі діяв без редеплою.
 export const revalidate = 60;
-
-function isCategorySlug(v: string | undefined): v is CatalogCategorySlug {
-  return !!v && (catalogCategorySlugs as string[]).includes(v);
-}
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
@@ -29,16 +26,10 @@ export async function generateMetadata({ params }: { params: { locale: Locale } 
   });
 }
 
-export default async function CatalogPage({
-  params,
-  searchParams,
-}: {
-  params: { locale: Locale };
-  searchParams: { category?: string };
-}) {
+export default async function CatalogPage({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
   const t = dict.catalog;
-  let sections = collectionOrder
+  const baseSections = collectionOrder
     .filter((id) => collections[id])
     .map((id) => {
       const data = collections[id];
@@ -51,65 +42,56 @@ export default async function CatalogPage({
       return { id, data };
     });
 
-  // Піли-категорії з головної сторінки ведуть сюди з ?category=... — звужуємо
-  // список секцій (і, для "dekor", ще й моделі всередині) під конкретну
-  // категорію, замість показу всього каталогу.
-  const categorySlug = isCategorySlug(searchParams.category) ? searchParams.category : undefined;
-  const category = categorySlug ? catalogCategories[categorySlug] : undefined;
-  if (category) {
-    sections = sections
+  // Остання вкладка "Погонажні вироби" — короб/лиштва/добір окремо від
+  // полотна (по всіх лініях), плюс дверна накладка й плінтус (не прив'язані
+  // до лінії, тому groupуються під власною "псевдо-колекцією"). Це частина
+  // повного каталогу (не входить у жодну з категорій-пілів).
+  const [pogonazhni, plintus, nakladka] = await Promise.all([
+    getPublicPogonazhni(),
+    getPublicPlintus(),
+    getPublicNakladka(),
+  ]);
+  const addons = [
+    ...pogonazhni.map((row) => ({
+      collectionLabel: collections[row.collection]?.label ?? row.collection,
+      addon_type: row.addon_type,
+      item_label: row.item_label,
+      price: row.price,
+    })),
+    ...nakladka.map((item) => ({
+      collectionLabel: dict.furnitura.nakladkaTitle,
+      addon_type: "nakladka" as const,
+      item_label: item.label,
+      price: item.price,
+    })),
+    ...plintus.map((item) => ({
+      collectionLabel: dict.furnitura.plintusTitle,
+      addon_type: "plintus" as const,
+      item_label: item.label,
+      price: item.price,
+      unitSuffix: dict.furnitura.perMeter,
+    })),
+  ];
+  const sections =
+    addons.length > 0
+      ? [...baseSections, { id: "pogonazhni", data: { label: dict.furnitura.pogonazhniTitle, addons } }]
+      : baseSections;
+
+  // Піли-категорії з головної сторінки ведуть сюди з ?category=... — той
+  // фільтр тепер читається на клієнті (CatalogFilter/CategoryBanner), а тут
+  // заздалегідь рахуємо звужений набір секцій під кожну з 6 категорій, щоб
+  // сервер більше не читав searchParams (це форсувало динамічний рендер і
+  // ламало кешування сторінки).
+  const sectionsByCategory: Partial<Record<CatalogCategorySlug, typeof sections>> = {};
+  for (const slug of catalogCategorySlugs) {
+    const category = catalogCategories[slug];
+    sectionsByCategory[slug] = baseSections
       .filter((s) => category.collections.includes(s.id))
       .map((s) => {
         const excluded = category.excludeModelCodes?.[s.id];
         if (!excluded || !s.data.models) return s;
         return { ...s, data: { ...s.data, models: s.data.models.filter((m) => !excluded.includes(m.code)) } };
       });
-  }
-  const categoryLabel = categorySlug
-    ? dict.home.categories[catalogCategorySlugs.indexOf(categorySlug)]
-    : undefined;
-
-  // Остання вкладка "Погонажні вироби" — короб/лиштва/добір окремо від
-  // полотна (по всіх лініях), плюс дверна накладка й плінтус (не прив'язані
-  // до лінії, тому groupуються під власною "псевдо-колекцією"). Показуємо
-  // лише в повному каталозі (без ?category=), бо це не частина жодної з
-  // існуючих категорій-пілів.
-  if (!category) {
-    const [pogonazhni, plintus, nakladka] = await Promise.all([
-      getPublicPogonazhni(),
-      getPublicPlintus(),
-      getPublicNakladka(),
-    ]);
-    const addons = [
-      ...pogonazhni.map((row) => ({
-        collectionLabel: collections[row.collection]?.label ?? row.collection,
-        addon_type: row.addon_type,
-        item_label: row.item_label,
-        price: row.price,
-      })),
-      ...nakladka.map((item) => ({
-        collectionLabel: dict.furnitura.nakladkaTitle,
-        addon_type: "nakladka" as const,
-        item_label: item.label,
-        price: item.price,
-      })),
-      ...plintus.map((item) => ({
-        collectionLabel: dict.furnitura.plintusTitle,
-        addon_type: "plintus" as const,
-        item_label: item.label,
-        price: item.price,
-        unitSuffix: dict.furnitura.perMeter,
-      })),
-    ];
-    if (addons.length > 0) {
-      sections = [
-        ...sections,
-        {
-          id: "pogonazhni",
-          data: { label: dict.furnitura.pogonazhniTitle, addons },
-        },
-      ];
-    }
   }
 
   const pricesVisible = await getPricesVisible(params.locale);
@@ -183,16 +165,11 @@ export default async function CatalogPage({
         ))}
       </div>
 
-      {categoryLabel && (
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm">
-          <span className="rounded-full bg-gold/15 px-4 py-1.5 font-semibold text-gold-dim">
-            {categoryLabel}
-          </span>
-          <Link href={`/${params.locale}/catalog`} className="text-navy-dim underline decoration-dotted underline-offset-4 hover:text-navy-dark">
-            {t.showAllCatalog}
-          </Link>
-        </div>
-      )}
+      <CategoryBanner
+        locale={params.locale}
+        categoryLabels={dict.home.categories}
+        showAllLabel={t.showAllCatalog}
+      />
 
       <div className="mt-12">
         <DoorFit3dBanner
@@ -206,6 +183,7 @@ export default async function CatalogPage({
       <div className="mt-8">
         <CatalogFilter
           sections={sections}
+          sectionsByCategory={sectionsByCategory}
           t={t}
           pricesVisible={pricesVisible}
           nakladkaLabel={dict.furnitura.nakladkaShort}

@@ -91,25 +91,17 @@ export async function middleware(request: NextRequest) {
   // no-store і x-vercel-cache: MISS (SEO-аудит 23.09.2026, задача 2).
   // Публічні сторінки сесії не потребують — пропускаємо їх без дотику
   // до cookies, щоб Next/Vercel могли кешувати їх як завжди.
+  //
+  // Cache-Control тут більше НЕ проставляємо вручну: тимчасовий костиль
+  // (23.09) був потрібен, поки публічні сторінки все ще читали
+  // searchParams/cookies() і через це форсувались у динамічний рендер —
+  // тоді нативний Cache-Control сторінки взагалі не встигав застосуватись
+  // до CDN-кешу. Тепер ці сторінки статичні/ISR (revalidate), і Next сам
+  // виставляє правильний s-maxage — власний заголовок middleware лише
+  // заважав би (фіксована TTL замість реальної revalidate-політики кожної
+  // сторінки).
   if (!isPortalRoute) {
-    // Перевірка на проді 23.09 показала: Set-Cookie зник, але
-    // cache-control лишився private/no-store — Vercel не кешує на edge
-    // жодну сторінку, що проходить через middleware, якщо middleware сама
-    // не проставить Cache-Control у відповіді (middleware виконується до
-    // перевірки CDN-кешу, тож нативний заголовок ISR-сторінки до цього
-    // моменту ще не застосовано). /catalog і /furnitura мають свій
-    // revalidate = 60 (лічильник цін через Supabase) — тримаємо для них
-    // коротший s-maxage, що відповідає цьому інтервалу; решті публічних
-    // маршрутів віддаємо довший кеш із stale-while-revalidate.
-    const response = NextResponse.next();
-    const isFrequentlyRevalidated = /^\/[a-z]{2}\/(catalog|furnitura)(\/|$)/.test(pathname);
-    response.headers.set(
-      "Cache-Control",
-      isFrequentlyRevalidated
-        ? "public, s-maxage=60, stale-while-revalidate=3600"
-        : "public, s-maxage=3600, stale-while-revalidate=86400"
-    );
-    return response;
+    return NextResponse.next();
   }
 
   let response = NextResponse.next({ request });

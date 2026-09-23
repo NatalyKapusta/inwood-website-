@@ -8,6 +8,11 @@ import DoorFit3dBanner from "@/components/DoorFit3dBanner";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RichText from "@/components/RichText";
 
+// Публічна сторінка з рідкісним оновленням даних — статична генерація
+// з ISR раз на годину (замість повністю динамічного рендеру на кожен
+// запит), щоб сторінка кешувалась на CDN Vercel.
+export const revalidate = 3600;
+
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
   const t = dict.dlyaZabudovnykiv;
@@ -21,10 +26,8 @@ export async function generateMetadata({ params }: { params: { locale: Locale } 
 
 export default async function DlyaZabudovnykivPage({
   params,
-  searchParams,
 }: {
   params: { locale: Locale };
-  searchParams: { sent?: string };
 }) {
   const dict = await getDictionary(params.locale);
   const t = dict.dlyaZabudovnykiv;
@@ -125,7 +128,6 @@ export default async function DlyaZabudovnykivPage({
         phoneChooseCountryLabel={c.phoneChooseCountry}
         phoneInvalidLabel={c.phoneInvalid}
         source="Забудовники"
-        sent={searchParams.sent === "1"}
         extraFields={[
           { placeholder: s.formEmail, type: "email", name: "email" },
           { placeholder: s.formMessage },

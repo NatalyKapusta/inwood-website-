@@ -12,6 +12,11 @@ import {
 import ContactCta from "@/components/ContactCta";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
+// Публічна сторінка з рідкісним оновленням даних — статична генерація
+// з ISR раз на годину (замість повністю динамічного рендеру на кожен
+// запит), щоб сторінка кешувалась на CDN Vercel.
+export const revalidate = 3600;
+
 export function generateStaticParams() {
   return locales.flatMap((locale) => RECRUIT_CITIES.map((c) => ({ locale, city: c.slug })));
 }
@@ -38,10 +43,8 @@ export async function generateMetadata({
 
 export default async function DlyaZabudovnykivCityPage({
   params,
-  searchParams,
 }: {
   params: { locale: Locale; city: string };
-  searchParams: { sent?: string };
 }) {
   const found = findRecruitCity(params.city);
   if (!found) {
@@ -115,7 +118,6 @@ export default async function DlyaZabudovnykivCityPage({
         phoneChooseCountryLabel={c.phoneChooseCountry}
         phoneInvalidLabel={c.phoneInvalid}
         source={`Забудовники — ${found.city}`}
-        sent={searchParams.sent === "1"}
         extraFields={[
           { placeholder: s.formEmail, type: "email", name: "email" },
           { placeholder: s.formMessage },

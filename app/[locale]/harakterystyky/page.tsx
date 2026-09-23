@@ -16,6 +16,11 @@ const SHOWCASE_MODEL_CODE: Record<string, string> = {
   NOMINAL: "NL-05",
 };
 
+// Публічна сторінка з рідкісним оновленням даних — статична генерація
+// з ISR раз на годину (замість повністю динамічного рендеру на кожен
+// запит), щоб сторінка кешувалась на CDN Vercel.
+export const revalidate = 3600;
+
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
   return buildMetadata({
@@ -28,10 +33,8 @@ export async function generateMetadata({ params }: { params: { locale: Locale } 
 
 export default async function CharacteristicsPage({
   params,
-  searchParams,
 }: {
   params: { locale: Locale };
-  searchParams: { sent?: string };
 }) {
   const dict = await getDictionary(params.locale);
   const t = dict.harakterystyky;
@@ -120,7 +123,6 @@ export default async function CharacteristicsPage({
         phoneChooseCountryLabel={c.phoneChooseCountry}
         phoneInvalidLabel={c.phoneInvalid}
       source="Характеристики дверей"
-      sent={searchParams.sent === "1"}
       />
     </>
   );

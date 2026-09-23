@@ -374,9 +374,13 @@ export async function setPricesVisible(formData: FormData) {
     .from("site_settings")
     .upsert({ key: "prices_visible", value: visible, updated_by: user.id, updated_at: new Date().toISOString() });
 
+  // Ціни видно не лише на /catalog: ще /catalog/[collection] і /spivpratsya
+  // (всі 4 локалі), і всі ці сторінки тепер статичні з revalidate = 60 —
+  // без ручного інвалідування перемикач діяв би тільки на наступний
+  // ISR-цикл. revalidatePath("/", "layout") скидає кеш під кореневим
+  // layout одразу для всього сайту, тож перелічувати кожен маршрут окремо
+  // не потрібно (і не забудеться додати новий, якщо він теж читатиме ціни).
   revalidatePath("/portal");
-  revalidatePath("/ua/catalog");
-  revalidatePath("/ru/catalog");
-  revalidatePath("/en/catalog");
+  revalidatePath("/", "layout");
   redirect("/portal");
 }

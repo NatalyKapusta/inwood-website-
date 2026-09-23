@@ -7,6 +7,11 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import ShowroomMap from "@/components/ShowroomMap";
 import ContactCta from "@/components/ContactCta";
 
+// Публічна сторінка з рідкісним оновленням даних — статична генерація
+// з ISR раз на годину (замість повністю динамічного рендеру на кожен
+// запит), щоб сторінка кешувалась на CDN Vercel.
+export const revalidate = 3600;
+
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
   const t = dict.poltava;
@@ -20,10 +25,8 @@ export async function generateMetadata({ params }: { params: { locale: Locale } 
 
 export default async function PoltavaPage({
   params,
-  searchParams,
 }: {
   params: { locale: Locale };
-  searchParams: { sent?: string };
 }) {
   const dict = await getDictionary(params.locale);
   const t = dict.poltava;
@@ -149,7 +152,6 @@ export default async function PoltavaPage({
         phoneChooseCountryLabel={c.phoneChooseCountry}
         phoneInvalidLabel={c.phoneInvalid}
         source="Двері Полтава"
-        sent={searchParams.sent === "1"}
       />
     </>
   );

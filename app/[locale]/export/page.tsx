@@ -5,6 +5,11 @@ import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import ContactCta from "@/components/ContactCta";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
+// Публічна сторінка з рідкісним оновленням даних — статична генерація
+// з ISR раз на годину (замість повністю динамічного рендеру на кожен
+// запит), щоб сторінка кешувалась на CDN Vercel.
+export const revalidate = 3600;
+
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
   const t = dict.export;
@@ -18,10 +23,8 @@ export async function generateMetadata({ params }: { params: { locale: Locale } 
 
 export default async function ExportPage({
   params,
-  searchParams,
 }: {
   params: { locale: Locale };
-  searchParams: { sent?: string };
 }) {
   const dict = await getDictionary(params.locale);
   const t = dict.export;
@@ -113,7 +116,6 @@ export default async function ExportPage({
         phoneChooseCountryLabel={c.phoneChooseCountry}
         phoneInvalidLabel={c.phoneInvalid}
         source="Експорт"
-        sent={searchParams.sent === "1"}
         extraFields={[
           { placeholder: s.formEmail, type: "email", name: "email" },
           { placeholder: s.formMessage },

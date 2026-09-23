@@ -26,10 +26,8 @@ export async function generateMetadata({ params }: { params: { locale: Locale } 
 
 export default async function FurnituraPage({
   params,
-  searchParams,
 }: {
   params: { locale: Locale };
-  searchParams: { sent?: string };
 }) {
   const dict = await getDictionary(params.locale);
   const t = dict.furnitura;
@@ -98,7 +96,6 @@ export default async function FurnituraPage({
         phoneChooseCountryLabel={c.phoneChooseCountry}
         phoneInvalidLabel={c.phoneInvalid}
         source="Фурнітура та аксесуари"
-        sent={searchParams.sent === "1"}
       />
     </>
   );

@@ -35,6 +35,11 @@ function groupBlocks(blocks: BlogBlock[]): RenderBlock[] {
   return result;
 }
 
+// Публічна сторінка з рідкісним оновленням даних — статична генерація
+// з ISR раз на годину (замість повністю динамічного рендеру на кожен
+// запит), щоб сторінка кешувалась на CDN Vercel.
+export const revalidate = 3600;
+
 export function generateStaticParams() {
   return blogPosts.ua.map((post) => ({ slug: post.slug }));
 }
@@ -56,10 +61,8 @@ export async function generateMetadata({
 
 export default async function BlogPostPage({
   params,
-  searchParams,
 }: {
   params: { locale: Locale; slug: string };
-  searchParams: { sent?: string };
 }) {
   const post = getBlogPost(params.locale, params.slug);
   if (!post) notFound();
@@ -216,7 +219,6 @@ export default async function BlogPostPage({
         phoneChooseCountryLabel={c.phoneChooseCountry}
         phoneInvalidLabel={c.phoneInvalid}
         source={`Блог — ${post.title}`}
-        sent={searchParams.sent === "1"}
       />
     </>
   );

@@ -5,6 +5,11 @@ import Tabs from "@/components/Tabs";
 import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata } from "@/lib/seo";
 
+// Публічна сторінка з рідкісним оновленням даних — статична генерація
+// з ISR раз на годину (замість повністю динамічного рендеру на кожен
+// запит), щоб сторінка кешувалась на CDN Vercel.
+export const revalidate = 3600;
+
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
   return buildMetadata({
@@ -17,10 +22,8 @@ export async function generateMetadata({ params }: { params: { locale: Locale } 
 
 export default async function OplataDostavkaPage({
   params,
-  searchParams,
 }: {
   params: { locale: Locale };
-  searchParams: { sent?: string };
 }) {
   const dict = await getDictionary(params.locale);
   const t = dict.oplataDostavka;
@@ -85,7 +88,6 @@ export default async function OplataDostavkaPage({
         phoneChooseCountryLabel={c.phoneChooseCountry}
         phoneInvalidLabel={c.phoneInvalid}
       source="Оплата та доставка"
-      sent={searchParams.sent === "1"}
       />
     </>
   );

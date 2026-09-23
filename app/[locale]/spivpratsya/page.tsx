@@ -12,6 +12,11 @@ import { collections } from "@/lib/products";
 import { getPricesVisible } from "@/lib/siteSettings";
 import { getAllDealerRecruitCities, getRecruitCityDisplayName } from "@/lib/recruitCities";
 
+// Дані (видимість цін) читаються з Supabase публічним клієнтом (без
+// cookies()) — сторінка лишається статичною/ISR, але оновлюється частіше,
+// щоб перемикач цін у порталі діяв без редеплою.
+export const revalidate = 60;
+
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
   return buildMetadata({
@@ -24,10 +29,8 @@ export async function generateMetadata({ params }: { params: { locale: Locale } 
 
 export default async function SpivpratsyaPage({
   params,
-  searchParams,
 }: {
   params: { locale: Locale };
-  searchParams: { sent?: string };
 }) {
   const dict = await getDictionary(params.locale);
   const t = dict.spivpratsya;
@@ -280,7 +283,6 @@ export default async function SpivpratsyaPage({
         phoneChooseCountryLabel={c.phoneChooseCountry}
         phoneInvalidLabel={c.phoneInvalid}
         source="Співпраця"
-        sent={searchParams.sent === "1"}
         extraFields={[
           { placeholder: t.formRole, options: t.formRoleOptions },
           { placeholder: t.formEmail, type: "email", name: "email" },

@@ -18,6 +18,11 @@ import RichText from "@/components/RichText";
 import SpecsTable from "@/components/SpecsTable";
 import ContactCta from "@/components/ContactCta";
 
+// Дані (видимість цін) читаються з Supabase публічним клієнтом (без
+// cookies()) — сторінка лишається статичною/ISR, але оновлюється частіше,
+// щоб перемикач цін у порталі діяв без редеплою.
+export const revalidate = 60;
+
 export function generateStaticParams() {
   return locales.flatMap((locale) =>
     [...COLLECTION_PAGE_SLUGS, ...THEMATIC_PAGE_SLUGS].map((collection) => ({ locale, collection }))
@@ -53,13 +58,11 @@ export async function generateMetadata({
 
 export default async function CollectionPage({
   params,
-  searchParams,
 }: {
   params: { locale: Locale; collection: string };
-  searchParams: { sent?: string };
 }) {
   if (isThematicPageSlug(params.collection)) {
-    return <ThematicPage params={params} searchParams={searchParams} />;
+    return <ThematicPage params={params} />;
   }
   if (!isCollectionPageSlug(params.collection)) notFound();
 
@@ -141,7 +144,6 @@ export default async function CollectionPage({
         phoneChooseCountryLabel={c.phoneChooseCountry}
         phoneInvalidLabel={c.phoneInvalid}
         source={`${item.breadcrumbName} — сторінка колекції`}
-        sent={searchParams.sent === "1"}
       />
     </>
   );
@@ -152,10 +154,8 @@ export default async function CollectionPage({
 // на конкретний якір /catalog: тільки текст, характеристики й форма.
 async function ThematicPage({
   params,
-  searchParams,
 }: {
   params: { locale: Locale; collection: string };
-  searchParams: { sent?: string };
 }) {
   if (!isThematicPageSlug(params.collection)) notFound();
 
@@ -204,7 +204,6 @@ async function ThematicPage({
         phoneChooseCountryLabel={c.phoneChooseCountry}
         phoneInvalidLabel={c.phoneInvalid}
         source={`${item.breadcrumbName} — тематична сторінка`}
-        sent={searchParams.sent === "1"}
       />
     </>
   );

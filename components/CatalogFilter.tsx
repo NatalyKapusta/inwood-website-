@@ -1,11 +1,13 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import ProductCard from "@/components/ProductCard";
 import AddToCartButton from "@/components/AddToCartButton";
 import type { Collection } from "@/lib/products";
 import type { Dictionary } from "@/lib/dictionary";
+import type { CatalogCategorySlug } from "@/lib/catalogCategories";
 
 const ADDON_TYPES = ["korob", "lishtva", "dobir"] as const;
 type AddonType = (typeof ADDON_TYPES)[number];
@@ -23,7 +25,25 @@ function fmtUah(n: number) {
   return `${new Intl.NumberFormat("uk-UA").format(n)} ₴`;
 }
 
-export default function CatalogFilter({
+type Section = { id: string; data: Collection };
+
+type CatalogFilterProps = {
+  sections: Section[];
+  sectionsByCategory?: Partial<Record<CatalogCategorySlug, Section[]>>;
+  t: Dictionary["catalog"];
+  pricesVisible: boolean;
+  nakladkaLabel: string;
+  plintusLabel: string;
+  addToCartLabel: string;
+  addedToCartLabel: string;
+};
+
+// Чиста презентаційна частина — приймає вже вирішений набір secти, не читає
+// searchParams сама. Використовується і як реальний вміст (після гідратації,
+// з урахуванням ?category=), і як Suspense fallback (повний каталог,
+// безпечно рендериться статично — його бачать краулери й користувачі до
+// гідратації).
+function CatalogFilterView({
   sections,
   t,
   pricesVisible,
@@ -31,15 +51,7 @@ export default function CatalogFilter({
   plintusLabel,
   addToCartLabel,
   addedToCartLabel,
-}: {
-  sections: { id: string; data: Collection }[];
-  t: Dictionary["catalog"];
-  pricesVisible: boolean;
-  nakladkaLabel: string;
-  plintusLabel: string;
-  addToCartLabel: string;
-  addedToCartLabel: string;
-}) {
+}: Omit<CatalogFilterProps, "sectionsByCategory">) {
   const [active, setActive] = useState<string>("all");
   const [addonType, setAddonType] = useState<AddonFilter>("all");
   const [modelLimit, setModelLimit] = useState(INITIAL_MODEL_LIMIT);
@@ -243,6 +255,30 @@ export default function CatalogFilter({
 
       <p className="mt-12 text-center text-sm text-navy-dim">{t.footnote}</p>
     </div>
+  );
+}
+
+// ?category=... з пілів на головній — сервер більше не читає searchParams
+// (це примусово переводило б увесь /catalog у динамічний рендер), замість
+// цього сервер наперед рахує варіант секцій під кожну категорію
+// (sectionsByCategory), а цей тонкий клієнтський прошарок сам вирішує,
+// котрий показати, за URL.
+function CatalogFilterInner({ sections, sectionsByCategory, ...rest }: CatalogFilterProps) {
+  const searchParams = useSearchParams();
+  const categorySlug = searchParams.get("category") as CatalogCategorySlug | null;
+  const effectiveSections = (categorySlug && sectionsByCategory?.[categorySlug]) || sections;
+  return <CatalogFilterView sections={effectiveSections} {...rest} />;
+}
+
+// useSearchParams() у CatalogFilterInner вимагає Suspense-межу — інакше Next
+// не зможе статично згенерувати сторінку /catalog. Fallback — повний каталог
+// (без урахування ?category=), а не порожній стан: це те, що потрапляє в
+// статичний HTML і що бачать краулери до гідратації клієнта.
+export default function CatalogFilter(props: CatalogFilterProps) {
+  return (
+    <Suspense fallback={<CatalogFilterView {...props} />}>
+      <CatalogFilterInner {...props} />
+    </Suspense>
   );
 }
 

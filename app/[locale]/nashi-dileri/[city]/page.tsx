@@ -9,6 +9,11 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import ContactCta from "@/components/ContactCta";
 import RichText from "@/components/RichText";
 
+// Публічна сторінка з рідкісним оновленням даних — статична генерація
+// з ISR раз на годину (замість повністю динамічного рендеру на кожен
+// запит), щоб сторінка кешувалась на CDN Vercel.
+export const revalidate = 3600;
+
 export function generateStaticParams() {
   const cities = getCitiesWithDealers(dealers);
   return locales.flatMap((locale) => cities.map((c) => ({ locale, city: c.slug })));
@@ -38,10 +43,8 @@ export async function generateMetadata({
 
 export default async function DealerCityPage({
   params,
-  searchParams,
 }: {
   params: { locale: Locale; city: string };
-  searchParams: { sent?: string };
 }) {
   const found = findCity(params.city);
   if (!found) {
@@ -148,7 +151,6 @@ export default async function DealerCityPage({
           phoneChooseCountryLabel={c.phoneChooseCountry}
           phoneInvalidLabel={c.phoneInvalid}
           source={`/${params.locale}/nashi-dileri/${params.city}`}
-          sent={searchParams.sent === "1"}
         />
       </div>
     </>

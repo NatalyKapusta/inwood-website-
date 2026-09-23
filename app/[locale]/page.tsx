@@ -6,8 +6,7 @@ import ua from "@/dictionaries/ua.json";
 import { buildMetadata } from "@/lib/seo";
 import PhoneInput from "@/components/PhoneInput";
 import { submitLead } from "@/app/actions/lead";
-import LeadConversionTracker from "@/components/LeadConversionTracker";
-import SentModal from "@/components/SentModal";
+import SentNotice from "@/components/SentNotice";
 import YouTubeFacade from "@/components/YouTubeFacade";
 import Honeypot from "@/components/Honeypot";
 import DoorFit3dBanner from "@/components/DoorFit3dBanner";
@@ -29,6 +28,11 @@ async function getDict(locale: Locale) {
     return ua;
   }
 }
+
+// Публічна сторінка з рідкісним оновленням даних — статична генерація
+// з ISR раз на годину (замість повністю динамічного рендеру на кожен
+// запит), щоб сторінка кешувалась на CDN Vercel.
+export const revalidate = 3600;
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDict(params.locale);
@@ -68,16 +72,13 @@ const trends2026Items = [
 
 export default async function HomePage({
   params,
-  searchParams,
 }: {
   params: { locale: Locale };
-  searchParams: { sent?: string };
 }) {
   const dict = await getDict(params.locale);
   const t = dict.home;
   const c = dict.common;
   const locale = params.locale;
-  const sent = searchParams.sent === "1";
 
   return (
     <>
@@ -427,12 +428,7 @@ export default async function HomePage({
           {c.ctaTitle}
         </h2>
         <p className="mt-4 text-navy-dim">{c.ctaText}</p>
-        {sent && (
-          <>
-            <LeadConversionTracker source="Головна сторінка" />
-            <SentModal message={c.formSentMessage} />
-          </>
-        )}
+        <SentNotice source="Головна сторінка" sentLabel={c.formSentMessage} />
         <form action={submitLead} className="mx-auto mt-8 flex max-w-md flex-col gap-4">
           <input type="hidden" name="source" value="Головна сторінка" />
           <Honeypot />

@@ -7,6 +7,11 @@ import { DoorFitLoader, getDoorFitDictionary } from "@/components/door-fit";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RichText from "@/components/RichText";
 
+// Публічна сторінка з рідкісним оновленням даних — статична генерація
+// з ISR раз на годину (замість повністю динамічного рендеру на кожен
+// запит), щоб сторінка кешувалась на CDN Vercel.
+export const revalidate = 3600;
+
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
   const t = dict.doorFit3d;
@@ -20,10 +25,8 @@ export async function generateMetadata({ params }: { params: { locale: Locale } 
 
 export default async function DoorFit3dPage({
   params,
-  searchParams,
 }: {
   params: { locale: Locale };
-  searchParams: { sent?: string };
 }) {
   const dict = await getDictionary(params.locale);
   const t = dict.doorFit3d;
@@ -126,7 +129,6 @@ export default async function DoorFit3dPage({
         phoneChooseCountryLabel={c.phoneChooseCountry}
         phoneInvalidLabel={c.phoneInvalid}
         source="3D-примірка"
-        sent={searchParams.sent === "1"}
         extraFields={[
           { placeholder: s.formEmail, type: "email", name: "email" },
           { placeholder: s.formMessage },

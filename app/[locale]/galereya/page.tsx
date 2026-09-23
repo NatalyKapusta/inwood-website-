@@ -6,6 +6,11 @@ import GalleryFilter from "@/components/GalleryFilter";
 import RichText from "@/components/RichText";
 import ContactCta from "@/components/ContactCta";
 
+// Публічна сторінка з рідкісним оновленням даних — статична генерація
+// з ISR раз на годину (замість повністю динамічного рендеру на кожен
+// запит), щоб сторінка кешувалась на CDN Vercel.
+export const revalidate = 3600;
+
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
   return buildMetadata({
@@ -18,10 +23,8 @@ export async function generateMetadata({ params }: { params: { locale: Locale } 
 
 export default async function GaleryaPage({
   params,
-  searchParams,
 }: {
   params: { locale: Locale };
-  searchParams: { sent?: string };
 }) {
   const dict = await getDictionary(params.locale);
   const t = dict.galereya;
@@ -59,7 +62,6 @@ export default async function GaleryaPage({
         phoneChooseCountryLabel={c.phoneChooseCountry}
         phoneInvalidLabel={c.phoneInvalid}
         source="Галерея"
-        sent={searchParams.sent === "1"}
       />
     </>
   );
