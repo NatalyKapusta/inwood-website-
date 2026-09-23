@@ -311,11 +311,51 @@
     "metaDescription": "IN WOOD is a Ukrainian door manufacturer in Poltava, 20+ years of experience, 5 collections. Exports to Canada, France, Switzerland, Lithuania and Latvia."
   },
   "proNas": {
-    "sections": [],
-    "title": "IN WOOD — interior door manufacturer in Ukraine",
-    "heading": "About Us",
-    "intro": "IN WOOD is a Ukrainian manufacturer of interior doors.",
-    "lead": "We have been on the market for more than 20 years, and during this time we have built our own full-cycle production — from material processing to the finished door leaf.",
+    "title": "IN WOOD — interior door manufacturer in Poltava",
+    "heading": "About IN WOOD",
+    "intro": "IN WOOD has been making interior doors for twenty years.",
+    "lead": "Our factory is in Poltava and the cycle is complete: from cutting the MDF to fitting the hardware into the finished leaf.",
+    "sections": [
+      {
+        "heading": "What that means in practice",
+        "body": [
+          "There is no middleman between us and the buyer. The doors you buy from our partner in Kyiv or Odesa are made in the same workshop on Sportyvnyi Lane — not bought somewhere else and resold."
+        ]
+      },
+      {
+        "heading": "How our doors are built",
+        "body": [
+          "The leaf is 6 mm MDF over a kiln-dried timber frame with an 18 mm core. The dried timber matters: it is what decides whether the door warps a year later in an apartment with uneven humidity.",
+          "The frame is made of a combined material — natural pine plus MDF. Pine holds the geometry and the fixings, MDF gives an even surface for the finish.",
+          "Hardware is fitted at the factory. Doors arrive ready to install: the fitter puts them in rather than adjusting them on site."
+        ]
+      },
+      {
+        "heading": "Five lines",
+        "body": [
+          "**ETALON** — 17 models, 40 mm leaf, three edge options, the widest choice of frames and the only line with a soundproofing option. **PERFETTO** — two flat models for an exact RAL or NCS colour. **FREZZATTI** — 14 milled models with relief. **NOMINAL** — a practical 34 mm line for rental apartments, offices and development projects. **Hidden-frame doors** — the frame disappears into the wall and the leaf is painted together with it."
+        ]
+      },
+      {
+        "heading": "Sizes",
+        "body": [
+          "Width from 400 to 900 mm, height from 1800 to 2100 mm, in 50 mm steps — within that grid there is no size surcharge. Wider and taller is made to order. This is the single reason people most often come to us from competitors: you do not have to rebuild the opening to fit a standard door."
+        ]
+      },
+      {
+        "heading": "Who we work with",
+        "body": [
+          "31 official partners in 16 Ukrainian cities — from Bolhrad to Kharkiv. We work with retail buyers directly, with dealers, with developers fitting out whole projects, and with public institutions.",
+          "We export to Canada, France, Switzerland, Lithuania and Latvia."
+        ]
+      },
+      {
+        "heading": "Come and see",
+        "body": [
+          "You are welcome to visit the factory in Poltava: see the leaves in person, touch them, see the real colour. Orders can be picked up here. Sportyvnyi Lane 4, Mon–Fri, 8:00 to 17:00."
+        ]
+      }
+    ],
     "text": "We specialise in panel, painted, milled, PVC-coated and flush installation doors, and also produce mouldings. We work with dealers and wholesale partners across Ukraine and export our products abroad.",
     "points": [
       "We manufacture environmentally friendly products",
@@ -346,13 +386,69 @@
       "Issued by OS Eurostandart LLC",
       "Valid from 14.09.2026 to 13.09.2027"
     ],
-    "metaDescription": "IN WOOD is a full-cycle Ukrainian interior door manufacturer with in-house production, quality control at every stage, a dealer network, and export."
+    "metaDescription": "IN WOOD is a Ukrainian full-cycle interior door manufacturer. 20 years, own factory in Poltava, 5 collections, 31 partners across Ukraine, export to 5 countries."
   },
   "harakterystyky": {
-    "sections": [],
-    "title": "IN WOOD door line specifications — sizes and construction",
-    "heading": "IN WOOD Door Line Specifications",
-    "subheading": "Technical parameters of the models: height, width, leaf thickness and finish",
+    "title": "IN WOOD door specifications — sizes and construction",
+    "heading": "IN WOOD door specifications",
+    "subheading": "This page is for anyone who wants to understand the product before ordering. It covers everything that affects the price and everything that affects how the door behaves later.",
+    "sections": [
+      {
+        "heading": "The leaf",
+        "body": [
+          "6 mm MDF over a kiln-dried timber frame, 18 mm core.",
+          "Thickness depends on the line: **40 mm** for ETALON, PERFETTO and hidden-frame doors; **34 mm** for NOMINAL and FREZZATTI. Six millimetres do not show in a photo, but they show in the hand: a thicker leaf is heavier and closes more tightly. The room for soundproofing comes from that 40 mm — the other lines do not offer it."
+        ]
+      },
+      {
+        "heading": "Finish",
+        "body": [
+          "PVC film is the base finish across all lines. Palette: 17 colours in ETALON and PERFETTO, 12 in NOMINAL and FREZZATTI.",
+          "RAL or NCS painting is made to order and available for FREZZATTI and PERFETTO. There is no ready photograph of the colour in that case, only an indicative sample, and the lead time is longer."
+        ]
+      },
+      {
+        "heading": "Leaf edge",
+        "body": [
+          "**PVC edge** — the base option, the edge is covered with film. **Aluminium profile** — metal along the edge: it looks more expensive and takes knocks better. Black, white or matched to the leaf. **INSIDE profile** — the same plus a decorative aluminium inlay on the leaf, black or grey.",
+          "Aluminium options are available in ETALON and in hidden-frame doors."
+        ]
+      },
+      {
+        "heading": "Frame",
+        "body": [
+          "**Telescopic** — the most common. It has a sliding part that adapts to the wall thickness without cutting. Width 80, 100 or 120 mm.",
+          "**Coplanar** — the leaf sits flush with the wall, with no projection. Available in ETALON and PERFETTO.",
+          "**Hidden** — disappears into the wall completely. Two versions: STANDART for plaster finish and LUX for panels. It needs no architrave and no extension jamb; instead there is a system of aluminium trim profiles. The frame itself can be painted to a RAL colour."
+        ]
+      },
+      {
+        "heading": "Architrave and extension jamb",
+        "body": [
+          "The architrave covers the joint between frame and wall. Telescopic 80 mm, also available with a 40 mm wing; coplanar 80 mm — front side only, there is no rear architrave in the coplanar version.",
+          "The extension jamb deepens the frame for thick walls: 100, 150 or 200 mm."
+        ]
+      },
+      {
+        "heading": "Sizes",
+        "body": [
+          "**No surcharge:** width 400–900 mm, height 1800–2100 mm, 50 mm steps. **Made to order, +20% on the leaf price:** width 950 and 1000 mm, height 2150–2300 mm. Non-standard frames and extension jambs are calculated the same way."
+        ]
+      },
+      {
+        "heading": "Hardware fitting",
+        "body": [
+          "**No fitting** — the leaf as it is. **Lock fitting** — the cut-out for the lock mechanism only. **Full hardware fitting** — lock, hinges and frame adjustment. The door arrives ready to install.",
+          "On models with an aluminium edge, fitting costs more."
+        ]
+      },
+      {
+        "heading": "Extras",
+        "body": [
+          "Leaf soundproofing — ETALON only. Painting the aluminium edge to a chosen colour. Opening side: left, right or sliding."
+        ]
+      }
+    ],
     "lines": [
       {
         "name": "ETALON",
@@ -399,9 +495,9 @@
         ]
       }
     ],
-    "ctaTitle": "Need advice on a model?",
-    "ctaText": "Can't find the parameters you need, or want to clarify custom sizes for a wholesale order? Leave your contacts — our manager will help you choose the right line for your project.",
-    "metaDescription": "Technical specifications of IN WOOD door collections: panel sizes, frame, trim and door casing construction for ETALON, NOMINAL, FREZZATTI, PERFETTO.",
+    "ctaTitle": "Request a quote",
+    "ctaText": "Leave a request — we'll quote it within one working day.",
+    "metaDescription": "Leaf construction, frame types, architrave, extension jamb, edge options, sizes and non-standard surcharges — every technical parameter of IN WOOD doors in one place.",
     "constructionDiagram": {
       "title": "Panel construction",
       "subtitle": "ETALON / NOMINAL panel doors — what the panel is made of",
@@ -721,12 +817,22 @@
     "metaDescription": "Partner with IN WOOD: dealer, distributor and export cooperation for interior doors, exporting to Canada, France, Switzerland, Lithuania and Latvia."
   },
   "doorFit3d": {
-    "sections": [],
-    "pageTitle": "3D Door Fitting Tool Online — For Architects and Designers | IN WOOD",
-    "metaDescription": "Free 3D door configurator from IN WOOD: pick a model, colour and size, place the door in your own interior, and download a ready GLB/OBJ file for your project.",
+    "pageTitle": "Online 3D door preview for designers | IN WOOD",
+    "metaDescription": "Free IN WOOD 3D configurator: pick a model, colour and size, view the door from every angle and download GLB or OBJ into your project.",
     "backLink": "← Cooperation",
-    "heading": "3D door fitting tool",
-    "intro": "An online tool for architects, interior designers and developers: configure a door's model, size and colour, see how it looks in your space, and get a 3D file for your project right away.",
+    "heading": "Online 3D door preview",
+    "intro": "A tool for people who work with interiors professionally, and for anyone who wants to see a door before ordering it.",
+    "sections": [
+      {
+        "body": [
+          "**What you can do.** Choose a model from our collections, pick a colour from the real palette, set the size and view the leaf from every angle — as a volume, not as a flat front-facing photo.",
+          "**For designers and architects.** The finished model can be downloaded as GLB or OBJ and dropped into your project. It is not an approximate placeholder: the geometry and colours match what we actually manufacture and come from the current catalogue.",
+          "**Why it is useful.** Show a client the door in their own interior before anything is ordered. Compare two colours side by side. Check how a 2300 mm leaf changes the proportions of a room. All of it is faster than carrying samples around.",
+          "**What it does not include.** Prices — we do not publish them, quotes are prepared on request. And models we do not make: the tool contains the real range only.",
+          "The tool is free and needs no registration."
+        ]
+      }
+    ],
     "benefitsTitle": "Why architects and designers use this tool",
     "benefitsText": "Skip the back-and-forth with a manager — configure it yourself and get a project-ready file in minutes.",
     "benefits": [
@@ -743,8 +849,8 @@
       { "title": "Check it in a room", "text": "Place the door in the 3D room scene and view it from every angle." },
       { "title": "Download the file", "text": "Download the finished model as GLB or OBJ for your CAD or BIM software." }
     ],
-    "ctaTitle": "Need help with a project?",
-    "ctaText": "Leave a request — an IN WOOD manager will help you pick the right solution and send a commercial offer."
+    "ctaTitle": "Request a quote",
+    "ctaText": "Leave a request — we'll quote it within one working day."
   },
   "kontakty": {
     "title": "IN WOOD — Interior door manufacturer contacts | Ukraine",
@@ -852,7 +958,87 @@
     "cityMetaPrefix": "Official IN WOOD dealers in",
     "cityMetaSuffix": "— addresses, contacts and the IN WOOD interior door catalog.",
     "cityIntro": "Current contacts for IN WOOD dealers in this city — address, phone number and dealer website.",
-    "cityIntros": {},
+    "cityIntros": {
+      "poltava": [
+        "Poltava is where IN WOOD doors are made. Our workshop is on Sportyvnyi Lane, and you are welcome to come: see the leaves in person, touch them, see the real colour instead of a photo on a screen. Orders can be collected straight from the factory.",
+        "Poltava itself has nine partner showrooms — more than any other city. They are spread across the city so that almost every district has one nearby: Yevropeiska, Nebesnoi Sotni, Novobazarna, Zavodska, Hrushevskoho, Shevchenka, Heroiv-Chornobyltsiv.",
+        "If you would rather see the doors first and calculate afterwards, start with the nearest showroom. If you need a quote for a non-standard opening, write to us directly."
+      ],
+      "kyiv": [
+        "In Kyiv, IN WOOD doors are represented by two partners: DVNV on Stadionna and ВСІ Двері on Mykilska, where the door department is on the second floor.",
+        "Kyiv is a city where the choice of doors usually comes down not to price but to lead times and non-standard openings: pre-war buildings rarely have even geometry, and new developments often have openings taller than the standard.",
+        "Our size grid runs in 50 mm steps with no size surcharge, and leaves above 2100 mm are made to order. So there is no need to rebuild the wall around the door — even in a Stalin-era block with an uneven opening."
+      ],
+      "odesa": [
+        "Odesa has four partner showrooms: Магазин Тіана on Nebesnoi Sotni Avenue, Rich Market on Mala Arnautska, Лінія Дверей and ВСІ Двері on Serednofontanska.",
+        "The Odesa climate is a separate story for doors. High humidity for most of the year sets a higher bar for the finish and the construction of the leaf: what behaves well in a dry apartment can warp in a seaside city.",
+        "Our leaves are MDF over a kiln-dried timber frame, finished with PVC film or paint. For bathrooms and damp rooms, see our article on [doors for humid spaces](/blog/dveri-dlia-vannoi-ta-volohykh-prymishchen) — it explains what to look for."
+      ],
+      "kharkiv": [
+        "In Kharkiv you can see IN WOOD doors at KERAMIS, Klochkivska 159 — the door department is on the lower ground floor.",
+        "Kharkiv is rebuilding a great deal right now, and doors here are often bought not one at a time for a single apartment but as a set — for a floor, a building, a project. We have separate terms for those orders: the NOMINAL line was built for large volumes, where doors need to look good and last without paying for options.",
+        "If you need a volume quote, send us the number of openings and we will price it separately."
+      ],
+      "dnipro": [
+        "Dnipro has one partner — BRAVO on Nauky Avenue 82.",
+        "One showroom in a city that size means it is not equally convenient for everyone. So a reminder: all collections, colours and sizes can be viewed online, and we prepare quotes within one working day and send them over — you do not have to travel for that.",
+        "Doors ship with the hardware already fitted, ready to install: the fitter puts them in, with nothing to adjust."
+      ],
+      "kryvyi-rih": [
+        "Kryvyi Rih has two showrooms: Дверка on Hetmana Ivana Mazepy Street and Mr Door on Lotchykiv.",
+        "The city stretches out lengthwise — more than seventy kilometres from end to end — so having two showrooms in different parts of it is exactly right: from almost any district, one of them is closer.",
+        "Both partners work with the full range: ETALON, NOMINAL, FREZZATTI, PERFETTO and hidden-frame doors. If the model you want is not in stock, it will be ordered in from our factory in Poltava."
+      ],
+      "cherkasy": [
+        "Cherkasy has two partners: Маркет Дверей on Shevchenka Boulevard 352 — the landmark is the bus stop — and ALLDOORS on Rizdviana 43.",
+        "Cherkasy is close to Poltava, so delivery here is quick and non-standard orders do not drag on. If your opening is unusual — wider than 900 mm or taller than 2100 — this is precisely the case where it is worth asking us: we make those sizes to order rather than turning the job down."
+      ],
+      "ternopil": [
+        "Ternopil has two showrooms: Дріада on Budnoho 9v and Rooms on Stepana Bandery 63.",
+        "Western Ukraine has always leaned towards warm wood textures, and our palette has the most of them in ETALON and PERFETTO — seventeen colours, among them Chateau Oak, Carpathian Spruce, Provence Pine and Golden Rustic.",
+        "Both partners can show colour samples in person. That matters: a colour on a screen and a colour in your hand are different things, especially with textured films."
+      ],
+      "lutsk": [
+        "In Lutsk the partner is БастіOn on Koniakina Street 13.",
+        "If the showroom does not have the model or colour you want, it does not mean we do not make it. A showroom normally stocks the most popular items, while the full range — five collections with up to seventeen colours each — is available to order from the factory.",
+        "It is easier to see the whole range in the catalogue on this site first, and then visit the partner to look at a specific leaf."
+      ],
+      "rivne": [
+        "In Rivne, IN WOOD doors are represented by Yuterm on Henerala Bezruchka Avenue 2/20.",
+        "The partner works with both windows and doors — convenient when a renovation is being done in full and you would rather close both questions in one place, with one set of lead times and one delivery.",
+        "Our doors arrive with the hardware already fitted, ready to install, which makes the schedule simpler: nobody has to wait for a separate visit to cut in the lock and hinges."
+      ],
+      "zhytomyr": [
+        "In Zhytomyr you can see IN WOOD doors at STRAJ, Vitruka Street 6b.",
+        "If you are at the stage where the doors are not chosen yet but the walls are already being planned, this is the right moment to look at hidden-frame doors. They are ordered alongside the ceiling and the wiring, not after the plastering: the frame goes inside the wall, and it cannot be installed into a finished wall without taking it apart.",
+        "We have written separately about how they work and what they cost on the [hidden doors page](/catalog/pryhovani-dveri)."
+      ],
+      "kremenchuk": [
+        "In Kremenchuk the partner is Dveri.Alex — 101-i Kvartal Street 10g.",
+        "Kremenchuk is an hour's drive from our factory in Poltava, which makes delivery here the fastest of any city. If you like, you can also visit the factory itself: see how the doors are made and collect your order in person.",
+        "Non-standard sizes, RAL painting, hidden-frame doors — all of it is made to order, and being close to the workshop is a real advantage here."
+      ],
+      "brovary": [
+        "In Brovary, IN WOOD doors are represented by Магазин Тесля on Chornovola Street 6a.",
+        "Brovary is being built up quickly, and most orders here are doors for new apartments, bought as a complete set for the whole flat at once. In that case it makes sense to look not at the price of a single leaf but at the price of the set: leaf, frame, architrave, extension jamb and hardware fitting together.",
+        "We will price the set for your number of openings within one working day."
+      ],
+      "boryspil": [
+        "In Boryspil the partner is Салон Вікон та Дверей on Kyivskyi Shliakh 10.",
+        "They work with both windows and doors — convenient when a renovation runs end to end.",
+        "If you have a house rather than an apartment, pay attention to two things: the thickness of the leaf and the type of frame. Thick walls need an extension jamb, and uneven openings suit a telescopic frame, which adapts to the wall thickness without cutting. All of it is available in the current lines; the details are on the collection pages."
+      ],
+      "kamianets-podilskyi": [
+        "In Kamianets-Podilskyi, IN WOOD doors are represented by Perfetto on Hrushevskoho Avenue 31/2.",
+        "A city with a great deal of older building stock, which almost always means non-standard openings: uneven geometry, heights that do not match the standard, thick walls.",
+        "Our size grid runs in 50 mm steps with no surcharge, leaves up to 2300 mm are made to order, and for thick walls there are extension jambs in three depths. In other words, you will not have to rebuild the wall around the door."
+      ],
+      "bolhrad": [
+        "In Bolhrad, IN WOOD doors are represented by Сім'я Дім on Zavodska Street 89.",
+        "For a smaller city, one showroom with full access to the range is perfectly workable: the most popular items are in stock and everything else is ordered in from the factory in Poltava.",
+        "It is worth looking through the catalogue on this site beforehand and arriving at the showroom with a shortlist of models and colours — the choice takes less time that way, and what you need can be delivered in a single run."
+      ]
+    },
     "cityDealersHeading": "Dealers",
     "cityBackLink": "← All dealers in Ukraine",
     "cityCatalogCta": "Browse the door catalog",
@@ -977,32 +1163,59 @@
     "metaDescription": "FAQ about IN WOOD interior doors — lead times, sizes, materials, installation, warranty and care."
   },
   "blog": {
-    "sections": [],
-    "title": "IN WOOD blog — interior door articles",
-    "heading": "Blog",
-    "intro": "Helpful articles on choosing, installing and caring for IN WOOD interior doors.",
-    "metaDescription": "IN WOOD blog — advice on choosing, installing and caring for interior doors.",
+    "title": "IN WOOD blog — articles about interior doors",
+    "heading": "Articles about interior doors",
+    "intro": "People buy interior doors once every ten or fifteen years, and most of the questions come up once in a lifetime. We answer them here the way we would explain them on the shop floor: what is made of what, what it affects, and where you do not need to overpay.",
+    "sections": [
+      {
+        "body": [
+          "We write as a manufacturer, not as a shop. That means we write about the downsides too: white doors really do show marks sooner, a moulding really can be chipped by the corner of a cabinet, and RAL painting really does take longer than film.",
+          "**Worth reading before you order:** how to [choose a door by construction and finish](/blog/yak-obraty-mizhkimnatni-dveri), how [panel doors differ from stile-and-rail doors](/blog/shhytovi-chy-tsargovi-dveri), how to [match colour to your floor and furniture](/blog/yak-pidibraty-kolir-dverei-pid-pidlohu).",
+          "If you are already choosing a specific door: look at the collection pages below — they list models, colours and available options for each line."
+        ]
+      }
+    ],
+    "metaDescription": "How to choose a door, how constructions and finishes differ, how to match colour and size — explained by the manufacturer, without sales talk.",
     "readMore": "Read article",
     "back": "← All articles",
     "relatedPostsTitle": "You might also like",
     "browseCatalog": "Browse the IN WOOD door catalog"
   },
   "galereya": {
-    "sections": [],
-    "title": "IN WOOD Doors in Real Interiors — Gallery by Model",
-    "heading": "Gallery",
+    "title": "IN WOOD doors in real interiors — photo gallery",
+    "heading": "IN WOOD doors in real interiors",
     "intro": "IN WOOD doors in real interiors — choose a collection and model to see the available colors.",
-    "metaDescription": "Photos of IN WOOD interior doors in real interiors by model and color — ETALON, NOMINAL, FREZZATTI, PERFETTO collections.",
+    "sections": [
+      {
+        "body": [
+          "A colour on a screen and a colour in a room are two different things. Embossed film catches light differently, dark leaves look one way in daylight and another in the evening, and a white door in a room with warm walls reads warmer than it does in a photograph.",
+          "So this gallery is not about the catalogue. It is about how the doors behave in real rooms.",
+          "**What to look at.** How the leaf sits next to the floor — that is the main pairing in any interior. How visible the frame is: a telescopic frame projects from the wall, a coplanar one sits flush, a hidden one disappears. How a moulding or a milled pattern reads in side light — side light is what shows relief.",
+          "**If you are looking for something specific,** go to the [collection pages](/catalog): they list the models and colours available in each line. And the exact colour in your hand is best seen at one of our partners or at the factory in Poltava."
+        ]
+      }
+    ],
+    "metaDescription": "IN WOOD interior doors in real rooms: ETALON, NOMINAL, FREZZATTI, PERFETTO and hidden-frame doors. Photos by model and colour.",
     "all": "All collections",
     "color": "Color"
   },
   "dlyaZabudovnykiv": {
-    "sections": [],
-    "pageTitle": "IN WOOD Doors for Developers — Wholesale Supply",
-    "metaDescription": "Wholesale IN WOOD interior doors for developers and construction companies. In-house production in Poltava, bulk pricing, delivery across Ukraine.",
+    "pageTitle": "Doors for property developers — bulk supply | IN WOOD",
+    "metaDescription": "Fitting out new buildings and projects with interior doors direct from the manufacturer: volume pricing, our own factory in Poltava, delivery across Ukraine.",
     "backLink": "← All cooperation options",
-    "heading": "Doors for Developers and Construction Companies",
-    "intro": "IN WOOD is a manufacturer of interior doors with its own production facility in Poltava. We supply doors wholesale for fitting out new buildings, residential complexes and commercial projects — from a single entrance to an entire complex.",
+    "heading": "Doors for developers and construction companies",
+    "intro": "Fitting out a building is not the same as buying doors for an apartment. Three things matter here, and none of them is design: predictable lead times, consistency across the batch, and price multiplied by the number of openings.",
+    "sections": [
+      {
+        "body": [
+          "**We are the manufacturer, not a reseller.** The doors are made in our own workshop in Poltava, so lead times depend on our production schedule rather than on someone else's supply chain. The batch comes out uniform: one run, one film, one shade. On a project that is critical — doors from different batches are visibly different.",
+          "**What is usually chosen for projects.** The **NOMINAL** line was designed for exactly this: 34 mm leaf, 10 models, 12 colours, telescopic frame. No aluminium edges and no coplanar frames — in other words, no paying for options a project does not use. Where a higher level is required, the choice is **ETALON**.",
+          "**Sizes that match real openings.** A 50 mm grid with no size surcharge: width 400–900 mm, height 1800–2100 mm. Openings on site are rarely identical, and being able to take 850 instead of 800 at no extra cost saves both money and fitting time.",
+          "**Factory preparation.** Hardware is fitted at the factory. On a project this is where it shows most: the crew does not have to cut locks and adjust frames on hundreds of doors.",
+          "**Terms.** Volume orders are priced separately. Send us the number of openings and your target dates and we will quote for your volume."
+        ]
+      }
+    ],
     "benefitsTitle": "Terms for Developers",
     "benefitsText": "We work directly with the manufacturer — no middlemen, no markups.",
     "benefits": [
@@ -1029,8 +1242,8 @@
     ],
     "citiesTitle": "We Work with Developers in These Cities",
     "citiesText": "We prepare a commercial proposal for your project regardless of city — here's where we already actively work with developers.",
-    "ctaTitle": "Planning a Development Project?",
-    "ctaText": "Leave a request — we'll prepare a commercial proposal for your project and construction timeline.",
+    "ctaTitle": "Request a project quote",
+    "ctaText": "Send us the number of openings and your target dates and we will quote for your volume.",
     "cityTitlePrefix": "IN WOOD Doors for Developers —",
     "cityTitleSuffix": "Wholesale Supply",
     "cityMetaPrefix": "Wholesale supply of IN WOOD doors for developers",

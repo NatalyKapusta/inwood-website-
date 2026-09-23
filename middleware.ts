@@ -92,7 +92,24 @@ export async function middleware(request: NextRequest) {
   // Публічні сторінки сесії не потребують — пропускаємо їх без дотику
   // до cookies, щоб Next/Vercel могли кешувати їх як завжди.
   if (!isPortalRoute) {
-    return NextResponse.next();
+    // Перевірка на проді 23.09 показала: Set-Cookie зник, але
+    // cache-control лишився private/no-store — Vercel не кешує на edge
+    // жодну сторінку, що проходить через middleware, якщо middleware сама
+    // не проставить Cache-Control у відповіді (middleware виконується до
+    // перевірки CDN-кешу, тож нативний заголовок ISR-сторінки до цього
+    // моменту ще не застосовано). /catalog і /furnitura мають свій
+    // revalidate = 60 (лічильник цін через Supabase) — тримаємо для них
+    // коротший s-maxage, що відповідає цьому інтервалу; решті публічних
+    // маршрутів віддаємо довший кеш із stale-while-revalidate.
+    const response = NextResponse.next();
+    const isFrequentlyRevalidated = /^\/[a-z]{2}\/(catalog|furnitura)(\/|$)/.test(pathname);
+    response.headers.set(
+      "Cache-Control",
+      isFrequentlyRevalidated
+        ? "public, s-maxage=60, stale-while-revalidate=3600"
+        : "public, s-maxage=3600, stale-while-revalidate=86400"
+    );
+    return response;
   }
 
   let response = NextResponse.next({ request });

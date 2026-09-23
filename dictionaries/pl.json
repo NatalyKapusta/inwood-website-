@@ -311,11 +311,51 @@
     "metaDescription": "IN WOOD — producent drzwi wewnętrznych w Połtawie. 5 kolekcji: ETALON, NOMINAL, FREZZATTI, PERFETTO, drzwi montażu ukrytego. Dilerstwo i eksport."
   },
   "proNas": {
-    "sections": [],
-    "title": "IN WOOD — producent drzwi wewnętrznych w Ukrainie",
-    "heading": "O nas",
-    "intro": "IN WOOD to ukraiński producent drzwi wewnętrznych.",
-    "lead": "Jesteśmy na rynku ponad 20 lat i w tym czasie zbudowaliśmy własną produkcję pełnego cyklu — od obróbki materiału po gotowe skrzydło.",
+    "title": "IN WOOD — producent drzwi wewnętrznych z Połtawy",
+    "heading": "O firmie IN WOOD",
+    "intro": "IN WOOD produkuje drzwi wewnętrzne od dwudziestu lat.",
+    "lead": "Zakład mieści się w Połtawie, a cykl jest pełny: od rozkroju płyty MDF po okucia wfrezowane w gotowe skrzydło.",
+    "sections": [
+      {
+        "heading": "Co to oznacza w praktyce",
+        "body": [
+          "Między nami a kupującym nie ma pośrednika. Drzwi, które kupujesz u naszego partnera w Kijowie czy Odessie, powstały w tym samym zakładzie przy zaułku Sportowym — nie zostały skądś przywiezione i odsprzedane."
+        ]
+      },
+      {
+        "heading": "Jak zbudowane są nasze drzwi",
+        "body": [
+          "Skrzydło to płyta MDF o grubości 6 mm na ramie z suszonego drewna, z wypełnieniem 18 mm. Suszone drewno w ramie ma znaczenie zasadnicze: to od niego zależy, czy po roku drzwi wypaczą się w mieszkaniu o zmiennej wilgotności.",
+          "Ościeżnicę wykonujemy z materiału łączonego — naturalna sosna plus MDF. Sosna trzyma geometrię i mocowania, MDF daje równą powierzchnię pod wykończenie.",
+          "Okucia montujemy w zakładzie. Drzwi przyjeżdżają gotowe do montażu: monter je wstawia, a nie dopasowuje na miejscu."
+        ]
+      },
+      {
+        "heading": "Pięć linii",
+        "body": [
+          "**ETALON** — 17 modeli, skrzydło 40 mm, trzy warianty krawędzi, najszerszy wybór ościeżnic i jedyna linia z opcją wygłuszenia. **PERFETTO** — dwa gładkie modele pod dokładny kolor RAL lub NCS. **FREZZATTI** — 14 modeli frezowanych z reliefem. **NOMINAL** — praktyczna linia 34 mm do mieszkań na wynajem, biur i inwestycji. **Drzwi z ościeżnicą ukrytą** — ościeżnica chowa się w ścianie, skrzydło maluje się razem ze ścianą."
+        ]
+      },
+      {
+        "heading": "Wymiary",
+        "body": [
+          "Szerokość od 400 do 900 mm, wysokość od 1800 do 2100 mm, co 50 mm — w tym zakresie nie ma dopłaty za wymiar. Szersze i wyższe wykonujemy na zamówienie. To właśnie z tego powodu klienci najczęściej przechodzą do nas od konkurencji: nie trzeba przerabiać otworu pod standardowe drzwi."
+        ]
+      },
+      {
+        "heading": "Z kim pracujemy",
+        "body": [
+          "31 oficjalnych partnerów w 16 miastach Ukrainy — od Bołhradu po Charków. Współpracujemy bezpośrednio z klientami detalicznymi, z dealerami, z deweloperami przy wyposażaniu inwestycji oraz z instytucjami publicznymi.",
+          "Eksportujemy do Kanady, Francji, Szwajcarii, Litwy i Łotwy."
+        ]
+      },
+      {
+        "heading": "Przyjechać i zobaczyć",
+        "body": [
+          "Do zakładu w Połtawie można przyjechać: zobaczyć skrzydła na żywo, dotknąć, zobaczyć prawdziwy kolor. Zamówienie można odebrać osobiście. Zaułek Sportowy 4, pon.–pt. od 8:00 do 17:00."
+        ]
+      }
+    ],
     "text": "Specjalizujemy się w drzwiach płytowych, lakierowanych, frezowanych, drzwiach z okleiną PVC, drzwiach montażu ukrytego, a także produkujemy wyroby profilowe. Współpracujemy z dilerami i partnerami hurtowymi w całej Ukrainie, eksportujemy produkcję za granicę.",
     "points": [
       "Produkujemy ekologiczne wyroby",
@@ -346,13 +386,69 @@
       "Wydany przez OS Eurostandart Sp. z o.o.",
       "Ważny od 14.09.2026 do 13.09.2027"
     ],
-    "metaDescription": "IN WOOD — ukraiński producent drzwi wewnętrznych pełnego cyklu. Własna produkcja, kontrola jakości na każdym etapie, sieć dilerska i eksport."
+    "metaDescription": "IN WOOD to ukraiński producent drzwi wewnętrznych w pełnym cyklu. 20 lat, własna fabryka w Połtawie, 5 kolekcji, 31 partnerów w Ukrainie, eksport do 5 krajów."
   },
   "harakterystyky": {
-    "sections": [],
-    "title": "Charakterystyki linii drzwi IN WOOD — wymiary i konstrukcja",
-    "heading": "Charakterystyki linii drzwi IN WOOD",
-    "subheading": "Parametry techniczne modeli: wysokość, szerokość, grubość skrzydła i okleina",
+    "title": "Parametry drzwi IN WOOD — wymiary i konstrukcja",
+    "heading": "Parametry techniczne drzwi IN WOOD",
+    "subheading": "Strona dla tych, którzy chcą zrozumieć produkt przed zamówieniem. Zebraliśmy tu wszystko, co wpływa na cenę i na to, jak drzwi będą się zachowywać później.",
+    "sections": [
+      {
+        "heading": "Skrzydło",
+        "body": [
+          "Płyta MDF 6 mm na ramie z suszonego drewna, wypełnienie 18 mm.",
+          "Grubość zależy od linii: **40 mm** — ETALON, PERFETTO i drzwi z ościeżnicą ukrytą; **34 mm** — NOMINAL i FREZZATTI. Różnicy sześciu milimetrów nie widać na zdjęciu, ale czuć ją w ręce: grubsze skrzydło jest cięższe i domyka się szczelniej. Zapas na wygłuszenie daje właśnie grubość 40 mm — w pozostałych liniach takiej opcji nie ma."
+        ]
+      },
+      {
+        "heading": "Wykończenie",
+        "body": [
+          "Okleina PVC to wariant podstawowy we wszystkich liniach. Paleta: 17 kolorów w ETALON i PERFETTO, 12 w NOMINAL i FREZZATTI.",
+          "Malowanie w RAL lub NCS — na zamówienie, dostępne dla FREZZATTI i PERFETTO. Nie ma wtedy gotowego zdjęcia koloru, jedynie próbka orientacyjna, a termin realizacji jest dłuższy."
+        ]
+      },
+      {
+        "heading": "Krawędź skrzydła",
+        "body": [
+          "**Obrzeże PVC** — wariant podstawowy, krawędź zamknięta okleiną. **Profil aluminiowy** — metal na krawędzi: wygląda drożej i lepiej znosi uderzenia. Kolor czarny, biały lub w kolorze skrzydła. **Profil INSIDE** — to samo plus dekoracyjna wstawka aluminiowa na skrzydle, czarna lub szara.",
+          "Warianty aluminiowe dostępne są w ETALON i w drzwiach z ościeżnicą ukrytą."
+        ]
+      },
+      {
+        "heading": "Ościeżnica",
+        "body": [
+          "**Regulowana (teleskopowa)** — najczęściej wybierana. Ma ruchomą część, która dopasowuje się do grubości ściany bez docinania. Szerokość 80, 100 lub 120 mm.",
+          "**Komplanarna** — skrzydło licuje ze ścianą, bez występu. Dostępna w ETALON i PERFETTO.",
+          "**Ukryta** — chowa się w ścianie całkowicie. Dwa wykonania: STANDART pod gładź i LUX pod panele. Opaski ani poszerzenia nie są potrzebne; zastępuje je system aluminiowych profili wykończeniowych. Samą ościeżnicę można pomalować w kolorze RAL."
+        ]
+      },
+      {
+        "heading": "Opaski i poszerzenia",
+        "body": [
+          "Opaska zakrywa styk ościeżnicy ze ścianą. Regulowana 80 mm, jest też wariant ze skrzydełkiem 40 mm; komplanarna 80 mm — tylko od strony licowej, w wykonaniu komplanarnym nie występuje opaska tylna.",
+          "Poszerzenie zwiększa głębokość ościeżnicy dla grubych ścian: 100, 150 lub 200 mm."
+        ]
+      },
+      {
+        "heading": "Wymiary",
+        "body": [
+          "**Bez dopłaty:** szerokość 400–900 mm, wysokość 1800–2100 mm, co 50 mm. **Na zamówienie, +20% do ceny skrzydła:** szerokość 950 i 1000 mm, wysokość 2150–2300 mm. Ościeżnice i poszerzenia w wymiarze nietypowym liczone są tak samo."
+        ]
+      },
+      {
+        "heading": "Przygotowanie okuć",
+        "body": [
+          "**Bez frezowania** — skrzydło w stanie surowym. **Frezowanie pod zamek** — wyłącznie wycięcie pod mechanizm zamka. **Pełne przygotowanie okuć** — zamek, zawiasy i dopasowanie ościeżnicy. Drzwi przyjeżdżają gotowe do montażu.",
+          "W modelach z krawędzią aluminiową przygotowanie okuć kosztuje więcej."
+        ]
+      },
+      {
+        "heading": "Dodatkowo",
+        "body": [
+          "Wygłuszenie skrzydła — tylko ETALON. Malowanie krawędzi aluminiowej w wybranym kolorze. Strona otwierania: lewa, prawa lub przesuwne."
+        ]
+      }
+    ],
     "lines": [
       {
         "name": "ETALON",
@@ -399,9 +495,9 @@
         ]
       }
     ],
-    "ctaTitle": "Potrzebujesz konsultacji w sprawie modelu?",
-    "ctaText": "Nie znalazłeś potrzebnych parametrów lub chcesz doprecyzować niestandardowe wymiary do zamówienia hurtowego? Zostaw kontakt — nasz menedżer dobierze optymalną linię pod Twój projekt.",
-    "metaDescription": "Charakterystyki techniczne kolekcji drzwi IN WOOD: wymiary skrzydła, konstrukcja ościeżnicy, listwy i przylgi dla ETALON, NOMINAL, FREZZATTI, PERFETTO.",
+    "ctaTitle": "Wyceń zamówienie",
+    "ctaText": "Zostaw zapytanie — wycenimy w jeden dzień roboczy.",
+    "metaDescription": "Konstrukcja skrzydła, rodzaje ościeżnic, opaski, poszerzenia, warianty krawędzi, wymiary i dopłaty za nietypowe — wszystkie parametry drzwi IN WOOD w jednym miejscu.",
     "constructionDiagram": {
       "title": "Konstrukcja skrzydła",
       "subtitle": "Drzwi płytowe ETALON / NOMINAL — z czego składa się skrzydło",
@@ -743,12 +839,22 @@
     "metaDescription": "Współpraca z IN WOOD dla dilerów, dystrybutorów, deweloperów nieruchomości i projektantów wnętrz — ceny hurtowe, osobisty menedżer i kalkulator online."
   },
   "doorFit3d": {
-    "sections": [],
-    "pageTitle": "Przymiarka 3D drzwi online — dla architektów i projektantów | IN WOOD",
-    "metaDescription": "Darmowy konfigurator 3D drzwi IN WOOD: wybierz model, kolor i rozmiar, ustaw drzwi we własnym wnętrzu i pobierz gotowy plik GLB/OBJ do projektu.",
+    "pageTitle": "Przymiarka drzwi 3D online dla projektantów | IN WOOD",
+    "metaDescription": "Bezpłatny konfigurator 3D IN WOOD: wybierz model, kolor i wymiar, obejrzyj drzwi ze wszystkich stron i pobierz plik GLB lub OBJ do swojego projektu.",
     "backLink": "← Współpraca",
-    "heading": "Przymiarka 3D drzwi",
-    "intro": "Narzędzie online dla architektów, projektantów wnętrz i deweloperów: dobierz model, rozmiar i kolor drzwi, sprawdź jak wyglądają w Twojej przestrzeni i od razu pobierz plik 3D do projektu.",
+    "heading": "Przymiarka drzwi 3D online",
+    "intro": "Narzędzie dla tych, którzy pracują z wnętrzami zawodowo, i dla tych, którzy chcą zobaczyć drzwi przed zamówieniem.",
+    "sections": [
+      {
+        "body": [
+          "**Co można zrobić.** Wybrać model z naszych kolekcji, dobrać kolor z prawdziwej palety, ustawić wymiar i obejrzeć skrzydło ze wszystkich stron — jak wygląda w bryle, a nie na zdjęciu od frontu.",
+          "**Dla projektantów i architektów.** Gotowy model można pobrać w formacie GLB lub OBJ i wstawić do własnego projektu. To nie jest przybliżona bryła zastępcza: geometria i kolory odpowiadają temu, co faktycznie produkujemy, i pochodzą z aktualnego katalogu.",
+          "**Po co to Państwu.** Pokazać klientowi drzwi w jego wnętrzu, zanim cokolwiek zostanie zamówione. Porównać dwa kolory obok siebie. Sprawdzić, jak skrzydło o wysokości 2300 mm zmienia proporcje pomieszczenia. Wszystko to szybciej niż wożenie próbek.",
+          "**Czego tam nie ma.** Cen — nie publikujemy ich, wycenę przygotowujemy na zapytanie. I modeli, których nie produkujemy: w narzędziu jest wyłącznie rzeczywisty asortyment.",
+          "Narzędzie jest bezpłatne i nie wymaga rejestracji."
+        ]
+      }
+    ],
     "benefitsTitle": "Po co to narzędzie architektowi lub projektantowi",
     "benefitsText": "Zamiast długich ustaleń z opiekunem — samodzielny dobór i gotowy plik do projektu w kilka minut.",
     "benefits": [
@@ -765,8 +871,8 @@
       { "title": "Sprawdź we wnętrzu", "text": "Ustaw drzwi w scenie 3D pokoju i obejrzyj z każdej strony." },
       { "title": "Pobierz plik", "text": "Pobierz gotowy model w formacie GLB lub OBJ do programu CAD lub BIM." }
     ],
-    "ctaTitle": "Potrzebujesz konsultacji dotyczącej projektu?",
-    "ctaText": "Zostaw zapytanie — opiekun IN WOOD pomoże dobrać rozwiązanie do Twojego projektu i wyśle ofertę handlową."
+    "ctaTitle": "Wyceń zamówienie",
+    "ctaText": "Zostaw zapytanie — wycenimy w jeden dzień roboczy."
   },
   "kontakty": {
     "title": "IN WOOD — Kontakt do producenta drzwi wewnętrznych | Ukraina",
@@ -874,7 +980,87 @@
     "cityMetaPrefix": "Oficjalni dilerzy IN WOOD —",
     "cityMetaSuffix": "Adresy, kontakty i katalog drzwi wewnętrznych IN WOOD.",
     "cityIntro": "Aktualne kontakty dilerów IN WOOD w tym mieście — adres, telefon i strona dilera.",
-    "cityIntros": {},
+    "cityIntros": {
+      "poltava": [
+        "Połtawa to miasto, w którym powstają drzwi IN WOOD. Nasz zakład mieści się przy zaułku Sportowym i można do nas przyjechać: zobaczyć skrzydła na żywo, dotknąć, zobaczyć prawdziwy kolor zamiast zdjęcia na ekranie. Zamówienie można odebrać osobiście prosto z produkcji.",
+        "W samej Połtawie działa dziewięć punktów partnerskich — więcej niż w jakimkolwiek innym mieście. Są rozmieszczone tak, że niemal z każdej dzielnicy któryś jest blisko: Jewropejska, Nebesnoj Sotni, Nowobazarna, Zawodska, Hruszewskoho, Szewczenka, Herojiw-Czornobylciw.",
+        "Jeśli wolą Państwo najpierw obejrzeć drzwi, a dopiero potem liczyć — najwygodniej zacząć od najbliższego punktu. Jeśli potrzebna jest wycena pod nietypowy otwór — prosimy pisać do nas bezpośrednio."
+      ],
+      "kyiv": [
+        "W Kijowie drzwi IN WOOD reprezentuje dwóch partnerów: DVNV przy Stadionnej i ВСІ Двері przy Mykilskiej, gdzie dział drzwi znajduje się na drugim piętrze.",
+        "Kijów to miasto, w którym wybór drzwi najczęściej rozbija się nie o cenę, lecz o terminy i nietypowe otwory: w starym budownictwie rzadko trafia się równa geometria, a w nowych inwestycjach otwory bywają wyższe od typowych.",
+        "Nasza siatka wymiarów idzie co 50 mm bez dopłaty za wymiar, a skrzydła powyżej 2100 mm wykonujemy na zamówienie. Nie trzeba więc przerabiać ściany pod drzwi — nawet w kamienicy z nierównym otworem."
+      ],
+      "odesa": [
+        "W Odessie działają cztery punkty partnerskie: Магазин Тіана przy alei Nebesnoj Sotni, Rich Market przy Małej Arnauckiej, Лінія Дверей i ВСІ Двері przy Seredniofontanskiej.",
+        "Odeski klimat to dla drzwi osobna historia. Wysoka wilgotność przez większą część roku stawia wyższe wymagania wykończeniu i konstrukcji skrzydła: to, co dobrze sprawdza się w suchym mieszkaniu, w nadmorskim mieście może się wypaczyć.",
+        "Nasze skrzydła to płyta MDF na ramie z suszonego drewna, wykończenie okleiną PVC albo malowanie. Do łazienek i pomieszczeń wilgotnych polecamy nasz artykuł o [drzwiach do pomieszczeń wilgotnych](/blog/dveri-dlia-vannoi-ta-volohykh-prymishchen) — wyjaśniamy w nim, na co zwracać uwagę."
+      ],
+      "kharkiv": [
+        "W Charkowie drzwi IN WOOD można obejrzeć w KERAMIS przy Kłoczkiwskiej 159 — dział drzwi na parterze niskim.",
+        "Charków dużo teraz odbudowuje i drzwi kupuje się tu często nie pojedynczo do jednego mieszkania, lecz kompletem — na piętro, na budynek, na inwestycję. Dla takich zamówień mamy osobne warunki: linia NOMINAL powstała właśnie pod duże ilości, gdy drzwi mają dobrze wyglądać i długo służyć bez dopłaty za opcje.",
+        "Jeśli potrzebna jest wycena ilościowa — prosimy podać liczbę otworów, policzymy osobno."
+      ],
+      "dnipro": [
+        "W Dnieprze mamy jednego partnera — BRAVO przy alei Nauki 82.",
+        "Jeden punkt w mieście tej wielkości oznacza, że nie każdemu wygodnie do niego dojechać. Przypominamy więc: wszystkie kolekcje, kolory i wymiary można obejrzeć online, a wycenę przygotowujemy w jeden dzień roboczy i wysyłamy — przyjeżdżać po nią nie trzeba.",
+        "Drzwi wysyłamy z zamontowanymi okuciami, gotowe do montażu: monterowi zostaje samo wstawienie, nic nie wymaga dopasowania."
+      ],
+      "kryvyi-rih": [
+        "W Krzywym Rogu działają dwa punkty: Дверка przy ulicy Hetmana Iwana Mazepy i Mr Door przy Łotczykiw.",
+        "Miasto jest rozciągnięte wzdłuż — od krańca do krańca ponad siedemdziesiąt kilometrów — więc dwa punkty w różnych jego częściach to rozwiązanie wygodne: niemal z każdej dzielnicy któryś okaże się bliższy.",
+        "Obaj partnerzy pracują z pełnym asortymentem: ETALON, NOMINAL, FREZZATTI, PERFETTO i drzwi z ościeżnicą ukrytą. Jeśli potrzebnego modelu nie ma na miejscu — zostanie sprowadzony na zamówienie z naszego zakładu w Połtawie."
+      ],
+      "cherkasy": [
+        "W Czerkasach mamy dwóch partnerów: Маркет Дверей przy bulwarze Szewczenki 352 — punkt orientacyjny to przystanek — oraz ALLDOORS przy Rizdwianej 43.",
+        "Czerkasy leżą blisko Połtawy, więc dostawa jest tu szybka, a zamówienia nietypowe nie rozciągają się w czasie. Jeśli mają Państwo nietypowy otwór — szerszy niż 900 mm albo wyższy niż 2100 — to dokładnie ten przypadek, w którym warto policzyć u nas: takie wymiary wykonujemy na zamówienie, a nie odmawiamy."
+      ],
+      "ternopil": [
+        "W Tarnopolu działają dwa punkty: Дріада przy Budnoho 9w i Rooms przy Stepana Bandery 63.",
+        "Zachodnia Ukraina tradycyjnie ciąży ku ciepłym strukturom drewna, a w naszej palecie najwięcej ich jest właśnie w ETALON i PERFETTO — siedemnaście kolorów, wśród nich dąb chateau, świerk karpacki, sosna prowansalska i rustykalny złoty.",
+        "Obaj partnerzy mogą pokazać próbki kolorów na żywo. To ważne: kolor na ekranie i kolor w ręce to różne rzeczy, zwłaszcza przy okleinach strukturalnych."
+      ],
+      "lutsk": [
+        "W Łucku działa БастіOn przy ulicy Koniakina 13.",
+        "Jeśli w salonie nie ma akurat potrzebnego modelu albo koloru — to nie znaczy, że ich nie ma w ofercie. Na miejscu dostępne jest zwykle to, co najpopularniejsze, a pełny asortyment — pięć kolekcji i do siedemnastu kolorów w każdej — jest dostępny na zamówienie z zakładu.",
+        "Cały wybór wygodniej obejrzeć w katalogu na stronie, a dopiero potem przyjechać do partnera i zobaczyć konkretne skrzydło."
+      ],
+      "rivne": [
+        "W Równem drzwi IN WOOD reprezentuje Yuterm przy alei Generała Bezruczki 2/20.",
+        "Partner pracuje i z oknami, i z drzwiami — to wygodne, gdy remont idzie w całości i chce się zamknąć obie sprawy w jednym miejscu, z jednymi terminami i jedną dostawą.",
+        "Nasze drzwi przyjeżdżają z zamontowanymi okuciami, gotowe do montażu, więc łatwiej skoordynować prace: nie trzeba czekać, aż ktoś osobno wyfrezuje zamek i zawiasy."
+      ],
+      "zhytomyr": [
+        "W Żytomierzu drzwi IN WOOD można obejrzeć w STRAJ przy ulicy Witruka 6b.",
+        "Jeśli są Państwo na etapie remontu, na którym drzwi nie są jeszcze wybrane, ale ściany już się planuje — to właściwy moment, żeby spojrzeć w stronę ościeżnic ukrytych. Takie drzwi zamawia się razem z sufitem i elektryką, a nie po gładziach: ościeżnica chowa się w ścianie i nie da się jej wstawić w gotową ścianę bez rozbierania.",
+        "O tym, jak to działa i ile kosztuje, napisaliśmy osobno na [stronie drzwi ukrytych](/catalog/pryhovani-dveri)."
+      ],
+      "kremenchuk": [
+        "W Krzemieńczuku działa Dveri.Alex — ulica 101-j Kwartał 10g.",
+        "Krzemieńczuk leży godzinę drogi od naszego zakładu w Połtawie, więc dostawa jest tu najszybsza ze wszystkich miast. W razie chęci można przyjechać i do samego zakładu: zobaczyć, jak powstają drzwi, i odebrać zamówienie osobiście.",
+        "Wymiary nietypowe, malowanie w RAL, drzwi ukryte — wszystko to wykonujemy na zamówienie, a bliskość zakładu jest tu odczuwalną przewagą."
+      ],
+      "brovary": [
+        "W Browarach drzwi IN WOOD reprezentuje Магазин Тесля przy ulicy Czornowoła 6a.",
+        "Browary intensywnie się zabudowują i większość zamówień to drzwi do nowych mieszkań, od razu kompletem na całą powierzchnię. W takim przypadku warto patrzeć nie na cenę jednego skrzydła, lecz na koszt kompletu: skrzydło, ościeżnica, opaski, poszerzenia i przygotowanie okuć razem.",
+        "Wycenimy komplet pod Państwa liczbę otworów w jeden dzień roboczy."
+      ],
+      "boryspil": [
+        "W Boryspolu działa Салон Вікон та Дверей przy Kijowskim Szlachu 10.",
+        "Partner zajmuje się i oknami, i drzwiami — to wygodne, gdy remont idzie pełnym cyklem.",
+        "Jeśli mają Państwo dom, warto zwrócić uwagę na dwie rzeczy: grubość skrzydła i rodzaj ościeżnicy. Do grubych ścian potrzebne jest poszerzenie, a do nierównych otworów lepiej sprawdza się ościeżnica regulowana, która dopasowuje się do grubości ściany bez docinania. Wszystko to jest dostępne w obecnych liniach, szczegóły — na stronach kolekcji."
+      ],
+      "kamianets-podilskyi": [
+        "W Kamieńcu Podolskim drzwi IN WOOD reprezentuje Perfetto przy alei Hruszewskiego 31/2.",
+        "Miasto z dużą ilością starej zabudowy, a to niemal zawsze oznacza nietypowe otwory: nierówną geometrię, wysokość odbiegającą od typowej, grube ściany.",
+        "Nasza siatka wymiarów idzie co 50 mm bez dopłaty, skrzydła do 2300 mm wykonujemy na zamówienie, a do grubych ścian mamy poszerzenia w trzech głębokościach. Nie trzeba więc przerabiać ściany pod drzwi."
+      ],
+      "bolhrad": [
+        "W Bołhradzie drzwi IN WOOD reprezentuje Сім'я Дім przy ulicy Zawodskiej 89.",
+        "W niewielkim mieście jeden punkt z pełnym dostępem do asortymentu to rozwiązanie zupełnie wystarczające: na miejscu jest to, co najpopularniejsze, reszta na zamówienie z zakładu w Połtawie.",
+        "Warto wcześniej przejrzeć katalog na stronie i przyjechać do partnera z gotową listą modeli i kolorów — wybór zajmie wtedy mniej czasu, a potrzebne skrzydła można przywieźć jednym transportem."
+      ]
+    },
     "cityDealersHeading": "Dilerzy",
     "cityBackLink": "← Wszyscy dilerzy w Ukrainie",
     "cityCatalogCta": "Zobacz katalog drzwi",
@@ -999,32 +1185,59 @@
     "metaDescription": "FAQ o drzwiach wewnętrznych IN WOOD — czas produkcji, wymiary, materiały, montaż, gwarancja i pielęgnacja."
   },
   "blog": {
-    "sections": [],
     "title": "Blog IN WOOD — artykuły o drzwiach wewnętrznych",
-    "heading": "Blog",
-    "intro": "Przydatne artykuły o wyborze, montażu i pielęgnacji drzwi wewnętrznych IN WOOD.",
-    "metaDescription": "Blog IN WOOD — porady dotyczące wyboru, montażu i pielęgnacji drzwi wewnętrznych.",
+    "heading": "Artykuły o drzwiach wewnętrznych",
+    "intro": "Drzwi kupuje się raz na dziesięć–piętnaście lat, a większość pytań pojawia się raz w życiu. Odpowiadamy na nie tak, jak wyjaśnialibyśmy w zakładzie: co z czego jest zrobione, na co to wpływa i gdzie nie trzeba przepłacać.",
+    "sections": [
+      {
+        "body": [
+          "Piszemy jako producent, a nie jako sklep. To znaczy, że o wadach też piszemy: białe drzwi rzeczywiście szybciej pokazują ślady, listwę ozdobną rzeczywiście można obić rogiem mebla, a malowanie w RAL rzeczywiście trwa dłużej niż okleina.",
+          "**Warto przeczytać przed zamówieniem:** jak [wybrać drzwi pod względem konstrukcji i wykończenia](/blog/yak-obraty-mizhkimnatni-dveri), czym [różnią się drzwi płytowe od ramiakowych](/blog/shhytovi-chy-tsargovi-dveri), jak [dobrać kolor do podłogi i mebli](/blog/yak-pidibraty-kolir-dverei-pid-pidlohu).",
+          "**Jeśli wybierasz już konkretny model:** zajrzyj na strony kolekcji poniżej — zebraliśmy tam modele, kolory i dostępne opcje w każdej linii."
+        ]
+      }
+    ],
+    "metaDescription": "Jak wybrać drzwi, czym różnią się konstrukcje i wykończenia, jak dobrać kolor i wymiar — wyjaśnienia od producenta, bez reklamy.",
     "readMore": "Czytaj artykuł",
     "back": "← Wszystkie artykuły",
     "relatedPostsTitle": "Czytaj również",
     "browseCatalog": "Zobacz katalog drzwi IN WOOD"
   },
   "galereya": {
-    "sections": [],
-    "title": "Zdjęcia drzwi IN WOOD we wnętrzu — galeria według modeli",
-    "heading": "Galeria",
+    "title": "Drzwi IN WOOD we wnętrzach — galeria zdjęć",
+    "heading": "Drzwi IN WOOD we wnętrzach",
     "intro": "Drzwi IN WOOD w prawdziwych wnętrzach — wybierz kolekcję i model, aby zobaczyć dostępne kolory.",
-    "metaDescription": "Zdjęcia drzwi wewnętrznych IN WOOD we wnętrzu według modeli i kolorów — kolekcje ETALON, NOMINAL, FREZZATTI, PERFETTO.",
+    "sections": [
+      {
+        "body": [
+          "Kolor na ekranie i kolor w pokoju to dwie różne rzeczy. Okleina z tłoczeniem inaczej łapie światło, ciemne skrzydła wyglądają inaczej w dzień i wieczorem, a białe drzwi w pomieszczeniu o ciepłych ścianach czyta się cieplej niż na zdjęciu.",
+          "Dlatego ta galeria nie jest o katalogu, tylko o tym, jak drzwi zachowują się w prawdziwych wnętrzach.",
+          "**Na co patrzeć.** Jak skrzydło wygląda obok podłogi — to najważniejsze zestawienie we wnętrzu. Jak bardzo widoczna jest rama ościeżnicy: regulowana wystaje ze ściany, komplanarna licuje, ukryta znika zupełnie. Jak czyta się listwa ozdobna albo frezowanie przy świetle bocznym — to właśnie ono pokazuje relief.",
+          "**Jeśli szukasz konkretnego modelu** — zajrzyj na [strony kolekcji](/catalog): znajdziesz tam modele i kolory dostępne w każdej linii. A dokładny kolor w ręce pokażą nasi partnerzy albo zakład w Połtawie."
+        ]
+      }
+    ],
+    "metaDescription": "Drzwi wewnętrzne IN WOOD w prawdziwych wnętrzach: ETALON, NOMINAL, FREZZATTI, PERFETTO, drzwi ukryte. Zdjęcia według modeli i kolorów.",
     "all": "Wszystkie kolekcje",
     "color": "Kolor"
   },
   "dlyaZabudovnykiv": {
-    "sections": [],
-    "pageTitle": "Drzwi IN WOOD dla deweloperów — dostawy hurtowe",
-    "metaDescription": "Hurtowe dostawy drzwi wewnętrznych IN WOOD dla deweloperów i firm budowlanych. Własna produkcja w Połtawie, ceny hurtowe, dostawa po Ukrainie.",
+    "pageTitle": "Drzwi dla deweloperów — dostawy hurtowe | IN WOOD",
+    "metaDescription": "Wyposażanie inwestycji w drzwi wewnętrzne bezpośrednio od producenta: ceny za ilość, własna fabryka w Połtawie, dostawa na terenie Ukrainy.",
     "backLink": "← Wszystkie możliwości współpracy",
     "heading": "Drzwi dla deweloperów i firm budowlanych",
-    "intro": "IN WOOD to producent drzwi wewnętrznych z własną produkcją w Połtawie. Dostarczamy drzwi hurtowo do wyposażenia nowych budynków, osiedli mieszkaniowych i obiektów komercyjnych — od jednej klatki schodowej po całe osiedle.",
+    "intro": "Wyposażenie inwestycji w drzwi to nie to samo co zakup drzwi do mieszkania. Liczą się tu trzy rzeczy i żadna z nich nie dotyczy wzornictwa: przewidywalność terminów, jednorodność partii i cena pomnożona przez liczbę otworów.",
+    "sections": [
+      {
+        "body": [
+          "**Jesteśmy producentem, a nie pośrednikiem.** Drzwi powstają w naszym zakładzie w Połtawie, więc terminy zależą od naszego obłożenia, a nie od cudzych dostaw. Partia wychodzi jednorodna: jeden przebieg, jedna okleina, jeden odcień. Na inwestycji ma to znaczenie krytyczne — drzwi z różnych partii wyraźnie się różnią.",
+          "**Co zwykle wybiera się na inwestycje.** Linia **NOMINAL** powstała właśnie do takich zadań: skrzydło 34 mm, 10 modeli, 12 kolorów, ościeżnica regulowana. Bez krawędzi aluminiowych i ościeżnic komplanarnych — czyli bez dopłaty za opcje, z których na inwestycji się nie korzysta. Tam, gdzie potrzebny jest wyższy standard, wybiera się **ETALON**.",
+          "**Wymiary pod rzeczywiste otwory.** Siatka co 50 mm bez dopłaty za wymiar: szerokość 400–900 mm, wysokość 1800–2100 mm. Na budowie otwory rzadko bywają identyczne, a możliwość wzięcia 850 zamiast 800 bez dopłaty oszczędza i pieniądze, i pracę przy montażu.",
+          "**Przygotowanie fabryczne.** Okucia montujemy w zakładzie. Na inwestycji widać to najbardziej: ekipa nie musi frezować zamków i dopasowywać ościeżnic przy setkach drzwi.",
+          "**Warunki.** Zamówienia ilościowe wyceniamy osobno. Prosimy o liczbę otworów i oczekiwane terminy — przygotujemy wycenę pod Państwa wolumen."
+        ]
+      }
+    ],
     "benefitsTitle": "Warunki dla deweloperów",
     "benefitsText": "Pracujemy bezpośrednio z producentem — bez pośredników i narzutów.",
     "benefits": [
@@ -1051,8 +1264,8 @@
     ],
     "citiesTitle": "Współpracujemy z deweloperami w tych miastach",
     "citiesText": "Przygotowujemy ofertę handlową pod obiekt niezależnie od miasta — oto gdzie już aktywnie współpracujemy z deweloperami.",
-    "ctaTitle": "Planujesz budowę?",
-    "ctaText": "Zostaw zgłoszenie — przygotujemy ofertę handlową pod Twój projekt i terminy budowy.",
+    "ctaTitle": "Zamów wycenę inwestycji",
+    "ctaText": "Prosimy o liczbę otworów i oczekiwane terminy — przygotujemy wycenę pod Państwa wolumen.",
     "cityTitlePrefix": "Drzwi IN WOOD dla deweloperów —",
     "cityTitleSuffix": "dostawy hurtowe",
     "cityMetaPrefix": "Hurtowe dostawy drzwi IN WOOD dla deweloperów",
