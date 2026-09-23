@@ -7,6 +7,7 @@ import LineColorPreview from "@/components/LineColorPreview";
 import ConstructionDiagram from "@/components/ConstructionDiagram";
 import DoorFit3dBanner from "@/components/DoorFit3dBanner";
 import RelatedLinks from "@/components/RelatedLinks";
+import RichText from "@/components/RichText";
 
 // Яку модель показувати як приклад у картці колекції на цій сторінці —
 // за замовчуванням береться перша модель колекції, тут навмисний вибір.
@@ -77,6 +78,21 @@ export default async function CharacteristicsPage({
           dimensions={t.constructionDiagram.dimensions}
         />
       </section>
+
+      {t.sections && t.sections.length > 0 && (
+        <section className="mx-auto max-w-3xl px-4 pb-16 sm:pb-24">
+          <div className="space-y-10">
+            {t.sections.map((s) => (
+              <div key={s.heading}>
+                <h2 className="font-serif text-xl font-bold text-navy-dark">{s.heading}</h2>
+                <div className="mt-3">
+                  <RichText paragraphs={s.body} locale={params.locale} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       <section className="pb-16 sm:pb-24">
         <DoorFit3dBanner

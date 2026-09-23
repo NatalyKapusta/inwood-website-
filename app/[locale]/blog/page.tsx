@@ -4,6 +4,7 @@ import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata } from "@/lib/seo";
 import { blogPosts } from "@/data/blog";
 import { COLLECTION_PAGE_SLUGS } from "@/lib/collectionPages";
+import RichText from "@/components/RichText";
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
@@ -27,6 +28,14 @@ export default async function BlogIndexPage({ params }: { params: { locale: Loca
         <h1 className="font-serif text-3xl font-bold text-navy-dark sm:text-4xl">{t.heading}</h1>
         <p className="mx-auto mt-4 max-w-2xl text-navy-dim">{t.intro}</p>
       </div>
+
+      {t.sections && t.sections.length > 0 && (
+        <div className="mx-auto mt-8 max-w-2xl">
+          {t.sections.map((s, i) => (
+            <RichText key={i} paragraphs={s.body} locale={params.locale} />
+          ))}
+        </div>
+      )}
 
       <div className="mt-12 grid gap-6 sm:grid-cols-2">
         {posts.map((post) => (

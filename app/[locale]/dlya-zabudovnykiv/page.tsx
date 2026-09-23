@@ -6,6 +6,7 @@ import { RECRUIT_CITIES, getRecruitCityDisplayName } from "@/lib/recruitCities";
 import ContactCta from "@/components/ContactCta";
 import DoorFit3dBanner from "@/components/DoorFit3dBanner";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import RichText from "@/components/RichText";
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
@@ -57,6 +58,14 @@ export default async function DlyaZabudovnykivPage({
           <p className="mt-4 text-white/85">{t.intro}</p>
         </div>
       </section>
+
+      {t.sections && t.sections.length > 0 && (
+        <section className="mx-auto max-w-3xl px-4 py-16 sm:py-24">
+          {t.sections.map((sec, i) => (
+            <RichText key={i} paragraphs={sec.body} locale={params.locale} />
+          ))}
+        </section>
+      )}
 
       <section className="bg-panel-alt py-16 sm:py-24">
         <div className="mx-auto max-w-5xl px-4">

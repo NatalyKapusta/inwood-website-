@@ -311,6 +311,7 @@
     "metaDescription": "IN WOOD — producent drzwi wewnętrznych w Połtawie. 5 kolekcji: ETALON, NOMINAL, FREZZATTI, PERFETTO, drzwi montażu ukrytego. Dilerstwo i eksport."
   },
   "proNas": {
+    "sections": [],
     "title": "IN WOOD — producent drzwi wewnętrznych w Ukrainie",
     "heading": "O nas",
     "intro": "IN WOOD to ukraiński producent drzwi wewnętrznych.",
@@ -348,6 +349,7 @@
     "metaDescription": "IN WOOD — ukraiński producent drzwi wewnętrznych pełnego cyklu. Własna produkcja, kontrola jakości na każdym etapie, sieć dilerska i eksport."
   },
   "harakterystyky": {
+    "sections": [],
     "title": "Charakterystyki linii drzwi IN WOOD — wymiary i konstrukcja",
     "heading": "Charakterystyki linii drzwi IN WOOD",
     "subheading": "Parametry techniczne modeli: wysokość, szerokość, grubość skrzydła i okleina",
@@ -741,6 +743,7 @@
     "metaDescription": "Współpraca z IN WOOD dla dilerów, dystrybutorów, deweloperów nieruchomości i projektantów wnętrz — ceny hurtowe, osobisty menedżer i kalkulator online."
   },
   "doorFit3d": {
+    "sections": [],
     "pageTitle": "Przymiarka 3D drzwi online — dla architektów i projektantów | IN WOOD",
     "metaDescription": "Darmowy konfigurator 3D drzwi IN WOOD: wybierz model, kolor i rozmiar, ustaw drzwi we własnym wnętrzu i pobierz gotowy plik GLB/OBJ do projektu.",
     "backLink": "← Współpraca",
@@ -808,6 +811,7 @@
     "sendInquiry": "Wyślij zapytanie",
     "close": "Zamknij",
     "footnote": "Niestandardowy rozmiar jest uwzględniany automatycznie (+20% do ceny). Warianty aluminiowej krawędzi — pytaj o nie w zapytaniu. Wybór koloru w ramach standardowej palety nie wpływa na cenę; malowanie według RAL/NCS (tam, gdzie dostępne) ma osobną cenę.",
+    "showMore": "Pokaż więcej modeli",
     "metaDescription": "Asortyment drzwi wewnętrznych IN WOOD: wybierz model, kolor, ościeżnicę, listwę i przylgę do swojego projektu.",
     "downloadCatalog": "Pobierz katalog (PDF)",
     "finishBase": "Baza",
@@ -870,6 +874,7 @@
     "cityMetaPrefix": "Oficjalni dilerzy IN WOOD —",
     "cityMetaSuffix": "Adresy, kontakty i katalog drzwi wewnętrznych IN WOOD.",
     "cityIntro": "Aktualne kontakty dilerów IN WOOD w tym mieście — adres, telefon i strona dilera.",
+    "cityIntros": {},
     "cityDealersHeading": "Dilerzy",
     "cityBackLink": "← Wszyscy dilerzy w Ukrainie",
     "cityCatalogCta": "Zobacz katalog drzwi",
@@ -994,6 +999,7 @@
     "metaDescription": "FAQ o drzwiach wewnętrznych IN WOOD — czas produkcji, wymiary, materiały, montaż, gwarancja i pielęgnacja."
   },
   "blog": {
+    "sections": [],
     "title": "Blog IN WOOD — artykuły o drzwiach wewnętrznych",
     "heading": "Blog",
     "intro": "Przydatne artykuły o wyborze, montażu i pielęgnacji drzwi wewnętrznych IN WOOD.",
@@ -1004,6 +1010,7 @@
     "browseCatalog": "Zobacz katalog drzwi IN WOOD"
   },
   "galereya": {
+    "sections": [],
     "title": "Zdjęcia drzwi IN WOOD we wnętrzu — galeria według modeli",
     "heading": "Galeria",
     "intro": "Drzwi IN WOOD w prawdziwych wnętrzach — wybierz kolekcję i model, aby zobaczyć dostępne kolory.",
@@ -1012,6 +1019,7 @@
     "color": "Kolor"
   },
   "dlyaZabudovnykiv": {
+    "sections": [],
     "pageTitle": "Drzwi IN WOOD dla deweloperów — dostawy hurtowe",
     "metaDescription": "Hurtowe dostawy drzwi wewnętrznych IN WOOD dla deweloperów i firm budowlanych. Własna produkcja w Połtawie, ceny hurtowe, dostawa po Ukrainie.",
     "backLink": "← Wszystkie możliwości współpracy",

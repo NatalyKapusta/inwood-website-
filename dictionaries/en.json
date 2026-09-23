@@ -311,6 +311,7 @@
     "metaDescription": "IN WOOD is a Ukrainian door manufacturer in Poltava, 20+ years of experience, 5 collections. Exports to Canada, France, Switzerland, Lithuania and Latvia."
   },
   "proNas": {
+    "sections": [],
     "title": "IN WOOD — interior door manufacturer in Ukraine",
     "heading": "About Us",
     "intro": "IN WOOD is a Ukrainian manufacturer of interior doors.",
@@ -348,6 +349,7 @@
     "metaDescription": "IN WOOD is a full-cycle Ukrainian interior door manufacturer with in-house production, quality control at every stage, a dealer network, and export."
   },
   "harakterystyky": {
+    "sections": [],
     "title": "IN WOOD door line specifications — sizes and construction",
     "heading": "IN WOOD Door Line Specifications",
     "subheading": "Technical parameters of the models: height, width, leaf thickness and finish",
@@ -719,6 +721,7 @@
     "metaDescription": "Partner with IN WOOD: dealer, distributor and export cooperation for interior doors, exporting to Canada, France, Switzerland, Lithuania and Latvia."
   },
   "doorFit3d": {
+    "sections": [],
     "pageTitle": "3D Door Fitting Tool Online — For Architects and Designers | IN WOOD",
     "metaDescription": "Free 3D door configurator from IN WOOD: pick a model, colour and size, place the door in your own interior, and download a ready GLB/OBJ file for your project.",
     "backLink": "← Cooperation",
@@ -786,6 +789,7 @@
     "sendInquiry": "Send inquiry",
     "close": "Close",
     "footnote": "Non-standard sizing is applied automatically (+20% to the price). Aluminium edge options — contact us for those. Choosing a colour within the standard palette does not affect the price; RAL/NCS painting (where available) has its own price.",
+    "showMore": "Show more models",
     "metaDescription": "IN WOOD interior door range: choose a model, color, frame, trim and door casing for your project.",
     "downloadCatalog": "Download catalog (PDF)",
     "finishBase": "Base",
@@ -848,6 +852,7 @@
     "cityMetaPrefix": "Official IN WOOD dealers in",
     "cityMetaSuffix": "— addresses, contacts and the IN WOOD interior door catalog.",
     "cityIntro": "Current contacts for IN WOOD dealers in this city — address, phone number and dealer website.",
+    "cityIntros": {},
     "cityDealersHeading": "Dealers",
     "cityBackLink": "← All dealers in Ukraine",
     "cityCatalogCta": "Browse the door catalog",
@@ -972,6 +977,7 @@
     "metaDescription": "FAQ about IN WOOD interior doors — lead times, sizes, materials, installation, warranty and care."
   },
   "blog": {
+    "sections": [],
     "title": "IN WOOD blog — interior door articles",
     "heading": "Blog",
     "intro": "Helpful articles on choosing, installing and caring for IN WOOD interior doors.",
@@ -982,6 +988,7 @@
     "browseCatalog": "Browse the IN WOOD door catalog"
   },
   "galereya": {
+    "sections": [],
     "title": "IN WOOD Doors in Real Interiors — Gallery by Model",
     "heading": "Gallery",
     "intro": "IN WOOD doors in real interiors — choose a collection and model to see the available colors.",
@@ -990,6 +997,7 @@
     "color": "Color"
   },
   "dlyaZabudovnykiv": {
+    "sections": [],
     "pageTitle": "IN WOOD Doors for Developers — Wholesale Supply",
     "metaDescription": "Wholesale IN WOOD interior doors for developers and construction companies. In-house production in Poltava, bulk pricing, delivery across Ukraine.",
     "backLink": "← All cooperation options",

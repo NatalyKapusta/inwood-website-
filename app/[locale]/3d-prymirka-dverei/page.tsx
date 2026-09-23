@@ -5,6 +5,7 @@ import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import ContactCta from "@/components/ContactCta";
 import { DoorFitLoader, getDoorFitDictionary } from "@/components/door-fit";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import RichText from "@/components/RichText";
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
@@ -105,6 +106,14 @@ export default async function DoorFit3dPage({
           </div>
         </div>
       </section>
+
+      {t.sections && t.sections.length > 0 && (
+        <section className="mx-auto max-w-3xl px-4 py-16 sm:py-24">
+          {t.sections.map((sec, i) => (
+            <RichText key={i} paragraphs={sec.body} locale={params.locale} />
+          ))}
+        </section>
+      )}
 
       <ContactCta
         title={t.ctaTitle}

@@ -7,6 +7,7 @@ import { getCitiesWithDealers, getCityDisplayName } from "@/lib/dealers";
 import { locales } from "@/lib/i18n";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ContactCta from "@/components/ContactCta";
+import RichText from "@/components/RichText";
 
 export function generateStaticParams() {
   const cities = getCitiesWithDealers(dealers);
@@ -84,7 +85,12 @@ export default async function DealerCityPage({
         <h1 className="mt-4 font-serif text-3xl font-bold text-navy-dark sm:text-4xl">
           {t.cityTitlePrefix} {cityName}: {t.cityTitleSuffix}
         </h1>
-        <p className="mt-4 max-w-2xl text-navy-dim">{t.cityIntro}</p>
+        <div className="mt-4 max-w-2xl text-navy-dim">
+          <RichText
+            paragraphs={(t.cityIntros as Record<string, string[] | undefined>)[params.city] ?? [t.cityIntro]}
+            locale={params.locale}
+          />
+        </div>
 
         <a
           href={`/${params.locale}/catalog`}

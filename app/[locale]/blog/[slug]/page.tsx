@@ -49,7 +49,7 @@ export async function generateMetadata({
   return buildMetadata({
     locale: params.locale,
     path: `/blog/${params.slug}`,
-    title: post.title,
+    title: post.seoTitle ?? post.title,
     description: post.excerpt,
   });
 }

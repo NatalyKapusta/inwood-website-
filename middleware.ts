@@ -84,8 +84,17 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(url, 308);
   }
 
-  // Оновлюємо сесію Supabase (потрібно для закритого порталу /portal) —
-  // без цього логін "злітав" би після закриття вкладки.
+  // Оновлюємо сесію Supabase — лише для /portal. Раніше цей блок бігав на
+  // КОЖЕН запит сайту (не тільки /portal), а Set-Cookie в middleware-
+  // response примусово вимикає HTTP-кеш на боці Vercel/CDN для сторінки —
+  // саме через це всі публічні сторінки йшли з cache-control: private,
+  // no-store і x-vercel-cache: MISS (SEO-аудит 23.09.2026, задача 2).
+  // Публічні сторінки сесії не потребують — пропускаємо їх без дотику
+  // до cookies, щоб Next/Vercel могли кешувати їх як завжди.
+  if (!isPortalRoute) {
+    return NextResponse.next();
+  }
+
   let response = NextResponse.next({ request });
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,

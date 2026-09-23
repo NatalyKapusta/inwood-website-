@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import ProductCard from "@/components/ProductCard";
 import AddToCartButton from "@/components/AddToCartButton";
@@ -10,6 +10,14 @@ import type { Dictionary } from "@/lib/dictionary";
 const ADDON_TYPES = ["korob", "lishtva", "dobir"] as const;
 type AddonType = (typeof ADDON_TYPES)[number];
 type AddonFilter = AddonType | "nakladka_plintus" | "all";
+
+// SEO-аудит 23.09.2026: /catalog віддавав 971 зображення в розмітці одразу —
+// DOM такого розміру зривав LCP (2,8с при порозі Google 2,5с), хоча вага
+// файлів (14 КБ початкового трафіку) до цього стосунку не мала. Рішення —
+// показувати першою порцією 20-30 моделей (тільки у вкладці "Усі", кожна
+// окрема колекція й так невелика), решту довантажувати по кнопці.
+const INITIAL_MODEL_LIMIT = 24;
+const MODEL_BATCH = 24;
 
 function fmtUah(n: number) {
   return `${new Intl.NumberFormat("uk-UA").format(n)} ₴`;
@@ -34,11 +42,49 @@ export default function CatalogFilter({
 }) {
   const [active, setActive] = useState<string>("all");
   const [addonType, setAddonType] = useState<AddonFilter>("all");
+  const [modelLimit, setModelLimit] = useState(INITIAL_MODEL_LIMIT);
   const addonTypeLabel: Partial<Record<AddonType | "nakladka" | "plintus", string>> = {
     korob: t.korob,
     lishtva: t.lyshtva,
     dobir: t.dobir,
   };
+
+  const totalModelCount = useMemo(
+    () => sections.reduce((sum, s) => sum + (s.data.models?.length ?? 0), 0),
+    [sections]
+  );
+  // Скільки моделей показувати з кожної секції у вкладці "Усі" — розподіляємо
+  // загальний ліміт по секціях у їхньому порядку, не чіпаючи інші вкладки
+  // (там і так, максимум, одна колекція — 17 моделей, це не проблема).
+  const perSectionVisible = useMemo(() => {
+    let remaining = modelLimit;
+    return sections.map((s) => {
+      const total = s.data.models?.length ?? 0;
+      const show = Math.max(0, Math.min(total, remaining));
+      remaining -= show;
+      return show;
+    });
+  }, [sections, modelLimit]);
+
+  // Глибокі посилання на конкретну модель (напр. блок "Тренди 2026" на
+  // головній, #etalon-ET-06:colorSlug) можуть вести на модель, яка ще не
+  // потрапила в початкову порцію — тоді одразу розкриваємо досить моделей,
+  // щоб потрібна опинилась у розмітці.
+  useEffect(() => {
+    const anchorId = window.location.hash.slice(1).split(":")[0];
+    if (!anchorId) return;
+    let cumulative = 0;
+    for (const s of sections) {
+      const models = s.data.models ?? [];
+      const idx = models.findIndex((m) => `${s.id}-${m.code}` === anchorId);
+      if (idx !== -1) {
+        setModelLimit((prev) => Math.max(prev, cumulative + idx + 1));
+        return;
+      }
+      cumulative += models.length;
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div>
@@ -54,7 +100,7 @@ export default function CatalogFilter({
       </div>
 
       <div className="mt-10 space-y-16">
-        {sections.map((s) => (
+        {sections.map((s, sectionIdx) => (
           <section key={s.id} id={s.id} hidden={active !== "all" && active !== s.id}>
             <h2 className="font-serif text-2xl font-bold text-navy-dark">{s.data.label}</h2>
             {s.data.thickness && (
@@ -95,19 +141,21 @@ export default function CatalogFilter({
 
             {s.data.models && (
               <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {s.data.models.map((m) => (
-                  <ProductCard
-                    key={m.code}
-                    anchorId={`${s.id}-${m.code}`}
-                    collectionLabel={s.data.label}
-                    model={m}
-                    komplekt={s.data.komplekt!}
-                    t={t}
-                    pricesVisible={pricesVisible}
-                    addToCartLabel={addToCartLabel}
-                    addedToCartLabel={addedToCartLabel}
-                  />
-                ))}
+                {(active === "all" ? s.data.models.slice(0, perSectionVisible[sectionIdx]) : s.data.models).map(
+                  (m) => (
+                    <ProductCard
+                      key={m.code}
+                      anchorId={`${s.id}-${m.code}`}
+                      collectionLabel={s.data.label}
+                      model={m}
+                      komplekt={s.data.komplekt!}
+                      t={t}
+                      pricesVisible={pricesVisible}
+                      addToCartLabel={addToCartLabel}
+                      addedToCartLabel={addedToCartLabel}
+                    />
+                  )
+                )}
               </div>
             )}
 
@@ -180,6 +228,18 @@ export default function CatalogFilter({
           </section>
         ))}
       </div>
+
+      {active === "all" && modelLimit < totalModelCount && (
+        <div className="mt-10 text-center">
+          <button
+            type="button"
+            onClick={() => setModelLimit((n) => n + MODEL_BATCH)}
+            className="rounded-full border border-navy-dim/25 px-6 py-2.5 text-sm font-semibold text-navy-dark transition hover:border-gold hover:text-gold-dim"
+          >
+            {t.showMore}
+          </button>
+        </div>
+      )}
 
       <p className="mt-12 text-center text-sm text-navy-dim">{t.footnote}</p>
     </div>
