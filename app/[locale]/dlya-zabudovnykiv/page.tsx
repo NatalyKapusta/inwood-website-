@@ -7,6 +7,7 @@ import ContactCta from "@/components/ContactCta";
 import DoorFit3dBanner from "@/components/DoorFit3dBanner";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RichText from "@/components/RichText";
+import CertificateBlock from "@/components/CertificateBlock";
 
 // Публічна сторінка з рідкісним оновленням даних — статична генерація
 // з ISR раз на годину (замість повністю динамічного рендеру на кожен
@@ -116,6 +117,12 @@ export default async function DlyaZabudovnykivPage({
           ))}
         </div>
       </section>
+
+      <CertificateBlock
+        title={c.certificate.title}
+        text={c.certificate.text}
+        details={c.certificate.details}
+      />
 
       <ContactCta
         title={t.ctaTitle}

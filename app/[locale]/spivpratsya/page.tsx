@@ -6,6 +6,7 @@ import RelatedLinks from "@/components/RelatedLinks";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Counter from "@/components/Counter";
 import ProductCard from "@/components/ProductCard";
+import CertificateBlock from "@/components/CertificateBlock";
 import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { collections } from "@/lib/products";
@@ -265,6 +266,12 @@ export default async function SpivpratsyaPage({
           ))}
         </div>
       </section>
+
+      <CertificateBlock
+        title={c.certificate.title}
+        text={c.certificate.text}
+        details={c.certificate.details}
+      />
 
       <RelatedLinks
         locale={params.locale}

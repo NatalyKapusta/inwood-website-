@@ -1,11 +1,19 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import type { PublicHardwareItem } from "@/lib/publicShop";
 import type { HardwareCategory } from "@/lib/quote";
 import AddToCartButton from "@/components/AddToCartButton";
 import { trackEvent } from "@/lib/gtag";
+
+// SEO-аудит 23.09.2026: /furnitura віддавала 1,6 МБ розмітки і 434
+// зображення одним екраном — те саме, що вирішили пагінацією в каталозі
+// (задача 5). На відміну від каталогу, тут навіть окрема категорія
+// ("Ручки" — under a сотню позицій) може бути завеликою, тож ліміт діє в
+// будь-якій вкладці, не лише "Усі".
+const INITIAL_LIMIT = 24;
+const BATCH = 24;
 
 function fmtUah(n: number) {
   return `${new Intl.NumberFormat("uk-UA").format(n)} ₴`;
@@ -30,6 +38,7 @@ export default function FurnituraHardware({
   noPhotoLabel,
   addToCartLabel,
   addedToCartLabel,
+  showMoreLabel,
 }: {
   items: PublicHardwareItem[];
   brandLabels: Record<string, string>;
@@ -40,8 +49,10 @@ export default function FurnituraHardware({
   noPhotoLabel: string;
   addToCartLabel: string;
   addedToCartLabel: string;
+  showMoreLabel: string;
 }) {
   const [active, setActive] = useState<HardwareCategory | "all">("all");
+  const [visibleLimit, setVisibleLimit] = useState(INITIAL_LIMIT);
   const availableCategories = categoryOrder.filter((cat) => items.some((i) => i.category === cat));
 
   const rootRef = useRef<HTMLDivElement>(null);
@@ -68,13 +79,33 @@ export default function FurnituraHardware({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const byBrand = brandOrder
-    .map((brand) => ({
-      brand,
-      label: brandLabels[brand] ?? brand,
-      items: items.filter((i) => i.brand === brand && (active === "all" || i.category === active)),
-    }))
-    .filter((b) => b.items.length > 0);
+  // Перемикання вкладки категорії рахуємо як новий перегляд — ліміт
+  // повертаємо до початкового, а не лишаємо розкритим із попередньої вкладки.
+  useEffect(() => {
+    setVisibleLimit(INITIAL_LIMIT);
+  }, [active]);
+
+  const filteredItems = items.filter((i) => active === "all" || i.category === active);
+  const totalCount = filteredItems.length;
+
+  // Розподіляємо загальний ліміт по групах бренду в їхньому порядку — той
+  // самий принцип, що вже є в CatalogFilter.tsx.
+  const byBrand = useMemo(() => {
+    let remaining = visibleLimit;
+    return brandOrder
+      .map((brand) => {
+        const brandItems = filteredItems.filter((i) => i.brand === brand);
+        const show = Math.max(0, Math.min(brandItems.length, remaining));
+        remaining -= show;
+        return {
+          brand,
+          label: brandLabels[brand] ?? brand,
+          items: brandItems.slice(0, show),
+        };
+      })
+      .filter((b) => b.items.length > 0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filteredItems, visibleLimit, brandOrder, brandLabels]);
 
   return (
     <div ref={rootRef}>
@@ -147,6 +178,18 @@ export default function FurnituraHardware({
           </div>
         ))}
       </div>
+
+      {visibleLimit < totalCount && (
+        <div className="mt-10 text-center">
+          <button
+            type="button"
+            onClick={() => setVisibleLimit((n) => n + BATCH)}
+            className="rounded-full border border-navy-dim/25 px-6 py-2.5 text-sm font-semibold text-navy-dark transition hover:border-gold hover:text-gold-dim"
+          >
+            {showMoreLabel}
+          </button>
+        </div>
+      )}
     </div>
   );
 }

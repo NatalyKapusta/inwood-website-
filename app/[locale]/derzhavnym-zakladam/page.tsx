@@ -4,6 +4,7 @@ import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import ContactCta from "@/components/ContactCta";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import CertificateBlock from "@/components/CertificateBlock";
 
 // Публічна сторінка з рідкісним оновленням даних — статична генерація
 // з ISR раз на годину (замість повністю динамічного рендеру на кожен
@@ -85,6 +86,12 @@ export default async function DerzhZakladyPage({
         <h2 className="font-serif text-2xl font-bold text-navy-dark sm:text-3xl">{t.tenderTitle}</h2>
         <p className="mt-4 text-navy-dim">{t.tenderText}</p>
       </section>
+
+      <CertificateBlock
+        title={c.certificate.title}
+        text={c.certificate.text}
+        details={c.certificate.details}
+      />
 
       <ContactCta
         title={t.ctaTitle}

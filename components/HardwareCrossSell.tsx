@@ -17,6 +17,7 @@ export default async function HardwareCrossSell({
   noPhotoLabel,
   addToCartLabel,
   addedToCartLabel,
+  hiddenMountHinges,
 }: {
   locale: Locale;
   heading: string;
@@ -26,9 +27,12 @@ export default async function HardwareCrossSell({
   noPhotoLabel: string;
   addToCartLabel: string;
   addedToCartLabel: string;
+  // /catalog/pryhovani-dveri: звичайні завіси тут не підходять, медіану по
+  // "Завісах" рахуємо лише серед прихованих/магнітних (lib/hardwareCrossSell.ts).
+  hiddenMountHinges?: boolean;
 }) {
   const hardware = await getPublicHardware();
-  const items = selectCrossSellItems(hardware);
+  const items = selectCrossSellItems(hardware, { hiddenMountHinges });
   if (items.length === 0) return null;
 
   return (

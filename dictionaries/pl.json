@@ -113,7 +113,17 @@
     "cartFindOutPrice": "Zapytaj o cenę",
     "cartRemove": "Usuń",
     "cartSendInquiry": "Wyślij zapytanie",
-    "cartClose": "Zamknij"
+    "cartClose": "Zamknij",
+    "certificate": {
+      "title": "Certyfikacja",
+      "text": "Drzwi i zestawy drzwiowe IN WOOD są produkowane zgodnie z normami europejskimi, potwierdzonymi oficjalnym Certyfikatem Zgodności.",
+      "details": [
+        "Certyfikat nr UA.PN.191.3592-26",
+        "Zgodność z DSTU EN 14351-1:2020 i DSTU EN 14351-2:2022",
+        "Wydany przez OS Eurostandart Sp. z o.o.",
+        "Ważny od 14.09.2026 do 13.09.2027"
+      ]
+    }
   },
   "home": {
     "title": "Producent drzwi wewnętrznych w Ukrainie | Dilerzy | Eksport",
@@ -295,7 +305,7 @@
     "qualityBanner": {
       "kicker": "Jakość gwarantowana",
       "title": "Jakość gwarantowana przez IN WOOD",
-      "text": "Każde drzwi przechodzą pełny cykl przygotowania fabrycznego i kontrolę jakości przed wysyłką — do dilera lub bezpośrednio na obiekt. Odpowiadamy za wynik na każdym etapie: od produkcji po montaż.",
+      "text": "Każde drzwi przechodzą pełny cykl przygotowania fabrycznego i kontrolę jakości przed wysyłką — do dilera lub bezpośrednio na obiekt. Odpowiadamy za rezultat na każdym etapie — od materiału po drzwi gotowe do montażu.",
       "imageAlt": "Drzwi wewnętrzne IN WOOD ETALON ET-01, kolor kamień cięty, we wnętrzu",
       "points": [
         "20+ lat produkcji w Ukrainie",
@@ -345,7 +355,7 @@
       {
         "heading": "Z kim pracujemy",
         "body": [
-          "31 oficjalnych partnerów w 16 miastach Ukrainy — od Bołhradu po Charków. Współpracujemy bezpośrednio z klientami detalicznymi, z dealerami, z deweloperami przy wyposażaniu inwestycji oraz z instytucjami publicznymi.",
+          "35+ oficjalnych partnerów — od Bołhradu po Charków. Współpracujemy bezpośrednio z klientami detalicznymi, z dealerami, z deweloperami przy wyposażaniu inwestycji oraz z instytucjami publicznymi.",
           "Eksportujemy do Kanady, Francji, Szwajcarii, Litwy i Łotwy."
         ]
       },
@@ -378,15 +388,7 @@
       "Zadowolony klient to nasza największa wartość",
       "Nieustannie doskonalimy produkcję"
     ],
-    "certTitle": "Certyfikacja",
-    "certText": "Drzwi i zestawy drzwiowe IN WOOD są produkowane zgodnie z normami europejskimi, potwierdzonymi oficjalnym Certyfikatem Zgodności.",
-    "certDetails": [
-      "Certyfikat nr UA.PN.191.3592-26",
-      "Zgodność z DSTU EN 14351-1:2020 i DSTU EN 14351-2:2022",
-      "Wydany przez OS Eurostandart Sp. z o.o.",
-      "Ważny od 14.09.2026 do 13.09.2027"
-    ],
-    "metaDescription": "IN WOOD to ukraiński producent drzwi wewnętrznych w pełnym cyklu. 20 lat, własna fabryka w Połtawie, 5 kolekcji, 31 partnerów w Ukrainie, eksport do 5 krajów."
+    "metaDescription": "IN WOOD to ukraiński producent drzwi wewnętrznych w pełnym cyklu. 20 lat, własna fabryka w Połtawie, 5 kolekcji, 35+ partnerów w Ukrainie, eksport do 5 krajów."
   },
   "harakterystyky": {
     "title": "Parametry drzwi IN WOOD — wymiary i konstrukcja",
@@ -956,7 +958,8 @@
     "ctaTitle": "Potrzebujesz porady w sprawie okuć lub akcesoriów?",
     "ctaText": "Zostaw zapytanie — dobierzemy potrzebne pozycje i wycenimy koszt.",
     "backToCatalog": "← Katalog drzwi",
-    "comingSoon": "Asortyment jest aktualizowany — zajrzyj tu wkrótce."
+    "comingSoon": "Asortyment jest aktualizowany — zajrzyj tu wkrótce.",
+    "showMore": "Pokaż więcej pozycji"
   },
   "nashiDileri": {
     "title": "Drzwi IN WOOD w Ukrainie | Oficjalni dilerzy i partnerzy",

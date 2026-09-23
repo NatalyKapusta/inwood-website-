@@ -113,7 +113,17 @@
     "cartFindOutPrice": "Get a quote",
     "cartRemove": "Remove",
     "cartSendInquiry": "Send request",
-    "cartClose": "Close"
+    "cartClose": "Close",
+    "certificate": {
+      "title": "Certification",
+      "text": "IN WOOD doors and door sets are manufactured in accordance with European standards, confirmed by an official Certificate of Conformity.",
+      "details": [
+        "Certificate No. UA.PN.191.3592-26",
+        "Complies with DSTU EN 14351-1:2020 and DSTU EN 14351-2:2022",
+        "Issued by OS Eurostandart LLC",
+        "Valid from 14.09.2026 to 13.09.2027"
+      ]
+    }
   },
   "home": {
     "title": "Interior Door Manufacturer in Ukraine | Wholesale & Export",
@@ -295,7 +305,7 @@
     "qualityBanner": {
       "kicker": "Quality guaranteed",
       "title": "Quality guaranteed by IN WOOD",
-      "text": "Every door goes through a full cycle of factory preparation and quality control before it ships — to a dealer or straight to the site. We stand behind the result at every stage, from production to installation.",
+      "text": "Every door goes through a full cycle of factory preparation and quality control before it ships — to a dealer or straight to the site. We are accountable at every stage — from the material to a door that is ready to install.",
       "imageAlt": "IN WOOD ETALON ET-01 interior door, зріз каменю color, in a real interior",
       "points": [
         "20+ years of production in Ukraine",
@@ -345,7 +355,7 @@
       {
         "heading": "Who we work with",
         "body": [
-          "31 official partners in 16 Ukrainian cities — from Bolhrad to Kharkiv. We work with retail buyers directly, with dealers, with developers fitting out whole projects, and with public institutions.",
+          "35+ official partners — from Bolhrad to Kharkiv. We work with retail buyers directly, with dealers, with developers fitting out whole projects, and with public institutions.",
           "We export to Canada, France, Switzerland, Lithuania and Latvia."
         ]
       },
@@ -378,15 +388,7 @@
       "A satisfied customer is our greatest value",
       "We are constantly improving our production"
     ],
-    "certTitle": "Certification",
-    "certText": "IN WOOD doors and door sets are manufactured in accordance with European standards, confirmed by an official Certificate of Conformity.",
-    "certDetails": [
-      "Certificate No. UA.PN.191.3592-26",
-      "Complies with DSTU EN 14351-1:2020 and DSTU EN 14351-2:2022",
-      "Issued by OS Eurostandart LLC",
-      "Valid from 14.09.2026 to 13.09.2027"
-    ],
-    "metaDescription": "IN WOOD is a Ukrainian full-cycle interior door manufacturer. 20 years, own factory in Poltava, 5 collections, 31 partners across Ukraine, export to 5 countries."
+    "metaDescription": "IN WOOD is a Ukrainian full-cycle interior door manufacturer. 20 years, own factory in Poltava, 5 collections, 35+ partners across Ukraine, export to 5 countries."
   },
   "harakterystyky": {
     "title": "IN WOOD door specifications — sizes and construction",
@@ -934,7 +936,8 @@
     "ctaTitle": "Need advice on hardware or accessories?",
     "ctaText": "Leave a request — we'll pick the right items and quote the price.",
     "backToCatalog": "← Door catalog",
-    "comingSoon": "Range is being updated — check back shortly."
+    "comingSoon": "Range is being updated — check back shortly.",
+    "showMore": "Show more items"
   },
   "nashiDileri": {
     "title": "IN WOOD doors in Ukraine | Official dealers and partners",

@@ -134,21 +134,21 @@ export default async function CollectionPage({
         </div>
       </section>
 
-      {/* "Приховані двері" тимчасово без блоку: медіана по загальній категорії
-          "Завіси" підставила б звичайні петлі, а не приховані/магнітні —
-          питання підбору позицій для цієї сторінки лишається відкритим. */}
-      {params.collection !== "pryhovani-dveri" && (
-        <HardwareCrossSell
-          locale={params.locale}
-          heading={dict.hardwareCrossSell.heading}
-          intro={dict.hardwareCrossSell.intro}
-          cardLabels={dict.hardwareCrossSell.cardLabels}
-          linkLabel={dict.hardwareCrossSell.linkLabel}
-          noPhotoLabel={dict.furnitura.noPhoto}
-          addToCartLabel={c.addToCart}
-          addedToCartLabel={c.addedToCart}
-        />
-      )}
+      {/* "Приховані двері": звичайні завіси тут не підходять, тож для цієї
+          сторінки медіану по "Завісах" рахуємо лише серед прихованих/
+          магнітних (атрибут "Спосіб монтажу: прихований" у даних
+          фурнітури) — lib/hardwareCrossSell.ts. Три інші категорії без змін. */}
+      <HardwareCrossSell
+        locale={params.locale}
+        heading={dict.hardwareCrossSell.heading}
+        intro={dict.hardwareCrossSell.intro}
+        cardLabels={dict.hardwareCrossSell.cardLabels}
+        linkLabel={dict.hardwareCrossSell.linkLabel}
+        noPhotoLabel={dict.furnitura.noPhoto}
+        addToCartLabel={c.addToCart}
+        addedToCartLabel={c.addedToCart}
+        hiddenMountHinges={params.collection === "pryhovani-dveri"}
+      />
 
       <ContactCta
         title={dict.poltava.ctaTitle}

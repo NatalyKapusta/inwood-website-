@@ -117,7 +117,7 @@ export default async function HomePage({
             </div>
           </div>
 
-          {/* Анімовані лічильники — "вау"-ефект без шкоди швидкодії (лише CSS/IntersectionObserver) */}
+          {/* Лічильники — статичні значення, без JS-анімації (справжнє число має бути в HTML одразу) */}
           <div className="grid grid-cols-2 gap-8 rounded-2xl border border-white/10 bg-white/5 p-8 sm:grid-cols-4 lg:grid-cols-2">
             {t.counters.map((cnt: { to: number; suffix: string; label: string }) => (
               <Counter key={cnt.label} to={cnt.to} suffix={cnt.suffix} label={cnt.label} />

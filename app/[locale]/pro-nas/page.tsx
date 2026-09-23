@@ -4,6 +4,7 @@ import { buildMetadata } from "@/lib/seo";
 import ContactCta from "@/components/ContactCta";
 import RelatedLinks from "@/components/RelatedLinks";
 import RichText from "@/components/RichText";
+import CertificateBlock from "@/components/CertificateBlock";
 
 // Публічна сторінка з рідкісним оновленням даних — статична генерація
 // з ISR раз на годину (замість повністю динамічного рендеру на кожен
@@ -69,20 +70,11 @@ export default async function ProNasPage({
         </section>
       )}
 
-      <section className="bg-panel-alt py-16 text-center sm:py-24">
-        <div className="mx-auto max-w-3xl px-4">
-          <h2 className="font-serif text-xl font-bold text-navy-dark">{t.certTitle}</h2>
-          <p className="mt-4 text-navy-dim">{t.certText}</p>
-          <ul className="mx-auto mt-6 max-w-md space-y-2 text-left text-sm text-navy-dark">
-            {t.certDetails.map((d) => (
-              <li key={d} className="flex items-start gap-2">
-                <span className="text-gold-dim">✔</span>
-                <span>{d}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      <CertificateBlock
+        title={c.certificate.title}
+        text={c.certificate.text}
+        details={c.certificate.details}
+      />
 
       <RelatedLinks
         locale={params.locale}

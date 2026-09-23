@@ -79,6 +79,7 @@ export default async function FurnituraPage({
                 noPhotoLabel={t.noPhoto}
                 addToCartLabel={c.addToCart}
                 addedToCartLabel={c.addedToCart}
+                showMoreLabel={t.showMore}
               />
             </div>
           </section>
