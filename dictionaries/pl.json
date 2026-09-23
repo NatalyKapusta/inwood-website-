@@ -1332,5 +1332,52 @@
         ]
       }
     }
+  },
+  "poltava": {
+    "title": "Drzwi wewnętrzne w Połtawie — prosto od producenta | IN WOOD",
+    "metaDescription": "Produkcja drzwi wewnętrznych w Połtawie, zaułek Sportywnyj 4. Przyjedź i zobacz drzwi na żywo, odbierz zamówienie osobiście. Wycena w jeden dzień roboczy.",
+    "h1": "Drzwi wewnętrzne w Połtawie — z własnej produkcji",
+    "breadcrumbName": "Połtawa",
+    "intro": "Większość drzwi sprzedawanych w Połtawie została skądś przywieziona. My robimy je tutaj — przy zaułku Sportywnym 4.",
+    "reasonsLead": "Dla ciebie oznacza to trzy konkretne rzeczy.",
+    "reasons": [
+      {
+        "title": "Możesz przyjechać i zobaczyć.",
+        "text": "Nie zdjęcie w katalogu i nie render na ekranie, tylko same drzwi: chwycić skrzydło, poczuć ciężar, zobaczyć, jak naprawdę wygląda kolor, który na monitorze wygląda inaczej. Drzwi kupuje się raz na dziesięć-piętnaście lat i wybieranie ich z obrazka to kiepski pomysł."
+      },
+      {
+        "title": "Cena bez marży salonu.",
+        "text": "Kupujesz u tego, kto wyprodukował, a nie u tego, kto odsprzedaje. Między nami a tobą nie ma ogniwa pośredniego."
+      },
+      {
+        "title": "Odbiór własny z zakładu.",
+        "text": "Zamówienie można odebrać samemu — bez czekania na dostawę i bez płacenia za nią."
+      }
+    ],
+    "whatWeMakeTitle": "Co produkujemy",
+    "whatWeMakeIntro": "Pięć linii drzwi wewnętrznych, od praktycznych po ukryte:",
+    "collectionBlurbs": {
+      "etalon": "17 modeli, skrzydło 40 mm, krawędź aluminiowa, ościeżnica bezprzylgowa, wygłuszenie",
+      "perfetto": "minimalistyczne skrzydła w dowolnym kolorze RAL lub NCS",
+      "frezzatti": "drzwi frezowane z reliefem, 14 modeli",
+      "nominal": "praktyczna linia do mieszkań na wynajem, biur i inwestycji",
+      "pryhovani-dveri": "ościeżnica chowa się w ścianie, a drzwi w niej znikają"
+    },
+    "factoryNote": "Zakład działa od 20 lat. Drzwi przyjeżdżają z wciętymi okuciami, gotowe do montażu.",
+    "sizesTitle": "Wymiary pod twój otwór",
+    "sizesText": "Szerokość 400–900 mm, wysokość 1800–2100 mm, co 50 mm — w tym zakresie bez dopłaty za wymiar. Nie trzeba przerabiać otworu pod standardowe drzwi ani dopłacać za „nietypowy” rozmiar, który w rzeczywistości jest standardowy.",
+    "sizesExtra": "Szersze i wyższe również wykonujemy na zamówienie.",
+    "orderTitle": "Jak zamówić",
+    "orderSteps": [
+      "Zostaw zgłoszenie albo zadzwoń",
+      "Wycenimy twój komplet w jeden dzień roboczy",
+      "Wykonamy pod twoje wymiary",
+      "Odbierzesz osobiście albo dowieziemy"
+    ],
+    "visitTitle": "Przyjedź do nas",
+    "ctaLabel": "Oblicz cenę",
+    "ctaTitle": "Oblicz cenę kompletu",
+    "ctaText": "Zostaw zgłoszenie — wycenimy w jeden dzień roboczy.",
+    "dealersLinkText": "Inne miasto? Zobacz naszych dilerów"
   }
 }

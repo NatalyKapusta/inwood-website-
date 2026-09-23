@@ -1295,5 +1295,52 @@
         ]
       }
     }
+  },
+  "poltava": {
+    "title": "Interior Doors in Poltava — Straight from the Factory | IN WOOD",
+    "metaDescription": "Interior door factory in Poltava, 4 Sportyvnyi Lane. Come and see the doors in person, collect your order yourself. Quote within one working day.",
+    "h1": "Interior doors in Poltava — from our own factory",
+    "breadcrumbName": "Poltava",
+    "intro": "Most doors sold in Poltava were brought in from somewhere else. We make ours here, at 4 Sportyvnyi Lane.",
+    "reasonsLead": "That means three concrete things for you.",
+    "reasons": [
+      {
+        "title": "You can come and see them.",
+        "text": "Not a photo in a catalogue or a render on a screen, but the doors themselves: take hold of the leaf, feel the weight, see what the colour actually looks like away from a monitor. People buy interior doors once every ten or fifteen years — choosing them from a picture is a poor way to do it."
+      },
+      {
+        "title": "Factory price, no showroom markup.",
+        "text": "You buy from the people who made the door, not from someone reselling it. There is no middle link between us and you."
+      },
+      {
+        "title": "Collect it yourself.",
+        "text": "Orders can be picked up straight from the factory — no waiting for delivery and no paying for it."
+      }
+    ],
+    "whatWeMakeTitle": "What we make",
+    "whatWeMakeIntro": "Five lines of interior doors, from practical to fully concealed:",
+    "collectionBlurbs": {
+      "etalon": "17 models, 40 mm leaf, aluminium edging, flush frame, sound insulation",
+      "perfetto": "minimalist leaves in any RAL or NCS colour",
+      "frezzatti": "milled doors with relief patterns, 14 models",
+      "nominal": "a practical line for rental flats, offices and projects",
+      "pryhovani-dveri": "the frame hides inside the wall and the door disappears into it"
+    },
+    "factoryNote": "The factory has been running for 20 years. Doors arrive with hardware already cut in, ready to install.",
+    "sizesTitle": "Sizes to fit your opening",
+    "sizesText": "Width 400–900 mm, height 1800–2100 mm, in 50 mm steps — no size surcharge within that range. No need to rebuild the opening around a standard door, and no paying extra for a \"non-standard\" size that is in fact standard.",
+    "sizesExtra": "Wider and taller doors are made to order.",
+    "orderTitle": "How to order",
+    "orderSteps": [
+      "Send a request or call us",
+      "We price your set within one working day",
+      "We make it to your sizes",
+      "Collect it yourself or have it delivered"
+    ],
+    "visitTitle": "Visit us",
+    "ctaLabel": "Get a quote",
+    "ctaTitle": "Get a quote for your set",
+    "ctaText": "Leave a request — we will price it within one working day.",
+    "dealersLinkText": "In a different city? See our dealers"
   }
 }

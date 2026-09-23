@@ -20,6 +20,7 @@ const paths = [
   "/export",
   "/derzhavnym-zakladam",
   "/mdf-nakladky",
+  "/mizhkimnatni-dveri-poltava",
   "/oplata-dostavka",
   "/servis",
   "/garantiya",
