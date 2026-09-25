@@ -37,7 +37,6 @@ export default async function PortalQuotePage() {
       <QuoteBuilder
         consultantDefault={profile?.full_name ?? user.email ?? ""}
         canOverride={effectiveRole === "staff" || effectiveRole === "manager"}
-        canManualLishtva={effectiveRole === "manager"}
         allowedTariffs={allowedTariffs === "all" ? undefined : (allowedTariffs as Tariff[])}
       />
     </div>

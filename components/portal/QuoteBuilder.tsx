@@ -135,15 +135,10 @@ const HARDWARE_CATEGORY_ORDER: HardwareCategory[] = [
 export default function QuoteBuilder({
   consultantDefault,
   canOverride,
-  canManualLishtva,
   allowedTariffs,
 }: {
   consultantDefault: string;
   canOverride: boolean;
-  // Вужче за canOverride: тільки роль manager, а не staff+manager — ручна
-  // нестандартна лиштва (на відміну від короба й добору) видима лише
-  // менеджерам, за прямим запитом 25.09.2026.
-  canManualLishtva: boolean;
   // Задається лише під час прев'ю власником "чужими очима" — звужує список
   // тарифів у селекті до того, що бачила б обрана роль. Дані самі по собі
   // не звужуються (RLS вже й так дає власнику доступ до всього).
@@ -438,21 +433,19 @@ export default function QuoteBuilder({
         photo: addonPhotoFor("korob", korob),
       });
     }
-    if (canManualLishtva && lishtvaManual) {
-      if (lishtvaManualFrontPrice > 0)
-        rows.push({
-          label: `Лиштва, нестандарт${
-            lishtvaManualFrontWidth ? `, ${lishtvaManualFrontWidth} мм` : ""
-          } (лицьова, вручну)`,
-          unitPrice: lishtvaManualFrontPrice,
-        });
-      if (lishtvaManualBackPrice > 0)
-        rows.push({
-          label: `Лиштва, нестандарт${
-            lishtvaManualBackWidth ? `, ${lishtvaManualBackWidth} мм` : ""
-          } (тильна, вручну)`,
-          unitPrice: lishtvaManualBackPrice,
-        });
+    if (canOverride && lishtvaManual) {
+      rows.push({
+        label: `Лиштва, нестандарт${
+          lishtvaManualFrontWidth ? `, ${lishtvaManualFrontWidth} мм` : ""
+        } (лицьова, вручну)`,
+        unitPrice: lishtvaManualFrontPrice,
+      });
+      rows.push({
+        label: `Лиштва, нестандарт${
+          lishtvaManualBackWidth ? `, ${lishtvaManualBackWidth} мм` : ""
+        } (тильна, вручну)`,
+        unitPrice: lishtvaManualBackPrice,
+      });
     } else {
       if (lishtvaFront)
         rows.push({
@@ -1354,7 +1347,7 @@ export default function QuoteBuilder({
 
             {!hideLishtvaDobirForKorob && (
             <>
-            {canManualLishtva && (
+            {canOverride && (
               <label className="flex items-center gap-2 text-sm text-navy-dark">
                 <input
                   type="checkbox"
@@ -1364,11 +1357,9 @@ export default function QuoteBuilder({
                 Лиштва — нестандарт (вручну)
               </label>
             )}
-            {canManualLishtva && lishtvaManual ? (
+            {canOverride && lishtvaManual ? (
               <>
-                <p className="text-xs text-navy-dim">
-                  Лицьова й тильна лиштва — незалежно, заповнюйте лише потрібну сторону.
-                </p>
+                <p className="text-xs text-navy-dim">Лицьова й тильна лиштва — вкажіть ширину і ціну для обох.</p>
                 <div className="grid grid-cols-2 gap-3">
                   <input
                     type="number"
