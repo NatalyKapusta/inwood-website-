@@ -135,10 +135,15 @@ const HARDWARE_CATEGORY_ORDER: HardwareCategory[] = [
 export default function QuoteBuilder({
   consultantDefault,
   canOverride,
+  canManualLishtva,
   allowedTariffs,
 }: {
   consultantDefault: string;
   canOverride: boolean;
+  // Вужче за canOverride: тільки роль manager, а не staff+manager — ручна
+  // нестандартна лиштва (на відміну від короба й добору) видима лише
+  // менеджерам, за прямим запитом 25.09.2026.
+  canManualLishtva: boolean;
   // Задається лише під час прев'ю власником "чужими очима" — звужує список
   // тарифів у селекті до того, що бачила б обрана роль. Дані самі по собі
   // не звужуються (RLS вже й так дає власнику доступ до всього).
@@ -431,7 +436,7 @@ export default function QuoteBuilder({
         photo: addonPhotoFor("korob", korob),
       });
     }
-    if (canOverride && lishtvaManual) {
+    if (canManualLishtva && lishtvaManual) {
       rows.push({
         label: `Лиштва, нестандарт${lishtvaManualWidth ? `, ${lishtvaManualWidth} мм` : ""} (вручну)`,
         unitPrice: lishtvaManualPrice,
@@ -1333,7 +1338,7 @@ export default function QuoteBuilder({
 
             {!hideLishtvaDobirForKorob && (
             <>
-            {canOverride && (
+            {canManualLishtva && (
               <label className="flex items-center gap-2 text-sm text-navy-dark">
                 <input
                   type="checkbox"
@@ -1343,7 +1348,7 @@ export default function QuoteBuilder({
                 Лиштва — нестандарт (вручну)
               </label>
             )}
-            {canOverride && lishtvaManual ? (
+            {canManualLishtva && lishtvaManual ? (
               <div className="grid grid-cols-2 gap-3">
                 <input
                   type="number"
