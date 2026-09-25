@@ -208,8 +208,10 @@ export default function QuoteBuilder({
   const [dobirManualHeight, setDobirManualHeight] = useState("");
   const [dobirManualPrice, setDobirManualPrice] = useState(0);
   const [lishtvaManual, setLishtvaManual] = useState(false);
-  const [lishtvaManualWidth, setLishtvaManualWidth] = useState("");
-  const [lishtvaManualPrice, setLishtvaManualPrice] = useState(0);
+  const [lishtvaManualFrontWidth, setLishtvaManualFrontWidth] = useState("");
+  const [lishtvaManualFrontPrice, setLishtvaManualFrontPrice] = useState(0);
+  const [lishtvaManualBackWidth, setLishtvaManualBackWidth] = useState("");
+  const [lishtvaManualBackPrice, setLishtvaManualBackPrice] = useState(0);
   const [qty, setQty] = useState(1);
 
   const [positions, setPositions] = useState<QuotePosition[]>([]);
@@ -437,10 +439,20 @@ export default function QuoteBuilder({
       });
     }
     if (canManualLishtva && lishtvaManual) {
-      rows.push({
-        label: `Лиштва, нестандарт${lishtvaManualWidth ? `, ${lishtvaManualWidth} мм` : ""} (вручну)`,
-        unitPrice: lishtvaManualPrice,
-      });
+      if (lishtvaManualFrontPrice > 0)
+        rows.push({
+          label: `Лиштва, нестандарт${
+            lishtvaManualFrontWidth ? `, ${lishtvaManualFrontWidth} мм` : ""
+          } (лицьова, вручну)`,
+          unitPrice: lishtvaManualFrontPrice,
+        });
+      if (lishtvaManualBackPrice > 0)
+        rows.push({
+          label: `Лиштва, нестандарт${
+            lishtvaManualBackWidth ? `, ${lishtvaManualBackWidth} мм` : ""
+          } (тильна, вручну)`,
+          unitPrice: lishtvaManualBackPrice,
+        });
     } else {
       if (lishtvaFront)
         rows.push({
@@ -525,8 +537,10 @@ export default function QuoteBuilder({
     dobirManualHeight,
     dobirManualPrice,
     lishtvaManual,
-    lishtvaManualWidth,
-    lishtvaManualPrice,
+    lishtvaManualFrontWidth,
+    lishtvaManualFrontPrice,
+    lishtvaManualBackWidth,
+    lishtvaManualBackPrice,
     addonRows,
     serviceRows,
     panelRows,
@@ -625,8 +639,10 @@ export default function QuoteBuilder({
     setDobirManualHeight("");
     setDobirManualPrice(0);
     setLishtvaManual(false);
-    setLishtvaManualWidth("");
-    setLishtvaManualPrice(0);
+    setLishtvaManualFrontWidth("");
+    setLishtvaManualFrontPrice(0);
+    setLishtvaManualBackWidth("");
+    setLishtvaManualBackPrice(0);
     setQty(1);
   }
 
@@ -1349,25 +1365,49 @@ export default function QuoteBuilder({
               </label>
             )}
             {canManualLishtva && lishtvaManual ? (
-              <div className="grid grid-cols-2 gap-3">
-                <input
-                  type="number"
-                  min={1}
-                  value={lishtvaManualWidth}
-                  onChange={(e) => setLishtvaManualWidth(e.target.value)}
-                  placeholder="Ширина лиштви, мм, напр. 100"
-                  className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
-                />
-                <input
-                  type="number"
-                  min={0}
-                  step="0.01"
-                  value={lishtvaManualPrice || ""}
-                  onChange={(e) => setLishtvaManualPrice(Math.max(0, Number(e.target.value)))}
-                  placeholder="Ціна лиштви, ₴"
-                  className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
-                />
-              </div>
+              <>
+                <p className="text-xs text-navy-dim">
+                  Лицьова й тильна лиштва — незалежно, заповнюйте лише потрібну сторону.
+                </p>
+                <div className="grid grid-cols-2 gap-3">
+                  <input
+                    type="number"
+                    min={1}
+                    value={lishtvaManualFrontWidth}
+                    onChange={(e) => setLishtvaManualFrontWidth(e.target.value)}
+                    placeholder="Лицьова: ширина, мм, напр. 100"
+                    className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+                  />
+                  <input
+                    type="number"
+                    min={0}
+                    step="0.01"
+                    value={lishtvaManualFrontPrice || ""}
+                    onChange={(e) => setLishtvaManualFrontPrice(Math.max(0, Number(e.target.value)))}
+                    placeholder="Лицьова: ціна, ₴"
+                    className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+                  />
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  <input
+                    type="number"
+                    min={1}
+                    value={lishtvaManualBackWidth}
+                    onChange={(e) => setLishtvaManualBackWidth(e.target.value)}
+                    placeholder="Тильна: ширина, мм, напр. 100"
+                    className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+                  />
+                  <input
+                    type="number"
+                    min={0}
+                    step="0.01"
+                    value={lishtvaManualBackPrice || ""}
+                    onChange={(e) => setLishtvaManualBackPrice(Math.max(0, Number(e.target.value)))}
+                    placeholder="Тильна: ціна, ₴"
+                    className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+                  />
+                </div>
+              </>
             ) : (
               <>
                 <select
