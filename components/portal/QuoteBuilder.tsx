@@ -202,6 +202,9 @@ export default function QuoteBuilder({
   const [dobirManualWidth, setDobirManualWidth] = useState("");
   const [dobirManualHeight, setDobirManualHeight] = useState("");
   const [dobirManualPrice, setDobirManualPrice] = useState(0);
+  const [lishtvaManual, setLishtvaManual] = useState(false);
+  const [lishtvaManualWidth, setLishtvaManualWidth] = useState("");
+  const [lishtvaManualPrice, setLishtvaManualPrice] = useState(0);
   const [qty, setQty] = useState(1);
 
   const [positions, setPositions] = useState<QuotePosition[]>([]);
@@ -428,18 +431,25 @@ export default function QuoteBuilder({
         photo: addonPhotoFor("korob", korob),
       });
     }
-    if (lishtvaFront)
+    if (canOverride && lishtvaManual) {
       rows.push({
-        label: `${lishtvaFront} (лицьова)`,
-        unitPrice: priceOf(lishtvaOptions, lishtvaFront),
-        photo: addonPhotoFor("lishtva", lishtvaFront),
+        label: `Лиштва, нестандарт${lishtvaManualWidth ? `, ${lishtvaManualWidth} мм` : ""} (вручну)`,
+        unitPrice: lishtvaManualPrice,
       });
-    if (lishtvaBack)
-      rows.push({
-        label: `${lishtvaBack} (тильна)`,
-        unitPrice: priceOf(lishtvaOptions, lishtvaBack),
-        photo: addonPhotoFor("lishtva", lishtvaBack),
-      });
+    } else {
+      if (lishtvaFront)
+        rows.push({
+          label: `${lishtvaFront} (лицьова)`,
+          unitPrice: priceOf(lishtvaOptions, lishtvaFront),
+          photo: addonPhotoFor("lishtva", lishtvaFront),
+        });
+      if (lishtvaBack)
+        rows.push({
+          label: `${lishtvaBack} (тильна)`,
+          unitPrice: priceOf(lishtvaOptions, lishtvaBack),
+          photo: addonPhotoFor("lishtva", lishtvaBack),
+        });
+    }
     if (canOverride && dobirManual) {
       rows.push({
         label: `Добір, нестандарт${
@@ -509,6 +519,9 @@ export default function QuoteBuilder({
     dobirManualWidth,
     dobirManualHeight,
     dobirManualPrice,
+    lishtvaManual,
+    lishtvaManualWidth,
+    lishtvaManualPrice,
     addonRows,
     serviceRows,
     panelRows,
@@ -606,6 +619,9 @@ export default function QuoteBuilder({
     setDobirManualWidth("");
     setDobirManualHeight("");
     setDobirManualPrice(0);
+    setLishtvaManual(false);
+    setLishtvaManualWidth("");
+    setLishtvaManualPrice(0);
     setQty(1);
   }
 
@@ -1317,33 +1333,67 @@ export default function QuoteBuilder({
 
             {!hideLishtvaDobirForKorob && (
             <>
-            <select
-              value={lishtvaFront}
-              onChange={(e) => setLishtvaFront(e.target.value)}
-              className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
-            >
-              <option value="">Лиштва лицьова — не обрано</option>
-              {lishtvaOptions.map((r) => (
-                <option key={r.item_label} value={r.item_label}>
-                  {r.item_label}
-                </option>
-              ))}
-            </select>
-            <AddonRefPhoto src={addonPhotoFor("lishtva", lishtvaFront)} />
+            {canOverride && (
+              <label className="flex items-center gap-2 text-sm text-navy-dark">
+                <input
+                  type="checkbox"
+                  checked={lishtvaManual}
+                  onChange={(e) => setLishtvaManual(e.target.checked)}
+                />
+                Лиштва — нестандарт (вручну)
+              </label>
+            )}
+            {canOverride && lishtvaManual ? (
+              <div className="grid grid-cols-2 gap-3">
+                <input
+                  type="number"
+                  min={1}
+                  value={lishtvaManualWidth}
+                  onChange={(e) => setLishtvaManualWidth(e.target.value)}
+                  placeholder="Ширина лиштви, мм, напр. 100"
+                  className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+                />
+                <input
+                  type="number"
+                  min={0}
+                  step="0.01"
+                  value={lishtvaManualPrice || ""}
+                  onChange={(e) => setLishtvaManualPrice(Math.max(0, Number(e.target.value)))}
+                  placeholder="Ціна лиштви, ₴"
+                  className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+                />
+              </div>
+            ) : (
+              <>
+                <select
+                  value={lishtvaFront}
+                  onChange={(e) => setLishtvaFront(e.target.value)}
+                  className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+                >
+                  <option value="">Лиштва лицьова — не обрано</option>
+                  {lishtvaOptions.map((r) => (
+                    <option key={r.item_label} value={r.item_label}>
+                      {r.item_label}
+                    </option>
+                  ))}
+                </select>
+                <AddonRefPhoto src={addonPhotoFor("lishtva", lishtvaFront)} />
 
-            <select
-              value={lishtvaBack}
-              onChange={(e) => setLishtvaBack(e.target.value)}
-              className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
-            >
-              <option value="">Лиштва тильна — не обрано</option>
-              {lishtvaOptions.map((r) => (
-                <option key={r.item_label} value={r.item_label}>
-                  {r.item_label}
-                </option>
-              ))}
-            </select>
-            <AddonRefPhoto src={addonPhotoFor("lishtva", lishtvaBack)} />
+                <select
+                  value={lishtvaBack}
+                  onChange={(e) => setLishtvaBack(e.target.value)}
+                  className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
+                >
+                  <option value="">Лиштва тильна — не обрано</option>
+                  {lishtvaOptions.map((r) => (
+                    <option key={r.item_label} value={r.item_label}>
+                      {r.item_label}
+                    </option>
+                  ))}
+                </select>
+                <AddonRefPhoto src={addonPhotoFor("lishtva", lishtvaBack)} />
+              </>
+            )}
 
             {canOverride && (
               <label className="flex items-center gap-2 text-sm text-navy-dark">
