@@ -182,10 +182,10 @@ export default async function BlogPostPage({
 
         <div className="mt-14 border-t border-navy-dim/15 pt-8">
           <Link
-            href={`/${params.locale}/catalog`}
+            href={`/${params.locale}${post.ctaHref ?? "/catalog"}`}
             className="inline-block rounded-full bg-navy-dark px-6 py-3 text-sm font-semibold text-white transition hover:bg-gold hover:text-navy-dark"
           >
-            {t.browseCatalog} →
+            {post.ctaLabel ?? t.browseCatalog} →
           </Link>
         </div>
 
