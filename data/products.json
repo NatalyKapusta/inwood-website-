@@ -1707,13 +1707,13 @@
             "image": "/photos/nominal/nl-01-oksyd-temnyi.png"
           },
           {
-            "slug": "venhe-pivdenne",
-            "label": "венге південне",
+            "slug": "venhe",
+            "label": "Венге",
             "image": "/photos/nominal/nl-01-venhe-pivdenne.png"
           },
           {
             "slug": "white",
-            "label": "white",
+            "label": "Білий",
             "image": "/photos/nominal/nl-01-white.png"
           }
         ]
@@ -1773,13 +1773,13 @@
             "image": "/photos/nominal/nl-02-oksyd-temnyi.png"
           },
           {
-            "slug": "venhe-pivdenne",
-            "label": "венге південне",
+            "slug": "venhe",
+            "label": "Венге",
             "image": "/photos/nominal/nl-02-venhe-pivdenne.png"
           },
           {
             "slug": "white",
-            "label": "white",
+            "label": "Білий",
             "image": "/photos/nominal/nl-02-white.png"
           }
         ]
@@ -1839,13 +1839,13 @@
             "image": "/photos/nominal/nl-03-oksyd-temnyi.png"
           },
           {
-            "slug": "venhe-pivdenne",
-            "label": "венге південне",
+            "slug": "venhe",
+            "label": "Венге",
             "image": "/photos/nominal/nl-03-venhe-pivdenne.png"
           },
           {
             "slug": "white",
-            "label": "white",
+            "label": "Білий",
             "image": "/photos/nominal/nl-03-white.png"
           }
         ]
@@ -1905,13 +1905,13 @@
             "image": "/photos/nominal/nl-04-oksyd-temnyi.png"
           },
           {
-            "slug": "venhe-pivdenne",
-            "label": "венге південне",
+            "slug": "venhe",
+            "label": "Венге",
             "image": "/photos/nominal/nl-04-venhe-pivdenne.png"
           },
           {
             "slug": "white",
-            "label": "white",
+            "label": "Білий",
             "image": "/photos/nominal/nl-04-white.png"
           }
         ]
@@ -1971,13 +1971,13 @@
             "image": "/photos/nominal/nl-05-oksyd-temnyi.png"
           },
           {
-            "slug": "venhe-pivdenne",
-            "label": "венге південне",
+            "slug": "venhe",
+            "label": "Венге",
             "image": "/photos/nominal/nl-05-venhe-pivdenne.png"
           },
           {
             "slug": "white",
-            "label": "white",
+            "label": "Білий",
             "image": "/photos/nominal/nl-05-white.png"
           }
         ]
@@ -2043,7 +2043,7 @@
           },
           {
             "slug": "white",
-            "label": "white",
+            "label": "Білий",
             "image": "/photos/nominal/nl-06-white.png"
           }
         ]
@@ -2109,7 +2109,7 @@
           },
           {
             "slug": "white",
-            "label": "white",
+            "label": "Білий",
             "image": "/photos/nominal/nl-07-white.png"
           }
         ]
@@ -2175,7 +2175,7 @@
           },
           {
             "slug": "white",
-            "label": "white",
+            "label": "Білий",
             "image": "/photos/nominal/nl-08-white.png"
           }
         ]
@@ -2241,7 +2241,7 @@
           },
           {
             "slug": "white",
-            "label": "white",
+            "label": "Білий",
             "image": "/photos/nominal/nl-09-white.png"
           }
         ]
@@ -2307,7 +2307,7 @@
           },
           {
             "slug": "white",
-            "label": "white",
+            "label": "Білий",
             "image": "/photos/nominal/nl-10-white.png"
           }
         ]
