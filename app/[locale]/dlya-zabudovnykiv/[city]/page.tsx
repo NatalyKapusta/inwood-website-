@@ -17,6 +17,13 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 // запит), щоб сторінка кешувалась на CDN Vercel.
 export const revalidate = 3600;
 
+// Контент є тільки для міст із RECRUIT_CITIES (10 штук) — без dynamicParams
+// = false будь-який інший слаг (напр. /dlya-zabudovnykiv/poltava) віддавав
+// статус 200 із порожньою сторінкою (немає title/description/h1/тексту,
+// findRecruitCity повертає undefined): "м'яка 404", яку Google індексує
+// й за яку знижує довіру до розділу (SEO-аудит 28.09.2026, задача 2).
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return locales.flatMap((locale) => RECRUIT_CITIES.map((c) => ({ locale, city: c.slug })));
 }
@@ -37,7 +44,6 @@ export async function generateMetadata({
     path: `/dlya-zabudovnykiv/${params.city}`,
     title: `${t.cityTitlePrefix} ${cityName}: ${t.cityTitleSuffix}`,
     description: `${t.cityMetaPrefix} ${inCityPhrase}. ${t.cityMetaSuffix}`,
-    noindex: true,
   });
 }
 

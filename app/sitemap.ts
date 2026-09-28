@@ -5,6 +5,7 @@ import { blogPosts } from "@/data/blog";
 import dealers from "@/data/dealers.json";
 import { getCitiesWithDealers } from "@/lib/dealers";
 import { COLLECTION_PAGE_SLUGS, THEMATIC_PAGE_SLUGS } from "@/lib/collectionPages";
+import { getAllDealerRecruitCities, RECRUIT_CITIES } from "@/lib/recruitCities";
 
 const paths = [
   "",
@@ -29,6 +30,10 @@ const paths = [
   ...blogPosts.ua.map((post) => `/blog/${post.slug}`),
   ...getCitiesWithDealers(dealers).map((c) => `/nashi-dileri/${c.slug}`),
   "/dlya-zabudovnykiv",
+  // SEO-аудит 28.09.2026, задача 1: ці сторінки мали noindex, тепер прибрано —
+  // додаємо їх у sitemap, щоб Google дізнався про них швидше, ніж по посиланнях.
+  ...getAllDealerRecruitCities().map((c) => `/staty-dylerom/${c.slug}`),
+  ...RECRUIT_CITIES.map((c) => `/dlya-zabudovnykiv/${c.slug}`),
   ...COLLECTION_PAGE_SLUGS.map((slug) => `/catalog/${slug}`),
   ...THEMATIC_PAGE_SLUGS.map((slug) => `/catalog/${slug}`),
 ];

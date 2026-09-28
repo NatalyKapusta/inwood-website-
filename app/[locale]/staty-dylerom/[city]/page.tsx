@@ -31,7 +31,6 @@ export async function generateMetadata({
     path: `/staty-dylerom/${params.city}`,
     title: `${t.titlePrefix} ${cityName}: ${t.titleSuffix}`,
     description: `${t.metaPrefix} ${cityName}. ${t.metaSuffix}`,
-    noindex: true,
   });
 }
 

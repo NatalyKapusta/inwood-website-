@@ -134,7 +134,12 @@ export default async function HomePage({
               src="/photos/interiors/etalon-et-01-zriz-kameniu.jpg"
               alt={t.qualityBanner.imageAlt}
               fill
-              sizes="(min-width: 1024px) 640px, 100vw"
+              // Блок — половина grid-контейнера max-w-7xl (1280px) мінус px-4
+              // з обох боків і gap-10 між колонками: (min(100vw,1280px)-72px)/2.
+              // Раніше sizes називав 640px, а реальна ширина була 476–604px —
+              // next/image брав замалий варіант зі srcset, фото було нерізким
+              // (SEO-аудит 28.09.2026, задача 3).
+              sizes="(min-width: 1024px) calc((min(100vw, 1280px) - 72px) / 2), 100vw"
               className="object-cover"
               priority
             />
