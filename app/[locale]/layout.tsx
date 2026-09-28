@@ -92,11 +92,15 @@ export default async function LocaleLayout({
         <DeferredChatWidget />
         <StickyCallButton phone={common.phone} />
         <ClickTracking />
+        {/* lazyOnload — стартує тільки після події load, тож не конкурує з
+            LCP-відмальовкою h1 на головній (LCP-ТЗ 27.09.2026, Правка 2).
+            Компроміс: візити коротші за секунду можуть не потрапити в GA4.
+            Якщо точність аналітики важливіша — повернути на afterInteractive. */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="ga4-init" strategy="afterInteractive">
+        <Script id="ga4-init" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

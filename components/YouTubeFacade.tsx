@@ -33,13 +33,20 @@ export default function YouTubeFacade({
       type="button"
       onClick={() => setPlaying(true)}
       aria-label={playLabel}
-      className="group absolute inset-0 h-full w-full cursor-pointer"
-      style={{
-        backgroundImage: `url(https://img.youtube.com/vi/${videoId}/hqdefault.jpg)`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+      className="group absolute inset-0 h-full w-full cursor-pointer overflow-hidden"
     >
+      {/* Звичайний <img> замість background-image: браузер вантажить
+          background-image одразу при відмальовці, а тут превʼю нижче
+          першого екрана, і loading="lazy" відкладає запит до наближення
+          в'юпорту (LCP-ТЗ 27.09.2026, Правка 1). */}
+      <img
+        src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
+        alt=""
+        loading="lazy"
+        decoding="async"
+        fetchPriority="low"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
       <span className="absolute inset-0 bg-black/25 transition group-hover:bg-black/40" />
       <span className="absolute inset-0 flex items-center justify-center">
         <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 shadow-lg transition group-hover:scale-110">
