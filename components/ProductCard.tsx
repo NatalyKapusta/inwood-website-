@@ -49,11 +49,11 @@ export default function ProductCard({
   addedToCartLabel: string;
   locale: Locale;
 }) {
-  // Назви кольорів не перекладаються по мовах (свідоме рішення), крім тих
-  // колекцій, де є offiційний англійський каталог (FREZZATTI/PERFETTO,
-  // 27.09.2026) — там на EN-версії підставляємо labelEn, якщо він є.
-  const colorLabel = (c: { label: string; labelEn?: string }) =>
-    locale === "en" && c.labelEn ? c.labelEn : c.label;
+  // Назви кольорів беруться з друкованого каталогу (28.09.2026): для
+  // ru/en/pl підставляємо відповідний locale-переклад, якщо він є,
+  // інакше — українську назву за замовчуванням.
+  const colorLabel = (c: { label: string; labelRu?: string; labelEn?: string; labelPl?: string }) =>
+    (locale === "ru" && c.labelRu) || (locale === "en" && c.labelEn) || (locale === "pl" && c.labelPl) || c.label;
   const defaultColorIdx = Math.max(
     model.colors.findIndex((c) => c.slug === "white"),
     0

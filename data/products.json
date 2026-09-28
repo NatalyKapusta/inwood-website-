@@ -65,87 +65,138 @@
         "colors": [
           {
             "slug": "astana-marle",
-            "label": "астана марле",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
             "image": "/photos/etalon/et-01-astana-marle.png"
           },
           {
             "slug": "beton-siryi",
-            "label": "бетон сірий",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
             "image": "/photos/etalon/et-01-beton-siryi.png"
           },
           {
             "slug": "beton-snizhnyi",
-            "label": "бетон сніжний",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
             "image": "/photos/etalon/et-01-beton-snizhnyi.png"
           },
           {
             "slug": "beton-temnyi",
-            "label": "бетон темний",
+            "label": "Бетон темний",
+            "labelRu": "Бетон тёмный",
+            "labelEn": "Concrete dark",
+            "labelPl": "Beton ciemny",
             "image": "/photos/etalon/et-01-beton-temnyi.png"
           },
           {
             "slug": "bila-teksturna",
-            "label": "біла текстурна",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
             "image": "/photos/etalon/et-01-bila-teksturna.png"
           },
           {
             "slug": "chorna-korka",
-            "label": "чорна корка",
+            "label": "Чорна корка",
+            "labelRu": "Чёрная корка",
+            "labelEn": "Black crust",
+            "labelPl": "Czarna kora",
             "image": "/photos/etalon/et-01-chorna-korka.png"
           },
           {
             "slug": "dub-hlazho-eko",
-            "label": "дуб глазго еко",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
             "image": "/photos/etalon/et-01-dub-hlazho-eko.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/etalon/et-01-dub-shato.png"
           },
           {
             "slug": "karpatska-ialyna",
-            "label": "карпатська ялина",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
             "image": "/photos/etalon/et-01-karpatska-ialyna.png"
           },
           {
             "slug": "popeliastyi-softach",
-            "label": "попелястий софтач",
+            "label": "Попелястий софттач",
+            "labelRu": "Пепельный софттач",
+            "labelEn": "Ashen softtouch",
+            "labelPl": "Popielaty softtouch",
             "image": "/photos/etalon/et-01-popeliastyi-softach.png"
           },
           {
             "slug": "rustik-avinon-bilyi",
-            "label": "рустік авінон білий",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
             "image": "/photos/etalon/et-01-rustik-avinon-bilyi.png"
           },
           {
             "slug": "rustyk-zolotyi",
-            "label": "рустик золотий",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
             "image": "/photos/etalon/et-01-rustyk-zolotyi.png"
           },
           {
             "slug": "shpon-korychnevyi",
-            "label": "шпон коричневий",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
             "image": "/photos/etalon/et-01-shpon-korychnevyi.png"
           },
           {
             "slug": "sosna-provans",
-            "label": "сосна прованс",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
             "image": "/photos/etalon/et-01-sosna-provans.png"
           },
           {
             "slug": "venhe-pivdenne-tysnene",
-            "label": "венге південне тиснене",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
             "image": "/photos/etalon/et-01-venhe-pivdenne-tysnene.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/etalon/et-01-white.png"
           },
           {
             "slug": "zriz-kameniu",
-            "label": "зріз каменю",
+            "label": "Зріз каменю",
+            "labelRu": "Срез камня",
+            "labelEn": "Stone slice",
+            "labelPl": "Przekrój kamienia",
             "image": "/photos/etalon/et-01-zriz-kameniu.png"
           }
         ]
@@ -156,87 +207,138 @@
         "colors": [
           {
             "slug": "astana-marle",
-            "label": "астана марле",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
             "image": "/photos/etalon/et-02-astana-marle.png"
           },
           {
             "slug": "beton-siryi",
-            "label": "бетон сірий",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
             "image": "/photos/etalon/et-02-beton-siryi.png"
           },
           {
             "slug": "beton-snizhnyi",
-            "label": "бетон сніжний",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
             "image": "/photos/etalon/et-02-beton-snizhnyi.png"
           },
           {
             "slug": "beton-temnyi",
-            "label": "бетон темний",
+            "label": "Бетон темний",
+            "labelRu": "Бетон тёмный",
+            "labelEn": "Concrete dark",
+            "labelPl": "Beton ciemny",
             "image": "/photos/etalon/et-02-beton-temnyi.png"
           },
           {
             "slug": "bila-teksturna",
-            "label": "біла текстурна",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
             "image": "/photos/etalon/et-02-bila-teksturna.png"
           },
           {
             "slug": "chorna-korka",
-            "label": "чорна корка",
+            "label": "Чорна корка",
+            "labelRu": "Чёрная корка",
+            "labelEn": "Black crust",
+            "labelPl": "Czarna kora",
             "image": "/photos/etalon/et-02-chorna-korka.png"
           },
           {
             "slug": "dub-hlazho-eko",
-            "label": "дуб глазго еко",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
             "image": "/photos/etalon/et-02-dub-hlazho-eko.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/etalon/et-02-dub-shato.png"
           },
           {
             "slug": "karpatska-ialyna",
-            "label": "карпатська ялина",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
             "image": "/photos/etalon/et-02-karpatska-ialyna.png"
           },
           {
             "slug": "popeliastyi-softach",
-            "label": "попелястий софтач",
+            "label": "Попелястий софттач",
+            "labelRu": "Пепельный софттач",
+            "labelEn": "Ashen softtouch",
+            "labelPl": "Popielaty softtouch",
             "image": "/photos/etalon/et-02-popeliastyi-softach.png"
           },
           {
             "slug": "rustik-avinon-bilyi",
-            "label": "рустік авінон білий",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
             "image": "/photos/etalon/et-02-rustik-avinon-bilyi.png"
           },
           {
             "slug": "rustyk-zolotyi",
-            "label": "рустик золотий",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
             "image": "/photos/etalon/et-02-rustyk-zolotyi.png"
           },
           {
             "slug": "shpon-korychnevyi",
-            "label": "шпон коричневий",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
             "image": "/photos/etalon/et-02-shpon-korychnevyi.png"
           },
           {
             "slug": "sosna-provans",
-            "label": "сосна прованс",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
             "image": "/photos/etalon/et-02-sosna-provans.png"
           },
           {
             "slug": "venhe-pivdenne-tysnene",
-            "label": "венге південне тиснене",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
             "image": "/photos/etalon/et-02-venhe-pivdenne-tysnene.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/etalon/et-02-white.png"
           },
           {
             "slug": "zriz-kameniu",
-            "label": "зріз каменю",
+            "label": "Зріз каменю",
+            "labelRu": "Срез камня",
+            "labelEn": "Stone slice",
+            "labelPl": "Przekrój kamienia",
             "image": "/photos/etalon/et-02-zriz-kameniu.png"
           }
         ]
@@ -247,87 +349,138 @@
         "colors": [
           {
             "slug": "astana-marle",
-            "label": "астана марле",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
             "image": "/photos/etalon/et-03-astana-marle.png"
           },
           {
             "slug": "beton-siryi",
-            "label": "бетон сірий",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
             "image": "/photos/etalon/et-03-beton-siryi.png"
           },
           {
             "slug": "beton-snizhnyi",
-            "label": "бетон сніжний",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
             "image": "/photos/etalon/et-03-beton-snizhnyi.png"
           },
           {
             "slug": "beton-temnyi",
-            "label": "бетон темний",
+            "label": "Бетон темний",
+            "labelRu": "Бетон тёмный",
+            "labelEn": "Concrete dark",
+            "labelPl": "Beton ciemny",
             "image": "/photos/etalon/et-03-beton-temnyi.png"
           },
           {
             "slug": "bila-teksturna",
-            "label": "біла текстурна",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
             "image": "/photos/etalon/et-03-bila-teksturna.png"
           },
           {
             "slug": "chorna-korka",
-            "label": "чорна корка",
+            "label": "Чорна корка",
+            "labelRu": "Чёрная корка",
+            "labelEn": "Black crust",
+            "labelPl": "Czarna kora",
             "image": "/photos/etalon/et-03-chorna-korka.png"
           },
           {
             "slug": "dub-hlazho-eko",
-            "label": "дуб глазго еко",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
             "image": "/photos/etalon/et-03-dub-hlazho-eko.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/etalon/et-03-dub-shato.png"
           },
           {
             "slug": "karpatska-ialyna",
-            "label": "карпатська ялина",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
             "image": "/photos/etalon/et-03-karpatska-ialyna.png"
           },
           {
             "slug": "popeliastyi-softach",
-            "label": "попелястий софтач",
+            "label": "Попелястий софттач",
+            "labelRu": "Пепельный софттач",
+            "labelEn": "Ashen softtouch",
+            "labelPl": "Popielaty softtouch",
             "image": "/photos/etalon/et-03-popeliastyi-softach.png"
           },
           {
             "slug": "rustik-avinon-bilyi",
-            "label": "рустік авінон білий",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
             "image": "/photos/etalon/et-03-rustik-avinon-bilyi.png"
           },
           {
             "slug": "rustyk-zolotyi",
-            "label": "рустик золотий",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
             "image": "/photos/etalon/et-03-rustyk-zolotyi.png"
           },
           {
             "slug": "shpon-korychnevyi",
-            "label": "шпон коричневий",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
             "image": "/photos/etalon/et-03-shpon-korychnevyi.png"
           },
           {
             "slug": "sosna-provans",
-            "label": "сосна прованс",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
             "image": "/photos/etalon/et-03-sosna-provans.png"
           },
           {
             "slug": "venhe-pivdenne-tysnene",
-            "label": "венге південне тиснене",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
             "image": "/photos/etalon/et-03-venhe-pivdenne-tysnene.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/etalon/et-03-white.png"
           },
           {
             "slug": "zriz-kameniu",
-            "label": "зріз каменю",
+            "label": "Зріз каменю",
+            "labelRu": "Срез камня",
+            "labelEn": "Stone slice",
+            "labelPl": "Przekrój kamienia",
             "image": "/photos/etalon/et-03-zriz-kameniu.png"
           }
         ]
@@ -338,87 +491,138 @@
         "colors": [
           {
             "slug": "astana-marle",
-            "label": "астана марле",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
             "image": "/photos/etalon/et-04-astana-marle.png"
           },
           {
             "slug": "beton-siryi",
-            "label": "бетон сірий",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
             "image": "/photos/etalon/et-04-beton-siryi.png"
           },
           {
             "slug": "beton-snizhnyi",
-            "label": "бетон сніжний",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
             "image": "/photos/etalon/et-04-beton-snizhnyi.png"
           },
           {
             "slug": "beton-temnyi",
-            "label": "бетон темний",
+            "label": "Бетон темний",
+            "labelRu": "Бетон тёмный",
+            "labelEn": "Concrete dark",
+            "labelPl": "Beton ciemny",
             "image": "/photos/etalon/et-04-beton-temnyi.png"
           },
           {
             "slug": "bila-teksturna",
-            "label": "біла текстурна",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
             "image": "/photos/etalon/et-04-bila-teksturna.png"
           },
           {
             "slug": "chorna-korka",
-            "label": "чорна корка",
+            "label": "Чорна корка",
+            "labelRu": "Чёрная корка",
+            "labelEn": "Black crust",
+            "labelPl": "Czarna kora",
             "image": "/photos/etalon/et-04-chorna-korka.png"
           },
           {
             "slug": "dub-hlazho-eko",
-            "label": "дуб глазго еко",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
             "image": "/photos/etalon/et-04-dub-hlazho-eko.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/etalon/et-04-dub-shato.png"
           },
           {
             "slug": "karpatska-ialyna",
-            "label": "карпатська ялина",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
             "image": "/photos/etalon/et-04-karpatska-ialyna.png"
           },
           {
             "slug": "popeliastyi-softach",
-            "label": "попелястий софтач",
+            "label": "Попелястий софттач",
+            "labelRu": "Пепельный софттач",
+            "labelEn": "Ashen softtouch",
+            "labelPl": "Popielaty softtouch",
             "image": "/photos/etalon/et-04-popeliastyi-softach.png"
           },
           {
             "slug": "rustik-avinon-bilyi",
-            "label": "рустік авінон білий",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
             "image": "/photos/etalon/et-04-rustik-avinon-bilyi.png"
           },
           {
             "slug": "rustyk-zolotyi",
-            "label": "рустик золотий",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
             "image": "/photos/etalon/et-04-rustyk-zolotyi.png"
           },
           {
             "slug": "shpon-korychnevyi",
-            "label": "шпон коричневий",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
             "image": "/photos/etalon/et-04-shpon-korychnevyi.png"
           },
           {
             "slug": "sosna-provans",
-            "label": "сосна прованс",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
             "image": "/photos/etalon/et-04-sosna-provans.png"
           },
           {
             "slug": "venhe-pivdenne-tysnene",
-            "label": "венге південне тиснене",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
             "image": "/photos/etalon/et-04-venhe-pivdenne-tysnene.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/etalon/et-04-white.png"
           },
           {
             "slug": "zriz-kameniu",
-            "label": "зріз каменю",
+            "label": "Зріз каменю",
+            "labelRu": "Срез камня",
+            "labelEn": "Stone slice",
+            "labelPl": "Przekrój kamienia",
             "image": "/photos/etalon/et-04-zriz-kameniu.png"
           }
         ]
@@ -429,87 +633,138 @@
         "colors": [
           {
             "slug": "astana-marle",
-            "label": "астана марле",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
             "image": "/photos/etalon/et-05-astana-marle.png"
           },
           {
             "slug": "beton-siryi",
-            "label": "бетон сірий",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
             "image": "/photos/etalon/et-05-beton-siryi.png"
           },
           {
             "slug": "beton-snizhnyi",
-            "label": "бетон сніжний",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
             "image": "/photos/etalon/et-05-beton-snizhnyi.png"
           },
           {
             "slug": "beton-temnyi",
-            "label": "бетон темний",
+            "label": "Бетон темний",
+            "labelRu": "Бетон тёмный",
+            "labelEn": "Concrete dark",
+            "labelPl": "Beton ciemny",
             "image": "/photos/etalon/et-05-beton-temnyi.png"
           },
           {
             "slug": "bila-teksturna",
-            "label": "біла текстурна",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
             "image": "/photos/etalon/et-05-bila-teksturna.png"
           },
           {
             "slug": "chorna-korka",
-            "label": "чорна корка",
+            "label": "Чорна корка",
+            "labelRu": "Чёрная корка",
+            "labelEn": "Black crust",
+            "labelPl": "Czarna kora",
             "image": "/photos/etalon/et-05-chorna-korka.png"
           },
           {
             "slug": "dub-hlazho-eko",
-            "label": "дуб глазго еко",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
             "image": "/photos/etalon/et-05-dub-hlazho-eko.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/etalon/et-05-dub-shato.png"
           },
           {
             "slug": "karpatska-ialyna",
-            "label": "карпатська ялина",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
             "image": "/photos/etalon/et-05-karpatska-ialyna.png"
           },
           {
             "slug": "popeliastyi-softach",
-            "label": "попелястий софтач",
+            "label": "Попелястий софттач",
+            "labelRu": "Пепельный софттач",
+            "labelEn": "Ashen softtouch",
+            "labelPl": "Popielaty softtouch",
             "image": "/photos/etalon/et-05-popeliastyi-softach.png"
           },
           {
             "slug": "rustik-avinon-bilyi",
-            "label": "рустік авінон білий",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
             "image": "/photos/etalon/et-05-rustik-avinon-bilyi.png"
           },
           {
             "slug": "rustyk-zolotyi",
-            "label": "рустик золотий",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
             "image": "/photos/etalon/et-05-rustyk-zolotyi.png"
           },
           {
             "slug": "shpon-korychnevyi",
-            "label": "шпон коричневий",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
             "image": "/photos/etalon/et-05-shpon-korychnevyi.png"
           },
           {
             "slug": "sosna-provans",
-            "label": "сосна прованс",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
             "image": "/photos/etalon/et-05-sosna-provans.png"
           },
           {
             "slug": "venhe-pivdenne-tysnene",
-            "label": "венге південне тиснене",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
             "image": "/photos/etalon/et-05-venhe-pivdenne-tysnene.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/etalon/et-05-white.png"
           },
           {
             "slug": "zriz-kameniu",
-            "label": "зріз каменю",
+            "label": "Зріз каменю",
+            "labelRu": "Срез камня",
+            "labelEn": "Stone slice",
+            "labelPl": "Przekrój kamienia",
             "image": "/photos/etalon/et-05-zriz-kameniu.png"
           }
         ]
@@ -520,87 +775,138 @@
         "colors": [
           {
             "slug": "astana-marle",
-            "label": "астана марле",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
             "image": "/photos/etalon/et-06-astana-marle.png"
           },
           {
             "slug": "beton-siryi",
-            "label": "бетон сірий",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
             "image": "/photos/etalon/et-06-beton-siryi.png"
           },
           {
             "slug": "beton-snizhnyi",
-            "label": "бетон сніжний",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
             "image": "/photos/etalon/et-06-beton-snizhnyi.png"
           },
           {
             "slug": "beton-temnyi",
-            "label": "бетон темний",
+            "label": "Бетон темний",
+            "labelRu": "Бетон тёмный",
+            "labelEn": "Concrete dark",
+            "labelPl": "Beton ciemny",
             "image": "/photos/etalon/et-06-beton-temnyi.png"
           },
           {
             "slug": "bila-teksturna",
-            "label": "біла текстурна",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
             "image": "/photos/etalon/et-06-bila-teksturna.png"
           },
           {
             "slug": "chorna-korka",
-            "label": "чорна корка",
+            "label": "Чорна корка",
+            "labelRu": "Чёрная корка",
+            "labelEn": "Black crust",
+            "labelPl": "Czarna kora",
             "image": "/photos/etalon/et-06-chorna-korka.png"
           },
           {
             "slug": "dub-hlazho-eko",
-            "label": "дуб глазго еко",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
             "image": "/photos/etalon/et-06-dub-hlazho-eko.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/etalon/et-06-dub-shato.png"
           },
           {
             "slug": "karpatska-ialyna",
-            "label": "карпатська ялина",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
             "image": "/photos/etalon/et-06-karpatska-ialyna.png"
           },
           {
             "slug": "popeliastyi-softach",
-            "label": "попелястий софтач",
+            "label": "Попелястий софттач",
+            "labelRu": "Пепельный софттач",
+            "labelEn": "Ashen softtouch",
+            "labelPl": "Popielaty softtouch",
             "image": "/photos/etalon/et-06-popeliastyi-softach.png"
           },
           {
             "slug": "rustik-avinon-bilyi",
-            "label": "рустік авінон білий",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
             "image": "/photos/etalon/et-06-rustik-avinon-bilyi.png"
           },
           {
             "slug": "rustyk-zolotyi",
-            "label": "рустик золотий",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
             "image": "/photos/etalon/et-06-rustyk-zolotyi.png"
           },
           {
             "slug": "shpon-korychnevyi",
-            "label": "шпон коричневий",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
             "image": "/photos/etalon/et-06-shpon-korychnevyi.png"
           },
           {
             "slug": "sosna-provans",
-            "label": "сосна прованс",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
             "image": "/photos/etalon/et-06-sosna-provans.png"
           },
           {
             "slug": "venhe-pivdenne-tysnene",
-            "label": "венге південне тиснене",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
             "image": "/photos/etalon/et-06-venhe-pivdenne-tysnene.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/etalon/et-06-white.png"
           },
           {
             "slug": "zriz-kameniu",
-            "label": "зріз каменю",
+            "label": "Зріз каменю",
+            "labelRu": "Срез камня",
+            "labelEn": "Stone slice",
+            "labelPl": "Przekrój kamienia",
             "image": "/photos/etalon/et-06-zriz-kameniu.png"
           }
         ]
@@ -611,87 +917,138 @@
         "colors": [
           {
             "slug": "astana-marle",
-            "label": "астана марле",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
             "image": "/photos/etalon/et-07-astana-marle.png"
           },
           {
             "slug": "beton-siryi",
-            "label": "бетон сірий",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
             "image": "/photos/etalon/et-07-beton-siryi.png"
           },
           {
             "slug": "beton-snizhnyi",
-            "label": "бетон сніжний",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
             "image": "/photos/etalon/et-07-beton-snizhnyi.png"
           },
           {
             "slug": "beton-temnyi",
-            "label": "бетон темний",
+            "label": "Бетон темний",
+            "labelRu": "Бетон тёмный",
+            "labelEn": "Concrete dark",
+            "labelPl": "Beton ciemny",
             "image": "/photos/etalon/et-07-beton-temnyi.png"
           },
           {
             "slug": "bila-teksturna",
-            "label": "біла текстурна",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
             "image": "/photos/etalon/et-07-bila-teksturna.png"
           },
           {
             "slug": "chorna-korka",
-            "label": "чорна корка",
+            "label": "Чорна корка",
+            "labelRu": "Чёрная корка",
+            "labelEn": "Black crust",
+            "labelPl": "Czarna kora",
             "image": "/photos/etalon/et-07-chorna-korka.png"
           },
           {
             "slug": "dub-hlazho-eko",
-            "label": "дуб глазго еко",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
             "image": "/photos/etalon/et-07-dub-hlazho-eko.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/etalon/et-07-dub-shato.png"
           },
           {
             "slug": "karpatska-ialyna",
-            "label": "карпатська ялина",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
             "image": "/photos/etalon/et-07-karpatska-ialyna.png"
           },
           {
             "slug": "popeliastyi-softach",
-            "label": "попелястий софтач",
+            "label": "Попелястий софттач",
+            "labelRu": "Пепельный софттач",
+            "labelEn": "Ashen softtouch",
+            "labelPl": "Popielaty softtouch",
             "image": "/photos/etalon/et-07-popeliastyi-softach.png"
           },
           {
             "slug": "rustik-avinon-bilyi",
-            "label": "рустік авінон білий",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
             "image": "/photos/etalon/et-07-rustik-avinon-bilyi.png"
           },
           {
             "slug": "rustyk-zolotyi",
-            "label": "рустик золотий",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
             "image": "/photos/etalon/et-07-rustyk-zolotyi.png"
           },
           {
             "slug": "shpon-korychnevyi",
-            "label": "шпон коричневий",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
             "image": "/photos/etalon/et-07-shpon-korychnevyi.png"
           },
           {
             "slug": "sosna-provans",
-            "label": "сосна прованс",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
             "image": "/photos/etalon/et-07-sosna-provans.png"
           },
           {
             "slug": "venhe-pivdenne-tysnene",
-            "label": "венге південне тиснене",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
             "image": "/photos/etalon/et-07-venhe-pivdenne-tysnene.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/etalon/et-07-white.png"
           },
           {
             "slug": "zriz-kameniu",
-            "label": "зріз каменю",
+            "label": "Зріз каменю",
+            "labelRu": "Срез камня",
+            "labelEn": "Stone slice",
+            "labelPl": "Przekrój kamienia",
             "image": "/photos/etalon/et-07-zriz-kameniu.png"
           }
         ]
@@ -702,87 +1059,138 @@
         "colors": [
           {
             "slug": "astana-marle",
-            "label": "астана марле",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
             "image": "/photos/etalon/et-08-astana-marle.png"
           },
           {
             "slug": "beton-siryi",
-            "label": "бетон сірий",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
             "image": "/photos/etalon/et-08-beton-siryi.png"
           },
           {
             "slug": "beton-snizhnyi",
-            "label": "бетон сніжний",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
             "image": "/photos/etalon/et-08-beton-snizhnyi.png"
           },
           {
             "slug": "beton-temnyi",
-            "label": "бетон темний",
+            "label": "Бетон темний",
+            "labelRu": "Бетон тёмный",
+            "labelEn": "Concrete dark",
+            "labelPl": "Beton ciemny",
             "image": "/photos/etalon/et-08-beton-temnyi.png"
           },
           {
             "slug": "bila-teksturna",
-            "label": "біла текстурна",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
             "image": "/photos/etalon/et-08-bila-teksturna.png"
           },
           {
             "slug": "chorna-korka",
-            "label": "чорна корка",
+            "label": "Чорна корка",
+            "labelRu": "Чёрная корка",
+            "labelEn": "Black crust",
+            "labelPl": "Czarna kora",
             "image": "/photos/etalon/et-08-chorna-korka.png"
           },
           {
             "slug": "dub-hlazho-eko",
-            "label": "дуб глазго еко",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
             "image": "/photos/etalon/et-08-dub-hlazho-eko.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/etalon/et-08-dub-shato.png"
           },
           {
             "slug": "karpatska-ialyna",
-            "label": "карпатська ялина",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
             "image": "/photos/etalon/et-08-karpatska-ialyna.png"
           },
           {
             "slug": "popeliastyi-softach",
-            "label": "попелястий софтач",
+            "label": "Попелястий софттач",
+            "labelRu": "Пепельный софттач",
+            "labelEn": "Ashen softtouch",
+            "labelPl": "Popielaty softtouch",
             "image": "/photos/etalon/et-08-popeliastyi-softach.png"
           },
           {
             "slug": "rustik-avinon-bilyi",
-            "label": "рустік авінон білий",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
             "image": "/photos/etalon/et-08-rustik-avinon-bilyi.png"
           },
           {
             "slug": "rustyk-zolotyi",
-            "label": "рустик золотий",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
             "image": "/photos/etalon/et-08-rustyk-zolotyi.png"
           },
           {
             "slug": "shpon-korychnevyi",
-            "label": "шпон коричневий",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
             "image": "/photos/etalon/et-08-shpon-korychnevyi.png"
           },
           {
             "slug": "sosna-provans",
-            "label": "сосна прованс",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
             "image": "/photos/etalon/et-08-sosna-provans.png"
           },
           {
             "slug": "venhe-pivdenne-tysnene",
-            "label": "венге південне тиснене",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
             "image": "/photos/etalon/et-08-venhe-pivdenne-tysnene.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/etalon/et-08-white.png"
           },
           {
             "slug": "zriz-kameniu",
-            "label": "зріз каменю",
+            "label": "Зріз каменю",
+            "labelRu": "Срез камня",
+            "labelEn": "Stone slice",
+            "labelPl": "Przekrój kamienia",
             "image": "/photos/etalon/et-08-zriz-kameniu.png"
           }
         ]
@@ -793,87 +1201,138 @@
         "colors": [
           {
             "slug": "astana-marle",
-            "label": "астана марле",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
             "image": "/photos/etalon/et-09-astana-marle.png"
           },
           {
             "slug": "beton-siryi",
-            "label": "бетон сірий",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
             "image": "/photos/etalon/et-09-beton-siryi.png"
           },
           {
             "slug": "beton-snizhnyi",
-            "label": "бетон сніжний",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
             "image": "/photos/etalon/et-09-beton-snizhnyi.png"
           },
           {
             "slug": "beton-temnyi",
-            "label": "бетон темний",
+            "label": "Бетон темний",
+            "labelRu": "Бетон тёмный",
+            "labelEn": "Concrete dark",
+            "labelPl": "Beton ciemny",
             "image": "/photos/etalon/et-09-beton-temnyi.png"
           },
           {
             "slug": "bila-teksturna",
-            "label": "біла текстурна",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
             "image": "/photos/etalon/et-09-bila-teksturna.png"
           },
           {
             "slug": "chorna-korka",
-            "label": "чорна корка",
+            "label": "Чорна корка",
+            "labelRu": "Чёрная корка",
+            "labelEn": "Black crust",
+            "labelPl": "Czarna kora",
             "image": "/photos/etalon/et-09-chorna-korka.png"
           },
           {
             "slug": "dub-hlazho-eko",
-            "label": "дуб глазго еко",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
             "image": "/photos/etalon/et-09-dub-hlazho-eko.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/etalon/et-09-dub-shato.png"
           },
           {
             "slug": "karpatska-ialyna",
-            "label": "карпатська ялина",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
             "image": "/photos/etalon/et-09-karpatska-ialyna.png"
           },
           {
             "slug": "popeliastyi-softach",
-            "label": "попелястий софтач",
+            "label": "Попелястий софттач",
+            "labelRu": "Пепельный софттач",
+            "labelEn": "Ashen softtouch",
+            "labelPl": "Popielaty softtouch",
             "image": "/photos/etalon/et-09-popeliastyi-softach.png"
           },
           {
             "slug": "rustik-avinon-bilyi",
-            "label": "рустік авінон білий",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
             "image": "/photos/etalon/et-09-rustik-avinon-bilyi.png"
           },
           {
             "slug": "rustyk-zolotyi",
-            "label": "рустик золотий",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
             "image": "/photos/etalon/et-09-rustyk-zolotyi.png"
           },
           {
             "slug": "shpon-korychnevyi",
-            "label": "шпон коричневий",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
             "image": "/photos/etalon/et-09-shpon-korychnevyi.png"
           },
           {
             "slug": "sosna-provans",
-            "label": "сосна прованс",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
             "image": "/photos/etalon/et-09-sosna-provans.png"
           },
           {
             "slug": "venhe-pivdenne-tysnene",
-            "label": "венге південне тиснене",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
             "image": "/photos/etalon/et-09-venhe-pivdenne-tysnene.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/etalon/et-09-white.png"
           },
           {
             "slug": "zriz-kameniu",
-            "label": "зріз каменю",
+            "label": "Зріз каменю",
+            "labelRu": "Срез камня",
+            "labelEn": "Stone slice",
+            "labelPl": "Przekrój kamienia",
             "image": "/photos/etalon/et-09-zriz-kameniu.png"
           }
         ]
@@ -884,87 +1343,138 @@
         "colors": [
           {
             "slug": "astana-marle",
-            "label": "астана марле",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
             "image": "/photos/etalon/et-10-astana-marle.png"
           },
           {
             "slug": "beton-siryi",
-            "label": "бетон сірий",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
             "image": "/photos/etalon/et-10-beton-siryi.png"
           },
           {
             "slug": "beton-snizhnyi",
-            "label": "бетон сніжний",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
             "image": "/photos/etalon/et-10-beton-snizhnyi.png"
           },
           {
             "slug": "beton-temnyi",
-            "label": "бетон темний",
+            "label": "Бетон темний",
+            "labelRu": "Бетон тёмный",
+            "labelEn": "Concrete dark",
+            "labelPl": "Beton ciemny",
             "image": "/photos/etalon/et-10-beton-temnyi.png"
           },
           {
             "slug": "bila-teksturna",
-            "label": "біла текстурна",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
             "image": "/photos/etalon/et-10-bila-teksturna.png"
           },
           {
             "slug": "chorna-korka",
-            "label": "чорна корка",
+            "label": "Чорна корка",
+            "labelRu": "Чёрная корка",
+            "labelEn": "Black crust",
+            "labelPl": "Czarna kora",
             "image": "/photos/etalon/et-10-chorna-korka.png"
           },
           {
             "slug": "dub-hlazho-eko",
-            "label": "дуб глазго еко",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
             "image": "/photos/etalon/et-10-dub-hlazho-eko.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/etalon/et-10-dub-shato.png"
           },
           {
             "slug": "karpatska-ialyna",
-            "label": "карпатська ялина",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
             "image": "/photos/etalon/et-10-karpatska-ialyna.png"
           },
           {
             "slug": "popeliastyi-softach",
-            "label": "попелястий софтач",
+            "label": "Попелястий софттач",
+            "labelRu": "Пепельный софттач",
+            "labelEn": "Ashen softtouch",
+            "labelPl": "Popielaty softtouch",
             "image": "/photos/etalon/et-10-popeliastyi-softach.png"
           },
           {
             "slug": "rustik-avinon-bilyi",
-            "label": "рустік авінон білий",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
             "image": "/photos/etalon/et-10-rustik-avinon-bilyi.png"
           },
           {
             "slug": "rustyk-zolotyi",
-            "label": "рустик золотий",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
             "image": "/photos/etalon/et-10-rustyk-zolotyi.png"
           },
           {
             "slug": "shpon-korychnevyi",
-            "label": "шпон коричневий",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
             "image": "/photos/etalon/et-10-shpon-korychnevyi.png"
           },
           {
             "slug": "sosna-provans",
-            "label": "сосна прованс",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
             "image": "/photos/etalon/et-10-sosna-provans.png"
           },
           {
             "slug": "venhe-pivdenne-tysnene",
-            "label": "венге південне тиснене",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
             "image": "/photos/etalon/et-10-venhe-pivdenne-tysnene.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/etalon/et-10-white.png"
           },
           {
             "slug": "zriz-kameniu",
-            "label": "зріз каменю",
+            "label": "Зріз каменю",
+            "labelRu": "Срез камня",
+            "labelEn": "Stone slice",
+            "labelPl": "Przekrój kamienia",
             "image": "/photos/etalon/et-10-zriz-kameniu.png"
           }
         ]
@@ -975,87 +1485,138 @@
         "colors": [
           {
             "slug": "astana-marle",
-            "label": "астана марле",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
             "image": "/photos/etalon/et-11-astana-marle.png"
           },
           {
             "slug": "beton-siryi",
-            "label": "бетон сірий",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
             "image": "/photos/etalon/et-11-beton-siryi.png"
           },
           {
             "slug": "beton-snizhnyi",
-            "label": "бетон сніжний",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
             "image": "/photos/etalon/et-11-beton-snizhnyi.png"
           },
           {
             "slug": "beton-temnyi",
-            "label": "бетон темний",
+            "label": "Бетон темний",
+            "labelRu": "Бетон тёмный",
+            "labelEn": "Concrete dark",
+            "labelPl": "Beton ciemny",
             "image": "/photos/etalon/et-11-beton-temnyi.png"
           },
           {
             "slug": "bila-teksturna",
-            "label": "біла текстурна",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
             "image": "/photos/etalon/et-11-bila-teksturna.png"
           },
           {
             "slug": "chorna-korka",
-            "label": "чорна корка",
+            "label": "Чорна корка",
+            "labelRu": "Чёрная корка",
+            "labelEn": "Black crust",
+            "labelPl": "Czarna kora",
             "image": "/photos/etalon/et-11-chorna-korka.png"
           },
           {
             "slug": "dub-hlazho-eko",
-            "label": "дуб глазго еко",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
             "image": "/photos/etalon/et-11-dub-hlazho-eko.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/etalon/et-11-dub-shato.png"
           },
           {
             "slug": "karpatska-ialyna",
-            "label": "карпатська ялина",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
             "image": "/photos/etalon/et-11-karpatska-ialyna.png"
           },
           {
             "slug": "popeliastyi-softach",
-            "label": "попелястий софтач",
+            "label": "Попелястий софттач",
+            "labelRu": "Пепельный софттач",
+            "labelEn": "Ashen softtouch",
+            "labelPl": "Popielaty softtouch",
             "image": "/photos/etalon/et-11-popeliastyi-softach.png"
           },
           {
             "slug": "rustik-avinon-bilyi",
-            "label": "рустік авінон білий",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
             "image": "/photos/etalon/et-11-rustik-avinon-bilyi.png"
           },
           {
             "slug": "rustyk-zolotyi",
-            "label": "рустик золотий",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
             "image": "/photos/etalon/et-11-rustyk-zolotyi.png"
           },
           {
             "slug": "shpon-korychnevyi",
-            "label": "шпон коричневий",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
             "image": "/photos/etalon/et-11-shpon-korychnevyi.png"
           },
           {
             "slug": "sosna-provans",
-            "label": "сосна прованс",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
             "image": "/photos/etalon/et-11-sosna-provans.png"
           },
           {
             "slug": "venhe-pivdenne-tysnene",
-            "label": "венге південне тиснене",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
             "image": "/photos/etalon/et-11-venhe-pivdenne-tysnene.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/etalon/et-11-white.png"
           },
           {
             "slug": "zriz-kameniu",
-            "label": "зріз каменю",
+            "label": "Зріз каменю",
+            "labelRu": "Срез камня",
+            "labelEn": "Stone slice",
+            "labelPl": "Przekrój kamienia",
             "image": "/photos/etalon/et-11-zriz-kameniu.png"
           }
         ]
@@ -1066,87 +1627,138 @@
         "colors": [
           {
             "slug": "astana-marle",
-            "label": "астана марле",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
             "image": "/photos/etalon/et-12-astana-marle.png"
           },
           {
             "slug": "beton-siryi",
-            "label": "бетон сірий",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
             "image": "/photos/etalon/et-12-beton-siryi.png"
           },
           {
             "slug": "beton-snizhnyi",
-            "label": "бетон сніжний",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
             "image": "/photos/etalon/et-12-beton-snizhnyi.png"
           },
           {
             "slug": "beton-temnyi",
-            "label": "бетон темний",
+            "label": "Бетон темний",
+            "labelRu": "Бетон тёмный",
+            "labelEn": "Concrete dark",
+            "labelPl": "Beton ciemny",
             "image": "/photos/etalon/et-12-beton-temnyi.png"
           },
           {
             "slug": "bila-teksturna",
-            "label": "біла текстурна",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
             "image": "/photos/etalon/et-12-bila-teksturna.png"
           },
           {
             "slug": "chorna-korka",
-            "label": "чорна корка",
+            "label": "Чорна корка",
+            "labelRu": "Чёрная корка",
+            "labelEn": "Black crust",
+            "labelPl": "Czarna kora",
             "image": "/photos/etalon/et-12-chorna-korka.png"
           },
           {
             "slug": "dub-hlazho-eko",
-            "label": "дуб глазго еко",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
             "image": "/photos/etalon/et-12-dub-hlazho-eko.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/etalon/et-12-dub-shato.png"
           },
           {
             "slug": "karpatska-ialyna",
-            "label": "карпатська ялина",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
             "image": "/photos/etalon/et-12-karpatska-ialyna.png"
           },
           {
             "slug": "popeliastyi-softach",
-            "label": "попелястий софтач",
+            "label": "Попелястий софттач",
+            "labelRu": "Пепельный софттач",
+            "labelEn": "Ashen softtouch",
+            "labelPl": "Popielaty softtouch",
             "image": "/photos/etalon/et-12-popeliastyi-softach.png"
           },
           {
             "slug": "rustik-avinon-bilyi",
-            "label": "рустік авінон білий",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
             "image": "/photos/etalon/et-12-rustik-avinon-bilyi.png"
           },
           {
             "slug": "rustyk-zolotyi",
-            "label": "рустик золотий",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
             "image": "/photos/etalon/et-12-rustyk-zolotyi.png"
           },
           {
             "slug": "shpon-korychnevyi",
-            "label": "шпон коричневий",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
             "image": "/photos/etalon/et-12-shpon-korychnevyi.png"
           },
           {
             "slug": "sosna-provans",
-            "label": "сосна прованс",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
             "image": "/photos/etalon/et-12-sosna-provans.png"
           },
           {
             "slug": "venhe-pivdenne-tysnene",
-            "label": "венге південне тиснене",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
             "image": "/photos/etalon/et-12-venhe-pivdenne-tysnene.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/etalon/et-12-white.png"
           },
           {
             "slug": "zriz-kameniu",
-            "label": "зріз каменю",
+            "label": "Зріз каменю",
+            "labelRu": "Срез камня",
+            "labelEn": "Stone slice",
+            "labelPl": "Przekrój kamienia",
             "image": "/photos/etalon/et-12-zriz-kameniu.png"
           }
         ]
@@ -1157,87 +1769,138 @@
         "colors": [
           {
             "slug": "astana-marle",
-            "label": "астана марле",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
             "image": "/photos/etalon/et-13-astana-marle.png"
           },
           {
             "slug": "beton-siryi",
-            "label": "бетон сірий",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
             "image": "/photos/etalon/et-13-beton-siryi.png"
           },
           {
             "slug": "beton-snizhnyi",
-            "label": "бетон сніжний",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
             "image": "/photos/etalon/et-13-beton-snizhnyi.png"
           },
           {
             "slug": "beton-temnyi",
-            "label": "бетон темний",
+            "label": "Бетон темний",
+            "labelRu": "Бетон тёмный",
+            "labelEn": "Concrete dark",
+            "labelPl": "Beton ciemny",
             "image": "/photos/etalon/et-13-beton-temnyi.png"
           },
           {
             "slug": "bila-teksturna",
-            "label": "біла текстурна",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
             "image": "/photos/etalon/et-13-bila-teksturna.png"
           },
           {
             "slug": "chorna-korka",
-            "label": "чорна корка",
+            "label": "Чорна корка",
+            "labelRu": "Чёрная корка",
+            "labelEn": "Black crust",
+            "labelPl": "Czarna kora",
             "image": "/photos/etalon/et-13-chorna-korka.png"
           },
           {
             "slug": "dub-hlazho-eko",
-            "label": "дуб глазго еко",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
             "image": "/photos/etalon/et-13-dub-hlazho-eko.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/etalon/et-13-dub-shato.png"
           },
           {
             "slug": "karpatska-ialyna",
-            "label": "карпатська ялина",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
             "image": "/photos/etalon/et-13-karpatska-ialyna.png"
           },
           {
             "slug": "popeliastyi-softach",
-            "label": "попелястий софтач",
+            "label": "Попелястий софттач",
+            "labelRu": "Пепельный софттач",
+            "labelEn": "Ashen softtouch",
+            "labelPl": "Popielaty softtouch",
             "image": "/photos/etalon/et-13-popeliastyi-softach.png"
           },
           {
             "slug": "rustik-avinon-bilyi",
-            "label": "рустік авінон білий",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
             "image": "/photos/etalon/et-13-rustik-avinon-bilyi.png"
           },
           {
             "slug": "rustyk-zolotyi",
-            "label": "рустик золотий",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
             "image": "/photos/etalon/et-13-rustyk-zolotyi.png"
           },
           {
             "slug": "shpon-korychnevyi",
-            "label": "шпон коричневий",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
             "image": "/photos/etalon/et-13-shpon-korychnevyi.png"
           },
           {
             "slug": "sosna-provans",
-            "label": "сосна прованс",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
             "image": "/photos/etalon/et-13-sosna-provans.png"
           },
           {
             "slug": "venhe-pivdenne-tysnene",
-            "label": "венге південне тиснене",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
             "image": "/photos/etalon/et-13-venhe-pivdenne-tysnene.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/etalon/et-13-white.png"
           },
           {
             "slug": "zriz-kameniu",
-            "label": "зріз каменю",
+            "label": "Зріз каменю",
+            "labelRu": "Срез камня",
+            "labelEn": "Stone slice",
+            "labelPl": "Przekrój kamienia",
             "image": "/photos/etalon/et-13-zriz-kameniu.png"
           }
         ]
@@ -1248,87 +1911,138 @@
         "colors": [
           {
             "slug": "astana-marle",
-            "label": "астана марле",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
             "image": "/photos/etalon/et-14-astana-marle.png"
           },
           {
             "slug": "beton-siryi",
-            "label": "бетон сірий",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
             "image": "/photos/etalon/et-14-beton-siryi.png"
           },
           {
             "slug": "beton-snizhnyi",
-            "label": "бетон сніжний",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
             "image": "/photos/etalon/et-14-beton-snizhnyi.png"
           },
           {
             "slug": "beton-temnyi",
-            "label": "бетон темний",
+            "label": "Бетон темний",
+            "labelRu": "Бетон тёмный",
+            "labelEn": "Concrete dark",
+            "labelPl": "Beton ciemny",
             "image": "/photos/etalon/et-14-beton-temnyi.png"
           },
           {
             "slug": "bila-teksturna",
-            "label": "біла текстурна",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
             "image": "/photos/etalon/et-14-bila-teksturna.png"
           },
           {
             "slug": "chorna-korka",
-            "label": "чорна корка",
+            "label": "Чорна корка",
+            "labelRu": "Чёрная корка",
+            "labelEn": "Black crust",
+            "labelPl": "Czarna kora",
             "image": "/photos/etalon/et-14-chorna-korka.png"
           },
           {
             "slug": "dub-hlazho-eko",
-            "label": "дуб глазго еко",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
             "image": "/photos/etalon/et-14-dub-hlazho-eko.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/etalon/et-14-dub-shato.png"
           },
           {
             "slug": "karpatska-ialyna",
-            "label": "карпатська ялина",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
             "image": "/photos/etalon/et-14-karpatska-ialyna.png"
           },
           {
             "slug": "popeliastyi-softach",
-            "label": "попелястий софтач",
+            "label": "Попелястий софттач",
+            "labelRu": "Пепельный софттач",
+            "labelEn": "Ashen softtouch",
+            "labelPl": "Popielaty softtouch",
             "image": "/photos/etalon/et-14-popeliastyi-softach.png"
           },
           {
             "slug": "rustik-avinon-bilyi",
-            "label": "рустік авінон білий",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
             "image": "/photos/etalon/et-14-rustik-avinon-bilyi.png"
           },
           {
             "slug": "rustyk-zolotyi",
-            "label": "рустик золотий",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
             "image": "/photos/etalon/et-14-rustyk-zolotyi.png"
           },
           {
             "slug": "shpon-korychnevyi",
-            "label": "шпон коричневий",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
             "image": "/photos/etalon/et-14-shpon-korychnevyi.png"
           },
           {
             "slug": "sosna-provans",
-            "label": "сосна прованс",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
             "image": "/photos/etalon/et-14-sosna-provans.png"
           },
           {
             "slug": "venhe-pivdenne-tysnene",
-            "label": "венге південне тиснене",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
             "image": "/photos/etalon/et-14-venhe-pivdenne-tysnene.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/etalon/et-14-white.png"
           },
           {
             "slug": "zriz-kameniu",
-            "label": "зріз каменю",
+            "label": "Зріз каменю",
+            "labelRu": "Срез камня",
+            "labelEn": "Stone slice",
+            "labelPl": "Przekrój kamienia",
             "image": "/photos/etalon/et-14-zriz-kameniu.png"
           }
         ]
@@ -1339,87 +2053,138 @@
         "colors": [
           {
             "slug": "astana-marle",
-            "label": "астана марле",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
             "image": "/photos/etalon/et-15-astana-marle.png"
           },
           {
             "slug": "beton-siryi",
-            "label": "бетон сірий",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
             "image": "/photos/etalon/et-15-beton-siryi.png"
           },
           {
             "slug": "beton-snizhnyi",
-            "label": "бетон сніжний",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
             "image": "/photos/etalon/et-15-beton-snizhnyi.png"
           },
           {
             "slug": "beton-temnyi",
-            "label": "бетон темний",
+            "label": "Бетон темний",
+            "labelRu": "Бетон тёмный",
+            "labelEn": "Concrete dark",
+            "labelPl": "Beton ciemny",
             "image": "/photos/etalon/et-15-beton-temnyi.png"
           },
           {
             "slug": "bila-teksturna",
-            "label": "біла текстурна",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
             "image": "/photos/etalon/et-15-bila-teksturna.png"
           },
           {
             "slug": "chorna-korka",
-            "label": "чорна корка",
+            "label": "Чорна корка",
+            "labelRu": "Чёрная корка",
+            "labelEn": "Black crust",
+            "labelPl": "Czarna kora",
             "image": "/photos/etalon/et-15-chorna-korka.png"
           },
           {
             "slug": "dub-hlazho-eko",
-            "label": "дуб глазго еко",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
             "image": "/photos/etalon/et-15-dub-hlazho-eko.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/etalon/et-15-dub-shato.png"
           },
           {
             "slug": "karpatska-ialyna",
-            "label": "карпатська ялина",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
             "image": "/photos/etalon/et-15-karpatska-ialyna.png"
           },
           {
             "slug": "popeliastyi-softach",
-            "label": "попелястий софтач",
+            "label": "Попелястий софттач",
+            "labelRu": "Пепельный софттач",
+            "labelEn": "Ashen softtouch",
+            "labelPl": "Popielaty softtouch",
             "image": "/photos/etalon/et-15-popeliastyi-softach.png"
           },
           {
             "slug": "rustik-avinon-bilyi",
-            "label": "рустік авінон білий",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
             "image": "/photos/etalon/et-15-rustik-avinon-bilyi.png"
           },
           {
             "slug": "rustyk-zolotyi",
-            "label": "рустик золотий",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
             "image": "/photos/etalon/et-15-rustyk-zolotyi.png"
           },
           {
             "slug": "shpon-korychnevyi",
-            "label": "шпон коричневий",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
             "image": "/photos/etalon/et-15-shpon-korychnevyi.png"
           },
           {
             "slug": "sosna-provans",
-            "label": "сосна прованс",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
             "image": "/photos/etalon/et-15-sosna-provans.png"
           },
           {
             "slug": "venhe-pivdenne-tysnene",
-            "label": "венге південне тиснене",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
             "image": "/photos/etalon/et-15-venhe-pivdenne-tysnene.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/etalon/et-15-white.png"
           },
           {
             "slug": "zriz-kameniu",
-            "label": "зріз каменю",
+            "label": "Зріз каменю",
+            "labelRu": "Срез камня",
+            "labelEn": "Stone slice",
+            "labelPl": "Przekrój kamienia",
             "image": "/photos/etalon/et-15-zriz-kameniu.png"
           }
         ]
@@ -1430,87 +2195,138 @@
         "colors": [
           {
             "slug": "astana-marle",
-            "label": "астана марле",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
             "image": "/photos/etalon/et-16-astana-marle.png"
           },
           {
             "slug": "beton-siryi",
-            "label": "бетон сірий",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
             "image": "/photos/etalon/et-16-beton-siryi.png"
           },
           {
             "slug": "beton-snizhnyi",
-            "label": "бетон сніжний",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
             "image": "/photos/etalon/et-16-beton-snizhnyi.png"
           },
           {
             "slug": "beton-temnyi",
-            "label": "бетон темний",
+            "label": "Бетон темний",
+            "labelRu": "Бетон тёмный",
+            "labelEn": "Concrete dark",
+            "labelPl": "Beton ciemny",
             "image": "/photos/etalon/et-16-beton-temnyi.png"
           },
           {
             "slug": "bila-teksturna",
-            "label": "біла текстурна",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
             "image": "/photos/etalon/et-16-bila-teksturna.png"
           },
           {
             "slug": "chorna-korka",
-            "label": "чорна корка",
+            "label": "Чорна корка",
+            "labelRu": "Чёрная корка",
+            "labelEn": "Black crust",
+            "labelPl": "Czarna kora",
             "image": "/photos/etalon/et-16-chorna-korka.png"
           },
           {
             "slug": "dub-hlazho-eko",
-            "label": "дуб глазго еко",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
             "image": "/photos/etalon/et-16-dub-hlazho-eko.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/etalon/et-16-dub-shato.png"
           },
           {
             "slug": "karpatska-ialyna",
-            "label": "карпатська ялина",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
             "image": "/photos/etalon/et-16-karpatska-ialyna.png"
           },
           {
             "slug": "popeliastyi-softach",
-            "label": "попелястий софтач",
+            "label": "Попелястий софттач",
+            "labelRu": "Пепельный софттач",
+            "labelEn": "Ashen softtouch",
+            "labelPl": "Popielaty softtouch",
             "image": "/photos/etalon/et-16-popeliastyi-softach.png"
           },
           {
             "slug": "rustik-avinon-bilyi",
-            "label": "рустік авінон білий",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
             "image": "/photos/etalon/et-16-rustik-avinon-bilyi.png"
           },
           {
             "slug": "rustyk-zolotyi",
-            "label": "рустик золотий",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
             "image": "/photos/etalon/et-16-rustyk-zolotyi.png"
           },
           {
             "slug": "shpon-korychnevyi",
-            "label": "шпон коричневий",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
             "image": "/photos/etalon/et-16-shpon-korychnevyi.png"
           },
           {
             "slug": "sosna-provans",
-            "label": "сосна прованс",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
             "image": "/photos/etalon/et-16-sosna-provans.png"
           },
           {
             "slug": "venhe-pivdenne-tysnene",
-            "label": "венге південне тиснене",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
             "image": "/photos/etalon/et-16-venhe-pivdenne-tysnene.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/etalon/et-16-white.png"
           },
           {
             "slug": "zriz-kameniu",
-            "label": "зріз каменю",
+            "label": "Зріз каменю",
+            "labelRu": "Срез камня",
+            "labelEn": "Stone slice",
+            "labelPl": "Przekrój kamienia",
             "image": "/photos/etalon/et-16-zriz-kameniu.png"
           }
         ]
@@ -1521,87 +2337,138 @@
         "colors": [
           {
             "slug": "astana-marle",
-            "label": "астана марле",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
             "image": "/photos/etalon/et-17-astana-marle.png"
           },
           {
             "slug": "beton-siryi",
-            "label": "бетон сірий",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
             "image": "/photos/etalon/et-17-beton-siryi.png"
           },
           {
             "slug": "beton-snizhnyi",
-            "label": "бетон сніжний",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
             "image": "/photos/etalon/et-17-beton-snizhnyi.png"
           },
           {
             "slug": "beton-temnyi",
-            "label": "бетон темний",
+            "label": "Бетон темний",
+            "labelRu": "Бетон тёмный",
+            "labelEn": "Concrete dark",
+            "labelPl": "Beton ciemny",
             "image": "/photos/etalon/et-17-beton-temnyi.png"
           },
           {
             "slug": "bila-teksturna",
-            "label": "біла текстурна",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
             "image": "/photos/etalon/et-17-bila-teksturna.png"
           },
           {
             "slug": "chorna-korka",
-            "label": "чорна корка",
+            "label": "Чорна корка",
+            "labelRu": "Чёрная корка",
+            "labelEn": "Black crust",
+            "labelPl": "Czarna kora",
             "image": "/photos/etalon/et-17-chorna-korka.png"
           },
           {
             "slug": "dub-hlazho-eko",
-            "label": "дуб глазго еко",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
             "image": "/photos/etalon/et-17-dub-hlazho-eko.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/etalon/et-17-dub-shato.png"
           },
           {
             "slug": "karpatska-ialyna",
-            "label": "карпатська ялина",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
             "image": "/photos/etalon/et-17-karpatska-ialyna.png"
           },
           {
             "slug": "popeliastyi-softach",
-            "label": "попелястий софтач",
+            "label": "Попелястий софттач",
+            "labelRu": "Пепельный софттач",
+            "labelEn": "Ashen softtouch",
+            "labelPl": "Popielaty softtouch",
             "image": "/photos/etalon/et-17-popeliastyi-softach.png"
           },
           {
             "slug": "rustik-avinon-bilyi",
-            "label": "рустік авінон білий",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
             "image": "/photos/etalon/et-17-rustik-avinon-bilyi.png"
           },
           {
             "slug": "rustyk-zolotyi",
-            "label": "рустик золотий",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
             "image": "/photos/etalon/et-17-rustyk-zolotyi.png"
           },
           {
             "slug": "shpon-korychnevyi",
-            "label": "шпон коричневий",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
             "image": "/photos/etalon/et-17-shpon-korychnevyi.png"
           },
           {
             "slug": "sosna-provans",
-            "label": "сосна прованс",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
             "image": "/photos/etalon/et-17-sosna-provans.png"
           },
           {
             "slug": "venhe-pivdenne-tysnene",
-            "label": "венге південне тиснене",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
             "image": "/photos/etalon/et-17-venhe-pivdenne-tysnene.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/etalon/et-17-white.png"
           },
           {
             "slug": "zriz-kameniu",
-            "label": "зріз каменю",
+            "label": "Зріз каменю",
+            "labelRu": "Срез камня",
+            "labelEn": "Stone slice",
+            "labelPl": "Przekrój kamienia",
             "image": "/photos/etalon/et-17-zriz-kameniu.png"
           }
         ]
@@ -1659,61 +2526,97 @@
           {
             "slug": "antratsyt",
             "label": "Антрацит",
+            "labelRu": "Антрацит",
+            "labelEn": "Anthracite",
+            "labelPl": "Antracyt",
             "image": "/photos/nominal/nl-01-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
             "label": "Дуб немо лате",
+            "labelRu": "Дуб немо лате",
+            "labelEn": "Oak Nemo latte",
+            "labelPl": "Dąb Nemo latte",
             "image": "/photos/nominal/nl-01-dub-nemo-late.png"
           },
           {
             "slug": "dub-nemo-sribliastyi",
             "label": "Дуб немо сріблястий",
+            "labelRu": "Дуб немо серебристый",
+            "labelEn": "Oak Nemo silver",
+            "labelPl": "Dąb Nemo srebrny",
             "image": "/photos/nominal/nl-01-dub-nemo-sribliastyi.png"
           },
           {
             "slug": "dub-pasadena",
             "label": "Дуб пасадена",
+            "labelRu": "Дуб пасадена",
+            "labelEn": "Oak Pasadena",
+            "labelPl": "Dąb Pasadena",
             "image": "/photos/nominal/nl-01-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
             "label": "Дуб портовий",
+            "labelRu": "Дуб портовый",
+            "labelEn": "Oak Porto",
+            "labelPl": "Dąb portowy",
             "image": "/photos/nominal/nl-01-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
             "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/nominal/nl-01-dub-shato.png"
           },
           {
             "slug": "feldhrau",
             "label": "Фельдграу",
+            "labelRu": "Фельдграу",
+            "labelEn": "Feldgrau",
+            "labelPl": "Feldgrau",
             "image": "/photos/nominal/nl-01-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
             "label": "Оксид білий",
+            "labelRu": "Оксид белый",
+            "labelEn": "Oxide white",
+            "labelPl": "Oksyd biały",
             "image": "/photos/nominal/nl-01-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
             "label": "Оксид світлий",
+            "labelRu": "Оксид светлый",
+            "labelEn": "Oxide light",
+            "labelPl": "Oksyd jasny",
             "image": "/photos/nominal/nl-01-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
             "label": "Оксид темний",
+            "labelRu": "Оксид тёмный",
+            "labelEn": "Oxide dark",
+            "labelPl": "Oksyd ciemny",
             "image": "/photos/nominal/nl-01-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
-            "label": "Венге",
+            "label": "Венге південне",
+            "labelRu": "Венге южное",
+            "labelEn": "Wenge southern",
+            "labelPl": "Wenge południowe",
             "image": "/photos/nominal/nl-01-venhe-pivdenne.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/nominal/nl-01-white.png"
           }
         ]
@@ -1725,61 +2628,97 @@
           {
             "slug": "antratsyt",
             "label": "Антрацит",
+            "labelRu": "Антрацит",
+            "labelEn": "Anthracite",
+            "labelPl": "Antracyt",
             "image": "/photos/nominal/nl-02-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
             "label": "Дуб немо лате",
+            "labelRu": "Дуб немо лате",
+            "labelEn": "Oak Nemo latte",
+            "labelPl": "Dąb Nemo latte",
             "image": "/photos/nominal/nl-02-dub-nemo-late.png"
           },
           {
             "slug": "dub-nemo-sribliastyi",
             "label": "Дуб немо сріблястий",
+            "labelRu": "Дуб немо серебристый",
+            "labelEn": "Oak Nemo silver",
+            "labelPl": "Dąb Nemo srebrny",
             "image": "/photos/nominal/nl-02-dub-nemo-sribliastyi.png"
           },
           {
             "slug": "dub-pasadena",
             "label": "Дуб пасадена",
+            "labelRu": "Дуб пасадена",
+            "labelEn": "Oak Pasadena",
+            "labelPl": "Dąb Pasadena",
             "image": "/photos/nominal/nl-02-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
             "label": "Дуб портовий",
+            "labelRu": "Дуб портовый",
+            "labelEn": "Oak Porto",
+            "labelPl": "Dąb portowy",
             "image": "/photos/nominal/nl-02-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
             "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/nominal/nl-02-dub-shato.png"
           },
           {
             "slug": "feldhrau",
             "label": "Фельдграу",
+            "labelRu": "Фельдграу",
+            "labelEn": "Feldgrau",
+            "labelPl": "Feldgrau",
             "image": "/photos/nominal/nl-02-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
             "label": "Оксид білий",
+            "labelRu": "Оксид белый",
+            "labelEn": "Oxide white",
+            "labelPl": "Oksyd biały",
             "image": "/photos/nominal/nl-02-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
             "label": "Оксид світлий",
+            "labelRu": "Оксид светлый",
+            "labelEn": "Oxide light",
+            "labelPl": "Oksyd jasny",
             "image": "/photos/nominal/nl-02-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
             "label": "Оксид темний",
+            "labelRu": "Оксид тёмный",
+            "labelEn": "Oxide dark",
+            "labelPl": "Oksyd ciemny",
             "image": "/photos/nominal/nl-02-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
-            "label": "Венге",
+            "label": "Венге південне",
+            "labelRu": "Венге южное",
+            "labelEn": "Wenge southern",
+            "labelPl": "Wenge południowe",
             "image": "/photos/nominal/nl-02-venhe-pivdenne.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/nominal/nl-02-white.png"
           }
         ]
@@ -1791,61 +2730,97 @@
           {
             "slug": "antratsyt",
             "label": "Антрацит",
+            "labelRu": "Антрацит",
+            "labelEn": "Anthracite",
+            "labelPl": "Antracyt",
             "image": "/photos/nominal/nl-03-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
             "label": "Дуб немо лате",
+            "labelRu": "Дуб немо лате",
+            "labelEn": "Oak Nemo latte",
+            "labelPl": "Dąb Nemo latte",
             "image": "/photos/nominal/nl-03-dub-nemo-late.png"
           },
           {
             "slug": "dub-nemo-sribliastyi",
             "label": "Дуб немо сріблястий",
+            "labelRu": "Дуб немо серебристый",
+            "labelEn": "Oak Nemo silver",
+            "labelPl": "Dąb Nemo srebrny",
             "image": "/photos/nominal/nl-03-dub-nemo-sribliastyi.png"
           },
           {
             "slug": "dub-pasadena",
             "label": "Дуб пасадена",
+            "labelRu": "Дуб пасадена",
+            "labelEn": "Oak Pasadena",
+            "labelPl": "Dąb Pasadena",
             "image": "/photos/nominal/nl-03-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
             "label": "Дуб портовий",
+            "labelRu": "Дуб портовый",
+            "labelEn": "Oak Porto",
+            "labelPl": "Dąb portowy",
             "image": "/photos/nominal/nl-03-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
             "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/nominal/nl-03-dub-shato.png"
           },
           {
             "slug": "feldhrau",
             "label": "Фельдграу",
+            "labelRu": "Фельдграу",
+            "labelEn": "Feldgrau",
+            "labelPl": "Feldgrau",
             "image": "/photos/nominal/nl-03-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
             "label": "Оксид білий",
+            "labelRu": "Оксид белый",
+            "labelEn": "Oxide white",
+            "labelPl": "Oksyd biały",
             "image": "/photos/nominal/nl-03-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
             "label": "Оксид світлий",
+            "labelRu": "Оксид светлый",
+            "labelEn": "Oxide light",
+            "labelPl": "Oksyd jasny",
             "image": "/photos/nominal/nl-03-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
             "label": "Оксид темний",
+            "labelRu": "Оксид тёмный",
+            "labelEn": "Oxide dark",
+            "labelPl": "Oksyd ciemny",
             "image": "/photos/nominal/nl-03-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
-            "label": "Венге",
+            "label": "Венге південне",
+            "labelRu": "Венге южное",
+            "labelEn": "Wenge southern",
+            "labelPl": "Wenge południowe",
             "image": "/photos/nominal/nl-03-venhe-pivdenne.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/nominal/nl-03-white.png"
           }
         ]
@@ -1857,61 +2832,97 @@
           {
             "slug": "antratsyt",
             "label": "Антрацит",
+            "labelRu": "Антрацит",
+            "labelEn": "Anthracite",
+            "labelPl": "Antracyt",
             "image": "/photos/nominal/nl-04-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
             "label": "Дуб немо лате",
+            "labelRu": "Дуб немо лате",
+            "labelEn": "Oak Nemo latte",
+            "labelPl": "Dąb Nemo latte",
             "image": "/photos/nominal/nl-04-dub-nemo-late.png"
           },
           {
             "slug": "dub-nemo-sribliastyi",
             "label": "Дуб немо сріблястий",
+            "labelRu": "Дуб немо серебристый",
+            "labelEn": "Oak Nemo silver",
+            "labelPl": "Dąb Nemo srebrny",
             "image": "/photos/nominal/nl-04-dub-nemo-sribliastyi.png"
           },
           {
             "slug": "dub-pasadena",
             "label": "Дуб пасадена",
+            "labelRu": "Дуб пасадена",
+            "labelEn": "Oak Pasadena",
+            "labelPl": "Dąb Pasadena",
             "image": "/photos/nominal/nl-04-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
             "label": "Дуб портовий",
+            "labelRu": "Дуб портовый",
+            "labelEn": "Oak Porto",
+            "labelPl": "Dąb portowy",
             "image": "/photos/nominal/nl-04-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
             "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/nominal/nl-04-dub-shato.png"
           },
           {
             "slug": "feldhrau",
             "label": "Фельдграу",
+            "labelRu": "Фельдграу",
+            "labelEn": "Feldgrau",
+            "labelPl": "Feldgrau",
             "image": "/photos/nominal/nl-04-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
             "label": "Оксид білий",
+            "labelRu": "Оксид белый",
+            "labelEn": "Oxide white",
+            "labelPl": "Oksyd biały",
             "image": "/photos/nominal/nl-04-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
             "label": "Оксид світлий",
+            "labelRu": "Оксид светлый",
+            "labelEn": "Oxide light",
+            "labelPl": "Oksyd jasny",
             "image": "/photos/nominal/nl-04-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
             "label": "Оксид темний",
+            "labelRu": "Оксид тёмный",
+            "labelEn": "Oxide dark",
+            "labelPl": "Oksyd ciemny",
             "image": "/photos/nominal/nl-04-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
-            "label": "Венге",
+            "label": "Венге південне",
+            "labelRu": "Венге южное",
+            "labelEn": "Wenge southern",
+            "labelPl": "Wenge południowe",
             "image": "/photos/nominal/nl-04-venhe-pivdenne.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/nominal/nl-04-white.png"
           }
         ]
@@ -1923,61 +2934,97 @@
           {
             "slug": "antratsyt",
             "label": "Антрацит",
+            "labelRu": "Антрацит",
+            "labelEn": "Anthracite",
+            "labelPl": "Antracyt",
             "image": "/photos/nominal/nl-05-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
             "label": "Дуб немо лате",
+            "labelRu": "Дуб немо лате",
+            "labelEn": "Oak Nemo latte",
+            "labelPl": "Dąb Nemo latte",
             "image": "/photos/nominal/nl-05-dub-nemo-late.png"
           },
           {
             "slug": "dub-nemo-sribliastyi",
             "label": "Дуб немо сріблястий",
+            "labelRu": "Дуб немо серебристый",
+            "labelEn": "Oak Nemo silver",
+            "labelPl": "Dąb Nemo srebrny",
             "image": "/photos/nominal/nl-05-dub-nemo-sribliastyi.png"
           },
           {
             "slug": "dub-pasadena",
             "label": "Дуб пасадена",
+            "labelRu": "Дуб пасадена",
+            "labelEn": "Oak Pasadena",
+            "labelPl": "Dąb Pasadena",
             "image": "/photos/nominal/nl-05-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
             "label": "Дуб портовий",
+            "labelRu": "Дуб портовый",
+            "labelEn": "Oak Porto",
+            "labelPl": "Dąb portowy",
             "image": "/photos/nominal/nl-05-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
             "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/nominal/nl-05-dub-shato.png"
           },
           {
             "slug": "feldhrau",
             "label": "Фельдграу",
+            "labelRu": "Фельдграу",
+            "labelEn": "Feldgrau",
+            "labelPl": "Feldgrau",
             "image": "/photos/nominal/nl-05-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
             "label": "Оксид білий",
+            "labelRu": "Оксид белый",
+            "labelEn": "Oxide white",
+            "labelPl": "Oksyd biały",
             "image": "/photos/nominal/nl-05-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
             "label": "Оксид світлий",
+            "labelRu": "Оксид светлый",
+            "labelEn": "Oxide light",
+            "labelPl": "Oksyd jasny",
             "image": "/photos/nominal/nl-05-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
             "label": "Оксид темний",
+            "labelRu": "Оксид тёмный",
+            "labelEn": "Oxide dark",
+            "labelPl": "Oksyd ciemny",
             "image": "/photos/nominal/nl-05-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
-            "label": "Венге",
+            "label": "Венге південне",
+            "labelRu": "Венге южное",
+            "labelEn": "Wenge southern",
+            "labelPl": "Wenge południowe",
             "image": "/photos/nominal/nl-05-venhe-pivdenne.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/nominal/nl-05-white.png"
           }
         ]
@@ -1989,61 +3036,97 @@
           {
             "slug": "antratsyt",
             "label": "Антрацит",
+            "labelRu": "Антрацит",
+            "labelEn": "Anthracite",
+            "labelPl": "Antracyt",
             "image": "/photos/nominal/nl-06-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
             "label": "Дуб немо лате",
+            "labelRu": "Дуб немо лате",
+            "labelEn": "Oak Nemo latte",
+            "labelPl": "Dąb Nemo latte",
             "image": "/photos/nominal/nl-06-dub-nemo-late.png"
           },
           {
             "slug": "dub-nemo-sribliastyi",
             "label": "Дуб немо сріблястий",
+            "labelRu": "Дуб немо серебристый",
+            "labelEn": "Oak Nemo silver",
+            "labelPl": "Dąb Nemo srebrny",
             "image": "/photos/nominal/nl-06-dub-nemo-sribliastyi.png"
           },
           {
             "slug": "dub-pasadena",
             "label": "Дуб пасадена",
+            "labelRu": "Дуб пасадена",
+            "labelEn": "Oak Pasadena",
+            "labelPl": "Dąb Pasadena",
             "image": "/photos/nominal/nl-06-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
             "label": "Дуб портовий",
+            "labelRu": "Дуб портовый",
+            "labelEn": "Oak Porto",
+            "labelPl": "Dąb portowy",
             "image": "/photos/nominal/nl-06-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
             "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/nominal/nl-06-dub-shato.png"
           },
           {
             "slug": "feldhrau",
             "label": "Фельдграу",
+            "labelRu": "Фельдграу",
+            "labelEn": "Feldgrau",
+            "labelPl": "Feldgrau",
             "image": "/photos/nominal/nl-06-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
             "label": "Оксид білий",
+            "labelRu": "Оксид белый",
+            "labelEn": "Oxide white",
+            "labelPl": "Oksyd biały",
             "image": "/photos/nominal/nl-06-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
             "label": "Оксид світлий",
+            "labelRu": "Оксид светлый",
+            "labelEn": "Oxide light",
+            "labelPl": "Oksyd jasny",
             "image": "/photos/nominal/nl-06-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
             "label": "Оксид темний",
+            "labelRu": "Оксид тёмный",
+            "labelEn": "Oxide dark",
+            "labelPl": "Oksyd ciemny",
             "image": "/photos/nominal/nl-06-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
-            "label": "Венге",
+            "label": "Венге південне",
+            "labelRu": "Венге южное",
+            "labelEn": "Wenge southern",
+            "labelPl": "Wenge południowe",
             "image": "/photos/nominal/nl-06-venhe.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/nominal/nl-06-white.png"
           }
         ]
@@ -2055,61 +3138,97 @@
           {
             "slug": "antratsyt",
             "label": "Антрацит",
+            "labelRu": "Антрацит",
+            "labelEn": "Anthracite",
+            "labelPl": "Antracyt",
             "image": "/photos/nominal/nl-07-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
             "label": "Дуб немо лате",
+            "labelRu": "Дуб немо лате",
+            "labelEn": "Oak Nemo latte",
+            "labelPl": "Dąb Nemo latte",
             "image": "/photos/nominal/nl-07-dub-nemo-late.png"
           },
           {
             "slug": "dub-nemo-sribliastyi",
             "label": "Дуб немо сріблястий",
+            "labelRu": "Дуб немо серебристый",
+            "labelEn": "Oak Nemo silver",
+            "labelPl": "Dąb Nemo srebrny",
             "image": "/photos/nominal/nl-07-dub-nemo-sribliastyi.png"
           },
           {
             "slug": "dub-pasadena",
             "label": "Дуб пасадена",
+            "labelRu": "Дуб пасадена",
+            "labelEn": "Oak Pasadena",
+            "labelPl": "Dąb Pasadena",
             "image": "/photos/nominal/nl-07-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
             "label": "Дуб портовий",
+            "labelRu": "Дуб портовый",
+            "labelEn": "Oak Porto",
+            "labelPl": "Dąb portowy",
             "image": "/photos/nominal/nl-07-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
             "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/nominal/nl-07-dub-shato.png"
           },
           {
             "slug": "feldhrau",
             "label": "Фельдграу",
+            "labelRu": "Фельдграу",
+            "labelEn": "Feldgrau",
+            "labelPl": "Feldgrau",
             "image": "/photos/nominal/nl-07-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
             "label": "Оксид білий",
+            "labelRu": "Оксид белый",
+            "labelEn": "Oxide white",
+            "labelPl": "Oksyd biały",
             "image": "/photos/nominal/nl-07-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
             "label": "Оксид світлий",
+            "labelRu": "Оксид светлый",
+            "labelEn": "Oxide light",
+            "labelPl": "Oksyd jasny",
             "image": "/photos/nominal/nl-07-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
             "label": "Оксид темний",
+            "labelRu": "Оксид тёмный",
+            "labelEn": "Oxide dark",
+            "labelPl": "Oksyd ciemny",
             "image": "/photos/nominal/nl-07-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
-            "label": "Венге",
+            "label": "Венге південне",
+            "labelRu": "Венге южное",
+            "labelEn": "Wenge southern",
+            "labelPl": "Wenge południowe",
             "image": "/photos/nominal/nl-07-venhe.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/nominal/nl-07-white.png"
           }
         ]
@@ -2121,61 +3240,97 @@
           {
             "slug": "antratsyt",
             "label": "Антрацит",
+            "labelRu": "Антрацит",
+            "labelEn": "Anthracite",
+            "labelPl": "Antracyt",
             "image": "/photos/nominal/nl-08-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
             "label": "Дуб немо лате",
+            "labelRu": "Дуб немо лате",
+            "labelEn": "Oak Nemo latte",
+            "labelPl": "Dąb Nemo latte",
             "image": "/photos/nominal/nl-08-dub-nemo-late.png"
           },
           {
             "slug": "dub-nemo-sribliastyi",
             "label": "Дуб немо сріблястий",
+            "labelRu": "Дуб немо серебристый",
+            "labelEn": "Oak Nemo silver",
+            "labelPl": "Dąb Nemo srebrny",
             "image": "/photos/nominal/nl-08-dub-nemo-sribliastyi.png"
           },
           {
             "slug": "dub-pasadena",
             "label": "Дуб пасадена",
+            "labelRu": "Дуб пасадена",
+            "labelEn": "Oak Pasadena",
+            "labelPl": "Dąb Pasadena",
             "image": "/photos/nominal/nl-08-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
             "label": "Дуб портовий",
+            "labelRu": "Дуб портовый",
+            "labelEn": "Oak Porto",
+            "labelPl": "Dąb portowy",
             "image": "/photos/nominal/nl-08-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
             "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/nominal/nl-08-dub-shato.png"
           },
           {
             "slug": "feldhrau",
             "label": "Фельдграу",
+            "labelRu": "Фельдграу",
+            "labelEn": "Feldgrau",
+            "labelPl": "Feldgrau",
             "image": "/photos/nominal/nl-08-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
             "label": "Оксид білий",
+            "labelRu": "Оксид белый",
+            "labelEn": "Oxide white",
+            "labelPl": "Oksyd biały",
             "image": "/photos/nominal/nl-08-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
             "label": "Оксид світлий",
+            "labelRu": "Оксид светлый",
+            "labelEn": "Oxide light",
+            "labelPl": "Oksyd jasny",
             "image": "/photos/nominal/nl-08-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
             "label": "Оксид темний",
+            "labelRu": "Оксид тёмный",
+            "labelEn": "Oxide dark",
+            "labelPl": "Oksyd ciemny",
             "image": "/photos/nominal/nl-08-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
-            "label": "Венге",
+            "label": "Венге південне",
+            "labelRu": "Венге южное",
+            "labelEn": "Wenge southern",
+            "labelPl": "Wenge południowe",
             "image": "/photos/nominal/nl-08-venhe.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/nominal/nl-08-white.png"
           }
         ]
@@ -2187,61 +3342,97 @@
           {
             "slug": "antratsyt",
             "label": "Антрацит",
+            "labelRu": "Антрацит",
+            "labelEn": "Anthracite",
+            "labelPl": "Antracyt",
             "image": "/photos/nominal/nl-09-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
             "label": "Дуб немо лате",
+            "labelRu": "Дуб немо лате",
+            "labelEn": "Oak Nemo latte",
+            "labelPl": "Dąb Nemo latte",
             "image": "/photos/nominal/nl-09-dub-nemo-late.png"
           },
           {
             "slug": "dub-nemo-sribliastyi",
             "label": "Дуб немо сріблястий",
+            "labelRu": "Дуб немо серебристый",
+            "labelEn": "Oak Nemo silver",
+            "labelPl": "Dąb Nemo srebrny",
             "image": "/photos/nominal/nl-09-dub-nemo-sribliastyi.png"
           },
           {
             "slug": "dub-pasadena",
             "label": "Дуб пасадена",
+            "labelRu": "Дуб пасадена",
+            "labelEn": "Oak Pasadena",
+            "labelPl": "Dąb Pasadena",
             "image": "/photos/nominal/nl-09-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
             "label": "Дуб портовий",
+            "labelRu": "Дуб портовый",
+            "labelEn": "Oak Porto",
+            "labelPl": "Dąb portowy",
             "image": "/photos/nominal/nl-09-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
             "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/nominal/nl-09-dub-shato.png"
           },
           {
             "slug": "feldhrau",
             "label": "Фельдграу",
+            "labelRu": "Фельдграу",
+            "labelEn": "Feldgrau",
+            "labelPl": "Feldgrau",
             "image": "/photos/nominal/nl-09-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
             "label": "Оксид білий",
+            "labelRu": "Оксид белый",
+            "labelEn": "Oxide white",
+            "labelPl": "Oksyd biały",
             "image": "/photos/nominal/nl-09-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
             "label": "Оксид світлий",
+            "labelRu": "Оксид светлый",
+            "labelEn": "Oxide light",
+            "labelPl": "Oksyd jasny",
             "image": "/photos/nominal/nl-09-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
             "label": "Оксид темний",
+            "labelRu": "Оксид тёмный",
+            "labelEn": "Oxide dark",
+            "labelPl": "Oksyd ciemny",
             "image": "/photos/nominal/nl-09-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
-            "label": "Венге",
+            "label": "Венге південне",
+            "labelRu": "Венге южное",
+            "labelEn": "Wenge southern",
+            "labelPl": "Wenge południowe",
             "image": "/photos/nominal/nl-09-venhe.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/nominal/nl-09-white.png"
           }
         ]
@@ -2253,61 +3444,97 @@
           {
             "slug": "antratsyt",
             "label": "Антрацит",
+            "labelRu": "Антрацит",
+            "labelEn": "Anthracite",
+            "labelPl": "Antracyt",
             "image": "/photos/nominal/nl-10-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
             "label": "Дуб немо лате",
+            "labelRu": "Дуб немо лате",
+            "labelEn": "Oak Nemo latte",
+            "labelPl": "Dąb Nemo latte",
             "image": "/photos/nominal/nl-10-dub-nemo-late.png"
           },
           {
             "slug": "dub-nemo-sribliastyi",
             "label": "Дуб немо сріблястий",
+            "labelRu": "Дуб немо серебристый",
+            "labelEn": "Oak Nemo silver",
+            "labelPl": "Dąb Nemo srebrny",
             "image": "/photos/nominal/nl-10-dub-nemo-sribliastyi.png"
           },
           {
             "slug": "dub-pasadena",
             "label": "Дуб пасадена",
+            "labelRu": "Дуб пасадена",
+            "labelEn": "Oak Pasadena",
+            "labelPl": "Dąb Pasadena",
             "image": "/photos/nominal/nl-10-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
             "label": "Дуб портовий",
+            "labelRu": "Дуб портовый",
+            "labelEn": "Oak Porto",
+            "labelPl": "Dąb portowy",
             "image": "/photos/nominal/nl-10-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
             "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/nominal/nl-10-dub-shato.png"
           },
           {
             "slug": "feldhrau",
             "label": "Фельдграу",
+            "labelRu": "Фельдграу",
+            "labelEn": "Feldgrau",
+            "labelPl": "Feldgrau",
             "image": "/photos/nominal/nl-10-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
             "label": "Оксид білий",
+            "labelRu": "Оксид белый",
+            "labelEn": "Oxide white",
+            "labelPl": "Oksyd biały",
             "image": "/photos/nominal/nl-10-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
             "label": "Оксид світлий",
+            "labelRu": "Оксид светлый",
+            "labelEn": "Oxide light",
+            "labelPl": "Oksyd jasny",
             "image": "/photos/nominal/nl-10-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
             "label": "Оксид темний",
+            "labelRu": "Оксид тёмный",
+            "labelEn": "Oxide dark",
+            "labelPl": "Oksyd ciemny",
             "image": "/photos/nominal/nl-10-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
-            "label": "Венге",
+            "label": "Венге південне",
+            "labelRu": "Венге южное",
+            "labelEn": "Wenge southern",
+            "labelPl": "Wenge południowe",
             "image": "/photos/nominal/nl-10-venhe.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/nominal/nl-10-white.png"
           }
         ]
@@ -2365,74 +3592,98 @@
         "colors": [
           {
             "slug": "antratsyt",
-            "label": "антрацит",
+            "label": "Антрацит",
+            "labelRu": "Антрацит",
             "labelEn": "Anthracite",
+            "labelPl": "Antracyt",
             "image": "/photos/frezzatti/fz-01-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
-            "label": "дуб немо лате",
-            "labelEn": "Nemo oak late",
+            "label": "Дуб немо лате",
+            "labelRu": "Дуб немо лате",
+            "labelEn": "Oak Nemo latte",
+            "labelPl": "Dąb Nemo latte",
             "image": "/photos/frezzatti/fz-01-dub-nemo-late.png"
           },
           {
             "slug": "dub-pasadena",
-            "label": "дуб пасадена",
+            "label": "Дуб пасадена",
+            "labelRu": "Дуб пасадена",
             "labelEn": "Oak Pasadena",
+            "labelPl": "Dąb Pasadena",
             "image": "/photos/frezzatti/fz-01-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
-            "label": "дуб портовий",
-            "labelEn": "Oak port",
+            "label": "Дуб портовий",
+            "labelRu": "Дуб портовый",
+            "labelEn": "Oak Porto",
+            "labelPl": "Dąb portowy",
             "image": "/photos/frezzatti/fz-01-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
             "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/frezzatti/fz-01-dub-shato.png"
           },
           {
             "slug": "dub-sribliastyi",
-            "label": "дуб сріблястий",
-            "labelEn": "Nemo oak silver",
+            "label": "Дуб немо сріблястий",
+            "labelRu": "Дуб немо серебристый",
+            "labelEn": "Oak Nemo silver",
+            "labelPl": "Dąb Nemo srebrny",
             "image": "/photos/frezzatti/fz-01-dub-sribliastyi.png"
           },
           {
             "slug": "feldhrau",
-            "label": "фельдграу",
+            "label": "Фельдграу",
+            "labelRu": "Фельдграу",
             "labelEn": "Feldgrau",
+            "labelPl": "Feldgrau",
             "image": "/photos/frezzatti/fz-01-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
-            "label": "оксид білий",
+            "label": "Оксид білий",
+            "labelRu": "Оксид белый",
             "labelEn": "Oxide white",
+            "labelPl": "Oksyd biały",
             "image": "/photos/frezzatti/fz-01-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
-            "label": "оксид світлий",
+            "label": "Оксид світлий",
+            "labelRu": "Оксид светлый",
             "labelEn": "Oxide light",
+            "labelPl": "Oksyd jasny",
             "image": "/photos/frezzatti/fz-01-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
-            "label": "оксид темний",
+            "label": "Оксид темний",
+            "labelRu": "Оксид тёмный",
             "labelEn": "Oxide dark",
+            "labelPl": "Oksyd ciemny",
             "image": "/photos/frezzatti/fz-01-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
-            "label": "венге",
+            "label": "Венге південне",
+            "labelRu": "Венге южное",
             "labelEn": "Wenge southern",
+            "labelPl": "Wenge południowe",
             "image": "/photos/frezzatti/fz-01-venhe.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
             "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/frezzatti/fz-01-white.png"
           }
         ],
@@ -2444,74 +3695,98 @@
         "colors": [
           {
             "slug": "antratsyt",
-            "label": "антрацит",
+            "label": "Антрацит",
+            "labelRu": "Антрацит",
             "labelEn": "Anthracite",
+            "labelPl": "Antracyt",
             "image": "/photos/frezzatti/fz-02-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
-            "label": "дуб немо лате",
-            "labelEn": "Nemo oak late",
+            "label": "Дуб немо лате",
+            "labelRu": "Дуб немо лате",
+            "labelEn": "Oak Nemo latte",
+            "labelPl": "Dąb Nemo latte",
             "image": "/photos/frezzatti/fz-02-dub-nemo-late.png"
           },
           {
             "slug": "dub-pasadena",
-            "label": "дуб пасадена",
+            "label": "Дуб пасадена",
+            "labelRu": "Дуб пасадена",
             "labelEn": "Oak Pasadena",
+            "labelPl": "Dąb Pasadena",
             "image": "/photos/frezzatti/fz-02-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
-            "label": "дуб портовий",
-            "labelEn": "Oak port",
+            "label": "Дуб портовий",
+            "labelRu": "Дуб портовый",
+            "labelEn": "Oak Porto",
+            "labelPl": "Dąb portowy",
             "image": "/photos/frezzatti/fz-02-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
             "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/frezzatti/fz-02-dub-shato.png"
           },
           {
             "slug": "dub-sribliastyi",
-            "label": "дуб сріблястий",
-            "labelEn": "Nemo oak silver",
+            "label": "Дуб немо сріблястий",
+            "labelRu": "Дуб немо серебристый",
+            "labelEn": "Oak Nemo silver",
+            "labelPl": "Dąb Nemo srebrny",
             "image": "/photos/frezzatti/fz-02-dub-sribliastyi.png"
           },
           {
             "slug": "feldhrau",
-            "label": "фельдграу",
+            "label": "Фельдграу",
+            "labelRu": "Фельдграу",
             "labelEn": "Feldgrau",
+            "labelPl": "Feldgrau",
             "image": "/photos/frezzatti/fz-02-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
-            "label": "оксид білий",
+            "label": "Оксид білий",
+            "labelRu": "Оксид белый",
             "labelEn": "Oxide white",
+            "labelPl": "Oksyd biały",
             "image": "/photos/frezzatti/fz-02-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
-            "label": "оксид світлий",
+            "label": "Оксид світлий",
+            "labelRu": "Оксид светлый",
             "labelEn": "Oxide light",
+            "labelPl": "Oksyd jasny",
             "image": "/photos/frezzatti/fz-02-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
-            "label": "оксид темний",
+            "label": "Оксид темний",
+            "labelRu": "Оксид тёмный",
             "labelEn": "Oxide dark",
+            "labelPl": "Oksyd ciemny",
             "image": "/photos/frezzatti/fz-02-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
-            "label": "венге",
+            "label": "Венге південне",
+            "labelRu": "Венге южное",
             "labelEn": "Wenge southern",
+            "labelPl": "Wenge południowe",
             "image": "/photos/frezzatti/fz-02-venhe.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
             "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/frezzatti/fz-02-white.png"
           }
         ],
@@ -2523,74 +3798,98 @@
         "colors": [
           {
             "slug": "antratsyt",
-            "label": "антрацит",
+            "label": "Антрацит",
+            "labelRu": "Антрацит",
             "labelEn": "Anthracite",
+            "labelPl": "Antracyt",
             "image": "/photos/frezzatti/fz-03-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
-            "label": "дуб немо лате",
-            "labelEn": "Nemo oak late",
+            "label": "Дуб немо лате",
+            "labelRu": "Дуб немо лате",
+            "labelEn": "Oak Nemo latte",
+            "labelPl": "Dąb Nemo latte",
             "image": "/photos/frezzatti/fz-03-dub-nemo-late.png"
           },
           {
             "slug": "dub-pasadena",
-            "label": "дуб пасадена",
+            "label": "Дуб пасадена",
+            "labelRu": "Дуб пасадена",
             "labelEn": "Oak Pasadena",
+            "labelPl": "Dąb Pasadena",
             "image": "/photos/frezzatti/fz-03-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
-            "label": "дуб портовий",
-            "labelEn": "Oak port",
+            "label": "Дуб портовий",
+            "labelRu": "Дуб портовый",
+            "labelEn": "Oak Porto",
+            "labelPl": "Dąb portowy",
             "image": "/photos/frezzatti/fz-03-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
             "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/frezzatti/fz-03-dub-shato.png"
           },
           {
             "slug": "dub-sribliastyi",
-            "label": "дуб сріблястий",
-            "labelEn": "Nemo oak silver",
+            "label": "Дуб немо сріблястий",
+            "labelRu": "Дуб немо серебристый",
+            "labelEn": "Oak Nemo silver",
+            "labelPl": "Dąb Nemo srebrny",
             "image": "/photos/frezzatti/fz-03-dub-sribliastyi.png"
           },
           {
             "slug": "feldhrau",
-            "label": "фельдграу",
+            "label": "Фельдграу",
+            "labelRu": "Фельдграу",
             "labelEn": "Feldgrau",
+            "labelPl": "Feldgrau",
             "image": "/photos/frezzatti/fz-03-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
-            "label": "оксид білий",
+            "label": "Оксид білий",
+            "labelRu": "Оксид белый",
             "labelEn": "Oxide white",
+            "labelPl": "Oksyd biały",
             "image": "/photos/frezzatti/fz-03-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
-            "label": "оксид світлий",
+            "label": "Оксид світлий",
+            "labelRu": "Оксид светлый",
             "labelEn": "Oxide light",
+            "labelPl": "Oksyd jasny",
             "image": "/photos/frezzatti/fz-03-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
-            "label": "оксид темний",
+            "label": "Оксид темний",
+            "labelRu": "Оксид тёмный",
             "labelEn": "Oxide dark",
+            "labelPl": "Oksyd ciemny",
             "image": "/photos/frezzatti/fz-03-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
-            "label": "венге",
+            "label": "Венге південне",
+            "labelRu": "Венге южное",
             "labelEn": "Wenge southern",
+            "labelPl": "Wenge południowe",
             "image": "/photos/frezzatti/fz-03-venhe.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
             "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/frezzatti/fz-03-white.png"
           }
         ],
@@ -2602,74 +3901,98 @@
         "colors": [
           {
             "slug": "antratsyt",
-            "label": "антрацит",
+            "label": "Антрацит",
+            "labelRu": "Антрацит",
             "labelEn": "Anthracite",
+            "labelPl": "Antracyt",
             "image": "/photos/frezzatti/fz-04-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
-            "label": "дуб немо лате",
-            "labelEn": "Nemo oak late",
+            "label": "Дуб немо лате",
+            "labelRu": "Дуб немо лате",
+            "labelEn": "Oak Nemo latte",
+            "labelPl": "Dąb Nemo latte",
             "image": "/photos/frezzatti/fz-04-dub-nemo-late.png"
           },
           {
             "slug": "dub-pasadena",
-            "label": "дуб пасадена",
+            "label": "Дуб пасадена",
+            "labelRu": "Дуб пасадена",
             "labelEn": "Oak Pasadena",
+            "labelPl": "Dąb Pasadena",
             "image": "/photos/frezzatti/fz-04-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
-            "label": "дуб портовий",
-            "labelEn": "Oak port",
+            "label": "Дуб портовий",
+            "labelRu": "Дуб портовый",
+            "labelEn": "Oak Porto",
+            "labelPl": "Dąb portowy",
             "image": "/photos/frezzatti/fz-04-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
             "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/frezzatti/fz-04-dub-shato.png"
           },
           {
             "slug": "dub-sribliastyi",
-            "label": "дуб сріблястий",
-            "labelEn": "Nemo oak silver",
+            "label": "Дуб немо сріблястий",
+            "labelRu": "Дуб немо серебристый",
+            "labelEn": "Oak Nemo silver",
+            "labelPl": "Dąb Nemo srebrny",
             "image": "/photos/frezzatti/fz-04-dub-sribliastyi.png"
           },
           {
             "slug": "feldhrau",
-            "label": "фельдграу",
+            "label": "Фельдграу",
+            "labelRu": "Фельдграу",
             "labelEn": "Feldgrau",
+            "labelPl": "Feldgrau",
             "image": "/photos/frezzatti/fz-04-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
-            "label": "оксид білий",
+            "label": "Оксид білий",
+            "labelRu": "Оксид белый",
             "labelEn": "Oxide white",
+            "labelPl": "Oksyd biały",
             "image": "/photos/frezzatti/fz-04-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
-            "label": "оксид світлий",
+            "label": "Оксид світлий",
+            "labelRu": "Оксид светлый",
             "labelEn": "Oxide light",
+            "labelPl": "Oksyd jasny",
             "image": "/photos/frezzatti/fz-04-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
-            "label": "оксид темний",
+            "label": "Оксид темний",
+            "labelRu": "Оксид тёмный",
             "labelEn": "Oxide dark",
+            "labelPl": "Oksyd ciemny",
             "image": "/photos/frezzatti/fz-04-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
-            "label": "венге",
+            "label": "Венге південне",
+            "labelRu": "Венге южное",
             "labelEn": "Wenge southern",
+            "labelPl": "Wenge południowe",
             "image": "/photos/frezzatti/fz-04-venhe.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
             "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/frezzatti/fz-04-white.png"
           }
         ],
@@ -2681,74 +4004,98 @@
         "colors": [
           {
             "slug": "antratsyt",
-            "label": "антрацит",
+            "label": "Антрацит",
+            "labelRu": "Антрацит",
             "labelEn": "Anthracite",
+            "labelPl": "Antracyt",
             "image": "/photos/frezzatti/fz-05-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
-            "label": "дуб немо лате",
-            "labelEn": "Nemo oak late",
+            "label": "Дуб немо лате",
+            "labelRu": "Дуб немо лате",
+            "labelEn": "Oak Nemo latte",
+            "labelPl": "Dąb Nemo latte",
             "image": "/photos/frezzatti/fz-05-dub-nemo-late.png"
           },
           {
             "slug": "dub-pasadena",
-            "label": "дуб пасадена",
+            "label": "Дуб пасадена",
+            "labelRu": "Дуб пасадена",
             "labelEn": "Oak Pasadena",
+            "labelPl": "Dąb Pasadena",
             "image": "/photos/frezzatti/fz-05-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
-            "label": "дуб портовий",
-            "labelEn": "Oak port",
+            "label": "Дуб портовий",
+            "labelRu": "Дуб портовый",
+            "labelEn": "Oak Porto",
+            "labelPl": "Dąb portowy",
             "image": "/photos/frezzatti/fz-05-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
             "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/frezzatti/fz-05-dub-shato.png"
           },
           {
             "slug": "dub-sribliastyi",
-            "label": "дуб сріблястий",
-            "labelEn": "Nemo oak silver",
+            "label": "Дуб немо сріблястий",
+            "labelRu": "Дуб немо серебристый",
+            "labelEn": "Oak Nemo silver",
+            "labelPl": "Dąb Nemo srebrny",
             "image": "/photos/frezzatti/fz-05-dub-sribliastyi.png"
           },
           {
             "slug": "feldhrau",
-            "label": "фельдграу",
+            "label": "Фельдграу",
+            "labelRu": "Фельдграу",
             "labelEn": "Feldgrau",
+            "labelPl": "Feldgrau",
             "image": "/photos/frezzatti/fz-05-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
-            "label": "оксид білий",
+            "label": "Оксид білий",
+            "labelRu": "Оксид белый",
             "labelEn": "Oxide white",
+            "labelPl": "Oksyd biały",
             "image": "/photos/frezzatti/fz-05-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
-            "label": "оксид світлий",
+            "label": "Оксид світлий",
+            "labelRu": "Оксид светлый",
             "labelEn": "Oxide light",
+            "labelPl": "Oksyd jasny",
             "image": "/photos/frezzatti/fz-05-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
-            "label": "оксид темний",
+            "label": "Оксид темний",
+            "labelRu": "Оксид тёмный",
             "labelEn": "Oxide dark",
+            "labelPl": "Oksyd ciemny",
             "image": "/photos/frezzatti/fz-05-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
-            "label": "венге",
+            "label": "Венге південне",
+            "labelRu": "Венге южное",
             "labelEn": "Wenge southern",
+            "labelPl": "Wenge południowe",
             "image": "/photos/frezzatti/fz-05-venhe.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
             "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/frezzatti/fz-05-white.png"
           }
         ],
@@ -2760,74 +4107,98 @@
         "colors": [
           {
             "slug": "antratsyt",
-            "label": "антрацит",
+            "label": "Антрацит",
+            "labelRu": "Антрацит",
             "labelEn": "Anthracite",
+            "labelPl": "Antracyt",
             "image": "/photos/frezzatti/fz-06-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
-            "label": "дуб немо лате",
-            "labelEn": "Nemo oak late",
+            "label": "Дуб немо лате",
+            "labelRu": "Дуб немо лате",
+            "labelEn": "Oak Nemo latte",
+            "labelPl": "Dąb Nemo latte",
             "image": "/photos/frezzatti/fz-06-dub-nemo-late.png"
           },
           {
             "slug": "dub-pasadena",
-            "label": "дуб пасадена",
+            "label": "Дуб пасадена",
+            "labelRu": "Дуб пасадена",
             "labelEn": "Oak Pasadena",
+            "labelPl": "Dąb Pasadena",
             "image": "/photos/frezzatti/fz-06-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
-            "label": "дуб портовий",
-            "labelEn": "Oak port",
+            "label": "Дуб портовий",
+            "labelRu": "Дуб портовый",
+            "labelEn": "Oak Porto",
+            "labelPl": "Dąb portowy",
             "image": "/photos/frezzatti/fz-06-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
             "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/frezzatti/fz-06-dub-shato.png"
           },
           {
             "slug": "dub-sribliastyi",
-            "label": "дуб сріблястий",
-            "labelEn": "Nemo oak silver",
+            "label": "Дуб немо сріблястий",
+            "labelRu": "Дуб немо серебристый",
+            "labelEn": "Oak Nemo silver",
+            "labelPl": "Dąb Nemo srebrny",
             "image": "/photos/frezzatti/fz-06-dub-sribliastyi.png"
           },
           {
             "slug": "feldhrau",
-            "label": "фельдграу",
+            "label": "Фельдграу",
+            "labelRu": "Фельдграу",
             "labelEn": "Feldgrau",
+            "labelPl": "Feldgrau",
             "image": "/photos/frezzatti/fz-06-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
-            "label": "оксид білий",
+            "label": "Оксид білий",
+            "labelRu": "Оксид белый",
             "labelEn": "Oxide white",
+            "labelPl": "Oksyd biały",
             "image": "/photos/frezzatti/fz-06-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
-            "label": "оксид світлий",
+            "label": "Оксид світлий",
+            "labelRu": "Оксид светлый",
             "labelEn": "Oxide light",
+            "labelPl": "Oksyd jasny",
             "image": "/photos/frezzatti/fz-06-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
-            "label": "оксид темний",
+            "label": "Оксид темний",
+            "labelRu": "Оксид тёмный",
             "labelEn": "Oxide dark",
+            "labelPl": "Oksyd ciemny",
             "image": "/photos/frezzatti/fz-06-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
-            "label": "венге",
+            "label": "Венге південне",
+            "labelRu": "Венге южное",
             "labelEn": "Wenge southern",
+            "labelPl": "Wenge południowe",
             "image": "/photos/frezzatti/fz-06-venhe.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
             "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/frezzatti/fz-06-white.png"
           }
         ],
@@ -2839,74 +4210,98 @@
         "colors": [
           {
             "slug": "antratsyt",
-            "label": "антрацит",
+            "label": "Антрацит",
+            "labelRu": "Антрацит",
             "labelEn": "Anthracite",
+            "labelPl": "Antracyt",
             "image": "/photos/frezzatti/fz-07-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
-            "label": "дуб немо лате",
-            "labelEn": "Nemo oak late",
+            "label": "Дуб немо лате",
+            "labelRu": "Дуб немо лате",
+            "labelEn": "Oak Nemo latte",
+            "labelPl": "Dąb Nemo latte",
             "image": "/photos/frezzatti/fz-07-dub-nemo-late.png"
           },
           {
             "slug": "dub-pasadena",
-            "label": "дуб пасадена",
+            "label": "Дуб пасадена",
+            "labelRu": "Дуб пасадена",
             "labelEn": "Oak Pasadena",
+            "labelPl": "Dąb Pasadena",
             "image": "/photos/frezzatti/fz-07-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
-            "label": "дуб портовий",
-            "labelEn": "Oak port",
+            "label": "Дуб портовий",
+            "labelRu": "Дуб портовый",
+            "labelEn": "Oak Porto",
+            "labelPl": "Dąb portowy",
             "image": "/photos/frezzatti/fz-07-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
             "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/frezzatti/fz-07-dub-shato.png"
           },
           {
             "slug": "dub-sribliastyi",
-            "label": "дуб сріблястий",
-            "labelEn": "Nemo oak silver",
+            "label": "Дуб немо сріблястий",
+            "labelRu": "Дуб немо серебристый",
+            "labelEn": "Oak Nemo silver",
+            "labelPl": "Dąb Nemo srebrny",
             "image": "/photos/frezzatti/fz-07-dub-sribliastyi.png"
           },
           {
             "slug": "feldhrau",
-            "label": "фельдграу",
+            "label": "Фельдграу",
+            "labelRu": "Фельдграу",
             "labelEn": "Feldgrau",
+            "labelPl": "Feldgrau",
             "image": "/photos/frezzatti/fz-07-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
-            "label": "оксид білий",
+            "label": "Оксид білий",
+            "labelRu": "Оксид белый",
             "labelEn": "Oxide white",
+            "labelPl": "Oksyd biały",
             "image": "/photos/frezzatti/fz-07-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
-            "label": "оксид світлий",
+            "label": "Оксид світлий",
+            "labelRu": "Оксид светлый",
             "labelEn": "Oxide light",
+            "labelPl": "Oksyd jasny",
             "image": "/photos/frezzatti/fz-07-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
-            "label": "оксид темний",
+            "label": "Оксид темний",
+            "labelRu": "Оксид тёмный",
             "labelEn": "Oxide dark",
+            "labelPl": "Oksyd ciemny",
             "image": "/photos/frezzatti/fz-07-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
-            "label": "венге",
+            "label": "Венге південне",
+            "labelRu": "Венге южное",
             "labelEn": "Wenge southern",
+            "labelPl": "Wenge południowe",
             "image": "/photos/frezzatti/fz-07-venhe.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
             "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/frezzatti/fz-07-white.png"
           }
         ],
@@ -2918,74 +4313,98 @@
         "colors": [
           {
             "slug": "antratsyt",
-            "label": "антрацит",
+            "label": "Антрацит",
+            "labelRu": "Антрацит",
             "labelEn": "Anthracite",
+            "labelPl": "Antracyt",
             "image": "/photos/frezzatti/fz-08-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
-            "label": "дуб немо лате",
-            "labelEn": "Nemo oak late",
+            "label": "Дуб немо лате",
+            "labelRu": "Дуб немо лате",
+            "labelEn": "Oak Nemo latte",
+            "labelPl": "Dąb Nemo latte",
             "image": "/photos/frezzatti/fz-08-dub-nemo-late.png"
           },
           {
             "slug": "dub-pasadena",
-            "label": "дуб пасадена",
+            "label": "Дуб пасадена",
+            "labelRu": "Дуб пасадена",
             "labelEn": "Oak Pasadena",
+            "labelPl": "Dąb Pasadena",
             "image": "/photos/frezzatti/fz-08-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
-            "label": "дуб портовий",
-            "labelEn": "Oak port",
+            "label": "Дуб портовий",
+            "labelRu": "Дуб портовый",
+            "labelEn": "Oak Porto",
+            "labelPl": "Dąb portowy",
             "image": "/photos/frezzatti/fz-08-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
             "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/frezzatti/fz-08-dub-shato.png"
           },
           {
             "slug": "dub-sribliastyi",
-            "label": "дуб сріблястий",
-            "labelEn": "Nemo oak silver",
+            "label": "Дуб немо сріблястий",
+            "labelRu": "Дуб немо серебристый",
+            "labelEn": "Oak Nemo silver",
+            "labelPl": "Dąb Nemo srebrny",
             "image": "/photos/frezzatti/fz-08-dub-sribliastyi.png"
           },
           {
             "slug": "feldhrau",
-            "label": "фельдграу",
+            "label": "Фельдграу",
+            "labelRu": "Фельдграу",
             "labelEn": "Feldgrau",
+            "labelPl": "Feldgrau",
             "image": "/photos/frezzatti/fz-08-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
-            "label": "оксид білий",
+            "label": "Оксид білий",
+            "labelRu": "Оксид белый",
             "labelEn": "Oxide white",
+            "labelPl": "Oksyd biały",
             "image": "/photos/frezzatti/fz-08-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
-            "label": "оксид світлий",
+            "label": "Оксид світлий",
+            "labelRu": "Оксид светлый",
             "labelEn": "Oxide light",
+            "labelPl": "Oksyd jasny",
             "image": "/photos/frezzatti/fz-08-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
-            "label": "оксид темний",
+            "label": "Оксид темний",
+            "labelRu": "Оксид тёмный",
             "labelEn": "Oxide dark",
+            "labelPl": "Oksyd ciemny",
             "image": "/photos/frezzatti/fz-08-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
-            "label": "венге",
+            "label": "Венге південне",
+            "labelRu": "Венге южное",
             "labelEn": "Wenge southern",
+            "labelPl": "Wenge południowe",
             "image": "/photos/frezzatti/fz-08-venhe.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
             "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/frezzatti/fz-08-white.png"
           }
         ],
@@ -2997,74 +4416,98 @@
         "colors": [
           {
             "slug": "antratsyt",
-            "label": "антрацит",
+            "label": "Антрацит",
+            "labelRu": "Антрацит",
             "labelEn": "Anthracite",
+            "labelPl": "Antracyt",
             "image": "/photos/frezzatti/fz-09-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
-            "label": "дуб немо лате",
-            "labelEn": "Nemo oak late",
+            "label": "Дуб немо лате",
+            "labelRu": "Дуб немо лате",
+            "labelEn": "Oak Nemo latte",
+            "labelPl": "Dąb Nemo latte",
             "image": "/photos/frezzatti/fz-09-dub-nemo-late.png"
           },
           {
             "slug": "dub-pasadena",
-            "label": "дуб пасадена",
+            "label": "Дуб пасадена",
+            "labelRu": "Дуб пасадена",
             "labelEn": "Oak Pasadena",
+            "labelPl": "Dąb Pasadena",
             "image": "/photos/frezzatti/fz-09-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
-            "label": "дуб портовий",
-            "labelEn": "Oak port",
+            "label": "Дуб портовий",
+            "labelRu": "Дуб портовый",
+            "labelEn": "Oak Porto",
+            "labelPl": "Dąb portowy",
             "image": "/photos/frezzatti/fz-09-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
             "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/frezzatti/fz-09-dub-shato.png"
           },
           {
             "slug": "dub-sribliastyi",
-            "label": "дуб сріблястий",
-            "labelEn": "Nemo oak silver",
+            "label": "Дуб немо сріблястий",
+            "labelRu": "Дуб немо серебристый",
+            "labelEn": "Oak Nemo silver",
+            "labelPl": "Dąb Nemo srebrny",
             "image": "/photos/frezzatti/fz-09-dub-sribliastyi.png"
           },
           {
             "slug": "feldhrau",
-            "label": "фельдграу",
+            "label": "Фельдграу",
+            "labelRu": "Фельдграу",
             "labelEn": "Feldgrau",
+            "labelPl": "Feldgrau",
             "image": "/photos/frezzatti/fz-09-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
-            "label": "оксид білий",
+            "label": "Оксид білий",
+            "labelRu": "Оксид белый",
             "labelEn": "Oxide white",
+            "labelPl": "Oksyd biały",
             "image": "/photos/frezzatti/fz-09-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
-            "label": "оксид світлий",
+            "label": "Оксид світлий",
+            "labelRu": "Оксид светлый",
             "labelEn": "Oxide light",
+            "labelPl": "Oksyd jasny",
             "image": "/photos/frezzatti/fz-09-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
-            "label": "оксид темний",
+            "label": "Оксид темний",
+            "labelRu": "Оксид тёмный",
             "labelEn": "Oxide dark",
+            "labelPl": "Oksyd ciemny",
             "image": "/photos/frezzatti/fz-09-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
-            "label": "венге",
+            "label": "Венге південне",
+            "labelRu": "Венге южное",
             "labelEn": "Wenge southern",
+            "labelPl": "Wenge południowe",
             "image": "/photos/frezzatti/fz-09-venhe.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
             "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/frezzatti/fz-09-white.png"
           }
         ],
@@ -3076,74 +4519,98 @@
         "colors": [
           {
             "slug": "antratsyt",
-            "label": "антрацит",
+            "label": "Антрацит",
+            "labelRu": "Антрацит",
             "labelEn": "Anthracite",
+            "labelPl": "Antracyt",
             "image": "/photos/frezzatti/fz-10-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
-            "label": "дуб немо лате",
-            "labelEn": "Nemo oak late",
+            "label": "Дуб немо лате",
+            "labelRu": "Дуб немо лате",
+            "labelEn": "Oak Nemo latte",
+            "labelPl": "Dąb Nemo latte",
             "image": "/photos/frezzatti/fz-10-dub-nemo-late.png"
           },
           {
             "slug": "dub-pasadena",
-            "label": "дуб пасадена",
+            "label": "Дуб пасадена",
+            "labelRu": "Дуб пасадена",
             "labelEn": "Oak Pasadena",
+            "labelPl": "Dąb Pasadena",
             "image": "/photos/frezzatti/fz-10-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
-            "label": "дуб портовий",
-            "labelEn": "Oak port",
+            "label": "Дуб портовий",
+            "labelRu": "Дуб портовый",
+            "labelEn": "Oak Porto",
+            "labelPl": "Dąb portowy",
             "image": "/photos/frezzatti/fz-10-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
             "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/frezzatti/fz-10-dub-shato.png"
           },
           {
             "slug": "dub-sribliastyi",
-            "label": "дуб сріблястий",
-            "labelEn": "Nemo oak silver",
+            "label": "Дуб немо сріблястий",
+            "labelRu": "Дуб немо серебристый",
+            "labelEn": "Oak Nemo silver",
+            "labelPl": "Dąb Nemo srebrny",
             "image": "/photos/frezzatti/fz-10-dub-sribliastyi.png"
           },
           {
             "slug": "feldhrau",
-            "label": "фельдграу",
+            "label": "Фельдграу",
+            "labelRu": "Фельдграу",
             "labelEn": "Feldgrau",
+            "labelPl": "Feldgrau",
             "image": "/photos/frezzatti/fz-10-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
-            "label": "оксид білий",
+            "label": "Оксид білий",
+            "labelRu": "Оксид белый",
             "labelEn": "Oxide white",
+            "labelPl": "Oksyd biały",
             "image": "/photos/frezzatti/fz-10-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
-            "label": "оксид світлий",
+            "label": "Оксид світлий",
+            "labelRu": "Оксид светлый",
             "labelEn": "Oxide light",
+            "labelPl": "Oksyd jasny",
             "image": "/photos/frezzatti/fz-10-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
-            "label": "оксид темний",
+            "label": "Оксид темний",
+            "labelRu": "Оксид тёмный",
             "labelEn": "Oxide dark",
+            "labelPl": "Oksyd ciemny",
             "image": "/photos/frezzatti/fz-10-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
-            "label": "венге",
+            "label": "Венге південне",
+            "labelRu": "Венге южное",
             "labelEn": "Wenge southern",
+            "labelPl": "Wenge południowe",
             "image": "/photos/frezzatti/fz-10-venhe.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
             "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/frezzatti/fz-10-white.png"
           }
         ],
@@ -3155,74 +4622,98 @@
         "colors": [
           {
             "slug": "antratsyt",
-            "label": "антрацит",
+            "label": "Антрацит",
+            "labelRu": "Антрацит",
             "labelEn": "Anthracite",
+            "labelPl": "Antracyt",
             "image": "/photos/frezzatti/fz-11-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
-            "label": "дуб немо лате",
-            "labelEn": "Nemo oak late",
+            "label": "Дуб немо лате",
+            "labelRu": "Дуб немо лате",
+            "labelEn": "Oak Nemo latte",
+            "labelPl": "Dąb Nemo latte",
             "image": "/photos/frezzatti/fz-11-dub-nemo-late.png"
           },
           {
             "slug": "dub-pasadena",
-            "label": "дуб пасадена",
+            "label": "Дуб пасадена",
+            "labelRu": "Дуб пасадена",
             "labelEn": "Oak Pasadena",
+            "labelPl": "Dąb Pasadena",
             "image": "/photos/frezzatti/fz-11-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
-            "label": "дуб портовий",
-            "labelEn": "Oak port",
+            "label": "Дуб портовий",
+            "labelRu": "Дуб портовый",
+            "labelEn": "Oak Porto",
+            "labelPl": "Dąb portowy",
             "image": "/photos/frezzatti/fz-11-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
             "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/frezzatti/fz-11-dub-shato.png"
           },
           {
             "slug": "dub-sribliastyi",
-            "label": "дуб сріблястий",
-            "labelEn": "Nemo oak silver",
+            "label": "Дуб немо сріблястий",
+            "labelRu": "Дуб немо серебристый",
+            "labelEn": "Oak Nemo silver",
+            "labelPl": "Dąb Nemo srebrny",
             "image": "/photos/frezzatti/fz-11-dub-sribliastyi.png"
           },
           {
             "slug": "feldhrau",
-            "label": "фельдграу",
+            "label": "Фельдграу",
+            "labelRu": "Фельдграу",
             "labelEn": "Feldgrau",
+            "labelPl": "Feldgrau",
             "image": "/photos/frezzatti/fz-11-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
-            "label": "оксид білий",
+            "label": "Оксид білий",
+            "labelRu": "Оксид белый",
             "labelEn": "Oxide white",
+            "labelPl": "Oksyd biały",
             "image": "/photos/frezzatti/fz-11-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
-            "label": "оксид світлий",
+            "label": "Оксид світлий",
+            "labelRu": "Оксид светлый",
             "labelEn": "Oxide light",
+            "labelPl": "Oksyd jasny",
             "image": "/photos/frezzatti/fz-11-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
-            "label": "оксид темний",
+            "label": "Оксид темний",
+            "labelRu": "Оксид тёмный",
             "labelEn": "Oxide dark",
+            "labelPl": "Oksyd ciemny",
             "image": "/photos/frezzatti/fz-11-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
-            "label": "венге",
+            "label": "Венге південне",
+            "labelRu": "Венге южное",
             "labelEn": "Wenge southern",
+            "labelPl": "Wenge południowe",
             "image": "/photos/frezzatti/fz-11-venhe.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
             "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/frezzatti/fz-11-white.png"
           }
         ],
@@ -3234,74 +4725,98 @@
         "colors": [
           {
             "slug": "antratsyt",
-            "label": "антрацит",
+            "label": "Антрацит",
+            "labelRu": "Антрацит",
             "labelEn": "Anthracite",
+            "labelPl": "Antracyt",
             "image": "/photos/frezzatti/fz-12-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
-            "label": "дуб немо лате",
-            "labelEn": "Nemo oak late",
+            "label": "Дуб немо лате",
+            "labelRu": "Дуб немо лате",
+            "labelEn": "Oak Nemo latte",
+            "labelPl": "Dąb Nemo latte",
             "image": "/photos/frezzatti/fz-12-dub-nemo-late.png"
           },
           {
             "slug": "dub-pasadena",
-            "label": "дуб пасадена",
+            "label": "Дуб пасадена",
+            "labelRu": "Дуб пасадена",
             "labelEn": "Oak Pasadena",
+            "labelPl": "Dąb Pasadena",
             "image": "/photos/frezzatti/fz-12-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
-            "label": "дуб портовий",
-            "labelEn": "Oak port",
+            "label": "Дуб портовий",
+            "labelRu": "Дуб портовый",
+            "labelEn": "Oak Porto",
+            "labelPl": "Dąb portowy",
             "image": "/photos/frezzatti/fz-12-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
             "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/frezzatti/fz-12-dub-shato.png"
           },
           {
             "slug": "dub-sribliastyi",
-            "label": "дуб сріблястий",
-            "labelEn": "Nemo oak silver",
+            "label": "Дуб немо сріблястий",
+            "labelRu": "Дуб немо серебристый",
+            "labelEn": "Oak Nemo silver",
+            "labelPl": "Dąb Nemo srebrny",
             "image": "/photos/frezzatti/fz-12-dub-sribliastyi.png"
           },
           {
             "slug": "feldhrau",
-            "label": "фельдграу",
+            "label": "Фельдграу",
+            "labelRu": "Фельдграу",
             "labelEn": "Feldgrau",
+            "labelPl": "Feldgrau",
             "image": "/photos/frezzatti/fz-12-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
-            "label": "оксид білий",
+            "label": "Оксид білий",
+            "labelRu": "Оксид белый",
             "labelEn": "Oxide white",
+            "labelPl": "Oksyd biały",
             "image": "/photos/frezzatti/fz-12-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
-            "label": "оксид світлий",
+            "label": "Оксид світлий",
+            "labelRu": "Оксид светлый",
             "labelEn": "Oxide light",
+            "labelPl": "Oksyd jasny",
             "image": "/photos/frezzatti/fz-12-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
-            "label": "оксид темний",
+            "label": "Оксид темний",
+            "labelRu": "Оксид тёмный",
             "labelEn": "Oxide dark",
+            "labelPl": "Oksyd ciemny",
             "image": "/photos/frezzatti/fz-12-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
-            "label": "венге",
+            "label": "Венге південне",
+            "labelRu": "Венге южное",
             "labelEn": "Wenge southern",
+            "labelPl": "Wenge południowe",
             "image": "/photos/frezzatti/fz-12-venhe.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
             "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/frezzatti/fz-12-white.png"
           }
         ],
@@ -3313,74 +4828,98 @@
         "colors": [
           {
             "slug": "antratsyt",
-            "label": "антрацит",
+            "label": "Антрацит",
+            "labelRu": "Антрацит",
             "labelEn": "Anthracite",
+            "labelPl": "Antracyt",
             "image": "/photos/frezzatti/fz-13-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
-            "label": "дуб немо лате",
-            "labelEn": "Nemo oak late",
+            "label": "Дуб немо лате",
+            "labelRu": "Дуб немо лате",
+            "labelEn": "Oak Nemo latte",
+            "labelPl": "Dąb Nemo latte",
             "image": "/photos/frezzatti/fz-13-dub-nemo-late.png"
           },
           {
             "slug": "dub-pasadena",
-            "label": "дуб пасадена",
+            "label": "Дуб пасадена",
+            "labelRu": "Дуб пасадена",
             "labelEn": "Oak Pasadena",
+            "labelPl": "Dąb Pasadena",
             "image": "/photos/frezzatti/fz-13-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
-            "label": "дуб портовий",
-            "labelEn": "Oak port",
+            "label": "Дуб портовий",
+            "labelRu": "Дуб портовый",
+            "labelEn": "Oak Porto",
+            "labelPl": "Dąb portowy",
             "image": "/photos/frezzatti/fz-13-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
             "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/frezzatti/fz-13-dub-shato.png"
           },
           {
             "slug": "dub-sribliastyi",
-            "label": "дуб сріблястий",
-            "labelEn": "Nemo oak silver",
+            "label": "Дуб немо сріблястий",
+            "labelRu": "Дуб немо серебристый",
+            "labelEn": "Oak Nemo silver",
+            "labelPl": "Dąb Nemo srebrny",
             "image": "/photos/frezzatti/fz-13-dub-sribliastyi.png"
           },
           {
             "slug": "feldhrau",
-            "label": "фельдграу",
+            "label": "Фельдграу",
+            "labelRu": "Фельдграу",
             "labelEn": "Feldgrau",
+            "labelPl": "Feldgrau",
             "image": "/photos/frezzatti/fz-13-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
-            "label": "оксид білий",
+            "label": "Оксид білий",
+            "labelRu": "Оксид белый",
             "labelEn": "Oxide white",
+            "labelPl": "Oksyd biały",
             "image": "/photos/frezzatti/fz-13-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
-            "label": "оксид світлий",
+            "label": "Оксид світлий",
+            "labelRu": "Оксид светлый",
             "labelEn": "Oxide light",
+            "labelPl": "Oksyd jasny",
             "image": "/photos/frezzatti/fz-13-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
-            "label": "оксид темний",
+            "label": "Оксид темний",
+            "labelRu": "Оксид тёмный",
             "labelEn": "Oxide dark",
+            "labelPl": "Oksyd ciemny",
             "image": "/photos/frezzatti/fz-13-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
-            "label": "венге",
+            "label": "Венге південне",
+            "labelRu": "Венге южное",
             "labelEn": "Wenge southern",
+            "labelPl": "Wenge południowe",
             "image": "/photos/frezzatti/fz-13-venhe.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
             "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/frezzatti/fz-13-white.png"
           }
         ],
@@ -3392,74 +4931,98 @@
         "colors": [
           {
             "slug": "antratsyt",
-            "label": "антрацит",
+            "label": "Антрацит",
+            "labelRu": "Антрацит",
             "labelEn": "Anthracite",
+            "labelPl": "Antracyt",
             "image": "/photos/frezzatti/fz-14-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
-            "label": "дуб немо лате",
-            "labelEn": "Nemo oak late",
+            "label": "Дуб немо лате",
+            "labelRu": "Дуб немо лате",
+            "labelEn": "Oak Nemo latte",
+            "labelPl": "Dąb Nemo latte",
             "image": "/photos/frezzatti/fz-14-dub-nemo-late.png"
           },
           {
             "slug": "dub-pasadena",
-            "label": "дуб пасадена",
+            "label": "Дуб пасадена",
+            "labelRu": "Дуб пасадена",
             "labelEn": "Oak Pasadena",
+            "labelPl": "Dąb Pasadena",
             "image": "/photos/frezzatti/fz-14-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
-            "label": "дуб портовий",
-            "labelEn": "Oak port",
+            "label": "Дуб портовий",
+            "labelRu": "Дуб портовый",
+            "labelEn": "Oak Porto",
+            "labelPl": "Dąb portowy",
             "image": "/photos/frezzatti/fz-14-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
             "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/frezzatti/fz-14-dub-shato.png"
           },
           {
             "slug": "dub-sribliastyi",
-            "label": "дуб сріблястий",
-            "labelEn": "Nemo oak silver",
+            "label": "Дуб немо сріблястий",
+            "labelRu": "Дуб немо серебристый",
+            "labelEn": "Oak Nemo silver",
+            "labelPl": "Dąb Nemo srebrny",
             "image": "/photos/frezzatti/fz-14-dub-sribliastyi.png"
           },
           {
             "slug": "feldhrau",
-            "label": "фельдграу",
+            "label": "Фельдграу",
+            "labelRu": "Фельдграу",
             "labelEn": "Feldgrau",
+            "labelPl": "Feldgrau",
             "image": "/photos/frezzatti/fz-14-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
-            "label": "оксид білий",
+            "label": "Оксид білий",
+            "labelRu": "Оксид белый",
             "labelEn": "Oxide white",
+            "labelPl": "Oksyd biały",
             "image": "/photos/frezzatti/fz-14-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
-            "label": "оксид світлий",
+            "label": "Оксид світлий",
+            "labelRu": "Оксид светлый",
             "labelEn": "Oxide light",
+            "labelPl": "Oksyd jasny",
             "image": "/photos/frezzatti/fz-14-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
-            "label": "оксид темний",
+            "label": "Оксид темний",
+            "labelRu": "Оксид тёмный",
             "labelEn": "Oxide dark",
+            "labelPl": "Oksyd ciemny",
             "image": "/photos/frezzatti/fz-14-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
-            "label": "венге",
+            "label": "Венге південне",
+            "labelRu": "Венге южное",
             "labelEn": "Wenge southern",
+            "labelPl": "Wenge południowe",
             "image": "/photos/frezzatti/fz-14-venhe.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
             "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/frezzatti/fz-14-white.png"
           }
         ],
@@ -3534,104 +5097,138 @@
         "colors": [
           {
             "slug": "astana-marle",
-            "label": "астана марле",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
             "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "beton-siryi",
-            "label": "бетон сірий",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
             "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "beton-snizhnyi",
-            "label": "бетон сніжний",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
             "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "beton-temnyi",
-            "label": "бетон темний",
+            "label": "Бетон темний",
+            "labelRu": "Бетон тёмный",
             "labelEn": "Concrete dark",
+            "labelPl": "Beton ciemny",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "bila-teksturna",
-            "label": "біла текстурна",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
             "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "chorna-korka",
-            "label": "чорна корка",
+            "label": "Чорна корка",
+            "labelRu": "Чёрная корка",
             "labelEn": "Black crust",
+            "labelPl": "Czarna kora",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "dub-hlazho-eko",
-            "label": "дуб глазго еко",
-            "labelEn": "Oak Glasgow IVF",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
             "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "karpatska-ialyna",
-            "label": "карпатська ялина",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
             "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "popeliastyi-softach",
-            "label": "попелястий софтач",
+            "label": "Попелястий софттач",
+            "labelRu": "Пепельный софттач",
             "labelEn": "Ashen softtouch",
+            "labelPl": "Popielaty softtouch",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "rustik-avinon-bilyi",
-            "label": "рустік авінон білий",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
             "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "rustyk-zolotyi",
-            "label": "рустик золотий",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
             "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "shpon-korychnevyi",
-            "label": "шпон коричневий",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
             "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "sosna-provans",
-            "label": "сосна прованс",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
             "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "venhe-pivdenne-tysnene",
-            "label": "венге південне тиснене",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
             "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
             "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "zriz-kameniu",
-            "label": "зріз каменю",
-            "labelEn": "Slice stone",
+            "label": "Зріз каменю",
+            "labelRu": "Срез камня",
+            "labelEn": "Stone slice",
+            "labelPl": "Przekrój kamienia",
             "image": "/photos/perfetto/pf-01.png"
           }
         ],
@@ -3643,104 +5240,138 @@
         "colors": [
           {
             "slug": "astana-marle",
-            "label": "астана марле",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
             "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "beton-siryi",
-            "label": "бетон сірий",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
             "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "beton-snizhnyi",
-            "label": "бетон сніжний",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
             "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "beton-temnyi",
-            "label": "бетон темний",
+            "label": "Бетон темний",
+            "labelRu": "Бетон тёмный",
             "labelEn": "Concrete dark",
+            "labelPl": "Beton ciemny",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "bila-teksturna",
-            "label": "біла текстурна",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
             "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "chorna-korka",
-            "label": "чорна корка",
+            "label": "Чорна корка",
+            "labelRu": "Чёрная корка",
             "labelEn": "Black crust",
+            "labelPl": "Czarna kora",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "dub-hlazho-eko",
-            "label": "дуб глазго еко",
-            "labelEn": "Oak Glasgow IVF",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "dub-shato",
-            "label": "дуб шато",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
             "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "karpatska-ialyna",
-            "label": "карпатська ялина",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
             "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "popeliastyi-softach",
-            "label": "попелястий софтач",
+            "label": "Попелястий софттач",
+            "labelRu": "Пепельный софттач",
             "labelEn": "Ashen softtouch",
+            "labelPl": "Popielaty softtouch",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "rustik-avinon-bilyi",
-            "label": "рустік авінон білий",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
             "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "rustyk-zolotyi",
-            "label": "рустик золотий",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
             "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "shpon-korychnevyi",
-            "label": "шпон коричневий",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
             "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "sosna-provans",
-            "label": "сосна прованс",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
             "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "venhe-pivdenne-tysnene",
-            "label": "венге південне тиснене",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
             "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "white",
             "label": "Білий",
+            "labelRu": "Белый",
             "labelEn": "White",
+            "labelPl": "Biały",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "zriz-kameniu",
-            "label": "зріз каменю",
-            "labelEn": "Slice stone",
+            "label": "Зріз каменю",
+            "labelRu": "Срез камня",
+            "labelEn": "Stone slice",
+            "labelPl": "Przekrój kamienia",
             "image": "/photos/perfetto/pf-02.png"
           }
         ],

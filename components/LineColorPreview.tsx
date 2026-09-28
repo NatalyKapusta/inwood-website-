@@ -14,7 +14,8 @@ export default function LineColorPreview({
   colors: ColorOption[];
   locale: Locale;
 }) {
-  const colorLabel = (c: ColorOption) => (locale === "en" && c.labelEn ? c.labelEn : c.label);
+  const colorLabel = (c: ColorOption) =>
+    (locale === "ru" && c.labelRu) || (locale === "en" && c.labelEn) || (locale === "pl" && c.labelPl) || c.label;
   const defaultIdx = Math.max(
     0,
     colors.findIndex((c) => c.slug === "white")

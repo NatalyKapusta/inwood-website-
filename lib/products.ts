@@ -2,11 +2,10 @@ import products from "@/data/products.json";
 
 export type KomplektOption = { label: string; price: number };
 export type Komplekt = { korob: KomplektOption[]; lyshtva: KomplektOption[]; dobir: KomplektOption[] };
-// labelEn — офіційна англійська назва кольору з друкованого каталогу
-// (public/documents/catalog-en.pdf). Заповнена поки що тільки для
-// FREZZATTI/PERFETTO (27.09.2026) — решта колекцій далі показують
-// українську назву на всіх мовах, як і раніше.
-export type ColorOption = { slug: string; label: string; labelEn?: string; image: string };
+// labelRu/labelEn/labelPl — офіційні назви кольору з друкованого каталогу
+// (взято з тексту каталогу 28.09.2026, замовниця надала переклади для
+// всіх 4 мов для ETALON/PERFETTO (17 плівок) і NOMINAL/FREZZATTI (12 плівок)).
+export type ColorOption = { slug: string; label: string; labelRu?: string; labelEn?: string; labelPl?: string; image: string };
 // ralPrice — ціна варіанту "Фарбування RAL/NCS" (тільки FREZZATTI/PERFETTO),
 // вручну вказаний колір замість вибору зі стандартної палітри. Той самий
 // принцип, що й у B2B-калькуляторі (data/model-variants.json, variantType "ral").
