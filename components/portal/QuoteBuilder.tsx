@@ -326,7 +326,7 @@ export default function QuoteBuilder({
   const isEdgeColorModel = !isSpecialLine && !isHiddenDoors && ["etalon", "nominal", "frezzatti", "perfetto"].includes(collectionKey) && !!modelCode;
   const edgeColorOptions = isAluEdge
     ? ["Сірий", "Чорний", "RAL"]
-    : collectionKey === "etalon" || collectionKey === "perfetto"
+    : collectionKey === "etalon" || ((collectionKey === "frezzatti" || collectionKey === "perfetto") && isRalVariant)
     ? ["Чорний", "Білий", "В колір полотна"]
     : ["Чорний", "Білий"];
   const isAlumEdgePaintSurcharge = isAluEdge && (edgeColor === "Чорний" || edgeColor === "RAL");
