@@ -81,6 +81,7 @@ export default async function SpivpratsyaPage({
               collectionLabel={collections.etalon.label}
               model={demoModel}
               komplekt={collections.etalon.komplekt!}
+              locale={params.locale}
               t={dict.catalog}
               pricesVisible={pricesVisible}
               addToCartLabel={c.addToCart}

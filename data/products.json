@@ -2366,61 +2366,73 @@
           {
             "slug": "antratsyt",
             "label": "антрацит",
+            "labelEn": "Anthracite",
             "image": "/photos/frezzatti/fz-01-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
             "label": "дуб немо лате",
+            "labelEn": "Nemo oak late",
             "image": "/photos/frezzatti/fz-01-dub-nemo-late.png"
           },
           {
             "slug": "dub-pasadena",
             "label": "дуб пасадена",
+            "labelEn": "Oak Pasadena",
             "image": "/photos/frezzatti/fz-01-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
             "label": "дуб портовий",
+            "labelEn": "Oak port",
             "image": "/photos/frezzatti/fz-01-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
             "label": "дуб шато",
+            "labelEn": "Oak chateau",
             "image": "/photos/frezzatti/fz-01-dub-shato.png"
           },
           {
             "slug": "dub-sribliastyi",
             "label": "дуб сріблястий",
+            "labelEn": "Nemo oak silver",
             "image": "/photos/frezzatti/fz-01-dub-sribliastyi.png"
           },
           {
             "slug": "feldhrau",
             "label": "фельдграу",
+            "labelEn": "Feldgrau",
             "image": "/photos/frezzatti/fz-01-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
             "label": "оксид білий",
+            "labelEn": "Oxide white",
             "image": "/photos/frezzatti/fz-01-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
             "label": "оксид світлий",
+            "labelEn": "Oxide light",
             "image": "/photos/frezzatti/fz-01-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
             "label": "оксид темний",
+            "labelEn": "Oxide dark",
             "image": "/photos/frezzatti/fz-01-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
             "label": "венге",
+            "labelEn": "Wenge southern",
             "image": "/photos/frezzatti/fz-01-venhe.png"
           },
           {
             "slug": "white",
-            "label": "white",
+            "label": "Білий",
+            "labelEn": "White",
             "image": "/photos/frezzatti/fz-01-white.png"
           }
         ],
@@ -2433,61 +2445,73 @@
           {
             "slug": "antratsyt",
             "label": "антрацит",
+            "labelEn": "Anthracite",
             "image": "/photos/frezzatti/fz-02-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
             "label": "дуб немо лате",
+            "labelEn": "Nemo oak late",
             "image": "/photos/frezzatti/fz-02-dub-nemo-late.png"
           },
           {
             "slug": "dub-pasadena",
             "label": "дуб пасадена",
+            "labelEn": "Oak Pasadena",
             "image": "/photos/frezzatti/fz-02-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
             "label": "дуб портовий",
+            "labelEn": "Oak port",
             "image": "/photos/frezzatti/fz-02-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
             "label": "дуб шато",
+            "labelEn": "Oak chateau",
             "image": "/photos/frezzatti/fz-02-dub-shato.png"
           },
           {
             "slug": "dub-sribliastyi",
             "label": "дуб сріблястий",
+            "labelEn": "Nemo oak silver",
             "image": "/photos/frezzatti/fz-02-dub-sribliastyi.png"
           },
           {
             "slug": "feldhrau",
             "label": "фельдграу",
+            "labelEn": "Feldgrau",
             "image": "/photos/frezzatti/fz-02-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
             "label": "оксид білий",
+            "labelEn": "Oxide white",
             "image": "/photos/frezzatti/fz-02-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
             "label": "оксид світлий",
+            "labelEn": "Oxide light",
             "image": "/photos/frezzatti/fz-02-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
             "label": "оксид темний",
+            "labelEn": "Oxide dark",
             "image": "/photos/frezzatti/fz-02-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
             "label": "венге",
+            "labelEn": "Wenge southern",
             "image": "/photos/frezzatti/fz-02-venhe.png"
           },
           {
             "slug": "white",
-            "label": "white",
+            "label": "Білий",
+            "labelEn": "White",
             "image": "/photos/frezzatti/fz-02-white.png"
           }
         ],
@@ -2500,61 +2524,73 @@
           {
             "slug": "antratsyt",
             "label": "антрацит",
+            "labelEn": "Anthracite",
             "image": "/photos/frezzatti/fz-03-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
             "label": "дуб немо лате",
+            "labelEn": "Nemo oak late",
             "image": "/photos/frezzatti/fz-03-dub-nemo-late.png"
           },
           {
             "slug": "dub-pasadena",
             "label": "дуб пасадена",
+            "labelEn": "Oak Pasadena",
             "image": "/photos/frezzatti/fz-03-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
             "label": "дуб портовий",
+            "labelEn": "Oak port",
             "image": "/photos/frezzatti/fz-03-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
             "label": "дуб шато",
+            "labelEn": "Oak chateau",
             "image": "/photos/frezzatti/fz-03-dub-shato.png"
           },
           {
             "slug": "dub-sribliastyi",
             "label": "дуб сріблястий",
+            "labelEn": "Nemo oak silver",
             "image": "/photos/frezzatti/fz-03-dub-sribliastyi.png"
           },
           {
             "slug": "feldhrau",
             "label": "фельдграу",
+            "labelEn": "Feldgrau",
             "image": "/photos/frezzatti/fz-03-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
             "label": "оксид білий",
+            "labelEn": "Oxide white",
             "image": "/photos/frezzatti/fz-03-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
             "label": "оксид світлий",
+            "labelEn": "Oxide light",
             "image": "/photos/frezzatti/fz-03-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
             "label": "оксид темний",
+            "labelEn": "Oxide dark",
             "image": "/photos/frezzatti/fz-03-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
             "label": "венге",
+            "labelEn": "Wenge southern",
             "image": "/photos/frezzatti/fz-03-venhe.png"
           },
           {
             "slug": "white",
-            "label": "white",
+            "label": "Білий",
+            "labelEn": "White",
             "image": "/photos/frezzatti/fz-03-white.png"
           }
         ],
@@ -2567,61 +2603,73 @@
           {
             "slug": "antratsyt",
             "label": "антрацит",
+            "labelEn": "Anthracite",
             "image": "/photos/frezzatti/fz-04-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
             "label": "дуб немо лате",
+            "labelEn": "Nemo oak late",
             "image": "/photos/frezzatti/fz-04-dub-nemo-late.png"
           },
           {
             "slug": "dub-pasadena",
             "label": "дуб пасадена",
+            "labelEn": "Oak Pasadena",
             "image": "/photos/frezzatti/fz-04-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
             "label": "дуб портовий",
+            "labelEn": "Oak port",
             "image": "/photos/frezzatti/fz-04-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
             "label": "дуб шато",
+            "labelEn": "Oak chateau",
             "image": "/photos/frezzatti/fz-04-dub-shato.png"
           },
           {
             "slug": "dub-sribliastyi",
             "label": "дуб сріблястий",
+            "labelEn": "Nemo oak silver",
             "image": "/photos/frezzatti/fz-04-dub-sribliastyi.png"
           },
           {
             "slug": "feldhrau",
             "label": "фельдграу",
+            "labelEn": "Feldgrau",
             "image": "/photos/frezzatti/fz-04-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
             "label": "оксид білий",
+            "labelEn": "Oxide white",
             "image": "/photos/frezzatti/fz-04-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
             "label": "оксид світлий",
+            "labelEn": "Oxide light",
             "image": "/photos/frezzatti/fz-04-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
             "label": "оксид темний",
+            "labelEn": "Oxide dark",
             "image": "/photos/frezzatti/fz-04-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
             "label": "венге",
+            "labelEn": "Wenge southern",
             "image": "/photos/frezzatti/fz-04-venhe.png"
           },
           {
             "slug": "white",
-            "label": "white",
+            "label": "Білий",
+            "labelEn": "White",
             "image": "/photos/frezzatti/fz-04-white.png"
           }
         ],
@@ -2634,61 +2682,73 @@
           {
             "slug": "antratsyt",
             "label": "антрацит",
+            "labelEn": "Anthracite",
             "image": "/photos/frezzatti/fz-05-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
             "label": "дуб немо лате",
+            "labelEn": "Nemo oak late",
             "image": "/photos/frezzatti/fz-05-dub-nemo-late.png"
           },
           {
             "slug": "dub-pasadena",
             "label": "дуб пасадена",
+            "labelEn": "Oak Pasadena",
             "image": "/photos/frezzatti/fz-05-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
             "label": "дуб портовий",
+            "labelEn": "Oak port",
             "image": "/photos/frezzatti/fz-05-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
             "label": "дуб шато",
+            "labelEn": "Oak chateau",
             "image": "/photos/frezzatti/fz-05-dub-shato.png"
           },
           {
             "slug": "dub-sribliastyi",
             "label": "дуб сріблястий",
+            "labelEn": "Nemo oak silver",
             "image": "/photos/frezzatti/fz-05-dub-sribliastyi.png"
           },
           {
             "slug": "feldhrau",
             "label": "фельдграу",
+            "labelEn": "Feldgrau",
             "image": "/photos/frezzatti/fz-05-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
             "label": "оксид білий",
+            "labelEn": "Oxide white",
             "image": "/photos/frezzatti/fz-05-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
             "label": "оксид світлий",
+            "labelEn": "Oxide light",
             "image": "/photos/frezzatti/fz-05-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
             "label": "оксид темний",
+            "labelEn": "Oxide dark",
             "image": "/photos/frezzatti/fz-05-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
             "label": "венге",
+            "labelEn": "Wenge southern",
             "image": "/photos/frezzatti/fz-05-venhe.png"
           },
           {
             "slug": "white",
-            "label": "white",
+            "label": "Білий",
+            "labelEn": "White",
             "image": "/photos/frezzatti/fz-05-white.png"
           }
         ],
@@ -2701,61 +2761,73 @@
           {
             "slug": "antratsyt",
             "label": "антрацит",
+            "labelEn": "Anthracite",
             "image": "/photos/frezzatti/fz-06-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
             "label": "дуб немо лате",
+            "labelEn": "Nemo oak late",
             "image": "/photos/frezzatti/fz-06-dub-nemo-late.png"
           },
           {
             "slug": "dub-pasadena",
             "label": "дуб пасадена",
+            "labelEn": "Oak Pasadena",
             "image": "/photos/frezzatti/fz-06-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
             "label": "дуб портовий",
+            "labelEn": "Oak port",
             "image": "/photos/frezzatti/fz-06-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
             "label": "дуб шато",
+            "labelEn": "Oak chateau",
             "image": "/photos/frezzatti/fz-06-dub-shato.png"
           },
           {
             "slug": "dub-sribliastyi",
             "label": "дуб сріблястий",
+            "labelEn": "Nemo oak silver",
             "image": "/photos/frezzatti/fz-06-dub-sribliastyi.png"
           },
           {
             "slug": "feldhrau",
             "label": "фельдграу",
+            "labelEn": "Feldgrau",
             "image": "/photos/frezzatti/fz-06-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
             "label": "оксид білий",
+            "labelEn": "Oxide white",
             "image": "/photos/frezzatti/fz-06-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
             "label": "оксид світлий",
+            "labelEn": "Oxide light",
             "image": "/photos/frezzatti/fz-06-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
             "label": "оксид темний",
+            "labelEn": "Oxide dark",
             "image": "/photos/frezzatti/fz-06-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
             "label": "венге",
+            "labelEn": "Wenge southern",
             "image": "/photos/frezzatti/fz-06-venhe.png"
           },
           {
             "slug": "white",
-            "label": "white",
+            "label": "Білий",
+            "labelEn": "White",
             "image": "/photos/frezzatti/fz-06-white.png"
           }
         ],
@@ -2768,61 +2840,73 @@
           {
             "slug": "antratsyt",
             "label": "антрацит",
+            "labelEn": "Anthracite",
             "image": "/photos/frezzatti/fz-07-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
             "label": "дуб немо лате",
+            "labelEn": "Nemo oak late",
             "image": "/photos/frezzatti/fz-07-dub-nemo-late.png"
           },
           {
             "slug": "dub-pasadena",
             "label": "дуб пасадена",
+            "labelEn": "Oak Pasadena",
             "image": "/photos/frezzatti/fz-07-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
             "label": "дуб портовий",
+            "labelEn": "Oak port",
             "image": "/photos/frezzatti/fz-07-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
             "label": "дуб шато",
+            "labelEn": "Oak chateau",
             "image": "/photos/frezzatti/fz-07-dub-shato.png"
           },
           {
             "slug": "dub-sribliastyi",
             "label": "дуб сріблястий",
+            "labelEn": "Nemo oak silver",
             "image": "/photos/frezzatti/fz-07-dub-sribliastyi.png"
           },
           {
             "slug": "feldhrau",
             "label": "фельдграу",
+            "labelEn": "Feldgrau",
             "image": "/photos/frezzatti/fz-07-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
             "label": "оксид білий",
+            "labelEn": "Oxide white",
             "image": "/photos/frezzatti/fz-07-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
             "label": "оксид світлий",
+            "labelEn": "Oxide light",
             "image": "/photos/frezzatti/fz-07-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
             "label": "оксид темний",
+            "labelEn": "Oxide dark",
             "image": "/photos/frezzatti/fz-07-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
             "label": "венге",
+            "labelEn": "Wenge southern",
             "image": "/photos/frezzatti/fz-07-venhe.png"
           },
           {
             "slug": "white",
-            "label": "white",
+            "label": "Білий",
+            "labelEn": "White",
             "image": "/photos/frezzatti/fz-07-white.png"
           }
         ],
@@ -2835,61 +2919,73 @@
           {
             "slug": "antratsyt",
             "label": "антрацит",
+            "labelEn": "Anthracite",
             "image": "/photos/frezzatti/fz-08-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
             "label": "дуб немо лате",
+            "labelEn": "Nemo oak late",
             "image": "/photos/frezzatti/fz-08-dub-nemo-late.png"
           },
           {
             "slug": "dub-pasadena",
             "label": "дуб пасадена",
+            "labelEn": "Oak Pasadena",
             "image": "/photos/frezzatti/fz-08-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
             "label": "дуб портовий",
+            "labelEn": "Oak port",
             "image": "/photos/frezzatti/fz-08-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
             "label": "дуб шато",
+            "labelEn": "Oak chateau",
             "image": "/photos/frezzatti/fz-08-dub-shato.png"
           },
           {
             "slug": "dub-sribliastyi",
             "label": "дуб сріблястий",
+            "labelEn": "Nemo oak silver",
             "image": "/photos/frezzatti/fz-08-dub-sribliastyi.png"
           },
           {
             "slug": "feldhrau",
             "label": "фельдграу",
+            "labelEn": "Feldgrau",
             "image": "/photos/frezzatti/fz-08-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
             "label": "оксид білий",
+            "labelEn": "Oxide white",
             "image": "/photos/frezzatti/fz-08-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
             "label": "оксид світлий",
+            "labelEn": "Oxide light",
             "image": "/photos/frezzatti/fz-08-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
             "label": "оксид темний",
+            "labelEn": "Oxide dark",
             "image": "/photos/frezzatti/fz-08-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
             "label": "венге",
+            "labelEn": "Wenge southern",
             "image": "/photos/frezzatti/fz-08-venhe.png"
           },
           {
             "slug": "white",
-            "label": "white",
+            "label": "Білий",
+            "labelEn": "White",
             "image": "/photos/frezzatti/fz-08-white.png"
           }
         ],
@@ -2902,61 +2998,73 @@
           {
             "slug": "antratsyt",
             "label": "антрацит",
+            "labelEn": "Anthracite",
             "image": "/photos/frezzatti/fz-09-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
             "label": "дуб немо лате",
+            "labelEn": "Nemo oak late",
             "image": "/photos/frezzatti/fz-09-dub-nemo-late.png"
           },
           {
             "slug": "dub-pasadena",
             "label": "дуб пасадена",
+            "labelEn": "Oak Pasadena",
             "image": "/photos/frezzatti/fz-09-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
             "label": "дуб портовий",
+            "labelEn": "Oak port",
             "image": "/photos/frezzatti/fz-09-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
             "label": "дуб шато",
+            "labelEn": "Oak chateau",
             "image": "/photos/frezzatti/fz-09-dub-shato.png"
           },
           {
             "slug": "dub-sribliastyi",
             "label": "дуб сріблястий",
+            "labelEn": "Nemo oak silver",
             "image": "/photos/frezzatti/fz-09-dub-sribliastyi.png"
           },
           {
             "slug": "feldhrau",
             "label": "фельдграу",
+            "labelEn": "Feldgrau",
             "image": "/photos/frezzatti/fz-09-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
             "label": "оксид білий",
+            "labelEn": "Oxide white",
             "image": "/photos/frezzatti/fz-09-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
             "label": "оксид світлий",
+            "labelEn": "Oxide light",
             "image": "/photos/frezzatti/fz-09-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
             "label": "оксид темний",
+            "labelEn": "Oxide dark",
             "image": "/photos/frezzatti/fz-09-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
             "label": "венге",
+            "labelEn": "Wenge southern",
             "image": "/photos/frezzatti/fz-09-venhe.png"
           },
           {
             "slug": "white",
-            "label": "white",
+            "label": "Білий",
+            "labelEn": "White",
             "image": "/photos/frezzatti/fz-09-white.png"
           }
         ],
@@ -2969,61 +3077,73 @@
           {
             "slug": "antratsyt",
             "label": "антрацит",
+            "labelEn": "Anthracite",
             "image": "/photos/frezzatti/fz-10-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
             "label": "дуб немо лате",
+            "labelEn": "Nemo oak late",
             "image": "/photos/frezzatti/fz-10-dub-nemo-late.png"
           },
           {
             "slug": "dub-pasadena",
             "label": "дуб пасадена",
+            "labelEn": "Oak Pasadena",
             "image": "/photos/frezzatti/fz-10-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
             "label": "дуб портовий",
+            "labelEn": "Oak port",
             "image": "/photos/frezzatti/fz-10-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
             "label": "дуб шато",
+            "labelEn": "Oak chateau",
             "image": "/photos/frezzatti/fz-10-dub-shato.png"
           },
           {
             "slug": "dub-sribliastyi",
             "label": "дуб сріблястий",
+            "labelEn": "Nemo oak silver",
             "image": "/photos/frezzatti/fz-10-dub-sribliastyi.png"
           },
           {
             "slug": "feldhrau",
             "label": "фельдграу",
+            "labelEn": "Feldgrau",
             "image": "/photos/frezzatti/fz-10-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
             "label": "оксид білий",
+            "labelEn": "Oxide white",
             "image": "/photos/frezzatti/fz-10-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
             "label": "оксид світлий",
+            "labelEn": "Oxide light",
             "image": "/photos/frezzatti/fz-10-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
             "label": "оксид темний",
+            "labelEn": "Oxide dark",
             "image": "/photos/frezzatti/fz-10-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
             "label": "венге",
+            "labelEn": "Wenge southern",
             "image": "/photos/frezzatti/fz-10-venhe.png"
           },
           {
             "slug": "white",
-            "label": "white",
+            "label": "Білий",
+            "labelEn": "White",
             "image": "/photos/frezzatti/fz-10-white.png"
           }
         ],
@@ -3036,61 +3156,73 @@
           {
             "slug": "antratsyt",
             "label": "антрацит",
+            "labelEn": "Anthracite",
             "image": "/photos/frezzatti/fz-11-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
             "label": "дуб немо лате",
+            "labelEn": "Nemo oak late",
             "image": "/photos/frezzatti/fz-11-dub-nemo-late.png"
           },
           {
             "slug": "dub-pasadena",
             "label": "дуб пасадена",
+            "labelEn": "Oak Pasadena",
             "image": "/photos/frezzatti/fz-11-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
             "label": "дуб портовий",
+            "labelEn": "Oak port",
             "image": "/photos/frezzatti/fz-11-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
             "label": "дуб шато",
+            "labelEn": "Oak chateau",
             "image": "/photos/frezzatti/fz-11-dub-shato.png"
           },
           {
             "slug": "dub-sribliastyi",
             "label": "дуб сріблястий",
+            "labelEn": "Nemo oak silver",
             "image": "/photos/frezzatti/fz-11-dub-sribliastyi.png"
           },
           {
             "slug": "feldhrau",
             "label": "фельдграу",
+            "labelEn": "Feldgrau",
             "image": "/photos/frezzatti/fz-11-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
             "label": "оксид білий",
+            "labelEn": "Oxide white",
             "image": "/photos/frezzatti/fz-11-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
             "label": "оксид світлий",
+            "labelEn": "Oxide light",
             "image": "/photos/frezzatti/fz-11-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
             "label": "оксид темний",
+            "labelEn": "Oxide dark",
             "image": "/photos/frezzatti/fz-11-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
             "label": "венге",
+            "labelEn": "Wenge southern",
             "image": "/photos/frezzatti/fz-11-venhe.png"
           },
           {
             "slug": "white",
-            "label": "white",
+            "label": "Білий",
+            "labelEn": "White",
             "image": "/photos/frezzatti/fz-11-white.png"
           }
         ],
@@ -3103,61 +3235,73 @@
           {
             "slug": "antratsyt",
             "label": "антрацит",
+            "labelEn": "Anthracite",
             "image": "/photos/frezzatti/fz-12-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
             "label": "дуб немо лате",
+            "labelEn": "Nemo oak late",
             "image": "/photos/frezzatti/fz-12-dub-nemo-late.png"
           },
           {
             "slug": "dub-pasadena",
             "label": "дуб пасадена",
+            "labelEn": "Oak Pasadena",
             "image": "/photos/frezzatti/fz-12-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
             "label": "дуб портовий",
+            "labelEn": "Oak port",
             "image": "/photos/frezzatti/fz-12-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
             "label": "дуб шато",
+            "labelEn": "Oak chateau",
             "image": "/photos/frezzatti/fz-12-dub-shato.png"
           },
           {
             "slug": "dub-sribliastyi",
             "label": "дуб сріблястий",
+            "labelEn": "Nemo oak silver",
             "image": "/photos/frezzatti/fz-12-dub-sribliastyi.png"
           },
           {
             "slug": "feldhrau",
             "label": "фельдграу",
+            "labelEn": "Feldgrau",
             "image": "/photos/frezzatti/fz-12-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
             "label": "оксид білий",
+            "labelEn": "Oxide white",
             "image": "/photos/frezzatti/fz-12-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
             "label": "оксид світлий",
+            "labelEn": "Oxide light",
             "image": "/photos/frezzatti/fz-12-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
             "label": "оксид темний",
+            "labelEn": "Oxide dark",
             "image": "/photos/frezzatti/fz-12-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
             "label": "венге",
+            "labelEn": "Wenge southern",
             "image": "/photos/frezzatti/fz-12-venhe.png"
           },
           {
             "slug": "white",
-            "label": "white",
+            "label": "Білий",
+            "labelEn": "White",
             "image": "/photos/frezzatti/fz-12-white.png"
           }
         ],
@@ -3170,61 +3314,73 @@
           {
             "slug": "antratsyt",
             "label": "антрацит",
+            "labelEn": "Anthracite",
             "image": "/photos/frezzatti/fz-13-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
             "label": "дуб немо лате",
+            "labelEn": "Nemo oak late",
             "image": "/photos/frezzatti/fz-13-dub-nemo-late.png"
           },
           {
             "slug": "dub-pasadena",
             "label": "дуб пасадена",
+            "labelEn": "Oak Pasadena",
             "image": "/photos/frezzatti/fz-13-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
             "label": "дуб портовий",
+            "labelEn": "Oak port",
             "image": "/photos/frezzatti/fz-13-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
             "label": "дуб шато",
+            "labelEn": "Oak chateau",
             "image": "/photos/frezzatti/fz-13-dub-shato.png"
           },
           {
             "slug": "dub-sribliastyi",
             "label": "дуб сріблястий",
+            "labelEn": "Nemo oak silver",
             "image": "/photos/frezzatti/fz-13-dub-sribliastyi.png"
           },
           {
             "slug": "feldhrau",
             "label": "фельдграу",
+            "labelEn": "Feldgrau",
             "image": "/photos/frezzatti/fz-13-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
             "label": "оксид білий",
+            "labelEn": "Oxide white",
             "image": "/photos/frezzatti/fz-13-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
             "label": "оксид світлий",
+            "labelEn": "Oxide light",
             "image": "/photos/frezzatti/fz-13-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
             "label": "оксид темний",
+            "labelEn": "Oxide dark",
             "image": "/photos/frezzatti/fz-13-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
             "label": "венге",
+            "labelEn": "Wenge southern",
             "image": "/photos/frezzatti/fz-13-venhe.png"
           },
           {
             "slug": "white",
-            "label": "white",
+            "label": "Білий",
+            "labelEn": "White",
             "image": "/photos/frezzatti/fz-13-white.png"
           }
         ],
@@ -3237,61 +3393,73 @@
           {
             "slug": "antratsyt",
             "label": "антрацит",
+            "labelEn": "Anthracite",
             "image": "/photos/frezzatti/fz-14-antratsyt.png"
           },
           {
             "slug": "dub-nemo-late",
             "label": "дуб немо лате",
+            "labelEn": "Nemo oak late",
             "image": "/photos/frezzatti/fz-14-dub-nemo-late.png"
           },
           {
             "slug": "dub-pasadena",
             "label": "дуб пасадена",
+            "labelEn": "Oak Pasadena",
             "image": "/photos/frezzatti/fz-14-dub-pasadena.png"
           },
           {
             "slug": "dub-portovyi",
             "label": "дуб портовий",
+            "labelEn": "Oak port",
             "image": "/photos/frezzatti/fz-14-dub-portovyi.png"
           },
           {
             "slug": "dub-shato",
             "label": "дуб шато",
+            "labelEn": "Oak chateau",
             "image": "/photos/frezzatti/fz-14-dub-shato.png"
           },
           {
             "slug": "dub-sribliastyi",
             "label": "дуб сріблястий",
+            "labelEn": "Nemo oak silver",
             "image": "/photos/frezzatti/fz-14-dub-sribliastyi.png"
           },
           {
             "slug": "feldhrau",
             "label": "фельдграу",
+            "labelEn": "Feldgrau",
             "image": "/photos/frezzatti/fz-14-feldhrau.png"
           },
           {
             "slug": "oksyd-bilyi",
             "label": "оксид білий",
+            "labelEn": "Oxide white",
             "image": "/photos/frezzatti/fz-14-oksyd-bilyi.png"
           },
           {
             "slug": "oksyd-svitlyi",
             "label": "оксид світлий",
+            "labelEn": "Oxide light",
             "image": "/photos/frezzatti/fz-14-oksyd-svitlyi.png"
           },
           {
             "slug": "oksyd-temnyi",
             "label": "оксид темний",
+            "labelEn": "Oxide dark",
             "image": "/photos/frezzatti/fz-14-oksyd-temnyi.png"
           },
           {
             "slug": "venhe",
             "label": "венге",
+            "labelEn": "Wenge southern",
             "image": "/photos/frezzatti/fz-14-venhe.png"
           },
           {
             "slug": "white",
-            "label": "white",
+            "label": "Білий",
+            "labelEn": "White",
             "image": "/photos/frezzatti/fz-14-white.png"
           }
         ],
@@ -3367,86 +3535,103 @@
           {
             "slug": "astana-marle",
             "label": "астана марле",
+            "labelEn": "Astana merle",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "beton-siryi",
             "label": "бетон сірий",
+            "labelEn": "Concrete grey",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "beton-snizhnyi",
             "label": "бетон сніжний",
+            "labelEn": "Concrete snow",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "beton-temnyi",
             "label": "бетон темний",
+            "labelEn": "Concrete dark",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "bila-teksturna",
             "label": "біла текстурна",
+            "labelEn": "White textured",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "chorna-korka",
             "label": "чорна корка",
+            "labelEn": "Black crust",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "dub-hlazho-eko",
             "label": "дуб глазго еко",
+            "labelEn": "Oak Glasgow IVF",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "dub-shato",
             "label": "дуб шато",
+            "labelEn": "Oak chateau",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "karpatska-ialyna",
             "label": "карпатська ялина",
+            "labelEn": "Carpathian spruce",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "popeliastyi-softach",
             "label": "попелястий софтач",
+            "labelEn": "Ashen softtouch",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "rustik-avinon-bilyi",
             "label": "рустік авінон білий",
+            "labelEn": "Rustic Avinon white",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "rustyk-zolotyi",
             "label": "рустик золотий",
+            "labelEn": "Rustic gold",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "shpon-korychnevyi",
             "label": "шпон коричневий",
+            "labelEn": "Veneer brown",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "sosna-provans",
             "label": "сосна прованс",
+            "labelEn": "Pine Provence",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "venhe-pivdenne-tysnene",
             "label": "венге південне тиснене",
+            "labelEn": "Wenge southern embossed",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "white",
-            "label": "white",
+            "label": "Білий",
+            "labelEn": "White",
             "image": "/photos/perfetto/pf-01.png"
           },
           {
             "slug": "zriz-kameniu",
             "label": "зріз каменю",
+            "labelEn": "Slice stone",
             "image": "/photos/perfetto/pf-01.png"
           }
         ],
@@ -3459,86 +3644,103 @@
           {
             "slug": "astana-marle",
             "label": "астана марле",
+            "labelEn": "Astana merle",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "beton-siryi",
             "label": "бетон сірий",
+            "labelEn": "Concrete grey",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "beton-snizhnyi",
             "label": "бетон сніжний",
+            "labelEn": "Concrete snow",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "beton-temnyi",
             "label": "бетон темний",
+            "labelEn": "Concrete dark",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "bila-teksturna",
             "label": "біла текстурна",
+            "labelEn": "White textured",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "chorna-korka",
             "label": "чорна корка",
+            "labelEn": "Black crust",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "dub-hlazho-eko",
             "label": "дуб глазго еко",
+            "labelEn": "Oak Glasgow IVF",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "dub-shato",
             "label": "дуб шато",
+            "labelEn": "Oak chateau",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "karpatska-ialyna",
             "label": "карпатська ялина",
+            "labelEn": "Carpathian spruce",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "popeliastyi-softach",
             "label": "попелястий софтач",
+            "labelEn": "Ashen softtouch",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "rustik-avinon-bilyi",
             "label": "рустік авінон білий",
+            "labelEn": "Rustic Avinon white",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "rustyk-zolotyi",
             "label": "рустик золотий",
+            "labelEn": "Rustic gold",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "shpon-korychnevyi",
             "label": "шпон коричневий",
+            "labelEn": "Veneer brown",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "sosna-provans",
             "label": "сосна прованс",
+            "labelEn": "Pine Provence",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "venhe-pivdenne-tysnene",
             "label": "венге південне тиснене",
+            "labelEn": "Wenge southern embossed",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "white",
-            "label": "white",
+            "label": "Білий",
+            "labelEn": "White",
             "image": "/photos/perfetto/pf-02.png"
           },
           {
             "slug": "zriz-kameniu",
             "label": "зріз каменю",
+            "labelEn": "Slice stone",
             "image": "/photos/perfetto/pf-02.png"
           }
         ],

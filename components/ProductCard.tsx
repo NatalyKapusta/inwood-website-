@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import type { Komplekt, ProductModel } from "@/lib/products";
 import type { Dictionary } from "@/lib/dictionary";
+import type { Locale } from "@/lib/i18n";
 import AddToCartButton from "@/components/AddToCartButton";
 import {
   STANDARD_WIDTHS,
@@ -36,6 +37,7 @@ export default function ProductCard({
   pricesVisible,
   addToCartLabel,
   addedToCartLabel,
+  locale,
 }: {
   anchorId: string;
   collectionLabel: string;
@@ -45,7 +47,13 @@ export default function ProductCard({
   pricesVisible: boolean;
   addToCartLabel: string;
   addedToCartLabel: string;
+  locale: Locale;
 }) {
+  // Назви кольорів не перекладаються по мовах (свідоме рішення), крім тих
+  // колекцій, де є offiційний англійський каталог (FREZZATTI/PERFETTO,
+  // 27.09.2026) — там на EN-версії підставляємо labelEn, якщо він є.
+  const colorLabel = (c: { label: string; labelEn?: string }) =>
+    locale === "en" && c.labelEn ? c.labelEn : c.label;
   const defaultColorIdx = Math.max(
     model.colors.findIndex((c) => c.slug === "white"),
     0
@@ -113,7 +121,7 @@ export default function ProductCard({
     `${collectionLabel} — ${model.code}${sizeLabel}`,
     finish === "ral"
       ? `${t.finishRal}: ${ralColor.trim() || "-"}`
-      : `${t.color}: ${color?.label ?? "-"}`,
+      : `${t.color}: ${color ? colorLabel(color) : "-"}`,
     korob !== NONE ? `${t.korob}: ${korob}` : null,
     lyshtva !== NONE ? `${t.lyshtva}: ${lyshtva}` : null,
     dobir !== NONE ? `${t.dobir}: ${dobir}` : null,
@@ -149,7 +157,7 @@ export default function ProductCard({
           <Image
             key={color.image}
             src={color.image}
-            alt={`Міжкімнатні двері IN WOOD ${collectionLabel} ${model.code}, колір ${color.label}`}
+            alt={`Міжкімнатні двері IN WOOD ${collectionLabel} ${model.code}, колір ${colorLabel(color)}`}
             fill
             sizes="(min-width: 1280px) 300px, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
             className="object-contain p-4"
@@ -205,7 +213,7 @@ export default function ProductCard({
           model.colors.length > 1 && (
             <div>
               <label className="text-xs text-navy-dim">
-                {t.color}: {color?.label}
+                {t.color}: {color && colorLabel(color)}
               </label>
               <div className="mt-1 flex flex-wrap gap-1.5">
                 {model.colors.map((c, i) => (
@@ -213,12 +221,12 @@ export default function ProductCard({
                     key={c.slug}
                     type="button"
                     onClick={() => setColorIdx(i)}
-                    title={c.label}
+                    title={colorLabel(c)}
                     className={`relative h-6 w-6 overflow-hidden rounded-full border-2 ${
                       i === colorIdx ? "border-gold" : "border-navy-dim/20"
                     }`}
                   >
-                    <Image src={c.image} alt={c.label} fill sizes="24px" className="object-cover" />
+                    <Image src={c.image} alt={colorLabel(c)} fill sizes="24px" className="object-cover" />
                   </button>
                 ))}
               </div>

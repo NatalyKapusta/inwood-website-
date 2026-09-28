@@ -8,6 +8,7 @@ import AddToCartButton from "@/components/AddToCartButton";
 import type { Collection } from "@/lib/products";
 import type { Dictionary } from "@/lib/dictionary";
 import type { CatalogCategorySlug } from "@/lib/catalogCategories";
+import type { Locale } from "@/lib/i18n";
 
 const ADDON_TYPES = ["korob", "lishtva", "dobir"] as const;
 type AddonType = (typeof ADDON_TYPES)[number];
@@ -36,6 +37,7 @@ type CatalogFilterProps = {
   plintusLabel: string;
   addToCartLabel: string;
   addedToCartLabel: string;
+  locale: Locale;
 };
 
 // Чиста презентаційна частина — приймає вже вирішений набір secти, не читає
@@ -51,6 +53,7 @@ function CatalogFilterView({
   plintusLabel,
   addToCartLabel,
   addedToCartLabel,
+  locale,
 }: Omit<CatalogFilterProps, "sectionsByCategory">) {
   const [active, setActive] = useState<string>("all");
   const [addonType, setAddonType] = useState<AddonFilter>("all");
@@ -165,6 +168,7 @@ function CatalogFilterView({
                       pricesVisible={pricesVisible}
                       addToCartLabel={addToCartLabel}
                       addedToCartLabel={addedToCartLabel}
+                      locale={locale}
                     />
                   )
                 )}

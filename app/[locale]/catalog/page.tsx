@@ -191,6 +191,7 @@ export default async function CatalogPage({ params }: { params: { locale: Locale
           plintusLabel={dict.furnitura.plintusTitle}
           addToCartLabel={dict.common.addToCart}
           addedToCartLabel={dict.common.addedToCart}
+          locale={params.locale}
         />
       </div>
 

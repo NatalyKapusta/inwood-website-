@@ -57,7 +57,9 @@ export default async function CharacteristicsPage({
               <div key={line.name} className="rounded-xl bg-panel-alt p-6">
                 <h2 className="font-serif text-xl font-bold text-gold-dim">{line.name}</h2>
                 <div className="mt-4 grid gap-6 sm:grid-cols-[200px_1fr]">
-                  {model && <LineColorPreview code={model.code} colors={model.colors} />}
+                  {model && (
+                    <LineColorPreview code={model.code} colors={model.colors} locale={params.locale} />
+                  )}
                   <ul className="space-y-2 text-sm text-navy-dark">
                     {line.params.map((p) => (
                       <li key={p}>— {p}</li>

@@ -3,14 +3,18 @@
 import { useState } from "react";
 import Image from "next/image";
 import type { ColorOption } from "@/lib/products";
+import type { Locale } from "@/lib/i18n";
 
 export default function LineColorPreview({
   code,
   colors,
+  locale,
 }: {
   code: string;
   colors: ColorOption[];
+  locale: Locale;
 }) {
+  const colorLabel = (c: ColorOption) => (locale === "en" && c.labelEn ? c.labelEn : c.label);
   const defaultIdx = Math.max(
     0,
     colors.findIndex((c) => c.slug === "white")
@@ -23,7 +27,7 @@ export default function LineColorPreview({
   return (
     <div>
       <div className="relative aspect-square overflow-hidden rounded-lg bg-panel">
-        <Image key={color.image} src={color.image} alt={`${code} — ${color.label}`} fill className="object-contain p-4" />
+        <Image key={color.image} src={color.image} alt={`${code} — ${colorLabel(color)}`} fill className="object-contain p-4" />
       </div>
       {colors.length > 1 && (
         <div className="mt-3 flex flex-wrap gap-1.5">
@@ -32,10 +36,10 @@ export default function LineColorPreview({
               key={c.slug}
               type="button"
               onClick={() => setIdx(i)}
-              title={c.label}
+              title={colorLabel(c)}
               className={`relative h-6 w-6 overflow-hidden rounded-full border-2 ${i === idx ? "border-gold" : "border-navy-dim/20"}`}
             >
-              <Image src={c.image} alt={c.label} fill sizes="24px" className="object-cover" />
+              <Image src={c.image} alt={colorLabel(c)} fill sizes="24px" className="object-cover" />
             </button>
           ))}
         </div>

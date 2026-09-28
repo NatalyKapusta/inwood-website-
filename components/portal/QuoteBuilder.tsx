@@ -1345,7 +1345,7 @@ export default function QuoteBuilder({
               />
             )}
 
-            {!hideLishtvaDobirForKorob && (
+            {!hideLishtvaDobirForKorob && !isHiddenDoors && (
             <>
             {canOverride && (
               <label className="flex items-center gap-2 text-sm text-navy-dark">
