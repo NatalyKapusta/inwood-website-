@@ -38,6 +38,9 @@ export default async function PortalQuotePage() {
         consultantDefault={profile?.full_name ?? user.email ?? ""}
         canOverride={effectiveRole === "staff" || effectiveRole === "manager"}
         allowedTariffs={allowedTariffs === "all" ? undefined : (allowedTariffs as Tariff[])}
+        canSeeStandart={
+          effectiveRole === "staff" || effectiveRole === "manager" || effectiveRole === "dealer_distributor"
+        }
       />
     </div>
   );

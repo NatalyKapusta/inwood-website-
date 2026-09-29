@@ -136,6 +136,7 @@ export default function QuoteBuilder({
   consultantDefault,
   canOverride,
   allowedTariffs,
+  canSeeStandart,
 }: {
   consultantDefault: string;
   canOverride: boolean;
@@ -143,6 +144,10 @@ export default function QuoteBuilder({
   // тарифів у селекті до того, що бачила б обрана роль. Дані самі по собі
   // не звужуються (RLS вже й так дає власнику доступ до всього).
   allowedTariffs?: Tariff[];
+  // STANDART (ТЗ 29.09.2026) — тільки для manager/staff/dealer_distributor.
+  // Іншим ролям (dealer, epicenter, distributor, builder, export) колекція
+  // взагалі не показується в списку ліній.
+  canSeeStandart: boolean;
 }) {
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
@@ -281,6 +286,7 @@ export default function QuoteBuilder({
   // добору й так немає, а лиштва там — це вже система алюм. профілів, інша річ).
   const hideLishtvaDobirForKorob = collectionKey === "etalon" && isKorobRalModel;
   const models = collections[collectionKey]?.models ?? [];
+  const visibleCollectionOrder = portalCollectionOrder.filter((k) => k !== "standart" || canSeeStandart);
   const currentModel = models.find((m) => m.code === modelCode);
   const hiddenVariants = collections["hidden-doors"]?.variants ?? [];
   const previewPhoto = isSpecialLine
@@ -968,7 +974,7 @@ export default function QuoteBuilder({
               }}
               className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
             >
-              {portalCollectionOrder
+              {visibleCollectionOrder
                 // "pid-farbuvannya" — та сама лінія hidden-doors, продубльована лише
                 // в публічному каталозі під іншою назвою; у калькуляторі не потрібна.
                 .filter((k) => k !== "pid-farbuvannya")
@@ -1016,7 +1022,7 @@ export default function QuoteBuilder({
                   }}
                   className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
                 >
-                  {portalCollectionOrder
+                  {visibleCollectionOrder
                     .filter((k) => collections[k]?.models?.length)
                     .map((k) => (
                       <option key={k} value={k}>
