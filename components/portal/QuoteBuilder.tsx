@@ -2,7 +2,7 @@
 
 import { Fragment, useEffect, useMemo, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
-import { collections, collectionOrder } from "@/lib/products";
+import { collections, collectionOrder, portalCollectionOrder } from "@/lib/products";
 import modelVariantsData from "@/data/model-variants.json";
 import { translateForPrint, PRINT_EN_STATIC, PRINT_EN_TIERS } from "@/lib/printEn";
 import { addonPhotoFor } from "@/lib/addonPhotos";
@@ -338,9 +338,11 @@ export default function QuoteBuilder({
     (collectionKey === "nominal" && /^NL-\d+$/.test(modelCode) && modelCode !== "NL-01");
 
   // Сторона відкривання — інформаційне поле, на ціну не впливає, обов'язкове
-  // для всіх моделей ETALON/NOMINAL/FREZZATTI/PERFETTO. Розсувних немає лише
-  // у варіанту "Алюмінієва крайка INSIDE" (тільки ETALON) — у решти вони є.
-  const isOpeningSideModel = !isSpecialLine && !isHiddenDoors && ["etalon", "nominal", "frezzatti", "perfetto"].includes(collectionKey) && !!modelCode;
+  // для всіх моделей ETALON/NOMINAL/FREZZATTI/PERFETTO/STANDART. Розсувних
+  // немає лише у варіанту "Алюмінієва крайка INSIDE" (тільки ETALON) —
+  // у решти вони є. STANDART крайки не має (ТЗ 29.09.2026) — не входить
+  // у isEdgeColorModel.
+  const isOpeningSideModel = !isSpecialLine && !isHiddenDoors && ["etalon", "nominal", "frezzatti", "perfetto", "standart"].includes(collectionKey) && !!modelCode;
   const openingSideOptions = variantType === "alu-inside" ? ["Ліва", "Права"] : ["Ліва", "Права", "Розсувні"];
 
   const korobOptionsAll = addonRows.filter((r) => r.collection === collectionKey && r.addon_type === "korob" && r.tariff === tariff);
@@ -966,7 +968,7 @@ export default function QuoteBuilder({
               }}
               className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
             >
-              {collectionOrder
+              {portalCollectionOrder
                 // "pid-farbuvannya" — та сама лінія hidden-doors, продубльована лише
                 // в публічному каталозі під іншою назвою; у калькуляторі не потрібна.
                 .filter((k) => k !== "pid-farbuvannya")
@@ -1014,7 +1016,7 @@ export default function QuoteBuilder({
                   }}
                   className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
                 >
-                  {collectionOrder
+                  {portalCollectionOrder
                     .filter((k) => collections[k]?.models?.length)
                     .map((k) => (
                       <option key={k} value={k}>

@@ -5486,5 +5486,1990 @@
         "image": "/photos/hidden-doors/inside-aluminum-black.jpg"
       }
     ]
+  },
+  "standart": {
+    "label": "STANDART",
+    "models": [
+      {
+        "code": "ST-1.1",
+        "basePrice": 8970,
+        "colors": [
+          {
+            "slug": "white",
+            "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
+            "image": "/photos/standart/st-1-1-white.png"
+          },
+          {
+            "slug": "astana-marle",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
+            "image": "/photos/standart/st-1-1-astana-marle.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
+            "image": "/photos/standart/st-1-1-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
+            "image": "/photos/standart/st-1-1-beton-siryi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
+            "image": "/photos/standart/st-1-1-bila-teksturna.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
+            "image": "/photos/standart/st-1-1-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
+            "image": "/photos/standart/st-1-1-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
+            "image": "/photos/standart/st-1-1-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
+            "image": "/photos/standart/st-1-1-karpatska-ialyna.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
+            "image": "/photos/standart/st-1-1-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
+            "image": "/photos/standart/st-1-1-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
+            "image": "/photos/standart/st-1-1-sosna-provans.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
+            "image": "/photos/standart/st-1-1-shpon-korychnevyi.png"
+          }
+        ]
+      },
+      {
+        "code": "ST-1.2",
+        "basePrice": 8970,
+        "colors": [
+          {
+            "slug": "white",
+            "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
+            "image": "/photos/standart/st-1-2-white.png"
+          },
+          {
+            "slug": "astana-marle",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
+            "image": "/photos/standart/st-1-2-astana-marle.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
+            "image": "/photos/standart/st-1-2-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
+            "image": "/photos/standart/st-1-2-beton-siryi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
+            "image": "/photos/standart/st-1-2-bila-teksturna.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
+            "image": "/photos/standart/st-1-2-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
+            "image": "/photos/standart/st-1-2-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
+            "image": "/photos/standart/st-1-2-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
+            "image": "/photos/standart/st-1-2-karpatska-ialyna.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
+            "image": "/photos/standart/st-1-2-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
+            "image": "/photos/standart/st-1-2-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
+            "image": "/photos/standart/st-1-2-sosna-provans.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
+            "image": "/photos/standart/st-1-2-shpon-korychnevyi.png"
+          }
+        ]
+      },
+      {
+        "code": "ST-1.3",
+        "basePrice": 8970,
+        "colors": [
+          {
+            "slug": "white",
+            "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
+            "image": "/photos/standart/st-1-3-white.png"
+          },
+          {
+            "slug": "astana-marle",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
+            "image": "/photos/standart/st-1-3-astana-marle.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
+            "image": "/photos/standart/st-1-3-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
+            "image": "/photos/standart/st-1-3-beton-siryi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
+            "image": "/photos/standart/st-1-3-bila-teksturna.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
+            "image": "/photos/standart/st-1-3-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
+            "image": "/photos/standart/st-1-3-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
+            "image": "/photos/standart/st-1-3-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
+            "image": "/photos/standart/st-1-3-karpatska-ialyna.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
+            "image": "/photos/standart/st-1-3-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
+            "image": "/photos/standart/st-1-3-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
+            "image": "/photos/standart/st-1-3-sosna-provans.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
+            "image": "/photos/standart/st-1-3-shpon-korychnevyi.png"
+          }
+        ]
+      },
+      {
+        "code": "ST-1.4",
+        "basePrice": 8970,
+        "colors": [
+          {
+            "slug": "white",
+            "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
+            "image": "/photos/standart/st-1-4-white.png"
+          },
+          {
+            "slug": "astana-marle",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
+            "image": "/photos/standart/st-1-4-astana-marle.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
+            "image": "/photos/standart/st-1-4-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
+            "image": "/photos/standart/st-1-4-beton-siryi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
+            "image": "/photos/standart/st-1-4-bila-teksturna.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
+            "image": "/photos/standart/st-1-4-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
+            "image": "/photos/standart/st-1-4-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
+            "image": "/photos/standart/st-1-4-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
+            "image": "/photos/standart/st-1-4-karpatska-ialyna.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
+            "image": "/photos/standart/st-1-4-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
+            "image": "/photos/standart/st-1-4-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
+            "image": "/photos/standart/st-1-4-sosna-provans.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
+            "image": "/photos/standart/st-1-4-shpon-korychnevyi.png"
+          }
+        ]
+      },
+      {
+        "code": "ST-1.5",
+        "basePrice": 8970,
+        "colors": [
+          {
+            "slug": "white",
+            "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
+            "image": "/photos/standart/st-1-5-white.png"
+          },
+          {
+            "slug": "astana-marle",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
+            "image": "/photos/standart/st-1-5-astana-marle.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
+            "image": "/photos/standart/st-1-5-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
+            "image": "/photos/standart/st-1-5-beton-siryi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
+            "image": "/photos/standart/st-1-5-bila-teksturna.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
+            "image": "/photos/standart/st-1-5-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
+            "image": "/photos/standart/st-1-5-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
+            "image": "/photos/standart/st-1-5-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
+            "image": "/photos/standart/st-1-5-karpatska-ialyna.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
+            "image": "/photos/standart/st-1-5-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
+            "image": "/photos/standart/st-1-5-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
+            "image": "/photos/standart/st-1-5-sosna-provans.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
+            "image": "/photos/standart/st-1-5-shpon-korychnevyi.png"
+          }
+        ]
+      },
+      {
+        "code": "ST-1.6",
+        "basePrice": 8970,
+        "colors": [
+          {
+            "slug": "white",
+            "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
+            "image": "/photos/standart/st-1-6-white.png"
+          },
+          {
+            "slug": "astana-marle",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
+            "image": "/photos/standart/st-1-6-astana-marle.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
+            "image": "/photos/standart/st-1-6-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
+            "image": "/photos/standart/st-1-6-beton-siryi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
+            "image": "/photos/standart/st-1-6-bila-teksturna.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
+            "image": "/photos/standart/st-1-6-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
+            "image": "/photos/standart/st-1-6-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
+            "image": "/photos/standart/st-1-6-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
+            "image": "/photos/standart/st-1-6-karpatska-ialyna.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
+            "image": "/photos/standart/st-1-6-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
+            "image": "/photos/standart/st-1-6-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
+            "image": "/photos/standart/st-1-6-sosna-provans.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
+            "image": "/photos/standart/st-1-6-shpon-korychnevyi.png"
+          }
+        ]
+      },
+      {
+        "code": "ST-1.7",
+        "basePrice": 8970,
+        "colors": [
+          {
+            "slug": "white",
+            "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
+            "image": "/photos/standart/st-1-7-white.png"
+          },
+          {
+            "slug": "astana-marle",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
+            "image": "/photos/standart/st-1-7-astana-marle.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
+            "image": "/photos/standart/st-1-7-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
+            "image": "/photos/standart/st-1-7-beton-siryi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
+            "image": "/photos/standart/st-1-7-bila-teksturna.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
+            "image": "/photos/standart/st-1-7-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
+            "image": "/photos/standart/st-1-7-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
+            "image": "/photos/standart/st-1-7-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
+            "image": "/photos/standart/st-1-7-karpatska-ialyna.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
+            "image": "/photos/standart/st-1-7-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
+            "image": "/photos/standart/st-1-7-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
+            "image": "/photos/standart/st-1-7-sosna-provans.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
+            "image": "/photos/standart/st-1-7-shpon-korychnevyi.png"
+          }
+        ]
+      },
+      {
+        "code": "ST-2.1",
+        "basePrice": 11063,
+        "colors": [
+          {
+            "slug": "white",
+            "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
+            "image": "/photos/standart/st-2-1-white.png"
+          },
+          {
+            "slug": "astana-marle",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
+            "image": "/photos/standart/st-2-1-astana-marle.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
+            "image": "/photos/standart/st-2-1-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
+            "image": "/photos/standart/st-2-1-beton-siryi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
+            "image": "/photos/standart/st-2-1-bila-teksturna.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
+            "image": "/photos/standart/st-2-1-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
+            "image": "/photos/standart/st-2-1-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
+            "image": "/photos/standart/st-2-1-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
+            "image": "/photos/standart/st-2-1-karpatska-ialyna.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
+            "image": "/photos/standart/st-2-1-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
+            "image": "/photos/standart/st-2-1-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
+            "image": "/photos/standart/st-2-1-sosna-provans.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
+            "image": "/photos/standart/st-2-1-shpon-korychnevyi.png"
+          }
+        ]
+      },
+      {
+        "code": "ST-2.2",
+        "basePrice": 11063,
+        "colors": [
+          {
+            "slug": "white",
+            "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
+            "image": "/photos/standart/st-2-2-white.png"
+          },
+          {
+            "slug": "astana-marle",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
+            "image": "/photos/standart/st-2-2-astana-marle.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
+            "image": "/photos/standart/st-2-2-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
+            "image": "/photos/standart/st-2-2-beton-siryi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
+            "image": "/photos/standart/st-2-2-bila-teksturna.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
+            "image": "/photos/standart/st-2-2-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
+            "image": "/photos/standart/st-2-2-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
+            "image": "/photos/standart/st-2-2-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
+            "image": "/photos/standart/st-2-2-karpatska-ialyna.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
+            "image": "/photos/standart/st-2-2-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
+            "image": "/photos/standart/st-2-2-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
+            "image": "/photos/standart/st-2-2-sosna-provans.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
+            "image": "/photos/standart/st-2-2-shpon-korychnevyi.png"
+          }
+        ]
+      },
+      {
+        "code": "ST-2.3",
+        "basePrice": 11063,
+        "colors": [
+          {
+            "slug": "white",
+            "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
+            "image": "/photos/standart/st-2-3-white.png"
+          },
+          {
+            "slug": "astana-marle",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
+            "image": "/photos/standart/st-2-3-astana-marle.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
+            "image": "/photos/standart/st-2-3-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
+            "image": "/photos/standart/st-2-3-beton-siryi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
+            "image": "/photos/standart/st-2-3-bila-teksturna.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
+            "image": "/photos/standart/st-2-3-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
+            "image": "/photos/standart/st-2-3-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
+            "image": "/photos/standart/st-2-3-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
+            "image": "/photos/standart/st-2-3-karpatska-ialyna.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
+            "image": "/photos/standart/st-2-3-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
+            "image": "/photos/standart/st-2-3-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
+            "image": "/photos/standart/st-2-3-sosna-provans.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
+            "image": "/photos/standart/st-2-3-shpon-korychnevyi.png"
+          }
+        ]
+      },
+      {
+        "code": "ST-2.4",
+        "basePrice": 11063,
+        "colors": [
+          {
+            "slug": "white",
+            "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
+            "image": "/photos/standart/st-2-4-white.png"
+          },
+          {
+            "slug": "astana-marle",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
+            "image": "/photos/standart/st-2-4-astana-marle.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
+            "image": "/photos/standart/st-2-4-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
+            "image": "/photos/standart/st-2-4-beton-siryi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
+            "image": "/photos/standart/st-2-4-bila-teksturna.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
+            "image": "/photos/standart/st-2-4-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
+            "image": "/photos/standart/st-2-4-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
+            "image": "/photos/standart/st-2-4-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
+            "image": "/photos/standart/st-2-4-karpatska-ialyna.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
+            "image": "/photos/standart/st-2-4-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
+            "image": "/photos/standart/st-2-4-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
+            "image": "/photos/standart/st-2-4-sosna-provans.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
+            "image": "/photos/standart/st-2-4-shpon-korychnevyi.png"
+          }
+        ]
+      },
+      {
+        "code": "ST-2.5",
+        "basePrice": 11063,
+        "colors": [
+          {
+            "slug": "white",
+            "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
+            "image": "/photos/standart/st-2-5-white.png"
+          },
+          {
+            "slug": "astana-marle",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
+            "image": "/photos/standart/st-2-5-astana-marle.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
+            "image": "/photos/standart/st-2-5-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
+            "image": "/photos/standart/st-2-5-beton-siryi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
+            "image": "/photos/standart/st-2-5-bila-teksturna.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
+            "image": "/photos/standart/st-2-5-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
+            "image": "/photos/standart/st-2-5-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
+            "image": "/photos/standart/st-2-5-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
+            "image": "/photos/standart/st-2-5-karpatska-ialyna.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
+            "image": "/photos/standart/st-2-5-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
+            "image": "/photos/standart/st-2-5-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
+            "image": "/photos/standart/st-2-5-sosna-provans.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
+            "image": "/photos/standart/st-2-5-shpon-korychnevyi.png"
+          }
+        ]
+      },
+      {
+        "code": "ST-2.6",
+        "basePrice": 11063,
+        "colors": [
+          {
+            "slug": "white",
+            "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
+            "image": "/photos/standart/st-2-6-white.png"
+          },
+          {
+            "slug": "astana-marle",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
+            "image": "/photos/standart/st-2-6-astana-marle.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
+            "image": "/photos/standart/st-2-6-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
+            "image": "/photos/standart/st-2-6-beton-siryi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
+            "image": "/photos/standart/st-2-6-bila-teksturna.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
+            "image": "/photos/standart/st-2-6-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
+            "image": "/photos/standart/st-2-6-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
+            "image": "/photos/standart/st-2-6-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
+            "image": "/photos/standart/st-2-6-karpatska-ialyna.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
+            "image": "/photos/standart/st-2-6-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
+            "image": "/photos/standart/st-2-6-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
+            "image": "/photos/standart/st-2-6-sosna-provans.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
+            "image": "/photos/standart/st-2-6-shpon-korychnevyi.png"
+          }
+        ]
+      },
+      {
+        "code": "ST-2.7",
+        "basePrice": 11063,
+        "colors": [
+          {
+            "slug": "white",
+            "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
+            "image": "/photos/standart/st-2-7-white.png"
+          },
+          {
+            "slug": "astana-marle",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
+            "image": "/photos/standart/st-2-7-astana-marle.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
+            "image": "/photos/standart/st-2-7-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
+            "image": "/photos/standart/st-2-7-beton-siryi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
+            "image": "/photos/standart/st-2-7-bila-teksturna.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
+            "image": "/photos/standart/st-2-7-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
+            "image": "/photos/standart/st-2-7-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
+            "image": "/photos/standart/st-2-7-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
+            "image": "/photos/standart/st-2-7-karpatska-ialyna.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
+            "image": "/photos/standart/st-2-7-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
+            "image": "/photos/standart/st-2-7-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
+            "image": "/photos/standart/st-2-7-sosna-provans.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
+            "image": "/photos/standart/st-2-7-shpon-korychnevyi.png"
+          }
+        ]
+      },
+      {
+        "code": "ST-3.1",
+        "basePrice": 9150,
+        "colors": [
+          {
+            "slug": "white",
+            "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
+            "image": "/photos/standart/st-3-1-white.png"
+          },
+          {
+            "slug": "astana-marle",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
+            "image": "/photos/standart/st-3-1-astana-marle.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
+            "image": "/photos/standart/st-3-1-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
+            "image": "/photos/standart/st-3-1-beton-siryi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
+            "image": "/photos/standart/st-3-1-bila-teksturna.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
+            "image": "/photos/standart/st-3-1-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
+            "image": "/photos/standart/st-3-1-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
+            "image": "/photos/standart/st-3-1-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
+            "image": "/photos/standart/st-3-1-karpatska-ialyna.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
+            "image": "/photos/standart/st-3-1-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
+            "image": "/photos/standart/st-3-1-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
+            "image": "/photos/standart/st-3-1-sosna-provans.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
+            "image": "/photos/standart/st-3-1-shpon-korychnevyi.png"
+          }
+        ]
+      },
+      {
+        "code": "ST-3.2",
+        "basePrice": 9150,
+        "colors": [
+          {
+            "slug": "white",
+            "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
+            "image": "/photos/standart/st-3-2-white.png"
+          },
+          {
+            "slug": "astana-marle",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
+            "image": "/photos/standart/st-3-2-astana-marle.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
+            "image": "/photos/standart/st-3-2-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
+            "image": "/photos/standart/st-3-2-beton-siryi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
+            "image": "/photos/standart/st-3-2-bila-teksturna.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
+            "image": "/photos/standart/st-3-2-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
+            "image": "/photos/standart/st-3-2-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
+            "image": "/photos/standart/st-3-2-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
+            "image": "/photos/standart/st-3-2-karpatska-ialyna.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
+            "image": "/photos/standart/st-3-2-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
+            "image": "/photos/standart/st-3-2-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
+            "image": "/photos/standart/st-3-2-sosna-provans.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
+            "image": "/photos/standart/st-3-2-shpon-korychnevyi.png"
+          }
+        ]
+      },
+      {
+        "code": "ST-3.3",
+        "basePrice": 9150,
+        "colors": [
+          {
+            "slug": "white",
+            "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
+            "image": "/photos/standart/st-3-3-white.png"
+          },
+          {
+            "slug": "astana-marle",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
+            "image": "/photos/standart/st-3-3-astana-marle.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
+            "image": "/photos/standart/st-3-3-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
+            "image": "/photos/standart/st-3-3-beton-siryi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
+            "image": "/photos/standart/st-3-3-bila-teksturna.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
+            "image": "/photos/standart/st-3-3-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
+            "image": "/photos/standart/st-3-3-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
+            "image": "/photos/standart/st-3-3-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
+            "image": "/photos/standart/st-3-3-karpatska-ialyna.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
+            "image": "/photos/standart/st-3-3-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
+            "image": "/photos/standart/st-3-3-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
+            "image": "/photos/standart/st-3-3-sosna-provans.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
+            "image": "/photos/standart/st-3-3-shpon-korychnevyi.png"
+          }
+        ]
+      },
+      {
+        "code": "ST-3.4",
+        "basePrice": 9150,
+        "colors": [
+          {
+            "slug": "white",
+            "label": "Білий",
+            "labelRu": "Белый",
+            "labelEn": "White",
+            "labelPl": "Biały",
+            "image": "/photos/standart/st-3-4-white.png"
+          },
+          {
+            "slug": "astana-marle",
+            "label": "Астана мерле",
+            "labelRu": "Астана мерле",
+            "labelEn": "Astana merle",
+            "labelPl": "Astana merle",
+            "image": "/photos/standart/st-3-4-astana-marle.png"
+          },
+          {
+            "slug": "beton-snizhnyi",
+            "label": "Бетон сніжний",
+            "labelRu": "Бетон снежный",
+            "labelEn": "Concrete snow",
+            "labelPl": "Beton śnieżny",
+            "image": "/photos/standart/st-3-4-beton-snizhnyi.png"
+          },
+          {
+            "slug": "beton-siryi",
+            "label": "Бетон сірий",
+            "labelRu": "Бетон серый",
+            "labelEn": "Concrete grey",
+            "labelPl": "Beton szary",
+            "image": "/photos/standart/st-3-4-beton-siryi.png"
+          },
+          {
+            "slug": "bila-teksturna",
+            "label": "Білий текстурний",
+            "labelRu": "Белый текстурный",
+            "labelEn": "White textured",
+            "labelPl": "Biały teksturowany",
+            "image": "/photos/standart/st-3-4-bila-teksturna.png"
+          },
+          {
+            "slug": "venhe-pivdenne-tysnene",
+            "label": "Венге південне тиснене",
+            "labelRu": "Венге южное тиснёное",
+            "labelEn": "Wenge southern embossed",
+            "labelPl": "Wenge południowe tłoczone",
+            "image": "/photos/standart/st-3-4-venhe-pivdenne-tysnene.png"
+          },
+          {
+            "slug": "dub-hlazho-eko",
+            "label": "Дуб Глазго ЕКО",
+            "labelRu": "Дуб Глазго ЭКО",
+            "labelEn": "Oak Glasgow ECO",
+            "labelPl": "Dąb Glasgow EKO",
+            "image": "/photos/standart/st-3-4-dub-hlazho-eko.png"
+          },
+          {
+            "slug": "dub-shato",
+            "label": "Дуб шато",
+            "labelRu": "Дуб шато",
+            "labelEn": "Oak chateau",
+            "labelPl": "Dąb chateau",
+            "image": "/photos/standart/st-3-4-dub-shato.png"
+          },
+          {
+            "slug": "karpatska-ialyna",
+            "label": "Карпатська ялина",
+            "labelRu": "Карпатская ель",
+            "labelEn": "Carpathian spruce",
+            "labelPl": "Świerk karpacki",
+            "image": "/photos/standart/st-3-4-karpatska-ialyna.png"
+          },
+          {
+            "slug": "rustyk-zolotyi",
+            "label": "Рустик золотий",
+            "labelRu": "Рустик золотой",
+            "labelEn": "Rustic gold",
+            "labelPl": "Rustik złoty",
+            "image": "/photos/standart/st-3-4-rustyk-zolotyi.png"
+          },
+          {
+            "slug": "rustik-avinon-bilyi",
+            "label": "Рустик Авінон білий",
+            "labelRu": "Рустик Авинон белый",
+            "labelEn": "Rustic Avinon white",
+            "labelPl": "Rustik Avinon biały",
+            "image": "/photos/standart/st-3-4-rustik-avinon-bilyi.png"
+          },
+          {
+            "slug": "sosna-provans",
+            "label": "Сосна прованс",
+            "labelRu": "Сосна прованс",
+            "labelEn": "Pine Provence",
+            "labelPl": "Sosna Prowansja",
+            "image": "/photos/standart/st-3-4-sosna-provans.png"
+          },
+          {
+            "slug": "shpon-korychnevyi",
+            "label": "Шпон коричневий",
+            "labelRu": "Шпон коричневый",
+            "labelEn": "Veneer brown",
+            "labelPl": "Fornir brązowy",
+            "image": "/photos/standart/st-3-4-shpon-korychnevyi.png"
+          }
+        ]
+      }
+    ]
   }
 }

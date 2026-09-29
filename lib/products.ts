@@ -43,3 +43,7 @@ export const collectionOrder = [
   "hidden-doors",
   "pid-farbuvannya",
 ];
+
+// STANDART — тільки для B2B-калькулятора (ТЗ 29.09.2026), на публічному
+// каталозі не показується, тому не входить у collectionOrder.
+export const portalCollectionOrder = [...collectionOrder, "standart"];
