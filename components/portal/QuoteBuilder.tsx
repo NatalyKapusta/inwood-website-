@@ -1025,7 +1025,55 @@ export default function QuoteBuilder({
     );
 
   return (
-    <div className="mt-6 grid gap-8 lg:grid-cols-[380px_1fr]">
+    <>
+      <div className="sticky top-0 z-20 mb-4 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-gold-dim bg-navy-dark px-4 py-3 shadow-sm">
+        <div className="flex items-center gap-1.5">
+          <button
+            type="button"
+            onClick={() => setTranslateEn(false)}
+            className={`rounded-md px-3 py-1.5 text-sm font-semibold transition ${
+              !translateEn ? "bg-gold text-navy-dark" : "bg-white/10 text-white/70 hover:bg-white/20"
+            }`}
+          >
+            UA
+          </button>
+          <button
+            type="button"
+            onClick={() => setTranslateEn(true)}
+            className={`rounded-md px-3 py-1.5 text-sm font-semibold transition ${
+              translateEn ? "bg-gold text-navy-dark" : "bg-white/10 text-white/70 hover:bg-white/20"
+            }`}
+          >
+            EN
+          </button>
+        </div>
+        <div className="flex flex-wrap items-center gap-1.5">
+          {(["none", "EUR", "USD"] as const).map((c) => (
+            <button
+              key={c}
+              type="button"
+              onClick={() => setCurrency(c)}
+              className={`rounded-md px-3 py-1.5 text-sm font-semibold transition ${
+                currency === c ? "bg-gold text-navy-dark" : "bg-white/10 text-white/70 hover:bg-white/20"
+              }`}
+            >
+              {c === "none" ? "UAH" : c}
+            </button>
+          ))}
+          {currency !== "none" && (
+            <input
+              type="number"
+              min={0}
+              step="0.01"
+              placeholder={translateEn ? `Rate, UAH per 1 ${currencySymbol}` : `Курс, ₴ за 1 ${currencySymbol}`}
+              value={exchangeRate || ""}
+              onChange={(e) => setExchangeRate(Math.max(0, Number(e.target.value)))}
+              className="w-44 rounded-md border-none bg-white/10 px-3 py-1.5 text-sm text-white placeholder-white/50 outline-none focus:bg-white/20"
+            />
+          )}
+        </div>
+      </div>
+      <div className="grid gap-8 lg:grid-cols-[380px_1fr]">
       <div className="space-y-6">
         <div className="rounded-xl bg-panel p-5 shadow-sm">
           <h2 className="font-serif text-lg font-bold text-navy-dark">{t("Клієнт і тариф")}</h2>
@@ -1785,32 +1833,7 @@ export default function QuoteBuilder({
                 onChange={(e) => setDiscountValue(Math.max(0, Number(e.target.value)))}
                 className="w-32 rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
               />
-              <select
-                value={currency}
-                onChange={(e) => setCurrency(e.target.value as "none" | "EUR" | "USD")}
-                className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
-              >
-                <option value="none">{t("Без валюти")}</option>
-                <option value="EUR">EUR</option>
-                <option value="USD">USD</option>
-              </select>
-              {currency !== "none" && (
-                <input
-                  type="number"
-                  min={0}
-                  step="0.01"
-                  placeholder={translateEn ? `Rate, UAH per 1 ${currencySymbol}` : `Курс, ₴ за 1 ${currencySymbol}`}
-                  value={exchangeRate || ""}
-                  onChange={(e) => setExchangeRate(Math.max(0, Number(e.target.value)))}
-                  className="w-36 rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
-                />
-              )}
             </div>
-
-            <label className="mt-3 flex items-center gap-2 text-sm text-navy-dark">
-              <input type="checkbox" checked={translateEn} onChange={(e) => setTranslateEn(e.target.checked)} />
-              {t("Переклад бланку на англійську")}
-            </label>
 
             <div className="mt-4 text-right">
               {discountValue > 0 && (
@@ -1855,7 +1878,8 @@ export default function QuoteBuilder({
           </div>
         )}
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 
