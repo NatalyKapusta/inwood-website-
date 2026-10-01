@@ -709,6 +709,9 @@ export default function QuoteBuilder({
       return;
     }
     if (!modelCode || previewRows.length === 0) return;
+    const displayColorLabel = translateEn
+      ? currentModel?.colors.find((c) => c.label === colorLabel)?.labelEn ?? colorLabel
+      : colorLabel;
     const colorNotes = [
       isEdgeColorModel && edgeColor
         ? translateEn
@@ -730,7 +733,7 @@ export default function QuoteBuilder({
       id: crypto.randomUUID(),
       collectionLabel: collections[collectionKey].label,
       modelCode,
-      colorLabel: [colorLabel, ...colorNotes].filter(Boolean).join(" · "),
+      colorLabel: [displayColorLabel, ...colorNotes].filter(Boolean).join(" · "),
       photo: previewPhoto,
       qty,
       rows: previewRows.map((r) => ({ label: r.label, unitPrice: r.unitPrice, qty, amount: r.unitPrice * qty, photo: r.photo })),
@@ -1290,7 +1293,7 @@ export default function QuoteBuilder({
                 <option value="">{t("Колір...")}</option>
                 {currentModel.colors.map((c) => (
                   <option key={c.slug} value={c.label}>
-                    {c.label}
+                    {translateEn ? c.labelEn ?? c.label : c.label}
                   </option>
                 ))}
               </select>
