@@ -4,7 +4,7 @@ import { Fragment, useEffect, useMemo, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { collections, collectionOrder, portalCollectionOrder } from "@/lib/products";
 import modelVariantsData from "@/data/model-variants.json";
-import { translateForPrint, PRINT_EN_STATIC, PRINT_EN_TIERS } from "@/lib/printEn";
+import { translateForPrint, PRINT_EN_STATIC, PRINT_EN_TIERS, PRINT_EN_CATALOG } from "@/lib/printEn";
 import { addonPhotoFor } from "@/lib/addonPhotos";
 import {
   STANDARD_WIDTHS,
@@ -72,6 +72,106 @@ function fmtNum(n: number) {
 function fmtUah(n: number) {
   return `${fmtNum(n)} ₴`;
 }
+
+// Переклад робочого екрана калькулятора (не лише друкованого бланку) —
+// ТЗ 01.10.2026: іноземний клієнт з доступом "export" має бачити інтерфейс
+// англійською, а не тільки готовий PDF. Терміни короб/лиштва/добір/крайка
+// звірені з друкованим англійським каталогом (public/documents/catalog-en.pdf,
+// сторінки 63-64): короб → Frame, лиштва → Trim, добір → Door Casing,
+// крило → Wing, крайка → Edge. Для сірого кольору алюмінієвої крайки
+// каталог використовує "Anodized", а не буквальне "Grey" — враховано нижче
+// окремо, саме для цього контексту.
+const UI_EN: Record<string, string> = {
+  "Завантаження цін...": "Loading prices...",
+  "Тарифні ціни ще не завантажені у систему — конструктор КП поки недоступний.":
+    "Tariff prices are not loaded yet — the quote builder is temporarily unavailable.",
+  "Клієнт і тариф": "Client and tariff",
+  "Ім'я клієнта": "Client name",
+  "Телефон / email клієнта": "Client phone / email",
+  "Ім'я консультанта": "Consultant name",
+  "Телефон консультанта": "Consultant phone",
+  "Коментар (необов'язково)": "Comment (optional)",
+  "Додати позицію": "Add item",
+  "Позиція...": "Item...",
+  "Лінія: ": "Line: ",
+  "Немає фото": "No photo",
+  "Модель...": "Model...",
+  "Колір RAL/NCS, напр. RAL 9010": "RAL/NCS colour, e.g. RAL 9010",
+  "Колір...": "Colour...",
+  "Колір крайки...": "Edge colour...",
+  "Колір вставки...": "Insert colour...",
+  "Сторона відкривання...": "Opening side...",
+  "Ліва": "Left",
+  "Права": "Right",
+  "Розсувні": "Sliding",
+  "Нестандартний розмір (вручну)": "Custom size (manual)",
+  "Ширина, мм...": "Width, mm...",
+  "Висота, мм...": "Height, mm...",
+  "Ширина, мм (вручну), напр. 1050": "Width, mm (manual), e.g. 1050",
+  "Висота, мм (вручну), напр. 2350": "Height, mm (manual), e.g. 2350",
+  "Ціна полотна, ₴ (вручну), напр. 12000": "Leaf price, UAH (manual), e.g. 12000",
+  "Короб — нестандарт (вручну)": "Frame — custom (manual)",
+  "Глибина короба, мм, напр. 130": "Frame depth, mm, e.g. 130",
+  "Ціна короба, ₴": "Frame price, UAH",
+  "Короб — не обрано": "Frame — not selected",
+  "Колір RAL/NCS (необов'язково), напр. RAL 9010": "RAL/NCS colour (optional), e.g. RAL 9010",
+  "Лиштва — нестандарт (вручну)": "Trim — custom (manual)",
+  "Лицьова й тильна лиштва — вкажіть ширину і ціну для обох.": "Front and back trim — enter width and price for both.",
+  "Лицьова: ширина, мм, напр. 100": "Front: width, mm, e.g. 100",
+  "Лицьова: ціна, ₴": "Front: price, UAH",
+  "Тильна: ширина, мм, напр. 100": "Back: width, mm, e.g. 100",
+  "Тильна: ціна, ₴": "Back: price, UAH",
+  "Лиштва лицьова — не обрано": "Front trim — not selected",
+  "Лиштва тильна — не обрано": "Back trim — not selected",
+  "Добір — нестандарт (вручну)": "Door casing — custom (manual)",
+  "Ширина добору, мм, напр. 220": "Casing width, mm, e.g. 220",
+  "Висота добору, мм, напр. 2050": "Casing height, mm, e.g. 2050",
+  "Ціна добору, ₴": "Casing price, UAH",
+  "Добір — не обрано": "Door casing — not selected",
+  "Шумоізоляція": "Soundproofing",
+  "Фарбування алюм. крайки": "Aluminum edge painting",
+  "Позиція": "Item",
+  "Модель": "Model",
+  "К-сть": "Qty",
+  "Ціна": "Price",
+  "Видалити": "Remove",
+  "Ще немає жодної позиції": "No items yet",
+  "Знижка, %": "Discount, %",
+  "Знижка, грн": "Discount, UAH",
+  "Без валюти": "No currency",
+  "Переклад бланку на англійську": "Translate to English",
+  "Зберегти PDF": "Save PDF",
+  "Зберегти файл": "Save file",
+  "Без врізки": "No cutout",
+  "Врізка під замок": "Lock cutout",
+  "Повна врізка фурнітури": "Full hardware cutout",
+  "Фурнітура": "Hardware",
+  "База": "Base",
+  "Сірий": "Anodized",
+  "Чорний": "Black",
+  "Білий": "White",
+  "В колір полотна": "Matching panel colour",
+  "Погонажні вироби (короб/лиштва/добір окремо)": "Linear items (frame/trim/casing separately)",
+  "Плінтус": "Skirting board",
+  "Дверна накладка (метал. двері, 10 мм)": "Door overlay (metal door, 10 mm)",
+  "Короб": "Frame",
+  "Лиштва": "Trim",
+  "Добір": "Door Casing",
+};
+
+const QTY_EN = (qty: number) => `Total for ${qty} pcs`;
+
+const HARDWARE_CATEGORY_EN: Record<HardwareCategory, string> = {
+  ruchky: "Handles",
+  nakladky: "Overlays",
+  zavisy: "Hinges",
+  upory: "Door stops",
+  mekhanizmy: "Mechanisms",
+  tsylindry: "Cylinders",
+  rozsuvna: "Sliding systems",
+  aksesuary: "Accessories",
+  inshe: "Other",
+};
 
 const VRIZKA_OPTIONS = [
   { value: "none", label: "Без врізки" },
@@ -168,6 +268,14 @@ export default function QuoteBuilder({
   const [currency, setCurrency] = useState<"none" | "EUR" | "USD">("none");
   const [exchangeRate, setExchangeRate] = useState(0);
   const [translateEn, setTranslateEn] = useState(false);
+  // Перекладає як робочий екран, так і друкований бланк — один словник
+  // на все (UI_EN для специфічних написів калькулятора, PRINT_EN_STATIC/
+  // PRINT_EN_CATALOG для того, що вже перекладено раніше для друку).
+  const t = (uk: string) => (translateEn ? UI_EN[uk] ?? PRINT_EN_STATIC[uk] ?? PRINT_EN_CATALOG[uk] ?? uk : uk);
+  // Для динамічно зібраних підписів позицій (напр. "Полотно, ET-01 (алюм.
+  // крайка)") точний збіг у словнику малоймовірний — той самий алгоритм
+  // пошуку коренів, що й у друкованому бланку (lib/printEn.ts).
+  const tc = (uk: string) => (translateEn ? translateForPrint(uk) : uk);
 
   const [collectionKey, setCollectionKey] = useState(collectionOrder[0]);
   const [pogLine, setPogLine] = useState(collectionOrder[0]);
@@ -602,9 +710,21 @@ export default function QuoteBuilder({
     }
     if (!modelCode || previewRows.length === 0) return;
     const colorNotes = [
-      isEdgeColorModel && edgeColor ? `крайка: ${edgeColor}` : "",
-      isInsertColorModel && insertColor ? `вставка: ${insertColor}` : "",
-      isOpeningSideModel && openingSide ? `сторона відкривання: ${openingSide}` : "",
+      isEdgeColorModel && edgeColor
+        ? translateEn
+          ? `Edge: ${t(edgeColor)}`
+          : `крайка: ${edgeColor}`
+        : "",
+      isInsertColorModel && insertColor
+        ? translateEn
+          ? `Insert: ${insertColor === "Сірий" ? "Grey" : t(insertColor)}`
+          : `вставка: ${insertColor}`
+        : "",
+      isOpeningSideModel && openingSide
+        ? translateEn
+          ? `Opening side: ${t(openingSide)}`
+          : `сторона відкривання: ${openingSide}`
+        : "",
     ].filter(Boolean);
     const position: QuotePosition = {
       id: crypto.randomUUID(),
@@ -707,8 +827,7 @@ export default function QuoteBuilder({
 
   function buildDocumentHtml() {
     const origin = typeof window !== "undefined" ? window.location.origin : "";
-    const tt = (uk: string) => (translateEn ? PRINT_EN_STATIC[uk] ?? uk : uk);
-    const tc = (uk: string) => (translateEn ? translateForPrint(uk) : uk);
+    const tt = t;
 
     const rowsHtml = positions
       .map((p) => {
@@ -721,8 +840,8 @@ export default function QuoteBuilder({
           ${idx === 0 ? `<td rowspan="${p.rows.length}"><strong>${modelLine}</strong><br/><span style="color:#8A90A6;font-size:12px;">${tc(p.colorLabel || "")}</span></td>` : ""}
           <td>${r.photo ? `<img class="addon-photo" src="${origin}${r.photo}" alt="" />` : ""}${tc(r.label)}</td>
           <td style="text-align:center;">${r.qty}</td>
-          <td style="text-align:right;">${fmtUah(r.unitPrice)}</td>
-          <td style="text-align:right;">${fmtUah(r.amount)}</td>
+          <td style="text-align:right;">${moneyDisplay(r.unitPrice)}</td>
+          <td style="text-align:right;">${moneyDisplay(r.amount)}</td>
         </tr>`
           )
           .join("");
@@ -893,12 +1012,12 @@ export default function QuoteBuilder({
     }
   }
 
-  if (loading) return <p className="mt-6 text-navy-dim">Завантаження цін...</p>;
+  if (loading) return <p className="mt-6 text-navy-dim">{t("Завантаження цін...")}</p>;
   if (loadError) return <p className="mt-6 rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">{loadError}</p>;
   if (availableTariffs.length === 0)
     return (
       <p className="mt-6 rounded-lg bg-panel p-6 text-navy-dim">
-        Тарифні ціни ще не завантажені у систему — конструктор КП поки недоступний.
+        {t("Тарифні ціни ще не завантажені у систему — конструктор КП поки недоступний.")}
       </p>
     );
 
@@ -906,7 +1025,7 @@ export default function QuoteBuilder({
     <div className="mt-6 grid gap-8 lg:grid-cols-[380px_1fr]">
       <div className="space-y-6">
         <div className="rounded-xl bg-panel p-5 shadow-sm">
-          <h2 className="font-serif text-lg font-bold text-navy-dark">Клієнт і тариф</h2>
+          <h2 className="font-serif text-lg font-bold text-navy-dark">{t("Клієнт і тариф")}</h2>
           <div className="mt-3 flex flex-col gap-3">
             {availableTariffs.length > 1 && (
               <select
@@ -914,9 +1033,9 @@ export default function QuoteBuilder({
                 onChange={(e) => setTariff(e.target.value as Tariff)}
                 className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
               >
-                {availableTariffs.map((t) => (
-                  <option key={t} value={t}>
-                    {tariffLabels[t]}
+                {availableTariffs.map((tf) => (
+                  <option key={tf} value={tf}>
+                    {translateEn ? tariffLabelsEn[tf] : tariffLabels[tf]}
                   </option>
                 ))}
               </select>
@@ -924,31 +1043,31 @@ export default function QuoteBuilder({
             <input
               value={clientName}
               onChange={(e) => setClientName(e.target.value)}
-              placeholder="Ім'я клієнта"
+              placeholder={t("Ім'я клієнта")}
               className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
             />
             <input
               value={clientContact}
               onChange={(e) => setClientContact(e.target.value)}
-              placeholder="Телефон / email клієнта"
+              placeholder={t("Телефон / email клієнта")}
               className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
             />
             <input
               value={consultantName}
               onChange={(e) => setConsultantName(e.target.value)}
-              placeholder="Ім'я консультанта"
+              placeholder={t("Ім'я консультанта")}
               className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
             />
             <input
               value={consultantPhone}
               onChange={(e) => setConsultantPhone(e.target.value)}
-              placeholder="Телефон консультанта"
+              placeholder={t("Телефон консультанта")}
               className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
             />
             <textarea
               value={comment}
               onChange={(e) => setComment(e.target.value)}
-              placeholder="Коментар (необов'язково)"
+              placeholder={t("Коментар (необов'язково)")}
               rows={2}
               className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
             />
@@ -956,7 +1075,7 @@ export default function QuoteBuilder({
         </div>
 
         <div className="rounded-xl bg-panel p-5 shadow-sm">
-          <h2 className="font-serif text-lg font-bold text-navy-dark">Додати позицію</h2>
+          <h2 className="font-serif text-lg font-bold text-navy-dark">{t("Додати позицію")}</h2>
           <div className="mt-3 flex flex-col gap-3">
             <select
               value={collectionKey}
@@ -984,15 +1103,17 @@ export default function QuoteBuilder({
                     {collections[k].label}
                   </option>
                 ))}
-              <option value={POGONAZHNI_KEY}>{POGONAZHNI_LABEL}</option>
+              <option value={POGONAZHNI_KEY}>{t(POGONAZHNI_LABEL)}</option>
               {FLAT_LINE_CATEGORIES.map((c) => (
                 <option key={c.key} value={c.key}>
-                  {c.label}
+                  {t(c.label)}
                 </option>
               ))}
               {availableHardwareBrands.map((b) => (
                 <option key={b} value={hardwareKeyForBrand(b)}>
-                  {HARDWARE_BRAND_LABELS[b] ?? b}
+                  {translateEn
+                    ? (HARDWARE_BRAND_LABELS[b] ?? b).replace("Фурнітура ", "Hardware ")
+                    : HARDWARE_BRAND_LABELS[b] ?? b}
                 </option>
               ))}
             </select>
@@ -1003,7 +1124,7 @@ export default function QuoteBuilder({
                 onChange={(e) => setFlatItemCode(e.target.value)}
                 className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
               >
-                <option value="">Позиція...</option>
+                <option value="">{t("Позиція...")}</option>
                 {flatItemOptions.map((r) => (
                   <option key={r.product_code} value={r.product_code}>
                     {r.product_code.slice(flatLine!.prefix.length)}
@@ -1026,7 +1147,7 @@ export default function QuoteBuilder({
                     .filter((k) => collections[k]?.models?.length)
                     .map((k) => (
                       <option key={k} value={k}>
-                        Лінія: {collections[k].label}
+                        {t("Лінія: ")}{collections[k].label}
                       </option>
                     ))}
                 </select>
@@ -1040,7 +1161,7 @@ export default function QuoteBuilder({
                 >
                   {POGONAZHNI_TYPE_OPTIONS.map((o) => (
                     <option key={o.value} value={o.value}>
-                      {o.label}
+                      {t(o.label)}
                     </option>
                   ))}
                 </select>
@@ -1049,10 +1170,10 @@ export default function QuoteBuilder({
                   onChange={(e) => setPogItem(e.target.value)}
                   className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
                 >
-                  <option value="">Позиція...</option>
+                  <option value="">{t("Позиція...")}</option>
                   {pogItemOptions.map((r) => (
                     <option key={r.item_label} value={r.item_label}>
-                      {r.item_label}
+                      {tc(r.item_label)}
                     </option>
                   ))}
                 </select>
@@ -1071,7 +1192,7 @@ export default function QuoteBuilder({
                 >
                   {hardwareCategoriesForBrand.map((c) => (
                     <option key={c} value={c}>
-                      {hardwareCategoryLabels[c]}
+                      {translateEn ? HARDWARE_CATEGORY_EN[c] : hardwareCategoryLabels[c]}
                     </option>
                   ))}
                 </select>
@@ -1080,7 +1201,7 @@ export default function QuoteBuilder({
                   onChange={(e) => setHardwareArticle(e.target.value)}
                   className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
                 >
-                  <option value="">Позиція...</option>
+                  <option value="">{t("Позиція...")}</option>
                   {hardwareItemOptions.map((r) => (
                     <option key={r.article} value={r.article}>
                       {r.article} — {r.name}
@@ -1098,7 +1219,7 @@ export default function QuoteBuilder({
                       />
                     ) : (
                       <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-md border border-navy-dim/10 bg-panel text-center text-[10px] text-navy-dim">
-                        Немає фото
+                        {t("Немає фото")}
                       </div>
                     )}
                     <div className="min-w-0">
@@ -1135,7 +1256,7 @@ export default function QuoteBuilder({
               }}
               className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
             >
-              <option value="">Модель...</option>
+              <option value="">{t("Модель...")}</option>
               {isHiddenDoors
                 ? hiddenVariants.map((v) => (
                     <option key={v.image} value={hiddenDoorCode(v.image)}>
@@ -1155,7 +1276,7 @@ export default function QuoteBuilder({
                 type="text"
                 value={colorLabel}
                 onChange={(e) => setColorLabel(e.target.value)}
-                placeholder="Колір RAL/NCS, напр. RAL 9010"
+                placeholder={t("Колір RAL/NCS, напр. RAL 9010")}
                 className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
               />
             )}
@@ -1166,7 +1287,7 @@ export default function QuoteBuilder({
                 onChange={(e) => setColorLabel(e.target.value)}
                 className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
               >
-                <option value="">Колір...</option>
+                <option value="">{t("Колір...")}</option>
                 {currentModel.colors.map((c) => (
                   <option key={c.slug} value={c.label}>
                     {c.label}
@@ -1181,10 +1302,10 @@ export default function QuoteBuilder({
                 onChange={(e) => setEdgeColor(e.target.value)}
                 className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
               >
-                <option value="">Колір крайки...</option>
+                <option value="">{t("Колір крайки...")}</option>
                 {edgeColorOptions.map((c) => (
                   <option key={c} value={c}>
-                    {c}
+                    {t(c)}
                   </option>
                 ))}
               </select>
@@ -1196,9 +1317,9 @@ export default function QuoteBuilder({
                 onChange={(e) => setInsertColor(e.target.value)}
                 className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
               >
-                <option value="">Колір вставки...</option>
-                <option value="Сірий">Сірий</option>
-                <option value="Чорний">Чорний</option>
+                <option value="">{t("Колір вставки...")}</option>
+                <option value="Сірий">{translateEn ? "Grey" : "Сірий"}</option>
+                <option value="Чорний">{t("Чорний")}</option>
               </select>
             )}
 
@@ -1208,10 +1329,10 @@ export default function QuoteBuilder({
                 onChange={(e) => setOpeningSide(e.target.value)}
                 className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
               >
-                <option value="">Сторона відкривання...</option>
+                <option value="">{t("Сторона відкривання...")}</option>
                 {openingSideOptions.map((s) => (
                   <option key={s} value={s}>
-                    {s}
+                    {t(s)}
                   </option>
                 ))}
               </select>
@@ -1220,7 +1341,7 @@ export default function QuoteBuilder({
             {!isSpecialLine && canOverride && (
               <label className="flex items-center gap-2 text-sm text-navy-dark">
                 <input type="checkbox" checked={nonstdSize} onChange={(e) => setNonstdSize(e.target.checked)} />
-                Нестандартний розмір (вручну)
+                {t("Нестандартний розмір (вручну)")}
               </label>
             )}
 
@@ -1231,15 +1352,15 @@ export default function QuoteBuilder({
                   onChange={(e) => setWidth(e.target.value)}
                   className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
                 >
-                  <option value="">Ширина, мм...</option>
+                  <option value="">{t("Ширина, мм...")}</option>
                   {STANDARD_WIDTHS.map((w) => (
                     <option key={w} value={w}>
-                      {w} мм
+                      {tc(`${w} мм`)}
                     </option>
                   ))}
                   {NONSTD_WIDTHS.map((w) => (
                     <option key={w} value={w}>
-                      {w} мм (нестандарт +20%)
+                      {tc(`${w} мм (нестандарт +20%)`)}
                     </option>
                   ))}
                 </select>
@@ -1248,15 +1369,15 @@ export default function QuoteBuilder({
                   onChange={(e) => setHeight(e.target.value)}
                   className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
                 >
-                  <option value="">Висота, мм...</option>
+                  <option value="">{t("Висота, мм...")}</option>
                   {STANDARD_HEIGHTS.map((h) => (
                     <option key={h} value={h}>
-                      {h} мм
+                      {tc(`${h} мм`)}
                     </option>
                   ))}
                   {NONSTD_HEIGHTS.map((h) => (
                     <option key={h} value={h}>
-                      {h} мм (нестандарт +20%)
+                      {tc(`${h} мм (нестандарт +20%)`)}
                     </option>
                   ))}
                 </select>
@@ -1270,7 +1391,7 @@ export default function QuoteBuilder({
                   min={1}
                   value={manualWidth}
                   onChange={(e) => setManualWidth(e.target.value)}
-                  placeholder="Ширина, мм (вручну), напр. 1050"
+                  placeholder={t("Ширина, мм (вручну), напр. 1050")}
                   className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
                 />
                 <input
@@ -1278,7 +1399,7 @@ export default function QuoteBuilder({
                   min={1}
                   value={manualHeight}
                   onChange={(e) => setManualHeight(e.target.value)}
-                  placeholder="Висота, мм (вручну), напр. 2350"
+                  placeholder={t("Висота, мм (вручну), напр. 2350")}
                   className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
                 />
                 <input
@@ -1287,7 +1408,7 @@ export default function QuoteBuilder({
                   step="0.01"
                   value={manualPolotnoPrice || ""}
                   onChange={(e) => setManualPolotnoPrice(Math.max(0, Number(e.target.value)))}
-                  placeholder="Ціна полотна, ₴ (вручну), напр. 12000"
+                  placeholder={t("Ціна полотна, ₴ (вручну), напр. 12000")}
                   className="col-span-2 rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
                 />
               </div>
@@ -1298,7 +1419,7 @@ export default function QuoteBuilder({
             {canOverride && (
               <label className="flex items-center gap-2 text-sm text-navy-dark">
                 <input type="checkbox" checked={korobManual} onChange={(e) => setKorobManual(e.target.checked)} />
-                Короб — нестандарт (вручну)
+                {t("Короб — нестандарт (вручну)")}
               </label>
             )}
             {canOverride && korobManual ? (
@@ -1308,7 +1429,7 @@ export default function QuoteBuilder({
                   min={1}
                   value={korobManualWidth}
                   onChange={(e) => setKorobManualWidth(e.target.value)}
-                  placeholder="Глибина короба, мм, напр. 130"
+                  placeholder={t("Глибина короба, мм, напр. 130")}
                   className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
                 />
                 <input
@@ -1317,7 +1438,7 @@ export default function QuoteBuilder({
                   step="0.01"
                   value={korobManualPrice || ""}
                   onChange={(e) => setKorobManualPrice(Math.max(0, Number(e.target.value)))}
-                  placeholder="Ціна короба, ₴"
+                  placeholder={t("Ціна короба, ₴")}
                   className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
                 />
               </div>
@@ -1335,10 +1456,10 @@ export default function QuoteBuilder({
                 }}
                 className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
               >
-                <option value="">Короб — не обрано</option>
+                <option value="">{t("Короб — не обрано")}</option>
                 {korobOptions.map((r) => (
                   <option key={r.item_label} value={r.item_label}>
-                    {r.item_label}
+                    {tc(r.item_label)}
                   </option>
                 ))}
               </select>
@@ -1350,7 +1471,7 @@ export default function QuoteBuilder({
                 type="text"
                 value={ralNcsColor}
                 onChange={(e) => setRalNcsColor(e.target.value)}
-                placeholder="Колір RAL/NCS (необов'язково), напр. RAL 9010"
+                placeholder={t("Колір RAL/NCS (необов'язково), напр. RAL 9010")}
                 className="rounded-lg border border-gold-dim bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
               />
             )}
@@ -1364,19 +1485,19 @@ export default function QuoteBuilder({
                   checked={lishtvaManual}
                   onChange={(e) => setLishtvaManual(e.target.checked)}
                 />
-                Лиштва — нестандарт (вручну)
+                {t("Лиштва — нестандарт (вручну)")}
               </label>
             )}
             {canOverride && lishtvaManual ? (
               <>
-                <p className="text-xs text-navy-dim">Лицьова й тильна лиштва — вкажіть ширину і ціну для обох.</p>
+                <p className="text-xs text-navy-dim">{t("Лицьова й тильна лиштва — вкажіть ширину і ціну для обох.")}</p>
                 <div className="grid grid-cols-2 gap-3">
                   <input
                     type="number"
                     min={1}
                     value={lishtvaManualFrontWidth}
                     onChange={(e) => setLishtvaManualFrontWidth(e.target.value)}
-                    placeholder="Лицьова: ширина, мм, напр. 100"
+                    placeholder={t("Лицьова: ширина, мм, напр. 100")}
                     className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
                   />
                   <input
@@ -1385,7 +1506,7 @@ export default function QuoteBuilder({
                     step="0.01"
                     value={lishtvaManualFrontPrice || ""}
                     onChange={(e) => setLishtvaManualFrontPrice(Math.max(0, Number(e.target.value)))}
-                    placeholder="Лицьова: ціна, ₴"
+                    placeholder={t("Лицьова: ціна, ₴")}
                     className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
                   />
                 </div>
@@ -1395,7 +1516,7 @@ export default function QuoteBuilder({
                     min={1}
                     value={lishtvaManualBackWidth}
                     onChange={(e) => setLishtvaManualBackWidth(e.target.value)}
-                    placeholder="Тильна: ширина, мм, напр. 100"
+                    placeholder={t("Тильна: ширина, мм, напр. 100")}
                     className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
                   />
                   <input
@@ -1404,7 +1525,7 @@ export default function QuoteBuilder({
                     step="0.01"
                     value={lishtvaManualBackPrice || ""}
                     onChange={(e) => setLishtvaManualBackPrice(Math.max(0, Number(e.target.value)))}
-                    placeholder="Тильна: ціна, ₴"
+                    placeholder={t("Тильна: ціна, ₴")}
                     className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
                   />
                 </div>
@@ -1416,10 +1537,10 @@ export default function QuoteBuilder({
                   onChange={(e) => setLishtvaFront(e.target.value)}
                   className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
                 >
-                  <option value="">Лиштва лицьова — не обрано</option>
+                  <option value="">{t("Лиштва лицьова — не обрано")}</option>
                   {lishtvaOptions.map((r) => (
                     <option key={r.item_label} value={r.item_label}>
-                      {r.item_label}
+                      {tc(r.item_label)}
                     </option>
                   ))}
                 </select>
@@ -1430,10 +1551,10 @@ export default function QuoteBuilder({
                   onChange={(e) => setLishtvaBack(e.target.value)}
                   className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
                 >
-                  <option value="">Лиштва тильна — не обрано</option>
+                  <option value="">{t("Лиштва тильна — не обрано")}</option>
                   {lishtvaOptions.map((r) => (
                     <option key={r.item_label} value={r.item_label}>
-                      {r.item_label}
+                      {tc(r.item_label)}
                     </option>
                   ))}
                 </select>
@@ -1444,7 +1565,7 @@ export default function QuoteBuilder({
             {canOverride && (
               <label className="flex items-center gap-2 text-sm text-navy-dark">
                 <input type="checkbox" checked={dobirManual} onChange={(e) => setDobirManual(e.target.checked)} />
-                Добір — нестандарт (вручну)
+                {t("Добір — нестандарт (вручну)")}
               </label>
             )}
             {canOverride && dobirManual ? (
@@ -1454,7 +1575,7 @@ export default function QuoteBuilder({
                   min={1}
                   value={dobirManualWidth}
                   onChange={(e) => setDobirManualWidth(e.target.value)}
-                  placeholder="Ширина добору, мм, напр. 220"
+                  placeholder={t("Ширина добору, мм, напр. 220")}
                   className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
                 />
                 <input
@@ -1462,7 +1583,7 @@ export default function QuoteBuilder({
                   min={1}
                   value={dobirManualHeight}
                   onChange={(e) => setDobirManualHeight(e.target.value)}
-                  placeholder="Висота добору, мм, напр. 2050"
+                  placeholder={t("Висота добору, мм, напр. 2050")}
                   className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
                 />
                 <input
@@ -1471,7 +1592,7 @@ export default function QuoteBuilder({
                   step="0.01"
                   value={dobirManualPrice || ""}
                   onChange={(e) => setDobirManualPrice(Math.max(0, Number(e.target.value)))}
-                  placeholder="Ціна добору, ₴"
+                  placeholder={t("Ціна добору, ₴")}
                   className="col-span-2 rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
                 />
               </div>
@@ -1481,10 +1602,10 @@ export default function QuoteBuilder({
                 onChange={(e) => setDobir(e.target.value)}
                 className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
               >
-                <option value="">Добір — не обрано</option>
+                <option value="">{t("Добір — не обрано")}</option>
                 {dobirOptions.map((r) => (
                   <option key={r.item_label} value={r.item_label}>
-                    {r.item_label}
+                    {tc(r.item_label)}
                   </option>
                 ))}
               </select>
@@ -1500,7 +1621,7 @@ export default function QuoteBuilder({
             >
               {VRIZKA_OPTIONS.map((o) => (
                 <option key={o.value} value={o.value}>
-                  {o.label}
+                  {t(o.label)}
                 </option>
               ))}
             </select>
@@ -1508,7 +1629,7 @@ export default function QuoteBuilder({
             {collectionKey === "etalon" && (
               <label className="flex items-center gap-2 text-sm text-navy-dark">
                 <input type="checkbox" checked={shumo} onChange={(e) => setShumo(e.target.checked)} />
-                Шумоізоляція
+                {t("Шумоізоляція")}
               </label>
             )}
 
@@ -1519,7 +1640,7 @@ export default function QuoteBuilder({
                   checked={alumPaintHiddenDoors}
                   onChange={(e) => setAlumPaintHiddenDoors(e.target.checked)}
                 />
-                Фарбування алюм. крайки
+                {t("Фарбування алюм. крайки")}
               </label>
             )}
 
@@ -1547,13 +1668,13 @@ export default function QuoteBuilder({
               <div className="rounded-lg bg-panel-alt p-3 text-xs text-navy-dim">
                 {previewRows.map((r) => (
                   <div key={r.label} className="flex justify-between">
-                    <span>{r.label}</span>
-                    <span>{fmtUah(r.unitPrice)}</span>
+                    <span>{tc(r.label)}</span>
+                    <span>{moneyDisplay(r.unitPrice)}</span>
                   </div>
                 ))}
                 <div className="mt-1 flex justify-between font-semibold text-navy-dark">
-                  <span>Разом за {qty} шт.</span>
-                  <span>{fmtUah(previewTotal)}</span>
+                  <span>{translateEn ? QTY_EN(qty) : `Разом за ${qty} шт.`}</span>
+                  <span>{moneyDisplay(previewTotal)}</span>
                 </div>
               </div>
             )}
@@ -1575,7 +1696,7 @@ export default function QuoteBuilder({
               }
               className="rounded-full bg-navy-dark px-6 py-3 font-semibold text-white transition hover:bg-gold hover:text-navy-dark disabled:opacity-40"
             >
-              Додати позицію
+              {t("Додати позицію")}
             </button>
           </div>
         </div>
@@ -1586,11 +1707,11 @@ export default function QuoteBuilder({
           <table className="w-full text-left text-sm">
             <thead className="bg-navy-dark text-white">
               <tr>
-                <th className="px-3 py-3">Модель</th>
-                <th className="px-3 py-3">Позиція</th>
-                <th className="px-3 py-3">К-сть</th>
-                <th className="px-3 py-3">Ціна</th>
-                <th className="px-3 py-3">Сума</th>
+                <th className="px-3 py-3">{t("Модель")}</th>
+                <th className="px-3 py-3">{t("Позиція")}</th>
+                <th className="px-3 py-3">{t("К-сть")}</th>
+                <th className="px-3 py-3">{t("Ціна")}</th>
+                <th className="px-3 py-3">{t("Сума")}</th>
                 <th className="px-3 py-3"></th>
               </tr>
             </thead>
@@ -1602,7 +1723,7 @@ export default function QuoteBuilder({
                       {idx === 0 && (
                         <td className="px-3 py-3 font-medium text-navy-dark" rowSpan={p.rows.length}>
                           {p.collectionLabel} — {p.modelCode}
-                          <div className="text-xs font-normal text-navy-dim">{p.colorLabel}</div>
+                          <div className="text-xs font-normal text-navy-dim">{tc(p.colorLabel)}</div>
                         </td>
                       )}
                       <td className="px-3 py-3 text-navy-dark">
@@ -1611,12 +1732,12 @@ export default function QuoteBuilder({
                             // eslint-disable-next-line @next/next/no-img-element
                             <img src={r.photo} alt="" className="h-5 w-7 rounded object-contain bg-panel-alt" />
                           )}
-                          {r.label}
+                          {tc(r.label)}
                         </div>
                       </td>
                       <td className="px-3 py-3 text-navy-dark">{r.qty}</td>
-                      <td className="px-3 py-3 text-navy-dark">{fmtUah(r.unitPrice)}</td>
-                      <td className="px-3 py-3 text-navy-dark">{fmtUah(r.amount)}</td>
+                      <td className="px-3 py-3 text-navy-dark">{moneyDisplay(r.unitPrice)}</td>
+                      <td className="px-3 py-3 text-navy-dark">{moneyDisplay(r.amount)}</td>
                       {idx === 0 && (
                         <td className="px-3 py-3" rowSpan={p.rows.length}>
                           <button
@@ -1624,7 +1745,7 @@ export default function QuoteBuilder({
                             onClick={() => removePosition(p.id)}
                             className="text-red-600 hover:underline"
                           >
-                            Видалити
+                            {t("Видалити")}
                           </button>
                         </td>
                       )}
@@ -1635,7 +1756,7 @@ export default function QuoteBuilder({
               {positions.length === 0 && (
                 <tr>
                   <td colSpan={6} className="px-3 py-6 text-center text-navy-dim">
-                    Ще немає жодної позиції
+                    {t("Ще немає жодної позиції")}
                   </td>
                 </tr>
               )}
@@ -1651,8 +1772,8 @@ export default function QuoteBuilder({
                 onChange={(e) => setDiscountType(e.target.value as "percent" | "amount")}
                 className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
               >
-                <option value="percent">Знижка, %</option>
-                <option value="amount">Знижка, грн</option>
+                <option value="percent">{t("Знижка, %")}</option>
+                <option value="amount">{t("Знижка, грн")}</option>
               </select>
               <input
                 type="number"
@@ -1666,7 +1787,7 @@ export default function QuoteBuilder({
                 onChange={(e) => setCurrency(e.target.value as "none" | "EUR" | "USD")}
                 className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
               >
-                <option value="none">Без валюти</option>
+                <option value="none">{t("Без валюти")}</option>
                 <option value="EUR">EUR</option>
                 <option value="USD">USD</option>
               </select>
@@ -1675,7 +1796,7 @@ export default function QuoteBuilder({
                   type="number"
                   min={0}
                   step="0.01"
-                  placeholder={`Курс, ₴ за 1 ${currencySymbol}`}
+                  placeholder={translateEn ? `Rate, UAH per 1 ${currencySymbol}` : `Курс, ₴ за 1 ${currencySymbol}`}
                   value={exchangeRate || ""}
                   onChange={(e) => setExchangeRate(Math.max(0, Number(e.target.value)))}
                   className="w-36 rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
@@ -1685,18 +1806,23 @@ export default function QuoteBuilder({
 
             <label className="mt-3 flex items-center gap-2 text-sm text-navy-dark">
               <input type="checkbox" checked={translateEn} onChange={(e) => setTranslateEn(e.target.checked)} />
-              Переклад бланку на англійську (лише для друку/файлу)
+              {t("Переклад бланку на англійську")}
             </label>
 
             <div className="mt-4 text-right">
               {discountValue > 0 && (
                 <div className="text-sm text-navy-dim line-through">
-                  Було: {fmtUah(subtotal)}{hasRate ? ` (${fmtForeign(subtotal)})` : ""}
+                  {t("Було")}: {moneyDisplay(subtotal)}
                 </div>
               )}
               <div className="font-serif text-2xl font-bold text-navy-dark">
-                Разом: {fmtUah(total)}{hasRate ? ` (${fmtForeign(total)})` : ""}
+                {t("Разом")}: {moneyDisplay(total)}
               </div>
+              {hasRate && (
+                <div className="text-xs text-navy-dim">
+                  {t("Курс")}: {fmtNum(exchangeRate)} ₴ {translateEn ? "per" : "за"} 1 {currencySymbol}
+                </div>
+              )}
             </div>
 
             <div className="mt-4 flex flex-wrap gap-3">
@@ -1706,21 +1832,21 @@ export default function QuoteBuilder({
                 disabled={pdfLoading}
                 className="rounded-full bg-navy-dark px-6 py-3 font-semibold text-white transition hover:bg-gold hover:text-navy-dark disabled:opacity-60"
               >
-                {pdfLoading ? "Формування PDF..." : "Зберегти PDF"}
+                {pdfLoading ? t("Формування PDF...") : t("Зберегти PDF")}
               </button>
               <button
                 type="button"
                 onClick={downloadDocument}
                 className="rounded-full border border-navy-dark px-6 py-3 font-semibold text-navy-dark transition hover:bg-navy-dark hover:text-white"
               >
-                Зберегти файл
+                {t("Зберегти файл")}
               </button>
               <button
                 type="button"
                 onClick={printDocument}
                 className="rounded-full border border-navy-dark px-6 py-3 font-semibold text-navy-dark transition hover:bg-navy-dark hover:text-white"
               >
-                Друкувати
+                {t("Друкувати")}
               </button>
             </div>
           </div>

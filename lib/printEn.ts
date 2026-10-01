@@ -7,7 +7,7 @@ const { PRINT_EN_STATIC, PRINT_EN_TIERS, PRINT_EN_CATALOG, PRINT_EN_ROOTS } = pr
   PRINT_EN_ROOTS: [string, string][];
 };
 
-export { PRINT_EN_STATIC, PRINT_EN_TIERS };
+export { PRINT_EN_STATIC, PRINT_EN_TIERS, PRINT_EN_CATALOG };
 
 // Переклад назви товару/позиції для друку: точний збіг у каталозі,
 // інакше — послідовна заміна кореневих слів (той самий алгоритм,
