@@ -54,10 +54,24 @@ export default function HeroDoorCarousel({ eyebrow, doors }: { eyebrow: string; 
 
   const slots = wide ? SLOTS_WIDE : SLOTS_COMPACT;
 
+  // Пауза при наведенні — лише для пристроїв зі справжньою мишею
+  // (hover: hover). Без цієї перевірки дотик на телефоні теж спрацьовує
+  // як "mouseenter", але відповідний "mouseleave" після скролу пальцем
+  // далі не приходить — карусель назавжди лишалась на паузі й на
+  // телефоні виглядала так, ніби взагалі не крутиться.
+  const canHover = useRef(false);
+  useEffect(() => {
+    canHover.current = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  }, []);
+
   return (
     <div
-      onMouseEnter={() => (paused.current = true)}
-      onMouseLeave={() => (paused.current = false)}
+      onMouseEnter={() => {
+        if (canHover.current) paused.current = true;
+      }}
+      onMouseLeave={() => {
+        if (canHover.current) paused.current = false;
+      }}
     >
       <div className="relative h-[212px]" style={{ perspective: 1200 }}>
         {doors.map((door, i) => {
