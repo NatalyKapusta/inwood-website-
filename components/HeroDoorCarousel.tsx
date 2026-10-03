@@ -28,7 +28,8 @@ const SLOTS_WIDE = [
   { x: -141, scale: 0.72, z: 40, opacity: 0.85, rotate: 16 },
 ] as const;
 
-const AUTOPLAY_MS = 3200;
+const AUTOPLAY_MS_DESKTOP = 3200;
+const AUTOPLAY_MS_MOBILE = 2400;
 
 export default function HeroDoorCarousel({ eyebrow, doors }: { eyebrow: string; doors: HeroDoor[] }) {
   const n = doors.length;
@@ -60,15 +61,17 @@ export default function HeroDoorCarousel({ eyebrow, doors }: { eyebrow: string; 
   // Відлік від останньої ручної дії (свайп) — щоб автопрокрутка не
   // перебивала вибір миттєво після того, як людина сама гортонула.
   const lastInteraction = useRef(0);
+  // На телефоні — трохи швидше за десктоп (не різко, просто бадьоріше).
+  const autoplayMs = wide ? AUTOPLAY_MS_DESKTOP : AUTOPLAY_MS_MOBILE;
 
   useEffect(() => {
     const id = setInterval(() => {
       if (paused.current) return;
-      if (Date.now() - lastInteraction.current < AUTOPLAY_MS) return;
+      if (Date.now() - lastInteraction.current < autoplayMs) return;
       setCurrent((c) => (c + 1) % n);
-    }, AUTOPLAY_MS);
+    }, autoplayMs);
     return () => clearInterval(id);
-  }, [n]);
+  }, [n, autoplayMs]);
 
   // Свайп пальцем на телефоні — вперед/назад по дверях. Рахуємо зсув
   // лише на touchend (а не під час руху), щоб не заважати звичайному
