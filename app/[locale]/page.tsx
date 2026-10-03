@@ -10,8 +10,41 @@ import SentNotice from "@/components/SentNotice";
 import YouTubeFacade from "@/components/YouTubeFacade";
 import Honeypot from "@/components/Honeypot";
 import DoorFit3dBanner from "@/components/DoorFit3dBanner";
+import HeroDoorCarousel from "@/components/HeroDoorCarousel";
 import { catalogCategorySlugs } from "@/lib/catalogCategories";
 import { blogPosts } from "@/data/blog";
+
+// Карусель дверей у hero — FREZZATTI 13 у 6 кольорах (обговорено й
+// затверджено в прев'ю, ТЗ 03.10.2026). Фото обрізані впритул під
+// контур двері й стиснуті у WebP (lib/products.ts тримає ті самі
+// кольори у квадратному форматі для каталогу — тут окрема, легша
+// версія спеціально під hero).
+const heroDoors: { image: string; label: Record<Locale, string> }[] = [
+  {
+    image: "/photos/hero/frezzatti-13/dub-nemo-late.webp",
+    label: { ua: "Дуб немо лате", ru: "Дуб немо лате", en: "Oak Nemo latte", pl: "Dąb Nemo latte" },
+  },
+  {
+    image: "/photos/hero/frezzatti-13/dub-sribliastyi.webp",
+    label: { ua: "Дуб немо сріблястий", ru: "Дуб немо серебристый", en: "Oak Nemo silver", pl: "Dąb Nemo srebrny" },
+  },
+  {
+    image: "/photos/hero/frezzatti-13/oksyd-svitlyi.webp",
+    label: { ua: "Оксид світлий", ru: "Оксид светлый", en: "Oxide light", pl: "Oksyd jasny" },
+  },
+  {
+    image: "/photos/hero/frezzatti-13/oksyd-temnyi.webp",
+    label: { ua: "Оксид темний", ru: "Оксид тёмный", en: "Oxide dark", pl: "Oksyd ciemny" },
+  },
+  {
+    image: "/photos/hero/frezzatti-13/dub-portovyi.webp",
+    label: { ua: "Дуб портовий", ru: "Дуб портовый", en: "Oak Porto", pl: "Dąb portowy" },
+  },
+  {
+    image: "/photos/hero/frezzatti-13/venhe.webp",
+    label: { ua: "Венге південне", ru: "Венге южное", en: "Wenge southern", pl: "Wenge południowe" },
+  },
+];
 
 const playLabels: Record<Locale, string> = {
   ua: "Відтворити відео",
@@ -84,7 +117,7 @@ export default async function HomePage({
     <>
       {/* HERO */}
       <section className="bg-navy-dark text-white">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:py-24 lg:grid-cols-2 lg:items-center">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:py-24 lg:grid-cols-2 lg:items-start">
           <div>
             <h1 className="font-serif text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
               {t.heroTitle}
@@ -117,11 +150,18 @@ export default async function HomePage({
             </div>
           </div>
 
-          {/* Лічильники — анімовані на клієнті, але HTML одразу містить справжнє число (Counter.tsx) */}
-          <div className="grid grid-cols-2 gap-8 rounded-2xl border border-white/10 bg-white/5 p-8 sm:grid-cols-4 lg:grid-cols-2">
-            {t.counters.map((cnt: { to: number; suffix: string; label: string }) => (
-              <Counter key={cnt.label} to={cnt.to} suffix={cnt.suffix} label={cnt.label} />
-            ))}
+          <div>
+            <HeroDoorCarousel
+              eyebrow="FREZZATTI 13"
+              doors={heroDoors.map((d) => ({ src: d.image, label: d.label[locale] }))}
+            />
+
+            {/* Лічильники — анімовані на клієнті, але HTML одразу містить справжнє число (Counter.tsx) */}
+            <div className="mt-6 grid grid-cols-2 gap-8 rounded-2xl border border-white/10 bg-white/5 p-8 sm:grid-cols-4 lg:grid-cols-2">
+              {t.counters.map((cnt: { to: number; suffix: string; label: string }) => (
+                <Counter key={cnt.label} to={cnt.to} suffix={cnt.suffix} label={cnt.label} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
