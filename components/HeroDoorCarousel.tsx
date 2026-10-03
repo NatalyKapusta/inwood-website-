@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type TouchEvent } from "react";
 
 export type HeroDoor = { src: string; label: string };
 
@@ -57,12 +57,41 @@ export default function HeroDoorCarousel({ eyebrow, doors }: { eyebrow: string; 
     return () => mq.removeEventListener("change", update);
   }, []);
 
+  // Відлік від останньої ручної дії (свайп) — щоб автопрокрутка не
+  // перебивала вибір миттєво після того, як людина сама гортонула.
+  const lastInteraction = useRef(0);
+
   useEffect(() => {
     const id = setInterval(() => {
-      if (!paused.current) setCurrent((c) => (c + 1) % n);
+      if (paused.current) return;
+      if (Date.now() - lastInteraction.current < AUTOPLAY_MS) return;
+      setCurrent((c) => (c + 1) % n);
     }, AUTOPLAY_MS);
     return () => clearInterval(id);
   }, [n]);
+
+  // Свайп пальцем на телефоні — вперед/назад по дверях. Рахуємо зсув
+  // лише на touchend (а не під час руху), щоб не заважати звичайному
+  // вертикальному скролу сторінки.
+  const touchStart = useRef<{ x: number; y: number } | null>(null);
+  const SWIPE_THRESHOLD = 40;
+
+  function onTouchStart(e: TouchEvent<HTMLDivElement>) {
+    const t = e.touches[0];
+    touchStart.current = { x: t.clientX, y: t.clientY };
+  }
+
+  function onTouchEnd(e: TouchEvent<HTMLDivElement>) {
+    const start = touchStart.current;
+    touchStart.current = null;
+    if (!start) return;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - start.x;
+    const dy = t.clientY - start.y;
+    if (Math.abs(dx) < SWIPE_THRESHOLD || Math.abs(dx) < Math.abs(dy)) return;
+    lastInteraction.current = Date.now();
+    setCurrent((c) => (dx < 0 ? (c + 1) % n : (c - 1 + n) % n));
+  }
 
   const slots = wide ? SLOTS_WIDE : SLOTS_COMPACT;
 
@@ -85,7 +114,12 @@ export default function HeroDoorCarousel({ eyebrow, doors }: { eyebrow: string; 
         if (canHover.current) paused.current = false;
       }}
     >
-      <div className="relative h-[212px]" style={{ perspective: 1200 }}>
+      <div
+        className="relative h-[212px] touch-pan-y"
+        style={{ perspective: 1200 }}
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+      >
         {doors.map((door, i) => {
           const offset = (i - current + n) % n;
           const s = slots[offset];
