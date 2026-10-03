@@ -34,6 +34,11 @@ export default function HeroDoorCarousel({ eyebrow, doors }: { eyebrow: string; 
   const n = doors.length;
   const [current, setCurrent] = useState(0);
   const [wide, setWide] = useState(false);
+  // "Зменшити рух" на пристрої вимикає лише плавний перехід (щоб не
+  // смикало екран великою анімацією), але не саму зміну кольорів — це
+  // вітрина товару, вона має продовжувати крутитись, просто без
+  // плавного ковзання.
+  const [reducedMotion, setReducedMotion] = useState(false);
   const paused = useRef(false);
 
   useEffect(() => {
@@ -45,7 +50,14 @@ export default function HeroDoorCarousel({ eyebrow, doors }: { eyebrow: string; 
   }, []);
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setReducedMotion(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
+  useEffect(() => {
     const id = setInterval(() => {
       if (!paused.current) setCurrent((c) => (c + 1) % n);
     }, AUTOPLAY_MS);
@@ -80,12 +92,13 @@ export default function HeroDoorCarousel({ eyebrow, doors }: { eyebrow: string; 
           return (
             <div
               key={door.src}
-              className="absolute left-1/2 top-1/2 h-[204px] w-[100px] -ml-[50px] -mt-[102px] transition-[transform,opacity] duration-[1150ms] ease-[cubic-bezier(0.22,0.61,0.36,1)]"
+              className="absolute left-1/2 top-1/2 h-[204px] w-[100px] -ml-[50px] -mt-[102px] transition-[transform,opacity] ease-[cubic-bezier(0.22,0.61,0.36,1)]"
               style={{
                 transform: `translateX(${s.x}px) scale(${s.scale}) rotateY(${s.rotate}deg)`,
                 opacity: s.opacity,
                 zIndex: s.z,
                 filter: "drop-shadow(0 10px 16px rgba(0,0,0,0.4))",
+                transitionDuration: reducedMotion ? "0ms" : "1150ms",
               }}
             >
               <Image src={door.src} alt={door.label} fill sizes="200px" className="object-contain" />
