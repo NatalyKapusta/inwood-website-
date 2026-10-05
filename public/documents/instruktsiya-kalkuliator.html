@@ -118,33 +118,6 @@
 
   hr.rule{ border:none; border-top:1px solid var(--line); margin: 48px 0; }
 
-  table.ref{
-    width: 100%;
-    border-collapse: collapse;
-    background: var(--paper);
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    overflow: hidden;
-    font-size: 13.5px;
-  }
-  table.ref th, table.ref td{
-    text-align: left;
-    padding: 10px 14px;
-    border-bottom: 1px solid var(--line);
-    vertical-align: top;
-  }
-  table.ref th{
-    background: var(--navy);
-    color: #fff;
-    font-weight: 600;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: .04em;
-  }
-  table.ref tr:last-child td{ border-bottom: none; }
-  table.ref td:first-child{ font-weight:600; min-width: 150px; }
-  .ref-wrap{ overflow-x: auto; }
-
   footer{
     font-size: 13px;
     color: var(--navy-dim);
@@ -314,20 +287,7 @@
 
   <div class="step" id="s13">
     <div class="step-head"><span class="step-num">13</span><h2>Коротко: що обов'язково заповнювати</h2></div>
-    <p>Залежно від лінії дверей частина полів може бути обов'язковою, навіть якщо на ціну вона не впливає — без неї кнопка «Додати позицію» лишиться неактивною.</p>
-    <div class="ref-wrap">
-    <table class="ref">
-      <thead><tr><th>Поле</th><th>Коли обов'язкове</th></tr></thead>
-      <tbody>
-        <tr><td>Модель</td><td>завжди</td></tr>
-        <tr><td>Колір крайки</td><td>ETALON / NOMINAL / FREZZATTI / PERFETTO — завжди. У STANDART і прихованих дверей немає.</td></tr>
-        <tr><td>Сторона відкривання</td><td>ETALON / NOMINAL / FREZZATTI / PERFETTO / STANDART — завжди.</td></tr>
-        <tr><td>Колір вставки</td><td>лише ETALON ET-02…17 і NOMINAL NL-02…05 (на ET-01 і NL-01 — немає).</td></tr>
-        <tr><td>Короб / лиштва лицьова / лиштва тильна / добір</td><td>ніколи не обов'язкові — кожне можна лишити «не обрано».</td></tr>
-        <tr><td>Погонажні вироби / фурнітура</td><td>обов'язкова лише сама позиція в останньому селекті.</td></tr>
-      </tbody>
-    </table>
-    </div>
+    <p>Якщо не внесли колір, розмір, сторону відкривання чи інше обов'язкове для цієї моделі поле — кнопка «Додати позицію» просто не стане активною. Пройдіться по формі зверху вниз і перевірте, що все заповнено.</p>
   </div>
 
   <hr class="rule">
