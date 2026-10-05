@@ -222,7 +222,7 @@ export default function Header({
         {menuOpen && (
           <nav
             onTouchStart={handleNavTouchStart}
-            className="flex max-h-[70vh] flex-col gap-1 overflow-y-auto overscroll-contain border-t border-white/10 px-4 py-4 text-sm uppercase tracking-wide lg:hidden"
+            className="flex max-h-[70dvh] flex-col gap-1 overflow-y-auto overscroll-contain border-t border-white/10 px-4 py-4 text-sm uppercase tracking-wide lg:hidden"
           >
             {nav.map((item) => (
               <Link
