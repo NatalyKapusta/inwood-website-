@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -54,6 +54,19 @@ export default function Header({
   // Тому саме тут робимо шапку звичайною (прокручується разом зі сторінкою),
   // на решті сайту лишаємо sticky як було.
   const isDoorFit3d = pathWithoutLocale === "/3d-prymirka-dverei";
+
+  // Поки відкрите мобільне меню — блокуємо скрол самої сторінки. Без цього
+  // на iOS Safari скрол сторінки й скрол усередині меню "змагаються" —
+  // при відпусканні пальця все відкочується на вихідну позицію, хоча
+  // список меню довший за екран (overflow-y-auto тут безсилий сам по собі).
+  useEffect(() => {
+    if (!menuOpen) return;
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [menuOpen]);
 
   return (
     <header
