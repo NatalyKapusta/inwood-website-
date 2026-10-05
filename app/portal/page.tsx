@@ -103,17 +103,17 @@ export default async function PortalDashboardPage() {
           </h2>
           <p className="mt-2 text-sm text-navy-dim">
             {en
-              ? "IN WOOD line-up reference (colours, frame/trim/casing, terminology) is available in Ukrainian only — ask your IN WOOD contact if you need something explained."
+              ? "IN WOOD line-up reference — colours, frame/trim/casing and terminology, to better understand the product."
               : "Довідник по лінійках IN WOOD: кольори, короб/лиштва/добір і терміни — щоб краще розуміти продукт."}
           </p>
           <div className="mt-3 flex flex-wrap gap-3">
             <a
-              href="/documents/dovidnyk-spivrobitnykiv.html"
+              href={en ? "/documents/dovidnyk-spivrobitnykiv-en.html" : "/documents/dovidnyk-spivrobitnykiv.html"}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full border border-navy-dark px-4 py-2 text-sm font-semibold text-navy-dark transition hover:bg-navy-dark hover:text-white"
             >
-              Довідник по лінійках IN WOOD
+              {en ? "IN WOOD Line-Up Reference" : "Довідник по лінійках IN WOOD"}
             </a>
             {effectiveRole === "export" ? (
               <a

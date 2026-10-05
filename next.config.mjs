@@ -36,6 +36,15 @@ const nextConfig = {
         headers: [{ key: "Cache-Control", value: "public, max-age=0, must-revalidate" }],
       },
       {
+        // Довідник по лінійках (UA/EN) теж регулярно редагується.
+        source: "/documents/dovidnyk-spivrobitnykiv.html",
+        headers: [{ key: "Cache-Control", value: "public, max-age=0, must-revalidate" }],
+      },
+      {
+        source: "/documents/dovidnyk-spivrobitnykiv-en.html",
+        headers: [{ key: "Cache-Control", value: "public, max-age=0, must-revalidate" }],
+      },
+      {
         // Текстури 3D-примірки дверей — той самий файл під тим самим ім'ям
         // ніколи не змінюється (нова версія = новий TEX_VER у door-fit.html),
         // тому теж безпечно кешувати надовго.
