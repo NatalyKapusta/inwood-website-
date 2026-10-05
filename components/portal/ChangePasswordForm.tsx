@@ -8,7 +8,7 @@ import { createClient } from "@/lib/supabase/client";
 // "згорають" самі (поштовий сервіс сам відкриває посилання, перевіряючи
 // його на безпечність, ще до того, як людина встигає клацнути) — а зміна
 // пароля з уже активної сесії цю проблему повністю обходить.
-export default function ChangePasswordForm() {
+export default function ChangePasswordForm({ en = false }: { en?: boolean }) {
   const supabase = createClient();
   const [open, setOpen] = useState(false);
   const [password, setPassword] = useState("");
@@ -21,11 +21,11 @@ export default function ChangePasswordForm() {
     e.preventDefault();
     setError("");
     if (password.length < 6) {
-      setError("Пароль має бути не менше 6 символів");
+      setError(en ? "Password must be at least 6 characters" : "Пароль має бути не менше 6 символів");
       return;
     }
     if (password !== confirm) {
-      setError("Паролі не збігаються");
+      setError(en ? "Passwords do not match" : "Паролі не збігаються");
       return;
     }
     setSaving(true);
@@ -47,7 +47,7 @@ export default function ChangePasswordForm() {
         onClick={() => setOpen(true)}
         className="text-sm text-navy-dim underline decoration-dotted hover:text-gold-dim"
       >
-        Змінити пароль
+        {en ? "Change password" : "Змінити пароль"}
       </button>
     );
   }
@@ -55,7 +55,7 @@ export default function ChangePasswordForm() {
   if (done) {
     return (
       <p className="rounded-lg bg-green-50 px-4 py-3 text-sm text-green-700">
-        Пароль змінено. Використовуйте його при наступному вході.
+        {en ? "Password changed. Use it next time you sign in." : "Пароль змінено. Використовуйте його при наступному вході."}
       </p>
     );
   }
@@ -65,7 +65,7 @@ export default function ChangePasswordForm() {
       <input
         type="password"
         required
-        placeholder="Новий пароль"
+        placeholder={en ? "New password" : "Новий пароль"}
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         className="rounded-lg border border-navy-dim/30 bg-panel px-4 py-2.5 text-sm outline-none focus:border-gold"
@@ -73,7 +73,7 @@ export default function ChangePasswordForm() {
       <input
         type="password"
         required
-        placeholder="Повторіть новий пароль"
+        placeholder={en ? "Repeat new password" : "Повторіть новий пароль"}
         value={confirm}
         onChange={(e) => setConfirm(e.target.value)}
         className="rounded-lg border border-navy-dim/30 bg-panel px-4 py-2.5 text-sm outline-none focus:border-gold"
@@ -85,14 +85,14 @@ export default function ChangePasswordForm() {
           disabled={saving}
           className="rounded-full bg-navy-dark px-5 py-2 text-sm font-semibold text-white transition hover:bg-gold hover:text-navy-dark disabled:opacity-60"
         >
-          {saving ? "..." : "Зберегти"}
+          {saving ? "..." : en ? "Save" : "Зберегти"}
         </button>
         <button
           type="button"
           onClick={() => setOpen(false)}
           className="rounded-full border border-navy-dim/30 px-5 py-2 text-sm font-semibold text-navy-dim hover:border-gold hover:text-gold-dim"
         >
-          Скасувати
+          {en ? "Cancel" : "Скасувати"}
         </button>
       </div>
     </form>

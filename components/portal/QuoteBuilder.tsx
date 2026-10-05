@@ -237,6 +237,7 @@ export default function QuoteBuilder({
   canOverride,
   allowedTariffs,
   canSeeStandart,
+  defaultEn,
 }: {
   consultantDefault: string;
   canOverride: boolean;
@@ -248,6 +249,9 @@ export default function QuoteBuilder({
   // Іншим ролям (dealer, epicenter, distributor, builder, export) колекція
   // взагалі не показується в списку ліній.
   canSeeStandart: boolean;
+  // export відкриває калькулятор одразу англійською — не треба щоразу
+  // клацати перемикач самим.
+  defaultEn?: boolean;
 }) {
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
@@ -267,7 +271,7 @@ export default function QuoteBuilder({
   const [discountValue, setDiscountValue] = useState(0);
   const [currency, setCurrency] = useState<"none" | "EUR" | "USD">("none");
   const [exchangeRate, setExchangeRate] = useState(0);
-  const [translateEn, setTranslateEn] = useState(false);
+  const [translateEn, setTranslateEn] = useState(defaultEn ?? false);
   // Перекладає як робочий екран, так і друкований бланк — один словник
   // на все (UI_EN для специфічних написів калькулятора, PRINT_EN_STATIC/
   // PRINT_EN_CATALOG для того, що вже перекладено раніше для друку).

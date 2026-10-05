@@ -25,14 +25,17 @@ export default async function PortalQuotePage() {
   }
   const effectiveRole = viewingAs ?? profile?.role;
   const allowedTariffs = viewingAs ? TARIFFS_BY_ROLE[viewingAs] : "all";
+  const en = effectiveRole === "export";
 
   return (
     <div>
       <h1 className="font-serif text-2xl font-bold text-navy-dark">
-        Формування комерційної пропозиції
+        {en ? "Building a commercial offer" : "Формування комерційної пропозиції"}
       </h1>
       <p className="mt-2 text-sm text-navy-dim">
-        Додайте позиції, вкажіть клієнта — і збережіть готовий документ для друку чи PDF.
+        {en
+          ? "Add items, enter the client — and save the finished document to print or as a PDF."
+          : "Додайте позиції, вкажіть клієнта — і збережіть готовий документ для друку чи PDF."}
       </p>
       <QuoteBuilder
         consultantDefault={profile?.full_name ?? user.email ?? ""}
@@ -41,6 +44,7 @@ export default async function PortalQuotePage() {
         canSeeStandart={
           effectiveRole === "staff" || effectiveRole === "manager" || effectiveRole === "dealer_distributor"
         }
+        defaultEn={en}
       />
     </div>
   );

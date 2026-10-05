@@ -41,11 +41,13 @@ export default async function PortalDashboardPage() {
   }
   const effectiveRole = viewingAs ?? role;
   const effectiveIsOwner = isOwner && !viewingAs;
+  const en = effectiveRole === "export";
 
   return (
     <div>
       <h1 className="font-serif text-2xl font-bold text-navy-dark">
-        Вітаємо{profile?.full_name ? `, ${profile.full_name}` : ""}
+        {en ? "Welcome" : "Вітаємо"}
+        {profile?.full_name ? `, ${profile.full_name}` : ""}
       </h1>
       <div className="mt-4 rounded-xl bg-panel p-6 shadow-sm">
         <p className="text-sm text-navy-dim">
@@ -53,24 +55,28 @@ export default async function PortalDashboardPage() {
         </p>
         {profile?.company_name && (
           <p className="mt-1 text-sm text-navy-dim">
-            Компанія: <span className="text-navy-dark">{profile.company_name}</span>
+            {en ? "Company" : "Компанія"}: <span className="text-navy-dark">{profile.company_name}</span>
           </p>
         )}
         <p className="mt-1 text-sm text-navy-dim">
-          Роль:{" "}
+          {en ? "Role" : "Роль"}:{" "}
           <span className="font-semibold text-navy-dark">
             {roleLabels[effectiveRole as keyof typeof roleLabels] ?? effectiveRole}
           </span>
         </p>
         <div className="mt-4">
-          <ChangePasswordForm />
+          <ChangePasswordForm en={en} />
         </div>
       </div>
 
       <div className="mt-8 grid gap-4 sm:grid-cols-2">
         <div className="rounded-xl bg-panel p-6 shadow-sm">
-          <h2 className="font-serif text-lg font-bold text-navy-dark">Каталоги для завантаження</h2>
-          <p className="mt-2 text-sm text-navy-dim">Повний каталог продукції IN WOOD у PDF.</p>
+          <h2 className="font-serif text-lg font-bold text-navy-dark">
+            {en ? "Catalogues to download" : "Каталоги для завантаження"}
+          </h2>
+          <p className="mt-2 text-sm text-navy-dim">
+            {en ? "The full IN WOOD product catalogue as a PDF." : "Повний каталог продукції IN WOOD у PDF."}
+          </p>
           <div className="mt-3 flex flex-wrap gap-3">
             <a
               href="/documents/catalog-ua.pdf"
@@ -92,9 +98,13 @@ export default async function PortalDashboardPage() {
         </div>
 
         <div className="rounded-xl bg-panel p-6 shadow-sm">
-          <h2 className="font-serif text-lg font-bold text-navy-dark">Навчальні матеріали</h2>
+          <h2 className="font-serif text-lg font-bold text-navy-dark">
+            {en ? "Training materials" : "Навчальні матеріали"}
+          </h2>
           <p className="mt-2 text-sm text-navy-dim">
-            Довідник по лінійках IN WOOD: кольори, короб/лиштва/добір і терміни — щоб краще розуміти продукт.
+            {en
+              ? "IN WOOD line-up reference (colours, frame/trim/casing, terminology) is available in Ukrainian only — ask your IN WOOD contact if you need something explained."
+              : "Довідник по лінійках IN WOOD: кольори, короб/лиштва/добір і терміни — щоб краще розуміти продукт."}
           </p>
           <div className="mt-3 flex flex-wrap gap-3">
             <a

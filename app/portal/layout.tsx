@@ -56,23 +56,28 @@ export default async function PortalLayout({ children }: { children: ReactNode }
   // незалежно від цього прев'ю.
   const effectiveRole = viewingAs ?? role;
   const effectiveIsOwner = isOwner && !viewingAs;
+  // export — єдина роль без власних українськомовних співробітників; решта
+  // хедера й навігації лишаються українською, бо нею ж користується команда.
+  const en = effectiveRole === "export";
 
   return (
-    <html lang="uk" className={`${playfairDisplay.variable} ${manrope.variable}`}>
+    <html lang={en ? "en" : "uk"} className={`${playfairDisplay.variable} ${manrope.variable}`}>
       <body className="min-h-screen bg-panel-alt">
         <header className="bg-navy-dark text-white">
           <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-4 gap-y-2 px-4 py-4">
             <Link href="/portal" className="flex shrink-0 items-center gap-3">
               <Image src="/logo/inwood-logo-gold.svg" alt="IN WOOD" width={90} height={62} priority />
-              <span className="font-serif text-lg font-bold text-gold">Партнерський портал</span>
+              <span className="font-serif text-lg font-bold text-gold">
+                {en ? "Partner Portal" : "Партнерський портал"}
+              </span>
             </Link>
             {user && (
               <nav className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm uppercase tracking-wide">
                 <Link href="/portal" className="text-white/85 hover:text-gold">
-                  Кабінет
+                  {en ? "Dashboard" : "Кабінет"}
                 </Link>
                 <Link href="/portal/quote" className="text-white/85 hover:text-gold">
-                  Комерційна пропозиція
+                  {en ? "Commercial Offer" : "Комерційна пропозиція"}
                 </Link>
                 {effectiveRole === "staff" && (
                   <Link href="/portal/overrides" className="text-white/85 hover:text-gold">
@@ -100,7 +105,7 @@ export default async function PortalLayout({ children }: { children: ReactNode }
                   </Link>
                 )}
                 {isOwner && <ViewAsSwitcher current={viewingAs ?? ""} returnTo="/portal" />}
-                <LogoutButton />
+                <LogoutButton label={en ? "Log out" : "Вийти"} />
               </nav>
             )}
           </div>
