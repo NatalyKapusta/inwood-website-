@@ -1,0 +1,289 @@
+<title>IN WOOD Calculator Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* той самий макет і стилі, що й в instruktsiya-kalkuliator.html — єдиний
+     документ-інструкція, лишень контент англійською для ролі export */
+  :root{
+    color-scheme: light;
+    --bg: #F7F6F2;
+    --paper: #FFFFFF;
+    --line: #E7E4DC;
+    --navy: #333958;
+    --navy-dim: #626998;
+    --gold: #E3CCA1;
+    --gold-dim: #8A6836;
+    --accent: #B33C32;
+    --serif: "Playfair Display", Georgia, serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{
+    background: var(--bg);
+    color: var(--navy);
+    font-family: var(--sans);
+    margin: 0;
+    padding-inline: 20px;
+    padding-block: 36px 60px;
+  }
+  .doc{ max-width: 760px; margin: 0 auto; }
+
+  .masthead{
+    display:flex; align-items:center; gap:14px;
+    margin-bottom: 28px;
+  }
+  .masthead img{ height: 46px; width:auto; }
+  .masthead .wordmark{ font-family: var(--serif); font-weight:700; font-size:14px; color:var(--navy); letter-spacing:.04em; }
+  .masthead .wordmark span{ display:block; font-family: var(--sans); font-weight:500; font-size:11px; color:var(--navy-dim); letter-spacing:.08em; text-transform:uppercase; }
+
+  h1{
+    font-family: var(--serif);
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0 0 10px;
+    text-wrap: balance;
+  }
+  .lede{
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--navy-dim);
+    max-width: 58ch;
+    margin: 0 0 32px;
+  }
+
+  .toc{
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin-bottom: 40px;
+  }
+  .toc p{ margin:0 0 10px; font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:.06em; color:var(--navy-dim); }
+  .toc ol{ margin:0; padding-left: 20px; display:grid; gap:6px; font-size:14.5px; }
+  .toc a{ color: var(--navy); text-decoration: none; }
+  .toc a:hover{ color: var(--accent); }
+
+  .step{
+    margin-bottom: 52px;
+    scroll-margin-top: 20px;
+  }
+  .step-head{
+    display:flex; align-items:baseline; gap:12px;
+    margin-bottom: 12px;
+  }
+  .step-num{
+    font-family: var(--serif);
+    font-size: 15px;
+    font-weight:700;
+    color: var(--gold-dim);
+    background: #FBF3E6;
+    border: 1px solid var(--gold);
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  .step h2{
+    font-family: var(--serif);
+    font-size: 21px;
+    font-weight: 700;
+    margin: 0;
+  }
+  .step p{ font-size: 15px; line-height: 1.65; margin: 0 0 14px; }
+  .step p.note{ color: var(--navy-dim); font-size: 13.5px; }
+  .step ol.points{ margin: 0 0 14px; padding-left: 20px; font-size: 15px; line-height: 1.7; }
+  .step ol.points li::marker{ color: var(--accent); font-weight:700; }
+
+  .shot{
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px -14px rgba(51,57,88,0.25);
+    margin-bottom: 10px;
+  }
+  .shot img{ display:block; width:100%; height:auto; }
+
+  .callout{
+    background: #FBF3E6;
+    border: 1px solid var(--gold);
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 14px;
+  }
+  .callout b{ color: var(--gold-dim); }
+
+  hr.rule{ border:none; border-top:1px solid var(--line); margin: 48px 0; }
+
+  footer{
+    font-size: 13px;
+    color: var(--navy-dim);
+    line-height: 1.7;
+  }
+  footer a{ color: var(--navy); }
+
+  @media (max-width: 480px){
+    .step-head{ align-items:flex-start; }
+  }
+</style>
+
+<div class="doc">
+
+  <div class="masthead">
+    <img src="/logo/inwood-logo-gold.svg" alt="" onerror="this.style.display='none'">
+    <div class="wordmark">IN WOOD<span>Partner Portal</span></div>
+  </div>
+
+  <h1>How to build a commercial offer in the calculator</h1>
+  <p class="lede">A step-by-step guide to the quote-builder calculator — from signing in to saving a finished quote as a PDF. Every step includes a real screenshot and notes on exactly what to click.</p>
+
+  <nav class="toc">
+    <p>Contents</p>
+    <ol>
+      <li><a href="#s1">Signing in to the portal</a></li>
+      <li><a href="#s2">Your dashboard — finding the calculator</a></li>
+      <li><a href="#s3">How the calculator is laid out</a></li>
+      <li><a href="#s4">Client details</a></li>
+      <li><a href="#s5">Door model, colour and size</a></li>
+      <li><a href="#s6">Add-ons, cutout, quantity</a></li>
+      <li><a href="#s7">Adding the item and the totals table</a></li>
+      <li><a href="#s8">Currency conversion and saving the file</a></li>
+      <li><a href="#s9">Separately: frame, trim or casing without a panel</a></li>
+      <li><a href="#s10">Separately: hardware</a></li>
+      <li><a href="#s11">In short: required fields</a></li>
+    </ol>
+  </nav>
+
+  <div class="step" id="s1">
+    <div class="step-head"><span class="step-num">1</span><h2>Signing in to the portal</h2></div>
+    <p>Open the partner portal's sign-in page and enter your login. The sign-in screen itself is in Ukrainian — the calculator's own interface is fully switchable to English, see step 3.</p>
+    <ol class="points">
+      <li><b>Email</b> — the one you were given when your access was set up.</li>
+      <li><b>Password</b> (Пароль).</li>
+      <li>Click the button below (Увійти — "Sign in").</li>
+    </ol>
+    <div class="shot"><img src="instruktsiya-kalkuliator-en-img/e01-login.png" alt="Portal sign-in screen"></div>
+    <p class="note">Forgot your password? There's a link right under the form ("Забули пароль?" — Forgot password).</p>
+  </div>
+
+  <div class="step" id="s2">
+    <div class="step-head"><span class="step-num">2</span><h2>Your dashboard — finding the calculator</h2></div>
+    <p>After signing in you land on your dashboard. In the top menu, click <b>«Комерційна пропозиція»</b> (Commercial Offer) — that's the calculator for building quotes.</p>
+    <div class="shot"><img src="instruktsiya-kalkuliator-en-img/e02-cabinet.png" alt="Partner dashboard"></div>
+    <div class="callout"><b>Good to know:</b> the same dashboard has a link to the full PDF product catalogue (an English version too — "EN catalogue") and to the "Довідник по лінійках IN WOOD" reference guide on colours, frame/trim/casing and terminology, if anything in the calculator itself is unclear.</div>
+  </div>
+
+  <div class="step" id="s3">
+    <div class="step-head"><span class="step-num">3</span><h2>How the calculator is laid out</h2></div>
+    <p>Before filling anything in, a quick look at the screen:</p>
+    <ol class="points">
+      <li><b>Language &amp; currency bar</b> — switch the whole calculator to English and/or convert prices to EUR/USD (covered in step 8).</li>
+      <li><b>"Client and tariff"</b> — the client's name and phone/email for this quote.</li>
+      <li><b>"Add item"</b> — choose the model, colour, size and all the add-ons for one line of the quote here.</li>
+      <li><b>Table on the right</b> — every item you add lands here, along with the running total.</li>
+    </ol>
+    <div class="shot"><img src="instruktsiya-kalkuliator-en-img/e03-overview.png" alt="Calculator overview with EN already selected"></div>
+    <p class="note">Click <b>EN</b> in the top bar first — the whole screen (field names, buttons, the table) switches to English, not just the printed quote. That's what every screenshot below already shows.</p>
+  </div>
+
+  <div class="step" id="s4">
+    <div class="step-head"><span class="step-num">4</span><h2>Client details</h2></div>
+    <p>Enter the client's name and phone (or email) for this quote. The tariff is already set to your account's own tariff — there's nothing to change there.</p>
+    <div class="shot"><img src="instruktsiya-kalkuliator-en-img/e04-client.png" alt="Client fields filled in"></div>
+    <p class="note">"Consultant phone" and "Comment" are optional — fill them in only if you need to.</p>
+  </div>
+
+  <div class="step" id="s5">
+    <div class="step-head"><span class="step-num">5</span><h2>Door model, colour and size</h2></div>
+    <p>In the "Add item" block, pick the door line (ETALON, NOMINAL, FREZZATTI, PERFETTO, etc.) — it's already set to the first one in the list. Then, in order:</p>
+    <ol class="points">
+      <li><b>Model</b> — the specific door code (e.g. ET-01).</li>
+      <li><b>Colour</b> — from the films available for this model.</li>
+      <li><b>Width and height</b> — from the standard size range.</li>
+    </ol>
+    <div class="shot"><img src="instruktsiya-kalkuliator-en-img/e05-model.png" alt="Model, colour and size selected"></div>
+    <div class="callout"><b>If extra fields appear</b> — "Edge colour", "Insert colour" or "Opening side" — they're required specifically for this model. Fill them in too, otherwise the "Add item" button further down will stay disabled.</div>
+  </div>
+
+  <div class="step" id="s6">
+    <div class="step-head"><span class="step-num">6</span><h2>Add-ons, cutout, quantity</h2></div>
+    <p>Further down are the frame, front trim, back trim and door casing — picked the same way as colour, from a dropdown. All four fields are fully independent of each other: you can pick only the front trim without the back one, only a frame without a casing, or none of them at all — whatever this particular order doesn't need, just leave as "not selected". Then:</p>
+    <ol class="points">
+      <li><b>Cutout</b> — no cutout / lock cutout / full hardware cutout.</li>
+      <li><b>Soundproofing</b> — tick if needed (ETALON line).</li>
+      <li><b>Quantity</b> — how many of this door the client needs.</li>
+    </ol>
+    <div class="shot"><img src="instruktsiya-kalkuliator-en-img/e06-addons.png" alt="Frame, trim, casing, cutout and quantity fields"></div>
+    <p>Right under the form you'll see a photo of the selected door and a price breakdown for every component — check it against what the client asked for before adding the item.</p>
+    <div class="callout"><b>One thing to watch for:</b> if you pick a "concealed mount" frame (STANDART or LUX) for ETALON, the trim and casing fields disappear from the screen. That's not a bug — they simply don't apply to that type of frame.</div>
+  </div>
+
+  <div class="step" id="s7">
+    <div class="step-head"><span class="step-num">7</span><h2>Adding the item and the totals table</h2></div>
+    <p>Once everything required is filled in, the <b>"Add item"</b> button becomes active. Click it: the line moves into the table on the right, and you can immediately start adding the next item (a different model or colour) the same way.</p>
+    <ol class="points">
+      <li>Each item shows a full price breakdown by component.</li>
+      <li>"Remove" — delete an item if you made a mistake.</li>
+      <li>Discount — in percent or in the account's currency, if agreed with the client.</li>
+      <li>The running total for the whole quote.</li>
+      <li>Three save buttons — covered in the next step.</li>
+    </ol>
+    <div class="shot"><img src="instruktsiya-kalkuliator-en-img/e07-table.png" alt="Item added to the table, with totals"></div>
+  </div>
+
+  <div class="step" id="s8">
+    <div class="step-head"><span class="step-num">8</span><h2>Currency conversion and saving the file</h2></div>
+    <p>Next to the language switch is the currency choice: UAH / EUR / USD. Pick EUR or USD and enter the exchange rate in the field on the right — every price in the table and the total recalculate instantly.</p>
+    <p>Once the quote is ready, under the total there are three buttons:</p>
+    <ol class="points">
+      <li><b>Save PDF</b> — downloads the finished file right away, the easiest way to send it to the client.</li>
+      <li><b>Save file</b> — an alternative way to save the document.</li>
+      <li><b>Print</b> — opens the print dialog if you need a hard copy immediately.</li>
+    </ol>
+    <div class="shot"><img src="instruktsiya-kalkuliator-en-img/e08-eur-save.png" alt="Currency switched to EUR, with the save and print buttons"></div>
+    <p>That's it — the commercial offer is ready.</p>
+  </div>
+
+  <hr class="rule">
+
+  <div class="step" id="s9">
+    <div class="step-head"><span class="step-num">9</span><h2>Separately: frame, trim or casing without a panel</h2></div>
+    <p>If the client only needs a frame, trim or door casing without the door itself — don't look for it among the door models. In the top "Line" select, choose <b>"Linear items (frame/trim/casing separately)"</b> — a shorter, separate form appears:</p>
+    <ol class="points">
+      <li><b>Line</b> — which collection the item is from (ETALON, NOMINAL, etc.).</li>
+      <li><b>Type</b> — frame, trim or casing.</li>
+      <li><b>Item</b> — the specific product from the list.</li>
+    </ol>
+    <div class="shot"><img src="instruktsiya-kalkuliator-en-img/e09-linear-select.png" alt="Selecting a linear item (frame/trim/casing)"></div>
+    <p>It's added to the table the same way, with the "Add item" button — price and quantity work exactly like a regular item.</p>
+    <div class="shot"><img src="instruktsiya-kalkuliator-en-img/e10-linear-result.png" alt="Linear item added to the table"></div>
+  </div>
+
+  <div class="step" id="s10">
+    <div class="step-head"><span class="step-num">10</span><h2>Separately: hardware (handles, hinges, locks, etc.)</h2></div>
+    <p>Same "Line" select — choose the hardware brand you need (<b>"Hardware MVM"</b>, <b>"Hardware Anselmi + AGB"</b>, etc.). Then:</p>
+    <ol class="points">
+      <li><b>Category</b> — handles, hinges, locks, stops, mechanisms, etc.</li>
+      <li><b>Article</b> — the specific item; its photo and material appear right under the select.</li>
+    </ol>
+    <div class="shot"><img src="instruktsiya-kalkuliator-en-img/e11-hardware-select.png" alt="Selecting hardware"></div>
+    <p>Click "Add item" the same way — done.</p>
+    <div class="shot"><img src="instruktsiya-kalkuliator-en-img/e12-hardware-result.png" alt="Hardware item added to the table"></div>
+    <p class="note">Hardware item names and materials currently display in Ukrainian regardless of the language switch — the article code itself (e.g. A-1209 SN/CP) is language-neutral and fine for ordering.</p>
+  </div>
+
+  <div class="step" id="s11">
+    <div class="step-head"><span class="step-num">11</span><h2>In short: required fields</h2></div>
+    <p>If you haven't filled in a colour, size, opening side or any other field required for that particular model, the "Add item" button simply won't become active. Go through the form from top to bottom and check that everything is filled in.</p>
+  </div>
+
+  <hr class="rule">
+
+  <footer>
+    Questions about colours, frame/trim/casing or terminology — see "Довідник по лінійках IN WOOD" in your dashboard. If anything in the calculator doesn't work as expected — just get in touch with us.
+  </footer>
+
+</div>

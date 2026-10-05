@@ -105,17 +105,31 @@ export default async function PortalDashboardPage() {
             >
               Довідник по лінійках IN WOOD
             </a>
-            <a
-              href="/documents/instruktsiya-kalkuliator.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative rounded-full bg-red-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-red-700"
-            >
-              Інструкція до калькулятора КП
-              <span className="absolute -top-2.5 -right-2.5 rounded-full bg-navy-dark px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-gold">
-                Обов&apos;язково
-              </span>
-            </a>
+            {effectiveRole === "export" ? (
+              <a
+                href="/documents/instruktsiya-kalkuliator-en.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative rounded-full bg-red-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-red-700"
+              >
+                Calculator Guide
+                <span className="absolute -top-2.5 -right-2.5 rounded-full bg-navy-dark px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-gold">
+                  Required
+                </span>
+              </a>
+            ) : (
+              <a
+                href="/documents/instruktsiya-kalkuliator.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative rounded-full bg-red-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-red-700"
+              >
+                Інструкція до калькулятора КП
+                <span className="absolute -top-2.5 -right-2.5 rounded-full bg-navy-dark px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-gold">
+                  Обов&apos;язково
+                </span>
+              </a>
+            )}
           </div>
         </div>
 
