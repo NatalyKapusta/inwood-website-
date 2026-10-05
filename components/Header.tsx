@@ -185,7 +185,7 @@ export default function Header({
         </div>
 
         {menuOpen && (
-          <nav className="flex flex-col gap-1 border-t border-white/10 px-4 py-4 text-sm uppercase tracking-wide lg:hidden">
+          <nav className="flex max-h-[70vh] flex-col gap-1 overflow-y-auto overscroll-contain border-t border-white/10 px-4 py-4 text-sm uppercase tracking-wide lg:hidden">
             {nav.map((item) => (
               <Link
                 key={item.href}
