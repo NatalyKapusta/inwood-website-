@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState, type MouseEvent, type TouchEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -67,6 +67,28 @@ export default function Header({
       document.body.style.overflow = prevOverflow;
     };
   }, [menuOpen]);
+
+  // Якщо палець відпускається прямо на пункті меню в кінці скролу — iOS
+  // Safari засчитує це як тап по посиланню, і людина випадково переходить
+  // не туди, куди хотіла прокрутити. Рахуємо вертикальне зміщення пальця
+  // від початку дотику до кінця: якщо воно помітне (це був скрол, а не
+  // тап) — відміняємо клік по посиланню.
+  const touchStartY = useRef<number | null>(null);
+  const DRAG_THRESHOLD = 10;
+  function handleNavTouchStart(e: TouchEvent<HTMLElement>) {
+    touchStartY.current = e.touches[0].clientY;
+  }
+  function handleNavLinkClick(e: MouseEvent<HTMLAnchorElement>) {
+    const startY = touchStartY.current;
+    touchStartY.current = null;
+    if (startY === null) return;
+    const dy = Math.abs(e.clientY - startY);
+    if (dy > DRAG_THRESHOLD) {
+      e.preventDefault();
+    } else {
+      setMenuOpen(false);
+    }
+  }
 
   return (
     <header
@@ -198,12 +220,15 @@ export default function Header({
         </div>
 
         {menuOpen && (
-          <nav className="flex max-h-[70vh] flex-col gap-1 overflow-y-auto overscroll-contain border-t border-white/10 px-4 py-4 text-sm uppercase tracking-wide lg:hidden">
+          <nav
+            onTouchStart={handleNavTouchStart}
+            className="flex max-h-[70vh] flex-col gap-1 overflow-y-auto overscroll-contain border-t border-white/10 px-4 py-4 text-sm uppercase tracking-wide lg:hidden"
+          >
             {nav.map((item) => (
               <Link
                 key={item.href}
                 href={`/${locale}${item.href}`}
-                onClick={() => setMenuOpen(false)}
+                onClick={handleNavLinkClick}
                 className="rounded-lg px-2 py-2 text-white/85 hover:bg-white/5 hover:text-gold"
               >
                 {item.label}
@@ -211,7 +236,7 @@ export default function Header({
             ))}
             <Link
               href="/portal/login"
-              onClick={() => setMenuOpen(false)}
+              onClick={handleNavLinkClick}
               className="mt-2 rounded-lg border border-gold px-2 py-2 text-center normal-case tracking-normal text-gold hover:bg-white/5"
             >
               {portalLabel}
