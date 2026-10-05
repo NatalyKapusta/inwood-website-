@@ -61,7 +61,7 @@ export default async function PortalDashboardPage() {
         <p className="mt-1 text-sm text-navy-dim">
           {en ? "Role" : "Роль"}:{" "}
           <span className="font-semibold text-navy-dark">
-            {roleLabels[effectiveRole as keyof typeof roleLabels] ?? effectiveRole}
+            {en ? "Export" : roleLabels[effectiveRole as keyof typeof roleLabels] ?? effectiveRole}
           </span>
         </p>
         <div className="mt-4">
