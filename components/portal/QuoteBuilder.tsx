@@ -664,8 +664,8 @@ export default function QuoteBuilder({
       if (!pogItem || previewRows.length === 0) return;
       const position: QuotePosition = {
         id: crypto.randomUUID(),
-        collectionLabel: POGONAZHNI_LABEL,
-        modelCode: `${collections[pogLine]?.label ?? pogLine} — ${pogTypeLabel}`,
+        collectionLabel: translateEn ? t(POGONAZHNI_LABEL) : POGONAZHNI_LABEL,
+        modelCode: `${collections[pogLine]?.label ?? pogLine} — ${translateEn ? t(pogTypeLabel) : pogTypeLabel}`,
         colorLabel: "",
         photo: undefined,
         qty,
@@ -680,7 +680,7 @@ export default function QuoteBuilder({
       if (!flatItemCode || previewRows.length === 0) return;
       const position: QuotePosition = {
         id: crypto.randomUUID(),
-        collectionLabel: flatLine!.label,
+        collectionLabel: translateEn ? t(flatLine!.label) : flatLine!.label,
         modelCode: previewRows[0].label,
         colorLabel: "",
         photo: undefined,
@@ -696,8 +696,10 @@ export default function QuoteBuilder({
       if (!hardwareArticle || previewRows.length === 0) return;
       const position: QuotePosition = {
         id: crypto.randomUUID(),
-        collectionLabel: HARDWARE_BRAND_LABELS[hardwareBrand] ?? "Фурнітура",
-        modelCode: hardwareCategoryLabels[hardwareCategory],
+        collectionLabel: translateEn
+          ? (HARDWARE_BRAND_LABELS[hardwareBrand] ?? "Фурнітура").replace("Фурнітура ", "Hardware ")
+          : HARDWARE_BRAND_LABELS[hardwareBrand] ?? "Фурнітура",
+        modelCode: translateEn ? HARDWARE_CATEGORY_EN[hardwareCategory] : hardwareCategoryLabels[hardwareCategory],
         colorLabel: "",
         photo: selectedHardware?.photo ?? undefined,
         qty,
