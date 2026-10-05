@@ -109,9 +109,12 @@ export default async function PortalDashboardPage() {
               href="/documents/instruktsiya-kalkuliator.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-navy-dark px-4 py-2 text-sm font-semibold text-navy-dark transition hover:bg-navy-dark hover:text-white"
+              className="relative rounded-full bg-red-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-red-700"
             >
               Інструкція до калькулятора КП
+              <span className="absolute -top-2.5 -right-2.5 rounded-full bg-navy-dark px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-gold">
+                Обов&apos;язково
+              </span>
             </a>
           </div>
         </div>
