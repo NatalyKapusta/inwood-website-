@@ -17,6 +17,25 @@ const nextConfig = {
         headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
       },
       {
+        // Інструкції до калькулятора КП (html + скріни) редагуються під тими
+        // самими іменами файлів — immutable-кеш вище змушував людей місяцями
+        // бачити застарілий текст/скріни навіть після фіксів.
+        source: "/documents/instruktsiya-kalkuliator.html",
+        headers: [{ key: "Cache-Control", value: "public, max-age=0, must-revalidate" }],
+      },
+      {
+        source: "/documents/instruktsiya-kalkuliator-en.html",
+        headers: [{ key: "Cache-Control", value: "public, max-age=0, must-revalidate" }],
+      },
+      {
+        source: "/documents/instruktsiya-kalkuliator-img/:path*",
+        headers: [{ key: "Cache-Control", value: "public, max-age=0, must-revalidate" }],
+      },
+      {
+        source: "/documents/instruktsiya-kalkuliator-en-img/:path*",
+        headers: [{ key: "Cache-Control", value: "public, max-age=0, must-revalidate" }],
+      },
+      {
         // Текстури 3D-примірки дверей — той самий файл під тим самим ім'ям
         // ніколи не змінюється (нова версія = новий TEX_VER у door-fit.html),
         // тому теж безпечно кешувати надовго.
