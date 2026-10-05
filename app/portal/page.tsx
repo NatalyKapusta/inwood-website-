@@ -105,6 +105,14 @@ export default async function PortalDashboardPage() {
             >
               Довідник по лінійках IN WOOD
             </a>
+            <a
+              href="/documents/instruktsiya-kalkuliator.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-navy-dark px-4 py-2 text-sm font-semibold text-navy-dark transition hover:bg-navy-dark hover:text-white"
+            >
+              Інструкція до калькулятора КП
+            </a>
           </div>
         </div>
 

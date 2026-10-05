@@ -1,0 +1,339 @@
+<title>Інструкція дилера IN WOOD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* макет: одноколонковий документ-інструкція, картинки на всю ширину колонки,
+     нумеровані кроки з короткою поясненою справа/знизу від кожного скріна */
+  :root{
+    color-scheme: light;
+    --bg: #F7F6F2;
+    --paper: #FFFFFF;
+    --line: #E7E4DC;
+    --navy: #333958;
+    --navy-dim: #626998;
+    --gold: #E3CCA1;
+    --gold-dim: #8A6836;
+    --accent: #B33C32;
+    --serif: "Playfair Display", Georgia, serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{
+    background: var(--bg);
+    color: var(--navy);
+    font-family: var(--sans);
+    margin: 0;
+    padding-inline: 20px;
+    padding-block: 36px 60px;
+  }
+  .doc{ max-width: 760px; margin: 0 auto; }
+
+  .masthead{
+    display:flex; align-items:center; gap:14px;
+    margin-bottom: 28px;
+  }
+  .masthead img{ height: 46px; width:auto; }
+  .masthead .wordmark{ font-family: var(--serif); font-weight:700; font-size:14px; color:var(--navy); letter-spacing:.04em; }
+  .masthead .wordmark span{ display:block; font-family: var(--sans); font-weight:500; font-size:11px; color:var(--navy-dim); letter-spacing:.08em; text-transform:uppercase; }
+
+  h1{
+    font-family: var(--serif);
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0 0 10px;
+    text-wrap: balance;
+  }
+  .lede{
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--navy-dim);
+    max-width: 58ch;
+    margin: 0 0 32px;
+  }
+
+  .toc{
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin-bottom: 40px;
+  }
+  .toc p{ margin:0 0 10px; font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:.06em; color:var(--navy-dim); }
+  .toc ol{ margin:0; padding-left: 20px; display:grid; gap:6px; font-size:14.5px; }
+  .toc a{ color: var(--navy); text-decoration: none; }
+  .toc a:hover{ color: var(--accent); }
+
+  .step{
+    margin-bottom: 52px;
+    scroll-margin-top: 20px;
+  }
+  .step-head{
+    display:flex; align-items:baseline; gap:12px;
+    margin-bottom: 12px;
+  }
+  .step-num{
+    font-family: var(--serif);
+    font-size: 15px;
+    font-weight:700;
+    color: var(--gold-dim);
+    background: #FBF3E6;
+    border: 1px solid var(--gold);
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  .step h2{
+    font-family: var(--serif);
+    font-size: 21px;
+    font-weight: 700;
+    margin: 0;
+  }
+  .step p{ font-size: 15px; line-height: 1.65; margin: 0 0 14px; }
+  .step p.note{ color: var(--navy-dim); font-size: 13.5px; }
+  .step ol.points{ margin: 0 0 14px; padding-left: 20px; font-size: 15px; line-height: 1.7; }
+  .step ol.points li::marker{ color: var(--accent); font-weight:700; }
+
+  .shot{
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px -14px rgba(51,57,88,0.25);
+    margin-bottom: 10px;
+  }
+  .shot img{ display:block; width:100%; height:auto; }
+
+  .callout{
+    background: #FBF3E6;
+    border: 1px solid var(--gold);
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 14px;
+  }
+  .callout b{ color: var(--gold-dim); }
+
+  hr.rule{ border:none; border-top:1px solid var(--line); margin: 48px 0; }
+
+  table.ref{
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 13.5px;
+  }
+  table.ref th, table.ref td{
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  table.ref th{
+    background: var(--navy);
+    color: #fff;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+  }
+  table.ref tr:last-child td{ border-bottom: none; }
+  table.ref td:first-child{ font-weight:600; min-width: 150px; }
+  .ref-wrap{ overflow-x: auto; }
+
+  footer{
+    font-size: 13px;
+    color: var(--navy-dim);
+    line-height: 1.7;
+  }
+  footer a{ color: var(--navy); }
+
+  @media (max-width: 480px){
+    .step-head{ align-items:flex-start; }
+  }
+</style>
+
+<div class="doc">
+
+  <div class="masthead">
+    <img src="/logo/inwood-logo-gold.svg" alt="" onerror="this.style.display='none'">
+    <div class="wordmark">IN WOOD<span>Партнерський портал</span></div>
+  </div>
+
+  <h1>Як створити комерційну пропозицію в калькуляторі</h1>
+  <p class="lede">Покрокова інструкція для дилерів — від входу в портал до збереження готового КП у PDF. Кожен крок зі скріном реального екрана й підписами, що саме натискати.</p>
+
+  <nav class="toc">
+    <p>Зміст</p>
+    <ol>
+      <li><a href="#s1">Вхід у портал</a></li>
+      <li><a href="#s2">Кабінет — де знайти калькулятор</a></li>
+      <li><a href="#s3">Як влаштований калькулятор</a></li>
+      <li><a href="#s4">Клієнт</a></li>
+      <li><a href="#s5">Модель, колір і розмір дверей</a></li>
+      <li><a href="#s6">Комплектуючі, врізка, кількість</a></li>
+      <li><a href="#s7">Додавання позиції й підсумок</a></li>
+      <li><a href="#s8">Переклад на англійську</a></li>
+      <li><a href="#s9">Перерахунок у валюту</a></li>
+      <li><a href="#s10">Збереження й друк</a></li>
+      <li><a href="#s11">Окремо: короб, лиштва чи добір без полотна</a></li>
+      <li><a href="#s12">Окремо: фурнітура</a></li>
+      <li><a href="#s13">Коротко: що обов'язково заповнювати</a></li>
+    </ol>
+  </nav>
+
+  <div class="step" id="s1">
+    <div class="step-head"><span class="step-num">1</span><h2>Вхід у портал</h2></div>
+    <p>Відкрийте сторінку входу в партнерський портал і введіть свій логін.</p>
+    <ol class="points">
+      <li>Email — той, що вам видали при підключенні.</li>
+      <li>Пароль.</li>
+      <li>Натисніть «Увійти».</li>
+    </ol>
+    <div class="shot"><img src="instruktsiya-kalkuliator-img/01-login.png" alt="Екран входу в портал"></div>
+    <p class="note">Забули пароль — на цій же сторінці є посилання «Забули пароль?».</p>
+  </div>
+
+  <div class="step" id="s2">
+    <div class="step-head"><span class="step-num">2</span><h2>Кабінет — де знайти калькулятор</h2></div>
+    <p>Після входу відкриється ваш кабінет. Зверху, в меню, натисніть <b>«Комерційна пропозиція»</b> — це і є калькулятор для створення КП.</p>
+    <div class="shot"><img src="instruktsiya-kalkuliator-img/02-cabinet.png" alt="Кабінет дилера"></div>
+    <div class="callout"><b>Корисно знати:</b> тут-таки, в кабінеті, є посилання на повний каталог продукції PDF і на «Довідник по лінійках IN WOOD» — короткий гід по кольорах, короб/лиштва/добір і термінах, якщо щось незрозуміло в самому калькуляторі.</div>
+  </div>
+
+  <div class="step" id="s3">
+    <div class="step-head"><span class="step-num">3</span><h2>Як влаштований калькулятор</h2></div>
+    <p>Перш ніж заповнювати — коротко про те, що є на екрані:</p>
+    <ol class="points">
+      <li><b>Панель мови й валюти</b> — переключити весь калькулятор на англійську та/або перерахувати ціни в EUR/USD (про це нижче, кроки 8–9).</li>
+      <li><b>«Клієнт і тариф»</b> — ім'я й телефон клієнта, для кого робите пропозицію.</li>
+      <li><b>«Додати позицію»</b> — тут обираєте модель, колір, розмір і все комплектуючі для однієї позиції КП.</li>
+      <li><b>Таблиця справа</b> — сюди потрапляють усі додані позиції, тут же підсумкова сума.</li>
+    </ol>
+    <div class="shot"><img src="instruktsiya-kalkuliator-img/03-overview.png" alt="Загальний вигляд калькулятора"></div>
+  </div>
+
+  <div class="step" id="s4">
+    <div class="step-head"><span class="step-num">4</span><h2>Клієнт</h2></div>
+    <p>Впишіть ім'я та телефон (або email) клієнта, для якого формуєте пропозицію. Поле тарифу вже стоїть за вашою роллю — міняти його не потрібно.</p>
+    <div class="shot"><img src="instruktsiya-kalkuliator-img/04-client.png" alt="Заповнені дані клієнта"></div>
+    <p class="note">Поля «Телефон консультанта» і «Коментар» — необов'язкові, заповнюйте за потреби.</p>
+  </div>
+
+  <div class="step" id="s5">
+    <div class="step-head"><span class="step-num">5</span><h2>Модель, колір і розмір дверей</h2></div>
+    <p>У блоці «Додати позицію» оберіть лінію дверей (ETALON, NOMINAL, FREZZATTI, PERFETTO тощо) — вона вже стоїть першою в списку. Далі по черзі:</p>
+    <ol class="points">
+      <li><b>Модель</b> — код конкретних дверей (напр. ET-01).</li>
+      <li><b>Колір</b> — із палітри доступних для цієї моделі плівок.</li>
+      <li><b>Ширина і висота</b> — зі стандартного ряду розмірів.</li>
+    </ol>
+    <div class="shot"><img src="instruktsiya-kalkuliator-img/05-model.png" alt="Вибір моделі, кольору і розміру"></div>
+    <div class="callout"><b>Якщо з'явились ще поля</b> — «Колір крайки», «Колір вставки» чи «Сторона відкривання» — вони обов'язкові саме для цієї моделі, заповніть і їх, інакше кнопка «Додати позицію» внизу лишиться неактивною.</div>
+  </div>
+
+  <div class="step" id="s6">
+    <div class="step-head"><span class="step-num">6</span><h2>Комплектуючі, врізка, кількість</h2></div>
+    <p>Нижче йдуть короб, лиштва лицьова й тильна, добір — обираються так само зі списку, як і колір. Усі чотири поля — повністю незалежні одне від одного: можна обрати тільки лицьову лиштву без тильної, тільки короб без добору, чи взагалі нічого з цього — що не потрібно для цього замовлення, лишайте «не обрано». Далі:</p>
+    <ol class="points">
+      <li><b>Врізка</b> — без врізки / під замок / повна врізка фурнітури.</li>
+      <li><b>Шумоізоляція</b> — галочка, якщо потрібна (лінія ETALON).</li>
+      <li><b>Кількість</b> — скільки таких дверей потрібно клієнту.</li>
+    </ol>
+    <p>Під формою одразу видно фото обраних дверей і розбивку ціни по кожній складовій — звіряйте з тим, що просить клієнт, ще до того, як додати позицію.</p>
+    <div class="callout"><b>Підводний камінь:</b> якщо для ETALON обрати короб «прихованого монтажу» (STANDART або LUX) — поля лиштви й добору зникають з екрана. Це не помилка: для такого короба вони не потрібні.</div>
+  </div>
+
+  <div class="step" id="s7">
+    <div class="step-head"><span class="step-num">7</span><h2>Додавання позиції й підсумок</h2></div>
+    <p>Коли все обрано — кнопка <b>«Додати позицію»</b> стає активною. Натисніть її: рядок переходить у таблицю справа, і можна одразу додавати наступну позицію (інша модель чи колір) тим самим способом.</p>
+    <ol class="points">
+      <li>Позиція з повною розбивкою ціни по кожній складовій.</li>
+      <li>«Видалити» — прибрати позицію, якщо помилились.</li>
+      <li>Знижка — у відсотках або в гривнях, якщо домовились з клієнтом.</li>
+      <li>Підсумкова сума по всьому КП.</li>
+      <li>Три кнопки збереження — про них у кроці 10.</li>
+    </ol>
+    <div class="shot"><img src="instruktsiya-kalkuliator-img/06-table.png" alt="Позицію додано в таблицю"></div>
+  </div>
+
+  <div class="step" id="s8">
+    <div class="step-head"><span class="step-num">8</span><h2>Переклад на англійську</h2></div>
+    <p>Якщо клієнт — іноземний, натисніть <b>EN</b> у панелі зверху: весь екран (назви, кнопки, таблиця) одразу перемикається на англійську, не лише друкований бланк.</p>
+    <div class="shot"><img src="instruktsiya-kalkuliator-img/07-english.png" alt="Перемикач англійської мови"></div>
+    <p class="note">Повернутись назад — та сама кнопка, тільки UA.</p>
+  </div>
+
+  <div class="step" id="s9">
+    <div class="step-head"><span class="step-num">9</span><h2>Перерахунок у валюту</h2></div>
+    <p>Поруч, справа — вибір валюти: UAH / EUR / USD. Оберіть EUR або USD, впишіть курс у полі праворуч — усі ціни в таблиці й підсумок одразу перерахуються.</p>
+    <div class="shot"><img src="instruktsiya-kalkuliator-img/08-eur.png" alt="Перерахунок цін у євро"></div>
+  </div>
+
+  <div class="step" id="s10">
+    <div class="step-head"><span class="step-num">10</span><h2>Збереження й друк</h2></div>
+    <p>Коли КП готове, під підсумковою сумою — три кнопки:</p>
+    <ol class="points">
+      <li><b>Зберегти PDF</b> — одразу скачує готовий файл, найзручніше для надсилання клієнту.</li>
+      <li><b>Зберегти файл</b> — альтернативний варіант збереження документа.</li>
+      <li><b>Друкувати</b> — відкриває діалог друку, якщо потрібно роздрукувати одразу.</li>
+    </ol>
+    <p>Все, комерційна пропозиція готова.</p>
+  </div>
+
+  <hr class="rule">
+
+  <div class="step" id="s11">
+    <div class="step-head"><span class="step-num">11</span><h2>Окремо: короб, лиштва чи добір без полотна</h2></div>
+    <p>Якщо клієнту потрібен лише короб, лиштва чи добір без дверей — не шукайте це серед моделей. У верхньому селекті «Лінія» оберіть пункт <b>«Погонажні вироби (короб/лиштва/добір окремо)»</b> — з'явиться окрема, коротша форма:</p>
+    <ol class="points">
+      <li><b>Лінія</b> — з якої колекції потрібен виріб (ETALON, NOMINAL тощо).</li>
+      <li><b>Тип</b> — короб, лиштва чи добір.</li>
+      <li><b>Позиція</b> — конкретний виріб зі списку.</li>
+    </ol>
+    <div class="shot"><img src="instruktsiya-kalkuliator-img/09-pogonazhni.png" alt="Вибір погонажних виробів"></div>
+    <p>Додається в таблицю так само кнопкою «Додати позицію» — ціна й кількість працюють ідентично до звичайної позиції.</p>
+    <div class="shot"><img src="instruktsiya-kalkuliator-img/10-pogonazhni-result.png" alt="Погонажний виріб додано в таблицю"></div>
+  </div>
+
+  <div class="step" id="s12">
+    <div class="step-head"><span class="step-num">12</span><h2>Окремо: фурнітура (ручки, завіси, замки тощо)</h2></div>
+    <p>Так само в селекті «Лінія» — оберіть потрібний бренд фурнітури (<b>«Фурнітура MVM»</b>, <b>«Фурнітура Anselmi + AGB»</b> тощо). Далі:</p>
+    <ol class="points">
+      <li><b>Категорія</b> — ручки, завіси, замки, упори, механізми тощо.</li>
+      <li><b>Артикул</b> — конкретна позиція; одразу під селектом з'явиться фото й матеріал.</li>
+    </ol>
+    <div class="shot"><img src="instruktsiya-kalkuliator-img/11-hardware.png" alt="Вибір фурнітури"></div>
+    <p>Так само натискаєте «Додати позицію» — готово.</p>
+    <div class="shot"><img src="instruktsiya-kalkuliator-img/12-hardware-result.png" alt="Фурнітуру додано в таблицю"></div>
+  </div>
+
+  <div class="step" id="s13">
+    <div class="step-head"><span class="step-num">13</span><h2>Коротко: що обов'язково заповнювати</h2></div>
+    <p>Залежно від лінії дверей частина полів може бути обов'язковою, навіть якщо на ціну вона не впливає — без неї кнопка «Додати позицію» лишиться неактивною.</p>
+    <div class="ref-wrap">
+    <table class="ref">
+      <thead><tr><th>Поле</th><th>Коли обов'язкове</th></tr></thead>
+      <tbody>
+        <tr><td>Модель</td><td>завжди</td></tr>
+        <tr><td>Колір крайки</td><td>ETALON / NOMINAL / FREZZATTI / PERFETTO — завжди. У STANDART і прихованих дверей немає.</td></tr>
+        <tr><td>Сторона відкривання</td><td>ETALON / NOMINAL / FREZZATTI / PERFETTO / STANDART — завжди.</td></tr>
+        <tr><td>Колір вставки</td><td>лише ETALON ET-02…17 і NOMINAL NL-02…05 (на ET-01 і NL-01 — немає).</td></tr>
+        <tr><td>Короб / лиштва лицьова / лиштва тильна / добір</td><td>ніколи не обов'язкові — кожне можна лишити «не обрано».</td></tr>
+        <tr><td>Погонажні вироби / фурнітура</td><td>обов'язкова лише сама позиція в останньому селекті.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <footer>
+    Є питання по кольорах, короб/лиштва/добір чи термінах — дивіться «Довідник по лінійках IN WOOD» у своєму кабінеті. Якщо щось у калькуляторі не працює як очікується — пишіть у портал напряму.
+  </footer>
+
+</div>
