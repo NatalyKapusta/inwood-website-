@@ -156,7 +156,7 @@ export default async function PortalDashboardPage() {
             <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <div className="flex items-center gap-2 rounded-full border border-navy-dark pl-4 pr-1.5 py-1.5">
                 <a
-                  href="/documents/prays-dilerska.html"
+                  href="/documents/prays-dilerska.html?v=2"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm font-semibold text-navy-dark hover:text-gold"
@@ -164,7 +164,7 @@ export default async function PortalDashboardPage() {
                   Прайс-лист — дилерська та роздрібна ціна
                 </a>
                 <a
-                  href="/documents/prays-dilerska.html"
+                  href="/documents/prays-dilerska.html?v=2"
                   download="Прайс-лист IN WOOD — дилерська та роздрібна ціна.html"
                   className="rounded-full bg-navy-dark px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-gold hover:text-navy-dark"
                 >
@@ -173,7 +173,7 @@ export default async function PortalDashboardPage() {
               </div>
               <div className="flex items-center gap-2 rounded-full border border-navy-dark pl-4 pr-1.5 py-1.5">
                 <a
-                  href="/documents/prays-rozdrib.html"
+                  href="/documents/prays-rozdrib.html?v=2"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm font-semibold text-navy-dark hover:text-gold"
@@ -181,7 +181,7 @@ export default async function PortalDashboardPage() {
                   Прайс-лист — тільки роздрібні ціни
                 </a>
                 <a
-                  href="/documents/prays-rozdrib.html"
+                  href="/documents/prays-rozdrib.html?v=2"
                   download="Прайс-лист IN WOOD — роздрібні ціни.html"
                   className="rounded-full bg-navy-dark px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-gold hover:text-navy-dark"
                 >

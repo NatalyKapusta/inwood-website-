@@ -45,6 +45,15 @@ const nextConfig = {
         headers: [{ key: "Cache-Control", value: "public, max-age=0, must-revalidate" }],
       },
       {
+        // Прайс-листи в кабінеті дилера — теж редагуються під тими самими іменами.
+        source: "/documents/prays-dilerska.html",
+        headers: [{ key: "Cache-Control", value: "public, max-age=0, must-revalidate" }],
+      },
+      {
+        source: "/documents/prays-rozdrib.html",
+        headers: [{ key: "Cache-Control", value: "public, max-age=0, must-revalidate" }],
+      },
+      {
         // Текстури 3D-примірки дверей — той самий файл під тим самим ім'ям
         // ніколи не змінюється (нова версія = новий TEX_VER у door-fit.html),
         // тому теж безпечно кешувати надовго.
