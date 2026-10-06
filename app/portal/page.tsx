@@ -161,11 +161,11 @@ export default async function PortalDashboardPage() {
                   rel="noopener noreferrer"
                   className="text-sm font-semibold text-navy-dark hover:text-gold"
                 >
-                  Прайс-лист — тільки дилерські ціни
+                  Прайс-лист — дилерська та роздрібна ціна
                 </a>
                 <a
                   href="/documents/prays-dilerska.html"
-                  download="Прайс-лист IN WOOD — дилерські ціни.html"
+                  download="Прайс-лист IN WOOD — дилерська та роздрібна ціна.html"
                   className="rounded-full bg-navy-dark px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-gold hover:text-navy-dark"
                 >
                   Скачати
