@@ -153,23 +153,41 @@ export default async function PortalDashboardPage() {
               Моделі, кольори, короб/лиштва/добір і ціни по кожній лінійці. Скачуйте той, що вам
               потрібен.
             </p>
-            <div className="mt-3 flex flex-wrap gap-3">
-              <a
-                href="/documents/prays-dilerska.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full border border-navy-dark px-4 py-2 text-sm font-semibold text-navy-dark transition hover:bg-navy-dark hover:text-white"
-              >
-                Прайс-лист — тільки дилерські ціни
-              </a>
-              <a
-                href="/documents/prays-rozdrib.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full border border-navy-dark px-4 py-2 text-sm font-semibold text-navy-dark transition hover:bg-navy-dark hover:text-white"
-              >
-                Прайс-лист — тільки роздрібні ціни
-              </a>
+            <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <div className="flex items-center gap-2 rounded-full border border-navy-dark pl-4 pr-1.5 py-1.5">
+                <a
+                  href="/documents/prays-dilerska.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-semibold text-navy-dark hover:text-gold"
+                >
+                  Прайс-лист — тільки дилерські ціни
+                </a>
+                <a
+                  href="/documents/prays-dilerska.html"
+                  download="Прайс-лист IN WOOD — дилерські ціни.html"
+                  className="rounded-full bg-navy-dark px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-gold hover:text-navy-dark"
+                >
+                  Скачати
+                </a>
+              </div>
+              <div className="flex items-center gap-2 rounded-full border border-navy-dark pl-4 pr-1.5 py-1.5">
+                <a
+                  href="/documents/prays-rozdrib.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-semibold text-navy-dark hover:text-gold"
+                >
+                  Прайс-лист — тільки роздрібні ціни
+                </a>
+                <a
+                  href="/documents/prays-rozdrib.html"
+                  download="Прайс-лист IN WOOD — роздрібні ціни.html"
+                  className="rounded-full bg-navy-dark px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-gold hover:text-navy-dark"
+                >
+                  Скачати
+                </a>
+              </div>
             </div>
           </div>
         )}
