@@ -42,6 +42,9 @@ export default async function PortalDashboardPage() {
   const effectiveRole = viewingAs ?? role;
   const effectiveIsOwner = isOwner && !viewingAs;
   const en = effectiveRole === "export";
+  const canSeePriceLists =
+    effectiveIsOwner ||
+    ["dealer", "dealer_distributor", "manager", "staff"].includes(effectiveRole as string);
 
   return (
     <div>
@@ -142,6 +145,34 @@ export default async function PortalDashboardPage() {
             )}
           </div>
         </div>
+
+        {canSeePriceLists && (
+          <div className="rounded-xl bg-panel p-6 shadow-sm sm:col-span-2">
+            <h2 className="font-serif text-lg font-bold text-navy-dark">Прайс-листи IN WOOD</h2>
+            <p className="mt-2 text-sm text-navy-dim">
+              Моделі, кольори, короб/лиштва/добір і ціни по кожній лінійці. Скачуйте той, що вам
+              потрібен.
+            </p>
+            <div className="mt-3 flex flex-wrap gap-3">
+              <a
+                href="/documents/prays-dilerska.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-navy-dark px-4 py-2 text-sm font-semibold text-navy-dark transition hover:bg-navy-dark hover:text-white"
+              >
+                Прайс-лист — тільки дилерські ціни
+              </a>
+              <a
+                href="/documents/prays-rozdrib.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-navy-dark px-4 py-2 text-sm font-semibold text-navy-dark transition hover:bg-navy-dark hover:text-white"
+              >
+                Прайс-лист — тільки роздрібні ціни
+              </a>
+            </div>
+          </div>
+        )}
 
         {effectiveRole === "staff" && (
           <Link
