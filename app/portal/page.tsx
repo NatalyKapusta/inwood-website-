@@ -192,6 +192,18 @@ export default async function PortalDashboardPage() {
           </div>
         )}
 
+        {effectiveIsOwner && (
+          <Link
+            href="/portal/offline-calculator"
+            className="rounded-xl bg-panel p-6 shadow-sm transition hover:shadow-md"
+          >
+            <h2 className="font-serif text-lg font-bold text-navy-dark">Офлайн-калькулятор</h2>
+            <p className="mt-2 text-sm text-navy-dim">
+              Один файл, що рахує КП без інтернету — аварійний резерв на випадок відключень.
+            </p>
+          </Link>
+        )}
+
         {effectiveRole === "staff" && (
           <Link
             href="/portal/overrides"

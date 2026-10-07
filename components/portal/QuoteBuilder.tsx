@@ -238,6 +238,7 @@ export default function QuoteBuilder({
   allowedTariffs,
   canSeeStandart,
   defaultEn,
+  offlineData,
 }: {
   consultantDefault: string;
   canOverride: boolean;
@@ -252,6 +253,15 @@ export default function QuoteBuilder({
   // export відкриває калькулятор одразу англійською — не треба щоразу
   // клацати перемикач самим.
   defaultEn?: boolean;
+  // Офлайн-версія (без інтернету/Supabase) — ціни вшиті в сам файл заздалегідь
+  // через сторінку "Завантажити офлайн-калькулятор" (app/portal/offline-export).
+  // Коли задано, компонент НЕ ходить у Supabase взагалі, бере дані звідси.
+  offlineData?: {
+    panels: PanelRow[];
+    addons: AddonRow[];
+    services: ServiceRow[];
+    hardware: HardwareRow[];
+  };
 }) {
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
@@ -329,6 +339,17 @@ export default function QuoteBuilder({
   const [positions, setPositions] = useState<QuotePosition[]>([]);
 
   useEffect(() => {
+    if (offlineData) {
+      setPanelRows(offlineData.panels);
+      setAddonRows(offlineData.addons);
+      setServiceRows(offlineData.services);
+      setHardwareRows(offlineData.hardware);
+      let tariffsAvailable = Array.from(new Set(offlineData.panels.map((r) => r.tariff))) as Tariff[];
+      if (allowedTariffs) tariffsAvailable = tariffsAvailable.filter((t) => allowedTariffs.includes(t));
+      if (tariffsAvailable.length > 0) setTariff(tariffsAvailable[0]);
+      setLoading(false);
+      return;
+    }
     const supabase = createClient();
     (async () => {
       const [panels, addons, services, hardwareData] = await Promise.all([
