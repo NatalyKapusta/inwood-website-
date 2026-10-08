@@ -188,6 +188,36 @@ export function articleJsonLd({
   };
 }
 
+// Тільки для статей блогу, що справді є покроковою інструкцією (поле
+// howToSteps у data/blog.ts) — не підходить для решти статей-оглядів.
+export function howToJsonLd({
+  locale,
+  path,
+  name,
+  description,
+  steps,
+}: {
+  locale: Locale;
+  path: string;
+  name: string;
+  description: string;
+  steps: { name: string; text: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name,
+    description,
+    inLanguage: hreflang[locale],
+    step: steps.map((step, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: step.name,
+      text: step.text,
+    })),
+  };
+}
+
 export function breadcrumbJsonLd(items: { name: string; path: string }[], locale: Locale) {
   return {
     "@context": "https://schema.org",

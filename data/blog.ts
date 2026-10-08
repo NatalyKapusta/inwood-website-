@@ -23,6 +23,9 @@ export type BlogPost = {
   // а не завжди в каталог — тому текст і посилання опційно перевизначаються.
   ctaLabel?: string;
   ctaHref?: string;
+  // Кроки для HowTo-розмітки (schema.org) — тільки для статей, які справді
+  // є покроковою інструкцією, а не довільний список з будь-якої статті.
+  howToSteps?: { name: string; text: string }[];
 };
 
 const uaPosts: BlogPost[] = [
@@ -618,6 +621,24 @@ const uaPosts: BlogPost[] = [
       "Що і де міряти, скільки точок перевіряти, що робити з нерівними стінами і які розміри дверей існують без доплати. Інструкція від виробника.",
     ctaLabel: "Надіслати заміри на розрахунок",
     ctaHref: "/kontakty",
+    howToSteps: [
+      {
+        name: "Ширина",
+        text: "Виміряйте відстань між лівим і правим відкосом унизу, посередині висоти та вгорі. Запишіть усі три числа і візьміть найменше — це робоча ширина прорізу.",
+      },
+      {
+        name: "Висота",
+        text: "Виміряйте від підлоги до верхньої перемички у трьох точках: біля лівого відкосу, посередині, біля правого. Міряйте від чистової підлоги, а не чорнової.",
+      },
+      {
+        name: "Товщина стіни",
+        text: "Виміряйте глибину прорізу — від площини однієї стіни до площини іншої, у двох-трьох місцях. Ця цифра визначає, чи потрібен добір короба.",
+      },
+      {
+        name: "Перевірка геометрії",
+        text: "Прикладіть рівень до лівого й правого відкосу та перевірте перемичку зверху на провисання чи нахил.",
+      },
+    ],
     blocks: [
       {
         type: "p",
@@ -1528,6 +1549,24 @@ const ruPosts: BlogPost[] = [
       "Что и где мерить, сколько точек проверять, что делать с неровными стенами и какие размеры дверей существуют без доплаты. Инструкция от производителя.",
     ctaLabel: "Отправить замеры на расчёт",
     ctaHref: "/kontakty",
+    howToSteps: [
+      {
+        name: "Ширина",
+        text: "Измерьте расстояние между левым и правым откосом внизу, посередине высоты и вверху. Запишите все три числа и возьмите наименьшее — это рабочая ширина проёма.",
+      },
+      {
+        name: "Высота",
+        text: "Измерьте от пола до верхней перемычки в трёх точках: у левого откоса, посередине, у правого. Мерьте от чистового пола, а не от чернового.",
+      },
+      {
+        name: "Толщина стены",
+        text: "Измерьте глубину проёма — от плоскости одной стены до плоскости другой, в двух-трёх местах. Эта цифра решает, нужна ли доборная планка.",
+      },
+      {
+        name: "Проверка геометрии",
+        text: "Приложите уровень к левому и правому откосу и проверьте перемычку сверху на провисание или наклон.",
+      },
+    ],
     blocks: [
       {
         type: "p",
@@ -2438,6 +2477,24 @@ const enPosts: BlogPost[] = [
       "What to measure, how many points to check, what to do with uneven walls, and which door sizes come with no surcharge. A guide from the manufacturer.",
     ctaLabel: "Send your measurements for a quote",
     ctaHref: "/kontakty",
+    howToSteps: [
+      {
+        name: "Width",
+        text: "Measure the distance between the left and right jambs at the bottom, mid-height, and top. Write down all three numbers and take the smallest — that's the working width.",
+      },
+      {
+        name: "Height",
+        text: "Measure from the floor to the top lintel at three points: near the left jamb, in the middle, near the right jamb. Measure from the finished floor, not the subfloor.",
+      },
+      {
+        name: "Wall thickness",
+        text: "Measure the depth of the opening from one wall face to the other, at two or three spots. This number decides whether you need a jamb extension.",
+      },
+      {
+        name: "Checking the geometry",
+        text: "Hold a level against the left and right jamb, and check the lintel above for sagging or sloping.",
+      },
+    ],
     blocks: [
       {
         type: "p",
@@ -3348,6 +3405,24 @@ const plPosts: BlogPost[] = [
       "Co i gdzie mierzyć, ile punktów sprawdzać, co robić z nierównymi ścianami i jakie rozmiary drzwi są bez dopłaty. Instrukcja od producenta.",
     ctaLabel: "Wysłać wymiary do wyceny",
     ctaHref: "/kontakty",
+    howToSteps: [
+      {
+        name: "Szerokość",
+        text: "Zmierzcie odległość między lewym a prawym ościeżem u dołu, w połowie wysokości i u góry. Zapiszcie wszystkie trzy liczby i weźcie najmniejszą — to robocza szerokość otworu.",
+      },
+      {
+        name: "Wysokość",
+        text: "Zmierzcie od podłogi do górnego nadproża w trzech punktach: przy lewym ościeżu, pośrodku, przy prawym. Mierzcie od podłogi wykończonej, nie surowej.",
+      },
+      {
+        name: "Grubość ściany",
+        text: "Zmierzcie głębokość otworu od płaszczyzny jednej ściany do drugiej, w dwóch-trzech miejscach. Ta liczba decyduje, czy potrzebne jest poszerzenie ościeżnicy.",
+      },
+      {
+        name: "Sprawdzenie geometrii",
+        text: "Przyłóżcie poziomicę do lewego i prawego ościeża oraz sprawdźcie nadproże u góry pod kątem ugięcia lub pochylenia.",
+      },
+    ],
     blocks: [
       {
         type: "p",
