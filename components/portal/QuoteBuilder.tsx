@@ -95,6 +95,8 @@ const UI_EN: Record<string, string> = {
   "Телефон консультанта": "Consultant phone",
   "Коментар (необов'язково)": "Comment (optional)",
   "Додати позицію": "Add item",
+  "Додати в кошик": "Add to cart",
+  "Кошик": "Cart",
   "Позиція...": "Item...",
   "Лінія: ": "Line: ",
   "Немає фото": "No photo",
@@ -1835,13 +1837,21 @@ export default function QuoteBuilder({
               }
               className="rounded-full bg-navy-dark px-6 py-3 font-semibold text-white transition hover:bg-gold hover:text-navy-dark disabled:opacity-40"
             >
-              {t("Додати позицію")}
+              🛒 {t("Додати в кошик")}
             </button>
           </div>
         </div>
       </div>
 
       <div>
+        <h2 className="mb-3 flex items-center gap-2 font-serif text-lg font-bold text-navy-dark">
+          🛒 {t("Кошик")}
+          {positions.length > 0 && (
+            <span className="rounded-full bg-navy-dark px-2.5 py-0.5 text-xs font-sans font-bold text-gold">
+              {positions.length}
+            </span>
+          )}
+        </h2>
         <div className="overflow-x-auto rounded-xl bg-panel shadow-sm">
           <table className="w-full text-left text-sm">
             <thead className="bg-navy-dark text-white">
