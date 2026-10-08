@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import dealers from "@/data/dealers.json";
 import DealersMap from "@/components/DealersMap";
 import DealersList from "@/components/DealersList";
@@ -26,9 +26,20 @@ export default async function NashiDileriPage({ params }: { params: { locale: Lo
   const dict = await getDictionary(params.locale);
   const t = dict.nashiDileri;
   const c = dict.common;
+  const breadcrumbItems = [
+    { name: c.breadcrumbHome, path: "" },
+    { name: t.heroTitle, path: "/nashi-dileri" },
+  ];
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbJsonLd(breadcrumbItems, params.locale)),
+        }}
+      />
       <section className="bg-navy-dark text-white">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>

@@ -2,7 +2,7 @@ import type { Locale } from "@/lib/i18n";
 import ContactCta from "@/components/ContactCta";
 import RelatedLinks from "@/components/RelatedLinks";
 import { getDictionary } from "@/lib/dictionary";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 
 // Публічна сторінка з рідкісним оновленням даних — статична генерація
 // з ISR раз на годину (замість повністю динамічного рендеру на кожен
@@ -26,9 +26,20 @@ export default async function ServisPage({
 }) {
   const dict = await getDictionary(params.locale);
   const t = dict.servis;
+  const breadcrumbItems = [
+    { name: dict.common.breadcrumbHome, path: "" },
+    { name: t.heading, path: "/servis" },
+  ];
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbJsonLd(breadcrumbItems, params.locale)),
+        }}
+      />
       <section className="mx-auto max-w-3xl px-4 py-16 text-center sm:py-24">
         <h1 className="font-serif text-3xl font-bold text-navy-dark sm:text-4xl">{t.heading}</h1>
         <p className="mt-4 text-navy-dim">{t.intro}</p>

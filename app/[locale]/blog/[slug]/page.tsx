@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
-import { buildMetadata, articleJsonLd } from "@/lib/seo";
+import { buildMetadata, articleJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import { blogPosts, getBlogPost, type BlogBlock } from "@/data/blog";
 import ContactCta from "@/components/ContactCta";
 
@@ -73,6 +73,11 @@ export default async function BlogPostPage({
   const relatedPosts = blogPosts[params.locale]
     .filter((p) => p.slug !== post.slug)
     .slice(0, 3);
+  const breadcrumbItems = [
+    { name: c.breadcrumbHome, path: "" },
+    { name: t.heading, path: "/blog" },
+    { name: post.title, path: `/blog/${params.slug}` },
+  ];
 
   return (
     <>
@@ -88,6 +93,13 @@ export default async function BlogPostPage({
               description: post.excerpt,
             })
           ),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbJsonLd(breadcrumbItems, params.locale)),
         }}
       />
       <article className="mx-auto max-w-3xl px-4 py-16 sm:py-24">

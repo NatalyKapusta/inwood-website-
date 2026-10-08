@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { blogPosts } from "@/data/blog";
 import { COLLECTION_PAGE_SLUGS } from "@/lib/collectionPages";
 import RichText from "@/components/RichText";
@@ -26,9 +26,20 @@ export default async function BlogIndexPage({ params }: { params: { locale: Loca
   const t = dict.blog;
   const cp = dict.collectionPages;
   const posts = blogPosts[params.locale];
+  const breadcrumbItems = [
+    { name: dict.common.breadcrumbHome, path: "" },
+    { name: t.heading, path: "/blog" },
+  ];
 
   return (
     <section className="mx-auto max-w-4xl px-4 py-16 sm:py-24">
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbJsonLd(breadcrumbItems, params.locale)),
+        }}
+      />
       <div className="text-center">
         <h1 className="font-serif text-3xl font-bold text-navy-dark sm:text-4xl">{t.heading}</h1>
         <p className="mx-auto mt-4 max-w-2xl text-navy-dim">{t.intro}</p>
