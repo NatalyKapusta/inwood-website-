@@ -119,29 +119,47 @@ export default async function PortalDashboardPage() {
               {en ? "IN WOOD Line-Up Reference" : "Довідник по лінійках IN WOOD"}
             </a>
             {effectiveRole === "export" ? (
-              <a
-                href="/documents/instruktsiya-kalkuliator-en.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative rounded-full bg-red-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-red-700"
-              >
-                Calculator Guide
+              <div className="relative flex items-center gap-2 rounded-full bg-red-600 py-1.5 pl-4 pr-1.5 shadow-sm">
+                <a
+                  href="/documents/instruktsiya-kalkuliator-en.html?v=3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-semibold text-white"
+                >
+                  Calculator Guide
+                </a>
+                <a
+                  href="/documents/instruktsiya-kalkuliator-en.html?v=3"
+                  download="IN WOOD Calculator Guide.html"
+                  className="rounded-full bg-navy-dark px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-gold hover:text-navy-dark"
+                >
+                  Download
+                </a>
                 <span className="absolute -top-2.5 -right-2.5 rounded-full bg-navy-dark px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-gold">
                   Required
                 </span>
-              </a>
+              </div>
             ) : (
-              <a
-                href="/documents/instruktsiya-kalkuliator.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative rounded-full bg-red-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-red-700"
-              >
-                Інструкція до калькулятора КП
+              <div className="relative flex items-center gap-2 rounded-full bg-red-600 py-1.5 pl-4 pr-1.5 shadow-sm">
+                <a
+                  href="/documents/instruktsiya-kalkuliator.html?v=3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-semibold text-white"
+                >
+                  Інструкція до калькулятора КП
+                </a>
+                <a
+                  href="/documents/instruktsiya-kalkuliator.html?v=3"
+                  download="Інструкція до калькулятора КП IN WOOD.html"
+                  className="rounded-full bg-navy-dark px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-gold hover:text-navy-dark"
+                >
+                  Скачати
+                </a>
                 <span className="absolute -top-2.5 -right-2.5 rounded-full bg-navy-dark px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-gold">
                   Обов&apos;язково
                 </span>
-              </a>
+              </div>
             )}
           </div>
         </div>
