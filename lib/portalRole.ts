@@ -34,16 +34,17 @@ export const roleLabels: Record<PortalRole, string> = {
 };
 
 // Той самий розподіл тарифів за роллю, що й у RLS-політиках Supabase
-// (supabase/migrations/0014_extra_tariff_roles.sql) — тримати синхронізованим.
+// (supabase/migrations/0014_extra_tariff_roles.sql, 0031_extra_roles_see_retail.sql)
+// — тримати синхронізованим.
 export const TARIFFS_BY_ROLE: Record<PortalRole, Tariff[] | "all"> = {
-  dealer: ["dealer"],
+  dealer: ["retail", "dealer"],
   dealer_distributor: ["retail", "dealer", "distributor"],
   manager: "all",
   staff: "all",
-  epicenter: ["epicenter"],
-  distributor: ["distributor"],
-  builder: ["builder"],
-  export: ["export"],
+  epicenter: ["retail", "epicenter"],
+  distributor: ["retail", "distributor"],
+  builder: ["retail", "builder"],
+  export: ["retail", "export"],
 };
 
 export function isPortalRole(value: unknown): value is PortalRole {
