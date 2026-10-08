@@ -96,11 +96,63 @@ export function isAddonCompatible(collection: string, variantType: VariantType, 
   return true;
 }
 
+// Де взяти ціну рядка — замість одного "замороженого" числа на момент
+// додавання позиції. Дає змогу перерахувати вже додані позиції під інший
+// тариф (кнопки "Дилерська"/"Роздрібна" тощо нагорі) — і в екрані, і в
+// друкованому бланку/PDF — без повторного збирання дверей заново.
+// "fixed" — ручне перевизначення (canOverride): число, яке консультант
+// вписав сам, не прив'язане до жодного тарифу — лишається незмінним при
+// перемиканні тарифу.
+export type PriceRef =
+  | { kind: "panel"; code: string; surcharge?: number }
+  | { kind: "addon"; collection: string; addonType: "korob" | "lishtva" | "dobir"; label: string }
+  | { kind: "service"; key: string }
+  | { kind: "flat"; code: string }
+  | { kind: "hardware"; brand: string; category: HardwareCategory; article: string }
+  | { kind: "fixed"; amount: number };
+
+export type PricingData = {
+  panelRows: PanelRow[];
+  addonRows: AddonRow[];
+  serviceRows: ServiceRow[];
+  hardwareRows: HardwareRow[];
+};
+
+export function priceForRef(ref: PriceRef, tariff: Tariff, data: PricingData): number {
+  switch (ref.kind) {
+    case "panel": {
+      const base = data.panelRows.find((r) => r.product_code === ref.code && r.tariff === tariff)?.price ?? 0;
+      return ref.surcharge ? base * ref.surcharge : base;
+    }
+    case "flat":
+      return data.panelRows.find((r) => r.product_code === ref.code && r.tariff === tariff)?.price ?? 0;
+    case "addon":
+      return (
+        data.addonRows.find(
+          (r) =>
+            r.collection === ref.collection &&
+            r.addon_type === ref.addonType &&
+            r.item_label === ref.label &&
+            r.tariff === tariff
+        )?.price ?? 0
+      );
+    case "service":
+      return data.serviceRows.find((r) => r.service_key === ref.key && r.tariff === tariff)?.price ?? 0;
+    case "hardware":
+      return (
+        data.hardwareRows.find(
+          (r) => r.brand === ref.brand && r.category === ref.category && r.article === ref.article && r.tariff === tariff
+        )?.price ?? 0
+      );
+    case "fixed":
+      return ref.amount;
+  }
+}
+
 export type QuoteLineItem = {
   label: string;
-  unitPrice: number;
+  ref: PriceRef;
   qty: number;
-  amount: number;
   photo?: string;
 };
 
@@ -114,6 +166,10 @@ export type QuotePosition = {
   rows: QuoteLineItem[];
 };
 
-export function positionTotal(position: QuotePosition) {
-  return position.rows.reduce((sum, r) => sum + r.amount, 0);
+export function lineItemAmount(item: QuoteLineItem, tariff: Tariff, data: PricingData) {
+  return priceForRef(item.ref, tariff, data) * item.qty;
+}
+
+export function positionTotal(position: QuotePosition, tariff: Tariff, data: PricingData) {
+  return position.rows.reduce((sum, r) => sum + lineItemAmount(r, tariff, data), 0);
 }

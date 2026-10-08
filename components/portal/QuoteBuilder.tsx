@@ -16,6 +16,7 @@ import {
 import {
   tariffLabels,
   positionTotal,
+  priceForRef,
   isAluEdgeVariant,
   isAddonCompatible,
   hardwareCategoryLabels,
@@ -28,6 +29,8 @@ import {
   type HardwareRow,
   type HardwareCategory,
   type QuotePosition,
+  type PriceRef,
+  type PricingData,
   type ModelVariant,
   type ModelVariantsData,
   type VariantType,
@@ -388,6 +391,15 @@ export default function QuoteBuilder({
     return allowedTariffs ? all.filter((t) => allowedTariffs.includes(t)) : all;
   }, [panelRows, allowedTariffs]);
 
+  // Для вже доданих позицій: кнопки тарифу нагорі перераховують їхню ціну
+  // "наживо" через PriceRef (lib/quote.ts), а не по замороженому числу з
+  // моменту додавання — так можна передрукувати те саме замовлення і по
+  // дилерській, і по роздрібній ціні, без повторного збирання дверей.
+  const pricingData: PricingData = { panelRows, addonRows, serviceRows, hardwareRows };
+  // previewRows рахується лише коли tariff уже обрано (див. нижче) — до того
+  // позицій додати не можна, тож тут завжди є хоч один дійсний тариф.
+  const activeTariff = (tariff || availableTariffs[0]) as Tariff;
+
   const isPogonazhni = collectionKey === POGONAZHNI_KEY;
   const flatLine = FLAT_LINE_CATEGORIES.find((c) => c.key === collectionKey);
   const isFlatLine = !!flatLine;
@@ -526,13 +538,15 @@ export default function QuoteBuilder({
     if (isPogonazhni) {
       if (!pogItem || !tariff) return [];
       const price = pogItemOptions.find((r) => r.item_label === pogItem)?.price ?? 0;
-      return [{ label: `${pogTypeLabel}: ${pogItem}`, unitPrice: price }];
+      const ref: PriceRef = { kind: "addon", collection: pogLine, addonType: pogType, label: pogItem };
+      return [{ label: `${pogTypeLabel}: ${pogItem}`, unitPrice: price, ref }];
     }
     if (isFlatLine) {
       if (!flatItemCode || !tariff) return [];
       const row = flatItemOptions.find((r) => r.product_code === flatItemCode);
       if (!row) return [];
-      return [{ label: row.product_code.slice(flatLine!.prefix.length), unitPrice: row.price }];
+      const ref: PriceRef = { kind: "flat", code: row.product_code };
+      return [{ label: row.product_code.slice(flatLine!.prefix.length), unitPrice: row.price, ref }];
     }
     if (isHardwareLine) {
       if (!hardwareArticle || !tariff || !selectedHardware) return [];
@@ -540,10 +554,16 @@ export default function QuoteBuilder({
       const label = `${selectedHardware.article} — ${selectedHardware.name}${
         selectedHardware.material ? ` (${selectedHardware.material})` : ""
       } [${brandLabel}]`;
-      return [{ label, unitPrice: selectedHardware.price }];
+      const ref: PriceRef = {
+        kind: "hardware",
+        brand: selectedHardware.brand,
+        category: selectedHardware.category,
+        article: selectedHardware.article,
+      };
+      return [{ label, unitPrice: selectedHardware.price, ref }];
     }
     if (!modelCode || !tariff) return [];
-    const rows: { label: string; unitPrice: number; photo?: string }[] = [];
+    const rows: { label: string; unitPrice: number; photo?: string; ref: PriceRef }[] = [];
     const variantLabel = variantOptions.find((v) => v.code === effectiveVariantCode)?.label;
     const panelBase = panelPrice();
     const isManualSize = canOverride && nonstdSize;
@@ -563,17 +583,22 @@ export default function QuoteBuilder({
         isManualSize ? " — нестандарт (вручну)" : sizeIsNonstd ? " — нестандарт*" : ""
       }`,
       unitPrice: isManualSize ? manualPolotnoPrice : sizeIsNonstd ? panelBase * NONSTD_SURCHARGE : panelBase,
+      ref: isManualSize
+        ? { kind: "fixed", amount: manualPolotnoPrice }
+        : { kind: "panel", code: effectiveVariantCode, surcharge: sizeIsNonstd ? NONSTD_SURCHARGE : undefined },
     });
     if (canOverride && korobManual) {
       rows.push({
         label: `Короб, нестандарт${korobManualWidth ? `, ${korobManualWidth} мм (глибина)` : ""} (вручну)`,
         unitPrice: korobManualPrice,
+        ref: { kind: "fixed", amount: korobManualPrice },
       });
     } else if (korob) {
       rows.push({
         label: isKorobRalModel && ralNcsColor.trim() ? `${korob} — RAL/NCS: ${ralNcsColor.trim()}` : korob,
         unitPrice: priceOf(korobOptions, korob),
         photo: addonPhotoFor("korob", korob),
+        ref: { kind: "addon", collection: collectionKey, addonType: "korob", label: korob },
       });
     }
     if (canOverride && lishtvaManual) {
@@ -582,12 +607,14 @@ export default function QuoteBuilder({
           lishtvaManualFrontWidth ? `, ${lishtvaManualFrontWidth} мм` : ""
         } (лицьова, вручну)`,
         unitPrice: lishtvaManualFrontPrice,
+        ref: { kind: "fixed", amount: lishtvaManualFrontPrice },
       });
       rows.push({
         label: `Лиштва, нестандарт${
           lishtvaManualBackWidth ? `, ${lishtvaManualBackWidth} мм` : ""
         } (тильна, вручну)`,
         unitPrice: lishtvaManualBackPrice,
+        ref: { kind: "fixed", amount: lishtvaManualBackPrice },
       });
     } else {
       if (lishtvaFront)
@@ -595,12 +622,14 @@ export default function QuoteBuilder({
           label: `${lishtvaFront} (лицьова)`,
           unitPrice: priceOf(lishtvaOptions, lishtvaFront),
           photo: addonPhotoFor("lishtva", lishtvaFront),
+          ref: { kind: "addon", collection: collectionKey, addonType: "lishtva", label: lishtvaFront },
         });
       if (lishtvaBack)
         rows.push({
           label: `${lishtvaBack} (тильна)`,
           unitPrice: priceOf(lishtvaOptions, lishtvaBack),
           photo: addonPhotoFor("lishtva", lishtvaBack),
+          ref: { kind: "addon", collection: collectionKey, addonType: "lishtva", label: lishtvaBack },
         });
     }
     if (canOverride && dobirManual) {
@@ -610,27 +639,48 @@ export default function QuoteBuilder({
         } (вручну)`,
         unitPrice: dobirManualPrice,
         photo: addonPhotoFor("dobir", dobir),
+        ref: { kind: "fixed", amount: dobirManualPrice },
       });
     } else if (dobir) {
-      rows.push({ label: dobir, unitPrice: priceOf(dobirOptions, dobir), photo: addonPhotoFor("dobir", dobir) });
+      rows.push({
+        label: dobir,
+        unitPrice: priceOf(dobirOptions, dobir),
+        photo: addonPhotoFor("dobir", dobir),
+        ref: { kind: "addon", collection: collectionKey, addonType: "dobir", label: dobir },
+      });
     }
-    if (vrizka === "lock")
+    if (vrizka === "lock") {
+      const key = isAluEdge ? "VRIZKA_LOCK_PRICE_ALU" : "VRIZKA_LOCK_PRICE";
+      rows.push({ label: "Врізка під замок", unitPrice: serviceePrice(key), ref: { kind: "service", key } });
+    }
+    if (vrizka === "full") {
+      const key = isAluEdge ? "VRIZKA_FULL_PRICE_ALU" : "VRIZKA_FULL_PRICE";
+      rows.push({ label: "Повна врізка фурнітури", unitPrice: serviceePrice(key), ref: { kind: "service", key } });
+    }
+    if (shumo)
       rows.push({
-        label: "Врізка під замок",
-        unitPrice: serviceePrice(isAluEdge ? "VRIZKA_LOCK_PRICE_ALU" : "VRIZKA_LOCK_PRICE"),
+        label: "Шумоізоляція",
+        unitPrice: serviceePrice("SHUMO_PRICE"),
+        ref: { kind: "service", key: "SHUMO_PRICE" },
       });
-    if (vrizka === "full")
-      rows.push({
-        label: "Повна врізка фурнітури",
-        unitPrice: serviceePrice(isAluEdge ? "VRIZKA_FULL_PRICE_ALU" : "VRIZKA_FULL_PRICE"),
-      });
-    if (shumo) rows.push({ label: "Шумоізоляція", unitPrice: serviceePrice("SHUMO_PRICE") });
     if (isAlumEdgePaintSurcharge)
-      rows.push({ label: `Фарбування алюм. крайки (${edgeColor})`, unitPrice: serviceePrice("ALUM_PAINT_PRICE") });
+      rows.push({
+        label: `Фарбування алюм. крайки (${edgeColor})`,
+        unitPrice: serviceePrice("ALUM_PAINT_PRICE"),
+        ref: { kind: "service", key: "ALUM_PAINT_PRICE" },
+      });
     if (isHiddenDoors && alumPaintHiddenDoors)
-      rows.push({ label: "Фарбування алюм. крайки", unitPrice: serviceePrice("ALUM_PAINT_PRICE") });
+      rows.push({
+        label: "Фарбування алюм. крайки",
+        unitPrice: serviceePrice("ALUM_PAINT_PRICE"),
+        ref: { kind: "service", key: "ALUM_PAINT_PRICE" },
+      });
     if (isKorobRalModel && ralNcsColor.trim())
-      rows.push({ label: "Фарбування коробки прих. монтажу по RAL", unitPrice: serviceePrice("PAINT_KOROB_RAL_PRICE") });
+      rows.push({
+        label: "Фарбування коробки прих. монтажу по RAL",
+        unitPrice: serviceePrice("PAINT_KOROB_RAL_PRICE"),
+        ref: { kind: "service", key: "PAINT_KOROB_RAL_PRICE" },
+      });
     return rows;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
@@ -694,7 +744,7 @@ export default function QuoteBuilder({
         colorLabel: "",
         photo: undefined,
         qty,
-        rows: previewRows.map((r) => ({ label: r.label, unitPrice: r.unitPrice, qty, amount: r.unitPrice * qty, photo: r.photo })),
+        rows: previewRows.map((r) => ({ label: r.label, ref: r.ref, qty, photo: r.photo })),
       };
       setPositions((prev) => [...prev, position]);
       setPogItem("");
@@ -710,7 +760,7 @@ export default function QuoteBuilder({
         colorLabel: "",
         photo: undefined,
         qty,
-        rows: previewRows.map((r) => ({ label: r.label, unitPrice: r.unitPrice, qty, amount: r.unitPrice * qty, photo: r.photo })),
+        rows: previewRows.map((r) => ({ label: r.label, ref: r.ref, qty, photo: r.photo })),
       };
       setPositions((prev) => [...prev, position]);
       setFlatItemCode("");
@@ -728,7 +778,7 @@ export default function QuoteBuilder({
         colorLabel: "",
         photo: selectedHardware?.photo ?? undefined,
         qty,
-        rows: previewRows.map((r) => ({ label: r.label, unitPrice: r.unitPrice, qty, amount: r.unitPrice * qty, photo: r.photo })),
+        rows: previewRows.map((r) => ({ label: r.label, ref: r.ref, qty, photo: r.photo })),
       };
       setPositions((prev) => [...prev, position]);
       setHardwareArticle("");
@@ -763,7 +813,7 @@ export default function QuoteBuilder({
       colorLabel: [displayColorLabel, ...colorNotes].filter(Boolean).join(" · "),
       photo: previewPhoto,
       qty,
-      rows: previewRows.map((r) => ({ label: r.label, unitPrice: r.unitPrice, qty, amount: r.unitPrice * qty, photo: r.photo })),
+      rows: previewRows.map((r) => ({ label: r.label, ref: r.ref, qty, photo: r.photo })),
     };
     setPositions((prev) => [...prev, position]);
     setVariantCode(modelCode);
@@ -803,7 +853,7 @@ export default function QuoteBuilder({
     setPositions((prev) => prev.filter((p) => p.id !== id));
   }
 
-  const subtotal = positions.reduce((s, p) => s + positionTotal(p), 0);
+  const subtotal = positions.reduce((s, p) => s + positionTotal(p, activeTariff, pricingData), 0);
   const discountAmount = discountType === "percent" ? (subtotal * discountValue) / 100 : discountValue;
   const total = Math.max(0, subtotal - discountAmount);
   const currencySymbol = currency === "EUR" ? "€" : currency === "USD" ? "$" : "";
@@ -867,15 +917,18 @@ export default function QuoteBuilder({
         const modelLine = `${p.collectionLabel} — ${p.modelCode}`;
         const subRows = p.rows
           .map(
-            (r, idx) => `
+            (r, idx) => {
+              const unitPrice = priceForRef(r.ref, activeTariff, pricingData);
+              return `
         <tr>
           ${idx === 0 ? `<td rowspan="${p.rows.length}" style="text-align:center;">${p.photo ? `<div style="width:64px;height:64px;display:flex;align-items:center;justify-content:center;margin:0 auto;"><img src="${photoSrc(p.photo)}" alt="" style="max-width:64px;max-height:64px;width:auto;height:auto;object-fit:contain;border-radius:6px;" /></div>` : ""}</td>` : ""}
           ${idx === 0 ? `<td rowspan="${p.rows.length}"><strong>${modelLine}</strong><br/><span style="color:#8A90A6;font-size:12px;">${tc(p.colorLabel || "")}</span></td>` : ""}
           <td>${r.photo ? `<img class="addon-photo" src="${photoSrc(r.photo)}" alt="" />` : ""}${tc(r.label)}</td>
           <td style="text-align:center;">${r.qty}</td>
-          <td style="text-align:right;">${moneyDisplay(r.unitPrice)}</td>
-          <td style="text-align:right;">${moneyDisplay(r.amount)}</td>
-        </tr>`
+          <td style="text-align:right;">${moneyDisplay(unitPrice)}</td>
+          <td style="text-align:right;">${moneyDisplay(unitPrice * r.qty)}</td>
+        </tr>`;
+            }
           )
           .join("");
         return subRows;
@@ -1109,17 +1162,22 @@ export default function QuoteBuilder({
           <h2 className="font-serif text-lg font-bold text-navy-dark">{t("Клієнт і тариф")}</h2>
           <div className="mt-3 flex flex-col gap-3">
             {availableTariffs.length > 1 && (
-              <select
-                value={tariff}
-                onChange={(e) => setTariff(e.target.value as Tariff)}
-                className="rounded-lg border border-navy-dim/30 bg-panel px-3 py-2 text-sm outline-none focus:border-gold"
-              >
+              <div className="flex flex-wrap gap-2">
                 {availableTariffs.map((tf) => (
-                  <option key={tf} value={tf}>
+                  <button
+                    key={tf}
+                    type="button"
+                    onClick={() => setTariff(tf)}
+                    className={`rounded-full border px-4 py-2 text-sm font-semibold transition ${
+                      tariff === tf
+                        ? "border-navy-dark bg-navy-dark text-white"
+                        : "border-navy-dim/30 bg-panel text-navy-dark hover:border-gold"
+                    }`}
+                  >
                     {translateEn ? tariffLabelsEn[tf] : tariffLabels[tf]}
-                  </option>
+                  </button>
                 ))}
-              </select>
+              </div>
             )}
             <input
               value={clientName}
@@ -1799,7 +1857,9 @@ export default function QuoteBuilder({
             <tbody>
               {positions.map((p) => (
                 <Fragment key={p.id}>
-                  {p.rows.map((r, idx) => (
+                  {p.rows.map((r, idx) => {
+                    const unitPrice = priceForRef(r.ref, activeTariff, pricingData);
+                    return (
                     <tr key={`${p.id}-${idx}`} className="border-t border-navy-dim/10">
                       {idx === 0 && (
                         <td className="px-3 py-3 font-medium text-navy-dark" rowSpan={p.rows.length}>
@@ -1817,8 +1877,8 @@ export default function QuoteBuilder({
                         </div>
                       </td>
                       <td className="px-3 py-3 text-navy-dark">{r.qty}</td>
-                      <td className="px-3 py-3 text-navy-dark">{moneyDisplay(r.unitPrice)}</td>
-                      <td className="px-3 py-3 text-navy-dark">{moneyDisplay(r.amount)}</td>
+                      <td className="px-3 py-3 text-navy-dark">{moneyDisplay(unitPrice)}</td>
+                      <td className="px-3 py-3 text-navy-dark">{moneyDisplay(unitPrice * r.qty)}</td>
                       {idx === 0 && (
                         <td className="px-3 py-3" rowSpan={p.rows.length}>
                           <button
@@ -1831,7 +1891,8 @@ export default function QuoteBuilder({
                         </td>
                       )}
                     </tr>
-                  ))}
+                    );
+                  })}
                 </Fragment>
               ))}
               {positions.length === 0 && (
