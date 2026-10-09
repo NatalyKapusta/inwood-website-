@@ -3,17 +3,23 @@
 # читаються (перевірено grep'ом по app/components/lib/data перед
 # додаванням сюди). Залишені в git-історії, просто не йдуть у деплой
 # (SEO-аудит Vercel, 09.10.2026, пункт 4.1).
-Etalon/
-Frezzatti 2/
-Nominal 4/
-Perfetto 2/
-добір/
-reference/
-index.html
-_headers
-_redirects
-Карта дилерів IN WOOD.html
-page-1.jpg
-page-2.jpg
-.DS_Store
-NOTES-GEO.md
+#
+# ОБОВ'ЯЗКОВО з "/" на початку кожного рядка — без нього Vercel зіставляє
+# ім'я на БУДЬ-ЯКІЙ глибині й без урахування регістру, тому "Etalon/" без
+# слеша на початку зачепив ще й public/photos/etalon/ та
+# public/photos/gallery/etalon/ — фото колекції ETALON випали з деплою
+# (інцидент 09.10.2026, деплой 257b311, виявлено і повідомлено власницею).
+/Etalon/
+/Frezzatti 2/
+/Nominal 4/
+/Perfetto 2/
+/добір/
+/reference/
+/index.html
+/_headers
+/_redirects
+/Карта дилерів IN WOOD.html
+/page-1.jpg
+/page-2.jpg
+/.DS_Store
+/NOTES-GEO.md
