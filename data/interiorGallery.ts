@@ -27,79 +27,79 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "astana-marle",
             "colorLabel": "Астана мерле",
-            "swatchImage": "/photos/etalon/et-01-astana-marle.png",
+            "swatchImage": "/photos/etalon/et-01-astana-marle.webp",
             "src": "/photos/gallery/etalon/et-01-astana-marle.jpg"
           },
           {
             "colorSlug": "beton-siryi",
             "colorLabel": "Бетон сірий",
-            "swatchImage": "/photos/etalon/et-01-beton-siryi.png",
+            "swatchImage": "/photos/etalon/et-01-beton-siryi.webp",
             "src": "/photos/gallery/etalon/et-01-beton-siryi.jpg"
           },
           {
             "colorSlug": "beton-temnyi",
             "colorLabel": "Бетон темний",
-            "swatchImage": "/photos/etalon/et-01-beton-temnyi.png",
+            "swatchImage": "/photos/etalon/et-01-beton-temnyi.webp",
             "src": "/photos/gallery/etalon/et-01-beton-temnyi.jpg"
           },
           {
             "colorSlug": "bila-teksturna",
             "colorLabel": "Білий текстурний",
-            "swatchImage": "/photos/etalon/et-01-bila-teksturna.png",
+            "swatchImage": "/photos/etalon/et-01-bila-teksturna.webp",
             "src": "/photos/gallery/etalon/et-01-bila-teksturna.jpg"
           },
           {
             "colorSlug": "chorna-korka",
             "colorLabel": "Чорна корка",
-            "swatchImage": "/photos/etalon/et-01-chorna-korka.png",
+            "swatchImage": "/photos/etalon/et-01-chorna-korka.webp",
             "src": "/photos/gallery/etalon/et-01-chorna-korka.jpg"
           },
           {
             "colorSlug": "karpatska-ialyna",
             "colorLabel": "Карпатська ялина",
-            "swatchImage": "/photos/etalon/et-01-karpatska-ialyna.png",
+            "swatchImage": "/photos/etalon/et-01-karpatska-ialyna.webp",
             "src": "/photos/gallery/etalon/et-01-karpatska-ialyna.jpg"
           },
           {
             "colorSlug": "popeliastyi-softach",
             "colorLabel": "Попелястий софттач",
-            "swatchImage": "/photos/etalon/et-01-popeliastyi-softach.png",
+            "swatchImage": "/photos/etalon/et-01-popeliastyi-softach.webp",
             "src": "/photos/gallery/etalon/et-01-popeliastyi-softach.jpg"
           },
           {
             "colorSlug": "rustyk-zolotyi",
             "colorLabel": "Рустик золотий",
-            "swatchImage": "/photos/etalon/et-01-rustyk-zolotyi.png",
+            "swatchImage": "/photos/etalon/et-01-rustyk-zolotyi.webp",
             "src": "/photos/gallery/etalon/et-01-rustyk-zolotyi.jpg"
           },
           {
             "colorSlug": "shpon-korychnevyi",
             "colorLabel": "Шпон коричневий",
-            "swatchImage": "/photos/etalon/et-01-shpon-korychnevyi.png",
+            "swatchImage": "/photos/etalon/et-01-shpon-korychnevyi.webp",
             "src": "/photos/gallery/etalon/et-01-shpon-korychnevyi.jpg"
           },
           {
             "colorSlug": "sosna-provans",
             "colorLabel": "Сосна прованс",
-            "swatchImage": "/photos/etalon/et-01-sosna-provans.png",
+            "swatchImage": "/photos/etalon/et-01-sosna-provans.webp",
             "src": "/photos/gallery/etalon/et-01-sosna-provans.jpg"
           },
           {
             "colorSlug": "venhe-pivdenne-tysnene",
             "colorLabel": "Венге південне тиснене",
-            "swatchImage": "/photos/etalon/et-01-venhe-pivdenne-tysnene.png",
+            "swatchImage": "/photos/etalon/et-01-venhe-pivdenne-tysnene.webp",
             "src": "/photos/gallery/etalon/et-01-venhe-pivdenne-tysnene.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/etalon/et-01-white.png",
+            "swatchImage": "/photos/etalon/et-01-white.webp",
             "src": "/photos/gallery/etalon/et-01-white.jpg"
           },
           {
             "colorSlug": "zriz-kameniu",
             "colorLabel": "Зріз каменю",
-            "swatchImage": "/photos/etalon/et-01-zriz-kameniu.png",
+            "swatchImage": "/photos/etalon/et-01-zriz-kameniu.webp",
             "src": "/photos/gallery/etalon/et-01-zriz-kameniu.jpg"
           }
         ]
@@ -110,79 +110,79 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "astana-marle",
             "colorLabel": "Астана мерле",
-            "swatchImage": "/photos/etalon/et-02-astana-marle.png",
+            "swatchImage": "/photos/etalon/et-02-astana-marle.webp",
             "src": "/photos/gallery/etalon/et-02-astana-marle.jpg"
           },
           {
             "colorSlug": "beton-siryi",
             "colorLabel": "Бетон сірий",
-            "swatchImage": "/photos/etalon/et-02-beton-siryi.png",
+            "swatchImage": "/photos/etalon/et-02-beton-siryi.webp",
             "src": "/photos/gallery/etalon/et-02-beton-siryi.jpg"
           },
           {
             "colorSlug": "beton-temnyi",
             "colorLabel": "Бетон темний",
-            "swatchImage": "/photos/etalon/et-02-beton-temnyi.png",
+            "swatchImage": "/photos/etalon/et-02-beton-temnyi.webp",
             "src": "/photos/gallery/etalon/et-02-beton-temnyi.jpg"
           },
           {
             "colorSlug": "bila-teksturna",
             "colorLabel": "Білий текстурний",
-            "swatchImage": "/photos/etalon/et-02-bila-teksturna.png",
+            "swatchImage": "/photos/etalon/et-02-bila-teksturna.webp",
             "src": "/photos/gallery/etalon/et-02-bila-teksturna.jpg"
           },
           {
             "colorSlug": "chorna-korka",
             "colorLabel": "Чорна корка",
-            "swatchImage": "/photos/etalon/et-02-chorna-korka.png",
+            "swatchImage": "/photos/etalon/et-02-chorna-korka.webp",
             "src": "/photos/gallery/etalon/et-02-chorna-korka.jpg"
           },
           {
             "colorSlug": "karpatska-ialyna",
             "colorLabel": "Карпатська ялина",
-            "swatchImage": "/photos/etalon/et-02-karpatska-ialyna.png",
+            "swatchImage": "/photos/etalon/et-02-karpatska-ialyna.webp",
             "src": "/photos/gallery/etalon/et-02-karpatska-ialyna.jpg"
           },
           {
             "colorSlug": "popeliastyi-softach",
             "colorLabel": "Попелястий софттач",
-            "swatchImage": "/photos/etalon/et-02-popeliastyi-softach.png",
+            "swatchImage": "/photos/etalon/et-02-popeliastyi-softach.webp",
             "src": "/photos/gallery/etalon/et-02-popeliastyi-softach.jpg"
           },
           {
             "colorSlug": "rustyk-zolotyi",
             "colorLabel": "Рустик золотий",
-            "swatchImage": "/photos/etalon/et-02-rustyk-zolotyi.png",
+            "swatchImage": "/photos/etalon/et-02-rustyk-zolotyi.webp",
             "src": "/photos/gallery/etalon/et-02-rustyk-zolotyi.jpg"
           },
           {
             "colorSlug": "shpon-korychnevyi",
             "colorLabel": "Шпон коричневий",
-            "swatchImage": "/photos/etalon/et-02-shpon-korychnevyi.png",
+            "swatchImage": "/photos/etalon/et-02-shpon-korychnevyi.webp",
             "src": "/photos/gallery/etalon/et-02-shpon-korychnevyi.jpg"
           },
           {
             "colorSlug": "sosna-provans",
             "colorLabel": "Сосна прованс",
-            "swatchImage": "/photos/etalon/et-02-sosna-provans.png",
+            "swatchImage": "/photos/etalon/et-02-sosna-provans.webp",
             "src": "/photos/gallery/etalon/et-02-sosna-provans.jpg"
           },
           {
             "colorSlug": "venhe-pivdenne-tysnene",
             "colorLabel": "Венге південне тиснене",
-            "swatchImage": "/photos/etalon/et-02-venhe-pivdenne-tysnene.png",
+            "swatchImage": "/photos/etalon/et-02-venhe-pivdenne-tysnene.webp",
             "src": "/photos/gallery/etalon/et-02-venhe-pivdenne-tysnene.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/etalon/et-02-white.png",
+            "swatchImage": "/photos/etalon/et-02-white.webp",
             "src": "/photos/gallery/etalon/et-02-white.jpg"
           },
           {
             "colorSlug": "zriz-kameniu",
             "colorLabel": "Зріз каменю",
-            "swatchImage": "/photos/etalon/et-02-zriz-kameniu.png",
+            "swatchImage": "/photos/etalon/et-02-zriz-kameniu.webp",
             "src": "/photos/gallery/etalon/et-02-zriz-kameniu.jpg"
           }
         ]
@@ -193,79 +193,79 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "astana-marle",
             "colorLabel": "Астана мерле",
-            "swatchImage": "/photos/etalon/et-03-astana-marle.png",
+            "swatchImage": "/photos/etalon/et-03-astana-marle.webp",
             "src": "/photos/gallery/etalon/et-03-astana-marle.jpg"
           },
           {
             "colorSlug": "beton-siryi",
             "colorLabel": "Бетон сірий",
-            "swatchImage": "/photos/etalon/et-03-beton-siryi.png",
+            "swatchImage": "/photos/etalon/et-03-beton-siryi.webp",
             "src": "/photos/gallery/etalon/et-03-beton-siryi.jpg"
           },
           {
             "colorSlug": "beton-temnyi",
             "colorLabel": "Бетон темний",
-            "swatchImage": "/photos/etalon/et-03-beton-temnyi.png",
+            "swatchImage": "/photos/etalon/et-03-beton-temnyi.webp",
             "src": "/photos/gallery/etalon/et-03-beton-temnyi.jpg"
           },
           {
             "colorSlug": "bila-teksturna",
             "colorLabel": "Білий текстурний",
-            "swatchImage": "/photos/etalon/et-03-bila-teksturna.png",
+            "swatchImage": "/photos/etalon/et-03-bila-teksturna.webp",
             "src": "/photos/gallery/etalon/et-03-bila-teksturna.jpg"
           },
           {
             "colorSlug": "chorna-korka",
             "colorLabel": "Чорна корка",
-            "swatchImage": "/photos/etalon/et-03-chorna-korka.png",
+            "swatchImage": "/photos/etalon/et-03-chorna-korka.webp",
             "src": "/photos/gallery/etalon/et-03-chorna-korka.jpg"
           },
           {
             "colorSlug": "karpatska-ialyna",
             "colorLabel": "Карпатська ялина",
-            "swatchImage": "/photos/etalon/et-03-karpatska-ialyna.png",
+            "swatchImage": "/photos/etalon/et-03-karpatska-ialyna.webp",
             "src": "/photos/gallery/etalon/et-03-karpatska-ialyna.jpg"
           },
           {
             "colorSlug": "popeliastyi-softach",
             "colorLabel": "Попелястий софттач",
-            "swatchImage": "/photos/etalon/et-03-popeliastyi-softach.png",
+            "swatchImage": "/photos/etalon/et-03-popeliastyi-softach.webp",
             "src": "/photos/gallery/etalon/et-03-popeliastyi-softach.jpg"
           },
           {
             "colorSlug": "rustyk-zolotyi",
             "colorLabel": "Рустик золотий",
-            "swatchImage": "/photos/etalon/et-03-rustyk-zolotyi.png",
+            "swatchImage": "/photos/etalon/et-03-rustyk-zolotyi.webp",
             "src": "/photos/gallery/etalon/et-03-rustyk-zolotyi.jpg"
           },
           {
             "colorSlug": "shpon-korychnevyi",
             "colorLabel": "Шпон коричневий",
-            "swatchImage": "/photos/etalon/et-03-shpon-korychnevyi.png",
+            "swatchImage": "/photos/etalon/et-03-shpon-korychnevyi.webp",
             "src": "/photos/gallery/etalon/et-03-shpon-korychnevyi.jpg"
           },
           {
             "colorSlug": "sosna-provans",
             "colorLabel": "Сосна прованс",
-            "swatchImage": "/photos/etalon/et-03-sosna-provans.png",
+            "swatchImage": "/photos/etalon/et-03-sosna-provans.webp",
             "src": "/photos/gallery/etalon/et-03-sosna-provans.jpg"
           },
           {
             "colorSlug": "venhe-pivdenne-tysnene",
             "colorLabel": "Венге південне тиснене",
-            "swatchImage": "/photos/etalon/et-03-venhe-pivdenne-tysnene.png",
+            "swatchImage": "/photos/etalon/et-03-venhe-pivdenne-tysnene.webp",
             "src": "/photos/gallery/etalon/et-03-venhe-pivdenne-tysnene.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/etalon/et-03-white.png",
+            "swatchImage": "/photos/etalon/et-03-white.webp",
             "src": "/photos/gallery/etalon/et-03-white.jpg"
           },
           {
             "colorSlug": "zriz-kameniu",
             "colorLabel": "Зріз каменю",
-            "swatchImage": "/photos/etalon/et-03-zriz-kameniu.png",
+            "swatchImage": "/photos/etalon/et-03-zriz-kameniu.webp",
             "src": "/photos/gallery/etalon/et-03-zriz-kameniu.jpg"
           }
         ]
@@ -276,79 +276,79 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "astana-marle",
             "colorLabel": "Астана мерле",
-            "swatchImage": "/photos/etalon/et-04-astana-marle.png",
+            "swatchImage": "/photos/etalon/et-04-astana-marle.webp",
             "src": "/photos/gallery/etalon/et-04-astana-marle.jpg"
           },
           {
             "colorSlug": "beton-siryi",
             "colorLabel": "Бетон сірий",
-            "swatchImage": "/photos/etalon/et-04-beton-siryi.png",
+            "swatchImage": "/photos/etalon/et-04-beton-siryi.webp",
             "src": "/photos/gallery/etalon/et-04-beton-siryi.jpg"
           },
           {
             "colorSlug": "beton-temnyi",
             "colorLabel": "Бетон темний",
-            "swatchImage": "/photos/etalon/et-04-beton-temnyi.png",
+            "swatchImage": "/photos/etalon/et-04-beton-temnyi.webp",
             "src": "/photos/gallery/etalon/et-04-beton-temnyi.jpg"
           },
           {
             "colorSlug": "bila-teksturna",
             "colorLabel": "Білий текстурний",
-            "swatchImage": "/photos/etalon/et-04-bila-teksturna.png",
+            "swatchImage": "/photos/etalon/et-04-bila-teksturna.webp",
             "src": "/photos/gallery/etalon/et-04-bila-teksturna.jpg"
           },
           {
             "colorSlug": "chorna-korka",
             "colorLabel": "Чорна корка",
-            "swatchImage": "/photos/etalon/et-04-chorna-korka.png",
+            "swatchImage": "/photos/etalon/et-04-chorna-korka.webp",
             "src": "/photos/gallery/etalon/et-04-chorna-korka.jpg"
           },
           {
             "colorSlug": "karpatska-ialyna",
             "colorLabel": "Карпатська ялина",
-            "swatchImage": "/photos/etalon/et-04-karpatska-ialyna.png",
+            "swatchImage": "/photos/etalon/et-04-karpatska-ialyna.webp",
             "src": "/photos/gallery/etalon/et-04-karpatska-ialyna.jpg"
           },
           {
             "colorSlug": "popeliastyi-softach",
             "colorLabel": "Попелястий софттач",
-            "swatchImage": "/photos/etalon/et-04-popeliastyi-softach.png",
+            "swatchImage": "/photos/etalon/et-04-popeliastyi-softach.webp",
             "src": "/photos/gallery/etalon/et-04-popeliastyi-softach.jpg"
           },
           {
             "colorSlug": "rustyk-zolotyi",
             "colorLabel": "Рустик золотий",
-            "swatchImage": "/photos/etalon/et-04-rustyk-zolotyi.png",
+            "swatchImage": "/photos/etalon/et-04-rustyk-zolotyi.webp",
             "src": "/photos/gallery/etalon/et-04-rustyk-zolotyi.jpg"
           },
           {
             "colorSlug": "shpon-korychnevyi",
             "colorLabel": "Шпон коричневий",
-            "swatchImage": "/photos/etalon/et-04-shpon-korychnevyi.png",
+            "swatchImage": "/photos/etalon/et-04-shpon-korychnevyi.webp",
             "src": "/photos/gallery/etalon/et-04-shpon-korychnevyi.jpg"
           },
           {
             "colorSlug": "sosna-provans",
             "colorLabel": "Сосна прованс",
-            "swatchImage": "/photos/etalon/et-04-sosna-provans.png",
+            "swatchImage": "/photos/etalon/et-04-sosna-provans.webp",
             "src": "/photos/gallery/etalon/et-04-sosna-provans.jpg"
           },
           {
             "colorSlug": "venhe-pivdenne-tysnene",
             "colorLabel": "Венге південне тиснене",
-            "swatchImage": "/photos/etalon/et-04-venhe-pivdenne-tysnene.png",
+            "swatchImage": "/photos/etalon/et-04-venhe-pivdenne-tysnene.webp",
             "src": "/photos/gallery/etalon/et-04-venhe-pivdenne-tysnene.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/etalon/et-04-white.png",
+            "swatchImage": "/photos/etalon/et-04-white.webp",
             "src": "/photos/gallery/etalon/et-04-white.jpg"
           },
           {
             "colorSlug": "zriz-kameniu",
             "colorLabel": "Зріз каменю",
-            "swatchImage": "/photos/etalon/et-04-zriz-kameniu.png",
+            "swatchImage": "/photos/etalon/et-04-zriz-kameniu.webp",
             "src": "/photos/gallery/etalon/et-04-zriz-kameniu.jpg"
           }
         ]
@@ -359,79 +359,79 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "astana-marle",
             "colorLabel": "Астана мерле",
-            "swatchImage": "/photos/etalon/et-05-astana-marle.png",
+            "swatchImage": "/photos/etalon/et-05-astana-marle.webp",
             "src": "/photos/gallery/etalon/et-05-astana-marle.jpg"
           },
           {
             "colorSlug": "beton-siryi",
             "colorLabel": "Бетон сірий",
-            "swatchImage": "/photos/etalon/et-05-beton-siryi.png",
+            "swatchImage": "/photos/etalon/et-05-beton-siryi.webp",
             "src": "/photos/gallery/etalon/et-05-beton-siryi.jpg"
           },
           {
             "colorSlug": "beton-temnyi",
             "colorLabel": "Бетон темний",
-            "swatchImage": "/photos/etalon/et-05-beton-temnyi.png",
+            "swatchImage": "/photos/etalon/et-05-beton-temnyi.webp",
             "src": "/photos/gallery/etalon/et-05-beton-temnyi.jpg"
           },
           {
             "colorSlug": "bila-teksturna",
             "colorLabel": "Білий текстурний",
-            "swatchImage": "/photos/etalon/et-05-bila-teksturna.png",
+            "swatchImage": "/photos/etalon/et-05-bila-teksturna.webp",
             "src": "/photos/gallery/etalon/et-05-bila-teksturna.jpg"
           },
           {
             "colorSlug": "chorna-korka",
             "colorLabel": "Чорна корка",
-            "swatchImage": "/photos/etalon/et-05-chorna-korka.png",
+            "swatchImage": "/photos/etalon/et-05-chorna-korka.webp",
             "src": "/photos/gallery/etalon/et-05-chorna-korka.jpg"
           },
           {
             "colorSlug": "karpatska-ialyna",
             "colorLabel": "Карпатська ялина",
-            "swatchImage": "/photos/etalon/et-05-karpatska-ialyna.png",
+            "swatchImage": "/photos/etalon/et-05-karpatska-ialyna.webp",
             "src": "/photos/gallery/etalon/et-05-karpatska-ialyna.jpg"
           },
           {
             "colorSlug": "popeliastyi-softach",
             "colorLabel": "Попелястий софттач",
-            "swatchImage": "/photos/etalon/et-05-popeliastyi-softach.png",
+            "swatchImage": "/photos/etalon/et-05-popeliastyi-softach.webp",
             "src": "/photos/gallery/etalon/et-05-popeliastyi-softach.jpg"
           },
           {
             "colorSlug": "rustyk-zolotyi",
             "colorLabel": "Рустик золотий",
-            "swatchImage": "/photos/etalon/et-05-rustyk-zolotyi.png",
+            "swatchImage": "/photos/etalon/et-05-rustyk-zolotyi.webp",
             "src": "/photos/gallery/etalon/et-05-rustyk-zolotyi.jpg"
           },
           {
             "colorSlug": "shpon-korychnevyi",
             "colorLabel": "Шпон коричневий",
-            "swatchImage": "/photos/etalon/et-05-shpon-korychnevyi.png",
+            "swatchImage": "/photos/etalon/et-05-shpon-korychnevyi.webp",
             "src": "/photos/gallery/etalon/et-05-shpon-korychnevyi.jpg"
           },
           {
             "colorSlug": "sosna-provans",
             "colorLabel": "Сосна прованс",
-            "swatchImage": "/photos/etalon/et-05-sosna-provans.png",
+            "swatchImage": "/photos/etalon/et-05-sosna-provans.webp",
             "src": "/photos/gallery/etalon/et-05-sosna-provans.jpg"
           },
           {
             "colorSlug": "venhe-pivdenne-tysnene",
             "colorLabel": "Венге південне тиснене",
-            "swatchImage": "/photos/etalon/et-05-venhe-pivdenne-tysnene.png",
+            "swatchImage": "/photos/etalon/et-05-venhe-pivdenne-tysnene.webp",
             "src": "/photos/gallery/etalon/et-05-venhe-pivdenne-tysnene.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/etalon/et-05-white.png",
+            "swatchImage": "/photos/etalon/et-05-white.webp",
             "src": "/photos/gallery/etalon/et-05-white.jpg"
           },
           {
             "colorSlug": "zriz-kameniu",
             "colorLabel": "Зріз каменю",
-            "swatchImage": "/photos/etalon/et-05-zriz-kameniu.png",
+            "swatchImage": "/photos/etalon/et-05-zriz-kameniu.webp",
             "src": "/photos/gallery/etalon/et-05-zriz-kameniu.jpg"
           }
         ]
@@ -442,79 +442,79 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "astana-marle",
             "colorLabel": "Астана мерле",
-            "swatchImage": "/photos/etalon/et-06-astana-marle.png",
+            "swatchImage": "/photos/etalon/et-06-astana-marle.webp",
             "src": "/photos/gallery/etalon/et-06-astana-marle.jpg"
           },
           {
             "colorSlug": "beton-siryi",
             "colorLabel": "Бетон сірий",
-            "swatchImage": "/photos/etalon/et-06-beton-siryi.png",
+            "swatchImage": "/photos/etalon/et-06-beton-siryi.webp",
             "src": "/photos/gallery/etalon/et-06-beton-siryi.jpg"
           },
           {
             "colorSlug": "beton-temnyi",
             "colorLabel": "Бетон темний",
-            "swatchImage": "/photos/etalon/et-06-beton-temnyi.png",
+            "swatchImage": "/photos/etalon/et-06-beton-temnyi.webp",
             "src": "/photos/gallery/etalon/et-06-beton-temnyi.jpg"
           },
           {
             "colorSlug": "bila-teksturna",
             "colorLabel": "Білий текстурний",
-            "swatchImage": "/photos/etalon/et-06-bila-teksturna.png",
+            "swatchImage": "/photos/etalon/et-06-bila-teksturna.webp",
             "src": "/photos/gallery/etalon/et-06-bila-teksturna.jpg"
           },
           {
             "colorSlug": "chorna-korka",
             "colorLabel": "Чорна корка",
-            "swatchImage": "/photos/etalon/et-06-chorna-korka.png",
+            "swatchImage": "/photos/etalon/et-06-chorna-korka.webp",
             "src": "/photos/gallery/etalon/et-06-chorna-korka.jpg"
           },
           {
             "colorSlug": "karpatska-ialyna",
             "colorLabel": "Карпатська ялина",
-            "swatchImage": "/photos/etalon/et-06-karpatska-ialyna.png",
+            "swatchImage": "/photos/etalon/et-06-karpatska-ialyna.webp",
             "src": "/photos/gallery/etalon/et-06-karpatska-ialyna.jpg"
           },
           {
             "colorSlug": "popeliastyi-softach",
             "colorLabel": "Попелястий софттач",
-            "swatchImage": "/photos/etalon/et-06-popeliastyi-softach.png",
+            "swatchImage": "/photos/etalon/et-06-popeliastyi-softach.webp",
             "src": "/photos/gallery/etalon/et-06-popeliastyi-softach.jpg"
           },
           {
             "colorSlug": "rustyk-zolotyi",
             "colorLabel": "Рустик золотий",
-            "swatchImage": "/photos/etalon/et-06-rustyk-zolotyi.png",
+            "swatchImage": "/photos/etalon/et-06-rustyk-zolotyi.webp",
             "src": "/photos/gallery/etalon/et-06-rustyk-zolotyi.jpg"
           },
           {
             "colorSlug": "shpon-korychnevyi",
             "colorLabel": "Шпон коричневий",
-            "swatchImage": "/photos/etalon/et-06-shpon-korychnevyi.png",
+            "swatchImage": "/photos/etalon/et-06-shpon-korychnevyi.webp",
             "src": "/photos/gallery/etalon/et-06-shpon-korychnevyi.jpg"
           },
           {
             "colorSlug": "sosna-provans",
             "colorLabel": "Сосна прованс",
-            "swatchImage": "/photos/etalon/et-06-sosna-provans.png",
+            "swatchImage": "/photos/etalon/et-06-sosna-provans.webp",
             "src": "/photos/gallery/etalon/et-06-sosna-provans.jpg"
           },
           {
             "colorSlug": "venhe-pivdenne-tysnene",
             "colorLabel": "Венге південне тиснене",
-            "swatchImage": "/photos/etalon/et-06-venhe-pivdenne-tysnene.png",
+            "swatchImage": "/photos/etalon/et-06-venhe-pivdenne-tysnene.webp",
             "src": "/photos/gallery/etalon/et-06-venhe-pivdenne-tysnene.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/etalon/et-06-white.png",
+            "swatchImage": "/photos/etalon/et-06-white.webp",
             "src": "/photos/gallery/etalon/et-06-white.jpg"
           },
           {
             "colorSlug": "zriz-kameniu",
             "colorLabel": "Зріз каменю",
-            "swatchImage": "/photos/etalon/et-06-zriz-kameniu.png",
+            "swatchImage": "/photos/etalon/et-06-zriz-kameniu.webp",
             "src": "/photos/gallery/etalon/et-06-zriz-kameniu.jpg"
           }
         ]
@@ -525,79 +525,79 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "astana-marle",
             "colorLabel": "Астана мерле",
-            "swatchImage": "/photos/etalon/et-07-astana-marle.png",
+            "swatchImage": "/photos/etalon/et-07-astana-marle.webp",
             "src": "/photos/gallery/etalon/et-07-astana-marle.jpg"
           },
           {
             "colorSlug": "beton-siryi",
             "colorLabel": "Бетон сірий",
-            "swatchImage": "/photos/etalon/et-07-beton-siryi.png",
+            "swatchImage": "/photos/etalon/et-07-beton-siryi.webp",
             "src": "/photos/gallery/etalon/et-07-beton-siryi.jpg"
           },
           {
             "colorSlug": "beton-temnyi",
             "colorLabel": "Бетон темний",
-            "swatchImage": "/photos/etalon/et-07-beton-temnyi.png",
+            "swatchImage": "/photos/etalon/et-07-beton-temnyi.webp",
             "src": "/photos/gallery/etalon/et-07-beton-temnyi.jpg"
           },
           {
             "colorSlug": "bila-teksturna",
             "colorLabel": "Білий текстурний",
-            "swatchImage": "/photos/etalon/et-07-bila-teksturna.png",
+            "swatchImage": "/photos/etalon/et-07-bila-teksturna.webp",
             "src": "/photos/gallery/etalon/et-07-bila-teksturna.jpg"
           },
           {
             "colorSlug": "chorna-korka",
             "colorLabel": "Чорна корка",
-            "swatchImage": "/photos/etalon/et-07-chorna-korka.png",
+            "swatchImage": "/photos/etalon/et-07-chorna-korka.webp",
             "src": "/photos/gallery/etalon/et-07-chorna-korka.jpg"
           },
           {
             "colorSlug": "karpatska-ialyna",
             "colorLabel": "Карпатська ялина",
-            "swatchImage": "/photos/etalon/et-07-karpatska-ialyna.png",
+            "swatchImage": "/photos/etalon/et-07-karpatska-ialyna.webp",
             "src": "/photos/gallery/etalon/et-07-karpatska-ialyna.jpg"
           },
           {
             "colorSlug": "popeliastyi-softach",
             "colorLabel": "Попелястий софттач",
-            "swatchImage": "/photos/etalon/et-07-popeliastyi-softach.png",
+            "swatchImage": "/photos/etalon/et-07-popeliastyi-softach.webp",
             "src": "/photos/gallery/etalon/et-07-popeliastyi-softach.jpg"
           },
           {
             "colorSlug": "rustyk-zolotyi",
             "colorLabel": "Рустик золотий",
-            "swatchImage": "/photos/etalon/et-07-rustyk-zolotyi.png",
+            "swatchImage": "/photos/etalon/et-07-rustyk-zolotyi.webp",
             "src": "/photos/gallery/etalon/et-07-rustyk-zolotyi.jpg"
           },
           {
             "colorSlug": "shpon-korychnevyi",
             "colorLabel": "Шпон коричневий",
-            "swatchImage": "/photos/etalon/et-07-shpon-korychnevyi.png",
+            "swatchImage": "/photos/etalon/et-07-shpon-korychnevyi.webp",
             "src": "/photos/gallery/etalon/et-07-shpon-korychnevyi.jpg"
           },
           {
             "colorSlug": "sosna-provans",
             "colorLabel": "Сосна прованс",
-            "swatchImage": "/photos/etalon/et-07-sosna-provans.png",
+            "swatchImage": "/photos/etalon/et-07-sosna-provans.webp",
             "src": "/photos/gallery/etalon/et-07-sosna-provans.jpg"
           },
           {
             "colorSlug": "venhe-pivdenne-tysnene",
             "colorLabel": "Венге південне тиснене",
-            "swatchImage": "/photos/etalon/et-07-venhe-pivdenne-tysnene.png",
+            "swatchImage": "/photos/etalon/et-07-venhe-pivdenne-tysnene.webp",
             "src": "/photos/gallery/etalon/et-07-venhe-pivdenne-tysnene.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/etalon/et-07-white.png",
+            "swatchImage": "/photos/etalon/et-07-white.webp",
             "src": "/photos/gallery/etalon/et-07-white.jpg"
           },
           {
             "colorSlug": "zriz-kameniu",
             "colorLabel": "Зріз каменю",
-            "swatchImage": "/photos/etalon/et-07-zriz-kameniu.png",
+            "swatchImage": "/photos/etalon/et-07-zriz-kameniu.webp",
             "src": "/photos/gallery/etalon/et-07-zriz-kameniu.jpg"
           }
         ]
@@ -608,79 +608,79 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "astana-marle",
             "colorLabel": "Астана мерле",
-            "swatchImage": "/photos/etalon/et-08-astana-marle.png",
+            "swatchImage": "/photos/etalon/et-08-astana-marle.webp",
             "src": "/photos/gallery/etalon/et-08-astana-marle.jpg"
           },
           {
             "colorSlug": "beton-siryi",
             "colorLabel": "Бетон сірий",
-            "swatchImage": "/photos/etalon/et-08-beton-siryi.png",
+            "swatchImage": "/photos/etalon/et-08-beton-siryi.webp",
             "src": "/photos/gallery/etalon/et-08-beton-siryi.jpg"
           },
           {
             "colorSlug": "beton-temnyi",
             "colorLabel": "Бетон темний",
-            "swatchImage": "/photos/etalon/et-08-beton-temnyi.png",
+            "swatchImage": "/photos/etalon/et-08-beton-temnyi.webp",
             "src": "/photos/gallery/etalon/et-08-beton-temnyi.jpg"
           },
           {
             "colorSlug": "bila-teksturna",
             "colorLabel": "Білий текстурний",
-            "swatchImage": "/photos/etalon/et-08-bila-teksturna.png",
+            "swatchImage": "/photos/etalon/et-08-bila-teksturna.webp",
             "src": "/photos/gallery/etalon/et-08-bila-teksturna.jpg"
           },
           {
             "colorSlug": "chorna-korka",
             "colorLabel": "Чорна корка",
-            "swatchImage": "/photos/etalon/et-08-chorna-korka.png",
+            "swatchImage": "/photos/etalon/et-08-chorna-korka.webp",
             "src": "/photos/gallery/etalon/et-08-chorna-korka.jpg"
           },
           {
             "colorSlug": "karpatska-ialyna",
             "colorLabel": "Карпатська ялина",
-            "swatchImage": "/photos/etalon/et-08-karpatska-ialyna.png",
+            "swatchImage": "/photos/etalon/et-08-karpatska-ialyna.webp",
             "src": "/photos/gallery/etalon/et-08-karpatska-ialyna.jpg"
           },
           {
             "colorSlug": "popeliastyi-softach",
             "colorLabel": "Попелястий софттач",
-            "swatchImage": "/photos/etalon/et-08-popeliastyi-softach.png",
+            "swatchImage": "/photos/etalon/et-08-popeliastyi-softach.webp",
             "src": "/photos/gallery/etalon/et-08-popeliastyi-softach.jpg"
           },
           {
             "colorSlug": "rustyk-zolotyi",
             "colorLabel": "Рустик золотий",
-            "swatchImage": "/photos/etalon/et-08-rustyk-zolotyi.png",
+            "swatchImage": "/photos/etalon/et-08-rustyk-zolotyi.webp",
             "src": "/photos/gallery/etalon/et-08-rustyk-zolotyi.jpg"
           },
           {
             "colorSlug": "shpon-korychnevyi",
             "colorLabel": "Шпон коричневий",
-            "swatchImage": "/photos/etalon/et-08-shpon-korychnevyi.png",
+            "swatchImage": "/photos/etalon/et-08-shpon-korychnevyi.webp",
             "src": "/photos/gallery/etalon/et-08-shpon-korychnevyi.jpg"
           },
           {
             "colorSlug": "sosna-provans",
             "colorLabel": "Сосна прованс",
-            "swatchImage": "/photos/etalon/et-08-sosna-provans.png",
+            "swatchImage": "/photos/etalon/et-08-sosna-provans.webp",
             "src": "/photos/gallery/etalon/et-08-sosna-provans.jpg"
           },
           {
             "colorSlug": "venhe-pivdenne-tysnene",
             "colorLabel": "Венге південне тиснене",
-            "swatchImage": "/photos/etalon/et-08-venhe-pivdenne-tysnene.png",
+            "swatchImage": "/photos/etalon/et-08-venhe-pivdenne-tysnene.webp",
             "src": "/photos/gallery/etalon/et-08-venhe-pivdenne-tysnene.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/etalon/et-08-white.png",
+            "swatchImage": "/photos/etalon/et-08-white.webp",
             "src": "/photos/gallery/etalon/et-08-white.jpg"
           },
           {
             "colorSlug": "zriz-kameniu",
             "colorLabel": "Зріз каменю",
-            "swatchImage": "/photos/etalon/et-08-zriz-kameniu.png",
+            "swatchImage": "/photos/etalon/et-08-zriz-kameniu.webp",
             "src": "/photos/gallery/etalon/et-08-zriz-kameniu.jpg"
           }
         ]
@@ -691,79 +691,79 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "astana-marle",
             "colorLabel": "Астана мерле",
-            "swatchImage": "/photos/etalon/et-09-astana-marle.png",
+            "swatchImage": "/photos/etalon/et-09-astana-marle.webp",
             "src": "/photos/gallery/etalon/et-09-astana-marle.jpg"
           },
           {
             "colorSlug": "beton-siryi",
             "colorLabel": "Бетон сірий",
-            "swatchImage": "/photos/etalon/et-09-beton-siryi.png",
+            "swatchImage": "/photos/etalon/et-09-beton-siryi.webp",
             "src": "/photos/gallery/etalon/et-09-beton-siryi.jpg"
           },
           {
             "colorSlug": "beton-temnyi",
             "colorLabel": "Бетон темний",
-            "swatchImage": "/photos/etalon/et-09-beton-temnyi.png",
+            "swatchImage": "/photos/etalon/et-09-beton-temnyi.webp",
             "src": "/photos/gallery/etalon/et-09-beton-temnyi.jpg"
           },
           {
             "colorSlug": "bila-teksturna",
             "colorLabel": "Білий текстурний",
-            "swatchImage": "/photos/etalon/et-09-bila-teksturna.png",
+            "swatchImage": "/photos/etalon/et-09-bila-teksturna.webp",
             "src": "/photos/gallery/etalon/et-09-bila-teksturna.jpg"
           },
           {
             "colorSlug": "chorna-korka",
             "colorLabel": "Чорна корка",
-            "swatchImage": "/photos/etalon/et-09-chorna-korka.png",
+            "swatchImage": "/photos/etalon/et-09-chorna-korka.webp",
             "src": "/photos/gallery/etalon/et-09-chorna-korka.jpg"
           },
           {
             "colorSlug": "karpatska-ialyna",
             "colorLabel": "Карпатська ялина",
-            "swatchImage": "/photos/etalon/et-09-karpatska-ialyna.png",
+            "swatchImage": "/photos/etalon/et-09-karpatska-ialyna.webp",
             "src": "/photos/gallery/etalon/et-09-karpatska-ialyna.jpg"
           },
           {
             "colorSlug": "popeliastyi-softach",
             "colorLabel": "Попелястий софттач",
-            "swatchImage": "/photos/etalon/et-09-popeliastyi-softach.png",
+            "swatchImage": "/photos/etalon/et-09-popeliastyi-softach.webp",
             "src": "/photos/gallery/etalon/et-09-popeliastyi-softach.jpg"
           },
           {
             "colorSlug": "rustyk-zolotyi",
             "colorLabel": "Рустик золотий",
-            "swatchImage": "/photos/etalon/et-09-rustyk-zolotyi.png",
+            "swatchImage": "/photos/etalon/et-09-rustyk-zolotyi.webp",
             "src": "/photos/gallery/etalon/et-09-rustyk-zolotyi.jpg"
           },
           {
             "colorSlug": "shpon-korychnevyi",
             "colorLabel": "Шпон коричневий",
-            "swatchImage": "/photos/etalon/et-09-shpon-korychnevyi.png",
+            "swatchImage": "/photos/etalon/et-09-shpon-korychnevyi.webp",
             "src": "/photos/gallery/etalon/et-09-shpon-korychnevyi.jpg"
           },
           {
             "colorSlug": "sosna-provans",
             "colorLabel": "Сосна прованс",
-            "swatchImage": "/photos/etalon/et-09-sosna-provans.png",
+            "swatchImage": "/photos/etalon/et-09-sosna-provans.webp",
             "src": "/photos/gallery/etalon/et-09-sosna-provans.jpg"
           },
           {
             "colorSlug": "venhe-pivdenne-tysnene",
             "colorLabel": "Венге південне тиснене",
-            "swatchImage": "/photos/etalon/et-09-venhe-pivdenne-tysnene.png",
+            "swatchImage": "/photos/etalon/et-09-venhe-pivdenne-tysnene.webp",
             "src": "/photos/gallery/etalon/et-09-venhe-pivdenne-tysnene.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/etalon/et-09-white.png",
+            "swatchImage": "/photos/etalon/et-09-white.webp",
             "src": "/photos/gallery/etalon/et-09-white.jpg"
           },
           {
             "colorSlug": "zriz-kameniu",
             "colorLabel": "Зріз каменю",
-            "swatchImage": "/photos/etalon/et-09-zriz-kameniu.png",
+            "swatchImage": "/photos/etalon/et-09-zriz-kameniu.webp",
             "src": "/photos/gallery/etalon/et-09-zriz-kameniu.jpg"
           }
         ]
@@ -774,79 +774,79 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "astana-marle",
             "colorLabel": "Астана мерле",
-            "swatchImage": "/photos/etalon/et-10-astana-marle.png",
+            "swatchImage": "/photos/etalon/et-10-astana-marle.webp",
             "src": "/photos/gallery/etalon/et-10-astana-marle.jpg"
           },
           {
             "colorSlug": "beton-siryi",
             "colorLabel": "Бетон сірий",
-            "swatchImage": "/photos/etalon/et-10-beton-siryi.png",
+            "swatchImage": "/photos/etalon/et-10-beton-siryi.webp",
             "src": "/photos/gallery/etalon/et-10-beton-siryi.jpg"
           },
           {
             "colorSlug": "beton-temnyi",
             "colorLabel": "Бетон темний",
-            "swatchImage": "/photos/etalon/et-10-beton-temnyi.png",
+            "swatchImage": "/photos/etalon/et-10-beton-temnyi.webp",
             "src": "/photos/gallery/etalon/et-10-beton-temnyi.jpg"
           },
           {
             "colorSlug": "bila-teksturna",
             "colorLabel": "Білий текстурний",
-            "swatchImage": "/photos/etalon/et-10-bila-teksturna.png",
+            "swatchImage": "/photos/etalon/et-10-bila-teksturna.webp",
             "src": "/photos/gallery/etalon/et-10-bila-teksturna.jpg"
           },
           {
             "colorSlug": "chorna-korka",
             "colorLabel": "Чорна корка",
-            "swatchImage": "/photos/etalon/et-10-chorna-korka.png",
+            "swatchImage": "/photos/etalon/et-10-chorna-korka.webp",
             "src": "/photos/gallery/etalon/et-10-chorna-korka.jpg"
           },
           {
             "colorSlug": "karpatska-ialyna",
             "colorLabel": "Карпатська ялина",
-            "swatchImage": "/photos/etalon/et-10-karpatska-ialyna.png",
+            "swatchImage": "/photos/etalon/et-10-karpatska-ialyna.webp",
             "src": "/photos/gallery/etalon/et-10-karpatska-ialyna.jpg"
           },
           {
             "colorSlug": "popeliastyi-softach",
             "colorLabel": "Попелястий софттач",
-            "swatchImage": "/photos/etalon/et-10-popeliastyi-softach.png",
+            "swatchImage": "/photos/etalon/et-10-popeliastyi-softach.webp",
             "src": "/photos/gallery/etalon/et-10-popeliastyi-softach.jpg"
           },
           {
             "colorSlug": "rustyk-zolotyi",
             "colorLabel": "Рустик золотий",
-            "swatchImage": "/photos/etalon/et-10-rustyk-zolotyi.png",
+            "swatchImage": "/photos/etalon/et-10-rustyk-zolotyi.webp",
             "src": "/photos/gallery/etalon/et-10-rustyk-zolotyi.jpg"
           },
           {
             "colorSlug": "shpon-korychnevyi",
             "colorLabel": "Шпон коричневий",
-            "swatchImage": "/photos/etalon/et-10-shpon-korychnevyi.png",
+            "swatchImage": "/photos/etalon/et-10-shpon-korychnevyi.webp",
             "src": "/photos/gallery/etalon/et-10-shpon-korychnevyi.jpg"
           },
           {
             "colorSlug": "sosna-provans",
             "colorLabel": "Сосна прованс",
-            "swatchImage": "/photos/etalon/et-10-sosna-provans.png",
+            "swatchImage": "/photos/etalon/et-10-sosna-provans.webp",
             "src": "/photos/gallery/etalon/et-10-sosna-provans.jpg"
           },
           {
             "colorSlug": "venhe-pivdenne-tysnene",
             "colorLabel": "Венге південне тиснене",
-            "swatchImage": "/photos/etalon/et-10-venhe-pivdenne-tysnene.png",
+            "swatchImage": "/photos/etalon/et-10-venhe-pivdenne-tysnene.webp",
             "src": "/photos/gallery/etalon/et-10-venhe-pivdenne-tysnene.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/etalon/et-10-white.png",
+            "swatchImage": "/photos/etalon/et-10-white.webp",
             "src": "/photos/gallery/etalon/et-10-white.jpg"
           },
           {
             "colorSlug": "zriz-kameniu",
             "colorLabel": "Зріз каменю",
-            "swatchImage": "/photos/etalon/et-10-zriz-kameniu.png",
+            "swatchImage": "/photos/etalon/et-10-zriz-kameniu.webp",
             "src": "/photos/gallery/etalon/et-10-zriz-kameniu.jpg"
           }
         ]
@@ -857,79 +857,79 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "astana-marle",
             "colorLabel": "Астана мерле",
-            "swatchImage": "/photos/etalon/et-11-astana-marle.png",
+            "swatchImage": "/photos/etalon/et-11-astana-marle.webp",
             "src": "/photos/gallery/etalon/et-11-astana-marle.jpg"
           },
           {
             "colorSlug": "beton-siryi",
             "colorLabel": "Бетон сірий",
-            "swatchImage": "/photos/etalon/et-11-beton-siryi.png",
+            "swatchImage": "/photos/etalon/et-11-beton-siryi.webp",
             "src": "/photos/gallery/etalon/et-11-beton-siryi.jpg"
           },
           {
             "colorSlug": "beton-temnyi",
             "colorLabel": "Бетон темний",
-            "swatchImage": "/photos/etalon/et-11-beton-temnyi.png",
+            "swatchImage": "/photos/etalon/et-11-beton-temnyi.webp",
             "src": "/photos/gallery/etalon/et-11-beton-temnyi.jpg"
           },
           {
             "colorSlug": "bila-teksturna",
             "colorLabel": "Білий текстурний",
-            "swatchImage": "/photos/etalon/et-11-bila-teksturna.png",
+            "swatchImage": "/photos/etalon/et-11-bila-teksturna.webp",
             "src": "/photos/gallery/etalon/et-11-bila-teksturna.jpg"
           },
           {
             "colorSlug": "chorna-korka",
             "colorLabel": "Чорна корка",
-            "swatchImage": "/photos/etalon/et-11-chorna-korka.png",
+            "swatchImage": "/photos/etalon/et-11-chorna-korka.webp",
             "src": "/photos/gallery/etalon/et-11-chorna-korka.jpg"
           },
           {
             "colorSlug": "karpatska-ialyna",
             "colorLabel": "Карпатська ялина",
-            "swatchImage": "/photos/etalon/et-11-karpatska-ialyna.png",
+            "swatchImage": "/photos/etalon/et-11-karpatska-ialyna.webp",
             "src": "/photos/gallery/etalon/et-11-karpatska-ialyna.jpg"
           },
           {
             "colorSlug": "popeliastyi-softach",
             "colorLabel": "Попелястий софттач",
-            "swatchImage": "/photos/etalon/et-11-popeliastyi-softach.png",
+            "swatchImage": "/photos/etalon/et-11-popeliastyi-softach.webp",
             "src": "/photos/gallery/etalon/et-11-popeliastyi-softach.jpg"
           },
           {
             "colorSlug": "rustyk-zolotyi",
             "colorLabel": "Рустик золотий",
-            "swatchImage": "/photos/etalon/et-11-rustyk-zolotyi.png",
+            "swatchImage": "/photos/etalon/et-11-rustyk-zolotyi.webp",
             "src": "/photos/gallery/etalon/et-11-rustyk-zolotyi.jpg"
           },
           {
             "colorSlug": "shpon-korychnevyi",
             "colorLabel": "Шпон коричневий",
-            "swatchImage": "/photos/etalon/et-11-shpon-korychnevyi.png",
+            "swatchImage": "/photos/etalon/et-11-shpon-korychnevyi.webp",
             "src": "/photos/gallery/etalon/et-11-shpon-korychnevyi.jpg"
           },
           {
             "colorSlug": "sosna-provans",
             "colorLabel": "Сосна прованс",
-            "swatchImage": "/photos/etalon/et-11-sosna-provans.png",
+            "swatchImage": "/photos/etalon/et-11-sosna-provans.webp",
             "src": "/photos/gallery/etalon/et-11-sosna-provans.jpg"
           },
           {
             "colorSlug": "venhe-pivdenne-tysnene",
             "colorLabel": "Венге південне тиснене",
-            "swatchImage": "/photos/etalon/et-11-venhe-pivdenne-tysnene.png",
+            "swatchImage": "/photos/etalon/et-11-venhe-pivdenne-tysnene.webp",
             "src": "/photos/gallery/etalon/et-11-venhe-pivdenne-tysnene.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/etalon/et-11-white.png",
+            "swatchImage": "/photos/etalon/et-11-white.webp",
             "src": "/photos/gallery/etalon/et-11-white.jpg"
           },
           {
             "colorSlug": "zriz-kameniu",
             "colorLabel": "Зріз каменю",
-            "swatchImage": "/photos/etalon/et-11-zriz-kameniu.png",
+            "swatchImage": "/photos/etalon/et-11-zriz-kameniu.webp",
             "src": "/photos/gallery/etalon/et-11-zriz-kameniu.jpg"
           }
         ]
@@ -940,79 +940,79 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "astana-marle",
             "colorLabel": "Астана мерле",
-            "swatchImage": "/photos/etalon/et-12-astana-marle.png",
+            "swatchImage": "/photos/etalon/et-12-astana-marle.webp",
             "src": "/photos/gallery/etalon/et-12-astana-marle.jpg"
           },
           {
             "colorSlug": "beton-siryi",
             "colorLabel": "Бетон сірий",
-            "swatchImage": "/photos/etalon/et-12-beton-siryi.png",
+            "swatchImage": "/photos/etalon/et-12-beton-siryi.webp",
             "src": "/photos/gallery/etalon/et-12-beton-siryi.jpg"
           },
           {
             "colorSlug": "beton-temnyi",
             "colorLabel": "Бетон темний",
-            "swatchImage": "/photos/etalon/et-12-beton-temnyi.png",
+            "swatchImage": "/photos/etalon/et-12-beton-temnyi.webp",
             "src": "/photos/gallery/etalon/et-12-beton-temnyi.jpg"
           },
           {
             "colorSlug": "bila-teksturna",
             "colorLabel": "Білий текстурний",
-            "swatchImage": "/photos/etalon/et-12-bila-teksturna.png",
+            "swatchImage": "/photos/etalon/et-12-bila-teksturna.webp",
             "src": "/photos/gallery/etalon/et-12-bila-teksturna.jpg"
           },
           {
             "colorSlug": "chorna-korka",
             "colorLabel": "Чорна корка",
-            "swatchImage": "/photos/etalon/et-12-chorna-korka.png",
+            "swatchImage": "/photos/etalon/et-12-chorna-korka.webp",
             "src": "/photos/gallery/etalon/et-12-chorna-korka.jpg"
           },
           {
             "colorSlug": "karpatska-ialyna",
             "colorLabel": "Карпатська ялина",
-            "swatchImage": "/photos/etalon/et-12-karpatska-ialyna.png",
+            "swatchImage": "/photos/etalon/et-12-karpatska-ialyna.webp",
             "src": "/photos/gallery/etalon/et-12-karpatska-ialyna.jpg"
           },
           {
             "colorSlug": "popeliastyi-softach",
             "colorLabel": "Попелястий софттач",
-            "swatchImage": "/photos/etalon/et-12-popeliastyi-softach.png",
+            "swatchImage": "/photos/etalon/et-12-popeliastyi-softach.webp",
             "src": "/photos/gallery/etalon/et-12-popeliastyi-softach.jpg"
           },
           {
             "colorSlug": "rustyk-zolotyi",
             "colorLabel": "Рустик золотий",
-            "swatchImage": "/photos/etalon/et-12-rustyk-zolotyi.png",
+            "swatchImage": "/photos/etalon/et-12-rustyk-zolotyi.webp",
             "src": "/photos/gallery/etalon/et-12-rustyk-zolotyi.jpg"
           },
           {
             "colorSlug": "shpon-korychnevyi",
             "colorLabel": "Шпон коричневий",
-            "swatchImage": "/photos/etalon/et-12-shpon-korychnevyi.png",
+            "swatchImage": "/photos/etalon/et-12-shpon-korychnevyi.webp",
             "src": "/photos/gallery/etalon/et-12-shpon-korychnevyi.jpg"
           },
           {
             "colorSlug": "sosna-provans",
             "colorLabel": "Сосна прованс",
-            "swatchImage": "/photos/etalon/et-12-sosna-provans.png",
+            "swatchImage": "/photos/etalon/et-12-sosna-provans.webp",
             "src": "/photos/gallery/etalon/et-12-sosna-provans.jpg"
           },
           {
             "colorSlug": "venhe-pivdenne-tysnene",
             "colorLabel": "Венге південне тиснене",
-            "swatchImage": "/photos/etalon/et-12-venhe-pivdenne-tysnene.png",
+            "swatchImage": "/photos/etalon/et-12-venhe-pivdenne-tysnene.webp",
             "src": "/photos/gallery/etalon/et-12-venhe-pivdenne-tysnene.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/etalon/et-12-white.png",
+            "swatchImage": "/photos/etalon/et-12-white.webp",
             "src": "/photos/gallery/etalon/et-12-white.jpg"
           },
           {
             "colorSlug": "zriz-kameniu",
             "colorLabel": "Зріз каменю",
-            "swatchImage": "/photos/etalon/et-12-zriz-kameniu.png",
+            "swatchImage": "/photos/etalon/et-12-zriz-kameniu.webp",
             "src": "/photos/gallery/etalon/et-12-zriz-kameniu.jpg"
           }
         ]
@@ -1023,79 +1023,79 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "astana-marle",
             "colorLabel": "Астана мерле",
-            "swatchImage": "/photos/etalon/et-13-astana-marle.png",
+            "swatchImage": "/photos/etalon/et-13-astana-marle.webp",
             "src": "/photos/gallery/etalon/et-13-astana-marle.jpg"
           },
           {
             "colorSlug": "beton-siryi",
             "colorLabel": "Бетон сірий",
-            "swatchImage": "/photos/etalon/et-13-beton-siryi.png",
+            "swatchImage": "/photos/etalon/et-13-beton-siryi.webp",
             "src": "/photos/gallery/etalon/et-13-beton-siryi.jpg"
           },
           {
             "colorSlug": "beton-temnyi",
             "colorLabel": "Бетон темний",
-            "swatchImage": "/photos/etalon/et-13-beton-temnyi.png",
+            "swatchImage": "/photos/etalon/et-13-beton-temnyi.webp",
             "src": "/photos/gallery/etalon/et-13-beton-temnyi.jpg"
           },
           {
             "colorSlug": "bila-teksturna",
             "colorLabel": "Білий текстурний",
-            "swatchImage": "/photos/etalon/et-13-bila-teksturna.png",
+            "swatchImage": "/photos/etalon/et-13-bila-teksturna.webp",
             "src": "/photos/gallery/etalon/et-13-bila-teksturna.jpg"
           },
           {
             "colorSlug": "chorna-korka",
             "colorLabel": "Чорна корка",
-            "swatchImage": "/photos/etalon/et-13-chorna-korka.png",
+            "swatchImage": "/photos/etalon/et-13-chorna-korka.webp",
             "src": "/photos/gallery/etalon/et-13-chorna-korka.jpg"
           },
           {
             "colorSlug": "karpatska-ialyna",
             "colorLabel": "Карпатська ялина",
-            "swatchImage": "/photos/etalon/et-13-karpatska-ialyna.png",
+            "swatchImage": "/photos/etalon/et-13-karpatska-ialyna.webp",
             "src": "/photos/gallery/etalon/et-13-karpatska-ialyna.jpg"
           },
           {
             "colorSlug": "popeliastyi-softach",
             "colorLabel": "Попелястий софттач",
-            "swatchImage": "/photos/etalon/et-13-popeliastyi-softach.png",
+            "swatchImage": "/photos/etalon/et-13-popeliastyi-softach.webp",
             "src": "/photos/gallery/etalon/et-13-popeliastyi-softach.jpg"
           },
           {
             "colorSlug": "rustyk-zolotyi",
             "colorLabel": "Рустик золотий",
-            "swatchImage": "/photos/etalon/et-13-rustyk-zolotyi.png",
+            "swatchImage": "/photos/etalon/et-13-rustyk-zolotyi.webp",
             "src": "/photos/gallery/etalon/et-13-rustyk-zolotyi.jpg"
           },
           {
             "colorSlug": "shpon-korychnevyi",
             "colorLabel": "Шпон коричневий",
-            "swatchImage": "/photos/etalon/et-13-shpon-korychnevyi.png",
+            "swatchImage": "/photos/etalon/et-13-shpon-korychnevyi.webp",
             "src": "/photos/gallery/etalon/et-13-shpon-korychnevyi.jpg"
           },
           {
             "colorSlug": "sosna-provans",
             "colorLabel": "Сосна прованс",
-            "swatchImage": "/photos/etalon/et-13-sosna-provans.png",
+            "swatchImage": "/photos/etalon/et-13-sosna-provans.webp",
             "src": "/photos/gallery/etalon/et-13-sosna-provans.jpg"
           },
           {
             "colorSlug": "venhe-pivdenne-tysnene",
             "colorLabel": "Венге південне тиснене",
-            "swatchImage": "/photos/etalon/et-13-venhe-pivdenne-tysnene.png",
+            "swatchImage": "/photos/etalon/et-13-venhe-pivdenne-tysnene.webp",
             "src": "/photos/gallery/etalon/et-13-venhe-pivdenne-tysnene.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/etalon/et-13-white.png",
+            "swatchImage": "/photos/etalon/et-13-white.webp",
             "src": "/photos/gallery/etalon/et-13-white.jpg"
           },
           {
             "colorSlug": "zriz-kameniu",
             "colorLabel": "Зріз каменю",
-            "swatchImage": "/photos/etalon/et-13-zriz-kameniu.png",
+            "swatchImage": "/photos/etalon/et-13-zriz-kameniu.webp",
             "src": "/photos/gallery/etalon/et-13-zriz-kameniu.jpg"
           }
         ]
@@ -1106,79 +1106,79 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "astana-marle",
             "colorLabel": "Астана мерле",
-            "swatchImage": "/photos/etalon/et-14-astana-marle.png",
+            "swatchImage": "/photos/etalon/et-14-astana-marle.webp",
             "src": "/photos/gallery/etalon/et-14-astana-marle.jpg"
           },
           {
             "colorSlug": "beton-siryi",
             "colorLabel": "Бетон сірий",
-            "swatchImage": "/photos/etalon/et-14-beton-siryi.png",
+            "swatchImage": "/photos/etalon/et-14-beton-siryi.webp",
             "src": "/photos/gallery/etalon/et-14-beton-siryi.jpg"
           },
           {
             "colorSlug": "beton-temnyi",
             "colorLabel": "Бетон темний",
-            "swatchImage": "/photos/etalon/et-14-beton-temnyi.png",
+            "swatchImage": "/photos/etalon/et-14-beton-temnyi.webp",
             "src": "/photos/gallery/etalon/et-14-beton-temnyi.jpg"
           },
           {
             "colorSlug": "bila-teksturna",
             "colorLabel": "Білий текстурний",
-            "swatchImage": "/photos/etalon/et-14-bila-teksturna.png",
+            "swatchImage": "/photos/etalon/et-14-bila-teksturna.webp",
             "src": "/photos/gallery/etalon/et-14-bila-teksturna.jpg"
           },
           {
             "colorSlug": "chorna-korka",
             "colorLabel": "Чорна корка",
-            "swatchImage": "/photos/etalon/et-14-chorna-korka.png",
+            "swatchImage": "/photos/etalon/et-14-chorna-korka.webp",
             "src": "/photos/gallery/etalon/et-14-chorna-korka.jpg"
           },
           {
             "colorSlug": "karpatska-ialyna",
             "colorLabel": "Карпатська ялина",
-            "swatchImage": "/photos/etalon/et-14-karpatska-ialyna.png",
+            "swatchImage": "/photos/etalon/et-14-karpatska-ialyna.webp",
             "src": "/photos/gallery/etalon/et-14-karpatska-ialyna.jpg"
           },
           {
             "colorSlug": "popeliastyi-softach",
             "colorLabel": "Попелястий софттач",
-            "swatchImage": "/photos/etalon/et-14-popeliastyi-softach.png",
+            "swatchImage": "/photos/etalon/et-14-popeliastyi-softach.webp",
             "src": "/photos/gallery/etalon/et-14-popeliastyi-softach.jpg"
           },
           {
             "colorSlug": "rustyk-zolotyi",
             "colorLabel": "Рустик золотий",
-            "swatchImage": "/photos/etalon/et-14-rustyk-zolotyi.png",
+            "swatchImage": "/photos/etalon/et-14-rustyk-zolotyi.webp",
             "src": "/photos/gallery/etalon/et-14-rustyk-zolotyi.jpg"
           },
           {
             "colorSlug": "shpon-korychnevyi",
             "colorLabel": "Шпон коричневий",
-            "swatchImage": "/photos/etalon/et-14-shpon-korychnevyi.png",
+            "swatchImage": "/photos/etalon/et-14-shpon-korychnevyi.webp",
             "src": "/photos/gallery/etalon/et-14-shpon-korychnevyi.jpg"
           },
           {
             "colorSlug": "sosna-provans",
             "colorLabel": "Сосна прованс",
-            "swatchImage": "/photos/etalon/et-14-sosna-provans.png",
+            "swatchImage": "/photos/etalon/et-14-sosna-provans.webp",
             "src": "/photos/gallery/etalon/et-14-sosna-provans.jpg"
           },
           {
             "colorSlug": "venhe-pivdenne-tysnene",
             "colorLabel": "Венге південне тиснене",
-            "swatchImage": "/photos/etalon/et-14-venhe-pivdenne-tysnene.png",
+            "swatchImage": "/photos/etalon/et-14-venhe-pivdenne-tysnene.webp",
             "src": "/photos/gallery/etalon/et-14-venhe-pivdenne-tysnene.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/etalon/et-14-white.png",
+            "swatchImage": "/photos/etalon/et-14-white.webp",
             "src": "/photos/gallery/etalon/et-14-white.jpg"
           },
           {
             "colorSlug": "zriz-kameniu",
             "colorLabel": "Зріз каменю",
-            "swatchImage": "/photos/etalon/et-14-zriz-kameniu.png",
+            "swatchImage": "/photos/etalon/et-14-zriz-kameniu.webp",
             "src": "/photos/gallery/etalon/et-14-zriz-kameniu.jpg"
           }
         ]
@@ -1189,79 +1189,79 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "astana-marle",
             "colorLabel": "Астана мерле",
-            "swatchImage": "/photos/etalon/et-15-astana-marle.png",
+            "swatchImage": "/photos/etalon/et-15-astana-marle.webp",
             "src": "/photos/gallery/etalon/et-15-astana-marle.jpg"
           },
           {
             "colorSlug": "beton-siryi",
             "colorLabel": "Бетон сірий",
-            "swatchImage": "/photos/etalon/et-15-beton-siryi.png",
+            "swatchImage": "/photos/etalon/et-15-beton-siryi.webp",
             "src": "/photos/gallery/etalon/et-15-beton-siryi.jpg"
           },
           {
             "colorSlug": "beton-temnyi",
             "colorLabel": "Бетон темний",
-            "swatchImage": "/photos/etalon/et-15-beton-temnyi.png",
+            "swatchImage": "/photos/etalon/et-15-beton-temnyi.webp",
             "src": "/photos/gallery/etalon/et-15-beton-temnyi.jpg"
           },
           {
             "colorSlug": "bila-teksturna",
             "colorLabel": "Білий текстурний",
-            "swatchImage": "/photos/etalon/et-15-bila-teksturna.png",
+            "swatchImage": "/photos/etalon/et-15-bila-teksturna.webp",
             "src": "/photos/gallery/etalon/et-15-bila-teksturna.jpg"
           },
           {
             "colorSlug": "chorna-korka",
             "colorLabel": "Чорна корка",
-            "swatchImage": "/photos/etalon/et-15-chorna-korka.png",
+            "swatchImage": "/photos/etalon/et-15-chorna-korka.webp",
             "src": "/photos/gallery/etalon/et-15-chorna-korka.jpg"
           },
           {
             "colorSlug": "karpatska-ialyna",
             "colorLabel": "Карпатська ялина",
-            "swatchImage": "/photos/etalon/et-15-karpatska-ialyna.png",
+            "swatchImage": "/photos/etalon/et-15-karpatska-ialyna.webp",
             "src": "/photos/gallery/etalon/et-15-karpatska-ialyna.jpg"
           },
           {
             "colorSlug": "popeliastyi-softach",
             "colorLabel": "Попелястий софттач",
-            "swatchImage": "/photos/etalon/et-15-popeliastyi-softach.png",
+            "swatchImage": "/photos/etalon/et-15-popeliastyi-softach.webp",
             "src": "/photos/gallery/etalon/et-15-popeliastyi-softach.jpg"
           },
           {
             "colorSlug": "rustyk-zolotyi",
             "colorLabel": "Рустик золотий",
-            "swatchImage": "/photos/etalon/et-15-rustyk-zolotyi.png",
+            "swatchImage": "/photos/etalon/et-15-rustyk-zolotyi.webp",
             "src": "/photos/gallery/etalon/et-15-rustyk-zolotyi.jpg"
           },
           {
             "colorSlug": "shpon-korychnevyi",
             "colorLabel": "Шпон коричневий",
-            "swatchImage": "/photos/etalon/et-15-shpon-korychnevyi.png",
+            "swatchImage": "/photos/etalon/et-15-shpon-korychnevyi.webp",
             "src": "/photos/gallery/etalon/et-15-shpon-korychnevyi.jpg"
           },
           {
             "colorSlug": "sosna-provans",
             "colorLabel": "Сосна прованс",
-            "swatchImage": "/photos/etalon/et-15-sosna-provans.png",
+            "swatchImage": "/photos/etalon/et-15-sosna-provans.webp",
             "src": "/photos/gallery/etalon/et-15-sosna-provans.jpg"
           },
           {
             "colorSlug": "venhe-pivdenne-tysnene",
             "colorLabel": "Венге південне тиснене",
-            "swatchImage": "/photos/etalon/et-15-venhe-pivdenne-tysnene.png",
+            "swatchImage": "/photos/etalon/et-15-venhe-pivdenne-tysnene.webp",
             "src": "/photos/gallery/etalon/et-15-venhe-pivdenne-tysnene.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/etalon/et-15-white.png",
+            "swatchImage": "/photos/etalon/et-15-white.webp",
             "src": "/photos/gallery/etalon/et-15-white.jpg"
           },
           {
             "colorSlug": "zriz-kameniu",
             "colorLabel": "Зріз каменю",
-            "swatchImage": "/photos/etalon/et-15-zriz-kameniu.png",
+            "swatchImage": "/photos/etalon/et-15-zriz-kameniu.webp",
             "src": "/photos/gallery/etalon/et-15-zriz-kameniu.jpg"
           }
         ]
@@ -1272,79 +1272,79 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "astana-marle",
             "colorLabel": "Астана мерле",
-            "swatchImage": "/photos/etalon/et-16-astana-marle.png",
+            "swatchImage": "/photos/etalon/et-16-astana-marle.webp",
             "src": "/photos/gallery/etalon/et-16-astana-marle.jpg"
           },
           {
             "colorSlug": "beton-siryi",
             "colorLabel": "Бетон сірий",
-            "swatchImage": "/photos/etalon/et-16-beton-siryi.png",
+            "swatchImage": "/photos/etalon/et-16-beton-siryi.webp",
             "src": "/photos/gallery/etalon/et-16-beton-siryi.jpg"
           },
           {
             "colorSlug": "beton-temnyi",
             "colorLabel": "Бетон темний",
-            "swatchImage": "/photos/etalon/et-16-beton-temnyi.png",
+            "swatchImage": "/photos/etalon/et-16-beton-temnyi.webp",
             "src": "/photos/gallery/etalon/et-16-beton-temnyi.jpg"
           },
           {
             "colorSlug": "bila-teksturna",
             "colorLabel": "Білий текстурний",
-            "swatchImage": "/photos/etalon/et-16-bila-teksturna.png",
+            "swatchImage": "/photos/etalon/et-16-bila-teksturna.webp",
             "src": "/photos/gallery/etalon/et-16-bila-teksturna.jpg"
           },
           {
             "colorSlug": "chorna-korka",
             "colorLabel": "Чорна корка",
-            "swatchImage": "/photos/etalon/et-16-chorna-korka.png",
+            "swatchImage": "/photos/etalon/et-16-chorna-korka.webp",
             "src": "/photos/gallery/etalon/et-16-chorna-korka.jpg"
           },
           {
             "colorSlug": "karpatska-ialyna",
             "colorLabel": "Карпатська ялина",
-            "swatchImage": "/photos/etalon/et-16-karpatska-ialyna.png",
+            "swatchImage": "/photos/etalon/et-16-karpatska-ialyna.webp",
             "src": "/photos/gallery/etalon/et-16-karpatska-ialyna.jpg"
           },
           {
             "colorSlug": "popeliastyi-softach",
             "colorLabel": "Попелястий софттач",
-            "swatchImage": "/photos/etalon/et-16-popeliastyi-softach.png",
+            "swatchImage": "/photos/etalon/et-16-popeliastyi-softach.webp",
             "src": "/photos/gallery/etalon/et-16-popeliastyi-softach.jpg"
           },
           {
             "colorSlug": "rustyk-zolotyi",
             "colorLabel": "Рустик золотий",
-            "swatchImage": "/photos/etalon/et-16-rustyk-zolotyi.png",
+            "swatchImage": "/photos/etalon/et-16-rustyk-zolotyi.webp",
             "src": "/photos/gallery/etalon/et-16-rustyk-zolotyi.jpg"
           },
           {
             "colorSlug": "shpon-korychnevyi",
             "colorLabel": "Шпон коричневий",
-            "swatchImage": "/photos/etalon/et-16-shpon-korychnevyi.png",
+            "swatchImage": "/photos/etalon/et-16-shpon-korychnevyi.webp",
             "src": "/photos/gallery/etalon/et-16-shpon-korychnevyi.jpg"
           },
           {
             "colorSlug": "sosna-provans",
             "colorLabel": "Сосна прованс",
-            "swatchImage": "/photos/etalon/et-16-sosna-provans.png",
+            "swatchImage": "/photos/etalon/et-16-sosna-provans.webp",
             "src": "/photos/gallery/etalon/et-16-sosna-provans.jpg"
           },
           {
             "colorSlug": "venhe-pivdenne-tysnene",
             "colorLabel": "Венге південне тиснене",
-            "swatchImage": "/photos/etalon/et-16-venhe-pivdenne-tysnene.png",
+            "swatchImage": "/photos/etalon/et-16-venhe-pivdenne-tysnene.webp",
             "src": "/photos/gallery/etalon/et-16-venhe-pivdenne-tysnene.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/etalon/et-16-white.png",
+            "swatchImage": "/photos/etalon/et-16-white.webp",
             "src": "/photos/gallery/etalon/et-16-white.jpg"
           },
           {
             "colorSlug": "zriz-kameniu",
             "colorLabel": "Зріз каменю",
-            "swatchImage": "/photos/etalon/et-16-zriz-kameniu.png",
+            "swatchImage": "/photos/etalon/et-16-zriz-kameniu.webp",
             "src": "/photos/gallery/etalon/et-16-zriz-kameniu.jpg"
           }
         ]
@@ -1355,79 +1355,79 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "astana-marle",
             "colorLabel": "Астана мерле",
-            "swatchImage": "/photos/etalon/et-17-astana-marle.png",
+            "swatchImage": "/photos/etalon/et-17-astana-marle.webp",
             "src": "/photos/gallery/etalon/et-17-astana-marle.jpg"
           },
           {
             "colorSlug": "beton-siryi",
             "colorLabel": "Бетон сірий",
-            "swatchImage": "/photos/etalon/et-17-beton-siryi.png",
+            "swatchImage": "/photos/etalon/et-17-beton-siryi.webp",
             "src": "/photos/gallery/etalon/et-17-beton-siryi.jpg"
           },
           {
             "colorSlug": "beton-temnyi",
             "colorLabel": "Бетон темний",
-            "swatchImage": "/photos/etalon/et-17-beton-temnyi.png",
+            "swatchImage": "/photos/etalon/et-17-beton-temnyi.webp",
             "src": "/photos/gallery/etalon/et-17-beton-temnyi.jpg"
           },
           {
             "colorSlug": "bila-teksturna",
             "colorLabel": "Білий текстурний",
-            "swatchImage": "/photos/etalon/et-17-bila-teksturna.png",
+            "swatchImage": "/photos/etalon/et-17-bila-teksturna.webp",
             "src": "/photos/gallery/etalon/et-17-bila-teksturna.jpg"
           },
           {
             "colorSlug": "chorna-korka",
             "colorLabel": "Чорна корка",
-            "swatchImage": "/photos/etalon/et-17-chorna-korka.png",
+            "swatchImage": "/photos/etalon/et-17-chorna-korka.webp",
             "src": "/photos/gallery/etalon/et-17-chorna-korka.jpg"
           },
           {
             "colorSlug": "karpatska-ialyna",
             "colorLabel": "Карпатська ялина",
-            "swatchImage": "/photos/etalon/et-17-karpatska-ialyna.png",
+            "swatchImage": "/photos/etalon/et-17-karpatska-ialyna.webp",
             "src": "/photos/gallery/etalon/et-17-karpatska-ialyna.jpg"
           },
           {
             "colorSlug": "popeliastyi-softach",
             "colorLabel": "Попелястий софттач",
-            "swatchImage": "/photos/etalon/et-17-popeliastyi-softach.png",
+            "swatchImage": "/photos/etalon/et-17-popeliastyi-softach.webp",
             "src": "/photos/gallery/etalon/et-17-popeliastyi-softach.jpg"
           },
           {
             "colorSlug": "rustyk-zolotyi",
             "colorLabel": "Рустик золотий",
-            "swatchImage": "/photos/etalon/et-17-rustyk-zolotyi.png",
+            "swatchImage": "/photos/etalon/et-17-rustyk-zolotyi.webp",
             "src": "/photos/gallery/etalon/et-17-rustyk-zolotyi.jpg"
           },
           {
             "colorSlug": "shpon-korychnevyi",
             "colorLabel": "Шпон коричневий",
-            "swatchImage": "/photos/etalon/et-17-shpon-korychnevyi.png",
+            "swatchImage": "/photos/etalon/et-17-shpon-korychnevyi.webp",
             "src": "/photos/gallery/etalon/et-17-shpon-korychnevyi.jpg"
           },
           {
             "colorSlug": "sosna-provans",
             "colorLabel": "Сосна прованс",
-            "swatchImage": "/photos/etalon/et-17-sosna-provans.png",
+            "swatchImage": "/photos/etalon/et-17-sosna-provans.webp",
             "src": "/photos/gallery/etalon/et-17-sosna-provans.jpg"
           },
           {
             "colorSlug": "venhe-pivdenne-tysnene",
             "colorLabel": "Венге південне тиснене",
-            "swatchImage": "/photos/etalon/et-17-venhe-pivdenne-tysnene.png",
+            "swatchImage": "/photos/etalon/et-17-venhe-pivdenne-tysnene.webp",
             "src": "/photos/gallery/etalon/et-17-venhe-pivdenne-tysnene.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/etalon/et-17-white.png",
+            "swatchImage": "/photos/etalon/et-17-white.webp",
             "src": "/photos/gallery/etalon/et-17-white.jpg"
           },
           {
             "colorSlug": "zriz-kameniu",
             "colorLabel": "Зріз каменю",
-            "swatchImage": "/photos/etalon/et-17-zriz-kameniu.png",
+            "swatchImage": "/photos/etalon/et-17-zriz-kameniu.webp",
             "src": "/photos/gallery/etalon/et-17-zriz-kameniu.jpg"
           }
         ]
@@ -1444,49 +1444,49 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "antratsyt",
             "colorLabel": "Антрацит",
-            "swatchImage": "/photos/nominal/nl-01-antratsyt.png",
+            "swatchImage": "/photos/nominal/nl-01-antratsyt.webp",
             "src": "/photos/gallery/nominal/nl-01-antratsyt.jpg"
           },
           {
             "colorSlug": "dub-nemo-late",
             "colorLabel": "Дуб немо лате",
-            "swatchImage": "/photos/nominal/nl-01-dub-nemo-late.png",
+            "swatchImage": "/photos/nominal/nl-01-dub-nemo-late.webp",
             "src": "/photos/gallery/nominal/nl-01-dub-nemo-late.jpg"
           },
           {
             "colorSlug": "dub-nemo-sribliastyi",
             "colorLabel": "Дуб немо сріблястий",
-            "swatchImage": "/photos/nominal/nl-01-dub-nemo-sribliastyi.png",
+            "swatchImage": "/photos/nominal/nl-01-dub-nemo-sribliastyi.webp",
             "src": "/photos/gallery/nominal/nl-01-dub-nemo-sribliastyi.jpg"
           },
           {
             "colorSlug": "dub-pasadena",
             "colorLabel": "Дуб пасадена",
-            "swatchImage": "/photos/nominal/nl-01-dub-pasadena.png",
+            "swatchImage": "/photos/nominal/nl-01-dub-pasadena.webp",
             "src": "/photos/gallery/nominal/nl-01-dub-pasadena.jpg"
           },
           {
             "colorSlug": "dub-shato",
             "colorLabel": "Дуб шато",
-            "swatchImage": "/photos/nominal/nl-01-dub-shato.png",
+            "swatchImage": "/photos/nominal/nl-01-dub-shato.webp",
             "src": "/photos/gallery/nominal/nl-01-dub-shato.jpg"
           },
           {
             "colorSlug": "oksyd-svitlyi",
             "colorLabel": "Оксид світлий",
-            "swatchImage": "/photos/nominal/nl-01-oksyd-svitlyi.png",
+            "swatchImage": "/photos/nominal/nl-01-oksyd-svitlyi.webp",
             "src": "/photos/gallery/nominal/nl-01-oksyd-svitlyi.jpg"
           },
           {
             "colorSlug": "oksyd-temnyi",
             "colorLabel": "Оксид темний",
-            "swatchImage": "/photos/nominal/nl-01-oksyd-temnyi.png",
+            "swatchImage": "/photos/nominal/nl-01-oksyd-temnyi.webp",
             "src": "/photos/gallery/nominal/nl-01-oksyd-temnyi.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/nominal/nl-01-white.png",
+            "swatchImage": "/photos/nominal/nl-01-white.webp",
             "src": "/photos/gallery/nominal/nl-01-white.jpg"
           }
         ]
@@ -1497,49 +1497,49 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "antratsyt",
             "colorLabel": "Антрацит",
-            "swatchImage": "/photos/nominal/nl-02-antratsyt.png",
+            "swatchImage": "/photos/nominal/nl-02-antratsyt.webp",
             "src": "/photos/gallery/nominal/nl-02-antratsyt.jpg"
           },
           {
             "colorSlug": "dub-nemo-late",
             "colorLabel": "Дуб немо лате",
-            "swatchImage": "/photos/nominal/nl-02-dub-nemo-late.png",
+            "swatchImage": "/photos/nominal/nl-02-dub-nemo-late.webp",
             "src": "/photos/gallery/nominal/nl-02-dub-nemo-late.jpg"
           },
           {
             "colorSlug": "dub-nemo-sribliastyi",
             "colorLabel": "Дуб немо сріблястий",
-            "swatchImage": "/photos/nominal/nl-02-dub-nemo-sribliastyi.png",
+            "swatchImage": "/photos/nominal/nl-02-dub-nemo-sribliastyi.webp",
             "src": "/photos/gallery/nominal/nl-02-dub-nemo-sribliastyi.jpg"
           },
           {
             "colorSlug": "dub-pasadena",
             "colorLabel": "Дуб пасадена",
-            "swatchImage": "/photos/nominal/nl-02-dub-pasadena.png",
+            "swatchImage": "/photos/nominal/nl-02-dub-pasadena.webp",
             "src": "/photos/gallery/nominal/nl-02-dub-pasadena.jpg"
           },
           {
             "colorSlug": "dub-shato",
             "colorLabel": "Дуб шато",
-            "swatchImage": "/photos/nominal/nl-02-dub-shato.png",
+            "swatchImage": "/photos/nominal/nl-02-dub-shato.webp",
             "src": "/photos/gallery/nominal/nl-02-dub-shato.jpg"
           },
           {
             "colorSlug": "oksyd-svitlyi",
             "colorLabel": "Оксид світлий",
-            "swatchImage": "/photos/nominal/nl-02-oksyd-svitlyi.png",
+            "swatchImage": "/photos/nominal/nl-02-oksyd-svitlyi.webp",
             "src": "/photos/gallery/nominal/nl-02-oksyd-svitlyi.jpg"
           },
           {
             "colorSlug": "oksyd-temnyi",
             "colorLabel": "Оксид темний",
-            "swatchImage": "/photos/nominal/nl-02-oksyd-temnyi.png",
+            "swatchImage": "/photos/nominal/nl-02-oksyd-temnyi.webp",
             "src": "/photos/gallery/nominal/nl-02-oksyd-temnyi.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/nominal/nl-02-white.png",
+            "swatchImage": "/photos/nominal/nl-02-white.webp",
             "src": "/photos/gallery/nominal/nl-02-white.jpg"
           }
         ]
@@ -1550,49 +1550,49 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "antratsyt",
             "colorLabel": "Антрацит",
-            "swatchImage": "/photos/nominal/nl-03-antratsyt.png",
+            "swatchImage": "/photos/nominal/nl-03-antratsyt.webp",
             "src": "/photos/gallery/nominal/nl-03-antratsyt.jpg"
           },
           {
             "colorSlug": "dub-nemo-late",
             "colorLabel": "Дуб немо лате",
-            "swatchImage": "/photos/nominal/nl-03-dub-nemo-late.png",
+            "swatchImage": "/photos/nominal/nl-03-dub-nemo-late.webp",
             "src": "/photos/gallery/nominal/nl-03-dub-nemo-late.jpg"
           },
           {
             "colorSlug": "dub-nemo-sribliastyi",
             "colorLabel": "Дуб немо сріблястий",
-            "swatchImage": "/photos/nominal/nl-03-dub-nemo-sribliastyi.png",
+            "swatchImage": "/photos/nominal/nl-03-dub-nemo-sribliastyi.webp",
             "src": "/photos/gallery/nominal/nl-03-dub-nemo-sribliastyi.jpg"
           },
           {
             "colorSlug": "dub-pasadena",
             "colorLabel": "Дуб пасадена",
-            "swatchImage": "/photos/nominal/nl-03-dub-pasadena.png",
+            "swatchImage": "/photos/nominal/nl-03-dub-pasadena.webp",
             "src": "/photos/gallery/nominal/nl-03-dub-pasadena.jpg"
           },
           {
             "colorSlug": "dub-shato",
             "colorLabel": "Дуб шато",
-            "swatchImage": "/photos/nominal/nl-03-dub-shato.png",
+            "swatchImage": "/photos/nominal/nl-03-dub-shato.webp",
             "src": "/photos/gallery/nominal/nl-03-dub-shato.jpg"
           },
           {
             "colorSlug": "oksyd-svitlyi",
             "colorLabel": "Оксид світлий",
-            "swatchImage": "/photos/nominal/nl-03-oksyd-svitlyi.png",
+            "swatchImage": "/photos/nominal/nl-03-oksyd-svitlyi.webp",
             "src": "/photos/gallery/nominal/nl-03-oksyd-svitlyi.jpg"
           },
           {
             "colorSlug": "oksyd-temnyi",
             "colorLabel": "Оксид темний",
-            "swatchImage": "/photos/nominal/nl-03-oksyd-temnyi.png",
+            "swatchImage": "/photos/nominal/nl-03-oksyd-temnyi.webp",
             "src": "/photos/gallery/nominal/nl-03-oksyd-temnyi.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/nominal/nl-03-white.png",
+            "swatchImage": "/photos/nominal/nl-03-white.webp",
             "src": "/photos/gallery/nominal/nl-03-white.jpg"
           }
         ]
@@ -1603,49 +1603,49 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "antratsyt",
             "colorLabel": "Антрацит",
-            "swatchImage": "/photos/nominal/nl-04-antratsyt.png",
+            "swatchImage": "/photos/nominal/nl-04-antratsyt.webp",
             "src": "/photos/gallery/nominal/nl-04-antratsyt.jpg"
           },
           {
             "colorSlug": "dub-nemo-late",
             "colorLabel": "Дуб немо лате",
-            "swatchImage": "/photos/nominal/nl-04-dub-nemo-late.png",
+            "swatchImage": "/photos/nominal/nl-04-dub-nemo-late.webp",
             "src": "/photos/gallery/nominal/nl-04-dub-nemo-late.jpg"
           },
           {
             "colorSlug": "dub-nemo-sribliastyi",
             "colorLabel": "Дуб немо сріблястий",
-            "swatchImage": "/photos/nominal/nl-04-dub-nemo-sribliastyi.png",
+            "swatchImage": "/photos/nominal/nl-04-dub-nemo-sribliastyi.webp",
             "src": "/photos/gallery/nominal/nl-04-dub-nemo-sribliastyi.jpg"
           },
           {
             "colorSlug": "dub-pasadena",
             "colorLabel": "Дуб пасадена",
-            "swatchImage": "/photos/nominal/nl-04-dub-pasadena.png",
+            "swatchImage": "/photos/nominal/nl-04-dub-pasadena.webp",
             "src": "/photos/gallery/nominal/nl-04-dub-pasadena.jpg"
           },
           {
             "colorSlug": "dub-shato",
             "colorLabel": "Дуб шато",
-            "swatchImage": "/photos/nominal/nl-04-dub-shato.png",
+            "swatchImage": "/photos/nominal/nl-04-dub-shato.webp",
             "src": "/photos/gallery/nominal/nl-04-dub-shato.jpg"
           },
           {
             "colorSlug": "oksyd-svitlyi",
             "colorLabel": "Оксид світлий",
-            "swatchImage": "/photos/nominal/nl-04-oksyd-svitlyi.png",
+            "swatchImage": "/photos/nominal/nl-04-oksyd-svitlyi.webp",
             "src": "/photos/gallery/nominal/nl-04-oksyd-svitlyi.jpg"
           },
           {
             "colorSlug": "oksyd-temnyi",
             "colorLabel": "Оксид темний",
-            "swatchImage": "/photos/nominal/nl-04-oksyd-temnyi.png",
+            "swatchImage": "/photos/nominal/nl-04-oksyd-temnyi.webp",
             "src": "/photos/gallery/nominal/nl-04-oksyd-temnyi.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/nominal/nl-04-white.png",
+            "swatchImage": "/photos/nominal/nl-04-white.webp",
             "src": "/photos/gallery/nominal/nl-04-white.jpg"
           }
         ]
@@ -1656,49 +1656,49 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "antratsyt",
             "colorLabel": "Антрацит",
-            "swatchImage": "/photos/nominal/nl-05-antratsyt.png",
+            "swatchImage": "/photos/nominal/nl-05-antratsyt.webp",
             "src": "/photos/gallery/nominal/nl-05-antratsyt.jpg"
           },
           {
             "colorSlug": "dub-nemo-late",
             "colorLabel": "Дуб немо лате",
-            "swatchImage": "/photos/nominal/nl-05-dub-nemo-late.png",
+            "swatchImage": "/photos/nominal/nl-05-dub-nemo-late.webp",
             "src": "/photos/gallery/nominal/nl-05-dub-nemo-late.jpg"
           },
           {
             "colorSlug": "dub-nemo-sribliastyi",
             "colorLabel": "Дуб немо сріблястий",
-            "swatchImage": "/photos/nominal/nl-05-dub-nemo-sribliastyi.png",
+            "swatchImage": "/photos/nominal/nl-05-dub-nemo-sribliastyi.webp",
             "src": "/photos/gallery/nominal/nl-05-dub-nemo-sribliastyi.jpg"
           },
           {
             "colorSlug": "dub-pasadena",
             "colorLabel": "Дуб пасадена",
-            "swatchImage": "/photos/nominal/nl-05-dub-pasadena.png",
+            "swatchImage": "/photos/nominal/nl-05-dub-pasadena.webp",
             "src": "/photos/gallery/nominal/nl-05-dub-pasadena.jpg"
           },
           {
             "colorSlug": "dub-shato",
             "colorLabel": "Дуб шато",
-            "swatchImage": "/photos/nominal/nl-05-dub-shato.png",
+            "swatchImage": "/photos/nominal/nl-05-dub-shato.webp",
             "src": "/photos/gallery/nominal/nl-05-dub-shato.jpg"
           },
           {
             "colorSlug": "oksyd-svitlyi",
             "colorLabel": "Оксид світлий",
-            "swatchImage": "/photos/nominal/nl-05-oksyd-svitlyi.png",
+            "swatchImage": "/photos/nominal/nl-05-oksyd-svitlyi.webp",
             "src": "/photos/gallery/nominal/nl-05-oksyd-svitlyi.jpg"
           },
           {
             "colorSlug": "oksyd-temnyi",
             "colorLabel": "Оксид темний",
-            "swatchImage": "/photos/nominal/nl-05-oksyd-temnyi.png",
+            "swatchImage": "/photos/nominal/nl-05-oksyd-temnyi.webp",
             "src": "/photos/gallery/nominal/nl-05-oksyd-temnyi.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/nominal/nl-05-white.png",
+            "swatchImage": "/photos/nominal/nl-05-white.webp",
             "src": "/photos/gallery/nominal/nl-05-white.jpg"
           }
         ]
@@ -1715,73 +1715,73 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "antratsyt",
             "colorLabel": "Антрацит",
-            "swatchImage": "/photos/frezzatti/fz-01-antratsyt.png",
+            "swatchImage": "/photos/frezzatti/fz-01-antratsyt.webp",
             "src": "/photos/gallery/frezzatti/fz-01-antratsyt.jpg"
           },
           {
             "colorSlug": "dub-nemo-late",
             "colorLabel": "Дуб немо лате",
-            "swatchImage": "/photos/frezzatti/fz-01-dub-nemo-late.png",
+            "swatchImage": "/photos/frezzatti/fz-01-dub-nemo-late.webp",
             "src": "/photos/gallery/frezzatti/fz-01-dub-nemo-late.jpg"
           },
           {
             "colorSlug": "dub-pasadena",
             "colorLabel": "Дуб пасадена",
-            "swatchImage": "/photos/frezzatti/fz-01-dub-pasadena.png",
+            "swatchImage": "/photos/frezzatti/fz-01-dub-pasadena.webp",
             "src": "/photos/gallery/frezzatti/fz-01-dub-pasadena.jpg"
           },
           {
             "colorSlug": "dub-portovyi",
             "colorLabel": "Дуб портовий",
-            "swatchImage": "/photos/frezzatti/fz-01-dub-portovyi.png",
+            "swatchImage": "/photos/frezzatti/fz-01-dub-portovyi.webp",
             "src": "/photos/gallery/frezzatti/fz-01-dub-portovyi.jpg"
           },
           {
             "colorSlug": "dub-shato",
             "colorLabel": "Дуб шато",
-            "swatchImage": "/photos/frezzatti/fz-01-dub-shato.png",
+            "swatchImage": "/photos/frezzatti/fz-01-dub-shato.webp",
             "src": "/photos/gallery/frezzatti/fz-01-dub-shato.jpg"
           },
           {
             "colorSlug": "dub-sribliastyi",
             "colorLabel": "Дуб немо сріблястий",
-            "swatchImage": "/photos/frezzatti/fz-01-dub-sribliastyi.png",
+            "swatchImage": "/photos/frezzatti/fz-01-dub-sribliastyi.webp",
             "src": "/photos/gallery/frezzatti/fz-01-dub-sribliastyi.jpg"
           },
           {
             "colorSlug": "feldhrau",
             "colorLabel": "Фельдграу",
-            "swatchImage": "/photos/frezzatti/fz-01-feldhrau.png",
+            "swatchImage": "/photos/frezzatti/fz-01-feldhrau.webp",
             "src": "/photos/gallery/frezzatti/fz-01-feldhrau.jpg"
           },
           {
             "colorSlug": "oksyd-bilyi",
             "colorLabel": "Оксид білий",
-            "swatchImage": "/photos/frezzatti/fz-01-oksyd-bilyi.png",
+            "swatchImage": "/photos/frezzatti/fz-01-oksyd-bilyi.webp",
             "src": "/photos/gallery/frezzatti/fz-01-oksyd-bilyi.jpg"
           },
           {
             "colorSlug": "oksyd-svitlyi",
             "colorLabel": "Оксид світлий",
-            "swatchImage": "/photos/frezzatti/fz-01-oksyd-svitlyi.png",
+            "swatchImage": "/photos/frezzatti/fz-01-oksyd-svitlyi.webp",
             "src": "/photos/gallery/frezzatti/fz-01-oksyd-svitlyi.jpg"
           },
           {
             "colorSlug": "oksyd-temnyi",
             "colorLabel": "Оксид темний",
-            "swatchImage": "/photos/frezzatti/fz-01-oksyd-temnyi.png",
+            "swatchImage": "/photos/frezzatti/fz-01-oksyd-temnyi.webp",
             "src": "/photos/gallery/frezzatti/fz-01-oksyd-temnyi.jpg"
           },
           {
             "colorSlug": "venhe",
             "colorLabel": "Венге південне",
-            "swatchImage": "/photos/frezzatti/fz-01-venhe.png",
+            "swatchImage": "/photos/frezzatti/fz-01-venhe.webp",
             "src": "/photos/gallery/frezzatti/fz-01-venhe.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/frezzatti/fz-01-white.png",
+            "swatchImage": "/photos/frezzatti/fz-01-white.webp",
             "src": "/photos/gallery/frezzatti/fz-01-white.jpg"
           }
         ]
@@ -1792,73 +1792,73 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "antratsyt",
             "colorLabel": "Антрацит",
-            "swatchImage": "/photos/frezzatti/fz-02-antratsyt.png",
+            "swatchImage": "/photos/frezzatti/fz-02-antratsyt.webp",
             "src": "/photos/gallery/frezzatti/fz-02-antratsyt.jpg"
           },
           {
             "colorSlug": "dub-nemo-late",
             "colorLabel": "Дуб немо лате",
-            "swatchImage": "/photos/frezzatti/fz-02-dub-nemo-late.png",
+            "swatchImage": "/photos/frezzatti/fz-02-dub-nemo-late.webp",
             "src": "/photos/gallery/frezzatti/fz-02-dub-nemo-late.jpg"
           },
           {
             "colorSlug": "dub-pasadena",
             "colorLabel": "Дуб пасадена",
-            "swatchImage": "/photos/frezzatti/fz-02-dub-pasadena.png",
+            "swatchImage": "/photos/frezzatti/fz-02-dub-pasadena.webp",
             "src": "/photos/gallery/frezzatti/fz-02-dub-pasadena.jpg"
           },
           {
             "colorSlug": "dub-portovyi",
             "colorLabel": "Дуб портовий",
-            "swatchImage": "/photos/frezzatti/fz-02-dub-portovyi.png",
+            "swatchImage": "/photos/frezzatti/fz-02-dub-portovyi.webp",
             "src": "/photos/gallery/frezzatti/fz-02-dub-portovyi.jpg"
           },
           {
             "colorSlug": "dub-shato",
             "colorLabel": "Дуб шато",
-            "swatchImage": "/photos/frezzatti/fz-02-dub-shato.png",
+            "swatchImage": "/photos/frezzatti/fz-02-dub-shato.webp",
             "src": "/photos/gallery/frezzatti/fz-02-dub-shato.jpg"
           },
           {
             "colorSlug": "dub-sribliastyi",
             "colorLabel": "Дуб немо сріблястий",
-            "swatchImage": "/photos/frezzatti/fz-02-dub-sribliastyi.png",
+            "swatchImage": "/photos/frezzatti/fz-02-dub-sribliastyi.webp",
             "src": "/photos/gallery/frezzatti/fz-02-dub-sribliastyi.jpg"
           },
           {
             "colorSlug": "feldhrau",
             "colorLabel": "Фельдграу",
-            "swatchImage": "/photos/frezzatti/fz-02-feldhrau.png",
+            "swatchImage": "/photos/frezzatti/fz-02-feldhrau.webp",
             "src": "/photos/gallery/frezzatti/fz-02-feldhrau.jpg"
           },
           {
             "colorSlug": "oksyd-bilyi",
             "colorLabel": "Оксид білий",
-            "swatchImage": "/photos/frezzatti/fz-02-oksyd-bilyi.png",
+            "swatchImage": "/photos/frezzatti/fz-02-oksyd-bilyi.webp",
             "src": "/photos/gallery/frezzatti/fz-02-oksyd-bilyi.jpg"
           },
           {
             "colorSlug": "oksyd-svitlyi",
             "colorLabel": "Оксид світлий",
-            "swatchImage": "/photos/frezzatti/fz-02-oksyd-svitlyi.png",
+            "swatchImage": "/photos/frezzatti/fz-02-oksyd-svitlyi.webp",
             "src": "/photos/gallery/frezzatti/fz-02-oksyd-svitlyi.jpg"
           },
           {
             "colorSlug": "oksyd-temnyi",
             "colorLabel": "Оксид темний",
-            "swatchImage": "/photos/frezzatti/fz-02-oksyd-temnyi.png",
+            "swatchImage": "/photos/frezzatti/fz-02-oksyd-temnyi.webp",
             "src": "/photos/gallery/frezzatti/fz-02-oksyd-temnyi.jpg"
           },
           {
             "colorSlug": "venhe",
             "colorLabel": "Венге південне",
-            "swatchImage": "/photos/frezzatti/fz-02-venhe.png",
+            "swatchImage": "/photos/frezzatti/fz-02-venhe.webp",
             "src": "/photos/gallery/frezzatti/fz-02-venhe.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/frezzatti/fz-02-white.png",
+            "swatchImage": "/photos/frezzatti/fz-02-white.webp",
             "src": "/photos/gallery/frezzatti/fz-02-white.jpg"
           }
         ]
@@ -1869,73 +1869,73 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "antratsyt",
             "colorLabel": "Антрацит",
-            "swatchImage": "/photos/frezzatti/fz-03-antratsyt.png",
+            "swatchImage": "/photos/frezzatti/fz-03-antratsyt.webp",
             "src": "/photos/gallery/frezzatti/fz-03-antratsyt.jpg"
           },
           {
             "colorSlug": "dub-nemo-late",
             "colorLabel": "Дуб немо лате",
-            "swatchImage": "/photos/frezzatti/fz-03-dub-nemo-late.png",
+            "swatchImage": "/photos/frezzatti/fz-03-dub-nemo-late.webp",
             "src": "/photos/gallery/frezzatti/fz-03-dub-nemo-late.jpg"
           },
           {
             "colorSlug": "dub-pasadena",
             "colorLabel": "Дуб пасадена",
-            "swatchImage": "/photos/frezzatti/fz-03-dub-pasadena.png",
+            "swatchImage": "/photos/frezzatti/fz-03-dub-pasadena.webp",
             "src": "/photos/gallery/frezzatti/fz-03-dub-pasadena.jpg"
           },
           {
             "colorSlug": "dub-portovyi",
             "colorLabel": "Дуб портовий",
-            "swatchImage": "/photos/frezzatti/fz-03-dub-portovyi.png",
+            "swatchImage": "/photos/frezzatti/fz-03-dub-portovyi.webp",
             "src": "/photos/gallery/frezzatti/fz-03-dub-portovyi.jpg"
           },
           {
             "colorSlug": "dub-shato",
             "colorLabel": "Дуб шато",
-            "swatchImage": "/photos/frezzatti/fz-03-dub-shato.png",
+            "swatchImage": "/photos/frezzatti/fz-03-dub-shato.webp",
             "src": "/photos/gallery/frezzatti/fz-03-dub-shato.jpg"
           },
           {
             "colorSlug": "dub-sribliastyi",
             "colorLabel": "Дуб немо сріблястий",
-            "swatchImage": "/photos/frezzatti/fz-03-dub-sribliastyi.png",
+            "swatchImage": "/photos/frezzatti/fz-03-dub-sribliastyi.webp",
             "src": "/photos/gallery/frezzatti/fz-03-dub-sribliastyi.jpg"
           },
           {
             "colorSlug": "feldhrau",
             "colorLabel": "Фельдграу",
-            "swatchImage": "/photos/frezzatti/fz-03-feldhrau.png",
+            "swatchImage": "/photos/frezzatti/fz-03-feldhrau.webp",
             "src": "/photos/gallery/frezzatti/fz-03-feldhrau.jpg"
           },
           {
             "colorSlug": "oksyd-bilyi",
             "colorLabel": "Оксид білий",
-            "swatchImage": "/photos/frezzatti/fz-03-oksyd-bilyi.png",
+            "swatchImage": "/photos/frezzatti/fz-03-oksyd-bilyi.webp",
             "src": "/photos/gallery/frezzatti/fz-03-oksyd-bilyi.jpg"
           },
           {
             "colorSlug": "oksyd-svitlyi",
             "colorLabel": "Оксид світлий",
-            "swatchImage": "/photos/frezzatti/fz-03-oksyd-svitlyi.png",
+            "swatchImage": "/photos/frezzatti/fz-03-oksyd-svitlyi.webp",
             "src": "/photos/gallery/frezzatti/fz-03-oksyd-svitlyi.jpg"
           },
           {
             "colorSlug": "oksyd-temnyi",
             "colorLabel": "Оксид темний",
-            "swatchImage": "/photos/frezzatti/fz-03-oksyd-temnyi.png",
+            "swatchImage": "/photos/frezzatti/fz-03-oksyd-temnyi.webp",
             "src": "/photos/gallery/frezzatti/fz-03-oksyd-temnyi.jpg"
           },
           {
             "colorSlug": "venhe",
             "colorLabel": "Венге південне",
-            "swatchImage": "/photos/frezzatti/fz-03-venhe.png",
+            "swatchImage": "/photos/frezzatti/fz-03-venhe.webp",
             "src": "/photos/gallery/frezzatti/fz-03-venhe.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/frezzatti/fz-03-white.png",
+            "swatchImage": "/photos/frezzatti/fz-03-white.webp",
             "src": "/photos/gallery/frezzatti/fz-03-white.jpg"
           }
         ]
@@ -1946,73 +1946,73 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "antratsyt",
             "colorLabel": "Антрацит",
-            "swatchImage": "/photos/frezzatti/fz-04-antratsyt.png",
+            "swatchImage": "/photos/frezzatti/fz-04-antratsyt.webp",
             "src": "/photos/gallery/frezzatti/fz-04-antratsyt.jpg"
           },
           {
             "colorSlug": "dub-nemo-late",
             "colorLabel": "Дуб немо лате",
-            "swatchImage": "/photos/frezzatti/fz-04-dub-nemo-late.png",
+            "swatchImage": "/photos/frezzatti/fz-04-dub-nemo-late.webp",
             "src": "/photos/gallery/frezzatti/fz-04-dub-nemo-late.jpg"
           },
           {
             "colorSlug": "dub-pasadena",
             "colorLabel": "Дуб пасадена",
-            "swatchImage": "/photos/frezzatti/fz-04-dub-pasadena.png",
+            "swatchImage": "/photos/frezzatti/fz-04-dub-pasadena.webp",
             "src": "/photos/gallery/frezzatti/fz-04-dub-pasadena.jpg"
           },
           {
             "colorSlug": "dub-portovyi",
             "colorLabel": "Дуб портовий",
-            "swatchImage": "/photos/frezzatti/fz-04-dub-portovyi.png",
+            "swatchImage": "/photos/frezzatti/fz-04-dub-portovyi.webp",
             "src": "/photos/gallery/frezzatti/fz-04-dub-portovyi.jpg"
           },
           {
             "colorSlug": "dub-shato",
             "colorLabel": "Дуб шато",
-            "swatchImage": "/photos/frezzatti/fz-04-dub-shato.png",
+            "swatchImage": "/photos/frezzatti/fz-04-dub-shato.webp",
             "src": "/photos/gallery/frezzatti/fz-04-dub-shato.jpg"
           },
           {
             "colorSlug": "dub-sribliastyi",
             "colorLabel": "Дуб немо сріблястий",
-            "swatchImage": "/photos/frezzatti/fz-04-dub-sribliastyi.png",
+            "swatchImage": "/photos/frezzatti/fz-04-dub-sribliastyi.webp",
             "src": "/photos/gallery/frezzatti/fz-04-dub-sribliastyi.jpg"
           },
           {
             "colorSlug": "feldhrau",
             "colorLabel": "Фельдграу",
-            "swatchImage": "/photos/frezzatti/fz-04-feldhrau.png",
+            "swatchImage": "/photos/frezzatti/fz-04-feldhrau.webp",
             "src": "/photos/gallery/frezzatti/fz-04-feldhrau.jpg"
           },
           {
             "colorSlug": "oksyd-bilyi",
             "colorLabel": "Оксид білий",
-            "swatchImage": "/photos/frezzatti/fz-04-oksyd-bilyi.png",
+            "swatchImage": "/photos/frezzatti/fz-04-oksyd-bilyi.webp",
             "src": "/photos/gallery/frezzatti/fz-04-oksyd-bilyi.jpg"
           },
           {
             "colorSlug": "oksyd-svitlyi",
             "colorLabel": "Оксид світлий",
-            "swatchImage": "/photos/frezzatti/fz-04-oksyd-svitlyi.png",
+            "swatchImage": "/photos/frezzatti/fz-04-oksyd-svitlyi.webp",
             "src": "/photos/gallery/frezzatti/fz-04-oksyd-svitlyi.jpg"
           },
           {
             "colorSlug": "oksyd-temnyi",
             "colorLabel": "Оксид темний",
-            "swatchImage": "/photos/frezzatti/fz-04-oksyd-temnyi.png",
+            "swatchImage": "/photos/frezzatti/fz-04-oksyd-temnyi.webp",
             "src": "/photos/gallery/frezzatti/fz-04-oksyd-temnyi.jpg"
           },
           {
             "colorSlug": "venhe",
             "colorLabel": "Венге південне",
-            "swatchImage": "/photos/frezzatti/fz-04-venhe.png",
+            "swatchImage": "/photos/frezzatti/fz-04-venhe.webp",
             "src": "/photos/gallery/frezzatti/fz-04-venhe.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/frezzatti/fz-04-white.png",
+            "swatchImage": "/photos/frezzatti/fz-04-white.webp",
             "src": "/photos/gallery/frezzatti/fz-04-white.jpg"
           }
         ]
@@ -2023,73 +2023,73 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "antratsyt",
             "colorLabel": "Антрацит",
-            "swatchImage": "/photos/frezzatti/fz-05-antratsyt.png",
+            "swatchImage": "/photos/frezzatti/fz-05-antratsyt.webp",
             "src": "/photos/gallery/frezzatti/fz-05-antratsyt.jpg"
           },
           {
             "colorSlug": "dub-nemo-late",
             "colorLabel": "Дуб немо лате",
-            "swatchImage": "/photos/frezzatti/fz-05-dub-nemo-late.png",
+            "swatchImage": "/photos/frezzatti/fz-05-dub-nemo-late.webp",
             "src": "/photos/gallery/frezzatti/fz-05-dub-nemo-late.jpg"
           },
           {
             "colorSlug": "dub-pasadena",
             "colorLabel": "Дуб пасадена",
-            "swatchImage": "/photos/frezzatti/fz-05-dub-pasadena.png",
+            "swatchImage": "/photos/frezzatti/fz-05-dub-pasadena.webp",
             "src": "/photos/gallery/frezzatti/fz-05-dub-pasadena.jpg"
           },
           {
             "colorSlug": "dub-portovyi",
             "colorLabel": "Дуб портовий",
-            "swatchImage": "/photos/frezzatti/fz-05-dub-portovyi.png",
+            "swatchImage": "/photos/frezzatti/fz-05-dub-portovyi.webp",
             "src": "/photos/gallery/frezzatti/fz-05-dub-portovyi.jpg"
           },
           {
             "colorSlug": "dub-shato",
             "colorLabel": "Дуб шато",
-            "swatchImage": "/photos/frezzatti/fz-05-dub-shato.png",
+            "swatchImage": "/photos/frezzatti/fz-05-dub-shato.webp",
             "src": "/photos/gallery/frezzatti/fz-05-dub-shato.jpg"
           },
           {
             "colorSlug": "dub-sribliastyi",
             "colorLabel": "Дуб немо сріблястий",
-            "swatchImage": "/photos/frezzatti/fz-05-dub-sribliastyi.png",
+            "swatchImage": "/photos/frezzatti/fz-05-dub-sribliastyi.webp",
             "src": "/photos/gallery/frezzatti/fz-05-dub-sribliastyi.jpg"
           },
           {
             "colorSlug": "feldhrau",
             "colorLabel": "Фельдграу",
-            "swatchImage": "/photos/frezzatti/fz-05-feldhrau.png",
+            "swatchImage": "/photos/frezzatti/fz-05-feldhrau.webp",
             "src": "/photos/gallery/frezzatti/fz-05-feldhrau.jpg"
           },
           {
             "colorSlug": "oksyd-bilyi",
             "colorLabel": "Оксид білий",
-            "swatchImage": "/photos/frezzatti/fz-05-oksyd-bilyi.png",
+            "swatchImage": "/photos/frezzatti/fz-05-oksyd-bilyi.webp",
             "src": "/photos/gallery/frezzatti/fz-05-oksyd-bilyi.jpg"
           },
           {
             "colorSlug": "oksyd-svitlyi",
             "colorLabel": "Оксид світлий",
-            "swatchImage": "/photos/frezzatti/fz-05-oksyd-svitlyi.png",
+            "swatchImage": "/photos/frezzatti/fz-05-oksyd-svitlyi.webp",
             "src": "/photos/gallery/frezzatti/fz-05-oksyd-svitlyi.jpg"
           },
           {
             "colorSlug": "oksyd-temnyi",
             "colorLabel": "Оксид темний",
-            "swatchImage": "/photos/frezzatti/fz-05-oksyd-temnyi.png",
+            "swatchImage": "/photos/frezzatti/fz-05-oksyd-temnyi.webp",
             "src": "/photos/gallery/frezzatti/fz-05-oksyd-temnyi.jpg"
           },
           {
             "colorSlug": "venhe",
             "colorLabel": "Венге південне",
-            "swatchImage": "/photos/frezzatti/fz-05-venhe.png",
+            "swatchImage": "/photos/frezzatti/fz-05-venhe.webp",
             "src": "/photos/gallery/frezzatti/fz-05-venhe.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/frezzatti/fz-05-white.png",
+            "swatchImage": "/photos/frezzatti/fz-05-white.webp",
             "src": "/photos/gallery/frezzatti/fz-05-white.jpg"
           }
         ]
@@ -2100,73 +2100,73 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "antratsyt",
             "colorLabel": "Антрацит",
-            "swatchImage": "/photos/frezzatti/fz-06-antratsyt.png",
+            "swatchImage": "/photos/frezzatti/fz-06-antratsyt.webp",
             "src": "/photos/gallery/frezzatti/fz-06-antratsyt.jpg"
           },
           {
             "colorSlug": "dub-nemo-late",
             "colorLabel": "Дуб немо лате",
-            "swatchImage": "/photos/frezzatti/fz-06-dub-nemo-late.png",
+            "swatchImage": "/photos/frezzatti/fz-06-dub-nemo-late.webp",
             "src": "/photos/gallery/frezzatti/fz-06-dub-nemo-late.jpg"
           },
           {
             "colorSlug": "dub-pasadena",
             "colorLabel": "Дуб пасадена",
-            "swatchImage": "/photos/frezzatti/fz-06-dub-pasadena.png",
+            "swatchImage": "/photos/frezzatti/fz-06-dub-pasadena.webp",
             "src": "/photos/gallery/frezzatti/fz-06-dub-pasadena.jpg"
           },
           {
             "colorSlug": "dub-portovyi",
             "colorLabel": "Дуб портовий",
-            "swatchImage": "/photos/frezzatti/fz-06-dub-portovyi.png",
+            "swatchImage": "/photos/frezzatti/fz-06-dub-portovyi.webp",
             "src": "/photos/gallery/frezzatti/fz-06-dub-portovyi.jpg"
           },
           {
             "colorSlug": "dub-shato",
             "colorLabel": "Дуб шато",
-            "swatchImage": "/photos/frezzatti/fz-06-dub-shato.png",
+            "swatchImage": "/photos/frezzatti/fz-06-dub-shato.webp",
             "src": "/photos/gallery/frezzatti/fz-06-dub-shato.jpg"
           },
           {
             "colorSlug": "dub-sribliastyi",
             "colorLabel": "Дуб немо сріблястий",
-            "swatchImage": "/photos/frezzatti/fz-06-dub-sribliastyi.png",
+            "swatchImage": "/photos/frezzatti/fz-06-dub-sribliastyi.webp",
             "src": "/photos/gallery/frezzatti/fz-06-dub-sribliastyi.jpg"
           },
           {
             "colorSlug": "feldhrau",
             "colorLabel": "Фельдграу",
-            "swatchImage": "/photos/frezzatti/fz-06-feldhrau.png",
+            "swatchImage": "/photos/frezzatti/fz-06-feldhrau.webp",
             "src": "/photos/gallery/frezzatti/fz-06-feldhrau.jpg"
           },
           {
             "colorSlug": "oksyd-bilyi",
             "colorLabel": "Оксид білий",
-            "swatchImage": "/photos/frezzatti/fz-06-oksyd-bilyi.png",
+            "swatchImage": "/photos/frezzatti/fz-06-oksyd-bilyi.webp",
             "src": "/photos/gallery/frezzatti/fz-06-oksyd-bilyi.jpg"
           },
           {
             "colorSlug": "oksyd-svitlyi",
             "colorLabel": "Оксид світлий",
-            "swatchImage": "/photos/frezzatti/fz-06-oksyd-svitlyi.png",
+            "swatchImage": "/photos/frezzatti/fz-06-oksyd-svitlyi.webp",
             "src": "/photos/gallery/frezzatti/fz-06-oksyd-svitlyi.jpg"
           },
           {
             "colorSlug": "oksyd-temnyi",
             "colorLabel": "Оксид темний",
-            "swatchImage": "/photos/frezzatti/fz-06-oksyd-temnyi.png",
+            "swatchImage": "/photos/frezzatti/fz-06-oksyd-temnyi.webp",
             "src": "/photos/gallery/frezzatti/fz-06-oksyd-temnyi.jpg"
           },
           {
             "colorSlug": "venhe",
             "colorLabel": "Венге південне",
-            "swatchImage": "/photos/frezzatti/fz-06-venhe.png",
+            "swatchImage": "/photos/frezzatti/fz-06-venhe.webp",
             "src": "/photos/gallery/frezzatti/fz-06-venhe.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/frezzatti/fz-06-white.png",
+            "swatchImage": "/photos/frezzatti/fz-06-white.webp",
             "src": "/photos/gallery/frezzatti/fz-06-white.jpg"
           }
         ]
@@ -2177,73 +2177,73 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "antratsyt",
             "colorLabel": "Антрацит",
-            "swatchImage": "/photos/frezzatti/fz-07-antratsyt.png",
+            "swatchImage": "/photos/frezzatti/fz-07-antratsyt.webp",
             "src": "/photos/gallery/frezzatti/fz-07-antratsyt.jpg"
           },
           {
             "colorSlug": "dub-nemo-late",
             "colorLabel": "Дуб немо лате",
-            "swatchImage": "/photos/frezzatti/fz-07-dub-nemo-late.png",
+            "swatchImage": "/photos/frezzatti/fz-07-dub-nemo-late.webp",
             "src": "/photos/gallery/frezzatti/fz-07-dub-nemo-late.jpg"
           },
           {
             "colorSlug": "dub-pasadena",
             "colorLabel": "Дуб пасадена",
-            "swatchImage": "/photos/frezzatti/fz-07-dub-pasadena.png",
+            "swatchImage": "/photos/frezzatti/fz-07-dub-pasadena.webp",
             "src": "/photos/gallery/frezzatti/fz-07-dub-pasadena.jpg"
           },
           {
             "colorSlug": "dub-portovyi",
             "colorLabel": "Дуб портовий",
-            "swatchImage": "/photos/frezzatti/fz-07-dub-portovyi.png",
+            "swatchImage": "/photos/frezzatti/fz-07-dub-portovyi.webp",
             "src": "/photos/gallery/frezzatti/fz-07-dub-portovyi.jpg"
           },
           {
             "colorSlug": "dub-shato",
             "colorLabel": "Дуб шато",
-            "swatchImage": "/photos/frezzatti/fz-07-dub-shato.png",
+            "swatchImage": "/photos/frezzatti/fz-07-dub-shato.webp",
             "src": "/photos/gallery/frezzatti/fz-07-dub-shato.jpg"
           },
           {
             "colorSlug": "dub-sribliastyi",
             "colorLabel": "Дуб немо сріблястий",
-            "swatchImage": "/photos/frezzatti/fz-07-dub-sribliastyi.png",
+            "swatchImage": "/photos/frezzatti/fz-07-dub-sribliastyi.webp",
             "src": "/photos/gallery/frezzatti/fz-07-dub-sribliastyi.jpg"
           },
           {
             "colorSlug": "feldhrau",
             "colorLabel": "Фельдграу",
-            "swatchImage": "/photos/frezzatti/fz-07-feldhrau.png",
+            "swatchImage": "/photos/frezzatti/fz-07-feldhrau.webp",
             "src": "/photos/gallery/frezzatti/fz-07-feldhrau.jpg"
           },
           {
             "colorSlug": "oksyd-bilyi",
             "colorLabel": "Оксид білий",
-            "swatchImage": "/photos/frezzatti/fz-07-oksyd-bilyi.png",
+            "swatchImage": "/photos/frezzatti/fz-07-oksyd-bilyi.webp",
             "src": "/photos/gallery/frezzatti/fz-07-oksyd-bilyi.jpg"
           },
           {
             "colorSlug": "oksyd-svitlyi",
             "colorLabel": "Оксид світлий",
-            "swatchImage": "/photos/frezzatti/fz-07-oksyd-svitlyi.png",
+            "swatchImage": "/photos/frezzatti/fz-07-oksyd-svitlyi.webp",
             "src": "/photos/gallery/frezzatti/fz-07-oksyd-svitlyi.jpg"
           },
           {
             "colorSlug": "oksyd-temnyi",
             "colorLabel": "Оксид темний",
-            "swatchImage": "/photos/frezzatti/fz-07-oksyd-temnyi.png",
+            "swatchImage": "/photos/frezzatti/fz-07-oksyd-temnyi.webp",
             "src": "/photos/gallery/frezzatti/fz-07-oksyd-temnyi.jpg"
           },
           {
             "colorSlug": "venhe",
             "colorLabel": "Венге південне",
-            "swatchImage": "/photos/frezzatti/fz-07-venhe.png",
+            "swatchImage": "/photos/frezzatti/fz-07-venhe.webp",
             "src": "/photos/gallery/frezzatti/fz-07-venhe.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/frezzatti/fz-07-white.png",
+            "swatchImage": "/photos/frezzatti/fz-07-white.webp",
             "src": "/photos/gallery/frezzatti/fz-07-white.jpg"
           }
         ]
@@ -2254,73 +2254,73 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "antratsyt",
             "colorLabel": "Антрацит",
-            "swatchImage": "/photos/frezzatti/fz-08-antratsyt.png",
+            "swatchImage": "/photos/frezzatti/fz-08-antratsyt.webp",
             "src": "/photos/gallery/frezzatti/fz-08-antratsyt.jpg"
           },
           {
             "colorSlug": "dub-nemo-late",
             "colorLabel": "Дуб немо лате",
-            "swatchImage": "/photos/frezzatti/fz-08-dub-nemo-late.png",
+            "swatchImage": "/photos/frezzatti/fz-08-dub-nemo-late.webp",
             "src": "/photos/gallery/frezzatti/fz-08-dub-nemo-late.jpg"
           },
           {
             "colorSlug": "dub-pasadena",
             "colorLabel": "Дуб пасадена",
-            "swatchImage": "/photos/frezzatti/fz-08-dub-pasadena.png",
+            "swatchImage": "/photos/frezzatti/fz-08-dub-pasadena.webp",
             "src": "/photos/gallery/frezzatti/fz-08-dub-pasadena.jpg"
           },
           {
             "colorSlug": "dub-portovyi",
             "colorLabel": "Дуб портовий",
-            "swatchImage": "/photos/frezzatti/fz-08-dub-portovyi.png",
+            "swatchImage": "/photos/frezzatti/fz-08-dub-portovyi.webp",
             "src": "/photos/gallery/frezzatti/fz-08-dub-portovyi.jpg"
           },
           {
             "colorSlug": "dub-shato",
             "colorLabel": "Дуб шато",
-            "swatchImage": "/photos/frezzatti/fz-08-dub-shato.png",
+            "swatchImage": "/photos/frezzatti/fz-08-dub-shato.webp",
             "src": "/photos/gallery/frezzatti/fz-08-dub-shato.jpg"
           },
           {
             "colorSlug": "dub-sribliastyi",
             "colorLabel": "Дуб немо сріблястий",
-            "swatchImage": "/photos/frezzatti/fz-08-dub-sribliastyi.png",
+            "swatchImage": "/photos/frezzatti/fz-08-dub-sribliastyi.webp",
             "src": "/photos/gallery/frezzatti/fz-08-dub-sribliastyi.jpg"
           },
           {
             "colorSlug": "feldhrau",
             "colorLabel": "Фельдграу",
-            "swatchImage": "/photos/frezzatti/fz-08-feldhrau.png",
+            "swatchImage": "/photos/frezzatti/fz-08-feldhrau.webp",
             "src": "/photos/gallery/frezzatti/fz-08-feldhrau.jpg"
           },
           {
             "colorSlug": "oksyd-bilyi",
             "colorLabel": "Оксид білий",
-            "swatchImage": "/photos/frezzatti/fz-08-oksyd-bilyi.png",
+            "swatchImage": "/photos/frezzatti/fz-08-oksyd-bilyi.webp",
             "src": "/photos/gallery/frezzatti/fz-08-oksyd-bilyi.jpg"
           },
           {
             "colorSlug": "oksyd-svitlyi",
             "colorLabel": "Оксид світлий",
-            "swatchImage": "/photos/frezzatti/fz-08-oksyd-svitlyi.png",
+            "swatchImage": "/photos/frezzatti/fz-08-oksyd-svitlyi.webp",
             "src": "/photos/gallery/frezzatti/fz-08-oksyd-svitlyi.jpg"
           },
           {
             "colorSlug": "oksyd-temnyi",
             "colorLabel": "Оксид темний",
-            "swatchImage": "/photos/frezzatti/fz-08-oksyd-temnyi.png",
+            "swatchImage": "/photos/frezzatti/fz-08-oksyd-temnyi.webp",
             "src": "/photos/gallery/frezzatti/fz-08-oksyd-temnyi.jpg"
           },
           {
             "colorSlug": "venhe",
             "colorLabel": "Венге південне",
-            "swatchImage": "/photos/frezzatti/fz-08-venhe.png",
+            "swatchImage": "/photos/frezzatti/fz-08-venhe.webp",
             "src": "/photos/gallery/frezzatti/fz-08-venhe.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/frezzatti/fz-08-white.png",
+            "swatchImage": "/photos/frezzatti/fz-08-white.webp",
             "src": "/photos/gallery/frezzatti/fz-08-white.jpg"
           }
         ]
@@ -2331,73 +2331,73 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "antratsyt",
             "colorLabel": "Антрацит",
-            "swatchImage": "/photos/frezzatti/fz-09-antratsyt.png",
+            "swatchImage": "/photos/frezzatti/fz-09-antratsyt.webp",
             "src": "/photos/gallery/frezzatti/fz-09-antratsyt.jpg"
           },
           {
             "colorSlug": "dub-nemo-late",
             "colorLabel": "Дуб немо лате",
-            "swatchImage": "/photos/frezzatti/fz-09-dub-nemo-late.png",
+            "swatchImage": "/photos/frezzatti/fz-09-dub-nemo-late.webp",
             "src": "/photos/gallery/frezzatti/fz-09-dub-nemo-late.jpg"
           },
           {
             "colorSlug": "dub-pasadena",
             "colorLabel": "Дуб пасадена",
-            "swatchImage": "/photos/frezzatti/fz-09-dub-pasadena.png",
+            "swatchImage": "/photos/frezzatti/fz-09-dub-pasadena.webp",
             "src": "/photos/gallery/frezzatti/fz-09-dub-pasadena.jpg"
           },
           {
             "colorSlug": "dub-portovyi",
             "colorLabel": "Дуб портовий",
-            "swatchImage": "/photos/frezzatti/fz-09-dub-portovyi.png",
+            "swatchImage": "/photos/frezzatti/fz-09-dub-portovyi.webp",
             "src": "/photos/gallery/frezzatti/fz-09-dub-portovyi.jpg"
           },
           {
             "colorSlug": "dub-shato",
             "colorLabel": "Дуб шато",
-            "swatchImage": "/photos/frezzatti/fz-09-dub-shato.png",
+            "swatchImage": "/photos/frezzatti/fz-09-dub-shato.webp",
             "src": "/photos/gallery/frezzatti/fz-09-dub-shato.jpg"
           },
           {
             "colorSlug": "dub-sribliastyi",
             "colorLabel": "Дуб немо сріблястий",
-            "swatchImage": "/photos/frezzatti/fz-09-dub-sribliastyi.png",
+            "swatchImage": "/photos/frezzatti/fz-09-dub-sribliastyi.webp",
             "src": "/photos/gallery/frezzatti/fz-09-dub-sribliastyi.jpg"
           },
           {
             "colorSlug": "feldhrau",
             "colorLabel": "Фельдграу",
-            "swatchImage": "/photos/frezzatti/fz-09-feldhrau.png",
+            "swatchImage": "/photos/frezzatti/fz-09-feldhrau.webp",
             "src": "/photos/gallery/frezzatti/fz-09-feldhrau.jpg"
           },
           {
             "colorSlug": "oksyd-bilyi",
             "colorLabel": "Оксид білий",
-            "swatchImage": "/photos/frezzatti/fz-09-oksyd-bilyi.png",
+            "swatchImage": "/photos/frezzatti/fz-09-oksyd-bilyi.webp",
             "src": "/photos/gallery/frezzatti/fz-09-oksyd-bilyi.jpg"
           },
           {
             "colorSlug": "oksyd-svitlyi",
             "colorLabel": "Оксид світлий",
-            "swatchImage": "/photos/frezzatti/fz-09-oksyd-svitlyi.png",
+            "swatchImage": "/photos/frezzatti/fz-09-oksyd-svitlyi.webp",
             "src": "/photos/gallery/frezzatti/fz-09-oksyd-svitlyi.jpg"
           },
           {
             "colorSlug": "oksyd-temnyi",
             "colorLabel": "Оксид темний",
-            "swatchImage": "/photos/frezzatti/fz-09-oksyd-temnyi.png",
+            "swatchImage": "/photos/frezzatti/fz-09-oksyd-temnyi.webp",
             "src": "/photos/gallery/frezzatti/fz-09-oksyd-temnyi.jpg"
           },
           {
             "colorSlug": "venhe",
             "colorLabel": "Венге південне",
-            "swatchImage": "/photos/frezzatti/fz-09-venhe.png",
+            "swatchImage": "/photos/frezzatti/fz-09-venhe.webp",
             "src": "/photos/gallery/frezzatti/fz-09-venhe.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/frezzatti/fz-09-white.png",
+            "swatchImage": "/photos/frezzatti/fz-09-white.webp",
             "src": "/photos/gallery/frezzatti/fz-09-white.jpg"
           }
         ]
@@ -2408,73 +2408,73 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "antratsyt",
             "colorLabel": "Антрацит",
-            "swatchImage": "/photos/frezzatti/fz-10-antratsyt.png",
+            "swatchImage": "/photos/frezzatti/fz-10-antratsyt.webp",
             "src": "/photos/gallery/frezzatti/fz-10-antratsyt.jpg"
           },
           {
             "colorSlug": "dub-nemo-late",
             "colorLabel": "Дуб немо лате",
-            "swatchImage": "/photos/frezzatti/fz-10-dub-nemo-late.png",
+            "swatchImage": "/photos/frezzatti/fz-10-dub-nemo-late.webp",
             "src": "/photos/gallery/frezzatti/fz-10-dub-nemo-late.jpg"
           },
           {
             "colorSlug": "dub-pasadena",
             "colorLabel": "Дуб пасадена",
-            "swatchImage": "/photos/frezzatti/fz-10-dub-pasadena.png",
+            "swatchImage": "/photos/frezzatti/fz-10-dub-pasadena.webp",
             "src": "/photos/gallery/frezzatti/fz-10-dub-pasadena.jpg"
           },
           {
             "colorSlug": "dub-portovyi",
             "colorLabel": "Дуб портовий",
-            "swatchImage": "/photos/frezzatti/fz-10-dub-portovyi.png",
+            "swatchImage": "/photos/frezzatti/fz-10-dub-portovyi.webp",
             "src": "/photos/gallery/frezzatti/fz-10-dub-portovyi.jpg"
           },
           {
             "colorSlug": "dub-shato",
             "colorLabel": "Дуб шато",
-            "swatchImage": "/photos/frezzatti/fz-10-dub-shato.png",
+            "swatchImage": "/photos/frezzatti/fz-10-dub-shato.webp",
             "src": "/photos/gallery/frezzatti/fz-10-dub-shato.jpg"
           },
           {
             "colorSlug": "dub-sribliastyi",
             "colorLabel": "Дуб немо сріблястий",
-            "swatchImage": "/photos/frezzatti/fz-10-dub-sribliastyi.png",
+            "swatchImage": "/photos/frezzatti/fz-10-dub-sribliastyi.webp",
             "src": "/photos/gallery/frezzatti/fz-10-dub-sribliastyi.jpg"
           },
           {
             "colorSlug": "feldhrau",
             "colorLabel": "Фельдграу",
-            "swatchImage": "/photos/frezzatti/fz-10-feldhrau.png",
+            "swatchImage": "/photos/frezzatti/fz-10-feldhrau.webp",
             "src": "/photos/gallery/frezzatti/fz-10-feldhrau.jpg"
           },
           {
             "colorSlug": "oksyd-bilyi",
             "colorLabel": "Оксид білий",
-            "swatchImage": "/photos/frezzatti/fz-10-oksyd-bilyi.png",
+            "swatchImage": "/photos/frezzatti/fz-10-oksyd-bilyi.webp",
             "src": "/photos/gallery/frezzatti/fz-10-oksyd-bilyi.jpg"
           },
           {
             "colorSlug": "oksyd-svitlyi",
             "colorLabel": "Оксид світлий",
-            "swatchImage": "/photos/frezzatti/fz-10-oksyd-svitlyi.png",
+            "swatchImage": "/photos/frezzatti/fz-10-oksyd-svitlyi.webp",
             "src": "/photos/gallery/frezzatti/fz-10-oksyd-svitlyi.jpg"
           },
           {
             "colorSlug": "oksyd-temnyi",
             "colorLabel": "Оксид темний",
-            "swatchImage": "/photos/frezzatti/fz-10-oksyd-temnyi.png",
+            "swatchImage": "/photos/frezzatti/fz-10-oksyd-temnyi.webp",
             "src": "/photos/gallery/frezzatti/fz-10-oksyd-temnyi.jpg"
           },
           {
             "colorSlug": "venhe",
             "colorLabel": "Венге південне",
-            "swatchImage": "/photos/frezzatti/fz-10-venhe.png",
+            "swatchImage": "/photos/frezzatti/fz-10-venhe.webp",
             "src": "/photos/gallery/frezzatti/fz-10-venhe.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/frezzatti/fz-10-white.png",
+            "swatchImage": "/photos/frezzatti/fz-10-white.webp",
             "src": "/photos/gallery/frezzatti/fz-10-white.jpg"
           }
         ]
@@ -2485,73 +2485,73 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "antratsyt",
             "colorLabel": "Антрацит",
-            "swatchImage": "/photos/frezzatti/fz-11-antratsyt.png",
+            "swatchImage": "/photos/frezzatti/fz-11-antratsyt.webp",
             "src": "/photos/gallery/frezzatti/fz-11-antratsyt.jpg"
           },
           {
             "colorSlug": "dub-nemo-late",
             "colorLabel": "Дуб немо лате",
-            "swatchImage": "/photos/frezzatti/fz-11-dub-nemo-late.png",
+            "swatchImage": "/photos/frezzatti/fz-11-dub-nemo-late.webp",
             "src": "/photos/gallery/frezzatti/fz-11-dub-nemo-late.jpg"
           },
           {
             "colorSlug": "dub-pasadena",
             "colorLabel": "Дуб пасадена",
-            "swatchImage": "/photos/frezzatti/fz-11-dub-pasadena.png",
+            "swatchImage": "/photos/frezzatti/fz-11-dub-pasadena.webp",
             "src": "/photos/gallery/frezzatti/fz-11-dub-pasadena.jpg"
           },
           {
             "colorSlug": "dub-portovyi",
             "colorLabel": "Дуб портовий",
-            "swatchImage": "/photos/frezzatti/fz-11-dub-portovyi.png",
+            "swatchImage": "/photos/frezzatti/fz-11-dub-portovyi.webp",
             "src": "/photos/gallery/frezzatti/fz-11-dub-portovyi.jpg"
           },
           {
             "colorSlug": "dub-shato",
             "colorLabel": "Дуб шато",
-            "swatchImage": "/photos/frezzatti/fz-11-dub-shato.png",
+            "swatchImage": "/photos/frezzatti/fz-11-dub-shato.webp",
             "src": "/photos/gallery/frezzatti/fz-11-dub-shato.jpg"
           },
           {
             "colorSlug": "dub-sribliastyi",
             "colorLabel": "Дуб немо сріблястий",
-            "swatchImage": "/photos/frezzatti/fz-11-dub-sribliastyi.png",
+            "swatchImage": "/photos/frezzatti/fz-11-dub-sribliastyi.webp",
             "src": "/photos/gallery/frezzatti/fz-11-dub-sribliastyi.jpg"
           },
           {
             "colorSlug": "feldhrau",
             "colorLabel": "Фельдграу",
-            "swatchImage": "/photos/frezzatti/fz-11-feldhrau.png",
+            "swatchImage": "/photos/frezzatti/fz-11-feldhrau.webp",
             "src": "/photos/gallery/frezzatti/fz-11-feldhrau.jpg"
           },
           {
             "colorSlug": "oksyd-bilyi",
             "colorLabel": "Оксид білий",
-            "swatchImage": "/photos/frezzatti/fz-11-oksyd-bilyi.png",
+            "swatchImage": "/photos/frezzatti/fz-11-oksyd-bilyi.webp",
             "src": "/photos/gallery/frezzatti/fz-11-oksyd-bilyi.jpg"
           },
           {
             "colorSlug": "oksyd-svitlyi",
             "colorLabel": "Оксид світлий",
-            "swatchImage": "/photos/frezzatti/fz-11-oksyd-svitlyi.png",
+            "swatchImage": "/photos/frezzatti/fz-11-oksyd-svitlyi.webp",
             "src": "/photos/gallery/frezzatti/fz-11-oksyd-svitlyi.jpg"
           },
           {
             "colorSlug": "oksyd-temnyi",
             "colorLabel": "Оксид темний",
-            "swatchImage": "/photos/frezzatti/fz-11-oksyd-temnyi.png",
+            "swatchImage": "/photos/frezzatti/fz-11-oksyd-temnyi.webp",
             "src": "/photos/gallery/frezzatti/fz-11-oksyd-temnyi.jpg"
           },
           {
             "colorSlug": "venhe",
             "colorLabel": "Венге південне",
-            "swatchImage": "/photos/frezzatti/fz-11-venhe.png",
+            "swatchImage": "/photos/frezzatti/fz-11-venhe.webp",
             "src": "/photos/gallery/frezzatti/fz-11-venhe.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/frezzatti/fz-11-white.png",
+            "swatchImage": "/photos/frezzatti/fz-11-white.webp",
             "src": "/photos/gallery/frezzatti/fz-11-white.jpg"
           }
         ]
@@ -2562,73 +2562,73 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "antratsyt",
             "colorLabel": "Антрацит",
-            "swatchImage": "/photos/frezzatti/fz-12-antratsyt.png",
+            "swatchImage": "/photos/frezzatti/fz-12-antratsyt.webp",
             "src": "/photos/gallery/frezzatti/fz-12-antratsyt.jpg"
           },
           {
             "colorSlug": "dub-nemo-late",
             "colorLabel": "Дуб немо лате",
-            "swatchImage": "/photos/frezzatti/fz-12-dub-nemo-late.png",
+            "swatchImage": "/photos/frezzatti/fz-12-dub-nemo-late.webp",
             "src": "/photos/gallery/frezzatti/fz-12-dub-nemo-late.jpg"
           },
           {
             "colorSlug": "dub-pasadena",
             "colorLabel": "Дуб пасадена",
-            "swatchImage": "/photos/frezzatti/fz-12-dub-pasadena.png",
+            "swatchImage": "/photos/frezzatti/fz-12-dub-pasadena.webp",
             "src": "/photos/gallery/frezzatti/fz-12-dub-pasadena.jpg"
           },
           {
             "colorSlug": "dub-portovyi",
             "colorLabel": "Дуб портовий",
-            "swatchImage": "/photos/frezzatti/fz-12-dub-portovyi.png",
+            "swatchImage": "/photos/frezzatti/fz-12-dub-portovyi.webp",
             "src": "/photos/gallery/frezzatti/fz-12-dub-portovyi.jpg"
           },
           {
             "colorSlug": "dub-shato",
             "colorLabel": "Дуб шато",
-            "swatchImage": "/photos/frezzatti/fz-12-dub-shato.png",
+            "swatchImage": "/photos/frezzatti/fz-12-dub-shato.webp",
             "src": "/photos/gallery/frezzatti/fz-12-dub-shato.jpg"
           },
           {
             "colorSlug": "dub-sribliastyi",
             "colorLabel": "Дуб немо сріблястий",
-            "swatchImage": "/photos/frezzatti/fz-12-dub-sribliastyi.png",
+            "swatchImage": "/photos/frezzatti/fz-12-dub-sribliastyi.webp",
             "src": "/photos/gallery/frezzatti/fz-12-dub-sribliastyi.jpg"
           },
           {
             "colorSlug": "feldhrau",
             "colorLabel": "Фельдграу",
-            "swatchImage": "/photos/frezzatti/fz-12-feldhrau.png",
+            "swatchImage": "/photos/frezzatti/fz-12-feldhrau.webp",
             "src": "/photos/gallery/frezzatti/fz-12-feldhrau.jpg"
           },
           {
             "colorSlug": "oksyd-bilyi",
             "colorLabel": "Оксид білий",
-            "swatchImage": "/photos/frezzatti/fz-12-oksyd-bilyi.png",
+            "swatchImage": "/photos/frezzatti/fz-12-oksyd-bilyi.webp",
             "src": "/photos/gallery/frezzatti/fz-12-oksyd-bilyi.jpg"
           },
           {
             "colorSlug": "oksyd-svitlyi",
             "colorLabel": "Оксид світлий",
-            "swatchImage": "/photos/frezzatti/fz-12-oksyd-svitlyi.png",
+            "swatchImage": "/photos/frezzatti/fz-12-oksyd-svitlyi.webp",
             "src": "/photos/gallery/frezzatti/fz-12-oksyd-svitlyi.jpg"
           },
           {
             "colorSlug": "oksyd-temnyi",
             "colorLabel": "Оксид темний",
-            "swatchImage": "/photos/frezzatti/fz-12-oksyd-temnyi.png",
+            "swatchImage": "/photos/frezzatti/fz-12-oksyd-temnyi.webp",
             "src": "/photos/gallery/frezzatti/fz-12-oksyd-temnyi.jpg"
           },
           {
             "colorSlug": "venhe",
             "colorLabel": "Венге південне",
-            "swatchImage": "/photos/frezzatti/fz-12-venhe.png",
+            "swatchImage": "/photos/frezzatti/fz-12-venhe.webp",
             "src": "/photos/gallery/frezzatti/fz-12-venhe.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/frezzatti/fz-12-white.png",
+            "swatchImage": "/photos/frezzatti/fz-12-white.webp",
             "src": "/photos/gallery/frezzatti/fz-12-white.jpg"
           }
         ]
@@ -2639,73 +2639,73 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "antratsyt",
             "colorLabel": "Антрацит",
-            "swatchImage": "/photos/frezzatti/fz-13-antratsyt.png",
+            "swatchImage": "/photos/frezzatti/fz-13-antratsyt.webp",
             "src": "/photos/gallery/frezzatti/fz-13-antratsyt.jpg"
           },
           {
             "colorSlug": "dub-nemo-late",
             "colorLabel": "Дуб немо лате",
-            "swatchImage": "/photos/frezzatti/fz-13-dub-nemo-late.png",
+            "swatchImage": "/photos/frezzatti/fz-13-dub-nemo-late.webp",
             "src": "/photos/gallery/frezzatti/fz-13-dub-nemo-late.jpg"
           },
           {
             "colorSlug": "dub-pasadena",
             "colorLabel": "Дуб пасадена",
-            "swatchImage": "/photos/frezzatti/fz-13-dub-pasadena.png",
+            "swatchImage": "/photos/frezzatti/fz-13-dub-pasadena.webp",
             "src": "/photos/gallery/frezzatti/fz-13-dub-pasadena.jpg"
           },
           {
             "colorSlug": "dub-portovyi",
             "colorLabel": "Дуб портовий",
-            "swatchImage": "/photos/frezzatti/fz-13-dub-portovyi.png",
+            "swatchImage": "/photos/frezzatti/fz-13-dub-portovyi.webp",
             "src": "/photos/gallery/frezzatti/fz-13-dub-portovyi.jpg"
           },
           {
             "colorSlug": "dub-shato",
             "colorLabel": "Дуб шато",
-            "swatchImage": "/photos/frezzatti/fz-13-dub-shato.png",
+            "swatchImage": "/photos/frezzatti/fz-13-dub-shato.webp",
             "src": "/photos/gallery/frezzatti/fz-13-dub-shato.jpg"
           },
           {
             "colorSlug": "dub-sribliastyi",
             "colorLabel": "Дуб немо сріблястий",
-            "swatchImage": "/photos/frezzatti/fz-13-dub-sribliastyi.png",
+            "swatchImage": "/photos/frezzatti/fz-13-dub-sribliastyi.webp",
             "src": "/photos/gallery/frezzatti/fz-13-dub-sribliastyi.jpg"
           },
           {
             "colorSlug": "feldhrau",
             "colorLabel": "Фельдграу",
-            "swatchImage": "/photos/frezzatti/fz-13-feldhrau.png",
+            "swatchImage": "/photos/frezzatti/fz-13-feldhrau.webp",
             "src": "/photos/gallery/frezzatti/fz-13-feldhrau.jpg"
           },
           {
             "colorSlug": "oksyd-bilyi",
             "colorLabel": "Оксид білий",
-            "swatchImage": "/photos/frezzatti/fz-13-oksyd-bilyi.png",
+            "swatchImage": "/photos/frezzatti/fz-13-oksyd-bilyi.webp",
             "src": "/photos/gallery/frezzatti/fz-13-oksyd-bilyi.jpg"
           },
           {
             "colorSlug": "oksyd-svitlyi",
             "colorLabel": "Оксид світлий",
-            "swatchImage": "/photos/frezzatti/fz-13-oksyd-svitlyi.png",
+            "swatchImage": "/photos/frezzatti/fz-13-oksyd-svitlyi.webp",
             "src": "/photos/gallery/frezzatti/fz-13-oksyd-svitlyi.jpg"
           },
           {
             "colorSlug": "oksyd-temnyi",
             "colorLabel": "Оксид темний",
-            "swatchImage": "/photos/frezzatti/fz-13-oksyd-temnyi.png",
+            "swatchImage": "/photos/frezzatti/fz-13-oksyd-temnyi.webp",
             "src": "/photos/gallery/frezzatti/fz-13-oksyd-temnyi.jpg"
           },
           {
             "colorSlug": "venhe",
             "colorLabel": "Венге південне",
-            "swatchImage": "/photos/frezzatti/fz-13-venhe.png",
+            "swatchImage": "/photos/frezzatti/fz-13-venhe.webp",
             "src": "/photos/gallery/frezzatti/fz-13-venhe.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/frezzatti/fz-13-white.png",
+            "swatchImage": "/photos/frezzatti/fz-13-white.webp",
             "src": "/photos/gallery/frezzatti/fz-13-white.jpg"
           }
         ]
@@ -2716,73 +2716,73 @@ export const galleryCollections: GalleryCollection[] = [
           {
             "colorSlug": "antratsyt",
             "colorLabel": "Антрацит",
-            "swatchImage": "/photos/frezzatti/fz-14-antratsyt.png",
+            "swatchImage": "/photos/frezzatti/fz-14-antratsyt.webp",
             "src": "/photos/gallery/frezzatti/fz-14-antratsyt.jpg"
           },
           {
             "colorSlug": "dub-nemo-late",
             "colorLabel": "Дуб немо лате",
-            "swatchImage": "/photos/frezzatti/fz-14-dub-nemo-late.png",
+            "swatchImage": "/photos/frezzatti/fz-14-dub-nemo-late.webp",
             "src": "/photos/gallery/frezzatti/fz-14-dub-nemo-late.jpg"
           },
           {
             "colorSlug": "dub-pasadena",
             "colorLabel": "Дуб пасадена",
-            "swatchImage": "/photos/frezzatti/fz-14-dub-pasadena.png",
+            "swatchImage": "/photos/frezzatti/fz-14-dub-pasadena.webp",
             "src": "/photos/gallery/frezzatti/fz-14-dub-pasadena.jpg"
           },
           {
             "colorSlug": "dub-portovyi",
             "colorLabel": "Дуб портовий",
-            "swatchImage": "/photos/frezzatti/fz-14-dub-portovyi.png",
+            "swatchImage": "/photos/frezzatti/fz-14-dub-portovyi.webp",
             "src": "/photos/gallery/frezzatti/fz-14-dub-portovyi.jpg"
           },
           {
             "colorSlug": "dub-shato",
             "colorLabel": "Дуб шато",
-            "swatchImage": "/photos/frezzatti/fz-14-dub-shato.png",
+            "swatchImage": "/photos/frezzatti/fz-14-dub-shato.webp",
             "src": "/photos/gallery/frezzatti/fz-14-dub-shato.jpg"
           },
           {
             "colorSlug": "dub-sribliastyi",
             "colorLabel": "Дуб немо сріблястий",
-            "swatchImage": "/photos/frezzatti/fz-14-dub-sribliastyi.png",
+            "swatchImage": "/photos/frezzatti/fz-14-dub-sribliastyi.webp",
             "src": "/photos/gallery/frezzatti/fz-14-dub-sribliastyi.jpg"
           },
           {
             "colorSlug": "feldhrau",
             "colorLabel": "Фельдграу",
-            "swatchImage": "/photos/frezzatti/fz-14-feldhrau.png",
+            "swatchImage": "/photos/frezzatti/fz-14-feldhrau.webp",
             "src": "/photos/gallery/frezzatti/fz-14-feldhrau.jpg"
           },
           {
             "colorSlug": "oksyd-bilyi",
             "colorLabel": "Оксид білий",
-            "swatchImage": "/photos/frezzatti/fz-14-oksyd-bilyi.png",
+            "swatchImage": "/photos/frezzatti/fz-14-oksyd-bilyi.webp",
             "src": "/photos/gallery/frezzatti/fz-14-oksyd-bilyi.jpg"
           },
           {
             "colorSlug": "oksyd-svitlyi",
             "colorLabel": "Оксид світлий",
-            "swatchImage": "/photos/frezzatti/fz-14-oksyd-svitlyi.png",
+            "swatchImage": "/photos/frezzatti/fz-14-oksyd-svitlyi.webp",
             "src": "/photos/gallery/frezzatti/fz-14-oksyd-svitlyi.jpg"
           },
           {
             "colorSlug": "oksyd-temnyi",
             "colorLabel": "Оксид темний",
-            "swatchImage": "/photos/frezzatti/fz-14-oksyd-temnyi.png",
+            "swatchImage": "/photos/frezzatti/fz-14-oksyd-temnyi.webp",
             "src": "/photos/gallery/frezzatti/fz-14-oksyd-temnyi.jpg"
           },
           {
             "colorSlug": "venhe",
             "colorLabel": "Венге південне",
-            "swatchImage": "/photos/frezzatti/fz-14-venhe.png",
+            "swatchImage": "/photos/frezzatti/fz-14-venhe.webp",
             "src": "/photos/gallery/frezzatti/fz-14-venhe.jpg"
           },
           {
             "colorSlug": "white",
             "colorLabel": "Білий",
-            "swatchImage": "/photos/frezzatti/fz-14-white.png",
+            "swatchImage": "/photos/frezzatti/fz-14-white.webp",
             "src": "/photos/gallery/frezzatti/fz-14-white.jpg"
           }
         ]

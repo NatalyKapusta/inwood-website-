@@ -78,10 +78,10 @@ export async function generateMetadata({ params }: { params: { locale: Locale } 
 }
 
 const collectionImages: Record<string, string> = {
-  ETALON: "/photos/etalon/et-01-white.png",
-  NOMINAL: "/photos/nominal/nl-01-dub-shato.png",
-  FREZZATTI: "/photos/frezzatti/fz-01-dub-shato.png",
-  PERFETTO: "/photos/perfetto/pf-01.png",
+  ETALON: "/photos/etalon/et-01-white.webp",
+  NOMINAL: "/photos/nominal/nl-01-dub-shato.webp",
+  FREZZATTI: "/photos/frezzatti/fz-01-dub-shato.webp",
+  PERFETTO: "/photos/perfetto/pf-01.webp",
 };
 
 // Кожен пункт відповідає своєму елементу dict.home.trends2026.items (за
@@ -91,16 +91,16 @@ const collectionImages: Record<string, string> = {
 // "<collectionId>-<modelCode>"), суфікс ":slug" одразу відкриває потрібний
 // колір замість білого за замовчуванням.
 const trends2026Items = [
-  { image: "/photos/etalon/et-03-dub-shato.png", anchor: "hidden-doors-ET-03:dub-shato" },
+  { image: "/photos/etalon/et-03-dub-shato.webp", anchor: "hidden-doors-ET-03:dub-shato" },
   // Двері на цьому конкретному фото зайняті меншу частину кадру (~408×854 з
   // 1000×1000), ніж на інших трьох (~430×900) — компенсуємо невеликим
   // масштабуванням, щоб полотно виглядало одного розміру з рештою карток.
-  { image: "/photos/frezzatti/fz-06-oksyd-temnyi.png", anchor: "frezzatti-FZ-06:oksyd-temnyi", imageScale: 1.06 },
-  { image: "/photos/etalon/et-09-beton-siryi.png", anchor: "etalon-ET-09:beton-siryi" },
-  { image: "/photos/nominal/nl-04-oksyd-svitlyi.png", anchor: "nominal-NL-04:oksyd-svitlyi" },
-  { image: "/photos/etalon/et-01-white.png", anchor: "etalon-ET-01:white" },
-  { image: "/photos/nominal/nl-05-oksyd-bilyi.png", anchor: "nominal-NL-05:oksyd-bilyi" },
-  { image: "/photos/frezzatti/fz-07-dub-nemo-late.png", anchor: "frezzatti-FZ-07:dub-nemo-late" },
+  { image: "/photos/frezzatti/fz-06-oksyd-temnyi.webp", anchor: "frezzatti-FZ-06:oksyd-temnyi", imageScale: 1.06 },
+  { image: "/photos/etalon/et-09-beton-siryi.webp", anchor: "etalon-ET-09:beton-siryi" },
+  { image: "/photos/nominal/nl-04-oksyd-svitlyi.webp", anchor: "nominal-NL-04:oksyd-svitlyi" },
+  { image: "/photos/etalon/et-01-white.webp", anchor: "etalon-ET-01:white" },
+  { image: "/photos/nominal/nl-05-oksyd-bilyi.webp", anchor: "nominal-NL-05:oksyd-bilyi" },
+  { image: "/photos/frezzatti/fz-07-dub-nemo-late.webp", anchor: "frezzatti-FZ-07:dub-nemo-late" },
 ];
 
 export default async function HomePage({
