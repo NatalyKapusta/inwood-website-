@@ -11,10 +11,16 @@
 const CSP_REPORT_ONLY = [
   "default-src 'self'",
   "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://keepincrm.chat https://*.keepincrm.chat",
-  "style-src 'self' 'unsafe-inline'",
+  // style-src: KeepinCRM-віджет сам вставляє собі inline-стилі в iframe/кнопку
+  // зі свого домену — без цього Report-Only ловив "Refused" саме на цей чат
+  // (SEO-аудит Vercel, 09.10.2026 "на сейчас", пункт 1).
+  "style-src 'self' 'unsafe-inline' https://keepincrm.chat https://*.keepincrm.chat",
   "img-src 'self' data: https://img.youtube.com https://*.tile.openstreetmap.org https://www.googletagmanager.com https://*.google-analytics.com",
   "font-src 'self' data:",
-  "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://vitals.vercel-insights.com https://keepincrm.chat https://*.keepincrm.chat",
+  // connect-src: GA4 шле подієві хіти (/g/collect) на www.google.com, не лише
+  // на googletagmanager.com/google-analytics.com — без цього частина
+  // аналітики губилась би в блокуючому режимі (той самий аудит, пункт 1).
+  "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://www.google.com https://vitals.vercel-insights.com https://keepincrm.chat https://*.keepincrm.chat",
   "frame-src https://www.youtube.com https://keepincrm.chat https://*.keepincrm.chat",
   "object-src 'none'",
   "base-uri 'self'",
