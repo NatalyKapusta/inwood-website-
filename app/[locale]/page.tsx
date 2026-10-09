@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { Locale } from "@/lib/i18n";
+import { assertLocale, type Locale } from "@/lib/i18n";
 import Counter from "@/components/Counter";
 import ua from "@/dictionaries/ua.json";
 import { buildMetadata } from "@/lib/seo";
@@ -108,10 +108,10 @@ export default async function HomePage({
 }: {
   params: { locale: Locale };
 }) {
-  const dict = await getDict(params.locale);
+  const locale = assertLocale(params.locale);
+  const dict = await getDict(locale);
   const t = dict.home;
   const c = dict.common;
-  const locale = params.locale;
 
   return (
     <>

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import type { Locale } from "@/lib/i18n";
+import { assertLocale, type Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata, articleJsonLd, breadcrumbJsonLd, howToJsonLd } from "@/lib/seo";
 import { blogPosts, getBlogPost, type BlogBlock } from "@/data/blog";
@@ -49,10 +49,11 @@ export async function generateMetadata({
 }: {
   params: { locale: Locale; slug: string };
 }) {
-  const post = getBlogPost(params.locale, params.slug);
+  const locale = assertLocale(params.locale);
+  const post = getBlogPost(locale, params.slug);
   if (!post) return {};
   return buildMetadata({
-    locale: params.locale,
+    locale,
     path: `/blog/${params.slug}`,
     title: post.seoTitle ?? post.title,
     description: post.excerpt,
@@ -64,13 +65,14 @@ export default async function BlogPostPage({
 }: {
   params: { locale: Locale; slug: string };
 }) {
-  const post = getBlogPost(params.locale, params.slug);
+  const locale = assertLocale(params.locale);
+  const post = getBlogPost(locale, params.slug);
   if (!post) notFound();
 
-  const dict = await getDictionary(params.locale);
+  const dict = await getDictionary(locale);
   const t = dict.blog;
   const c = dict.common;
-  const relatedPosts = blogPosts[params.locale]
+  const relatedPosts = blogPosts[locale]
     .filter((p) => p.slug !== post.slug)
     .slice(0, 3);
   const breadcrumbItems = [

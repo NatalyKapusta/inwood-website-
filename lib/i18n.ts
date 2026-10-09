@@ -1,6 +1,21 @@
+import { notFound } from "next/navigation";
+
 export const locales = ["ua", "ru", "en", "pl"] as const;
 export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = "ua";
+
+// Next.js не перевіряє [locale] проти Locale на рантаймі — боти, що ходять
+// по старих WordPress-адресах (wp-sitemap-posts-page-1.xml тощо), чи просто
+// неіснуючий шлях підставляють сюди будь-який рядок. Сторінки, що індексують
+// locale-ключовані дані (blogPosts[locale] на головній і в блозі), падали в
+// TypeError/500 замість чесного 404. Викликати як перший рядок у кожному
+// page.tsx/generateMetadata під [locale], де є такий lookup — НЕ через
+// dynamicParams = false на layout, бо те каскадом ламає власний 404-дизайн
+// для вкладених [slug]/[city] з невідомими значеннями (перевірено build-тестом).
+export function assertLocale(value: string): Locale {
+  if (!(locales as readonly string[]).includes(value)) notFound();
+  return value as Locale;
+}
 
 // RU навмисно без прапора — лише текстова позначка "RU" у перемикачі мов.
 export const localeLabels: Record<Locale, string> = {

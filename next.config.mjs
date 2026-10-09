@@ -9,6 +9,22 @@ const nextConfig = {
     // їх надовго — це прибирає PageSpeed-зауваження про короткий термін кешу.
     return [
       {
+        // Базові заголовки безпеки на всі відповіді (SEO-аудит Vercel,
+        // 09.10.2026, пункт 5.3). Повний Content-Security-Policy навмисно НЕ
+        // додано — на сайті є GA4, чат KeepinCRM і Leaflet-карта, і без
+        // ретельної перевірки кожного джерела CSP легко щось зламає.
+        // X-Frame-Options: SAMEORIGIN безпечний — на сайті немає жодного
+        // <iframe>, що показує сторінки самого inwood.com.ua (є лише
+        // YouTube-embed, який і так показує youtube.com, а не нас).
+        source: "/:path*",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
+        ],
+      },
+      {
         source: "/photos/:path*",
         headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
       },
@@ -66,6 +82,18 @@ const nextConfig = {
         source: "/tools/door-fit/door-fit.html",
         headers: [{ key: "Cache-Control", value: "public, max-age=0, must-revalidate" }],
       },
+    ];
+  },
+  async redirects() {
+    // Карти сайту старого Tilda-сайту — боти й застарілі посилання досі
+    // стукаються в ці адреси. Редіректи в next.config.mjs (а не middleware)
+    // спеціально, бо middleware пропускає будь-який шлях з крапкою, не
+    // перевіряючи resolveLegacyRedirect для нього (SEO-аудит Vercel,
+    // 09.10.2026, пункт 3.1).
+    return [
+      { source: "/sitemap_pages.xml", destination: "/sitemap.xml", permanent: true },
+      { source: "/shop/sitemap.xml", destination: "/sitemap.xml", permanent: true },
+      { source: "/blog/sitemap.xml", destination: "/sitemap.xml", permanent: true },
     ];
   },
 };

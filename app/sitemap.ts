@@ -42,7 +42,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return paths.flatMap((path) =>
     locales.map((locale) => ({
       url: `${SITE_URL}/${locale}${path}`,
-      lastModified: new Date(),
+      // Навмисно без lastModified: new Date() — реальної дати останньої
+      // зміни кожної сторінки ми не відстежуємо, а "завжди сьогодні" на
+      // всіх 368 адресах лише привчає Google ігнорувати це поле (SEO-аудит
+      // Vercel, 09.10.2026, пункт 6.1).
       changeFrequency: path === "" || path === "/catalog" ? ("weekly" as const) : ("monthly" as const),
       priority: path === "" ? 1 : path === "/catalog" ? 0.9 : 0.6,
       alternates: {

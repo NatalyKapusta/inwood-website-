@@ -48,6 +48,7 @@ export default function CartDrawer({
   const { items, removeItem, setQty, clear } = useCart();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const honeypotRef = useRef<HTMLInputElement>(null);
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState(false);
@@ -84,7 +85,13 @@ export default function CartDrawer({
       const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ client: name, phone, comment, source: "Кошик — сайт" }),
+        body: JSON.stringify({
+          client: name,
+          phone,
+          comment,
+          source: "Кошик — сайт",
+          company_url: honeypotRef.current?.value ?? "",
+        }),
       });
       const data = await res.json();
       if (data.ok) {
@@ -163,6 +170,22 @@ export default function CartDrawer({
               <p className="mt-4 rounded-lg bg-panel-alt px-4 py-3 text-sm text-navy-dark">{formSentMessage}</p>
             ) : (
               <form onSubmit={sendInquiry} className="mt-4 flex flex-col gap-3">
+                <input
+                  ref={honeypotRef}
+                  type="text"
+                  name="company_url"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  style={{
+                    position: "absolute",
+                    left: "-9999px",
+                    width: 1,
+                    height: 1,
+                    opacity: 0,
+                    pointerEvents: "none",
+                  }}
+                />
                 <input
                   type="text"
                   required

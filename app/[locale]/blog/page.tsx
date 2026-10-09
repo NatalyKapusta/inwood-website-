@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { Locale } from "@/lib/i18n";
+import { assertLocale, type Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
 import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { blogPosts } from "@/data/blog";
@@ -22,10 +22,11 @@ export async function generateMetadata({ params }: { params: { locale: Locale } 
 }
 
 export default async function BlogIndexPage({ params }: { params: { locale: Locale } }) {
-  const dict = await getDictionary(params.locale);
+  const locale = assertLocale(params.locale);
+  const dict = await getDictionary(locale);
   const t = dict.blog;
   const cp = dict.collectionPages;
-  const posts = blogPosts[params.locale];
+  const posts = blogPosts[locale];
   const breadcrumbItems = [
     { name: dict.common.breadcrumbHome, path: "" },
     { name: t.heading, path: "/blog" },
