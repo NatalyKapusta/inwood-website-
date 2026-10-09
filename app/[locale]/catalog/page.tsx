@@ -4,7 +4,6 @@ import { buildMetadata, productListJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import { collections, collectionOrder } from "@/lib/products";
 import { getPricesVisible } from "@/lib/siteSettings";
 import { getPublicPogonazhni, getPublicPlintus, getPublicNakladka } from "@/lib/publicShop";
-import { catalogCategories, catalogCategorySlugs, type CatalogCategorySlug } from "@/lib/catalogCategories";
 import { COLLECTION_PAGE_SLUGS, THEMATIC_PAGE_SLUGS } from "@/lib/collectionPages";
 import CatalogFilter from "@/components/CatalogFilter";
 import CategoryBanner from "@/components/CategoryBanner";
@@ -78,22 +77,12 @@ export default async function CatalogPage({ params }: { params: { locale: Locale
       ? [...baseSections, { id: "pogonazhni", data: { label: dict.furnitura.pogonazhniTitle, addons } }]
       : baseSections;
 
-  // Піли-категорії з головної сторінки ведуть сюди з ?category=... — той
-  // фільтр тепер читається на клієнті (CatalogFilter/CategoryBanner), а тут
-  // заздалегідь рахуємо звужений набір секцій під кожну з 6 категорій, щоб
-  // сервер більше не читав searchParams (це форсувало динамічний рендер і
-  // ламало кешування сторінки).
-  const sectionsByCategory: Partial<Record<CatalogCategorySlug, typeof sections>> = {};
-  for (const slug of catalogCategorySlugs) {
-    const category = catalogCategories[slug];
-    sectionsByCategory[slug] = baseSections
-      .filter((s) => category.collections.includes(s.id))
-      .map((s) => {
-        const excluded = category.excludeModelCodes?.[s.id];
-        if (!excluded || !s.data.models) return s;
-        return { ...s, data: { ...s.data, models: s.data.models.filter((m) => !excluded.includes(m.code)) } };
-      });
-  }
+  // Піли-категорії з головної сторінки ведуть сюди з ?category=... — цей
+  // фільтр читається і рахується на клієнті (CatalogFilter), з уже наявних
+  // sections, а не тут: раніше сервер наперед рахував і передавав 6 майже
+  // повних копій каталогу (по одній на категорію) через RSC-пропси — саме
+  // вони давали основну вагу inline-даних на сторінці (SEO-аудит Vercel,
+  // 09.10.2026).
 
   const pricesVisible = await getPricesVisible(params.locale);
   // Немає окремого PL-каталогу — для польської версії видаємо англійський
@@ -184,7 +173,6 @@ export default async function CatalogPage({ params }: { params: { locale: Locale
       <div className="mt-8">
         <CatalogFilter
           sections={sections}
-          sectionsByCategory={sectionsByCategory}
           t={t}
           pricesVisible={pricesVisible}
           nakladkaLabel={dict.furnitura.nakladkaShort}

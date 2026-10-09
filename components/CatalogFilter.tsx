@@ -7,7 +7,7 @@ import ProductCard from "@/components/ProductCard";
 import AddToCartButton from "@/components/AddToCartButton";
 import type { Collection } from "@/lib/products";
 import type { Dictionary } from "@/lib/dictionary";
-import type { CatalogCategorySlug } from "@/lib/catalogCategories";
+import { catalogCategories, catalogCategorySlugs, type CatalogCategorySlug } from "@/lib/catalogCategories";
 import type { Locale } from "@/lib/i18n";
 
 const ADDON_TYPES = ["korob", "lishtva", "dobir"] as const;
@@ -30,7 +30,6 @@ type Section = { id: string; data: Collection };
 
 type CatalogFilterProps = {
   sections: Section[];
-  sectionsByCategory?: Partial<Record<CatalogCategorySlug, Section[]>>;
   t: Dictionary["catalog"];
   pricesVisible: boolean;
   nakladkaLabel: string;
@@ -54,7 +53,7 @@ function CatalogFilterView({
   addToCartLabel,
   addedToCartLabel,
   locale,
-}: Omit<CatalogFilterProps, "sectionsByCategory">) {
+}: CatalogFilterProps) {
   const [active, setActive] = useState<string>("all");
   const [addonType, setAddonType] = useState<AddonFilter>("all");
   const [modelLimit, setModelLimit] = useState(INITIAL_MODEL_LIMIT);
@@ -263,14 +262,36 @@ function CatalogFilterView({
 }
 
 // ?category=... з пілів на головній — сервер більше не читає searchParams
-// (це примусово переводило б увесь /catalog у динамічний рендер), замість
-// цього сервер наперед рахує варіант секцій під кожну категорію
-// (sectionsByCategory), а цей тонкий клієнтський прошарок сам вирішує,
-// котрий показати, за URL.
-function CatalogFilterInner({ sections, sectionsByCategory, ...rest }: CatalogFilterProps) {
+// (це примусово переводило б увесь /catalog у динамічний рендер), а цей
+// тонкий клієнтський прошарок сам вирішує, яку категорію показати, за URL.
+//
+// Раніше сервер наперед рахував і передавав sectionsByCategory — 6 майже
+// повних копій каталогу (по одній на категорію-піл із головної) — у props
+// клієнтського компонента. catalogCategories важить кілька рядків і однаково
+// йде в клієнтський бандл, тож рахувати той самий фільтр тут, з уже наявного
+// sections, дає той самий результат без передачі зайвих копій через RSC
+// (SEO-аудит Vercel, 09.10.2026: /ua/catalog, inline-дані React).
+function filterSectionsByCategory(sections: Section[], slug: CatalogCategorySlug): Section[] {
+  const category = catalogCategories[slug];
+  return sections
+    .filter((s) => category.collections.includes(s.id))
+    .map((s) => {
+      const excluded = category.excludeModelCodes?.[s.id];
+      if (!excluded || !s.data.models) return s;
+      return { ...s, data: { ...s.data, models: s.data.models.filter((m) => !excluded.includes(m.code)) } };
+    });
+}
+
+function CatalogFilterInner({ sections, ...rest }: CatalogFilterProps) {
   const searchParams = useSearchParams();
-  const categorySlug = searchParams.get("category") as CatalogCategorySlug | null;
-  const effectiveSections = (categorySlug && sectionsByCategory?.[categorySlug]) || sections;
+  const categoryParam = searchParams.get("category");
+  // ?category= приходить з URL, не з наших посилань — може бути будь-яким
+  // рядком (бот, стара/битий лінк), тож перевіряємо, що це дійсно один із
+  // 6 відомих slug'ів, перш ніж індексувати catalogCategories по ньому.
+  const categorySlug = catalogCategorySlugs.includes(categoryParam as CatalogCategorySlug)
+    ? (categoryParam as CatalogCategorySlug)
+    : null;
+  const effectiveSections = categorySlug ? filterSectionsByCategory(sections, categorySlug) : sections;
   return <CatalogFilterView sections={effectiveSections} {...rest} />;
 }
 
