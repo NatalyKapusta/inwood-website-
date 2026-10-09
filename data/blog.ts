@@ -965,6 +965,7 @@ const ruPosts: BlogPost[] = [
   {
     slug: "yak-obraty-mizhkimnatni-dveri",
     title: "Как выбрать межкомнатные двери: что лучше — крашеные, ПВХ, скрытые или фрезерованные?",
+    seoTitle: "Как выбрать межкомнатные двери: крашеные, ПВХ или скрытые",
     excerpt:
       "Разбираем покрытие, конструкцию и монтаж межкомнатных дверей по порядку — как консультант в салоне, когда действительно хочет помочь, а не продать.",
     blocks: [
@@ -1108,6 +1109,7 @@ const ruPosts: BlogPost[] = [
   {
     slug: "hto-zamovliaie-mizhkimnatni-dveri",
     title: "Кто заказывает межкомнатные двери: частные клиенты, бизнес и государственные учреждения",
+    seoTitle: "Кто заказывает межкомнатные двери: клиенты и бизнес",
     excerpt:
       "Двери покупают не только для одной квартиры. Рассказываем, кто ещё обращается за межкомнатными дверями — от застройщиков и дизайнеров до отелей и кафе.",
     blocks: [
@@ -1156,6 +1158,7 @@ const ruPosts: BlogPost[] = [
   {
     slug: "shhytovi-chy-tsargovi-dveri",
     title: "Щитовые или царговые двери: в чём разница и как не запутаться в выборе",
+    seoTitle: "Щитовые или царговые двери: в чём разница",
     excerpt:
       "Объясняем, чем отличается конструкция дверей «изнутри» — и почему продавцы вообще используют эти термины.",
     blocks: [
@@ -1197,6 +1200,7 @@ const ruPosts: BlogPost[] = [
   {
     slug: "dveri-dlia-vannoi-ta-volohykh-prymishchen",
     title: "Двери для ванной комнаты и влажных помещений: что важно знать перед покупкой",
+    seoTitle: "Двери для ванной и влажных помещений: что учесть",
     excerpt:
       "Ванная, санузел, прачечная — помещения с повышенной влажностью. Разбираем, какое покрытие и конструкция выдержат влагу без деформаций.",
     blocks: [
@@ -1284,6 +1288,7 @@ const ruPosts: BlogPost[] = [
   {
     slug: "trendy-mizhkimnatnykh-dverei-2026",
     title: "Тренды межкомнатных дверей 2026: что выбрать для современного интерьера",
+    seoTitle: "Тренды межкомнатных дверей 2026 | IN WOOD",
     excerpt:
       "Скрытый монтаж, тёмные акценты, натуральные текстуры камня и дерева, высокие полотна — главные тренды 2026 и модели IN WOOD, которые им соответствуют.",
     blocks: [
@@ -1893,6 +1898,7 @@ const enPosts: BlogPost[] = [
   {
     slug: "yak-obraty-mizhkimnatni-dveri",
     title: "How to choose interior doors: painted, PVC-film, flush-mount or milled?",
+    seoTitle: "How to choose interior doors: painted, PVC or flush-mount",
     excerpt:
       "We break down door finish, construction and installation one by one — the way a showroom consultant does when they genuinely want to help, not just sell.",
     blocks: [
@@ -2036,6 +2042,7 @@ const enPosts: BlogPost[] = [
   {
     slug: "hto-zamovliaie-mizhkimnatni-dveri",
     title: "Who orders interior doors: private clients, businesses and public institutions",
+    seoTitle: "Who orders interior doors: clients and businesses",
     excerpt:
       "Doors aren't just bought for a single apartment. Here's who else orders interior doors — from developers and designers to hotels and cafes.",
     blocks: [
@@ -2084,6 +2091,7 @@ const enPosts: BlogPost[] = [
   {
     slug: "shhytovi-chy-tsargovi-dveri",
     title: "Panel vs. stile-and-rail doors: what's the difference and how to choose",
+    seoTitle: "Panel vs. stile-and-rail doors: what's the difference",
     excerpt:
       "We explain how door construction differs \"on the inside\" — and why sales staff use these terms in the first place.",
     blocks: [
@@ -2651,6 +2659,7 @@ const enPosts: BlogPost[] = [
   {
     slug: "dveri-v-novobudovu-koly-zamovlyaty",
     title: "Doors for a new-build apartment: when to order so you don't end up waiting",
+    seoTitle: "Doors for a new-build: when to order so you don't wait",
     excerpt:
       "When to start choosing doors during a renovation, what needs to be finished before measuring, and how long production takes. A countdown from your move-in date.",
     ctaLabel: "Get doors priced for your apartment",
@@ -2821,6 +2830,7 @@ const plPosts: BlogPost[] = [
   {
     slug: "yak-obraty-mizhkimnatni-dveri",
     title: "Jak wybrać drzwi wewnętrzne: co lepsze — lakierowane, PVC, ukryte czy frezowane?",
+    seoTitle: "Jak wybrać drzwi wewnętrzne: lakierowane, PVC czy ukryte",
     excerpt:
       "Analizujemy okleinę, konstrukcję i montaż drzwi wewnętrznych po kolei — tak, jak robi to konsultant w salonie, gdy naprawdę chce pomóc, a nie tylko sprzedać.",
     blocks: [
@@ -2964,6 +2974,7 @@ const plPosts: BlogPost[] = [
   {
     slug: "hto-zamovliaie-mizhkimnatni-dveri",
     title: "Kto zamawia drzwi wewnętrzne: klienci prywatni, biznes i instytucje państwowe",
+    seoTitle: "Kto zamawia drzwi wewnętrzne: klienci i biznes",
     excerpt:
       "Drzwi kupuje się nie tylko do jednego mieszkania. Opowiadamy, kto jeszcze zwraca się po drzwi wewnętrzne — od deweloperów i projektantów po hotele i kawiarnie.",
     blocks: [
@@ -3012,6 +3023,7 @@ const plPosts: BlogPost[] = [
   {
     slug: "shhytovi-chy-tsargovi-dveri",
     title: "Drzwi płytowe czy ramiakowo-płycinowe: na czym polega różnica i jak się nie pogubić w wyborze",
+    seoTitle: "Drzwi płytowe czy ramiakowe: na czym polega różnica",
     excerpt:
       "Wyjaśniamy, czym różni się konstrukcja drzwi „od środka” — i dlaczego sprzedawcy w ogóle używają tych terminów.",
     blocks: [
@@ -3053,6 +3065,7 @@ const plPosts: BlogPost[] = [
   {
     slug: "dveri-dlia-vannoi-ta-volohykh-prymishchen",
     title: "Drzwi do łazienki i pomieszczeń wilgotnych: co warto wiedzieć przed zakupem",
+    seoTitle: "Drzwi do łazienki i pomieszczeń wilgotnych: co warto wiedzieć",
     excerpt:
       "Łazienka, WC, pralnia — pomieszczenia o podwyższonej wilgotności. Wyjaśniamy, jaka okleina i konstrukcja wytrzymają wilgoć bez odkształceń.",
     blocks: [
