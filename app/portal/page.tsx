@@ -82,7 +82,7 @@ export default async function PortalDashboardPage() {
           </p>
           <div className="mt-3 flex flex-wrap gap-3">
             <a
-              href="/documents/catalog-ua.pdf"
+              href="/documents/catalog-ua-2026-10.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full border border-navy-dark px-4 py-2 text-sm font-semibold text-navy-dark transition hover:bg-navy-dark hover:text-white"
@@ -90,7 +90,7 @@ export default async function PortalDashboardPage() {
               UA каталог
             </a>
             <a
-              href="/documents/catalog-en.pdf"
+              href="/documents/catalog-en-2026-10.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full border border-navy-dark px-4 py-2 text-sm font-semibold text-navy-dark transition hover:bg-navy-dark hover:text-white"

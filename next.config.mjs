@@ -94,6 +94,12 @@ const nextConfig = {
       { source: "/sitemap_pages.xml", destination: "/sitemap.xml", permanent: true },
       { source: "/shop/sitemap.xml", destination: "/sitemap.xml", permanent: true },
       { source: "/blog/sitemap.xml", destination: "/sitemap.xml", permanent: true },
+      // Старі імена PDF-каталогів (стиснуті копії лежать під новими іменами —
+      // на /documents/* стоїть immutable-кеш на рік, тому стара назва не
+      // оновилась би сама собою). Старі посилання в листах/месенджерах
+      // мають продовжити працювати (SEO-аудит Vercel, 09.10.2026, пункт 1).
+      { source: "/documents/catalog-ua.pdf", destination: "/documents/catalog-ua-2026-10.pdf", permanent: true },
+      { source: "/documents/catalog-en.pdf", destination: "/documents/catalog-en-2026-10.pdf", permanent: true },
     ];
   },
 };

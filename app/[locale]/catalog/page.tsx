@@ -90,8 +90,8 @@ export default async function CatalogPage({ params }: { params: { locale: Locale
   // українську версію за замовчуванням.
   const catalogPdf =
     params.locale === "en" || params.locale === "pl"
-      ? "/documents/catalog-en.pdf"
-      : "/documents/catalog-ua.pdf";
+      ? "/documents/catalog-en-2026-10.pdf"
+      : "/documents/catalog-ua-2026-10.pdf";
   const breadcrumbItems = [
     { name: dict.common.breadcrumbHome, path: "" },
     { name: t.heading, path: "/catalog" },

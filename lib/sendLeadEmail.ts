@@ -56,10 +56,10 @@ export async function sendLeadEmail(payload: LeadPayload) {
   }
 }
 
-// Каталог — 14МБ, завеликий для вкладення (більшість поштових служб ріжуть
-// вкладення на 10-25МБ, та й великий файл сам по собі шкодить доставлюваності)
-// — тому клієнту йде посилання на файл, що вже лежить на сайті.
-const CATALOG_URL = `${SITE_URL}/documents/catalog-ua.pdf`;
+// Каталог — кілька МБ, завеликий для вкладення (більшість поштових служб
+// ріжуть вкладення на 10-25МБ, та й великий файл сам по собі шкодить
+// доставлюваності) — тому клієнту йде посилання на файл, що вже лежить на сайті.
+const CATALOG_URL = `${SITE_URL}/documents/catalog-ua-2026-10.pdf`;
 
 export async function sendCatalogToClient(name: string, email: string) {
   const resend = getResend();
