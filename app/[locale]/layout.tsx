@@ -16,6 +16,15 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
+// Без цього Next віддає "locale" будь-яким рядком з URL (боти, що ходять по
+// старих WordPress-адресах на кшталт /wp-sitemap-posts-page-1.xml, 404.php
+// тощо, підставляють його як [locale]) — сторінки на кшталт головної чи
+// блогу тоді падають у 500, бо indexing blogPosts[locale] не знаходить
+// такого ключа. dynamicParams стосується лише ЦЬОГО сегмента (locale) —
+// вкладені [city]/[slug] нижче мають власні generateStaticParams і на них
+// це не впливає (перевірено нижче build-тестом).
+export const dynamicParams = false;
+
 const GA_MEASUREMENT_ID = "G-R75X510R1Z";
 
 async function getCommonDict(locale: Locale) {
