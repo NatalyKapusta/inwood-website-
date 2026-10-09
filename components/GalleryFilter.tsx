@@ -97,7 +97,13 @@ function GalleryModelCard({
                   }`}
                 >
                   {p.swatchImage && (
-                    <Image src={p.swatchImage} alt={p.colorLabel ?? ""} fill sizes="24px" className="object-cover" />
+                    <Image
+                      src={p.swatchImage}
+                      alt={p.colorLabel ?? ""}
+                      width={24}
+                      height={24}
+                      className="h-full w-full object-cover"
+                    />
                   )}
                 </button>
               ))}

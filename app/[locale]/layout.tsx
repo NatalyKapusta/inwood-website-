@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import Script from "next/script";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { locales, localeHtmlLang, type Locale } from "@/lib/i18n";
+import { assertLocale, locales, localeHtmlLang, type Locale } from "@/lib/i18n";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { CartProvider } from "@/components/CartContext";
@@ -38,19 +38,27 @@ export default async function LocaleLayout({
   children: ReactNode;
   params: { locale: Locale };
 }) {
-  const common = await getCommonDict(params.locale);
+  // Робить так само, як home/blog вже роблять поштучно: notFound() тут
+  // закриває ВСІ сторінки під [locale] одним місцем, для тих 22 з 25
+  // сторінок, які самі нічого не індексують по locale (catalog, kontakty,
+  // faq тощо) — досі віддавали 200 на будь-якій мові-смітті (SEO-аудит
+  // Vercel, 09.10.2026, пункт 2). Виклики в home/blog/[slug] НЕ прибираю:
+  // ті сторінки рендеряться паралельно з layout і без власної перевірки
+  // знову падають у 500 (перевірено build-тестом раніше в цій сесії).
+  const locale = assertLocale(params.locale);
+  const common = await getCommonDict(locale);
 
   return (
-    <html lang={localeHtmlLang[params.locale]} className={`${playfairDisplay.variable} ${manrope.variable}`}>
+    <html lang={localeHtmlLang[locale]} className={`${playfairDisplay.variable} ${manrope.variable}`}>
       <body>
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd(params.locale)) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd(locale)) }}
         />
         <CartProvider>
           <Header
-            locale={params.locale}
+            locale={locale}
             phone={common.phone}
             address={common.address}
             email={common.email}
@@ -77,7 +85,7 @@ export default async function LocaleLayout({
           <main className="pb-14 sm:pb-0">{children}</main>
         </CartProvider>
         <Footer
-          locale={params.locale}
+          locale={locale}
           tagline={common.footerTagline}
           nav={common.nav}
           phone={common.phone}

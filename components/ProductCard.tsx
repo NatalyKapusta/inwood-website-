@@ -226,7 +226,13 @@ export default function ProductCard({
                       i === colorIdx ? "border-gold" : "border-navy-dim/20"
                     }`}
                   >
-                    <Image src={c.image} alt={colorLabel(c)} fill sizes="24px" className="object-cover" />
+                    <Image
+                      src={c.image}
+                      alt={colorLabel(c)}
+                      width={24}
+                      height={24}
+                      className="h-full w-full object-cover"
+                    />
                   </button>
                 ))}
               </div>

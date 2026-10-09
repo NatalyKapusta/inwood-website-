@@ -138,7 +138,13 @@ export default function HeroDoorCarousel({ eyebrow, doors }: { eyebrow: string; 
                 transitionDuration: reducedMotion ? "0ms" : "1150ms",
               }}
             >
-              <Image src={door.src} alt={door.label} fill sizes="100px" className="object-contain" />
+              <Image
+                src={door.src}
+                alt={door.label}
+                width={100}
+                height={204}
+                className="h-full w-full object-contain"
+              />
             </div>
           );
         })}
