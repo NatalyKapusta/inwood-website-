@@ -72,12 +72,12 @@ export default async function PortalUsersPage({
       )}
       {searchParams.salaryGranted && (
         <p className="mt-4 rounded-lg bg-green-50 px-4 py-3 text-sm text-green-700">
-          Доступ до "Зарплата" надано
+          Доступ до &quot;Зарплата&quot; надано
         </p>
       )}
       {searchParams.salaryRevoked && (
         <p className="mt-4 rounded-lg bg-green-50 px-4 py-3 text-sm text-green-700">
-          Доступ до "Зарплата" знято
+          Доступ до &quot;Зарплата&quot; знято
         </p>
       )}
       {searchParams.passwordSet && (
