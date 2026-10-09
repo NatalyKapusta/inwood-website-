@@ -1,3 +1,27 @@
+// Етап 1 (SEO-аудит Vercel, 09.10.2026, пункт 1): лише Report-Only — нічого
+// не блокує, браузер просто шле звіт про порушення на /api/csp-report.
+// Джерела нижче зібрано з реального коду сайту: GA4 (script+inline-init у
+// app/[locale]/layout.tsx), чат-віджет KeepinCRM (components/DeferredChatWidget.tsx,
+// вставляє і свій <script>, і свій <iframe>), YouTube-факад (components/YouTubeFacade.tsx —
+// превʼю з img.youtube.com, сам плеєр лише по кліку), карти на Leaflet+OpenStreetMap
+// (components/ShowroomMap.tsx, components/DealersMap.tsx), Supabase (lib/supabase/*.ts)
+// і Vercel Speed Insights (бʼюкон на vitals.vercel-insights.com, сам скрипт — з /_vercel/,
+// тобто 'self'). 'unsafe-inline' у script-src — через інлайновий GA4-ініт-скрипт без
+// nonce; прибрати це можна буде окремим заходом перед переходом на блокуючий CSP.
+const CSP_REPORT_ONLY = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://keepincrm.chat https://*.keepincrm.chat",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: https://img.youtube.com https://*.tile.openstreetmap.org https://www.googletagmanager.com https://*.google-analytics.com",
+  "font-src 'self' data:",
+  "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://vitals.vercel-insights.com https://keepincrm.chat https://*.keepincrm.chat",
+  "frame-src https://www.youtube.com https://keepincrm.chat https://*.keepincrm.chat",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "frame-ancestors 'self'",
+  "report-uri /api/csp-report",
+].join("; ");
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -32,6 +56,7 @@ const nextConfig = {
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
           { key: "X-Frame-Options", value: "SAMEORIGIN" },
           { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
+          { key: "Content-Security-Policy-Report-Only", value: CSP_REPORT_ONLY },
         ],
       },
       {
