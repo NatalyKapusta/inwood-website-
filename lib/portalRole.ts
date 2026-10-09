@@ -50,3 +50,13 @@ export const TARIFFS_BY_ROLE: Record<PortalRole, Tariff[] | "all"> = {
 export function isPortalRole(value: unknown): value is PortalRole {
   return typeof value === "string" && (PORTAL_ROLES as string[]).includes(value);
 }
+
+// Хто бачить прайс-листи (дилерський і роздрібний) у кабінеті — той самий
+// розподіл, що й у app/portal/page.tsx; винесено сюди, щоб захищений
+// маршрут app/portal/documents/[name]/route.ts перевіряв доступ так само,
+// а не дублював список ролей окремо (легко розсинхронити).
+const PRICE_LIST_ROLES: PortalRole[] = ["dealer", "dealer_distributor", "manager", "staff"];
+
+export function canSeePriceLists(isOwner: boolean, role: unknown): boolean {
+  return isOwner || (isPortalRole(role) && PRICE_LIST_ROLES.includes(role));
+}

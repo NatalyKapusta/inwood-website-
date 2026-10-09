@@ -4,7 +4,7 @@ import { cookies } from "next/headers";
 import { createClient } from "@/lib/supabase/server";
 import { getPricesVisible } from "@/lib/siteSettings";
 import { setPricesVisible } from "@/app/portal/actions";
-import { VIEW_AS_COOKIE, isPortalRole, roleLabels } from "@/lib/portalRole";
+import { VIEW_AS_COOKIE, isPortalRole, roleLabels, canSeePriceLists as checkCanSeePriceLists } from "@/lib/portalRole";
 import ChangePasswordForm from "@/components/portal/ChangePasswordForm";
 
 export default async function PortalDashboardPage() {
@@ -42,9 +42,7 @@ export default async function PortalDashboardPage() {
   const effectiveRole = viewingAs ?? role;
   const effectiveIsOwner = isOwner && !viewingAs;
   const en = effectiveRole === "export";
-  const canSeePriceLists =
-    effectiveIsOwner ||
-    ["dealer", "dealer_distributor", "manager", "staff"].includes(effectiveRole as string);
+  const canSeePriceLists = checkCanSeePriceLists(effectiveIsOwner, effectiveRole);
 
   return (
     <div>
@@ -111,7 +109,7 @@ export default async function PortalDashboardPage() {
           </p>
           <div className="mt-3 flex flex-wrap gap-3">
             <a
-              href={en ? "/documents/dovidnyk-spivrobitnykiv-en.html" : "/documents/dovidnyk-spivrobitnykiv.html"}
+              href={en ? "/portal/documents/dovidnyk-spivrobitnykiv-en" : "/portal/documents/dovidnyk-spivrobitnykiv"}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full border border-navy-dark px-4 py-2 text-sm font-semibold text-navy-dark transition hover:bg-navy-dark hover:text-white"
@@ -174,7 +172,7 @@ export default async function PortalDashboardPage() {
             <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <div className="flex items-center gap-2 rounded-full border border-navy-dark pl-4 pr-1.5 py-1.5">
                 <a
-                  href="/documents/prays-dilerska.html?v=2"
+                  href="/portal/documents/prays-dilerska"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm font-semibold text-navy-dark hover:text-gold"
@@ -182,7 +180,7 @@ export default async function PortalDashboardPage() {
                   Прайс-лист — дилерська та роздрібна ціна
                 </a>
                 <a
-                  href="/documents/prays-dilerska.html?v=2"
+                  href="/portal/documents/prays-dilerska"
                   download="Прайс-лист IN WOOD — дилерська та роздрібна ціна.html"
                   className="rounded-full bg-navy-dark px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-gold hover:text-navy-dark"
                 >
@@ -191,7 +189,7 @@ export default async function PortalDashboardPage() {
               </div>
               <div className="flex items-center gap-2 rounded-full border border-navy-dark pl-4 pr-1.5 py-1.5">
                 <a
-                  href="/documents/prays-rozdrib.html?v=2"
+                  href="/portal/documents/prays-rozdrib"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm font-semibold text-navy-dark hover:text-gold"
@@ -199,7 +197,7 @@ export default async function PortalDashboardPage() {
                   Прайс-лист — тільки роздрібні ціни
                 </a>
                 <a
-                  href="/documents/prays-rozdrib.html?v=2"
+                  href="/portal/documents/prays-rozdrib"
                   download="Прайс-лист IN WOOD — роздрібні ціни.html"
                   className="rounded-full bg-navy-dark px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-gold hover:text-navy-dark"
                 >

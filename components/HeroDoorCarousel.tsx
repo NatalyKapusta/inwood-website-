@@ -162,7 +162,7 @@ export default function HeroDoorCarousel({ eyebrow, doors }: { eyebrow: string; 
       </div>
 
       <div className="mt-1.5 text-center">
-        <p className="text-[10px] font-semibold uppercase tracking-widest text-white/50">{eyebrow}</p>
+        <p className="text-[10px] font-semibold uppercase tracking-widest text-white/70">{eyebrow}</p>
         <p className="font-serif text-base font-semibold text-white">{doors[current].label}</p>
       </div>
     </div>

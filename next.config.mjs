@@ -3,6 +3,16 @@ const nextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
+  // readFile(path.join(process.cwd(), "private-documents", ...)) у
+  // app/portal/documents/[name]/route.ts — динамічний шлях, Next.js не
+  // може сам простежити його статичним аналізом імпортів. Без цього Vercel
+  // не включить private-documents/ у бандл функції, і readFile впаде з
+  // ENOENT у проді, хоча локальний next build/start спрацює.
+  experimental: {
+    outputFileTracingIncludes: {
+      "/portal/documents/[name]": ["./private-documents/**/*"],
+    },
+  },
   async headers() {
     // Фото й документи в public/ — статичні файли, що не змінюються після
     // деплою (нова версія фото = нове ім'я файлу), тому безпечно кешувати
@@ -52,24 +62,6 @@ const nextConfig = {
         headers: [{ key: "Cache-Control", value: "public, max-age=0, must-revalidate" }],
       },
       {
-        // Довідник по лінійках (UA/EN) теж регулярно редагується.
-        source: "/documents/dovidnyk-spivrobitnykiv.html",
-        headers: [{ key: "Cache-Control", value: "public, max-age=0, must-revalidate" }],
-      },
-      {
-        source: "/documents/dovidnyk-spivrobitnykiv-en.html",
-        headers: [{ key: "Cache-Control", value: "public, max-age=0, must-revalidate" }],
-      },
-      {
-        // Прайс-листи в кабінеті дилера — теж редагуються під тими самими іменами.
-        source: "/documents/prays-dilerska.html",
-        headers: [{ key: "Cache-Control", value: "public, max-age=0, must-revalidate" }],
-      },
-      {
-        source: "/documents/prays-rozdrib.html",
-        headers: [{ key: "Cache-Control", value: "public, max-age=0, must-revalidate" }],
-      },
-      {
         // Текстури 3D-примірки дверей — той самий файл під тим самим ім'ям
         // ніколи не змінюється (нова версія = новий TEX_VER у door-fit.html),
         // тому теж безпечно кешувати надовго.
@@ -100,6 +92,15 @@ const nextConfig = {
       // мають продовжити працювати (SEO-аудит Vercel, 09.10.2026, пункт 1).
       { source: "/documents/catalog-ua.pdf", destination: "/documents/catalog-ua-2026-10.pdf", permanent: true },
       { source: "/documents/catalog-en.pdf", destination: "/documents/catalog-en-2026-10.pdf", permanent: true },
+      // Дилерський/роздрібний прайс, довідник співробітників і шаблон
+      // офлайн-калькулятора переїхали за логін (app/portal/documents/[name])
+      // — самі файли лежали в public/ і роздавались без входу будь-кому зі
+      // старим посиланням (SEO-аудит Vercel, 09.10.2026, розділ 5).
+      { source: "/documents/prays-dilerska.html", destination: "/portal/login", permanent: true },
+      { source: "/documents/prays-rozdrib.html", destination: "/portal/login", permanent: true },
+      { source: "/documents/dovidnyk-spivrobitnykiv.html", destination: "/portal/login", permanent: true },
+      { source: "/documents/dovidnyk-spivrobitnykiv-en.html", destination: "/portal/login", permanent: true },
+      { source: "/offline-calculator-template.html", destination: "/portal/login", permanent: true },
     ];
   },
 };

@@ -96,6 +96,7 @@ export default async function KontaktyPage({
               fill
               sizes="(min-width: 1024px) 640px, 100vw"
               className="object-cover"
+              priority
             />
           </div>
         </div>

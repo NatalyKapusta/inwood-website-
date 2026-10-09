@@ -65,7 +65,7 @@ export default function OfflineCalculatorGenerator() {
         hardware: offlineData.hardware.length,
       });
 
-      const templateRes = await fetch("/offline-calculator-template.html");
+      const templateRes = await fetch("/portal/documents/offline-calculator-template");
       if (!templateRes.ok) throw new Error("Не вдалося завантажити шаблон офлайн-калькулятора");
       const template = await templateRes.text();
 
